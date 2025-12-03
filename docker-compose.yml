@@ -40,16 +40,14 @@ services:
       KONG_PG_PASSWORD: kong
       KONG_PG_HOST: kong-database
 
-      # Logs
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
       KONG_ADMIN_ERROR_LOG: /dev/stderr
 
-      # Admin UI
       KONG_ADMIN_LISTEN: "0.0.0.0:8001, 0.0.0.0:8444 ssl"
       KONG_ADMIN_GUI_LISTEN: "0.0.0.0:8002"
-      KONG_ADMIN_GUI_URL: "http://kong_stack_kong:8002"
+      KONG_ADMIN_GUI_URL: "http://kong:8002"
     ports:
       - "8000:8000"
       - "8443:8443"
@@ -72,7 +70,7 @@ services:
 
 networks:
   kong-net:
-    driver: overlay
+    driver: overlay  # ← IMPORTANTE
 
 volumes:
   postgres-data:
