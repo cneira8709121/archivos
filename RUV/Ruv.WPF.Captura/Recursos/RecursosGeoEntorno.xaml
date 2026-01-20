@@ -1,0 +1,93 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+                    xmlns:controles="clr-namespace:Ruv.WPF.Captura.Controles"
+                    xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters">
+
+  <conv:TipoEntornoConverter x:Key="TEC" />
+
+  <Style x:Key="styTextBlockGeoEntorno01"
+         TargetType="TextBlock">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="{x:Null}">
+        <Setter Property="Text"
+                Value="" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="127">
+        <Setter Property="Text"
+                Value="Barrio" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="128">
+        <Setter Property="Text"
+                Value="Vereda" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="styTextBlockGeoEntorno02"
+         TargetType="TextBlock">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="{x:Null}">
+        <Setter Property="Text"
+                Value="" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="127">
+        <Setter Property="Text"
+                Value="Localidad" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="128">
+        <Setter Property="Text"
+                Value="Corregimiento" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="stySubTituloEntradaGeoEntorno01"
+         TargetType="sec:SubTituloEntrada">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="{x:Null}">
+        <Setter Property="sec:SubTituloEntrada.Texto"
+                Value="." />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="127">
+        <Setter Property="sec:SubTituloEntrada.Texto"
+                Value="BARRIO" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="128">
+        <Setter Property="sec:SubTituloEntrada.Texto"
+                Value="VEREDA" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="stySubTituloEntradaGeoEntorno02"
+         TargetType="sec:SubTituloEntrada">
+    <Style.Triggers>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="{x:Null}">
+        <Setter Property="sec:SubTituloEntrada.Texto"
+                Value="." />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="127">
+        <Setter Property="sec:SubTituloEntrada.Texto"
+                Value="LOCALIDAD" />
+      </DataTrigger>
+      <DataTrigger Binding="{Binding TipoEntorno, Converter={StaticResource TEC}}"
+                   Value="128">
+        <Setter Property="sec:SubTituloEntrada.Texto"
+                Value="CORREGIMIENTO" />
+      </DataTrigger>
+    </Style.Triggers>
+  </Style>
+
+</ResourceDictionary>

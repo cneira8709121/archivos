@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0f2d607e-2677-47b0-8b76-2a5afbb9d9e0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CriticaNService1.wsdl" MetadataType="Wsdl" ID="89c20b18-e92a-44ce-b140-7c5f7b26e2a8" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?wsdl" />
+    <MetadataFile FileName="CriticaNService2.xsd" MetadataType="Schema" ID="30ac29aa-9d28-4457-89df-57d37ed377fa" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CriticaNService.disco" MetadataType="Disco" ID="98ad56d0-ae09-4d90-89ba-ecfb93ac959b" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?disco" />
+    <MetadataFile FileName="CriticaNService.wsdl" MetadataType="Wsdl" ID="a7a2c840-3feb-43c0-a6a6-fda81c113e82" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CriticaNService1.xsd" MetadataType="Schema" ID="461afc86-7a63-481f-a43d-acf136ad6f2b" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CriticaNService.xsd" MetadataType="Schema" ID="d81a5c21-8479-4b81-a682-f58d38f8e3db" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

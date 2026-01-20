@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A11_Pregunta18"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:ParametroNumeroConverter x:Key="PNC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <sec:SubTituloEntrada Numero=""
+                          AlineacionTexto="Center"
+                          Texto="CRÉDITOS Y PASIVOS ASOCIADOS A LOS BIENES MUEBLE E INMUEBLES DESPOJADOS Y/O ABANDONADOS" />
+    <sec:SubTituloEntrada Numero="18"
+                          Texto="Pregunte si, al momento de los hechos victimizantes, existían créditos o pasivos asociados a los bienes muebles y/o inmuebles referenciados en este anexo. Indague si estas obligaciones entraron en mora o han sido objeto de refinanciación, reestructuración o consolidación como consecuencia de los hechos victimizantes. De ser así, registre en el siguiente cuadro los datos básicos de estas obligaciones."
+                          Margin="0,5" />
+
+    <Grid HorizontalAlignment="Center"
+          Margin="0,5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Border>
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t013}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <StackPanel Orientation="Horizontal">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t014}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t015}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+          </StackPanel>
+
+        </StackPanel>
+      </Border>
+    
+
+    </Grid>
+  </StackPanel>
+</UserControl>

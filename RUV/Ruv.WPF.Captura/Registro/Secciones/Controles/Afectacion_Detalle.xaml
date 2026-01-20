@@ -1,0 +1,47 @@
+﻿<UserControl xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             x:Class="Ruv.WPF.Captura.Registro.Secciones.Afectacion_Detalle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             d:DesignHeight="300"
+             d:DesignWidth="595">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="RadioButton"
+             BasedOn="{StaticResource styRadioButtonX}" />
+      <Style TargetType="CheckBox"
+             BasedOn="{StaticResource styCheckBoxX}" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid VerticalAlignment="Top">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="8*" />
+      <ColumnDefinition Width="3*" />
+    </Grid.ColumnDefinitions>
+    <!--PREGUNTA CÉDULA-->
+    <my:DatoSiNoColumna  Valor="{Binding Afectado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         DireccionTamaño="Both" />
+    <Grid Grid.Column="1">
+      <Border />
+      <sec:ListaOpciones VerticalAlignment="Center"
+                         TipoOpciones="Unica"
+                         TipoParametros="Entidades"
+                         Conjunto="TomaDeclaracion"
+                         ValorSeleccionUnica="{Binding TipoAfectacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+    </Grid>
+    <Grid Grid.Column="2">
+      <Border />
+      <TextBox Text="{Binding Otro, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+               Margin="3"
+               Grid.Column="2" />
+    </Grid>
+  </Grid>
+</UserControl>

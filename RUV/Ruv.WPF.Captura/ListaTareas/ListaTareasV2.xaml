@@ -1,0 +1,233 @@
+﻿<Page x:Class="Ruv.WPF.Captura.ListaTareas.ListaTareasV2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ctrl="clr-namespace:Ruv.WPF.Captura.Controles"
+      xmlns:Ruv_WPF_Captura_Controles="clr-namespace:Ruv.WPF.Captura.Controles"
+      xmlns:System="clr-namespace:System;assembly=mscorlib"
+      xmlns:entidad="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades;assembly=Ruv.Infrastructure.Crosscutting.Common"
+      xmlns:DataSource="clr-namespace:Ruv.WPF.Captura.Utils.DataSources"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      Title="ListaTareasV2">
+    <Page.Resources>
+        <Storyboard x:Key="SB01Start">
+            <ColorAnimation Storyboard.TargetProperty="(Background).GradientStops[0].Color"
+                      To="Yellow"
+                      Duration="0:0:0.3"
+                      FillBehavior="HoldEnd" />
+            <ColorAnimation Storyboard.TargetProperty="(Background).GradientStops[1].Color"
+                      To="Yellow"
+                      Duration="0:0:0.3"
+                      FillBehavior="HoldEnd" />
+            <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleX"
+                       To="1.1"
+                       Duration="0:0:0.2"
+                       FillBehavior="HoldEnd" />
+            <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleY"
+                       To="1.1"
+                       Duration="0:0:0.2"
+                       FillBehavior="HoldEnd" />
+        </Storyboard>
+        <Storyboard x:Key="SB01Stop">
+            <ColorAnimation Storyboard.TargetProperty="(Background).GradientStops[0].Color"
+                      To="#FFBABABA"
+                      Duration="0:0:0.3"
+                      FillBehavior="HoldEnd" />
+            <ColorAnimation Storyboard.TargetProperty="(Background).GradientStops[1].Color"
+                      To="White"
+                      Duration="0:0:0.3"
+                      FillBehavior="HoldEnd" />
+            <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleX"
+                       To="1"
+                       Duration="0:0:0.2"
+                       FillBehavior="HoldEnd" />
+            <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleY"
+                       To="1"
+                       Duration="0:0:0.2"
+                       FillBehavior="HoldEnd" />
+        </Storyboard>
+        <Storyboard x:Key="SB02Loaded">
+            <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleX"
+                       From="0.8"
+                       To="1"
+                       Duration="0:0:0.2"
+                       FillBehavior="Stop" />
+            <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleY"
+                       From="0.8"
+                       To="1"
+                       Duration="0:0:0.2"
+                       FillBehavior="Stop" />
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                       From="0"
+                       To="1"
+                       Duration="0:0:0.2"
+                       FillBehavior="Stop" />
+        </Storyboard>
+        <DataSource:ListaTareasDataSource x:Key="Datos"  />
+        <DataTemplate x:Key="dtListaTareas">
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                           Mode=FindAncestor, AncestorType={x:Type ListBoxItem},
+                           AncestorLevel=1},
+                           Path=IsSelected}"
+                     Value="True">
+                    <Setter TargetName="borTarea"
+                  Property="Border.BorderBrush"
+                  Value="Red" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+            <Border x:Name="borTarea"
+              BorderBrush="Black"
+              BorderThickness="2"
+              Margin="10,8,0,0"
+              Width="200"
+              CornerRadius="3">
+                <Border.RenderTransform>
+                    <ScaleTransform CenterX="100"
+                          CenterY="52" />
+                </Border.RenderTransform>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver"
+                       Value="true">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Name="BSB01"
+                                   Storyboard="{StaticResource SB01Start}">
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard Name="BSB02"
+                                   Storyboard="{StaticResource SB01Stop}">
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard Storyboard="{StaticResource SB02Loaded}" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <StackPanel Margin="5">
+                    <TextBlock FontSize="17"
+                     FontWeight="Bold"
+                     Foreground="Black"
+                     Text="{Binding Formulario}" />
+                    <TextBlock Foreground="#FF525252"
+                     FontWeight="Bold"
+                     Text="{Binding Accion}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Fecha Declaración:" />
+                        <TextBlock Text="{Binding Fecha, StringFormat='{}dd-MMM-yyyy'}" Margin="10,0,0,0"
+                                       Foreground="Black" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Fecha Radicación:" />
+                        <TextBlock Text="{Binding FechaLlegada, StringFormat='{}dd-MMM-yyyy'}" Margin="10,0,0,0"
+                         Foreground="Black" />
+                    </StackPanel>
+                </StackPanel>
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,0"
+                               StartPoint="1,1">
+                        <GradientStop Color="#FFBABABA"
+                          Offset="0" />
+                        <GradientStop Color="White"
+                          Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </DataTemplate>
+        <Style TargetType="{x:Type Ruv_WPF_Captura_Controles:PaggingControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Ruv_WPF_Captura_Controles:PaggingControl}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="23" >
+                            <Button Name="PART_FirstPageButton" Content="&lt;&lt;" Width="40" Height="23" />
+                            <Button Name="PART_PreviousPageButton" Content="&lt;" Width="40" Height="23" />
+                            <TextBlock Text="Pagina Actual:" TextAlignment="Center" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Center"  />
+                            <TextBox Name="PART_PageTextBox" Width="40" Height="23"  />
+                            <TextBlock Text="Total paginas:" TextAlignment="Center" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Center"  />
+                            <TextBlock Text="{Binding TotalPages, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="50" />
+                            <Button Name="PART_NextPageButton" Content="&gt;" Width="40" Height="23" />
+                            <Button Name="PART_LastPageButton" Content="&gt;&gt;" Width="40" Height="23" />
+                            <ComboBox Name="PART_PageSizesCombobox" Width="60" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="FocusVisualStyle"
+              Value="{x:Null}" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition />
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontWeight="Bold"
+               HorizontalAlignment="Center"
+               Text="LISTA DE TAREAS"
+               Margin="101,10,101,0"
+               VerticalAlignment="Top" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Text="Filtrar por:" Margin="0,0,15,0" />
+            <ComboBox Height="23" HorizontalAlignment="Left" Name="cbbFiltros" VerticalAlignment="Top" Width="152" Margin="0,0,15,0" SelectionChanged="cbbFiltros_SelectionChanged">
+                <ComboBoxItem Content="Numero Formulario"></ComboBoxItem>
+                <ComboBoxItem Content="Fecha Radicado"></ComboBoxItem>
+            </ComboBox>
+            <TextBox Name="txbFiltro" Width="152" Margin="0,0,15,0" Visibility="Collapsed" CharacterCasing="Upper" />
+            <StackPanel x:Name="stpFechas" Orientation="Horizontal" Visibility="Collapsed" Margin="0,0,15,0">
+                <TextBlock Text="Fecha Inicial" Margin="0,0,15,0" />
+                <DatePicker x:Name="dpkFechaIncial" Margin="0,0,15,0" />
+                <TextBlock Text="Fecha Final" Margin="0,0,15,0" />
+                <DatePicker x:Name="dpkFechaFinal" />
+            </StackPanel>
+            <Button x:Name="btn_Filtrar" Click="btn_Filtrar_Click" Height="23" Content="Filtrar" Margin="0,0,15,0" />
+            <Button x:Name="btn_RestablecerFiltro" Click="btn_RestablecerFiltro_Click" Height="23" Content="Restablecer" />
+        </StackPanel>
+        <ListBox Grid.Row="2" x:Name="lstListaTareas"
+             ItemsSource="{Binding ListaTareas}"
+             ItemTemplate="{StaticResource dtListaTareas}"
+             Padding="4"
+             TextSearch.TextPath="Formulario"
+             MouseDoubleClick="SeleccionarRadicacion"
+             ScrollViewer.VerticalScrollBarVisibility="Disabled"
+             BorderThickness="0"
+             Margin="0,5,0,12">
+            <ListBox.Resources>
+                <SolidColorBrush Color="Transparent"
+                         x:Key="{x:Static SystemColors.HighlightBrushKey}" />
+            </ListBox.Resources>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical"
+                     ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <Ruv_WPF_Captura_Controles:PaggingControl x:Name="pageControl" Grid.Row="3" Height="25"
+                              PageContract="{StaticResource Datos}"
+                              PreviewPageChange="pageControl_PreviewPageChange"
+                              PageChanged="pageControl_PageChanged">
+            <Ruv_WPF_Captura_Controles:PaggingControl.PageSizes>
+                <System:UInt32>50
+                </System:UInt32>
+                <System:UInt32>10
+                </System:UInt32>
+                <System:UInt32>20
+                </System:UInt32>
+                <System:UInt32>100
+                </System:UInt32>
+            </Ruv_WPF_Captura_Controles:PaggingControl.PageSizes>
+        </Ruv_WPF_Captura_Controles:PaggingControl>
+    </Grid>
+</Page>

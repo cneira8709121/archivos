@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivarOInactivar" xml:space="preserve">
+    <value>pi_Accion</value>
+  </data>
+  <data name="Cantidad" xml:space="preserve">
+    <value>pi_Cantidad</value>
+  </data>
+  <data name="FiltroConsulta" xml:space="preserve">
+    <value>Pi_Filtro</value>
+    <comment>Parametro que filtra la consulta del procedimiento sp_getDeclaracionesValPaginada</comment>
+  </data>
+  <data name="Formularios" xml:space="preserve">
+    <value>po_Formularios</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>P_ID</value>
+  </data>
+  <data name="IdCriticaN" xml:space="preserve">
+    <value>PI_IDCRITICAN</value>
+  </data>
+  <data name="IdDeclaracion" xml:space="preserve">
+    <value>pi_IdDeclaracion</value>
+  </data>
+  <data name="IdDepartamento" xml:space="preserve">
+    <value>pi_IdDepartamento</value>
+  </data>
+  <data name="IdEntidad" xml:space="preserve">
+    <value>pi_IdEntidadMunicipio</value>
+  </data>
+  <data name="IdEntidadmunicipio" xml:space="preserve">
+    <value>pi_IdEntidadmunicipio</value>
+  </data>
+  <data name="IdEntidadMunicipioRad" xml:space="preserve">
+    <value>P_ID_ENTIDADMUNICIPIO</value>
+  </data>
+  <data name="IdEstado" xml:space="preserve">
+    <value>pi_IdEstado</value>
+  </data>
+  <data name="IdFormulario" xml:space="preserve">
+    <value>po_IdIdentificadorFormulario</value>
+  </data>
+  <data name="IdFormularioIn" xml:space="preserve">
+    <value>PI_NIDFORMULARIO</value>
+  </data>
+  <data name="IdMunicipio" xml:space="preserve">
+    <value>pi_IdMunicipio</value>
+  </data>
+  <data name="IdMunicipioRad" xml:space="preserve">
+    <value>P_ID_MUNICIPIO</value>
+  </data>
+  <data name="IdPais" xml:space="preserve">
+    <value>pi_IdPais</value>
+  </data>
+  <data name="IdRadicacion" xml:space="preserve">
+    <value>PI_IDRADICACION</value>
+  </data>
+  <data name="IdTipoRadicacion" xml:space="preserve">
+    <value>P_NRO_ID_TIPO_RADICACION</value>
+  </data>
+  <data name="IdUsuario" xml:space="preserve">
+    <value>pi_IdUsuario</value>
+  </data>
+  <data name="Mensaje" xml:space="preserve">
+    <value>po_Mensaje</value>
+    <comment>Parámetro de salida usado para devolver cualquier tipo de mensaje de error o cadena necesaria desde la BD.</comment>
+  </data>
+  <data name="NumeroDocumento" xml:space="preserve">
+    <value>pi_NumeroDocumento</value>
+  </data>
+  <data name="NumeroFormulario" xml:space="preserve">
+    <value>pi_NumeroFormulario</value>
+  </data>
+  <data name="NumeroFormularioRad" xml:space="preserve">
+    <value>P_NRO_FORMULARIO</value>
+  </data>
+  <data name="NumeroPagina" xml:space="preserve">
+    <value>pi_PageNumber</value>
+    <comment>Numero de página (arranca en 1)</comment>
+  </data>
+  <data name="Observacion" xml:space="preserve">
+    <value>PI_OBSERVACION</value>
+  </data>
+  <data name="ObservacionCriticaN" xml:space="preserve">
+    <value>PI_OBSERVACIONCRITICAN</value>
+  </data>
+  <data name="Observaciones" xml:space="preserve">
+    <value>P_OBSERVACIONES</value>
+  </data>
+  <data name="OrdenConsulta" xml:space="preserve">
+    <value>Pi_Orden</value>
+    <comment>Parametro de columna que ordena consulta sp_getDeclaracionesValPaginada</comment>
+  </data>
+  <data name="OutRadicacion" xml:space="preserve">
+    <value>PO_RADICACION</value>
+  </data>
+  <data name="ParametroEstado" xml:space="preserve">
+    <value>Pi_Param_Estado</value>
+  </data>
+  <data name="ParamTipoEntidad" xml:space="preserve">
+    <value>P_PARAM_TIPOENTIDAD</value>
+  </data>
+  <data name="PrimerApellido" xml:space="preserve">
+    <value>pi_PrimerApellido</value>
+  </data>
+  <data name="PrimerNombre" xml:space="preserve">
+    <value>pi_PrimerNombre</value>
+  </data>
+  <data name="RegInicialConsulta" xml:space="preserve">
+    <value>Pi_RegInicial</value>
+    <comment>Parametro que filtra la consulta desde ese registro</comment>
+  </data>
+  <data name="RegistrosPorPagina" xml:space="preserve">
+    <value>pi_PageSize</value>
+    <comment>Numero de registros por página</comment>
+  </data>
+  <data name="Respuesta" xml:space="preserve">
+    <value>PI_RESPUESTA</value>
+  </data>
+  <data name="Resultado" xml:space="preserve">
+    <value>po_Cursor</value>
+    <comment>Cursores de retorno</comment>
+  </data>
+  <data name="ResultadoConsulta" xml:space="preserve">
+    <value>Po_Resultado</value>
+    <comment>Resultado de la consulta, conteo o cursor</comment>
+  </data>
+  <data name="ResultadoConteo" xml:space="preserve">
+    <value>po_RecordCount</value>
+    <comment>Numero de registros para ejecuciones paginadas</comment>
+  </data>
+  <data name="RutaImagen" xml:space="preserve">
+    <value>PO_RUTAIMAGEN</value>
+  </data>
+  <data name="RutaImagenRad" xml:space="preserve">
+    <value>P_RUTAIMAGEN</value>
+  </data>
+  <data name="Serie" xml:space="preserve">
+    <value>pi_Serie</value>
+  </data>
+  <data name="TamañoPaginaConsulta" xml:space="preserve">
+    <value>Pi_TamanoPagina</value>
+    <comment>Parametro que filtra hasta esa cantidad de registros la consulta</comment>
+  </data>
+  <data name="ValoradorId" xml:space="preserve">
+    <value>Pi_ValoradorId</value>
+    <comment>Id Del Valorador Para filtrar lista de tareas</comment>
+  </data>
+  <data name="Preguntas" xml:space="preserve">
+    <value>pi_Preguntas</value>
+    <comment>Preguntas de la devolución desde la critica n</comment>
+  </data>
+  <data name="Respuestas" xml:space="preserve">
+    <value>pi_Respuestas</value>
+    <comment>Respuestas de la devolución desde la critica n</comment>
+  </data>
+  <data name="IdDevolucion" xml:space="preserve">
+    <value>PI_IDDEVOLUCION</value>
+    <comment>Id de la devolucion</comment>
+  </data>
+  <data name="EstadoDeclaracionAnterior" xml:space="preserve">
+    <value>pi_EstadoDeclaracionAnterior</value>
+  </data>
+  <data name="FechaDevolucion" xml:space="preserve">
+    <value>pi_FechaDevolucion</value>
+  </data>
+  <data name="FechaRadicacion" xml:space="preserve">
+    <value>pi_FechaRadicacion</value>
+  </data>
+  <data name="FechaSolicitud" xml:space="preserve">
+    <value>pi_FechaSolicitud</value>
+  </data>
+  <data name="NumeroGuia" xml:space="preserve">
+    <value>pi_NumeroGuia</value>
+  </data>
+  <data name="ParteEmotiva" xml:space="preserve">
+    <value>PI_PARTEEMOTIVAMOD</value>
+  </data>
+  <data name="CausalesDevolucion" xml:space="preserve">
+    <value>PI_IDSCAUSALES</value>
+  </data>
+  <data name="Direccion" xml:space="preserve">
+    <value>PI_CDIRECCION</value>
+  </data>
+  <data name="Funcionario" xml:space="preserve">
+    <value>PI_CFUNCIONARIO</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>PI_NTELEFONO</value>
+  </data>
+  <data name="OutIdRadicacion" xml:space="preserve">
+    <value>PO_IDRADICACION</value>
+  </data>
+  <data name="FechaLlegada" xml:space="preserve">
+    <value>PI_FECHALLEGADA</value>
+  </data>
+  <data name="ParamResultadoValidacion" xml:space="preserve">
+    <value>P_PARAM_RESULTADO_VALIDACION</value>
+  </data>
+  <data name="IdValoracion" xml:space="preserve">
+    <value>PI_IDVALORACION</value>
+  </data>
+  <data name="IdPersona" xml:space="preserve">
+    <value>PI_IdPersona</value>
+  </data>
+  <data name="CamposCorrecciones" xml:space="preserve">
+    <value>PI_CamposCorrecciones</value>
+  </data>
+  <data name="ValoresCorrecciones" xml:space="preserve">
+    <value>PI_ValoresCorrecciones</value>
+  </data>
+  <data name="IdRegistroPersona" xml:space="preserve">
+    <value>PI_IDREGPERSONA</value>
+  </data>
+  <data name="IdCorreccion" xml:space="preserve">
+    <value>PI_IdCorreccion</value>
+  </data>
+  <data name="IdUsuarioSolicitud" xml:space="preserve">
+    <value>PI_IdUsuarioSolicitud</value>
+  </data>
+  <data name="IdUsuarioRechaza" xml:space="preserve">
+    <value>PI_IdUsuarioRechaza</value>
+  </data>
+  <data name="IdNotificacion" xml:space="preserve">
+    <value>PI_IDNOTIFICACION</value>
+  </data>
+  <data name="IdPaqueteNotificacion" xml:space="preserve">
+    <value>PO_IDPAQUETENOTIFICA</value>
+  </data>
+  <data name="DireccionEnvio" xml:space="preserve">
+    <value>PI_DireccionEnvio</value>
+  </data>
+  <data name="IdPaqueteNotificacionIn" xml:space="preserve">
+    <value>PI_IDPAQUETENOTIFICA</value>
+  </data>
+  <data name="IdPuntoNotificacion" xml:space="preserve">
+    <value>PI_PUNTONOTIFICACION</value>
+  </data>
+  <data name="nIdEstadoNotificacion" xml:space="preserve">
+    <value>PI_ESTADONOTIFICACION</value>
+  </data>
+  <data name="PINId" xml:space="preserve">
+    <value>PI_NID</value>
+  </data>
+  <data name="PIEstado" xml:space="preserve">
+    <value>PI_CESTADO</value>
+  </data>
+  <data name="PIFechaEstado" xml:space="preserve">
+    <value>PI_DESTADO</value>
+  </data>
+  <data name="IdValoracionOut" xml:space="preserve">
+    <value>PO_IDVALORACION</value>
+  </data>
+  <data name="IdNotificacionInterna" xml:space="preserve">
+    <value>PI_IDNOTINTERNA</value>
+  </data>
+  <data name="IdProcesos" xml:space="preserve">
+    <value>PI_IDPROCESO</value>
+  </data>
+  <data name="IdUsuarioGenera" xml:space="preserve">
+    <value>PI_IDUSUARIOGENERA</value>
+  </data>
+  <data name="IdUsuarioRecibe" xml:space="preserve">
+    <value>PI_IDUSUARIORECIBE</value>
+  </data>
+  <data name="DescripcionNotificacionInterna" xml:space="preserve">
+    <value>PI_DESCRIPCION</value>
+  </data>
+  <data name="TextoNotificacionInterna" xml:space="preserve">
+    <value>PI_TEXTO</value>
+  </data>
+  <data name="TipoProceso" xml:space="preserve">
+    <value>PI_TIPOPROCESO</value>
+  </data>
+  <data name="PINumeroDesde" xml:space="preserve">
+    <value>PI_NDESDE</value>
+  </data>
+  <data name="PINumeroHasta" xml:space="preserve">
+    <value>PI_NHASTA</value>
+  </data>
+  <data name="PIDGenerado" xml:space="preserve">
+    <value>PI_DGENERADO</value>
+  </data>
+  <data name="IdCorreccionOut" xml:space="preserve">
+    <value>PO_IdCorreccion</value>
+  </data>
+  <data name="IdDireccionTerritorial" xml:space="preserve">
+    <value>PI_IDDIRECCIONTERRITORIAL</value>
+  </data>
+  <data name="PICodigoOrfeo" xml:space="preserve">
+    <value>PI_CCODIGOORFEO</value>
+  </data>
+  <data name="IdTipoMotivacion" xml:space="preserve">
+    <value>PI_TIPOMOTIVACION</value>
+  </data>
+  <data name="TipoMotivacionId" xml:space="preserve">
+    <value>PO_TIPOMOTIVACION</value>
+  </data>
+  <data name="POCodigoOrfeo" xml:space="preserve">
+    <value>PO_CCODIGOORFEO</value>
+  </data>
+  <data name="OrdenServicio" xml:space="preserve">
+    <value>PI_OrdenServicio</value>
+  </data>
+  <data name="FechaFin" xml:space="preserve">
+    <value>pi_FechaFin</value>
+    <comment>Filtros de fecha</comment>
+  </data>
+  <data name="FechaInicio" xml:space="preserve">
+    <value>pi_FechaInicio</value>
+    <comment>Filtros de fecha</comment>
+  </data>
+  <data name="SoloAsignaciones" xml:space="preserve">
+    <value>PI_SOLOASIGNACIONES</value>
+  </data>
+  <data name="Declaracion" xml:space="preserve">
+    <value>pi_Declaracion</value>
+  </data>
+  <data name="DireccionCitacion" xml:space="preserve">
+    <value>pi_DireccionCitacion</value>
+  </data>
+  <data name="Documento" xml:space="preserve">
+    <value>pi_Documento</value>
+  </data>
+  <data name="NombreDeclarante" xml:space="preserve">
+    <value>pi_NombreDeclarante</value>
+  </data>
+  <data name="TipoDocumento" xml:space="preserve">
+    <value>pi_TipoDocumento</value>
+  </data>
+  <data name="UbicacionNotificacion" xml:space="preserve">
+    <value>pi_UbicacionNotificacion</value>
+  </data>
+  <data name="IdFestivo" xml:space="preserve">
+    <value>IDFESTIVO</value>
+  </data>
+  <data name="NumeroDias" xml:space="preserve">
+    <value>pi_NumeroDias</value>
+  </data>
+  <data name="Ano" xml:space="preserve">
+    <value>pi_Ano</value>
+  </data>
+  <data name="ContarCero" xml:space="preserve">
+    <value>pi_ContarCero</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>pi_Descripcion</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>pi_Fecha</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>pi_Nombre</value>
+  </data>
+  <data name="Recurrente" xml:space="preserve">
+    <value>pi_Recurrente</value>
+  </data>
+  <data name="Comunidad" xml:space="preserve">
+    <value>PI_COMUNIDAD</value>
+  </data>
+  <data name="Cualetnia" xml:space="preserve">
+    <value>PI_CUALETNIAOPUEBLO</value>
+  </data>
+  <data name="EstadoCivil" xml:space="preserve">
+    <value>PI_PARAM_ESTADOCIVIL</value>
+  </data>
+  <data name="EtniaPertenece" xml:space="preserve">
+    <value>PI_PARAM_ETNIAPERTENECE</value>
+  </data>
+  <data name="FechaNacimiento" xml:space="preserve">
+    <value>PI_FECHANACIMIENTO</value>
+  </data>
+  <data name="Genero" xml:space="preserve">
+    <value>PI_PARAM_GENERO</value>
+  </data>
+  <data name="Gestante" xml:space="preserve">
+    <value>PI_GESTANTE</value>
+  </data>
+  <data name="MinoriaEtnica" xml:space="preserve">
+    <value>PI_PARAM_MINORIAETNICA</value>
+  </data>
+  <data name="MujerCabezaHogar" xml:space="preserve">
+    <value>PI_ESMUJERCABEZADEHOGAR</value>
+  </data>
+  <data name="PersonaAgregadaId" xml:space="preserve">
+    <value>PI_IDCREADO</value>
+  </data>
+  <data name="RegimenEspecial" xml:space="preserve">
+    <value>PI_REGIMENESPECIAL</value>
+  </data>
+  <data name="ReguargoPertenece" xml:space="preserve">
+    <value>PI_PARAM_RESGUARDO</value>
+  </data>
+  <data name="RelacionPersona" xml:space="preserve">
+    <value>PI_RELACION</value>
+  </data>
+  <data name="SegundoApellido" xml:space="preserve">
+    <value>PI_SEGUNDOAPELLIDO</value>
+  </data>
+  <data name="SegundoNombre" xml:space="preserve">
+    <value>PI_SEGUNDONOMBRE</value>
+  </data>
+  <data name="Correoelectronico" xml:space="preserve">
+    <value>PI_CORREOELECTRONICO</value>
+  </data>
+  <data name="FechaAgregado" xml:space="preserve">
+    <value>PI_FECHAAGREGADO</value>
+  </data>
+  <data name="IdDiscapacidad" xml:space="preserve">
+    <value>PI_IDDISCAPACIDAD</value>
+  </data>
+  <data name="nIdCreadoPersona" xml:space="preserve">
+    <value>PI_IDCREADO</value>
+  </data>
+  <data name="BusquedaGlobal" xml:space="preserve">
+    <value>pi_BusquedaGlobal</value>
+  </data>
+  <data name="Po_IdPais" xml:space="preserve">
+    <value>Po_IdPais</value>
+  </data>
+  <data name="NombreSubetnia" xml:space="preserve">
+    <value>PO_NombreSubEtnia</value>
+  </data>
+  <data name="DepartamentoNotificacion" xml:space="preserve">
+    <value>pi_DepartamentoNotificacion</value>
+  </data>
+  <data name="EntidadNotificacion" xml:space="preserve">
+    <value>pi_EntidadNotificacion</value>
+  </data>
+  <data name="MunicipioNotificacion" xml:space="preserve">
+    <value>pi_MunicipioNotificacion</value>
+  </data>
+  <data name="PaisNotificacion" xml:space="preserve">
+    <value>pi_PaisNotificacion</value>
+  </data>
+  <data name="codigoguia" xml:space="preserve">
+    <value>PI_IDCODIGOGUIA</value>
+  </data>
+  <data name="IdActoAdministrativo" xml:space="preserve">
+    <value>pi_IdActoAdministrativo</value>
+  </data>
+  <data name="TipoCodigo" xml:space="preserve">
+    <value>pi_TipoCodigo</value>
+  </data>
+  <data name="IdCentroAtencion" xml:space="preserve">
+    <value>PI_IDCENTROATENCION</value>
+  </data>
+  <data name="NombreCentroAtencion" xml:space="preserve">
+    <value>PI_NOMBRECENTRO</value>
+  </data>
+  <data name="EstadoCourier" xml:space="preserve">
+    <value>pi_EstadoCourier</value>
+  </data>
+  <data name="FechaFinal" xml:space="preserve">
+    <value>pi_FechaFinal</value>
+  </data>
+  <data name="TipoCentroAtencion" xml:space="preserve">
+    <value>PI_TipoCentro</value>
+  </data>
+  <data name="TipoPuntoNotificacion" xml:space="preserve">
+    <value>pi_TipoPunto</value>
+  </data>
+  <data name="IdIntegradorGD" xml:space="preserve">
+    <value>PI_ID_INTEGRADORGD</value>
+  </data>
+  <data name="CodIntegradorGD" xml:space="preserve">
+    <value>Pi_codIntegradorGD</value>
+  </data>
+  <data name="ExpedienteGD" xml:space="preserve">
+    <value>PI_NumExpedienteGD</value>
+  </data>
+  <data name="IdExpedienteGD" xml:space="preserve">
+    <value>PI_IdExpedienteGD</value>
+  </data>
+</root>

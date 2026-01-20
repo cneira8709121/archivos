@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d7f88b17-15a5-4d6d-95bb-cba97bb8f156" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RadicacionService.xsd" MetadataType="Schema" ID="5b5639d5-40e2-4e8c-8e2e-9e1da3176d74" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?xsd=xsd5" />
+    <MetadataFile FileName="RadicacionService1.xsd" MetadataType="Schema" ID="712cc9f9-3bdf-4f0d-8245-4c598ffc2cb6" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?xsd=xsd4" />
+    <MetadataFile FileName="RadicacionService2.xsd" MetadataType="Schema" ID="0cab958f-2b08-4524-a238-a6630852a502" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RadicacionService.wsdl" MetadataType="Wsdl" ID="26c34d2f-0b90-4731-bb69-2351defd11d2" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?wsdl" />
+    <MetadataFile FileName="RadicacionService.disco" MetadataType="Disco" ID="4f79cbe0-2ef7-4267-b5d6-c3a595ab7dca" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?disco" />
+    <MetadataFile FileName="RadicacionService3.xsd" MetadataType="Schema" ID="f5788ccb-2a11-4e7f-97e2-9383c0353278" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?xsd=xsd3" />
+    <MetadataFile FileName="RadicacionService4.xsd" MetadataType="Schema" ID="f474615a-40de-4a84-bd1b-346da30d41ef" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RadicacionService5.xsd" MetadataType="Schema" ID="20457730-2188-44fe-baaa-a3dddf750226" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RadicacionService1.wsdl" MetadataType="Wsdl" ID="78370415-d3f1-411f-ac0b-9ffa451bf2ca" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/RadicacionService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

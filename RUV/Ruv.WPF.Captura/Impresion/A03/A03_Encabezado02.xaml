@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A03_Encabezado02"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="1159">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <my:EncabezadoColumna Texto="Documento de Identidad"
+                            Grid.Column="0" />
+      <my:EncabezadoColumna Texto="Primer apellido"
+                            Grid.Column="1" />
+      <my:EncabezadoColumna Texto="Segundo apellido"
+                            Grid.Column="2" />
+      <my:EncabezadoColumna Texto="Primer nombre"
+                            Grid.Column="3" />
+      <my:EncabezadoColumna Texto="Demás nombres (si aplica)"
+                            Grid.Column="4" />
+
+    </Grid>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,11 @@
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\bin\Release\Ruv.Infrastructure.Crosscutting.Common.dll
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\bin\Release\Ruv.Infrastructure.Crosscutting.Common.pdb
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\bin\Release\Ionic.Zip.Reduced.dll
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\bin\Release\itextsharp.dll
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\bin\Release\Ruv.Infrastructure.Crosscutting.Resources.dll
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\bin\Release\Ruv.Infrastructure.Crosscutting.Resources.pdb
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\obj\Release\Ruv.Infrastructure.Crosscutting.Common.csproj.AssemblyReference.cache
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\obj\Release\Ruv.Infrastructure.Crosscutting.Common.csproj.CoreCompileInputs.cache
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\obj\Release\Ruv.Infrastructure.Crosscutting.Common.csproj.CopyComplete
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\obj\Release\Ruv.Infrastructure.Crosscutting.Common.dll
+E:\source\UARIV\RUV\RUV\Ruv.Infrastructure.Crosscutting.Common\obj\Release\Ruv.Infrastructure.Crosscutting.Common.pdb

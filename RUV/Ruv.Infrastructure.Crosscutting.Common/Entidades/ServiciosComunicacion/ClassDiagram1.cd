@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ruv.Infrastructure.Crosscutting.Common.Entidades.ServiciosComunicacion.GrupoFamiliar">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAgAgAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Entidades\ServiciosComunicacion\GrupoFamiliar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ruv.Infrastructure.Crosscutting.Common.Entidades.ServiciosComunicacion.Persona">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAQAAAgAIAAAAAAAAAAAAAAAgAAAQAA=</HashCode>
+      <FileName>Entidades\ServiciosComunicacion\Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ruv.Infrastructure.Crosscutting.Common.Entidades.ServiciosComunicacion.Siniestro">
+    <Position X="5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAEEBAAAAAAAgAAAAAQAAAAAABAACAA=</HashCode>
+      <FileName>Entidades\ServiciosComunicacion\Siniestro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

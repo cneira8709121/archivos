@@ -1,0 +1,1 @@
+CREATE OR REPLACE TYPE StringKeyValueArray IS VARRAY(1000000000) OF StringKeyValuePair;

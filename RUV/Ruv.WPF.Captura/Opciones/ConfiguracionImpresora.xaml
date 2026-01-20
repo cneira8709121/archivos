@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Opciones.ConfiguracionImpresora"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:Enumeraciones="clr-namespace:Ruv.WPF.Captura"
+		xmlns:System="clr-namespace:System;assembly=mscorlib"
+		>
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/EstilosInfraestructura.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<Style TargetType="Button"
+			 BasedOn="{StaticResource styBotonInfraestructura}" />
+			<ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type System:Enum}" x:Key="sysEnum">
+				<ObjectDataProvider.MethodParameters>
+					<x:Type TypeName="Enumeraciones:eTipoPapel" />
+				</ObjectDataProvider.MethodParameters>
+			</ObjectDataProvider>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<DockPanel>
+
+		<ScrollViewer VerticalScrollBarVisibility="Auto">
+			<Grid Margin="10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition  Height="Auto" />
+					<RowDefinition  Height="10" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition  Height="Auto" />
+					<RowDefinition  Height="10" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition  Height="Auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+
+				<TextBlock Style="{StaticResource styLabel}">Impresora preferida</TextBlock>
+				<ComboBox x:Name="cbxImpresoras"
+				  Grid.Column="1"
+				  Width="300"
+				  HorizontalAlignment="Left" ItemsSource="{Binding Path=ListaImpresoras}"
+				  SelectedValue="{Binding Path=Configuracion.ImpresoraPreferida}" />
+				<TextBlock Style="{StaticResource styExplicacion}"
+				   Width="300"
+				   HorizontalAlignment="Left"
+				   Grid.Row="1"
+				   Grid.Column="1">La impresora preferida es la impresora que se utilizará para imprimir las declaraciones. No corresponde necesariamente a la impresora por defecto del sistema, ni cambia la impresora por defecto del sistema.</TextBlock>
+				<TextBlock Style="{StaticResource styLabel}"
+				   Grid.Row="3">Tipo de papel</TextBlock>
+				<TextBlock Style="{StaticResource styExplicacion}"
+				   Width="300"
+				   HorizontalAlignment="Left"
+				   Grid.Row="4"
+				   Grid.Column="1">Define el tamaño de papel a utilizar en la impresión de las declaraciones.</TextBlock>
+				<ComboBox x:Name="cbxTipoPapel"
+				  Grid.Row="3"
+				  Grid.Column="1"
+				  Width="300"
+				  HorizontalAlignment="Left"
+				  ItemsSource="{Binding Source={StaticResource sysEnum}}" 
+                          SelectedValue="{Binding Path=Configuracion.TipoPapel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+				<TextBlock Style="{StaticResource styLabel}"
+				   Grid.Row="6">Número de copias</TextBlock>
+				<ComboBox x:Name="cbxNumeroCopias"
+				  Grid.Row="6"
+				  Grid.Column="1"
+				  Width="300"
+				  HorizontalAlignment="Left" 
+                   ItemsSource="{Binding ListadoNumeroCopias}"
+                  SelectedValue="{Binding Path=Configuracion.NumeroCopias, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue=1}" />
+				<TextBlock Style="{StaticResource styExplicacion}"
+				   Width="300"
+				   HorizontalAlignment="Left"
+				   Grid.Row="7"
+				   Grid.Column="1">Define número de copias a imprimir por cada declaración..</TextBlock>
+			</Grid>
+		</ScrollViewer>
+	</DockPanel>
+</UserControl>

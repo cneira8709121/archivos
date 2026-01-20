@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Master.cs" Inherits="Site" %>
+<%@ Register TagPrefix="ruv" TagName="NotificacionesInternas" Src="~/Mensajeria/NotificacionesInternas.ascx" %>
+<%@ Register TagPrefix="kaz" TagName="ModalPopup" Src="~/Utilidades/Controles/ModalPopUp.ascx" %>
+<%--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">--%>
+<!doctype html>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="/Utilidades/Imagenes/favicon.ico" />
+    <asp:ContentPlaceHolder ID="Scripts" runat="server">
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/jquery-1.8.2.js") %>'></script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/namespace.min.js") %>'></script>
+        <script type="text/javascript">var ruv = ruv || {}; var $ = $ || jQuery; ruv.namespace('ruv.url'); ruv.url = (function (APP, global) { return { root: '<%= Page.ResolveClientUrl("~/") %>', images: '<%= Page.ResolveClientUrl("~/App_Themes/RUVTheme/Imagenes/") %>' } } (ruv, this));</script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/General/ruv.prototype.js") %>'></script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/General/ruv.log.js") %>'></script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/General/ruv.objects.js") %>'></script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/jquery.poshytip.js") %>'></script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/jUtils.js") %>'></script>
+        <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/enhancedModals.js") %>' />
+        <script type="text/javascript"></script>
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bdFondo">
+    <asp:UpdateProgress ID="UpdateProgress" runat="server">
+        <ProgressTemplate>
+            <div class="mask">
+                <div class="waiting">
+                    <div>
+                        <img src="<%= Page.ResolveClientUrl("~/App_Themes/RUVTheme/Imagenes/CargandoLT.gif") %>" alt="Cargando" border="0" /> 
+                        <p>Cargando...</p>
+                    </div> 
+                </div>                                                                                           
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager" runat="server" AsyncPostBackTimeout="1200">
+    </asp:ScriptManager>
+    <center>
+        <table width="90%" class="tblContenido">
+            <tr>
+                <td align="left" class="tdTitulo" colspan="2">
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td rowspan="2">
+                                    <asp:ImageButton ID="imgLogo" runat="server" SkinID="imgLogo" CausesValidation="false" PostBackUrl="~/Default.aspx" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top">
+                                    <ruv:NotificacionesInternas ID="MisNotificaciones" OnMensajeClick="MostrarMensaje" runat="server" />                                    
+                                    <div id="dvMensajeGuardar" class="dvMensaje">
+                                        <center>
+                                            <asp:Label ID="lblMensaje" runat="server" ClientIDMode="Static" SkinID="lblSubTitulo"></asp:Label>
+                                        </center>
+                                    </div>
+                                </td>
+                                <td style="text-align: right; vertical-align: top">
+                                    <div>
+                                        <asp:Label ID="lblTituloNombre" runat="server" Text="Registro Único De Víctimas"
+                                            SkinID="lblTituloApl"></asp:Label>
+                                    </div>
+                                    <div>
+                                        <asp:Label ID="lblSubtituloNombre" runat="server" Text="Web" SkinID="lblSubtituloApl"></asp:Label>
+                                    </div>
+                                    <div>
+                                        <br />
+                                        <asp:LoginName ID="LoginName1" runat="server" />
+                                        <ajax:BalloonPopupExtender ID="bpe_LoginName1" runat="server" CustomCssUrl="" DynamicServicePath=""
+                                            Enabled="True" TargetControlID="LoginName1" BalloonPopupControlID="pnlInfoUsuario"
+                                            DisplayOnMouseOver="true" BalloonStyle="Rectangle" BalloonSize="Small">
+                                        </ajax:BalloonPopupExtender>
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="pnlInfoUsuario" runat="server">
+                                        <div style="text-align: left">
+                                            <asp:Label ID="lblT" runat="server" Text="Información:"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lblFecha" runat="server"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                                            <br />
+                                        </div>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="height: 5px; background-color: #F4D600">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="tdSeparador">
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 50%; text-align: justify; text-decoration: none; float: left">
+                                    <div style="min-width: 700px">
+                                        <ruv:MenuPrincipal ID="MenuPrincipal1" runat="server" />
+                                    </div>
+                                </td>
+                                <td style="width: 40%; text-align: left">
+                                    <asp:SiteMapPath ID="smLugar" runat="server">
+                                    </asp:SiteMapPath>
+                                </td>
+                                <td style="width: 10%">
+                                    <div style="text-align: right">
+                                        <asp:LoginStatus ID="lsInicio" runat="server" LogoutText="[Cerrar Sesion]" OnLoggedOut="lsInicio_LoggedOut" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table width="90%">
+            <tr>
+                <td valign="top">
+                    <div id="dyna">
+                        <table width="100%">
+                            <tr>
+                                <td align="left">
+                                    <ruv:MenuAcciones ID="MenuAcciones1" runat="server" OnOpcionClick="opcionesMenu_OptionClick" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="left">
+                                    <%--<div style="text-align: center; max-height: 570px; min-height: 400px; overflow: auto">--%>
+                                    <div style="text-align: center">
+                                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                    </div>
+                                    <asp:UpdatePanel ID="upModal" runat="server">
+                                        <ContentTemplate>
+                                            <ruv:ModalPopUp ID="PopUpError" runat="server" MostrarBotones="true" VisibleBotonCancelar="false"
+                                                DropShadow="true" Mensaje="Ocurrio un error al guardar, intente de nuevo de persistir el error comuniquese con el administrador"
+                                                MostrarImagen="false" filatextBox="true" BehaviorID="PopUpErrorBehavior" />
+                                            <ruv:ModalPopUp ID="mpCargando" runat="server" MostrarImagen="true" />
+                                            <kaz:ModalPopUp ID="generalPopup" runat="server" MostrarImagen="true" />
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
+    </form>
+    <div id="generalMask"></div>                                                                                           
+    <script type="text/javascript" src='<%= Page.ResolveClientUrl("~/JScripts/General/ruv.session.js") %>'></script>
+    <script type="text/javascript">
+        Sys.Application.add_load(ApplicationLoadHandler);
+    </script>
+</body>
+</html>

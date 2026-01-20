@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7f9cd0f5-164e-481a-a6b2-c30091937de0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:44302/GeneralService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeneralService99.xsd" MetadataType="Schema" ID="ab750ae4-a64b-4b03-9ca8-387b35d1fd63" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd8" />
+    <MetadataFile FileName="GeneralService910.xsd" MetadataType="Schema" ID="0113eb20-a16b-4390-a96a-4b42e4beafd9" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd7" />
+    <MetadataFile FileName="GeneralService911.xsd" MetadataType="Schema" ID="55bf3485-4ce0-45e6-b4b8-8a4fb2afe5b7" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd5" />
+    <MetadataFile FileName="GeneralService22.wsdl" MetadataType="Wsdl" ID="35ec61ac-b4d4-42ef-9315-85b1f691a1c9" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="GeneralService23.wsdl" MetadataType="Wsdl" ID="deda8f5a-d4d8-41be-9f4c-1cd01c07e2a9" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?wsdl" />
+    <MetadataFile FileName="GeneralService912.xsd" MetadataType="Schema" ID="9ef8985d-3737-43f1-8589-e92b0cb0bdc3" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd6" />
+    <MetadataFile FileName="GeneralService913.xsd" MetadataType="Schema" ID="6016615d-0075-4a0c-a44e-315eb118ddca" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GeneralService914.xsd" MetadataType="Schema" ID="894a7fc1-4bba-45c6-bf7f-be3bfb9f10ed" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd4" />
+    <MetadataFile FileName="GeneralService915.xsd" MetadataType="Schema" ID="0ab82fcd-1500-41da-a073-92c7e4180d64" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GeneralService916.xsd" MetadataType="Schema" ID="e5541902-4daa-4e97-9855-82d241659dbc" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeneralService11.disco" MetadataType="Disco" ID="0906e13c-d890-46e0-855c-0800f8393a3f" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?disco" />
+    <MetadataFile FileName="GeneralService917.xsd" MetadataType="Schema" ID="b0f715f2-7bc6-4f95-b986-156a642d7c8b" SourceId="1" SourceUrl="http://localhost:39318/GeneralService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e88b7fa-f09f-4f1f-9f9b-d59945c28631" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioGestorDocumental.wsdl" MetadataType="Wsdl" ID="3171f32e-11b3-4ea0-bf86-a313c83b53b4" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?wsdl" />
+    <MetadataFile FileName="ServicioGestorDocumental.xsd" MetadataType="Schema" ID="fed53aef-73bf-493c-b2d3-2ef0ffcabcd2" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServicioGestorDocumental1.xsd" MetadataType="Schema" ID="81c4b306-4c57-44c1-b88d-a6544915b568" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServicioGestorDocumental2.xsd" MetadataType="Schema" ID="ecb1fbb4-7d21-4b6c-9e42-4fa189dba229" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServicioGestorDocumental3.xsd" MetadataType="Schema" ID="e4bc06ad-5cc9-4f28-94c7-5f023b7ee877" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServicioGestorDocumental4.xsd" MetadataType="Schema" ID="bd554dd2-004b-4c08-8535-7bf6d6e602b9" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioGestorDocumental5.xsd" MetadataType="Schema" ID="ca77b37a-bb15-4ff1-9a4b-e8ff137210c3" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioGestorDocumental6.xsd" MetadataType="Schema" ID="f33a463e-cdc3-40d6-a37d-01233b86ddcd" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioGestorDocumental7.xsd" MetadataType="Schema" ID="81209f00-a60c-469e-b2ec-a0111498387a" SourceId="1" SourceUrl="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

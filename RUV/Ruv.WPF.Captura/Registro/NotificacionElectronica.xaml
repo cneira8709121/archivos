@@ -1,0 +1,48 @@
+﻿<Window x:Class="Ruv.WPF.Captura.Registro.NotificacionElectronica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+        xmlns:local="clr-namespace:Ruv.WPF.Captura.Registro"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Notificacion Electronica" Height="300" Width="800" ResizeMode="NoResize" ShowInTaskbar="False" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel x:Name="stTieneFormato">
+                <CheckBox x:Name="chkTieneFormato" Content="Cuenta con el anexo de notificación electronica" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding TieneFormato, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Checked="chkTieneFormato_Checked" Unchecked="chkTieneFormato_Unchecked" />
+            </StackPanel>
+            <StackPanel x:Name="stConsentimiento">
+                <TextBlock Text="La Unidad para la Atención y Reparación Integral a las Víctimas solicita su consentimiento para notificarle electrónicamente las actuaciones administrativas, al correo que ha sido suministrado por usted en esta declaración. Lo anterior, de conformidad con el artículo 56 de la Ley 1437 de 2011 modificado por el artículo 10 de la Ley 2080 de 2021 y los demás relativos a la notificación electrónica. De igual manera, nos permitimos aclarar que en el desarrollo de la actuación usted podrá solicitar que las decisiones posteriores sean notificadas por los otros medios previstos en la ley." TextWrapping="Wrap" ></TextBlock>
+                <TextBlock></TextBlock>
+                <TextBlock Text="¿Otorga su consentimiento para ser notificado(a) electrónicamente?"></TextBlock> 
+                <sec:ListaOpciones ValorSeleccionUnica="{Binding AutorizaNotificacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                Grid.Column="3"
+                HorizontalAlignment="Center"
+                TipoParametros="SiNo" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock></TextBlock>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Height="25" Width="75" Click="Button_Click" Content="Aceptar" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button x:Name="btnCerrar" Grid.Column="1" Height="25" Width="75" Content="Cancelar" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnCerrar_Click"/>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

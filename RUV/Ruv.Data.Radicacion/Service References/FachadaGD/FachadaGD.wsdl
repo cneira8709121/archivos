@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FachadaGD" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IFachadaGD_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Entidades" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Negocio.ServicioBPM" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Datos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFachadaGD_radicarDeEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_radicarDeEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getRadicadoDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadoDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getRadicadoDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadoDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_descargarImagenesaFileSystem_InputMessage">
+    <wsdl:part name="parameters" element="tns:descargarImagenesaFileSystem" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_descargarImagenesaFileSystem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:descargarImagenesaFileSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_attachDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:attachDocument" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_attachDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:attachDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_downloadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:downloadDocument" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_downloadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:downloadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCities" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getDeparments_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDeparments" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getDeparments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDeparmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCountries" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_getCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_InformacionRadicadoEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:InformacionRadicadoEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_InformacionRadicadoEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InformacionRadicadoEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_InformacionRadicadoSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:InformacionRadicadoSalida" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_InformacionRadicadoSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InformacionRadicadoSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_avanzarTareaGestor_InputMessage">
+    <wsdl:part name="parameters" element="tns:avanzarTareaGestor" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_avanzarTareaGestor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:avanzarTareaGestorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_radicarRespuesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:radicarRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_radicarRespuesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:radicarRespuestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_TerminaRadicacionAppLegadoWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminaRadicacionAppLegadoWS" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_TerminaRadicacionAppLegadoWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminaRadicacionAppLegadoWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_TerminaRadicacionAppLegadoWSErroneos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminaRadicacionAppLegadoWSErroneos" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_TerminaRadicacionAppLegadoWSErroneos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminaRadicacionAppLegadoWSErroneosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarTiposOperacionMasiva_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTiposOperacionMasiva" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarTiposOperacionMasiva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTiposOperacionMasivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_DescargarPlantilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:DescargarPlantilla" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_DescargarPlantilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DescargarPlantillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_SubirPlantilla_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubirPlantilla" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_SubirPlantilla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubirPlantillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_RadicarActoAdministrativo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RadicarActoAdministrativo" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_RadicarActoAdministrativo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RadicarActoAdministrativoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_NotificacionRadicado_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotificacionRadicado" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_NotificacionRadicado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotificacionRadicadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarActoAdministrativoConfirmado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarActoAdministrativoConfirmado" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarActoAdministrativoConfirmado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarActoAdministrativoConfirmadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_CrearExpedienteOferta_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearExpedienteOferta" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_CrearExpedienteOferta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearExpedienteOfertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_CrearExpedienteRadicacionMasiva_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearExpedienteRadicacionMasiva" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_CrearExpedienteRadicacionMasiva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearExpedienteRadicacionMasivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarCertificado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCertificado" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarCertificado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCertificadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_RadicarSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:RadicarSistema" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_RadicarSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RadicarSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_RadicarSistemaArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:RadicarSistemaArea" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_RadicarSistemaArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RadicarSistemaAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarGeografia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGeografia" />
+  </wsdl:message>
+  <wsdl:message name="IFachadaGD_ConsultarGeografia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGeografiaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFachadaGD">
+    <wsdl:operation name="radicarDeEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/radicarDeEntrada" message="tns:IFachadaGD_radicarDeEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/radicarDeEntradaResponse" message="tns:IFachadaGD_radicarDeEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadoDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/getRadicadoDocuments" message="tns:IFachadaGD_getRadicadoDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/getRadicadoDocumentsResponse" message="tns:IFachadaGD_getRadicadoDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="descargarImagenesaFileSystem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/descargarImagenesaFileSystem" message="tns:IFachadaGD_descargarImagenesaFileSystem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/descargarImagenesaFileSystemResponse" message="tns:IFachadaGD_descargarImagenesaFileSystem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="attachDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/attachDocument" message="tns:IFachadaGD_attachDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/attachDocumentResponse" message="tns:IFachadaGD_attachDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="downloadDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/downloadDocument" message="tns:IFachadaGD_downloadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/downloadDocumentResponse" message="tns:IFachadaGD_downloadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/getCities" message="tns:IFachadaGD_getCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/getCitiesResponse" message="tns:IFachadaGD_getCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeparments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/getDeparments" message="tns:IFachadaGD_getDeparments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/getDeparmentsResponse" message="tns:IFachadaGD_getDeparments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/getCountries" message="tns:IFachadaGD_getCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/getCountriesResponse" message="tns:IFachadaGD_getCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformacionRadicadoEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/InformacionRadicadoEntrada" message="tns:IFachadaGD_InformacionRadicadoEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/InformacionRadicadoEntradaResponse" message="tns:IFachadaGD_InformacionRadicadoEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformacionRadicadoSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/InformacionRadicadoSalida" message="tns:IFachadaGD_InformacionRadicadoSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/InformacionRadicadoSalidaResponse" message="tns:IFachadaGD_InformacionRadicadoSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="avanzarTareaGestor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/avanzarTareaGestor" message="tns:IFachadaGD_avanzarTareaGestor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/avanzarTareaGestorResponse" message="tns:IFachadaGD_avanzarTareaGestor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="radicarRespuesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/radicarRespuesta" message="tns:IFachadaGD_radicarRespuesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/radicarRespuestaResponse" message="tns:IFachadaGD_radicarRespuesta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminaRadicacionAppLegadoWS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/TerminaRadicacionAppLegadoWS" message="tns:IFachadaGD_TerminaRadicacionAppLegadoWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/TerminaRadicacionAppLegadoWSResponse" message="tns:IFachadaGD_TerminaRadicacionAppLegadoWS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminaRadicacionAppLegadoWSErroneos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/TerminaRadicacionAppLegadoWSErroneos" message="tns:IFachadaGD_TerminaRadicacionAppLegadoWSErroneos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/TerminaRadicacionAppLegadoWSErroneosResponse" message="tns:IFachadaGD_TerminaRadicacionAppLegadoWSErroneos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposOperacionMasiva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarTiposOperacionMasiva" message="tns:IFachadaGD_ConsultarTiposOperacionMasiva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarTiposOperacionMasivaResponse" message="tns:IFachadaGD_ConsultarTiposOperacionMasiva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarPlantilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/DescargarPlantilla" message="tns:IFachadaGD_DescargarPlantilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/DescargarPlantillaResponse" message="tns:IFachadaGD_DescargarPlantilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubirPlantilla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/SubirPlantilla" message="tns:IFachadaGD_SubirPlantilla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/SubirPlantillaResponse" message="tns:IFachadaGD_SubirPlantilla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RadicarActoAdministrativo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/RadicarActoAdministrativo" message="tns:IFachadaGD_RadicarActoAdministrativo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/RadicarActoAdministrativoResponse" message="tns:IFachadaGD_RadicarActoAdministrativo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionRadicado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/NotificacionRadicado" message="tns:IFachadaGD_NotificacionRadicado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/NotificacionRadicadoResponse" message="tns:IFachadaGD_NotificacionRadicado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarActoAdministrativoConfirmado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarActoAdministrativoConfirmado" message="tns:IFachadaGD_ConsultarActoAdministrativoConfirmado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarActoAdministrativoConfirmadoResponse" message="tns:IFachadaGD_ConsultarActoAdministrativoConfirmado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearExpedienteOferta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/CrearExpedienteOferta" message="tns:IFachadaGD_CrearExpedienteOferta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/CrearExpedienteOfertaResponse" message="tns:IFachadaGD_CrearExpedienteOferta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearExpedienteRadicacionMasiva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/CrearExpedienteRadicacionMasiva" message="tns:IFachadaGD_CrearExpedienteRadicacionMasiva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/CrearExpedienteRadicacionMasivaResponse" message="tns:IFachadaGD_CrearExpedienteRadicacionMasiva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCertificado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarCertificado" message="tns:IFachadaGD_ConsultarCertificado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarCertificadoResponse" message="tns:IFachadaGD_ConsultarCertificado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RadicarSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/RadicarSistema" message="tns:IFachadaGD_RadicarSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/RadicarSistemaResponse" message="tns:IFachadaGD_RadicarSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RadicarSistemaArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/RadicarSistemaArea" message="tns:IFachadaGD_RadicarSistemaArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/RadicarSistemaAreaResponse" message="tns:IFachadaGD_RadicarSistemaArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGeografia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarGeografia" message="tns:IFachadaGD_ConsultarGeografia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFachadaGD/ConsultarGeografiaResponse" message="tns:IFachadaGD_ConsultarGeografia_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFachadaGD" type="tns:IFachadaGD">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IFachadaGD_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="radicarDeEntrada">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/radicarDeEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadoDocuments">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/getRadicadoDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="descargarImagenesaFileSystem">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/descargarImagenesaFileSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attachDocument">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/attachDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="downloadDocument">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/downloadDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/getCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeparments">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/getDeparments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCountries">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/getCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformacionRadicadoEntrada">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/InformacionRadicadoEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformacionRadicadoSalida">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/InformacionRadicadoSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="avanzarTareaGestor">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/avanzarTareaGestor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarRespuesta">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/radicarRespuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminaRadicacionAppLegadoWS">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/TerminaRadicacionAppLegadoWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminaRadicacionAppLegadoWSErroneos">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/TerminaRadicacionAppLegadoWSErroneos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposOperacionMasiva">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/ConsultarTiposOperacionMasiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarPlantilla">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/DescargarPlantilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubirPlantilla">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/SubirPlantilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RadicarActoAdministrativo">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/RadicarActoAdministrativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificacionRadicado">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/NotificacionRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarActoAdministrativoConfirmado">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/ConsultarActoAdministrativoConfirmado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearExpedienteOferta">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/CrearExpedienteOferta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearExpedienteRadicacionMasiva">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/CrearExpedienteRadicacionMasiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCertificado">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/ConsultarCertificado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RadicarSistema">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/RadicarSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RadicarSistemaArea">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/RadicarSistemaArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGeografia">
+      <soap:operation soapAction="http://tempuri.org/IFachadaGD/ConsultarGeografia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FachadaGD">
+    <wsdl:port name="BasicHttpBinding_IFachadaGD" binding="tns:BasicHttpBinding_IFachadaGD">
+      <soap:address location="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,307 @@
+﻿/*Grillas*/
+.grd
+{
+    font-family: Verdana;
+    font-size:12px;
+    border-color: Black;
+    color: White;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.grdAlterna
+{
+    background-color: White;
+    color: #343434;
+}
+
+.grdAdvertencia
+{
+    background-color: White;
+    color: Red;
+    border-width: 3px;
+    border-style:solid;
+    border-color: Black;
+}
+
+.grdFooter {
+    background-color: #014495;
+    color: White;
+    height: 20px;
+    border-width: 1px;
+    border-style:solid;
+    border-color: Black;
+    height:30px;
+}
+
+.grdFooter span, .grdFooter a {
+	font-family: Calibri, Verdana, Sans-serif;
+	font-size:12px;
+	padding: 0 4px 0 4px;
+	text-decoration: none;
+}
+
+.grdFooter a {
+	color: #FFF;
+}
+
+.grdFooter a:hover, .grdFooter span {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    background-color: #B0D3FF;
+}
+
+.drgEmptyData
+{
+    background-color: White;
+    color: #343434;
+}
+
+.grdHeader
+{
+    background-color: #014495;
+    font-weight: bold;
+    font-size:12px;
+    color: White;
+    height:30px;
+}
+
+.grdHeader a
+{
+    background-color: #014495;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:12px;
+    color: White;
+    height:30px;
+}
+
+.grdHeaderCorto
+{
+    background-color: #014495;
+    font-weight: normal;
+    font-size:12px;
+    color: White;
+    height:20px;
+}
+
+
+.grdRow
+{
+    background-color: #EEEEEE;
+    color: Black;
+}
+
+
+.grdSelected
+{
+    background-color: #EF852A;
+    font-weight: bold;
+    color: White;
+}
+/*Details View*/
+
+.dv
+{
+    background-color:#014495;
+    font-family:Verdana;
+    font-size:12px;
+}
+
+.dvHeader
+{
+    background-color:#014495;
+    font-weight:bold;
+    color:White;
+    max-width:250px;
+}
+.dvRow
+{
+    background-color:#CBD8E9;
+    font-family:Verdana;
+    font-size:12px;
+    color:Black;
+    max-width:250px;
+}
+
+.displayEasyHeader {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 15px;
+    text-align: right;
+    width: 30%;
+}
+
+.displayEasyRow {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.displayEasyAlternateRow {
+    font-family: Verdana, sans-serif;
+    background-color: #DEDEDE;
+    font-size: 12px;
+}
+
+div.gridWarning {
+	background-color: #AD6467;
+	border-radius: 3px;
+    box-shadow: 1px 2px 3px #666;
+    color: #EEE;
+    font-family: Tahoma,sans-serif;
+    font-size: 9px;
+    min-width: 200px;
+    max-width: 400px;
+    position: absolute;
+}
+
+div.gridWarning p.gridWarningValue {
+	margin: 0 20px 0 0;
+    padding: 0 6px;
+    text-align: left;
+}
+
+a.warningClose {
+	font-family: 'Trebuchet MS';
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    cursor: pointer;
+}
+
+.altInfo {
+    display: block;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.altInfoBig {
+    display: block;
+    font-style: italic;
+}
+
+.noWrap {
+	white-space: nowrap;
+}
+
+.heavyGrid {
+    border: 1px solid #999;
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+}
+
+.heavyGridHeader {
+    background: #0d4c93;
+    background: linear-gradient(to bottom, #44688e 0%, #0d4c93 100%);
+    color: #DDD;
+    font-weight: 700;
+}
+
+.heavyGridHeader th {
+    padding: 0 6px;
+    height: 40px;
+}
+
+.heavyGridHeader a, .heavyGridHeader a:hover {
+    color: #EFEFEF;
+    text-decoration: none;
+}
+
+.heavyRow {
+    background-color: #EFEFEF;
+    color: Black;
+}
+
+.heavyRow:nth-child(2n) {
+    background-color: #FFF;
+    color: Black;
+}
+
+.heavyRow td {
+    border: none;
+    padding: 2px 6px;
+}
+
+.customPager {
+	background: #606060;
+	background: linear-gradient(to bottom, #606060 0%, 8C8C8C 100%);
+	display: block;
+    height: 24px;
+    padding: 2px 10px;
+}
+
+.customPager select, .customPager option, .customPager span {
+	font-family: Verdana,sans-serif;
+    font-size: 10px;
+}
+
+.customPager span {
+	color: #EFEFEF;
+}
+
+.heavyList {
+    padding-left: 10px;
+}
+
+.heavyList ul {
+	list-style: none;
+	padding-left: 8px;
+}
+
+.heavyList ul li {
+    margin-top: 10px;
+}
+
+.heavyList .subtitle {
+	color: #666;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.heavyListElement {
+    margin-top: 2px;
+}
+
+.heavyListElement > div {
+    margin: 2px 0;
+}
+
+.heavyListElement > div strong {
+    display: inline-block;
+	min-width: 130px;
+}
+
+.heavyListElement > div span {
+    display: inline-block;
+}
+
+.heavyListElement > div span.break {
+    margin-left: 130px;
+}
+
+.heavyListElement > div span.subtle {
+    font-style: italic;
+    margin-left: 10px;
+}
+
+/*.heavyListElement li {
+	min-height: 20px;
+}*/
+
+/*.heavyListElement li strong {
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 130px;
+    text-align: right;
+}*/
+
+/*.heavyListElement li span {
+    display: inline-block;
+    min-width: 200px;
+    /*white-space: nowrap;
+}*/

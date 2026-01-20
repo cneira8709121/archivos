@@ -1,0 +1,25 @@
+﻿<Window x:Class="Ruv.WPF.Captura.Registro.Colilla.Recibo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+        xmlns:my="clr-namespace:Ruv.WPF.Captura.Registro.Colilla"
+        mc:Ignorable="d" 
+        Title="Colilla Recibo" Height="560" Width="840">
+    <Window.Resources>
+        <ResourceDictionary>
+            <rec:Controles x:Key="ControlesDataSource" d:IsDataSource="True"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="btnImprimir" Content="Imprimir" Click="btnImprimir_Click" />
+        </StackPanel>
+        <my:BloquesColilla Grid.Row="1" HorizontalAlignment="Left" x:Name="blkColilla" VerticalAlignment="Top" />
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A11_Pregunta03"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:VictimaConsultaConverter x:Key="VCC" />
+      <conv:ConsultaDatoConverter x:Key="CDC" />
+      <conv:CantidadTiempoConverter x:Key="CTC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <sec:SubTituloEntrada Numero=""
+                          Margin="0,5"
+                          AlineacionTexto="Center"
+                          Texto="BIENES INMUEBLES (TIERRAS, LOTES O VIVIENDAS)" />
+
+    <sec:SubTituloEntrada Numero="3"
+                          Texto="Si tuvo que abandonar bienes inmuebles (tierras, lotes o viviendas) y/o fue despojado de los mismos como consecuencia del conflicto armado, registre estos bienes en el siguiente cuadro. En la primera columna, especifique la persona a la que pertenece cada bien según el número consecutivo asignado en el ítem 11 de la Hoja 2 (cuadro de caracterización básica)." />
+
+    <Grid HorizontalAlignment="Center"
+          Margin="0,5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Border>
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t002}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t003}"
+                               TextWrapping="Wrap"
+                               Margin="0,0,5,0"
+                               MaxWidth="350" />
+        </StackPanel>
+      </Border>
+      <Border Grid.Column="1"
+              Margin="10,0">
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t004}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t005}"
+                               TextWrapping="Wrap"
+                               Margin="0,0,5,0"
+                               MaxWidth="350" />
+        </StackPanel>
+      </Border>
+      <Border Grid.Column="2">
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t006}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <StackPanel Orientation="Horizontal">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t007}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a11t008}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+
+  </StackPanel>
+</UserControl>

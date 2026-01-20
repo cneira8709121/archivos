@@ -1,0 +1,13 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:Ruv.WPF.Captura" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Ruv_Infrastructure_Crosscutting_Common_Entidades_Devolucion="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion;assembly=Ruv.Infrastructure.Crosscutting.Common" mc:Ignorable="d"
+	x:Class="Ruv.WPF.Captura.SolicitudDevolucion"
+	x:Name="Window"
+	Title="Solicitud de devolucion"
+	Width="360" Height="500" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+	<Grid x:Name="LayoutRoot">
+		<local:ucCausalesDevolucion x:Name="ucCausales" d:LayoutOverrides="Height" Margin="{DynamicResource Thickness-10}" CancelarClick="CancelarButton_Click" AceptarClick="AceptarButton_Click"/>
+	</Grid>
+</Window>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5bad5006-777c-4a06-8379-a18b79b5f64e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PdfHelperService.disco" MetadataType="Disco" ID="8d04afe0-3417-4667-9605-f7ec751cddc3" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?disco" />
+    <MetadataFile FileName="PdfHelperService.xsd" MetadataType="Schema" ID="dc939263-539a-441f-9288-a85e9943d19d" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PdfHelperService1.xsd" MetadataType="Schema" ID="f5cd5935-64f6-486c-b6d8-de6b6d846dff" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PdfHelperService.wsdl" MetadataType="Wsdl" ID="7243659f-4eeb-4a45-a57e-c0f62515fb31" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?wsdl" />
+    <MetadataFile FileName="PdfHelperService2.xsd" MetadataType="Schema" ID="84ba77ed-58ad-41cb-8e93-c286e991a4ef" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PdfHelperService3.xsd" MetadataType="Schema" ID="93fdae5b-c142-42db-ac1f-d390e864b8d4" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PdfHelperService1.wsdl" MetadataType="Wsdl" ID="b5d3bdda-247c-4d9f-8f5d-40e62ae4a4d3" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

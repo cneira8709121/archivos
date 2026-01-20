@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>12.1.0.2</ProductVersion>
+    <ProjectGuid>218574D1-FF94-4b95-8577-A6D58C11C315</ProjectGuid>
+    <AssemblyName>Ruv.Oracle.DataBases2</AssemblyName>
+    <Name>Ruv.Oracle.DataBases</Name>
+    <RootNamespace>Ruv.Oracle.DataBases2</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Functions\" />
+    <Folder Include="Pasos a producción" />
+    <Folder Include="Packages\" />
+    <Folder Include="Pasos a producción\20140110" />
+    <Folder Include="Pasos a producción\20140110\Scripts" />
+    <Folder Include="Pasos a producción\20140110\Packages" />
+    <Folder Include="Pasos a producción\20140110\Scripts\Data" />
+    <Folder Include="Pasos a producción\20140110\Scripts\Producción" />
+    <Folder Include="Procedures\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Scripts\Scripts pruebas 21-02-2014" />
+    <Folder Include="Security\" />
+    <Folder Include="Security\Permissions\" />
+    <Folder Include="Security\Roles\" />
+    <Folder Include="Security\Users\" />
+    <Folder Include="Sequences\" />
+    <Folder Include="Synonyms\" />
+    <Folder Include="Tables\" />
+    <Folder Include="Tables\Triggers\" />
+    <Folder Include="User Defined Types\" />
+    <Folder Include="User Defined Types\Nested Tables\" />
+    <Folder Include="User Defined Types\Objects\" />
+    <Folder Include="User Defined Types\VARRAYs\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Triggers\" />
+    <Folder Include="XML Schemas\" />
+    <Folder Include="AQ\" />
+    <Folder Include="AQ\Queues\" />
+    <Folder Include="AQ\Queue Tables\" />
+    <Folder Include="Pluggable Databases\" />
+    <DBRefs Include="Database References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Functions\REEMPLAZATILDES.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\rowconcat.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_ACTOSADMIN.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_CALENDARIO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_CARACTERIZACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\pkg_common.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_COMUNICACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_CONSULTA.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_CONTROLIDFORMULARIO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_CORRECCIONES.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_CRITICAN.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_DEVOLUCION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_DUPLICADOS.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_GLOSAS.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_NOTIFICACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_NOTIFICACIONINTERNA.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_ORFEO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_RADICACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_RECONOCIMIENTO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_REGISTROOFFLINE.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_REGLAS.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_SERIALIZATION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\PKG_VALORACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_ACTOSADMIN.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_CALENDARIO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_CARACTERIZACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\pkg_common.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_COMUNICACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_CONSULTA.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_CONTROLIDFORMULARIO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_CORRECCIONES.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_CRITICAN.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_DEVOLUCION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_DUPLICADOS.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_GLOSAS.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_NOTIFICACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_NOTIFICACIONINTERNA.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_ORFEO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_RADICACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_RECONOCIMIENTO.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_REGISTROOFFLINE.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_REGLAS.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_SERIALIZATION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Packages\PKG_VALORACION.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\ActualizacionDataYEliminacionDuplicidadEntidades.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\actualización personerias.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Actualización Sequencias.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Consuldos.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Corrección Permisos Digitación %28Glosas%29.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Data\Actualización Puntos Atención y Direcciones Territoriales.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Data\Actualización TBGEOGRAFIA.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Data\EliminacionDuplicidadConsulados.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Data\Estados Notificación.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Data\Motor de Reglas.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\DelDelaPuntodeAtencion.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Operaciones.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\Producción\ModificaciónTablas.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\RegimenEspecialNinguno.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\ReglasCitaciones.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pasos a producción\20140110\Scripts\ReglasNotificacion.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\Actualización nombres Geografía.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\InsercionData06032014.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\Scripts pruebas 21-02-2014\script_update_TBVALIDACIONESESTADO_INC_GLO2-19-02-2014.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\ModificacionCamposTabla.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Scripts\Scripts pruebas 21-02-2014\script_update_TBVALIDACIONESESTADO_INC_GLO2-19-02-2014.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="User Defined Types\VARRAYs\NUMBERARRAY.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="User Defined Types\VARRAYs\NumberKeyValuePair.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="User Defined Types\VARRAYs\StringKeyValueArray.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="User Defined Types\VARRAYs\StringKeyValuePair.sql">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

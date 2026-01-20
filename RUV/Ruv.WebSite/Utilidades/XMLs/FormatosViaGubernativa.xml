@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--<books>
+	<computerbooks>
+		<book title="Secrets of Silicon Valley" author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA CON APELACION MUNI.doc" />
+		<book title="Straight Talk About Computers" author="Dean Straight" link="www.google.com" />
+		<book title="You Can Combat Computer Stress!" author="Marjorie Green" link="www.google.com" />
+	</computerbooks>
+	<cookbooks>
+		<book title="Silicon Valley Gastronomic Treats" author="Innes del Castill" link="www.google.com" />
+	</cookbooks>
+</books>-->
+
+<formatos>
+	<formatos2011>
+		<Recursos>
+			<book title="CONFIRMA CON APELACION MUNI.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA CON APELACION MUNI.doc" />
+			<book title="CONFIRMA CON APELACION UAO.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA CON APELACION UAO.doc" />
+			<book title="CONFIRMA REPOSICIÓN MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA REPOSICIÓN MUNI.doc" />
+			<book title="CONFIRMA REPOSICIÓN UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA REPOSICIÓN UAO.doc" />
+			<book title="CONFIRMA REVO DIRECTA MUNI.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA REVO DIRECTA MUNI.doc" />
+			<book title="CONFIRMA REVO DIRECTA UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\CONFIRMA REVO DIRECTA UAO.doc" />
+			<book title="RECHAZA RECURSO VG MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\RECHAZA RECURSO VG MUNI.doc" />
+			<book title="RECHAZA RECURSO VG UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\RECHAZA RECURSO VG UAO.doc" />
+			<book title="REVALORA INCLUIR MUNI.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVALORA INCLUIR MUNI.doc" />
+			<book title="REVALORA INCLUIR UAO.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVALORA INCLUIR UAO.doc" />
+			<book title="REVALORA NO INCLUIR MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVALORA NO INCLUIR MUNI.doc" />
+			<book title="REVALORA NO INCLUIR UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVALORA NO INCLUIR UAO.doc" />
+			<book title="REVOCA RECURSO VG MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVOCA RECURSO VG MUNI.doc" />
+			<book title="REVOCA RECURSO VG UAO.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVOCA RECURSO VG UAO.doc" />
+			<book title="REVOCA REVO DIRECTA MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVOCA REVO DIRECTA MUNI.doc" />
+			<book title="REVOCA REVO DIRECTA UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Recursos\REVOCA REVO DIRECTA UAO.doc" />
+		</Recursos>
+		<Tutelas>
+			<book title="INSCRIPCION ORDEN JUDICIAL COMPLETA.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Tutelas\INSCRIPCION ORDEN JUDICIAL COMPLETA.doc" />
+			<book title="RESOL. TUTELA CONFIRMA CMPLETA.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Tutelas\RESOL. TUTELA CONFIRMA CMPLETA.doc" />
+			<book title="RESOLUCION REVOCA COMPLETA.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Tutelas\RESOLUCION REVOCA COMPLETA.doc" />
+			<book title="COMISORIO PRUEBA.doc"						author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Tutelas\COMISORIO PRUEBA.doc" />
+			<book title="INSCRIPCION EAH COMPLETA.doc"				author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Modelos Tutelas\INSCRIPCION EAH COMPLETA.doc" />
+		</Tutelas>
+		<CartasyOtros>
+			<book title="AVISO INCLUSION RECURSOS1.doc"											author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\AVISO INCLUSION RECURSOS1.doc" />
+			<book title="CARTA AMPLIACION DECLARACION.doc"										author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\CARTA AMPLIACION DECLARACION.doc" />
+			<book title="CARTA INFORMANDO REVALORACIàN.doc"										author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\CARTA INFORMANDO REVALORACIàN.doc" />
+			<book title="CARTA INTERPUSO RECURSO ANTERIOR SIN APELACION.doc"					author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\CARTA INTERPUSO RECURSO ANTERIOR SIN APELACION.doc" />
+			<book title="CARTA INTERPUSO RECURSO ANTERIOR Y LE CONFIRMARON CON APELACION.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\CARTA INTERPUSO RECURSO ANTERIOR Y LE CONFIRMARON CON APELACION.doc" />
+			<book title="CARTA INTERPUSO RECURSO ANTERIOR Y LE REVOCARON.doc"					author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\CARTA INTERPUSO RECURSO ANTERIOR Y LE REVOCARON.doc" />
+			<book title="COMISORIO - MEMORANDO UTs.doc"											author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\Comisorio - Memorando UTs.doc" />
+			<book title="REVOCATORIA DE OFICIO DIRECTA MUNI.doc"								author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\REVOCATORIA DE OFICIO DIRECTA MUNI.doc" />
+			<book title="REVOCATORIA DE OFICIO DIRECTA UAO.doc"									author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Cartas y Otros\REVOCATORIA DE OFICIO DIRECTA UAO.doc" />
+		</CartasyOtros>
+	</formatos2011>
+
+	<formatos2012>
+		<Recursos>
+			<book title="CONFIRMA CON APELACION MUNI.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\CONFIRMA CON APELACION MUNI.doc" />
+			<book title="CONFIRMA CON APELACION UAO.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\CONFIRMA CON APELACION UAO.doc" />
+			<book title="CONFIRMA REPOSICIÓN MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\CONFIRMA REPOSICIÓN MUNI.doc" />
+			<book title="CONFIRMA REPOSICIÓN UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\CONFIRMA REPOSICIÓN UAO.doc" />
+			<book title="CONFIRMA REVO DIRECTA MUNI.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\CONFIRMA REVO DIRECTA MUNI.doc" />
+			<book title="CONFIRMA REVO DIRECTA UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\CONFIRMA REVO DIRECTA UAO.doc" />
+			<book title="RECHAZA RECURSO VG MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\RECHAZA RECURSO VG MUNI.doc" />
+			<book title="RECHAZA RECURSO VG UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\RECHAZA RECURSO VG UAO.doc" />
+			<book title="REVALORA INCLUIR MUNI.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVALORA INCLUIR MUNI.doc" />
+			<book title="REVALORA INCLUIR UAO.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVALORA INCLUIR UAO.doc" />
+			<book title="REVALORA NO INCLUIR MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVALORA NO INCLUIR MUNI.doc" />
+			<book title="REVALORA NO INCLUIR UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVALORA NO INCLUIR UAO.doc" />
+			<book title="REVOCA RECURSO VG MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVOCA RECURSO VG MUNI.doc" />
+			<book title="REVOCA RECURSO VG UAO.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVOCA RECURSO VG UAO.doc" />
+			<book title="REVOCA REVO DIRECTA MUNI.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVOCA REVO DIRECTA MUNI.doc" />
+			<book title="REVOCA REVO DIRECTA UAO.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Recursos\REVOCA REVO DIRECTA UAO.doc" />
+		</Recursos>
+		<Tutelas>
+			<book title="INSCRIPCION ORDEN JUDICIAL COMPLETA.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Tutelas\INSCRIPCION ORDEN JUDICIAL COMPLETA.doc" />
+			<book title="RESOL. TUTELA CONFIRMA CMPLETA.doc"		author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Tutelas\RESOL. TUTELA CONFIRMA CMPLETA.doc" />
+			<book title="RESOLUCION REVOCA COMPLETA.doc"			author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Tutelas\RESOLUCION REVOCA COMPLETA.doc" />
+			<book title="COMISORIO PRUEBA.doc"						author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Tutelas\COMISORIO PRUEBA.doc" />
+			<book title="INSCRIPCION EAH COMPLETA.doc"				author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Modelos Tutelas\INSCRIPCION EAH COMPLETA.doc" />
+		</Tutelas>
+		<CartasyOtros>
+			<book title="AVISO INCLUSION RECURSOS1.doc"											author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\AVISO INCLUSION RECURSOS1.doc" />
+			<book title="CARTA AMPLIACION DECLARACION.doc"										author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\CARTA AMPLIACION DECLARACION.doc" />
+			<book title="CARTA INFORMANDO REVALORACIàN.doc"										author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\CARTA INFORMANDO REVALORACIàN.doc" />
+			<book title="CARTA INTERPUSO RECURSO ANTERIOR SIN APELACION.doc"					author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\CARTA INTERPUSO RECURSO ANTERIOR SIN APELACION.doc" />
+			<book title="CARTA INTERPUSO RECURSO ANTERIOR Y LE CONFIRMARON CON APELACION.doc"	author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\CARTA INTERPUSO RECURSO ANTERIOR Y LE CONFIRMARON CON APELACION.doc" />
+			<book title="CARTA INTERPUSO RECURSO ANTERIOR Y LE REVOCARON.doc"					author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\CARTA INTERPUSO RECURSO ANTERIOR Y LE REVOCARON.doc" />
+			<book title="COMISORIO - MEMORANDO UTs.doc"											author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\Comisorio - Memorando UTs.doc" />
+			<book title="REVOCATORIA DE OFICIO DIRECTA MUNI.doc"								author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\REVOCATORIA DE OFICIO DIRECTA MUNI.doc" />
+			<book title="REVOCATORIA DE OFICIO DIRECTA UAO.doc"									author="Sheryl Hunter" link="\\boyaca\Manuelita2011\Plantillas Combinada\Modelos Via Gubernativa\Formatos ViaGub 2012\Cartas y Otros\REVOCATORIA DE OFICIO DIRECTA UAO.doc" />
+		</CartasyOtros>
+	</formatos2012>
+
+</formatos>

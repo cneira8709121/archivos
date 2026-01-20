@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A05_Pregunta01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <TextBlock Margin="0,5"
+               Style="{StaticResource styTituloSeccion}"
+               Text="{Binding Nombre}" />
+    <sec:FechaLugar_Imp FechaYLugar="{Binding FechaYLugar}"
+                        Numero="1" />
+  </StackPanel>
+</UserControl>

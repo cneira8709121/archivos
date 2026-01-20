@@ -1,0 +1,220 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+
+<asp:Menu runat="server" CssClass="menu" IncludeStyleBlock="false" >
+</asp:Menu>
+
+
+<asp:Label runat="server" CssClass="lbl"></asp:Label>
+<asp:Label SkinId="lblError" runat="server" CssClass="lblError"></asp:Label>
+<asp:Label SkinId="lblBlanco" runat="server" CssClass="lblBlanco"></asp:Label>
+<asp:Label SkinId="lblSubTitulo" runat="server" CssClass="lblSubTitulo"></asp:Label>
+<asp:Label SkinId="lblayudaInf" runat="server" CssClass="lblayudaInf"></asp:Label>
+<asp:Label SkinId="lblTituloApl" runat="server" CssClass="lblTituloApl"></asp:Label>
+<asp:Label SkinId="lblSubtituloApl" runat="server" CssClass="lblSubTituloApl"></asp:Label>
+<asp:LoginName runat="server" CssClass="lName" />
+
+
+
+<asp:TextBox runat="server" CssClass="txt"></asp:TextBox>
+
+<asp:CheckBox runat="server" CssClass="chk" />
+
+<asp:DropDownList runat="server" CssClass="ddl"></asp:DropDownList>
+
+
+
+<asp:ImageButton SkinId="imgCalendar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Calendario.png" />
+<asp:ImageButton SkinId="imgBuscar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Buscar.png" />
+<asp:ImageButton SkinId="imgTrabajar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Trabajar.png" />
+<asp:ImageButton SkinId="imgDeshacer" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Deshacer.png" />
+<asp:ImageButton SkinId="imgWord" runat="server" CssClass="ImgWord" ImageUrl="~/App_Themes/RUVTheme/Imagenes/wordIcono.png" />
+<asp:ImageButton SkinId="imgCerrar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Cerrar.png" />
+<asp:ImageButton SkinId="imgAgregar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Agregar.png" />
+<asp:ImageButton SkinId="imgQuitar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Quitar.png" />
+<asp:ImageButton SkinId="imgEditar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Editar.png" />
+<asp:ImageButton SkinId="imgGenerarPDF" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/GenerarPDF.gif" />
+
+<asp:ImageButton SkinId="imgLogo" runat="server" CssClass="ImgLogo" ImageUrl="~/App_Themes/RUVTheme/Imagenes/logosUnidad.png" />
+<asp:Image SkinId="imgLogo" runat="server" CssClass="ImgLogo" ImageUrl="~/App_Themes/RUVTheme/Imagenes/logosUnidad.png" />
+<asp:Image SkinId="imgCargando" runat="server" CssClass="ImgCargando" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Cargando.gif" />
+<asp:Image SkinId="imgCargandoGrande" runat="server" CssClass="ImgCargando" ImageUrl="~/App_Themes/RUVTheme/Imagenes/CargandoGrande.gif" />
+<asp:Image SkinId="imgCargandoG" runat="server" CssClass="ImgCargando" ImageUrl="~/App_Themes/RUVTheme/Imagenes/CargandoG.gif" />
+<asp:Image SkinId="imgCalendar" runat="server" CssClass="imgPequeña" ImageUrl="~/App_Themes/RUVTheme/Imagenes/Calendario.png" />
+
+<asp:TreeView runat="server" CssClass="tv"></asp:TreeView>
+
+<asp:CompareValidator runat="server" CssClass="rfv" />
+<asp:RequiredFieldValidator runat="server" CssClass="rfv" />
+<ajax:ValidatorCalloutExtender runat="server" HighlightCssClass="vcClass"></ajax:ValidatorCalloutExtender>
+<asp:HyperLink SkinId="lnkMenuAzul" runat="server" CssClass="lnkMenuAzul"></asp:HyperLink>
+<asp:LinkButton SkinId="lbMenuAzul" runat="server" CssClass="lnkMenuAzul"></asp:LinkButton>
+<asp:LinkButton SkinId="lbMenuRojo" runat="server" CssClass="lnkMenuRojo"></asp:LinkButton>
+<asp:LinkButton SkinId="lbkBlanco" runat="server" CssClass="lnkBlanco"></asp:LinkButton>
+<asp:LinkButton SkinId="lbkNegro" runat="server" CssClass="lnkNegro"></asp:LinkButton>
+
+<asp:HyperLink SkinId="lnkMenuBlanco" runat="server" CssClass="lnkMenuBlanco"></asp:HyperLink>
+<asp:HyperLink SkinId="lnkNegro" runat="server" CssClass="lnkNegro"></asp:HyperLink>
+
+
+<asp:BulletedList runat="server" CssClass="bll" />
+<asp:BulletedList SkinId="bllRojo" runat="server" CssClass="bllRojo" />
+
+<asp:CheckBoxList runat="server" CssClass="chkl" />
+<asp:CheckBoxList SkinId="chklBlanco" runat="server" CssClass="chklBlanco" />
+<asp:RadioButtonList runat="server" CssClass="chkl" />
+
+<asp:Panel SkinId="pnlTitulo" runat="server" CssClass="pnlTitulos" />
+<asp:Panel SkinId="pnlMenu" runat="server" CssClass="pnlMenu" />
+<asp:Panel SkinId="pnlImagenAsignar" runat="server" CssClass="pnlImgAsg" />
+<asp:Panel SkinId="PanelmodalPopup" runat="server" CssClass="modalPopup" />
+<asp:Panel SkinId="pnlTarea" runat="server" CssClass="tarea" />
+
+<ajax:Accordion 
+    SkinId="aPrincipal"
+    runat="server"
+    HeaderCssClass="accordionTitulo"
+    HeaderSelectedCssClass="accordionTituloSeleccion"
+    ContentCssClass="accordionContenido"
+    FadeTransitions="true"
+    FramesPerSecond="40"
+    TransitionDuration="250"
+    AutoSize="None"
+    RequireOpenedPane="false"
+    SuppressHeaderPostbacks="true"
+    Width="99%">
+</ajax:Accordion>
+
+
+<asp:SiteMapPath runat="server" PathSeparator=" -> " CssClass="mSiteM">
+    <CurrentNodeStyle CssClass="CNodeSiteM" />
+    <NodeStyle CssClass="NodeDefSiteM"  />
+    <PathSeparatorStyle CssClass="PathStyleSite" />
+    <RootNodeStyle CssClass="rootNodeSite" />
+</asp:SiteMapPath>
+
+<asp:LoginStatus runat="server" CssClass="loginStatus" />
+
+<asp:GridView SkinID="GridViewConPaginacion" runat="server" CssClass="grd" 
+    PageSize="20"
+    AllowPaging="True" 
+    AllowExportToExcel="False" 
+    AllowMultiColumnSorting="False" 
+    ShowGridOnEmptyData="True" 
+    ShowNumberRowSelector="False" 
+    ShowPageText="&nbsp;" 
+    GridLines="Vertical"
+    HeaderStyle-CssClass="grdHeader"
+    EmptyDataRowStyle-CssClass="drgEmptyData"
+    PagerStyle-CssClass="grdFooter">
+    <RowStyle CssClass="grdRow" />
+    <SelectedRowStyle CssClass="grdSelected" />
+    <AlternatingRowStyle CssClass="grdAlterna"></AlternatingRowStyle>
+    <PagerSettings  Mode="NumericFirstLast" 
+                    FirstPageText="Primera"
+                    NextPageText="Siguiente"
+                    PreviousPageText ="Anterior"
+                    LastPageText="Ultima"
+         />
+</asp:GridView>
+
+<asp:GridView SkinID="GridViewListaTareas" runat="server" CssClass="grd" 
+    PageSize="20"
+    AllowPaging="True" 
+    AllowExportToExcel="False" 
+    AllowMultiColumnSorting="False" 
+    ShowGridOnEmptyData="True" 
+    ShowNumberRowSelector="False" 
+    ShowPageText="&nbsp;" 
+    GridLines="Vertical"
+    HeaderStyle-CssClass="grdHeader"
+    EmptyDataRowStyle-CssClass="drgEmptyData"
+    PagerStyle-CssClass="grdFooter">
+
+    <SelectedRowStyle CssClass="grdSelected" />
+
+    <PagerSettings  Mode="NumericFirstLast" 
+                    FirstPageText="Primera"
+                    NextPageText="Siguiente"
+                    PreviousPageText ="Anterior"
+                    LastPageText="Ultima"
+         />
+</asp:GridView>
+
+<asp:GridView SkinID="GridViewSinPaginacion" runat="server" CssClass="grd" 
+    AllowPaging="False" 
+    AllowExportToExcel="False" 
+    AllowMultiColumnSorting="False" 
+    ShowGridOnEmptyData="True" 
+    ShowNumberRowSelector="False" 
+    ShowPageText="&nbsp;" 
+    GridLines="Vertical"
+    HeaderStyle-CssClass="grdHeader">
+    <RowStyle CssClass="grdRow" />
+    <SelectedRowStyle CssClass="grdSelected" />
+    <AlternatingRowStyle CssClass="grdAlterna"></AlternatingRowStyle>
+</asp:GridView>
+
+<asp:GridView SkinID="GridViewSinSeleccion" runat="server" CssClass="grd" 
+    AllowPaging="False" 
+    AllowExportToExcel="False" 
+    AllowMultiColumnSorting="False" 
+    ShowGridOnEmptyData="True" 
+    ShowNumberRowSelector="False" 
+    ShowPageText="&nbsp;" 
+    GridLines="Vertical"
+    HeaderStyle-CssClass="grdHeaderCorto" >
+    <RowStyle CssClass="grdRow" />
+</asp:GridView>
+
+<asp:GridView SkinID="heavyInfoGridView" runat="server" CssClass="heavyGrid" 
+    AllowPaging="True" 
+    AllowSorting="False"
+    Width="100%"
+    PagerSettings-Visible="False"
+    AllowExportToExcel="False" 
+    AllowMultiColumnSorting="False" 
+    ShowGridOnEmptyData="True" 
+    ShowNumberRowSelector="False" 
+    ShowPageText="&nbsp;" 
+    GridLines="Vertical"
+    Border="0"
+    HeaderStyle-CssClass="heavyGridHeader" >
+    <RowStyle CssClass="heavyRow" />
+</asp:GridView>
+
+<asp:DetailsView runat="server" CellPadding="4" GridLines="Both">
+    <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+    <FieldHeaderStyle CssClass="dvHeader" />
+    <RowStyle CssClass="dvRow" />
+</asp:DetailsView>
+
+<asp:DetailsView SkinID="DisplayEasy" runat="server" CellPadding="4" GridLines="None" Width="85%">
+    <FieldHeaderStyle CssClass="displayEasyHeader" />
+    <RowStyle CssClass="displayEasyRow" />
+    <AlternatingRowStyle CssClass="displayEasyAlternateRow" />
+</asp:DetailsView>
+
+<ajax:ModalPopupExtender SkinID="PopUp" runat="server" BackgroundCssClass="modalBackground" />
+
+<asp:TreeView  runat="server"  CssClass="arbol"  SkinID="ArbolFormatos">
+    <HoverNodeStyle  CssClass="arbolHoverNodeStyle" />          
+    <NodeStyle HorizontalPadding="2px" NodeSpacing="0px" VerticalPadding="2px" CssClass="arbolNodeStyle" />
+    <ParentNodeStyle Font-Bold="False" />
+    <SelectedNodeStyle CssClass="arbolselectNodeStyle" HorizontalPadding="0px" VerticalPadding="0px"  />      
+</asp:TreeView>
+

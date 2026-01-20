@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Ruv.Infrastructure.Crosscutting.Common.Entidades;
+
+public partial class ListaTareas_ListaTareas : PaginaBase
+{
+    #region Eventos
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //int idUsuario = (int)Session[ConstantesSesion.USUARIO_ID_LOGIN];
+
+        //GeneralService service = new GeneralService();
+
+        //grvTareas.DataSource = service.ObtenerListaTareas(idUsuario, Master.LlaveUsuario);
+        //grvTareas.DataBind();
+
+    }
+
+    protected void odsTareas_ObjectCreated(object sender, ObjectDataSourceEventArgs e)
+    {
+        DataSourceListaTareas info = e.ObjectInstance as DataSourceListaTareas;
+        Session["TotalRegistros"] = info.CantidadTareas();
+        if (info != null)
+            info.SortColumns = "Id, Fecha";
+    }
+
+    protected void grvTareas_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //int idUsuario = (int)Session[ConstantesSesion.USUARIO_ID_LOGIN];
+        
+
+        //GeneralService objGeneralService = new GeneralService();
+        //int declaracionId = Convert.ToInt32(grvTareas.SelectedValue);
+        ////List<clsListaTareas> tareas = objGeneralService.ListarPersonasPorDeclaracion(declaracionId);
+        ////TODO: ??
+        //List<clsListaTareas> tareas = objGeneralService.ObtenerListaTareas(RUV.Current.Usuario.Id, RUV.Current.LlaveUsuario);
+        //grvTareas.DataSource = tareas;
+        //grvTareas.DataBind();
+    }
+
+    protected void grvTareas_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        
+    }
+
+    #endregion
+
+    #region Funciones
+
+    #endregion
+
+
+}

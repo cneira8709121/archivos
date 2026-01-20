@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Secciones.Controles.DenunciaPrevia_Edicion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my1="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+             Background="Transparent"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="503">
+  <StackPanel Orientation="Vertical">
+    <sec:SubTituloEntrada Numero=""
+                          Texto="Declaración o Denuncia Previa"
+                          HorizontalAlignment="Stretch"
+                          ColorTexto="Inverso"
+                          Margin="0,0,0,5" />
+    <Grid x:Name="grdMain"
+          VerticalAlignment="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"
+                          SharedSizeGroup="grpEdicion01" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+    </Grid.RowDefinitions>
+      <!--===============================-->
+      <TextBlock Grid.Row="0">* ¿Con respecto a estos hechos<LineBreak />ya presentó declaración o denuncia?</TextBlock>
+      <my:DatoSiNoColumna x:Name="dsnSePresento"
+                          Valor="{Binding SePresento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                          VerticalAlignment="Center"
+                          Height="20"
+                          IncluirNsNr="False"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          Background="White"
+                          HorizontalAlignment="Left" />
+      <!--===============================-->
+      <TextBlock Grid.Row="1">Indique la entidad</TextBlock>
+      <sec:ListaOpciones x:Name="loEntidades"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Background="White"
+                         VerticalAlignment="Center"
+                         TipoOpciones="Unica"
+                         TipoParametros="Entidades"
+                         TextoOtro="{Binding OtraEntidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         ValorSeleccionUnica="{Binding Entidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--===============================-->
+      <TextBlock Grid.Row="2">* Fecha denuncia o declaración</TextBlock>
+      <sec:CajaIngresoFecha Fecha="{Binding Fecha, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            x:Name="cifFecha"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            HorizontalAlignment="Left"
+                            MinWidth="120" />
+      <!--===============================-->
+            <!--ComboPais="{Binding ElementName=cb01Pais}"-->
+            <!--PasId="{Binding Pais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"-->
+            <TextBlock Grid.Row="3">* Lugar denuncia o declaración</TextBlock>
+      <congen:Geografia x:Name="geoDenunciaPrevia01"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Grid.RowSpan="2"
+                        ComboPais="{Binding ElementName=cb01Pais}"
+                        ComboDepartamento="{Binding ElementName=cb01Departamento}"
+                        ComboMunicipio="{Binding ElementName=cb01Municipio}"
+                        PaisId="{Binding Pais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        DepartamentoId="{Binding Departamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        MunicipioId="{Binding Municipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <StackPanel Grid.Row="3"
+                Grid.Column="1">
+            <TextBlock>País</TextBlock>
+            <ComboBox x:Name="cb01Pais" />
+        </StackPanel>
+        <StackPanel Grid.Row="4"
+                  Grid.Column="1">
+        <TextBlock>Departamento</TextBlock>
+        <ComboBox x:Name="cb01Departamento" />
+      </StackPanel>
+      <StackPanel Grid.Row="5"
+                  Grid.Column="1">
+        <TextBlock>Municipio</TextBlock>
+        <ComboBox x:Name="cb01Municipio" />
+      </StackPanel>
+      <!--===============================-->
+      <TextBlock Grid.Row="6">Registre en caso de conocerlo el código<LineBreak />de proceso, radicado o algún dato<LineBreak />de la denuncia o declaración.
+      </TextBlock>
+      <TextBox x:Name="tbxCodigo" Grid.Row="6"
+               MaxLength="30"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               Text="{Binding Codigo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--==============================-->
+      <my1:BloqueadorControles Valor="{Binding SePresento}">
+        <my1:ControlIndividual Elemento="{Binding ElementName=loEntidades}" />
+        <my1:ControlIndividual Elemento="{Binding ElementName=cifFecha}" />
+        <my1:ControlIndividual Elemento="{Binding ElementName=cb01Pais}" />
+        <my1:ControlIndividual Elemento="{Binding ElementName=cb01Departamento}" />
+        <my1:ControlIndividual Elemento="{Binding ElementName=cb01Municipio}" />
+        <my1:ControlIndividual Elemento="{Binding ElementName=tbxCodigo}" />
+      </my1:BloqueadorControles>
+    </Grid>
+  </StackPanel>
+</UserControl>

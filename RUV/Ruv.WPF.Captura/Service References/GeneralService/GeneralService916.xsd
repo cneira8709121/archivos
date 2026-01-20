@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.FirmaDeclaracion" />
+  <xs:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="clsDeclaracion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="A01" nillable="true" type="tns:ArrayOfclsAnexo01" />
+          <xs:element minOccurs="0" name="A02" nillable="true" type="tns:ArrayOfclsAnexo02" />
+          <xs:element minOccurs="0" name="A03" nillable="true" type="tns:ArrayOfclsAnexo03" />
+          <xs:element minOccurs="0" name="A04" nillable="true" type="tns:ArrayOfclsAnexo04" />
+          <xs:element minOccurs="0" name="A05" nillable="true" type="tns:ArrayOfclsAnexo05" />
+          <xs:element minOccurs="0" name="A06" nillable="true" type="tns:ArrayOfclsAnexo06" />
+          <xs:element minOccurs="0" name="A07" nillable="true" type="tns:ArrayOfclsAnexo07" />
+          <xs:element minOccurs="0" name="A08" nillable="true" type="tns:ArrayOfclsAnexo08" />
+          <xs:element minOccurs="0" name="A09" nillable="true" type="tns:ArrayOfclsAnexo09" />
+          <xs:element minOccurs="0" name="A10" nillable="true" type="tns:ArrayOfclsAnexo10" />
+          <xs:element minOccurs="0" name="A11" nillable="true" type="tns:ArrayOfclsAnexo11" />
+          <xs:element minOccurs="0" name="A13" nillable="true" type="tns:ArrayOfclsAnexo13" />
+          <xs:element minOccurs="0" name="AutoGeneradoPorRadicacion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DeclaracionNumero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionHechos" nillable="true" type="tns:clsDescripcionHechos" />
+          <xs:element minOccurs="0" name="DocumentoAnexo" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="DocumentoDigital" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="DocumentoDigitalNombre" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EstadoDeclaracion" type="q1:eEstadoDeclaracion" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.FirmaDeclaracion" minOccurs="0" name="Firmas" nillable="true" type="q2:ArrayOfclsFirma" />
+          <xs:element minOccurs="0" name="Glosas" nillable="true" type="tns:ArrayOfclsGlosa" />
+          <xs:element minOccurs="0" name="IGlosas" nillable="true" type="tns:ArrayOfclsGlosaIntencion" />
+          <xs:element minOccurs="0" name="IdValoracion" type="xs:int" />
+          <xs:element minOccurs="0" name="NotificacionElectronica" nillable="true" type="tns:clsNotificacionElectronica" />
+          <xs:element minOccurs="0" name="PendienteGlosas" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PersonasAfectadas" nillable="true" type="tns:clsPersonasAfectadas" />
+          <xs:element minOccurs="0" name="RadicacionId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TomaDeclaracion" nillable="true" type="tns:clsTomaDeclaracion" />
+          <xs:element minOccurs="0" name="UsuarioId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VerificacionProcedimiento" nillable="true" type="tns:clsVerificacionProcedimiento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsDeclaracion" nillable="true" type="tns:clsDeclaracion" />
+  <xs:complexType name="clsEntidadBase">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EstadoRegistro" type="q3:eEstadoRegistro" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Interno" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsEntidadBase" nillable="true" type="tns:clsEntidadBase" />
+  <xs:complexType name="ArrayOfclsAnexo01">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo01" nillable="true" type="tns:clsAnexo01" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo01" nillable="true" type="tns:ArrayOfclsAnexo01" />
+  <xs:complexType name="clsAnexo01">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo01_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo01" nillable="true" type="tns:clsAnexo01" />
+  <xs:complexType name="clsAnexo_FechaYLugar">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BarrioVeredaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="BarrioVeredaNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HechosDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="HechosFecha" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HechosMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="HechosPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LocalidadCorregimientoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LocalidadCorregimientoNombre" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="TipoEntorno" nillable="true" type="q4:eTipoEntorno" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo_FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+  <xs:complexType name="clsAnexo_JefeDeGrupo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EncuestaSisben" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EncuestaSisbenDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="EncuestaSisbenMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="EncuestaSisbenNivel" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EncuestaSisbenPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="HijosEstudianDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="HijosEstudianInstitucion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HijosEstudianMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="HijosEstudianPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="InscripcionDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="InscripcionMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="InscripcionPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="InscritoEnPrograma" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="InscritoEnProgramaDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="InscritoEnProgramaEntidadDondeLabora" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InscritoEnProgramaMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="InscritoEnProgramaPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LugarLaboralDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LugarLaboralEmpleador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LugarLaboralMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LugarLaboralPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TieneInscritaCedulaParaVotar" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VinculadoSistemaSalud" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VinculadoSistemaSaludDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="VinculadoSistemaSaludMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="VinculadoSistemaSaludPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="VinculadoSistemaSaludTipoAfiliacion" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo_JefeDeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+  <xs:complexType name="ArrayOfclsAnexo01_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo01_Victima" nillable="true" type="tns:clsAnexo01_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo01_Victima" nillable="true" type="tns:ArrayOfclsAnexo01_Victima" />
+  <xs:complexType name="clsAnexo01_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="AtencionEntidadMedica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AtencionMedicaDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AtencionMedicaMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AtencionMedicaPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AtencionMedicaRecibio" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Bienes" nillable="true" type="tns:ArrayOfclsAnexo01_Victima_Bien" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo01_Victima" nillable="true" type="tns:clsAnexo01_Victima" />
+  <xs:complexType name="clsAnexo_Afectacion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AfectadoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Otro" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TiposDeAfectacion" nillable="true" type="q5:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo_Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+  <xs:complexType name="ArrayOfclsAnexo01_Victima_Bien">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo01_Victima_Bien" nillable="true" type="tns:clsAnexo01_Victima_Bien" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo01_Victima_Bien" nillable="true" type="tns:ArrayOfclsAnexo01_Victima_Bien" />
+  <xs:complexType name="clsAnexo01_Victima_Bien">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalidadDeLaVictima" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoBien" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo01_Victima_Bien" nillable="true" type="tns:clsAnexo01_Victima_Bien" />
+  <xs:complexType name="clsAnexo_DenunciaPrevia">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Entidad" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="OtraEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="SePresento" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo_DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+  <xs:complexType name="ArrayOfclsAnexo02">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo02" nillable="true" type="tns:clsAnexo02" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo02" nillable="true" type="tns:ArrayOfclsAnexo02" />
+  <xs:complexType name="clsAnexo02">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo02_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo02" nillable="true" type="tns:clsAnexo02" />
+  <xs:complexType name="ArrayOfclsAnexo02_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo02_Victima" nillable="true" type="tns:clsAnexo02_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo02_Victima" nillable="true" type="tns:ArrayOfclsAnexo02_Victima" />
+  <xs:complexType name="clsAnexo02_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="HaContinuadoConLasAmenzas" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProteccionEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProteccionFechaInicial" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProteccionHaSolicitado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProteccionLeHanBrindado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProteccionTipoDeMedida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProteccionVigencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo02_Victima" nillable="true" type="tns:clsAnexo02_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo03">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo03" nillable="true" type="tns:clsAnexo03" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo03" nillable="true" type="tns:ArrayOfclsAnexo03" />
+  <xs:complexType name="clsAnexo03">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NiñosNacidosPorAbusoSexual" nillable="true" type="q6:ArrayOfint" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo03_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo03" nillable="true" type="tns:clsAnexo03" />
+  <xs:complexType name="ArrayOfclsAnexo03_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo03_Victima" nillable="true" type="tns:clsAnexo03_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo03_Victima" nillable="true" type="tns:ArrayOfclsAnexo03_Victima" />
+  <xs:complexType name="clsAnexo03_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="AtencionMedicaAyudaRecibida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AtencionMedicaDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AtencionMedicaEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AtencionMedicaMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AtencionMedicaPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AtencionMedicaRecibioAtencionMedica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtencionMedicaRecibioAyuda" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtencionMedicaSolicitoAyuda" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtencionMedicaSolicitoAyudaEntidad" nillable="true" type="xs:string" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DelitosSexuales" nillable="true" type="q7:ArrayOfint" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo03_Victima" nillable="true" type="tns:clsAnexo03_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo04">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo04" nillable="true" type="tns:clsAnexo04" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo04" nillable="true" type="tns:ArrayOfclsAnexo04" />
+  <xs:complexType name="clsAnexo04">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo04_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo04" nillable="true" type="tns:clsAnexo04" />
+  <xs:complexType name="ArrayOfclsAnexo04_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo04_Victima" nillable="true" type="tns:clsAnexo04_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo04_Victima" nillable="true" type="tns:ArrayOfclsAnexo04_Victima" />
+  <xs:complexType name="clsAnexo04_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActividadAlDesaparecer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="HaRealizadoBusquedaDeVictima" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HarealizadoBusquedaAnteEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MenorDesprotegidoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="QuedoMenorDesprotegido" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SePresentoEventoAnterior" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SePresentoEventoPosterior" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDesaparecida" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo04_Victima" nillable="true" type="tns:clsAnexo04_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo05">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo05" nillable="true" type="tns:clsAnexo05" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo05" nillable="true" type="tns:ArrayOfclsAnexo05" />
+  <xs:complexType name="clsAnexo05">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CausaDesplazamiento" nillable="true" type="q8:ArrayOfint" />
+          <xs:element minOccurs="0" name="CausaDesplazamientoOtro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="DeseaUbicarseEn" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="DeseoDelHogar" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="IdAnexo5" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="InformacionDeArribo" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TiempoResidenciaEnLugarExpulsorAños" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TiempoResidenciaEnLugarExpulsorDias" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TiempoResidenciaEnLugarExpulsorMeses" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoDesplazamiento" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo05_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo05" nillable="true" type="tns:clsAnexo05" />
+  <xs:complexType name="ArrayOfclsAnexo05_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo05_Victima" nillable="true" type="tns:clsAnexo05_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo05_Victima" nillable="true" type="tns:ArrayOfclsAnexo05_Victima" />
+  <xs:complexType name="clsAnexo05_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SeDesplazo" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo05_Victima" nillable="true" type="tns:clsAnexo05_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo06">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo06" nillable="true" type="tns:clsAnexo06" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo06" nillable="true" type="tns:ArrayOfclsAnexo06" />
+  <xs:complexType name="clsAnexo06">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo06_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo06" nillable="true" type="tns:clsAnexo06" />
+  <xs:complexType name="ArrayOfclsAnexo06_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo06_Victima" nillable="true" type="tns:clsAnexo06_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo06_Victima" nillable="true" type="tns:ArrayOfclsAnexo06_Victima" />
+  <xs:complexType name="clsAnexo06_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="AlgunMenorQuedoHuerfano" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="MenorDesprotegidoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MenorQuedoHuerfanoDe" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroPersonasMuertasEnEsteHecho" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RecuerdaNumeroPersonasMuertas" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaFallecida" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo06_Victima" nillable="true" type="tns:clsAnexo06_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo07">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo07" nillable="true" type="tns:clsAnexo07" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo07" nillable="true" type="tns:ArrayOfclsAnexo07" />
+  <xs:complexType name="clsAnexo07">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LugarAccidente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo07_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo07" nillable="true" type="tns:clsAnexo07" />
+  <xs:complexType name="ArrayOfclsAnexo07_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo07_Victima" nillable="true" type="tns:clsAnexo07_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo07_Victima" nillable="true" type="tns:ArrayOfclsAnexo07_Victima" />
+  <xs:complexType name="clsAnexo07_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActividadAlMomentoDelHecho" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="AlgunMenorQuedoHuerfano" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="EstadoVictima" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MenorDesprotegidoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MenorQuedoHuerfanoDe" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TipoAccidente" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo07_Victima" nillable="true" type="tns:clsAnexo07_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo08">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo08" nillable="true" type="tns:clsAnexo08" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo08" nillable="true" type="tns:ArrayOfclsAnexo08" />
+  <xs:complexType name="clsAnexo08">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo08_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo08" nillable="true" type="tns:clsAnexo08" />
+  <xs:complexType name="ArrayOfclsAnexo08_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo08_Victima" nillable="true" type="tns:clsAnexo08_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo08_Victima" nillable="true" type="tns:ArrayOfclsAnexo08_Victima" />
+  <xs:complexType name="clsAnexo08_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="ComoSeProdujoLiberacion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ContraprestacionPedida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="FechaLiberacion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FinalidadSecuestroExtorsivo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HanPedidoContraprestacionPorLibertad" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OtraFinalidadSecuestroOtro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PersonaEstaSecuestrada" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SituacionActualVictima" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoDeSecuestro" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo08_Victima" nillable="true" type="tns:clsAnexo08_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo09">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo09" nillable="true" type="tns:clsAnexo09" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo09" nillable="true" type="tns:ArrayOfclsAnexo09" />
+  <xs:complexType name="clsAnexo09">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo09_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo09" nillable="true" type="tns:clsAnexo09" />
+  <xs:complexType name="ArrayOfclsAnexo09_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo09_Victima" nillable="true" type="tns:clsAnexo09_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo09_Victima" nillable="true" type="tns:ArrayOfclsAnexo09_Victima" />
+  <xs:complexType name="clsAnexo09_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="AtencionMedicaAyudaRecibida" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AtencionMedicaEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AtencionMedicaRecibioAtencionMedica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtencionMedicaRecibioAyuda" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtencionMedicaSolicitoAyuda" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtencionMedicaSolicitoAyudaEntidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="RecibioAtencionMedicaPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo09_Victima" nillable="true" type="tns:clsAnexo09_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo10">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo10" nillable="true" type="tns:clsAnexo10" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo10" nillable="true" type="tns:ArrayOfclsAnexo10" />
+  <xs:complexType name="clsAnexo10">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="InformacionJefeGrupo" nillable="true" type="tns:clsAnexo_JefeDeGrupo" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Victimas" nillable="true" type="tns:ArrayOfclsAnexo10_Victima" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo10" nillable="true" type="tns:clsAnexo10" />
+  <xs:complexType name="ArrayOfclsAnexo10_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo10_Victima" nillable="true" type="tns:clsAnexo10_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo10_Victima" nillable="true" type="tns:ArrayOfclsAnexo10_Victima" />
+  <xs:complexType name="clsAnexo10_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Afectacion" nillable="true" type="tns:clsAnexo_Afectacion" />
+          <xs:element minOccurs="0" name="AtendidoPorICBF" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="AtendidoPorOtraEntidad" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="FechaAtencionICBF" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaAtencionOtraEntidad" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GrupoArmado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GrupoArmadoFechaDesvinculacion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NombreOtraEntidadQueAtendio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VictimaDeEsteHecho" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo10_Victima" nillable="true" type="tns:clsAnexo10_Victima" />
+  <xs:complexType name="ArrayOfclsAnexo11">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo11" nillable="true" type="tns:clsAnexo11" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo11" nillable="true" type="tns:ArrayOfclsAnexo11" />
+  <xs:complexType name="clsAnexo11">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BienesInmuebles" nillable="true" type="tns:ArrayOfclsAnexo11_BienInmueble" />
+          <xs:element minOccurs="0" name="BienesMuebles" nillable="true" type="tns:ArrayOfclsAnexo11_BienMueble" />
+          <xs:element minOccurs="0" name="CreditosPasivos" nillable="true" type="tns:ArrayOfclsAnexo11_CreditoPasivo" />
+          <xs:element minOccurs="0" name="DenunciaPrevia" nillable="true" type="tns:clsAnexo_DenunciaPrevia" />
+          <xs:element minOccurs="0" name="DespojoQuien" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DespojoTipo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EstadoActualLote" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="IdAnexo11" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LoteFueDespojado" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SolicitaProteccionMuebles" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SolicitaProteccionMueblesPorque" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo11" nillable="true" type="tns:clsAnexo11" />
+  <xs:complexType name="ArrayOfclsAnexo11_BienInmueble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo11_BienInmueble" nillable="true" type="tns:clsAnexo11_BienInmueble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo11_BienInmueble" nillable="true" type="tns:ArrayOfclsAnexo11_BienInmueble" />
+  <xs:complexType name="clsAnexo11_BienInmueble">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BarrioVeredaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="BarrioVeredaNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtensionArea" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="ExtensionUnidadDeArea" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LocalidadCorregimientoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LocalidadCorregimientoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocalizacionDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LocalizacionMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LocalizacionPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="NombreDireccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="TipoEntorno" nillable="true" type="q9:eTipoEntorno" />
+          <xs:element minOccurs="0" name="TipoInmueble" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoTenencia" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo11_BienInmueble" nillable="true" type="tns:clsAnexo11_BienInmueble" />
+  <xs:complexType name="ArrayOfclsAnexo11_BienMueble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo11_BienMueble" nillable="true" type="tns:clsAnexo11_BienMueble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo11_BienMueble" nillable="true" type="tns:ArrayOfclsAnexo11_BienMueble" />
+  <xs:complexType name="clsAnexo11_BienMueble">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cantidad" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoBien" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoTenencia" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo11_BienMueble" nillable="true" type="tns:clsAnexo11_BienMueble" />
+  <xs:complexType name="ArrayOfclsAnexo11_CreditoPasivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo11_CreditoPasivo" nillable="true" type="tns:clsAnexo11_CreditoPasivo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo11_CreditoPasivo" nillable="true" type="tns:ArrayOfclsAnexo11_CreditoPasivo" />
+  <xs:complexType name="clsAnexo11_CreditoPasivo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaContrajoObligacion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MontoAdeudado" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="NombreAcreedor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TipoAcreedor" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo11_CreditoPasivo" nillable="true" type="tns:clsAnexo11_CreditoPasivo" />
+  <xs:complexType name="ArrayOfclsAnexo13">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo13" nillable="true" type="tns:clsAnexo13" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo13" nillable="true" type="tns:ArrayOfclsAnexo13" />
+  <xs:complexType name="clsAnexo13">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AnexosRelacionados" nillable="true" type="q10:ArrayOfguid" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoBarrioVeredaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoBarrioVeredaNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoCorreoElectronico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoDireccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoLocalidadCorregimientoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoLocalidadCorregimientoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoTelefonoCelular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoTelefonoFijo" nillable="true" type="xs:string" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="DatoAlternoContactoTipoEntorno" nillable="true" type="q11:eTipoEntorno" />
+          <xs:element minOccurs="0" name="DatoContactoBarrioVeredaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoContactoBarrioVeredaNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoCorreoElectronico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoContactoDireccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoLocalidadCorregimientoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoContactoLocalidadCorregimientoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoContactoPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoContactoTelefonoCelular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoTelefonoFijo" nillable="true" type="xs:string" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="DatoContactoTipoEntorno" nillable="true" type="q12:eTipoEntorno" />
+          <xs:element minOccurs="0" name="FechaYLugar" nillable="true" type="tns:clsAnexo_FechaYLugar" />
+          <xs:element minOccurs="0" name="JefeGrupoFamiliarId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ListaPersonas" nillable="true" type="tns:ArrayOfclsAnexo13_Victima" />
+          <xs:element minOccurs="0" name="MedioDeContactoCorreoElectronico" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MedioDeContactoMensajeTexto" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MedioDeContactoMensajeVoz" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MedioDeContactoOtro" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo13" nillable="true" type="tns:clsAnexo13" />
+  <xs:complexType name="ArrayOfclsAnexo13_Victima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAnexo13_Victima" nillable="true" type="tns:clsAnexo13_Victima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAnexo13_Victima" nillable="true" type="tns:ArrayOfclsAnexo13_Victima" />
+  <xs:complexType name="clsAnexo13_Victima">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComunidadEtnica1" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ComunidadEtnica2" nillable="true" type="xs:int" />
+          <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Discapacidades" nillable="true" type="q13:ArrayOfint" />
+          <xs:element minOccurs="0" name="EstadoCivil" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FamiliaConsecutivo" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="GestanteLactante" nillable="true" type="xs:int" />
+          <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="HechosVictimizantes" nillable="true" type="q14:ArrayOfint" />
+          <xs:element minOccurs="0" name="MujerCabezaDeHogar" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroConsecutivo" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtraComunidadEtnica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtraDiscapacidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Otro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonaAfectadaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PertenenciaEtnica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegimenEspecial" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Relacion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:int" />
+          <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TiposDeAfectacion" nillable="true" type="q15:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsAnexo13_Victima" nillable="true" type="tns:clsAnexo13_Victima" />
+  <xs:complexType name="clsDescripcionHechos">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Narracion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsDescripcionHechos" nillable="true" type="tns:clsDescripcionHechos" />
+  <xs:complexType name="ArrayOfclsGlosa">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsGlosa" nillable="true" type="tns:clsGlosa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsGlosa" nillable="true" type="tns:ArrayOfclsGlosa" />
+  <xs:complexType name="clsGlosa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPCIONGLOSA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVOLUCION" nillable="true" type="xs:short" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EstadoRegistro" type="q16:eEstadoRegistro" />
+      <xs:element minOccurs="0" name="FECHAATENCION" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAESPERADAATEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAGLOSA" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GLOSAATEND" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="GLOSANOATEND" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_PROCESO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIOATIENDE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIOCOORDINA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIOCREA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_UTERRITORIAL" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MOTIVONOATEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTIVOSIATEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARAM_CATEGORIAGLOSA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PARAM_CONCEPTODEVOLUCION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PARAM_CONCEPTOGLOSA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PARAM_ESTADOGLOSA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PARAM_PROCESO" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="clsGlosa" nillable="true" type="tns:clsGlosa" />
+  <xs:complexType name="ArrayOfclsGlosaIntencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsGlosaIntencion" nillable="true" type="tns:clsGlosaIntencion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsGlosaIntencion" nillable="true" type="tns:ArrayOfclsGlosaIntencion" />
+  <xs:complexType name="clsGlosaIntencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPCIONINGLOSA" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EstadoRegistro" type="q17:eEstadoRegistro" />
+      <xs:element minOccurs="0" name="FECHAATENCION" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAESPERADAATEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHAINGLOSA" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GLOSAATEND" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="GLOSANOATEND" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_PROCESO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIOATIENDE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIOCOORDINA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USUARIOCREA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_UTERRITORIAL" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="MOTIVONOATEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARAM_CATEGORIAINGLOSA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PARAM_ESTADOGLOSA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PARAM_PROCESO" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="clsGlosaIntencion" nillable="true" type="tns:clsGlosaIntencion" />
+  <xs:complexType name="clsNotificacionElectronica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutorizaNotificacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TieneFormato" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsNotificacionElectronica" nillable="true" type="tns:clsNotificacionElectronica" />
+  <xs:complexType name="clsPersonasAfectadas">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListaPersonas" nillable="true" type="tns:ArrayOfclsPersonaAfectada" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsPersonasAfectadas" nillable="true" type="tns:clsPersonasAfectadas" />
+  <xs:complexType name="ArrayOfclsPersonaAfectada">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPersonaAfectada" nillable="true" type="tns:clsPersonaAfectada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPersonaAfectada" nillable="true" type="tns:ArrayOfclsPersonaAfectada" />
+  <xs:complexType name="clsPersonaAfectada">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ComunidadEtnica1" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ComunidadEtnica2" nillable="true" type="xs:int" />
+          <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Discapacidades" nillable="true" type="q18:ArrayOfint" />
+          <xs:element minOccurs="0" name="EstadoCivil" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FamiliaConsecutivo" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="GestanteLactante" nillable="true" type="xs:int" />
+          <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="HechosVictimizantes" nillable="true" type="q19:ArrayOfint" />
+          <xs:element minOccurs="0" name="MujerCabezaDeHogar" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroConsecutivo" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtraComunidadEtnica" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtraDiscapacidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PertenenciaEtnica" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegimenEspecial" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Relacion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsPersonaAfectada" nillable="true" type="tns:clsPersonaAfectada" />
+  <xs:complexType name="clsTomaDeclaracion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DatoAlternoContactoBarrioVeredaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoBarrioVeredaNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoCorreoElectronico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoDireccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoLocalidadCorregimientoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoLocalidadCorregimientoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoTelefonoCelular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoAlternoContactoTelefonoFijo" nillable="true" type="xs:string" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="DatoAlternoContactoTipoEntorno" nillable="true" type="q20:eTipoEntorno" />
+          <xs:element minOccurs="0" name="DatoContactoAlternoIndicativo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoBarrioVeredaId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoContactoBarrioVeredaNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoCorreoElectronico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoContactoDireccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoIndicativo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoLocalidadCorregimientoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DatoContactoLocalidadCorregimientoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoContactoPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DatoContactoTelefonoCelular" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DatoContactoTelefonoFijo" nillable="true" type="xs:string" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="DatoContactoTipoEntorno" nillable="true" type="q21:eTipoEntorno" />
+          <xs:element minOccurs="0" name="DeclaranteId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Encargado" nillable="true" type="tns:clsTomaDeclaracion_Encargado" />
+          <xs:element minOccurs="0" name="EntidadQueAtiende" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaDeclaracion" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HechosOtrosCual" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LugarDeclaracionDepartamento" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LugarDeclaracionEntidadMunicipio" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="LugarDeclaracionMunicipio" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="LugarDeclaracionPais" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="MedioDeContactoCorreoElectronico" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MedioDeContactoMensajeTexto" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MedioDeContactoMensajeVoz" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MedioDeContactoOtro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TieneCorreoElectronico" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TieneDireccionCorrespondencia" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsTomaDeclaracion" nillable="true" type="tns:clsTomaDeclaracion" />
+  <xs:complexType name="clsTomaDeclaracion_Encargado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RepresentanteDireccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentanteNumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentantePrimerApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentantePrimerNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentanteSegundoApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentanteSegundoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentanteTelefono" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentanteTipo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RepresentanteTipoAutoridadCompetente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RepresentanteTipoDocumento" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsTomaDeclaracion_Encargado" nillable="true" type="tns:clsTomaDeclaracion_Encargado" />
+  <xs:complexType name="clsVerificacionProcedimiento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeclaranteSabeFirmar" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EnmendarDeclaracion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="EnmendarDeclaracionTexto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FuncionarioCargo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FuncionarioDocumentoIdentidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FuncionarioNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HuboOrientacionParaCorregir" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LeyoAlDeclaranteLaDeclaracion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroTotalAnexos" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroTotalFolios" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroTotalSoportes" type="xs:int" />
+          <xs:element minOccurs="0" name="ObservacionesSobreDiligenciamiento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RealizoEntrevistaPrevia" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RealizoTomaJuramento" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SeIncluyeronCorrecciones" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsVerificacionProcedimiento" nillable="true" type="tns:clsVerificacionProcedimiento" />
+  <xs:complexType name="clsRadicacion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CANTIDADDOCUMENTOS" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="COD_GESTOR_DOCUMENTAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CONSECUTIVO" type="xs:long" />
+          <xs:element minOccurs="0" name="DocumentoDigital" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="FECHAENVIO" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FECHALLEGADA" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_DECLARACION" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_DEPARTAMENTO" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ID_ENTIDADMUNICIPIO" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="ID_EXPEDIENTE_SGD" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_MUNICIPIO" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ID_PAIS" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ID_RADICA_URGENCIA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_TIPODOCUMENTAL" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_TIPORADICACION" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_USUARIO_RADICA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_UTERRITORIALENVIA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_UTERRITORIALRADICA" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="ID_UTERRITORIALRECIBE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MODIFICACION" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="NOMBREENTIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NRO_FORMULARIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NUM_EXPEDIENTE_SGD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OBSERVACIONES" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PARAM_ENTIDADENVIANOMBRE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PARAM_RESULTADO_VALIDACION" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PARAM_TIPOACCIONES" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PARAM_TIPOENTIDAD" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUTAIMAGEN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsRadicacion" nillable="true" type="tns:clsRadicacion" />
+  <xs:complexType name="ArrayOfclsListaTareas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsListaTareas" nillable="true" type="tns:clsListaTareas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsListaTareas" nillable="true" type="tns:ArrayOfclsListaTareas" />
+  <xs:complexType name="clsListaTareas">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Accion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Correccion" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Declaracion" type="xs:int" />
+          <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaLlegada" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Formulario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IdAccion" type="xs:int" />
+          <xs:element minOccurs="0" name="Regpersona" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsListaTareas" nillable="true" type="tns:clsListaTareas" />
+</xs:schema>

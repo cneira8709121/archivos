@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Registros>
+  
+  <!--Registros de Campos a Filtrar-->
+  <Filtro Id="1" Nombre="NombreDeclarante" Descripcion="Nombre Declarante" TipoDato="String" Proceso="1" />
+  <Filtro Id="2" Nombre="DocumentoDeclarante" Descripcion="Documento Declarante" TipoDato="String" Proceso="1" />
+  <Filtro Id="3" Nombre="FechaRadicado" Descripcion="Fecha de Radicado" TipoDato="DateTime" Proceso="1" />
+  <Filtro Id="4" Nombre="NumeroFormulario" Descripcion="Numero de Formulario" TipoDato="String" Proceso="1" />
+  <Filtro Id="5" Nombre="TotalHv" Descripcion="Total Hv" TipoDato="Int32" Proceso="1" />
+  <Filtro Id="6" Nombre="Departamento" Descripcion="Departamento" TipoDato="String" Proceso="1" />
+  <Filtro Id="7" Nombre="Municipio" Descripcion="Municipio" TipoDato="String" Proceso="1" />
+  <Filtro Id="8" Nombre="Entidad" Descripcion="Entidad" TipoDato="String" Proceso="1" />
+  
+  <!--Filtro nuevo--> 
+  <Filtro Id="45" Nombre="Prueba" Descripcion="Prueba" TipoDato="String" Proceso="1" />
+  
+  <Filtro Id="9" Nombre="Nombre_Persona" Descripcion="Nombre Declarante" TipoDato="String" Proceso="2" />
+  <Filtro Id="10" Nombre="Documento" Descripcion="Documento Declarante" TipoDato="String" Proceso="2" />
+  <Filtro Id="11" Nombre="Fecha_Radicacion" Descripcion="Fecha de Radicado" TipoDato="DateTime" Proceso="2" />
+  <Filtro Id="12" Nombre="Formulario" Descripcion="Numero de Formulario" TipoDato="String" Proceso="2" />
+  <Filtro Id="13" Nombre="Total_Hv" Descripcion="Total Hv" TipoDato="Int32" Proceso="2" />
+  <Filtro Id="14" Nombre="Departamento" Descripcion="Departamento" TipoDato="String" Proceso="2" />
+  <Filtro Id="15" Nombre="Municipio" Descripcion="Municipio" TipoDato="String" Proceso="2" />
+  <Filtro Id="16" Nombre="TipoEntidad" Descripcion="Entidad" TipoDato="String" Proceso="2" />
+  <Filtro Id="17" Nombre="Valorador" Descripcion="Valorador" TipoDato="String" Proceso="2" />
+
+  <Filtro Id="18" Nombre="Declarante" Descripcion="Declarante" TipoDato="String" Proceso="3" />
+  <Filtro Id="19" Nombre="DocumentoDeclarante" Descripcion="Documento Declarante" TipoDato="String" Proceso="3" />
+  <Filtro Id="20" Nombre="FechaRadicacion" Descripcion="Fecha de Radicado" TipoDato="DateTime" Proceso="3" />
+  <Filtro Id="21" Nombre="Formulario" Descripcion="Numero de Formulario" TipoDato="String" Proceso="3" />
+  <Filtro Id="22" Nombre="Hechos" Descripcion="Hechos Victimizantes" TipoDato="String" Proceso="3" />
+  <Filtro Id="23" Nombre="TotalHV" Descripcion="Total Hv" TipoDato="Int32" Proceso="3" />
+  <Filtro Id="24" Nombre="FechaAsignacion" Descripcion="Fecha de Asignación" TipoDato="DateTime" Proceso="3" />
+  <Filtro Id="25" Nombre="Estado" Descripcion="Estado" TipoDato="String" Proceso="3" />
+  
+  <Filtro Id="26" Nombre="consecutivo" Descripcion="Consecutivo" TipoDato="String" Proceso="4" />
+  <Filtro Id="27" Nombre="fecha" Descripcion="Fecha" TipoDato="DateTime" Proceso="4" />
+  <Filtro Id="28" Nombre="Documento" Descripcion="Documento" TipoDato="String" Proceso="4" />
+  <Filtro Id="29" Nombre="Solicitante" Descripcion="Solicitante" TipoDato="String" Proceso="4" />
+  <Filtro Id="30" Nombre="NroFormulario" Descripcion="NroFormulario" TipoDato="String" Proceso="4" />
+  <Filtro Id="31" Nombre="Usuario" Descripcion="Usuario" TipoDato="String" Proceso="4" />
+  <Filtro Id="32" Nombre="Dirigido" Descripcion="Dirigido" TipoDato="String" Proceso="4" />
+  <Filtro Id="33" Nombre="Estado" Descripcion="Estado" TipoDato="String" Proceso="4" />
+
+  <Filtro Id="34" Nombre="Fecha" Descripcion="Fecha" TipoDato="DateTime" Proceso="5" />
+  <Filtro Id="35" Nombre="Accion" Descripcion="Estado" TipoDato="String" Proceso="5" />
+  <Filtro Id="36" Nombre="Formulario" Descripcion="Formulario" TipoDato="String" Proceso="5" />
+  
+  <!--Filtros de lider de notificaciones-->
+  <Filtro Id="37" Nombre="EstadoNotificacion" Descripcion="Estado Notificación" TipoDato="String" Proceso="6" />
+  <Filtro Id="38" Nombre="UBICACIONNOTIFICACION" Descripcion="Ubicación Notificación" TipoDato="String" Proceso="6" />
+  <Filtro Id="39" Nombre="DIRECCIONNOTIFICACION" Descripcion="Dirección Notificación" TipoDato="String" Proceso="6" />
+  <Filtro Id="40" Nombre="TELEFONONOTIFICACION" Descripcion="Teléfono Notificación" TipoDato="String" Proceso="6" />
+  <Filtro Id="41" Nombre="NOMBRECOMPLETO" Descripcion="Nombre declarante" TipoDato="String" Proceso="6" />
+  <Filtro Id="42" Nombre="TIPODOCUMENTO" Descripcion="Tipo de Documento" TipoDato="String" Proceso="6" />
+  <Filtro Id="43" Nombre="NUMERODOCUMENTO" Descripcion="Número de Documento" TipoDato="String" Proceso="6" />
+  <Filtro Id="44" Nombre="ESTADOPROCESO" Descripcion="Estado del Proceso" TipoDato="String" Proceso="6" />
+</Registros>

@@ -1,0 +1,17 @@
+﻿<local:clsHechoMotivoCollection xmlns:local="clr-namespace:Ruv.WPF.Captura.DesignTime"
+                                xmlns="http://schemas.microsoft.com/client/2007">
+  <local:clsHechoMotivo Item="I"
+                        HechoMotivo="Acto terrorista"
+                        Seleccionado="True" />
+  <local:clsHechoMotivo Item="III"
+                        HechoMotivo="Delitos contra la libertad e integridad sexual"
+                        Seleccionado="True" />
+  <local:clsHechoMotivo Item="V"
+                        HechoMotivo="Desplazamiento forzado" />
+  <local:clsHechoMotivo Item="VII"
+                        HechoMotivo="Masacre" />
+  <local:clsHechoMotivo Item="IX"
+                        HechoMotivo="Niños, Niñas y Adolescentes Desvinculados" />
+  <local:clsHechoMotivo Item="XI"
+                        HechoMotivo="Tortura" />
+</local:clsHechoMotivoCollection>

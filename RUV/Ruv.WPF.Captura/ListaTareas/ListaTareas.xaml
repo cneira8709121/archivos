@@ -1,0 +1,40 @@
+﻿<Page x:Class="Ruv.WPF.Captura.ListaTareas.ListaTareas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="457"
+      Title="ListaTareas">
+  <Grid>
+    <DataGrid AutoGenerateColumns="False"
+              Margin="0,36,0,12"
+              Name="dataGrid1"
+              HorizontalAlignment="Center">
+      <DataGrid.Columns>
+        <!--<DataGridTextColumn Binding="{Binding ID}" Header="ID" />-->
+        <DataGridTextColumn Binding="{Binding Fecha}"
+                            Header="FECHA" />
+        <DataGridTextColumn Binding="{Binding Accion}"
+                            Header="ACCION" />
+        <DataGridTextColumn Binding="{Binding Formulario}"
+                            Header="FORMULARIO" />
+        <DataGridTemplateColumn>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Click="VerDeclaracion"
+                      CommandParameter="{Binding Path=ID}">Ver</Button>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+    <TextBlock HorizontalAlignment="Center"
+               Text="LISTA DE TAREAS"
+               FontWeight="Bold"
+               VerticalAlignment="Top"
+               Margin="104,8,104,0" />
+  </Grid>
+</Page>

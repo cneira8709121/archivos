@@ -1,0 +1,101 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:my1="clr-namespace:Ruv.WPF.Captura.Controles"
+	  xmlns:Ruv.WPF.Captura_Validations="clr-namespace:Ruv.WPF.Captura.Validations" xmlns:Ruv_WPF_Captura_Recursos="clr-namespace:Ruv.WPF.Captura.Recursos"
+	  xmlns:Ruv_WPF_Captura="clr-namespace:Ruv.WPF.Captura" xmlns:Ruv_Infrastructure_Crosscutting_Common_Entidades_LiderRadicacion="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades.LiderRadicacion;assembly=Ruv.Infrastructure.Crosscutting.Common" xmlns:Ruv_WPF_Captura_Converters="clr-namespace:Ruv.WPF.Captura.Converters" x:Class="Ruv.WPF.Captura.Radicacion.LiderRadicacion" 
+      mc:Ignorable="d"
+	  Title="LiderRadicacion" Width="900" Loaded="Page_Loaded">
+
+	<Page.Resources>
+		<Ruv_WPF_Captura_Converters:ParametroNombreConverter x:Key="ParametroNombreConverter"/>
+		<Ruv_WPF_Captura_Recursos:Controles x:Key="ControlesDataSource" d:IsDataSource="True"/>
+		<Ruv_Infrastructure_Crosscutting_Common_Entidades_LiderRadicacion:clsLiderRadicacion x:Key="clsLiderRadicacionDataSource" d:IsDataSource="True"/>
+	</Page.Resources>
+	<Page.DataContext>
+		<Binding Source="{StaticResource clsLiderRadicacionDataSource}"/>
+	</Page.DataContext>
+
+    <Border BorderBrush="Black" BorderThickness="1" Padding="{DynamicResource Thickness-10}">
+    	<ScrollViewer MaxHeight="700">
+		    <Grid Margin="{DynamicResource Thickness-Right-10}">
+                <Grid.RowDefinitions>
+				    <RowDefinition Height="Auto"/>
+				    <RowDefinition Height="Auto"/>
+				    <RowDefinition Height="Auto"/>
+				    <RowDefinition/>
+				    <RowDefinition Height="Auto"/>
+			    </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Validation.ErrorTemplate">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <DockPanel LastChildFill="True">
+                                        <TextBlock DockPanel.Dock="Right"
+                                            Foreground="Red" FontSize="14" FontWeight="Bold"
+                                            ToolTip="{Binding ElementName=adornerPlaceholder,
+                                            Path=AdornedElement.(Validation.Errors)[0].ErrorContent}">*</TextBlock>
+                                        <Border BorderBrush="Green" BorderThickness="1">
+                                            <AdornedElementPlaceholder Name="adornerPlaceholder"></AdornedElementPlaceholder>
+                                        </Border>
+                                    </DockPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip"
+                                        Value="{Binding RelativeSource={RelativeSource Self},
+                                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel Orientation="Horizontal">
+				    <TextBlock TextWrapping="Wrap" Text="{Binding ResultadoValidacion, Source={StaticResource ControlesDataSource}}" VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}"/>
+				    <Label Content="{Binding RadActual.PARAM_RESULTADO_VALIDACION, Converter={StaticResource ParametroNombreConverter}}" MinHeight="25.96"/>
+			    </StackPanel>
+			    <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Padding="{DynamicResource Thickness-10}" Margin="{DynamicResource Thickness-Bottom-10}">
+				    <Grid HorizontalAlignment="Center">
+					    <Grid.ColumnDefinitions>
+						    <ColumnDefinition Width="Auto"/>
+						    <ColumnDefinition Width="Auto"/>
+					    </Grid.ColumnDefinitions>
+                            <TextBlock Text="Radicacion Existente / Procedencia Formulario"/>
+                        <Ruv_WPF_Captura:ucInfoRadicacion x:Name="ucRadExistente" BEditable="False" Margin="0,12,10,10" DataContext="{Binding RadExistente}" Height="556" />
+					    <Ruv_WPF_Captura:ucInfoRadicacion x:Name="ucRadActual" Grid.Column="1" DataContext="{Binding RadActual}" Height="578" Margin="0,0,0,-12" VerticalAlignment="Bottom" />
+                        <TextBlock Grid.Column="1" Height="24" HorizontalAlignment="Left" Margin="1,0,0,0" Name="textBlock1" Text="Radicacion Actual" VerticalAlignment="Top" Width="153"/>
+                    </Grid>
+			    </Border>
+			    <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Observaciones" Margin="{DynamicResource Thickness-Bottom-10}"/>
+                <TextBox x:Name="cObservaciones" Grid.Row="3" TextWrapping="Wrap" d:LayoutOverrides="Height" Margin="{DynamicResource Thickness-Bottom-10}" VerticalScrollBarVisibility="Auto" MinHeight="70">
+                    <TextBox.Text>
+                        <Binding Path="CObservacion" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="Explicit">
+                            <Binding.ValidationRules>
+                                <Ruv.WPF.Captura_Validations:CampoVacioRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+				    <Button Content="{Binding Guardar, Source={StaticResource ControlesDataSource}}" Margin="{DynamicResource Thickness-Right-10}" Click="BtnGuardar_Click"/>
+                    <Button Content="{Binding Devolver, Source={StaticResource ControlesDataSource}}" Margin="{DynamicResource Thickness-Right-10}" Click="BtnDevolver_Click" />
+                    <Button Content="{Binding Cancelar, Source={StaticResource ControlesDataSource}}"  Margin="{DynamicResource Thickness-Right-10}"  Click="BtnCancelar_Click" />                    
+                </StackPanel>             
+			    <Popup x:Name="pCausales" PlacementTarget="{Binding ElementName=LayoutRoot, Mode=OneWay}" AllowsTransparency="True" Placement="Center">
+    		        <Grid Background="#4C000000" Width="{Binding ActualWidth, ElementName=gPanel}" Height="{Binding ActualHeight, ElementName=LayoutRoot}">
+				        <Border BorderBrush="White" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+					        <Grid>
+					        	<Ruv_WPF_Captura:ucCausalesDevolucion x:Name="ucCausales" IdRadicacion="{Binding RadActual.ID}" IdEntidadMunicipio="{Binding RadActual.ID_ENTIDADMUNICIPIO}"/>
+						        <Image x:Name="img" HorizontalAlignment="Center" VerticalAlignment="Center" />
+					        </Grid>
+				        </Border>
+			        </Grid>
+    	        </Popup>
+    	    </Grid>
+		</ScrollViewer>
+	</Border>
+</Page>

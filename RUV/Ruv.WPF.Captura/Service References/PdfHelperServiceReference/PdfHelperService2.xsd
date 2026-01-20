@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Business.DTO.Devolucion" />
+  <xs:element name="GenerateOnePdfFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateOnePdfFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateOnePdfFileResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateManyPdfFilesAsZip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="codigos" nillable="true" type="q1:ArrayOfKeyValueOfstringboolean" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateManyPdfFilesAsZipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateManyPdfFilesAsZipResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePdf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contenido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePdfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratePdfResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePdfDevolucion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ruv.Business.DTO.Devolucion" minOccurs="0" name="datosparaDevolucion" nillable="true" type="q2:clsDatosparaDevolucion" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePdfDevolucionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratePdfDevolucionResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateOnePdfFileConNacional">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateOnePdfFileConNacionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateOnePdfFileConNacionalResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.H04_Bloque03"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="915">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+        </ResourceDictionary>
+        
+    </UserControl.Resources>
+
+    <StackPanel>
+        <TextBlock Style="{StaticResource styTituloSeccion}">III. VERIFICACIÓN DEL PROCEDIMIENTO</TextBlock>
+        <sec:SubTituloEntrada Numero="26"
+                          ColorTexto="FondoBlanco"
+                          Texto="Por favor relacione la cantidad de anexos, soportes y folios que hacen parte de la declaración:"
+                          Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                          Margin="0,5" />
+        <sec:SubTituloEntrada Numero="26"
+                          ColorTexto="FondoBlanco"
+                          Texto="Relacione la cantidad de soportes documentales, otros soportes y anexos del FUD que hacen parte de la declaración"
+                          Margin="0,5" />
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                 TextWrapping="Wrap">a) Número total de anexos diligenciados</TextBlock>
+            <TextBlock Grid.Column="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextWrapping="Wrap">a) Cantidad de anexos del FUD diligenciados de acuerdo con el hecho victimizante, adjuntos a esta declaración.</TextBlock>
+            <TextBlock Grid.Column="4" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                 Grid.Row="1"
+                 TextWrapping="Wrap">c) Número total de folios en esta declaración*</TextBlock>
+
+            <TextBlock Grid.Column="4" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 Grid.Row="1"
+                 TextWrapping="Wrap">d) Cantidad total de folios que componen esta declaración.*</TextBlock>
+            <TextBlock Grid.Column="1"
+                 Grid.Row="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextWrapping="Wrap">c) Cantidad de soportes diferentes a documentos (CDs, USB, prendas, fotografías, micro Sd, otros). Describirlos*</TextBlock>
+            <TextBlock Grid.Column="4" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                 TextWrapping="Wrap">b) Total soportes aportados por el declarante</TextBlock>
+            <TextBlock Grid.Column="4" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextWrapping="Wrap">b) Cantidad de folios de los soportes documentales aportados por el declarante.</TextBlock>
+            <Border Grid.Column="2"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding NumeroTotalAnexos}" />
+            </Border>
+            <Border Grid.Column="5"
+              Grid.Row="1"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding NumeroTotalFolios}" />
+            </Border>
+            <Border Grid.Column="2"
+              Grid.Row="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding NumeroTotalSoportesOtros}" />
+            </Border>
+            <Border Grid.Column="5"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding NumeroTotalSoportes}" />
+            </Border>
+            <Border Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="2" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding NumeroTotalSoportesOtrosDesc}" />
+            </Border>
+            <TextBlock Style="{StaticResource styTextoDescripcionPequeño}"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="5">*Incluidos Anexos y soportes</TextBlock>
+        </Grid>
+        <Grid HorizontalAlignment="Center">
+            <!--<Grid.Resources>
+        <Style TargetType="{x:Type sec:SubTituloEntrada}">
+          <Setter Property="VerticalAlignment"
+                  Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type sec:ListaOpciones}">
+          <Setter Property="HorizontalAlignment"
+                  Value="Left" />
+          <Setter Property="VerticalAlignment"
+                  Value="Top" />
+        </Style>
+      </Grid.Resources>-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <sec:SubTituloEntrada Numero="27"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Realizó la entrevista previa?" />
+            <sec:SubTituloEntrada Numero="29"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Leyó al (a la) Declarante la declaración?"
+                            Grid.Row="1" />
+            <sec:SubTituloEntrada Numero="31"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Se incluyeron correcciones o enmendaduras?"
+                            Grid.Row="2" />
+            <sec:SubTituloEntrada Numero="28"
+                            ColorTexto="FondoBlanco"
+                                  Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                            Texto="¿Realizó la toma de juramento?"
+                            Grid.Column="3"
+                            Grid.Row="0" />
+            <sec:SubTituloEntrada Numero="30"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Hubo orientación para corregir o enmendar?"
+                            Grid.Column="3"
+                            Grid.Row="1" />
+            <my:DatoSiNoColumna Valor="{Binding RealizoEntrevistaPrevia}"
+                          Grid.Column="1"
+                          HorizontalAlignment="Left" />
+            <my:DatoSiNoColumna Valor="{Binding LeyoAlDeclaranteLaDeclaracion}"
+                          Grid.Column="1"
+                          Grid.Row="1"
+                          HorizontalAlignment="Left" />
+            <my:DatoSiNoColumna Valor="{Binding SeIncluyeronCorrecciones}"
+                          Grid.Column="1"
+                          Grid.Row="2"
+                          HorizontalAlignment="Left" />
+            <my:DatoSiNoColumna Valor="{Binding RealizoTomaJuramento}" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                          Grid.Column="4"
+                          Grid.Row="0"
+                          HorizontalAlignment="Left" />
+            <my:DatoSiNoColumna Valor="{Binding HuboOrientacionParaCorregir}"
+                          Grid.Column="4"
+                          Grid.Row="1"
+                          HorizontalAlignment="Left" />
+        </Grid>
+        <DockPanel Margin="0,5">
+            <sec:SubTituloEntrada Numero="32"
+                            Texto="" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t001}"
+                           TextAlignment="Justify" />
+        </DockPanel>
+    </StackPanel>
+</UserControl>

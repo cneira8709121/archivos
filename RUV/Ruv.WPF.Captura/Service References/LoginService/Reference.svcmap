@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b0704cdb-d358-45c2-8cc4-573018df2c6b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LoginService.xsd" MetadataType="Schema" ID="77154f7b-5b55-412f-ba90-602fd18accad" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LoginService4.xsd" MetadataType="Schema" ID="d69a58e4-c4d8-4936-afc5-9cc8e753da32" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?xsd=xsd4" />
+    <MetadataFile FileName="LoginService.disco" MetadataType="Disco" ID="9f12d417-79bd-4c09-94b0-7434b576dd3c" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?disco" />
+    <MetadataFile FileName="LoginService1.xsd" MetadataType="Schema" ID="1bcc6195-8685-45d4-9fdc-d4170f215d06" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoginService2.xsd" MetadataType="Schema" ID="808d97bf-24e0-404e-b5aa-8e127323e645" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LoginService5.xsd" MetadataType="Schema" ID="dddfd0a9-7650-45aa-8d32-ade93011484b" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?xsd=xsd5" />
+    <MetadataFile FileName="LoginService.wsdl" MetadataType="Wsdl" ID="ee4939ae-2d11-4e91-ba54-4bb6c3131dfc" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="LoginService1.wsdl" MetadataType="Wsdl" ID="925d512a-a214-4fdb-9574-a5942b7937b8" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?wsdl" />
+    <MetadataFile FileName="LoginService3.xsd" MetadataType="Schema" ID="5d571ee5-9ddc-4c23-878d-ac5d3bf49ca7" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/LoginService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

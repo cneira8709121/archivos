@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A03_Detalle01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="131"
+             d:DesignWidth="1528">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:VictimaA03NiñosConverter x:Key="VNC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <!--DOCUMENTO-->
+      <my:DatoColumna Texto="{Binding Converter={StaticResource VNC}, ConverterParameter=documentoidentificacion }" />
+      <!--APELLIDOS-->
+      <my:DatoColumna Texto="{Binding Converter={StaticResource VNC}, ConverterParameter=primerapellido }"
+                      Grid.Column="1" />
+      <my:DatoColumna Texto="{Binding Converter={StaticResource VNC}, ConverterParameter=segundoapellido }"
+                      Grid.Column="2" />
+      <!--NOMBRES-->
+      <my:DatoColumna Texto="{Binding Converter={StaticResource VNC}, ConverterParameter=primernombre }"
+                      Grid.Column="3" />
+      <my:DatoColumna Texto="{Binding Converter={StaticResource VNC}, ConverterParameter=segundonombre }"
+                      Grid.Column="4" />
+    </Grid>
+
+  </StackPanel>
+</UserControl>

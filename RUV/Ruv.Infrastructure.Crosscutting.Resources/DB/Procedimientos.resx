@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AsignaGlosa" xml:space="preserve">
+    <value>PKG_GLOSAS.SP_ASIGNAGLOSA</value>
+  </data>
+  <data name="AsignarFormulario" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_AsignarFormulario</value>
+  </data>
+  <data name="GenerarFormularios" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_GenerarFormularios</value>
+  </data>
+  <data name="InactivarFormulario" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.SP_INACTIVARFORMULARIO</value>
+  </data>
+  <data name="ListarFormularios" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFormularios</value>
+  </data>
+  <data name="ListarFormulariosNoRadicados" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.SP_GETFORMULARIOSNORADICADOS</value>
+  </data>
+  <data name="ListarFormulariosPorEstado" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFormulariosPorEstado</value>
+  </data>
+  <data name="MarcarDescargado" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_MarcarDescargado</value>
+  </data>
+  <data name="ObtenerFrmPorUsuario" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFrmPorUsuario</value>
+  </data>
+  <data name="ListaTareasValorador" xml:space="preserve">
+    <value>PKG_VALORACION.sp_getDeclaraValoradorPaginado</value>
+    <comment>Lista de Tareas Valorador Paginada</comment>
+  </data>
+  <data name="ReporteDeclaracion" xml:space="preserve">
+    <value>PKG_CONSULTA.sp_BuscaDeclaraciones</value>
+  </data>
+  <data name="ReporteDeclaracionCount" xml:space="preserve">
+    <value>PKG_CONSULTA.sp_BuscaDeclaracionesCount</value>
+  </data>
+  <data name="ReporteDetalleDeclaracion" xml:space="preserve">
+    <value>PKG_CONSULTA.sp_DetalleDeclaracion</value>
+  </data>
+  <data name="SepararFormularioImprenta" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_SepararImprenta</value>
+  </data>
+  <data name="ValoracionesEnValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.sp_getDeclaracionesValPaginada</value>
+    <comment>Valoraciones que se encuentran asignadas y se puedan reasignar a otro valorador.</comment>
+  </data>
+  <data name="ValoracionesEnValoracionCantidad" xml:space="preserve">
+    <value>PKG_VALORACION.sp_getDeclaracionesValCantidad</value>
+  </data>
+  <data name="ListaTareasValoradorCantidad" xml:space="preserve">
+    <value>PKG_VALORACION.sp_getDeclaraValoradorCantidad</value>
+  </data>
+  <data name="ActualizarEstadoDeclaracion" xml:space="preserve">
+    <value>PKG_COMMON.SP_UPDESTADO_DECLARACION</value>
+  </data>
+  <data name="NombreImagenACargar" xml:space="preserve">
+    <value>PKG_CRITICAN.SP_CARGAIMAGENCRITICAN</value>
+  </data>
+  <data name="InsertaCriticaN" xml:space="preserve">
+    <value>PKG_CRITICAN.SP_INSERTACRITICA</value>
+  </data>
+  <data name="ObtenerFrmPorNumero" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFrmPorNumero</value>
+  </data>
+  <data name="ObtenerFrmPorUsuarioEstadoCantidad" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFrmsCantidad</value>
+    <comment>Cantidad de formularios por usuario y estado</comment>
+  </data>
+  <data name="ObtenerFrmPorUsuarioEstadoPaginado" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFrmsPaginado</value>
+    <comment>Formularios por estado y usuario paginados</comment>
+  </data>
+  <data name="CantidadFormulariosActivarInactivar" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFormulariosCantidad</value>
+  </data>
+  <data name="ListarFormulariosAcitvarInactivar" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtenerFormulariosPaginado</value>
+  </data>
+  <data name="DevolverDeclaracion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.sp_DevolverDeclaracion</value>
+  </data>
+  <data name="ObtenerRadicacionIdDeclaracion" xml:space="preserve">
+    <value>Pkg_Radicacion.SP_OBTENERRADFROMDECLA</value>
+  </data>
+  <data name="ObtenerRadicacionNumeroFormulario" xml:space="preserve">
+    <value>Pkg_Radicacion.SP_OBTENERRADFROMNROFORM</value>
+  </data>
+  <data name="ActualizarRadicacion" xml:space="preserve">
+    <value>Pkg_Radicacion.SP_UPDRADICACION</value>
+  </data>
+  <data name="CargaDevolucion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.SP_CARGADEVOLUCION</value>
+  </data>
+  <data name="ObtenerDevolucion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.sp_ObtenerDevolucion</value>
+  </data>
+  <data name="ActualizarDevolucion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.sp_ActualizarDevolucion</value>
+  </data>
+  <data name="SolicitarDevolucion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.sp_SolicitarDevolucion</value>
+  </data>
+  <data name="AutoAsignaValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_AUTOASIGNARVALORACION</value>
+  </data>
+  <data name="CargaDatosparaDevolucion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.SP_DATOSPARADEVOLUCION</value>
+  </data>
+  <data name="ConsultaGestionValorador" xml:space="preserve">
+    <value>PKG_VALORACION.SP_CONSULTAVALORADORES</value>
+  </data>
+  <data name="DetalleGestionValorador" xml:space="preserve">
+    <value>PKG_VALORACION.SP_CONSULTAVALORADORDETALLE</value>
+  </data>
+  <data name="ObtenerListaCausales" xml:space="preserve">
+    <value>PKG_DEVOLUCION.SP_OBTENERLISTACAUSALES</value>
+  </data>
+  <data name="InsertaRadicacionDevolucion" xml:space="preserve">
+    <value>Pkg_Radicacion.SP_INSERTARADICACIONDEV</value>
+  </data>
+  <data name="ObtenerPersonas" xml:space="preserve">
+    <value>PKG_COMUNICACION.sp_ObtenerPersonas</value>
+  </data>
+  <data name="ObtenerPersonaPorId" xml:space="preserve">
+    <value>PKG_COMUNICACION.sp_ObtenerPersonaPorId</value>
+  </data>
+  <data name="ObtenerPersonaPorDocumento" xml:space="preserve">
+    <value>PKG_COMUNICACION.sp_ObtenerPersonaPorDocumento</value>
+  </data>
+  <data name="ObtenerHechosPorIdPersona" xml:space="preserve">
+    <value>PKG_COMUNICACION.SP_OBTENERHECHOSPORIDPERSONA</value>
+  </data>
+  <data name="ObtenerGrupoFamiliar" xml:space="preserve">
+    <value>PKG_COMUNICACION.SP_OBTENERGRUPOFAMILIAR</value>
+  </data>
+  <data name="ContadorValoradores" xml:space="preserve">
+    <value>PKG_VALORACION.SP_CONSULTAVALORADORESCOUNT</value>
+  </data>
+  <data name="ContadorDetalleValora" xml:space="preserve">
+    <value>PKG_VALORACION.SP_DETALLEVALORADORCOOUNT</value>
+  </data>
+  <data name="CargaDatosNotificacion" xml:space="preserve">
+    <value>PKG_ACTOSADMIN.SP_NOTIFICACION</value>
+  </data>
+  <data name="ResumenLiderValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_RESUMENVALORACION</value>
+  </data>
+  <data name="MarcarFormularioRadicado" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_MarcarRadicado</value>
+    <comment>Marca un formulario como radicado</comment>
+  </data>
+  <data name="AprobarValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_APROBARVALORACION</value>
+  </data>
+  <data name="RechazarValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_RECHAZARVALORACION</value>
+  </data>
+  <data name="SolicitarCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.sp_SolicitarCorreccion</value>
+  </data>
+  <data name="CargaDatosCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.SP_CARGADATOSCORREGIR</value>
+  </data>
+  <data name="BuscaPersonas" xml:space="preserve">
+    <value>PKG_CorreccionES.SP_BUSCAPERSONAS</value>
+  </data>
+  <data name="BuscaPersonasCount" xml:space="preserve">
+    <value>PKG_CorreccionES.SP_BUSCAPERSONASCOUNT</value>
+  </data>
+  <data name="ConsultarCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.sp_ConsultarCorreccion</value>
+  </data>
+  <data name="RechazarCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.sp_RechazarCorreccion</value>
+  </data>
+  <data name="AprobarCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.SP_APROBARSOLICITUD</value>
+  </data>
+  <data name="ConsultarCamposCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.sp_ConsultarCamposCorreccion</value>
+  </data>
+  <data name="ObtenerListadoCausalesDevolucion" xml:space="preserve">
+    <value>PKG_DEVOLUCION.sp_ObtenerCausalesDevolucion</value>
+  </data>
+  <data name="ConsultaNotificacionesPaginado" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaNotificaciones</value>
+  </data>
+  <data name="ActualizarNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_ACTUALIZARNOTIFICACION</value>
+  </data>
+  <data name="InsertaNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_INSERTANOTIFICACION</value>
+  </data>
+  <data name="DetalleNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_DetalleNotificacion</value>
+  </data>
+  <data name="CreaPaqueteNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_CrearPaqueteNotificacion</value>
+  </data>
+  <data name="ActualizaEstadoEnviadoNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_AsociarNotificacionAPaquete</value>
+  </data>
+  <data name="ConsultaCantidadNotificaciones" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaNotificacionesCount</value>
+  </data>
+  <data name="SolicitaCorrecionDireccion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_SOLICITACORRECCION</value>
+  </data>
+  <data name="ConsultaNotificacionesEntregadas" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaNtfEntregadas</value>
+  </data>
+  <data name="ConsultaNotificacionesEntregadasConteo" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaNtfEntregadasCount</value>
+  </data>
+  <data name="ActualizaEstadoCourier" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ActualizarEstadoCourier</value>
+  </data>
+  <data name="ObtenerIdValoracionPorIdDeclaracion" xml:space="preserve">
+    <value>PKG_ACTOSADMIN.SP_GETIDVALORACIONBYIDDEC</value>
+  </data>
+  <data name="CierraNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_FINALIZANOTIFICACION</value>
+  </data>
+  <data name="GeneraNotificacionInterna" xml:space="preserve">
+    <value>PKG_NOTIFICACIONINTERNA.SP_GENERANOTIFICACION</value>
+  </data>
+  <data name="MarcarLeidos" xml:space="preserve">
+    <value>PKG_NOTIFICACIONINTERNA.SP_MARCALEIDOS</value>
+  </data>
+  <data name="ObtenerNotificacionInterna" xml:space="preserve">
+    <value>PKG_NOTIFICACIONINTERNA.SP_OBTENERNOTIUSUARIO</value>
+  </data>
+  <data name="ObtenerInfoCorreccion" xml:space="preserve">
+    <value>PKG_CORRECCIONES.SP_OBTENERINFOCORRECCION</value>
+  </data>
+  <data name="SepararFormularioImprentaFiltro" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.SP_SEPARARIMPRENTAFILTRO</value>
+  </data>
+  <data name="AsignarFormularioFiltro" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.SP_ASIGNARFORMULARIOFILTRO</value>
+  </data>
+  <data name="ObtenerDatosOrfeoPorIdValoracion" xml:space="preserve">
+    <value>PKG_ORFEO.SP_GETORFEOPORIDVALORACION</value>
+  </data>
+  <data name="RelacionarCodigoOrfeoValoracion" xml:space="preserve">
+    <value>PKG_ORFEO.SP_RELACIONARVALORACIONORFEO</value>
+  </data>
+  <data name="InsertaTipoMotivacion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_INSERTATIPOMOTIVACION</value>
+  </data>
+  <data name="ObtenerTipoMotivacion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_OBTIENETIPOMOTIVACION</value>
+  </data>
+  <data name="ObtieneCodigoOrfeoPorIdValoracion" xml:space="preserve">
+    <value>PKG_ORFEO.SP_GETCODORFEOPORIDVALORACION</value>
+  </data>
+  <data name="AgregarOrdenServicio" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_AGREGARORDENSERVICIO</value>
+  </data>
+  <data name="ObtenerPaqueteNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaPaquetePorId</value>
+  </data>
+  <data name="ObtenerPaquetesNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaPaquetes</value>
+  </data>
+  <data name="ObtenerPaquetesNotificacionConteo" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaPaquetesCount</value>
+  </data>
+  <data name="BorrarFestivo" xml:space="preserve">
+    <value>PKG_CALENDARIO.sp_BorrarFestivo</value>
+  </data>
+  <data name="FechaDiasHabiles" xml:space="preserve">
+    <value>PKG_CALENDARIO.sp_CalcularDiasHabiles</value>
+  </data>
+  <data name="AprobarNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_APROBARNOTIFICACION</value>
+  </data>
+  <data name="InsertarFestivo" xml:space="preserve">
+    <value>PKG_CALENDARIO.sp_InsertarFestivo</value>
+  </data>
+  <data name="ConsultarFeriadosPorAnio" xml:space="preserve">
+    <value>PKG_CALENDARIO.sp_ConsultarFestivos</value>
+  </data>
+  <data name="ObtenerDetallePaqueteNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaDetallePaquete</value>
+  </data>
+  <data name="ObtenerDetallePaqueteNotificacionConteo" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaDetallePaqueteCount</value>
+  </data>
+  <data name="ObservacionNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_GUARDAOBSERVACION</value>
+  </data>
+  <data name="CrearPaqueteNotificacionDesdeFiltro" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_CrearPaqueteDesdeFiltro</value>
+  </data>
+  <data name="ConsultaNotificacionPorId" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ConsultaNotificacionPorId</value>
+  </data>
+  <data name="CambiarEstadoNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_CAMBIAESTADONOTIFICACION</value>
+  </data>
+  <data name="ObtenerTodasNotificaciones" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_GETALLNOTIFICACIONES</value>
+  </data>
+  <data name="AgregarPersonaValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_AGREGAPERSONA</value>
+  </data>
+  <data name="CargaPersonasAsociadas" xml:space="preserve">
+    <value>PKG_VALORACION.SP_CARGAPERSONASASOCIADAS</value>
+  </data>
+  <data name="ContadorPersonasAsociadasDeclaracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_CARGAPERSONASASOCIADASCOUNT</value>
+  </data>
+  <data name="AgregaDiscapacidadValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_AGREGADISCAPACIDADVALORA</value>
+  </data>
+  <data name="AgregaRegPersonaValoracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_AGREGAREGPERSONA</value>
+  </data>
+  <data name="ActualizarPuntoNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_ActualizarPuntoNotificacion</value>
+  </data>
+  <data name="ObtieneIdValoracionporDeclaracion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_IDVALORACIONPORDECLARACION</value>
+  </data>
+  <data name="GenerarFormularioWEB" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_GenerarFormulariosWEB</value>
+  </data>
+  <data name="ObtienePaisGeneradorFormularioWEB" xml:space="preserve">
+    <value>PKG_CONTROLIDFORMULARIO.sp_ObtienePaisGenerFormuWEB</value>
+  </data>
+  <data name="ObtieneSubEtnias" xml:space="preserve">
+    <value>PKG_Common.SP_OBTIENESUBETNIAS</value>
+  </data>
+  <data name="ObtieneNombreSubetnia" xml:space="preserve">
+    <value>PKG_CORRECCIONES.SP_OBTENERNOMBRESUBETNIA</value>
+  </data>
+  <data name="ValoracionHistorico" xml:space="preserve">
+    <value>PKG_VALORACION.sp_getValoracionHistorico</value>
+  </data>
+  <data name="ActualizarTipoCodigoActoAdministrativo" xml:space="preserve">
+    <value>PKG_ACTOSADMIN.sp_ActualizarTipoCodigo</value>
+  </data>
+  <data name="AsociarCodigosGuia" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_ASOCIARCODIGUIANOTIFICACION</value>
+  </data>
+  <data name="ConfirmarEnvioNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_confirmaEnvionNotificacion</value>
+  </data>
+  <data name="ConsultaNotificacionesCentroAtencion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_CONSULTACENTROATENCIONOTIF</value>
+  </data>
+  <data name="ConsultaNotificacionesCentroAtencionCount" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_CONSULTACENTROATENCIONCOUNT</value>
+  </data>
+  <data name="DetalleCentroAtencion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_DetalleCentroAtencion</value>
+  </data>
+  <data name="DetalleCentroAtencioncontador" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_DetalleCentroAtencionCOUNT</value>
+  </data>
+  <data name="ObtenerHistoricoNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ObtenerHistorico</value>
+  </data>
+  <data name="ObtenerHistoricoPaqueteNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.sp_ObtenerHistoricoPaquete</value>
+  </data>
+  <data name="EvaluaLeyViejaoNueva" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_NOTIFICACIONLEYNUEVAOVIEJA</value>
+  </data>
+  <data name="getEncargadosPorEntidad" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_GETENCARGADOSPORENTIDAD</value>
+  </data>
+  <data name="CountEncargadosPorEntidad" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_ENCARGADOSPORENTIDADCOUNT</value>
+  </data>
+  <data name="ObtenerEstadosDeNotificacion" xml:space="preserve">
+    <value>PKG_NOTIFICACION.SP_GETESTADOSDENOTIFICACION</value>
+  </data>
+  <data name="ObtenerDireccionPuntoNotificacion" xml:space="preserve">
+    <value>PKG_COMMON.sp_getDirPuntoNotificacion</value>
+  </data>
+  <data name="ActualizarDireccionPuntoNotificacion" xml:space="preserve">
+    <value>PKG_COMMON.sp_setDirPuntoNotificacion</value>
+  </data>
+  <data name="ValoracionMotivacion" xml:space="preserve">
+    <value>PKG_VALORACION.SP_GETMOTIVACIONVALORACION</value>
+  </data>
+  <data name="InsertarIntregacionGD" xml:space="preserve">
+    <value>PKG_RADICACION.SP_RADICACION_INTEGRACION</value>
+  </data>
+  <data name="ActualizarLogIntegrador" xml:space="preserve">
+    <value>PKG_RADICACION.SP_ACTUALIZAR_INTEGRADORGD</value>
+  </data>
+</root>

@@ -1,0 +1,298 @@
+﻿<Window xmlns:my="clr-namespace:WPFDeveloperTools.Controls.FilteredTextBox;assembly=WPFDeveloperTools.Controls"
+        x:Class="Ruv.WPF.Captura.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctrl="clr-namespace:Ruv.WPF.Captura.Controles"
+        xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+        xmlns:regi="clr-namespace:Ruv.WPF.Captura.Registro"
+        xmlns:not="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
+        Icon="/Ruv.WPF.Captura;component/Recursos/Imagenes/RUV.ico"
+        Title="UARIV Unidad para las victimas - Registro Único de Víctimas"
+        Height="800"
+        Width="800"
+        WindowState="Maximized">
+    <Window.Resources>
+        <conv:EstadoRedColorConverter x:Key="EstadoRedColor" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="regi:ComandosRegistro.AbrirListaDeTareas"
+                    CanExecute="ComandoGenerico_CanExecute"
+                    Executed="AbrirListaDeTareas_Executed" />
+    </Window.CommandBindings>
+    <Grid>
+
+        <DockPanel x:Name="dpMain">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="EstadosMenu">
+                    <VisualState x:Name="MenuInvisible">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="grdBanner"
+                               Storyboard.TargetProperty="Height"
+                               From="40"
+                               To="100"
+                               Duration="0:0:0.5" />
+                            <!--<DoubleAnimation Storyboard.TargetName="imgEscudo"
+                               Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               Duration="0:0:0.5" />-->
+                            <DoubleAnimation Storyboard.TargetName="imgBannerSup"
+                               Storyboard.TargetProperty="Opacity"
+                               From="0.3"
+                               To="1"
+                               Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="imgAccionSocial"
+                               Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="menuMain"
+                               Storyboard.TargetProperty="(RenderTransform).Y"
+                               From="0"
+                               To="50"
+                               Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="menuMain"
+                               Storyboard.TargetProperty="Opacity"
+                               To="0"
+                               Duration="0:0:0.5" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MenuVisible">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="grdBanner"
+                               Storyboard.TargetProperty="Height"
+                               From="100"
+                               To="40"
+                               Duration="0:0:0.5" />
+                            <!--<DoubleAnimation Storyboard.TargetName="imgEscudo"
+                               Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               Duration="0:0:0.5" />-->
+                            <DoubleAnimation Storyboard.TargetName="imgBannerSup"
+                               Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0.3"
+                               Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="imgAccionSocial"
+                               Storyboard.TargetProperty="Opacity"
+                               From="1"
+                               To="0"
+                               Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="menuMain"
+                               Storyboard.TargetProperty="(RenderTransform).Y"
+                               From="50"
+                               To="0"
+                               Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetName="menuMain"
+                               Storyboard.TargetProperty="Opacity"
+                               From="0"
+                               To="1"
+                               Duration="0:0:0.5" />
+
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <!--BARRA DE ESTADO-->
+            <StatusBar DockPanel.Dock="Bottom"
+                 VerticalAlignment="Bottom"
+                 Padding="1"
+                 Height="26">
+                <StatusBar.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/ColoresEstadosProcesos.xaml" />
+                        </ResourceDictionary.MergedDictionaries>
+                        <conv:EstadoProcesoColorConverter x:Key="EPCC" />
+                    </ResourceDictionary>
+                </StatusBar.Resources>
+                <StackPanel Orientation="Horizontal"
+                    DataContext="{Binding Source={StaticResource RUV}}">
+                    <StackPanel Orientation="Horizontal"
+                      Width="200">
+                        <Grid Width="15"
+                  Height="15">
+                            <Ellipse Fill="{Binding Path=Red.EstadoRed, Converter={StaticResource EstadoRedColor}, ConverterParameter=color}" />
+                            <Ellipse Fill="Transparent"
+                       Stroke="Black"
+                       StrokeThickness="1" />
+                        </Grid>
+                        <TextBlock Text="{Binding Path=Red.EstadoRed, Converter={StaticResource EstadoRedColor}, ConverterParameter=descripcion}"
+                       Margin="5,0"
+                       ToolTip="Estado de conexión a la red" />
+                    </StackPanel>
+                    <Rectangle VerticalAlignment="Stretch"
+                     Width="1"
+                     Margin="10,0"
+                     Fill="Gray" />
+                    <TextBlock Text="{Binding ColaProcesos.UltimoMensajeCola}" />
+                    <TextBlock x:Name="txbNotificacion" />
+                    <StatusBarItem>
+                        <TextBlock Name="lblDbString" />
+                    </StatusBarItem>
+                </StackPanel>
+            </StatusBar>
+            <!--El banner visible en todo momento-->
+            <Canvas x:Name="canBannerSup"
+              DockPanel.Dock="Top">
+                <Image x:Name="imgBannerSup"
+               Source="/Ruv.WPF.Captura;component/Recursos/Imagenes/banner_sup.jpg"
+               Stretch="Fill"
+               Width="{Binding ElementName=canBannerSup, Path=ActualWidth}" />
+            </Canvas>
+            <Grid x:Name="grdBanner"
+            DockPanel.Dock="Top"
+            Height="40">
+                <!--<Image x:Name="imgEscudo"
+               Source="/Ruv.WPF.Captura;component/Recursos/Imagenes/Escudo.png"
+               Height="90"
+               Opacity="0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center" />-->
+                <Image x:Name="imgAccionSocial"
+               Source="/Ruv.WPF.Captura;component/Recursos/Imagenes/logo-unidad-herramienta.jpg"
+               Height="85"
+               Width="350"
+               Stretch="Fill"
+               Opacity="0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="0,5,0,5" />
+                <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right">
+                    <TextBlock TextAlignment="Right"
+                     FontSize="20"
+                     Padding="5,0"
+                     Foreground="DarkBlue"
+                     FontWeight="Bold"
+                     Text="{StaticResource TituloAplicacion}" />
+                    <StackPanel Orientation="Horizontal"
+                      HorizontalAlignment="Right">
+                        <TextBlock x:Name="txtModoEjecucion"
+                       FontSize="10"
+                       FontWeight="Bold"
+                       Margin="0,0,10,0">
+              <TextBlock.LayoutTransform>
+                <ScaleTransform />
+              </TextBlock.LayoutTransform>
+              <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                  <BeginStoryboard>
+                    <Storyboard>
+                      <DoubleAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource AncestorType=TextBlock,Mode=FindAncestor}}"
+                                       Storyboard.TargetProperty="(LayoutTransform).ScaleX"
+                                       Duration="0:0:2"
+                                       FillBehavior="HoldEnd"
+                                       From="5"
+                                       To="1" />
+                      <DoubleAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource AncestorType=TextBlock,Mode=FindAncestor}}"
+                                       Storyboard.TargetProperty="(LayoutTransform).ScaleY"
+                                       Duration="0:0:2"
+                                       FillBehavior="HoldEnd"
+                                       From="5"
+                                       To="1" />
+                    </Storyboard>
+                  </BeginStoryboard>
+                </EventTrigger>
+              </TextBlock.Triggers>
+              Desarrollo</TextBlock>
+                        <TextBlock TextAlignment="Right"
+                       HorizontalAlignment="Right"
+                       FontSize="10"
+                       Padding="5,0"
+                       Foreground="DarkBlue"
+                       FontWeight="Bold"
+                       Text="{Binding Source={StaticResource RUV}, Path=InfoGeneral.VersionAplicacion}" />
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock x:Name="txtConexion"></TextBlock>
+            </Grid>
+            <Grid DockPanel.Dock="Top" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="600"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Menu x:Name="menuMain"
+            MenuItem.Click="InvocarMenu"
+                      Grid.Column="0"
+            Height="25"
+            Opacity="0"
+            Background="Transparent">
+                    <Menu.RenderTransform>
+                        <TranslateTransform Y="0" />
+                    </Menu.RenderTransform>
+                    <Menu.Resources>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Foreground"
+                    Value="DarkBlue" />
+                            <Setter Property="FontWeight"
+                    Value="Bold" />
+                        </Style>
+                    </Menu.Resources>
+                    <MenuItem Header="Lista de Tareas"
+                  Tag="ListaTareas" />
+                    <MenuItem Header="Radicar"
+                  Tag="RadicarDeclaracion" />
+                    <!--<MenuItem Header="Lider Radicación"
+                  Tag="LiderRadicacion" />-->
+                    <MenuItem Header="Registro" Tag="Registro">
+                        <MenuItem Header="Ingresar una nueva declaración" 
+                    Tag="RegistroDeclaracion" />
+                        <!--<MenuItem Header="Digitar una declaración previamente radicada"
+                    Tag="DigitarDeclaracion" />-->
+                        <MenuItem Header="Obtener una declaración previamente ingresada"
+                    Tag="ObtenerDeclaracion" />
+                    </MenuItem>
+                    <MenuItem Header="Gestión Documentos" Tag="GestionDocumentos" >
+                        <MenuItem Header="Gestionar documentos" Tag="GestionDocumentos" />
+                        <MenuItem Header="Inactivar documentos" Tag="InactivarDocumentos" />
+                    </MenuItem>
+                    <MenuItem Header="Valoración"
+                  ToolTip="Realizar el proceso de valoración de un registro"
+                  Tag="Valoración" />
+                    <MenuItem Header="Opciones" Tag="Opciones">
+                        <MenuItem Header="Cola de procesos"
+                    ToolTip="Observa la lista de registros pendientes por transmitir"
+                    Tag="ColaDeProcesos" />
+                        <MenuItem Header="Cargue de parámetros"
+                    ToolTip="Forzar una carga de los parámetros del sistema"
+                    Tag="CargueDeParametros" />
+                        <MenuItem Header="Configuración"
+                    ToolTip="Despliega las opciones de impresión."
+                    Tag="Configuracion" />
+                    </MenuItem>
+                    <MenuItem Header="Sistema">
+                        <MenuItem Header="Cerrar sesión"
+                    ToolTip="Cierra la sesión del usuario"
+                    Tag="CerrarSesion" />
+                        <MenuItem Header="Salir"
+                    ToolTip="Cerrar esta aplicación"
+                    Visibility="Collapsed"
+                    Tag="Salir" />
+                    </MenuItem>
+                    <!--<MenuItem Header="Test">
+                    <MenuItem Header="Test"
+                    ToolTip="Test"
+                    Tag="Test" />
+                </MenuItem>-->
+                </Menu>
+                <TextBlock Name="tblUsuario" Grid.Column="1" FontSize="12"
+                       FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" ></TextBlock>
+            </Grid>
+
+            <Frame x:Name="frmMain"
+             Margin="5"
+             NavigationUIVisibility="Hidden"
+             Source="Seguridad/LoginVista.xaml" />
+        </DockPanel>
+        <ctrl:FocusAdorner x:Name="AdornoFocoValidacion"
+                       MainWindow="{Binding ElementName=RUV, Path=UIPrincipal}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top" />
+        <!--BORDE BLOQUEO INTERFASE-->
+        <ctrl:BloqueoInterfase x:Name="borBloqueoInterfase" />
+        <not:TaskbarIcon x:Name="Notificaciones" ToolTipText="Registro Unico de Victimas" IconSource="Recursos/Imagenes/RUV.ico"  />
+    </Grid>
+</Window>

@@ -1,0 +1,234 @@
+﻿<Page xmlns:my1="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+      xmlns:my="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+      x:Class="Ruv.WPF.Captura.Registro.RegistroVista"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:diagnostics="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+      xmlns:controles="clr-namespace:Ruv.WPF.Captura.Controles"
+      xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+      xmlns:regi="clr-namespace:Ruv.WPF.Captura.Registro"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="1024"
+      x:Name="pagRegistroVista"
+      Title="RegistroVista"
+      DataContext="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual}">
+  <Page.CommandBindings>
+    <CommandBinding Command="regi:ComandosRegistro.GrabarDeclaracion"
+                    CanExecute="GrabarDeclaracion_CanExecute"
+                    Executed="GrabarDeclaracion_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.UbicarSiguienteError"
+                    CanExecute="UbicarError_CanExecute"
+                    Executed="UbicarSiguienteError_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.UbicarAnteriorError"
+                    CanExecute="UbicarError_CanExecute"
+                    Executed="UbicarAnteriorError_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.AbrirListaDeAnexos"
+                    CanExecute="ComandoGenerico_CanExecute"
+                    Executed="AbrirListaDeAnexos_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.AbrirHoja01"
+                    CanExecute="ComandoGenerico_CanExecute"
+                    Executed="AbrirHoja01_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.AbrirHoja02"
+                    CanExecute="ComandoGenerico_CanExecute"
+                    Executed="AbrirHoja02_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.AbrirHoja03"
+                    CanExecute="ComandoGenerico_CanExecute"
+                    Executed="AbrirHoja03_Executed" />
+    <CommandBinding Command="regi:ComandosRegistro.AbrirHoja04"
+                    CanExecute="ComandoGenerico_CanExecute"
+                    Executed="AbrirHoja04_Executed" />
+  </Page.CommandBindings>
+  <Page.Resources>
+    <conv:ErroresEstadoIngresoConverter x:Key="ErroresEstadoIngreso" />
+    <conv:SeparadorTextoConverter x:Key="STC" />
+        <conv:VisibilidadSegunRolConverter x:Key="VisibilidadSegunRolConverter"/>
+        <conv:EntidadTituloConverter x:Key="ETC" />
+    <Style x:Key="styAnimacionBotonMenu"
+           TargetType="{x:Type controles:BotonMenu}">
+      <Style.Triggers>
+        <EventTrigger RoutedEvent="controles:BotonMenu.Seleccion">
+          <BeginStoryboard>
+            <Storyboard FillBehavior="Stop">
+              <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding  RelativeSource={RelativeSource AncestorType=controles:BotonMenu, Mode=FindAncestor}}"
+                                             Storyboard.TargetProperty="(RenderTransform).ScaleX"
+                                             Duration="0:0:3">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:0"
+                                        Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:0.15"
+                                      Value="1.5" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:2.85"
+                                        Value="0.5" />
+                <LinearDoubleKeyFrame KeyTime="0:0:3"
+                                      Value="1" />
+              </DoubleAnimationUsingKeyFrames>
+              <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding  RelativeSource={RelativeSource AncestorType=controles:BotonMenu, Mode=FindAncestor}}"
+                                             Storyboard.TargetProperty="(RenderTransform).ScaleY"
+                                             Duration="0:0:3">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:0"
+                                        Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:0.15"
+                                      Value="1.5" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:2.85"
+                                        Value="0.5" />
+                <LinearDoubleKeyFrame KeyTime="0:0:3"
+                                      Value="1" />
+              </DoubleAnimationUsingKeyFrames>
+              <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding  RelativeSource={RelativeSource AncestorType=controles:BotonMenu, Mode=FindAncestor}}"
+                                             Storyboard.TargetProperty="Opacity"
+                                             Duration="0:0:3">
+                <DiscreteDoubleKeyFrame KeyTime="0:0:0"
+                                        Value="1" />
+                <LinearDoubleKeyFrame KeyTime="0:0:0.15"
+                                      Value="0" />
+                <DiscreteDoubleKeyFrame KeyTime="0:0:2.85"
+                                        Value="0" />
+                <LinearDoubleKeyFrame KeyTime="0:0:3"
+                                      Value="1" />
+              </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Style.Triggers>
+    </Style>
+  </Page.Resources>
+  <DockPanel>
+    <Border DockPanel.Dock="Top"
+            CornerRadius="7,7,0,0"
+            BorderBrush="Gray"
+            BorderThickness="1"
+            Padding="5"
+            Background="#FFFFFFDB">
+      <WrapPanel Orientation="Horizontal"
+                 controles:BotonMenu.Seleccion="BontonMenu_Seleccion">
+        <WrapPanel.Resources>
+          <Style TargetType="TextBlock">
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+          </Style>
+          <Style TargetType="StackPanel">
+            <Setter Property="Margin"
+                    Value="0,0,20,0" />
+          </Style>
+        </WrapPanel.Resources>
+        <!--Operaciones de ingreso-->
+        <StackPanel Width="386">
+          <TextBlock FontWeight="Normal">Registro Mínimo</TextBlock>
+          <WrapPanel x:Name="wpRegistro" 
+                     Orientation="Horizontal"
+                     MaxHeight="70">
+            <controles:BotonMenu x:Name="bmH01_TomaDeclaracion"
+                                 Texto="Hoja 1 de 4"/>
+            <controles:BotonMenu x:Name="bmH02_PersonasAfectadas"
+                                 Texto="Hoja 2 de 4"/>
+            <controles:BotonMenu x:Name="mbAnexos" 
+                                 Texto="Anexos"
+                                 Tag="Anexos" />
+            <controles:BotonMenu x:Name="bmH03_DescripcionHechos"
+                                 Texto="Hoja 3 de 4"/>
+            <controles:BotonMenu x:Name="bmH04_VerificacionProcedimiento"
+                                 Texto="Hoja 4 de 4"/>
+            <controles:BotonMenu x:Name="bmCargarDeclaEscaneada" 
+                                 Texto="Cargar declaración escaneada y/o soportes"
+                                 Tag="DocumentoEscaneado" />
+            <controles:BotonMenu x:Name="bmDescargarDeclaEscaneada" 
+                        Texto="Ver declaración y/o soportes"
+                        Tag="VerDocumento" />
+                        <ListBox SelectionMode="Single" ItemsSource="{Binding Versiones}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Visibility="{Binding Source={StaticResource RUV}, Path=I.Usuario.RolesUsuario, Converter={StaticResource VisibilidadSegunRolConverter}, ConverterParameter=RuvDigitador}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <RadioButton Content="{Binding Nombre}" IsChecked="{Binding Seleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" GroupName="VersionesFUD" Checked="RadioButton_Checked" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <ListBox SelectionMode="Single" ItemsSource="{Binding Versiones}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Visibility="{Binding Source={StaticResource RUV}, Path=I.Usuario.RolesUsuario, Converter={StaticResource VisibilidadSegunRolConverter}, ConverterParameter=Glosas}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <RadioButton Content="{Binding Nombre}" IsChecked="{Binding Seleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" GroupName="VersionesFUD" Checked="RadioButton_Checked" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </WrapPanel>
+        </StackPanel>
+        <!--Operaciones de ingreso-->
+        <StackPanel>
+          <TextBlock FontWeight="Normal"
+                     Grid.Column="2">Operaciones</TextBlock>
+          <WrapPanel x:Name="wpBotonesOperaciones"
+                     Orientation="Horizontal"
+                     MaxWidth="300"
+                     Grid.Row="1"
+                     Grid.Column="2">
+            <controles:BotonMenu x:Name="btnGrabarDeclaracion"
+                                 Texto="Grabar"
+                                 Tag="GrabarBorrador"
+                                 Width="Auto"
+                                 Style="{StaticResource styAnimacionBotonMenu}">
+              <controles:BotonMenu.RenderTransform>
+                <ScaleTransform CenterX="25"
+                                CenterY="12" />
+              </controles:BotonMenu.RenderTransform>
+            </controles:BotonMenu>
+            <controles:BotonMenu x:Name="btnCargarDeclaracion"
+                                 Texto="Recuperar"
+                                 Tag="CargarBorrador" />
+            <controles:BotonMenu Texto="Pruebas"
+                                 Visibility="Collapsed"
+                                 Tag="Pruebas" />
+            <controles:BotonMenu x:Name="btnFirmaDigital" Texto="Tomar firma digital"
+                                 Tag="TomarFirma" />
+            <controles:BotonMenu Texto="Finalizar" x:Name="btnFinalizar"
+                                 Tag="Finalizar" />
+            <controles:BotonMenu Texto="Devolver" x:Name="btnDevolver"
+                                 Tag="Devolver" />
+            <controles:BotonMenu x:Name="btnImprimirDeclaracion"
+                                 Texto="Imprimir"
+                                 Tag="Imprimir" />
+          </WrapPanel>
+        </StackPanel>
+        <!--Operaciones de ingreso-->
+        <StackPanel>
+          <TextBlock FontWeight="Heavy"
+                     Foreground="#FFFFFFDB"
+                     Margin="0,0,0,10"
+                     TextAlignment="Center"
+                     Padding="2"
+                     Text="{Binding ElementName=svMain, Path=Content, Converter={StaticResource ETC} }"
+                     Background="Gray" />
+          <TextBlock FontWeight="Normal">Estado Declaración</TextBlock>
+          <TextBlock FontWeight="Heavy"
+                     Foreground="Blue"
+                     Text="{Binding EstadoDeclaracion, Converter={StaticResource STC}}" />
+        </StackPanel>
+      </WrapPanel>
+    </Border>
+
+    <!--CONTENEDOR PARA LOS VALIDATION SUMMARY-->
+    <StackPanel x:Name="spValidadores"
+                DockPanel.Dock="Bottom">
+    </StackPanel>
+
+    <!--LOS CONTROLES DE INGRESO DE DATOS.-->
+    <AdornerDecorator>
+      <ScrollViewer x:Name="svMain"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled"
+                    Padding="5">
+      </ScrollViewer>
+    </AdornerDecorator>
+        
+  </DockPanel>
+
+</Page>

@@ -1,0 +1,6 @@
+﻿<local:clsHechoMotivoCollection xmlns:local="clr-namespace:Ruv.WPF.Captura.DesignTime"
+                                xmlns="http://schemas.microsoft.com/client/2007">
+  <local:clsHechoMotivo Item="XIII"
+                        HechoMotivo="OTRO (Especifique cual en la siguiente casilla)"
+                        Seleccionado="True" />
+</local:clsHechoMotivoCollection>

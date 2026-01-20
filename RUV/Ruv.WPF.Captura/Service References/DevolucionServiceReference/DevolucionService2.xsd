@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/DevolucionService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="clsDevolucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CDeclarante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CDireccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEntidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CFuncionario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CMunicipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNumeroFud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNumeroGuia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CObservaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CParteEmotivaModificada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DRadicacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DSolicitudDevolucion" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LstCausalesDevolucion" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="NId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NIdDeclaracion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NIdEntidadMunicipio" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NIdRadicacion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NIdUsuario" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NTelefono" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsDevolucion" nillable="true" type="tns:clsDevolucion" />
+</xs:schema>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PdfHelperService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ExtremoPdfHelper_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Business.DTO.Devolucion" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPdfHelperService_GenerateOnePdfFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateOnePdfFile" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GenerateOnePdfFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateOnePdfFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GenerateManyPdfFilesAsZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateManyPdfFilesAsZip" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GenerateManyPdfFilesAsZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateManyPdfFilesAsZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GeneratePdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePdf" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GeneratePdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GeneratePdfDevolucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePdfDevolucion" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GeneratePdfDevolucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeneratePdfDevolucionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GenerateOnePdfFileConNacional_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateOnePdfFileConNacional" />
+  </wsdl:message>
+  <wsdl:message name="IPdfHelperService_GenerateOnePdfFileConNacional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateOnePdfFileConNacionalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPdfHelperService">
+    <wsdl:operation name="GenerateOnePdfFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPdfHelperService/GenerateOnePdfFile" message="tns:IPdfHelperService_GenerateOnePdfFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPdfHelperService/GenerateOnePdfFileResponse" message="tns:IPdfHelperService_GenerateOnePdfFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateManyPdfFilesAsZip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPdfHelperService/GenerateManyPdfFilesAsZip" message="tns:IPdfHelperService_GenerateManyPdfFilesAsZip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPdfHelperService/GenerateManyPdfFilesAsZipResponse" message="tns:IPdfHelperService_GenerateManyPdfFilesAsZip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePdf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPdfHelperService/GeneratePdf" message="tns:IPdfHelperService_GeneratePdf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPdfHelperService/GeneratePdfResponse" message="tns:IPdfHelperService_GeneratePdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePdfDevolucion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPdfHelperService/GeneratePdfDevolucion" message="tns:IPdfHelperService_GeneratePdfDevolucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPdfHelperService/GeneratePdfDevolucionResponse" message="tns:IPdfHelperService_GeneratePdfDevolucion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOnePdfFileConNacional">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPdfHelperService/GenerateOnePdfFileConNacional" message="tns:IPdfHelperService_GenerateOnePdfFileConNacional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPdfHelperService/GenerateOnePdfFileConNacionalResponse" message="tns:IPdfHelperService_GenerateOnePdfFileConNacional_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExtremoPdfHelper" type="tns:IPdfHelperService">
+    <wsp:PolicyReference URI="#ExtremoPdfHelper_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateOnePdfFile">
+      <soap12:operation soapAction="http://tempuri.org/IPdfHelperService/GenerateOnePdfFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateManyPdfFilesAsZip">
+      <soap12:operation soapAction="http://tempuri.org/IPdfHelperService/GenerateManyPdfFilesAsZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePdf">
+      <soap12:operation soapAction="http://tempuri.org/IPdfHelperService/GeneratePdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePdfDevolucion">
+      <soap12:operation soapAction="http://tempuri.org/IPdfHelperService/GeneratePdfDevolucion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOnePdfFileConNacional">
+      <soap12:operation soapAction="http://tempuri.org/IPdfHelperService/GenerateOnePdfFileConNacional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PdfHelperService">
+    <wsdl:port name="ExtremoPdfHelper" binding="tns:ExtremoPdfHelper">
+      <soap12:address location="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_IPdfHelperService" binding="i0:MetadataExchangeHttpBinding_IPdfHelperService">
+      <soap12:address location="http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ruvtemporal.unidadvictimas.gov.co/PdfHelperService.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

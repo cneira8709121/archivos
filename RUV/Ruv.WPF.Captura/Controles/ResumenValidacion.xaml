@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Controles.ResumenValidacion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             MaxHeight="120"
+             d:DesignHeight="300"
+             d:DesignWidth="300">
+  <UserControl.Resources>
+    
+    <SolidColorBrush x:Key="Rojo"
+                     Color="#FFFFC4C4" />
+    
+    <Style x:Key="styHyperlink"
+           TargetType="Hyperlink">
+      <Style.Triggers>
+        <DataTrigger Binding="{Binding Seleccionado}"
+                     Value="True">
+          <DataTrigger.EnterActions>
+            <StopStoryboard BeginStoryboardName="bsb02" />
+            <BeginStoryboard x:Name="bsb01">
+              <Storyboard>
+                <ColorAnimation Storyboard.TargetProperty="(Background).Color"
+                                RepeatBehavior="4x"
+                                FillBehavior="HoldEnd"
+                                Duration="0:0:0.15"
+                                From="White"
+                                To="#FFFFC4C4" />
+              </Storyboard>
+            </BeginStoryboard>
+          </DataTrigger.EnterActions>
+          <DataTrigger.ExitActions>
+            <StopStoryboard BeginStoryboardName="bsb01" />
+            <BeginStoryboard x:Name="bsb02">
+              <Storyboard>
+                <ColorAnimation Storyboard.TargetProperty="(Background).Color"
+                                FillBehavior="HoldEnd"
+                                Duration="0:0:0.5"
+                                To="White" />
+              </Storyboard>
+            </BeginStoryboard>
+          </DataTrigger.ExitActions>
+        </DataTrigger>
+      </Style.Triggers>
+    </Style>
+
+
+    <DataTemplate x:Key="dtErrores">
+      <StackPanel Orientation="Horizontal">
+        <TextBlock FontFamily="Webdings"
+                   Text=""
+                   FontSize="11"
+                   VerticalAlignment="Top"
+                   Margin="0,0,5,0"
+                   Foreground="Red" />
+        <TextBlock TextWrapping="Wrap" MaxWidth="400" TextAlignment="Justify"
+                   >
+        <Hyperlink Click="Hyperlink_Click"
+                   Style="{StaticResource styHyperlink}">
+          <Hyperlink.Background>
+            <SolidColorBrush Color="White" />
+          </Hyperlink.Background>
+            <Run Text="{Binding Path=Description}" />
+        </Hyperlink>
+        </TextBlock>
+      </StackPanel>
+    </DataTemplate>
+  </UserControl.Resources>
+  <Border BorderBrush="Red"
+          Background="{StaticResource Rojo}"
+          BorderThickness="1">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="20" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <TextBlock Text="Datos pendientes de corregir (click para ubicar el error)"
+                 x:Name="txtTitulo"
+                 Padding="5,2"
+                 Foreground="Black"
+                 FontWeight="Normal" />
+      <ListBox x:Name="lbxErrores"
+               Grid.Row="1"
+               BorderThickness="0"
+               Margin="8"
+               ScrollViewer.VerticalScrollBarVisibility="Disabled"
+               ItemTemplate="{StaticResource dtErrores}">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <WrapPanel Orientation="Vertical"
+                       ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                       ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+      </ListBox>
+      <Border Grid.Row="1"
+              Margin="8"
+              BorderBrush="Red"
+              BorderThickness="1">
+      </Border>
+    </Grid>
+  </Border>
+</UserControl>

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.H03_TextoPregunta01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             mc:Ignorable="d"
+             DataContext="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.DescripcionHechos}"
+             d:DesignHeight="1600"
+             d:DesignWidth="800">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="TextBlock"
+             x:Key="styNumeroPregunta">
+        <Setter Property="TextAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="5,2" />
+        <Setter Property="Background"
+                Value="Black" />
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="Grid.Row"
+                Value="2" />
+        <Setter Property="FontSize"
+                Value="{StaticResource TamañoTextoPequeño}" />
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel x:Name="spMain">
+    <DockPanel>
+      <TextBlock DockPanel.Dock="Left"
+                 VerticalAlignment="Top"
+                 Style="{StaticResource styNumeroPregunta}">24</TextBlock>
+      <congen:TextoRecurso Recurso="{x:Static rec:Textos.h03t001}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           TextAlignment="Justify" />
+    </DockPanel>
+    <Border Margin="10,10,10,5">
+      <StackPanel Orientation="Vertical">
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h03t002}"
+                             Style="{StaticResource styTextoDescripcionIzq}"
+                             FontSize="{StaticResource TamañoTextoPequeño}"
+                             TextAlignment="Justify" />
+      </StackPanel>
+
+    </Border>
+  </StackPanel>
+</UserControl>

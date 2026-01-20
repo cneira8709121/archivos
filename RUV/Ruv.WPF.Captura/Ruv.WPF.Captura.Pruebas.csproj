@@ -1,0 +1,12 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
+  <PropertyGroup>
+    <InstallUrl xdt:Transform="Replace">https://ruvpruebas.unidadvictimas.gov.co/ClientApp/</InstallUrl>
+    <ProductName xdt:Transform="Replace">PRUEBAS - Registro Único de Víctimas</ProductName>
+	<UpdateUrl>http://ruvpruebas.unidadvictimas.gov.co/ClientApp/</UpdateUrl>
+	<AssemblyName xdt:Transform="Replace">Ruv.WPF.Captura</AssemblyName>
+	<SuiteName>PRUEBAS - Registro Único de Víctimas</SuiteName>
+	<MinimumRequiredVersion>1.0.1.139</MinimumRequiredVersion>
+  </PropertyGroup>
+</Project>

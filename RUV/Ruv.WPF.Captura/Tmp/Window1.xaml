@@ -1,0 +1,102 @@
+﻿<Window xmlns:my="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+        x:Class="Ruv.WPF.Captura.Tmp.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1"
+        WindowState="Maximized"
+        Height="300"
+        Width="1200"
+        xmlns:my1="clr-namespace:Ruv.WPF.Captura.Controles">
+  <Grid Background="#FFE2E2E2">
+    <DataGrid AutoGenerateColumns="False"
+              HorizontalAlignment="Left"
+              Margin="10,10,0,0"
+              Name="dgEntidad"
+              RowEditEnding="dgEntidad_RowEditEnding"
+              ItemsSource="{Binding BienesVistaEditable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+              CanUserReorderColumns="False"
+              CanUserAddRows="False"
+              Height="210"
+              VerticalAlignment="Top">
+      <DataGrid.Columns>
+        <DataGridTemplateColumn Header="Tipo">
+          <DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+              <ComboBox SelectedValue="{Binding TipoBien, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        SelectedValuePath="Id"
+                        DisplayMemberPath="Nombre"
+                        ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window, AncestorLevel=1}, Path=DataContext.TiposBienes}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellEditingTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <ComboBox SelectedValue="{Binding TipoBien, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        SelectedValuePath="Id"
+                        DisplayMemberPath="Nombre"
+                        ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window, AncestorLevel=1}, Path=DataContext.TiposBienes}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <!--==============================-->
+        <DataGridTemplateColumn Header="Descripción">
+          <DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+              <TextBox Text="{Binding Descripcion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellEditingTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <TextBox Text="{Binding Descripcion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <!--==============================-->
+        <DataGridTemplateColumn>
+          <DataGridTemplateColumn.HeaderTemplate>
+            <DataTemplate>
+              <TextBlock TextAlignment="Center">Calidad de la víctima<LineBreak />(frente al bien)</TextBlock>
+            </DataTemplate>
+          </DataGridTemplateColumn.HeaderTemplate>
+          <DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+              <ComboBox SelectedValue="{Binding CalidadDeLaVictima, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window, AncestorLevel=1}, Path=DataContext.CalidadVictima}"
+                        SelectedValuePath="Id"
+                        DisplayMemberPath="Nombre" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellEditingTemplate>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <ComboBox SelectedValue="{Binding CalidadDeLaVictima, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window, AncestorLevel=1}, Path=DataContext.CalidadVictima}"
+                        SelectedValuePath="Id"
+                        DisplayMemberPath="Nombre" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+    <Button Content="Agregar"
+            Click="AgregarEntidad"
+            Height="23"
+            HorizontalAlignment="Left"
+            Margin="12,226,0,0"
+            VerticalAlignment="Top"
+            Width="75" />
+    <Button Content="Borrar"
+            Click="OperacionBorrarEntidad"
+            Height="23"
+            HorizontalAlignment="Left"
+            Margin="93,226,0,0"
+            Name="button2"
+            VerticalAlignment="Top"
+            Width="75" />
+    <Button Content="Listar cambios"
+            Click="ListarCambios"
+            Height="23"
+            HorizontalAlignment="Left"
+            Margin="174,226,0,0"
+            VerticalAlignment="Top"
+            />
+  </Grid>
+</Window>

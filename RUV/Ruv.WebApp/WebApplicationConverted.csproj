@@ -1,0 +1,1186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{999AC4AD-C315-4401-9846-6E7843FB6E9A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplicationConverted</RootNamespace>
+    <AssemblyName>WebApplicationConverted</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.68.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Criptografia, Version=1.0.2281.31018, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Criptografia.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14318.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Spring.Core, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WintabDN, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\WintabDN.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActosAdmin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActosAdmin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActosAdmin\Editar.aspx.cs">
+      <DependentUpon>Editar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActosAdmin\Editar.aspx.designer.cs">
+      <DependentUpon>Editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActosAdmin\LiderValoracionJefe.aspx.cs">
+      <DependentUpon>LiderValoracionJefe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActosAdmin\LiderValoracionJefe.aspx.designer.cs">
+      <DependentUpon>LiderValoracionJefe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActosAdmin\Nuevo.aspx.cs">
+      <DependentUpon>Nuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActosAdmin\Nuevo.aspx.designer.cs">
+      <DependentUpon>Nuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClavesUs.aspx.cs">
+      <DependentUpon>ClavesUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClavesUs.aspx.designer.cs">
+      <DependentUpon>ClavesUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Calendario.aspx.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Calendario.aspx.designer.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaPersona.aspx.cs">
+      <DependentUpon>ConsultaPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaPersona.aspx.designer.cs">
+      <DependentUpon>ConsultaPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\DetalleFormulario.aspx.cs">
+      <DependentUpon>DetalleFormulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\DetalleFormulario.aspx.designer.cs">
+      <DependentUpon>DetalleFormulario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\WebUserControl\WebUserControlConsulta.ascx.cs">
+      <DependentUpon>WebUserControlConsulta.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\WebUserControl\WebUserControlConsulta.ascx.designer.cs">
+      <DependentUpon>WebUserControlConsulta.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDocumentos\CodigosAsignados.aspx.cs">
+      <DependentUpon>CodigosAsignados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlDocumentos\CodigosAsignados.aspx.designer.cs">
+      <DependentUpon>CodigosAsignados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlDocumentos\ControlDocumentos.aspx.cs">
+      <DependentUpon>ControlDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlDocumentos\ControlDocumentos.aspx.designer.cs">
+      <DependentUpon>ControlDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Correcciones\AprobarRechazarCorreccion.aspx.cs">
+      <DependentUpon>AprobarRechazarCorreccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Correcciones\AprobarRechazarCorreccion.aspx.designer.cs">
+      <DependentUpon>AprobarRechazarCorreccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Correcciones\ConsultaPersona.aspx.cs">
+      <DependentUpon>ConsultaPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Correcciones\ConsultaPersona.aspx.designer.cs">
+      <DependentUpon>ConsultaPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Correcciones\SolicitudCorreccion.aspx.cs">
+      <DependentUpon>SolicitudCorreccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Correcciones\SolicitudCorreccion.aspx.designer.cs">
+      <DependentUpon>SolicitudCorreccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Descargar.aspx.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descargar.aspx.designer.cs">
+      <DependentUpon>Descargar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Valoracion\DetalleValorador.aspx.cs">
+      <DependentUpon>DetalleValorador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Valoracion\DetalleValorador.aspx.designer.cs">
+      <DependentUpon>DetalleValorador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\Valoracion\GestionValoracion.aspx.cs">
+      <DependentUpon>GestionValoracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\Valoracion\GestionValoracion.aspx.designer.cs">
+      <DependentUpon>GestionValoracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTareas\UCListaTareas.ascx.cs">
+      <DependentUpon>UCListaTareas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaTareas\UCListaTareas.ascx.designer.cs">
+      <DependentUpon>UCListaTareas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTareas\UCTarea.ascx.cs">
+      <DependentUpon>UCTarea.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaTareas\UCTarea.ascx.designer.cs">
+      <DependentUpon>UCTarea.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajeria\NotificacionesInternas.ascx.cs">
+      <DependentUpon>NotificacionesInternas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensajeria\NotificacionesInternas.ascx.designer.cs">
+      <DependentUpon>NotificacionesInternas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\ConsultaDatosCentrosAtencion.aspx.cs">
+      <DependentUpon>ConsultaDatosCentrosAtencion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\ConsultaDatosCentrosAtencion.aspx.designer.cs">
+      <DependentUpon>ConsultaDatosCentrosAtencion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\ConsultarNotificaciones.aspx.cs">
+      <DependentUpon>ConsultarNotificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\ConsultarNotificaciones.aspx.designer.cs">
+      <DependentUpon>ConsultarNotificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\DetallesDatosCentroAtencion.aspx.cs">
+      <DependentUpon>DetallesDatosCentroAtencion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\DetallesDatosCentroAtencion.aspx.designer.cs">
+      <DependentUpon>DetallesDatosCentroAtencion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\EntregaNotificacionesDetalle.aspx.cs">
+      <DependentUpon>EntregaNotificacionesDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\EntregaNotificacionesDetalle.aspx.designer.cs">
+      <DependentUpon>EntregaNotificacionesDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\EntregaNotificacionesDetalleENotificado.aspx.cs">
+      <DependentUpon>EntregaNotificacionesDetalleENotificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\EntregaNotificacionesDetalleENotificado.aspx.designer.cs">
+      <DependentUpon>EntregaNotificacionesDetalleENotificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\FueraTerminosNotificacionesDetalle.aspx.cs">
+      <DependentUpon>FueraTerminosNotificacionesDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\FueraTerminosNotificacionesDetalle.aspx.designer.cs">
+      <DependentUpon>FueraTerminosNotificacionesDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\NotificacionDetalle.aspx.cs">
+      <DependentUpon>NotificacionDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\NotificacionDetalle.aspx.designer.cs">
+      <DependentUpon>NotificacionDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\NotificacionDetalleEntregados.aspx.cs">
+      <DependentUpon>NotificacionDetalleEntregados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\NotificacionDetalleEntregados.aspx.designer.cs">
+      <DependentUpon>NotificacionDetalleEntregados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\NotificacionesEntregadas.aspx.cs">
+      <DependentUpon>NotificacionesEntregadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\NotificacionesEntregadas.aspx.designer.cs">
+      <DependentUpon>NotificacionesEntregadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\PaqueteDetalle.aspx.cs">
+      <DependentUpon>PaqueteDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\PaqueteDetalle.aspx.designer.cs">
+      <DependentUpon>PaqueteDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\PaquetesNotificacion.aspx.cs">
+      <DependentUpon>PaquetesNotificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\PaquetesNotificacion.aspx.designer.cs">
+      <DependentUpon>PaquetesNotificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\PendientePublicacionEdicto.aspx.cs">
+      <DependentUpon>PendientePublicacionEdicto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\PendientePublicacionEdicto.aspx.designer.cs">
+      <DependentUpon>PendientePublicacionEdicto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\PrepararNotificaciones.aspx.cs">
+      <DependentUpon>PrepararNotificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones\PrepararNotificaciones.aspx.designer.cs">
+      <DependentUpon>PrepararNotificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\Adapters\Base\IListDataAdapter.cs" />
+    <Compile Include="Old_App_Code\Common\Asignar.cs" />
+    <Compile Include="Old_App_Code\Common\clsCryptoUtil.cs" />
+    <Compile Include="Old_App_Code\Common\clsLog.cs" />
+    <Compile Include="Old_App_Code\Common\clsResultado.cs" />
+    <Compile Include="Old_App_Code\Common\clsSeguridad.cs" />
+    <Compile Include="Old_App_Code\Common\clsTipoFiltro.cs" />
+    <Compile Include="Old_App_Code\Common\clsUtil.cs" />
+    <Compile Include="Old_App_Code\Common\ConceptosUtil.cs" />
+    <Compile Include="Old_App_Code\Common\Constantes.cs" />
+    <Compile Include="Old_App_Code\Common\Controls.cs" />
+    <Compile Include="Old_App_Code\Common\Dates.cs" />
+    <Compile Include="Old_App_Code\Common\IFormularioGuardar.cs" />
+    <Compile Include="Old_App_Code\Common\PaginaBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\Common\PdfUtilidades.cs" />
+    <Compile Include="Old_App_Code\Common\Permisos.cs" />
+    <Compile Include="Old_App_Code\Common\RUV.cs" />
+    <Compile Include="Old_App_Code\Common\Url.cs" />
+    <Compile Include="Old_App_Code\Common\Varios.cs" />
+    <Compile Include="Old_App_Code\Controls\GridCustomPager\CustomDelegateClass.cs" />
+    <Compile Include="Old_App_Code\Controls\GridCustomPager\CustomPageChangeArgs.cs" />
+    <Compile Include="Old_App_Code\Controls\IModalPopup.cs" />
+    <Compile Include="Old_App_Code\Controls\IUCTarea.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceActosAdmin.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceAsignacion.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceConsulta.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceConsultaValorador.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceCorrecciones.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceDeclSinValorar.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceDetalleValorador.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceGeneral.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceListaTareas.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourcePaqueteNotificacion.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourcePaqueteNotificacionDetalle.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourcePersonasAsociadasDeclaracion.cs" />
+    <Compile Include="Old_App_Code\DataSources\DatasourceResumenValoracion.cs" />
+    <Compile Include="Old_App_Code\DataSources\DatasourceResumenValoracion2.cs" />
+    <Compile Include="Old_App_Code\DataSources\DataSourceTareas.cs" />
+    <Compile Include="Old_App_Code\DataSources\Feriados\DataSourceFeriados.cs" />
+    <Compile Include="Old_App_Code\DataSources\Notificaciones\DataSourceConsultaCentroAtencion.cs" />
+    <Compile Include="Old_App_Code\DataSources\Notificaciones\DataSourceDetalleCentroAtencion.cs" />
+    <Compile Include="Old_App_Code\DataSources\Notificaciones\DataSourceNotificacionDetalle.cs" />
+    <Compile Include="Old_App_Code\DataSources\Notificaciones\DataSourceNotificaciones.cs" />
+    <Compile Include="Old_App_Code\DataSources\Notificaciones\DataSourceNotificacionesEntregadas.cs" />
+    <Compile Include="Old_App_Code\DataSources\Notificaciones\DataSourcePaquetesNotificacion.cs" />
+    <Compile Include="Old_App_Code\Services\ActosAdminService.cs" />
+    <Compile Include="Old_App_Code\Services\CargaDatosValoracionService.cs" />
+    <Compile Include="Old_App_Code\Services\ConsultarEstadoPersonaService.cs" />
+    <Compile Include="Old_App_Code\Services\ControlDocumentosService.cs" />
+    <Compile Include="Old_App_Code\Services\CorreccionesService.cs" />
+    <Compile Include="Old_App_Code\Services\CriticaNService.cs" />
+    <Compile Include="Old_App_Code\Services\DataContracts\IOptimizationService.cs" />
+    <Compile Include="Old_App_Code\Services\DevolucionService.cs" />
+    <Compile Include="Old_App_Code\Services\FeriadosService.cs" />
+    <Compile Include="Old_App_Code\Services\GeneralService.cs" />
+    <Compile Include="Old_App_Code\Services\GestionValoradorService.cs" />
+    <Compile Include="Old_App_Code\Services\IActosAdminService.cs" />
+    <Compile Include="Old_App_Code\Services\ICargaDatosValoracionService.cs" />
+    <Compile Include="Old_App_Code\Services\IConsultarEstadoPersonaService.cs" />
+    <Compile Include="Old_App_Code\Services\IControlDocumentosService.cs" />
+    <Compile Include="Old_App_Code\Services\ICorreccionesService.cs" />
+    <Compile Include="Old_App_Code\Services\ICriticaNService.cs" />
+    <Compile Include="Old_App_Code\Services\IDevolucionService.cs" />
+    <Compile Include="Old_App_Code\Services\IFeriadosService.cs" />
+    <Compile Include="Old_App_Code\Services\IGeneralService.cs" />
+    <Compile Include="Old_App_Code\Services\IGestionValoradorService.cs" />
+    <Compile Include="Old_App_Code\Services\ILiderValoracionService.cs" />
+    <Compile Include="Old_App_Code\Services\ILoginService.cs" />
+    <Compile Include="Old_App_Code\Services\INotificacionInternaService.cs" />
+    <Compile Include="Old_App_Code\Services\INotificacionService.cs" />
+    <Compile Include="Old_App_Code\Services\IOrfeoService.cs" />
+    <Compile Include="Old_App_Code\Services\IPdfHelperService.cs" />
+    <Compile Include="Old_App_Code\Services\IRadicacionService.cs" />
+    <Compile Include="Old_App_Code\Services\IResumenValoracoinService.cs" />
+    <Compile Include="Old_App_Code\Services\IValoracionService.cs" />
+    <Compile Include="Old_App_Code\Services\LiderValoracionService.cs" />
+    <Compile Include="Old_App_Code\Services\LoginService.cs" />
+    <Compile Include="Old_App_Code\Services\NotificacionInternaService.cs" />
+    <Compile Include="Old_App_Code\Services\NotificacionService.cs" />
+    <Compile Include="Old_App_Code\Services\OptimizationService.cs" />
+    <Compile Include="Old_App_Code\Services\OrfeoService.cs" />
+    <Compile Include="Old_App_Code\Services\PdfHelperService.cs" />
+    <Compile Include="Old_App_Code\Services\RadicacionService.cs" />
+    <Compile Include="Old_App_Code\Services\ResumenValoracoinService.cs" />
+    <Compile Include="Old_App_Code\Services\ValoracionService.cs" />
+    <Compile Include="Old_App_Code\ServiciosComunicacion\IServicioComunicacion.cs" />
+    <Compile Include="Old_App_Code\ServiciosComunicacion\ServicioComunicacion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\Calendar.ascx.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\Calendar.ascx.designer.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\GridCustomPager.ascx.cs">
+      <DependentUpon>GridCustomPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\GridCustomPager.ascx.designer.cs">
+      <DependentUpon>GridCustomPager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\MenuAcciones.ascx.cs">
+      <DependentUpon>MenuAcciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\MenuAcciones.ascx.designer.cs">
+      <DependentUpon>MenuAcciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ModalPopUp.ascx.cs">
+      <DependentUpon>ModalPopUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ModalPopUp.ascx.designer.cs">
+      <DependentUpon>ModalPopUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\Notificacion\ruvEdicionDireccionCorrespondencia.ascx.cs">
+      <DependentUpon>ruvEdicionDireccionCorrespondencia.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\Notificacion\ruvEdicionDireccionCorrespondencia.ascx.designer.cs">
+      <DependentUpon>ruvEdicionDireccionCorrespondencia.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\Notificacion\ruvEdicionPuntoNotificacion.ascx.cs">
+      <DependentUpon>ruvEdicionPuntoNotificacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\Notificacion\ruvEdicionPuntoNotificacion.ascx.designer.cs">
+      <DependentUpon>ruvEdicionPuntoNotificacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\PrincipalMenu.ascx.cs">
+      <DependentUpon>PrincipalMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\PrincipalMenu.ascx.designer.cs">
+      <DependentUpon>PrincipalMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvArbol.ascx.cs">
+      <DependentUpon>ruvArbol.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvArbol.ascx.designer.cs">
+      <DependentUpon>ruvArbol.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvCheckBoxList.ascx.cs">
+      <DependentUpon>ruvCheckBoxList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvCheckBoxList.ascx.designer.cs">
+      <DependentUpon>ruvCheckBoxList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvDropDownList.ascx.cs">
+      <DependentUpon>ruvDropDownList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvDropDownList.ascx.designer.cs">
+      <DependentUpon>ruvDropDownList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvFiltros.ascx.cs">
+      <DependentUpon>ruvFiltros.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvFiltros.ascx.designer.cs">
+      <DependentUpon>ruvFiltros.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvGeografia.ascx.cs">
+      <DependentUpon>ruvGeografia.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvGeografia.ascx.designer.cs">
+      <DependentUpon>ruvGeografia.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvHerramientasOld.ascx.cs">
+      <DependentUpon>ruvHerramientasOld.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvHerramientasOld.ascx.designer.cs">
+      <DependentUpon>ruvHerramientasOld.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvListBox.ascx.cs">
+      <DependentUpon>ruvListBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvListBox.ascx.designer.cs">
+      <DependentUpon>ruvListBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvModalPopUp.ascx.cs">
+      <DependentUpon>ruvModalPopUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvModalPopUp.ascx.designer.cs">
+      <DependentUpon>ruvModalPopUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvTextBox.ascx.cs">
+      <DependentUpon>ruvTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvTextBox.ascx.designer.cs">
+      <DependentUpon>ruvTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvTextCalendar.ascx.cs">
+      <DependentUpon>ruvTextCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilidades\Controles\ruvTextCalendar.ascx.designer.cs">
+      <DependentUpon>ruvTextCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Asignacion\AsignarPendientes.aspx.cs">
+      <DependentUpon>AsignarPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Asignacion\AsignarPendientes.aspx.designer.cs">
+      <DependentUpon>AsignarPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Asignacion\AsignarValoraciones.aspx.cs">
+      <DependentUpon>AsignarValoraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Asignacion\AsignarValoraciones.aspx.designer.cs">
+      <DependentUpon>AsignarValoraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Asignacion\ReasignarValoraciones.aspx.cs">
+      <DependentUpon>ReasignarValoraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Asignacion\ReasignarValoraciones.aspx.designer.cs">
+      <DependentUpon>ReasignarValoraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\AgregarPersonaValoracion.aspx.cs">
+      <DependentUpon>AgregarPersonaValoracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\AgregarPersonaValoracion.aspx.designer.cs">
+      <DependentUpon>AgregarPersonaValoracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\CamposActoAdministrativo.ascx.cs">
+      <DependentUpon>CamposActoAdministrativo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\CamposActoAdministrativo.ascx.designer.cs">
+      <DependentUpon>CamposActoAdministrativo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\HechoVictimizante.ascx.cs">
+      <DependentUpon>HechoVictimizante.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\HechoVictimizante.ascx.designer.cs">
+      <DependentUpon>HechoVictimizante.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\Herramientas.ascx.cs">
+      <DependentUpon>Herramientas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\Herramientas.ascx.designer.cs">
+      <DependentUpon>Herramientas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\PersonasAsociadasVal.ascx.cs">
+      <DependentUpon>PersonasAsociadasVal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\PersonasAsociadasVal.ascx.designer.cs">
+      <DependentUpon>PersonasAsociadasVal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\PuntosNotificacion.ascx.cs">
+      <DependentUpon>PuntosNotificacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\PuntosNotificacion.ascx.designer.cs">
+      <DependentUpon>PuntosNotificacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\Validaciones.ascx.cs">
+      <DependentUpon>Validaciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\Validaciones.ascx.designer.cs">
+      <DependentUpon>Validaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\ValoracionHistoricoPopUp.ascx.cs">
+      <DependentUpon>ValoracionHistoricoPopUp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\ValoracionHistoricoPopUp.ascx.designer.cs">
+      <DependentUpon>ValoracionHistoricoPopUp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\ValorarPersona.ascx.cs">
+      <DependentUpon>ValorarPersona.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Controles\ValorarPersona.ascx.designer.cs">
+      <DependentUpon>ValorarPersona.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Nueva.aspx.cs">
+      <DependentUpon>Nueva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Nueva.aspx.designer.cs">
+      <DependentUpon>Nueva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Resumen.aspx.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valoracion\Valoracion\Resumen.aspx.designer.cs">
+      <DependentUpon>Resumen.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActosAdminService.svc" />
+    <Content Include="ActosAdmin\Default.aspx" />
+    <Content Include="ActosAdmin\Editar.aspx" />
+    <Content Include="ActosAdmin\LiderValoracionJefe.aspx" />
+    <Content Include="ActosAdmin\Nuevo.aspx" />
+    <Content Include="App_Themes\RUVTheme\DPS.css" />
+    <Content Include="App_Themes\RUVTheme\Grillas.css" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Agregar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Asignar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\banner_sup.jpg" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\banner_sup.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Buscar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Calendario.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Cargando.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\CargandoG.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\CargandoGrande.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\CargandoLT.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Cerrar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Deshacer.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Editar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\First.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\GenerarPDF.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\history.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\house.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Last.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\logo.jpg" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\logo.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\logosUnidad.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Next.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\paper.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Previous.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Quitar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\richtexteditor.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\tip-darkgray.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\tip-darkgray_arrows.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\Trabajar.png" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\windows-arrow.gif" />
+    <Content Include="App_Themes\RUVTheme\Imagenes\wordIcono.png" />
+    <Content Include="App_Themes\RUVTheme\Login.css" />
+    <Content Include="App_Themes\RUVTheme\Menu.css" />
+    <Content Include="App_Themes\RUVTheme\tip-darkgray.css" />
+    <Content Include="CargaDatosValoracionService.svc" />
+    <Content Include="ClavesUs.aspx" />
+    <Content Include="Configuracion\Calendario.aspx" />
+    <Content Include="Configuracion\Index.aspx" />
+    <Content Include="ConsultarEstadoPersonaService.svc" />
+    <Content Include="Consultas\ConsultaPersona.aspx" />
+    <Content Include="Consultas\DetalleFormulario.aspx" />
+    <Content Include="Consultas\WebUserControl\WebUserControlConsulta.ascx" />
+    <Content Include="ControlDocumentosService.svc" />
+    <Content Include="ControlDocumentos\CodigosAsignados.aspx" />
+    <Content Include="ControlDocumentos\ControlDocumentos.aspx" />
+    <Content Include="CorreccionesService.svc" />
+    <Content Include="Correcciones\AprobarRechazarCorreccion.aspx" />
+    <Content Include="Correcciones\ConsultaPersona.aspx" />
+    <Content Include="Correcciones\SolicitudCorreccion.aspx" />
+    <Content Include="CriticaNService.svc" />
+    <Content Include="Default.aspx" />
+    <Content Include="Descargar.aspx" />
+    <Content Include="DevolucionService.svc" />
+    <Content Include="Error.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="FeriadosService.svc" />
+    <Content Include="GeneralService.svc" />
+    <Content Include="GestionValoradorService.svc" />
+    <Content Include="Gestion\Valoracion\DetalleValorador.aspx" />
+    <Content Include="Gestion\Valoracion\GestionValoracion.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HTMLPage.htm" />
+    <Content Include="iisstart.htm" />
+    <Content Include="Inicio.htm" />
+    <Content Include="JScripts\CheckBoxCheck.js" />
+    <Content Include="JScripts\enhancedModals.js" />
+    <Content Include="JScripts\General\ruv.log.js" />
+    <Content Include="JScripts\General\ruv.objects.js" />
+    <Content Include="JScripts\General\ruv.prototype.js" />
+    <Content Include="JScripts\General\ruv.session.js" />
+    <Content Include="JScripts\JListaTareasHelper.js" />
+    <Content Include="JScripts\JNotificacion.js" />
+    <Content Include="JScripts\jquery-1.8.2.js" />
+    <Content Include="JScripts\jquery.center.js" />
+    <Content Include="JScripts\jquery.expander.js" />
+    <Content Include="JScripts\jquery.poshytip.js" />
+    <Content Include="JScripts\JUtils.js" />
+    <Content Include="JScripts\MicrosoftAjax.js" />
+    <Content Include="JScripts\namespace.min.js" />
+    <Content Include="JScripts\Notificaciones\ruv.notificaciones-centrosatencion.js" />
+    <Content Include="JScripts\Notificaciones\ruv.notificaciones-editardireccioncorrespondencia.js" />
+    <Content Include="JScripts\Notificaciones\ruv.notificaciones-editarpuntonotificacion.js" />
+    <Content Include="JScripts\Notificaciones\ruv.notificaciones-paquetedetalle.js" />
+    <Content Include="JScripts\Notificaciones\ruv.notificaciones-pendienteenvio.js" />
+    <Content Include="JScripts\search.js" />
+    <Content Include="JScripts\Shared\ext.nicedit.min.js" />
+    <Content Include="JScripts\Valoracion\JHechos.js" />
+    <Content Include="JScripts\Valoracion\JHistorico.js" />
+    <Content Include="JScripts\Valoracion\JPuntosNotificacion.js" />
+    <Content Include="JScripts\Valoracion\JValoracionHelper.js" />
+    <Content Include="JScripts\Valoracion\JValorarPersona.js" />
+    <Content Include="JScripts\Valoracion\JValoresAA.js" />
+    <Content Include="JScripts\Valoracion\ruv.valoracion-listavaloraciones.js" />
+    <Content Include="JScripts\Valoracion\ruv.valoracion-valoresactos.js" />
+    <Content Include="LiderValoracionService.svc" />
+    <Content Include="ListaTareas\UCListaTareas.ascx" />
+    <Content Include="ListaTareas\UCTarea.ascx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginService.svc" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Logs\RUV.txt" />
+    <Content Include="Logs\SIPOD_2013_12.txt" />
+    <Content Include="Mensajeria\NotificacionesInternas.ascx" />
+    <Content Include="Notificaciones\ConsultaDatosCentrosAtencion.aspx" />
+    <Content Include="Notificaciones\ConsultarNotificaciones.aspx" />
+    <Content Include="Notificaciones\DetallesDatosCentroAtencion.aspx" />
+    <Content Include="Notificaciones\EntregaNotificacionesDetalle.aspx" />
+    <Content Include="Notificaciones\EntregaNotificacionesDetalleENotificado.aspx" />
+    <Content Include="Notificaciones\FueraTerminosNotificacionesDetalle.aspx" />
+    <Content Include="Notificaciones\NotificacionDetalle.aspx" />
+    <Content Include="Notificaciones\NotificacionDetalleEntregados.aspx" />
+    <Content Include="Notificaciones\NotificacionesEntregadas.aspx" />
+    <Content Include="Notificaciones\PaqueteDetalle.aspx" />
+    <Content Include="Notificaciones\PaquetesNotificacion.aspx" />
+    <Content Include="Notificaciones\PendientePublicacionEdicto.aspx" />
+    <Content Include="Notificaciones\PrepararNotificaciones.aspx" />
+    <Content Include="NotificacionInternaService.svc" />
+    <Content Include="NotificacionService.svc" />
+    <Content Include="ObjetosRuv.xml" />
+    <Content Include="Old_App_Code\ServiciosComunicacion\CustomUserNameValidator.cs.exclude" />
+    <Content Include="Old_App_Code\ServiciosComunicacion\OAuthBase.cs.exclude" />
+    <Content Include="OptimizationService.svc" />
+    <Content Include="OrfeoService.svc" />
+    <Content Include="PdfHelperService.svc" />
+    <Content Include="RadicacionService.svc" />
+    <Content Include="ResumenValoracoinService.svc" />
+    <Content Include="Service.svc" />
+    <Content Include="ServiciosComunicacion\ServicioComunicacion.svc" />
+    <Content Include="Test\TestPage.aspx" />
+    <Content Include="Utilidades\Controles\Calendar.ascx" />
+    <Content Include="Utilidades\Controles\GridCustomPager.ascx" />
+    <Content Include="Utilidades\Controles\MenuAcciones.ascx" />
+    <Content Include="Utilidades\Controles\ModalPopUp.ascx" />
+    <Content Include="Utilidades\Controles\Notificacion\ruvEdicionDireccionCorrespondencia.ascx" />
+    <Content Include="Utilidades\Controles\Notificacion\ruvEdicionPuntoNotificacion.ascx" />
+    <Content Include="Utilidades\Controles\PrincipalMenu.ascx" />
+    <Content Include="Utilidades\Controles\ruvArbol.ascx" />
+    <Content Include="Utilidades\Controles\ruvCheckBoxList.ascx" />
+    <Content Include="Utilidades\Controles\ruvDropDownList.ascx" />
+    <Content Include="Utilidades\Controles\ruvFiltros.ascx" />
+    <Content Include="Utilidades\Controles\ruvGeografia.ascx" />
+    <Content Include="Utilidades\Controles\ruvHerramientasOld.ascx" />
+    <Content Include="Utilidades\Controles\ruvListBox.ascx" />
+    <Content Include="Utilidades\Controles\ruvModalPopUp.ascx" />
+    <Content Include="Utilidades\Controles\ruvTextBox.ascx" />
+    <Content Include="Utilidades\Controles\ruvTextCalendar.ascx" />
+    <Content Include="Utilidades\Imagenes\Anular.png" />
+    <Content Include="Utilidades\Imagenes\Atras.png" />
+    <Content Include="Utilidades\Imagenes\Buscar.png" />
+    <Content Include="Utilidades\Imagenes\Descargar.png" />
+    <Content Include="Utilidades\Imagenes\Editar.png" />
+    <Content Include="Utilidades\Imagenes\favicon.ico" />
+    <Content Include="Utilidades\Imagenes\Finalizar.png" />
+    <Content Include="Utilidades\Imagenes\Firmar.png" />
+    <Content Include="Utilidades\Imagenes\Guardar.png" />
+    <Content Include="Utilidades\Imagenes\Nuevo.png" />
+    <Content Include="Utilidades\Imagenes\NuevoDocumento.jpg" />
+    <Content Include="Utilidades\Imagenes\PersonasAsociadas.png" />
+    <Content Include="Utilidades\Imagenes\PuntoNotificacion.png" />
+    <Content Include="Utilidades\Imagenes\Recurso.png" />
+    <Content Include="Utilidades\Imagenes\Tutela.png" />
+    <Content Include="Utilidades\XMLs\FormatosViaGubernativa.xml" />
+    <Content Include="Utilidades\XMLs\ValoresDefault.xml" />
+    <Content Include="ValoracionService.svc" />
+    <Content Include="Valoracion\Asignacion\AsignarPendientes.aspx" />
+    <Content Include="Valoracion\Asignacion\AsignarValoraciones.aspx" />
+    <Content Include="Valoracion\Asignacion\ReasignarValoraciones.aspx" />
+    <Content Include="Valoracion\Valoracion\AgregarPersonaValoracion.aspx" />
+    <Content Include="Valoracion\Valoracion\Controles\CamposActoAdministrativo.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\HechoVictimizante.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\Herramientas.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\PersonasAsociadasVal.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\PuntosNotificacion.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\Validaciones.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\ValoracionHistoricoPopUp.ascx" />
+    <Content Include="Valoracion\Valoracion\Controles\ValorarPersona.ascx" />
+    <Content Include="Valoracion\Valoracion\Default.aspx" />
+    <Content Include="Valoracion\Valoracion\Nueva.aspx" />
+    <Content Include="Valoracion\Valoracion\Resumen.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ruv.Business.ActosAdmin\Ruv.Business.ActosAdmin.csproj">
+      <Project>{61d700ea-3230-4724-9ccf-e1b1f59aab82}</Project>
+      <Name>Ruv.Business.ActosAdmin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Captura\Ruv.Business.Captura.csproj">
+      <Project>{7b0aed84-7ef3-4062-ab75-316d6116b17b}</Project>
+      <Name>Ruv.Business.Captura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Correcciones\Ruv.Business.Correcciones.csproj">
+      <Project>{22343cac-2b02-4710-a280-6a949d8633ce}</Project>
+      <Name>Ruv.Business.Correcciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.CriticaN\Ruv.Business.CriticaN.csproj">
+      <Project>{d9400b67-fed7-4adc-b345-7446e198413b}</Project>
+      <Name>Ruv.Business.CriticaN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Devolucion\Ruv.Business.Devolucion.csproj">
+      <Project>{b9e759e2-6dd7-405c-bada-296adcd8ecdf}</Project>
+      <Name>Ruv.Business.Devolucion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.DTO\Ruv.Business.DTO.csproj">
+      <Project>{c8e89ad3-9b81-473b-86ee-5463ea0b7b96}</Project>
+      <Name>Ruv.Business.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Feriados\Ruv.Business.Feriados.csproj">
+      <Project>{33923ae4-1753-490c-8269-c476e3848c43}</Project>
+      <Name>Ruv.Business.Feriados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.General\Ruv.Business.General.csproj">
+      <Project>{ad816f9f-d90d-411c-b62d-2a727ab556e2}</Project>
+      <Name>Ruv.Business.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.GestionFormulario\Ruv.Business.GestionFormulario.csproj">
+      <Project>{c3052dd3-8b9c-4879-b9c9-5105a3941025}</Project>
+      <Name>Ruv.Business.GestionFormulario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.GestionValorador\Ruv.Business.GestionValorador.csproj">
+      <Project>{184f54dd-2c48-4563-9646-985f3153c369}</Project>
+      <Name>Ruv.Business.GestionValorador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Notificacion\Ruv.Business.Notificacion.csproj">
+      <Project>{42e4a55a-21e8-4af3-9a35-244cf5f39918}</Project>
+      <Name>Ruv.Business.Notificacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Orfeo\Ruv.Business.Orfeo.csproj">
+      <Project>{2d9ee696-0c72-437d-89bd-f211b27e1e3e}</Project>
+      <Name>Ruv.Business.Orfeo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Radicacion\Ruv.Business.Radicacion.csproj">
+      <Project>{8dd7e6b6-2a8b-4b41-9211-e46916ec9fbb}</Project>
+      <Name>Ruv.Business.Radicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Reporteador\Ruv.Business.Reporteador.csproj">
+      <Project>{00ee89a4-98a1-45ff-8091-ae6d433b186f}</Project>
+      <Name>Ruv.Business.Reporteador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.ServiciosComunicacion\Ruv.Business.ServiciosComunicacion.csproj">
+      <Project>{bc1fdb98-c05c-465c-b4a9-3c01613d5573}</Project>
+      <Name>Ruv.Business.ServiciosComunicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Business.Valoracion\Ruv.Business.Valoracion.csproj">
+      <Project>{b25e3084-4b71-43b4-aaf3-360f5fcdcdae}</Project>
+      <Name>Ruv.Business.Valoracion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.ActosAdmin\Ruv.Data.ActosAdmin.csproj">
+      <Project>{872d00a1-fd46-4994-bb05-7e1f55d5d479}</Project>
+      <Name>Ruv.Data.ActosAdmin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Correciones\Ruv.Data.Correcciones.csproj">
+      <Project>{65d3b324-3c16-4f10-a743-3370f0d0c629}</Project>
+      <Name>Ruv.Data.Correcciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.CriticaN\Ruv.Data.CriticaN.csproj">
+      <Project>{5d973616-3cab-4d20-ac74-505bd2fd5e3d}</Project>
+      <Name>Ruv.Data.CriticaN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Devolucion\Ruv.Data.Devolucion.csproj">
+      <Project>{9a6ff856-ad12-4cbb-8d2e-653d65d95020}</Project>
+      <Name>Ruv.Data.Devolucion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Feriados\Ruv.Data.Feriados.csproj">
+      <Project>{9cfefc15-84d3-4ad5-a905-4a8b6c9892a6}</Project>
+      <Name>Ruv.Data.Feriados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.General\Ruv.Data.General.csproj">
+      <Project>{bd55836f-9e22-4787-be8d-375edb131af1}</Project>
+      <Name>Ruv.Data.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.GestionFormulario\Ruv.Data.GestionFormulario.csproj">
+      <Project>{f09214eb-fb0b-4c4d-8830-07b5e7767e5d}</Project>
+      <Name>Ruv.Data.GestionFormulario</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.GestionGlosa\Ruv.Data.GestionGlosa.csproj">
+      <Project>{5e06e7ee-6d4e-4015-a820-b82b5b0a6e47}</Project>
+      <Name>Ruv.Data.GestionGlosa</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.GestionValorador\Ruv.Data.GestionValorador.csproj">
+      <Project>{7f608e5b-24e6-4baa-a949-994912ddaa26}</Project>
+      <Name>Ruv.Data.GestionValorador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Notificacion\Ruv.Data.Notificacion.csproj">
+      <Project>{46d541ba-c7c3-469f-87f1-0650a45b9845}</Project>
+      <Name>Ruv.Data.Notificacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Orfeo\Ruv.Data.Orfeo.csproj">
+      <Project>{775737db-f16c-4a15-88aa-73b738c60746}</Project>
+      <Name>Ruv.Data.Orfeo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Radicacion\Ruv.Data.Radicacion.csproj">
+      <Project>{c01cf5d2-fa5a-4d7e-b739-7490a9154a2e}</Project>
+      <Name>Ruv.Data.Radicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Reconocimiento\Ruv.Data.Reconocimiento.csproj">
+      <Project>{88063c2a-e7f2-4948-9d82-b7ff819ae2ab}</Project>
+      <Name>Ruv.Data.Reconocimiento</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Reporteador\Ruv.Data.Reporteador.csproj">
+      <Project>{3430f1ed-1e28-47b5-a08b-bccc43a87b03}</Project>
+      <Name>Ruv.Data.Reporteador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.ServiciosComunicacion\Ruv.Data.ServiciosComunicacion.csproj">
+      <Project>{ca864459-776a-45e0-83e9-796f053a4857}</Project>
+      <Name>Ruv.Data.ServiciosComunicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data.Valoracion\Ruv.Data.Valoracion.csproj">
+      <Project>{ea96be9e-2783-4ae7-b09e-b5619cbd79fb}</Project>
+      <Name>Ruv.Data.Valoracion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Data\Ruv.Data.csproj">
+      <Project>{a87e504a-e863-4b6d-90f7-38eb4ba50f53}</Project>
+      <Name>Ruv.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Common\Ruv.Infrastructure.Crosscutting.Common.csproj">
+      <Project>{4661210f-645e-4c3d-95a5-f80ac3fbb86c}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Resources\Ruv.Infrastructure.Crosscutting.Resources.csproj">
+      <Project>{1425a669-13b2-4e12-b886-c36b16375913}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Utilities\Ruv.Infrastructure.Crosscutting.Utilities.csproj">
+      <Project>{3e4419a0-7040-43a5-a262-451f5dd62d38}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.WPF.Data\Ruv.WPF.Data.csproj">
+      <Project>{0f609003-8f35-484f-8f96-77523687adb7}</Project>
+      <Name>Ruv.WPF.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.WPF.Server\Ruv.WPF.Server.csproj">
+      <Project>{d8a5e623-48f7-409f-8f3e-901be9596b57}</Project>
+      <Name>Ruv.WPF.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Vbe.Interop.Forms">
+      <Guid>{0D452EE1-E08F-101A-852E-02608C4D0BB4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\RUVTheme\DPSkin.skin" />
+    <Content Include="ListaTareas\ListaTareas.aspx.cs.exclude" />
+    <Content Include="ListaTareas\ListaTareas.aspx.exclude" />
+    <Content Include="packages.config" />
+    <Content Include="Reportes\Valoracion\IncluidoAntiguo\ReporteValoracionAviso.rdlc.exclude" />
+    <Content Include="Reportes\Valoracion\Incluido\Edicto.rdlc.exclude" />
+    <Content Include="Reportes\Valoracion\MixtoAntiguo\ReporteValoracionAviso.rdlc.exclude" />
+    <Content Include="Reportes\Valoracion\Mixto\Edicto.rdlc.exclude" />
+    <Content Include="Reportes\Valoracion\NoIncluidoAntiguo\ReporteValoracionAviso.rdlc.exclude" />
+    <Content Include="Reportes\Valoracion\NoIncluido\Edicto.rdlc.exclude" />
+    <Content Include="Site.Master" />
+    <Content Include="Templates\FormatoConstanciaAtencion.pdf" />
+    <Content Include="Templates\GENERA_DEVOLUCION.pdf" />
+    <Content Include="Templates\GENERA_FUD.pdf" />
+    <Content Include="Templates\GENERA_FUD_CONNACIONALES.pdf" />
+    <Content Include="Templates\GENERA_FUD_CONNACIONALES_V2.1.pdf" />
+    <Content Include="Templates\GENERA_FUD_V2.1.pdf" />
+    <Content Include="Templates\GENERA_FUD_V2.pdf" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\RuvTemporal.pubxml" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="Web.RuvTemporal.config" />
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\Asignar\DecNoValo.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\IncluidoAntiguo\Edicto.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\IncluidoAntiguo\ReporteValoracionCitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\IncluidoAntiguo\ReporteValoracionNotificacionPersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\IncluidoAntiguo\ReporteValoracionResolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Incluido\ReporteValoracionAviso.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Incluido\ReporteValoracionCitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Incluido\ReporteValoracionNotificacionPersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Incluido\ReporteValoracionResolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\MixtoAntiguo\Edicto.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\MixtoAntiguo\ReporteValoracionCitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\MixtoAntiguo\ReporteValoracionNotificacionPersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\MixtoAntiguo\ReporteValoracionResolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Mixto\ReporteValoracionAviso.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Mixto\ReporteValoracionCitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Mixto\ReporteValoracionNotificacionPersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\Mixto\ReporteValoracionResolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluidoAntiguo\Edicto.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluidoAntiguo\ReporteValoracionCitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluidoAntiguo\ReporteValoracionNotificacionPersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluidoAntiguo\ReporteValoracionResolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluido\ReporteValoracionAviso.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluido\ReporteValoracionCitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluido\ReporteValoracionNotificacionPersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\NoIncluido\ReporteValoracionResolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\Valoracion\ReporteValoracion.rdlc" />
+    <Content Include="Valoracion\App_LocalResources\Default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

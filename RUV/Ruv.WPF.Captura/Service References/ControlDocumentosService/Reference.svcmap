@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2529be43-8b4e-4bf3-abbd-81149838b790" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ControlDocumentosService.xsd" MetadataType="Schema" ID="db9b2aca-c694-4d16-9397-424afa878721" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ControlDocumentosService1.xsd" MetadataType="Schema" ID="ffe05f6f-fcce-46ab-a472-6ec5c8e3125f" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ControlDocumentosService.wsdl" MetadataType="Wsdl" ID="c261669a-878f-4e6b-aa17-f39726ec9d05" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?wsdl" />
+    <MetadataFile FileName="ControlDocumentosService2.xsd" MetadataType="Schema" ID="4a0efab4-304e-45f3-bcec-0e3a3b990760" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ControlDocumentosService3.xsd" MetadataType="Schema" ID="5ff16018-7641-4e2a-a4e3-fb2f0be14757" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ControlDocumentosService.disco" MetadataType="Disco" ID="779bd51e-83a0-47f8-bf01-294f42a271ad" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?disco" />
+    <MetadataFile FileName="ControlDocumentosService1.wsdl" MetadataType="Wsdl" ID="d19269a7-ad9e-4602-a672-3fe52c86cb83" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ControlDocumentosService4.xsd" MetadataType="Schema" ID="6096ce97-12f8-472c-a569-2139409d1dbf" SourceId="1" SourceUrl="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

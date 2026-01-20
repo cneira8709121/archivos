@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ControlDocumentosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ExtremoControlDocumentos_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+      <xsd:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IControlDocumentosService_GenerarFormularios_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarFormularios" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_GenerarFormularios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarFormulariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_GenerarFormulariosWEB_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarFormulariosWEB" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_GenerarFormulariosWEB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarFormulariosWEBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerPaisGeneraFormularioWEB_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaisGeneraFormularioWEB" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerPaisGeneraFormularioWEB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaisGeneraFormularioWEBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ListarFormularios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormularios" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ListarFormularios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormulariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ListarFormulariosNoRadicados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormulariosNoRadicados" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ListarFormulariosNoRadicados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormulariosNoRadicadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ListarFormulariosPorEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormulariosPorEstado" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ListarFormulariosPorEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFormulariosPorEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_AsignarFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_AsignarFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_AsignarFormularioFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarFormularioFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_AsignarFormularioFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarFormularioFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_InactivarFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_InactivarFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivarFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_SepararFormularioImprenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:SepararFormularioImprenta" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_SepararFormularioImprenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SepararFormularioImprentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_SepararFormularioImprentaFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:SepararFormularioImprentaFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_SepararFormularioImprentaFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SepararFormularioImprentaFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulariosPorUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulariosPorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulariosPorUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulariosPorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_MarcarDescargado_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarDescargado" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_MarcarDescargado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarDescargadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_MarcarRadicado_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarRadicado" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_MarcarRadicado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarRadicadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ValidarNumeroFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNumeroFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ValidarNumeroFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNumeroFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulariosPorUsuarioEstadoPaginado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulariosPorUsuarioEstadoPaginado" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulariosPorUsuarioEstadoPaginado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulariosPorUsuarioEstadoPaginadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerCantidadFormulariosPorUsuarioEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCantidadFormulariosPorUsuarioEstado" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerCantidadFormulariosPorUsuarioEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCantidadFormulariosPorUsuarioEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerCantidadFormulariosActivar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCantidadFormulariosActivar" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerCantidadFormulariosActivar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCantidadFormulariosActivarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulariosActivar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulariosActivar" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulariosActivar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulariosActivarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IControlDocumentosService_ObtenerFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFormularioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IControlDocumentosService">
+    <wsdl:operation name="GenerarFormularios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/GenerarFormularios" message="tns:IControlDocumentosService_GenerarFormularios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/GenerarFormulariosResponse" message="tns:IControlDocumentosService_GenerarFormularios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarFormulariosWEB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/GenerarFormulariosWEB" message="tns:IControlDocumentosService_GenerarFormulariosWEB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/GenerarFormulariosWEBResponse" message="tns:IControlDocumentosService_GenerarFormulariosWEB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaisGeneraFormularioWEB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerPaisGeneraFormularioWEB" message="tns:IControlDocumentosService_ObtenerPaisGeneraFormularioWEB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerPaisGeneraFormularioWEBResponse" message="tns:IControlDocumentosService_ObtenerPaisGeneraFormularioWEB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormularios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ListarFormularios" message="tns:IControlDocumentosService_ListarFormularios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ListarFormulariosResponse" message="tns:IControlDocumentosService_ListarFormularios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormulariosNoRadicados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ListarFormulariosNoRadicados" message="tns:IControlDocumentosService_ListarFormulariosNoRadicados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ListarFormulariosNoRadicadosResponse" message="tns:IControlDocumentosService_ListarFormulariosNoRadicados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormulariosPorEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ListarFormulariosPorEstado" message="tns:IControlDocumentosService_ListarFormulariosPorEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ListarFormulariosPorEstadoResponse" message="tns:IControlDocumentosService_ListarFormulariosPorEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/AsignarFormulario" message="tns:IControlDocumentosService_AsignarFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/AsignarFormularioResponse" message="tns:IControlDocumentosService_AsignarFormulario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarFormularioFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/AsignarFormularioFiltro" message="tns:IControlDocumentosService_AsignarFormularioFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/AsignarFormularioFiltroResponse" message="tns:IControlDocumentosService_AsignarFormularioFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivarFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/InactivarFormulario" message="tns:IControlDocumentosService_InactivarFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/InactivarFormularioResponse" message="tns:IControlDocumentosService_InactivarFormulario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SepararFormularioImprenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/SepararFormularioImprenta" message="tns:IControlDocumentosService_SepararFormularioImprenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/SepararFormularioImprentaResponse" message="tns:IControlDocumentosService_SepararFormularioImprenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SepararFormularioImprentaFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/SepararFormularioImprentaFiltro" message="tns:IControlDocumentosService_SepararFormularioImprentaFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/SepararFormularioImprentaFiltroResponse" message="tns:IControlDocumentosService_SepararFormularioImprentaFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulariosPorUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosPorUsuario" message="tns:IControlDocumentosService_ObtenerFormulariosPorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosPorUsuarioResponse" message="tns:IControlDocumentosService_ObtenerFormulariosPorUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarcarDescargado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/MarcarDescargado" message="tns:IControlDocumentosService_MarcarDescargado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/MarcarDescargadoResponse" message="tns:IControlDocumentosService_MarcarDescargado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarcarRadicado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/MarcarRadicado" message="tns:IControlDocumentosService_MarcarRadicado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/MarcarRadicadoResponse" message="tns:IControlDocumentosService_MarcarRadicado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNumeroFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ValidarNumeroFormulario" message="tns:IControlDocumentosService_ValidarNumeroFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ValidarNumeroFormularioResponse" message="tns:IControlDocumentosService_ValidarNumeroFormulario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulariosPorUsuarioEstadoPaginado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosPorUsuarioEstadoPaginado" message="tns:IControlDocumentosService_ObtenerFormulariosPorUsuarioEstadoPaginado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosPorUsuarioEstadoPaginadoResponse" message="tns:IControlDocumentosService_ObtenerFormulariosPorUsuarioEstadoPaginado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCantidadFormulariosPorUsuarioEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerCantidadFormulariosPorUsuarioEstado" message="tns:IControlDocumentosService_ObtenerCantidadFormulariosPorUsuarioEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerCantidadFormulariosPorUsuarioEstadoResponse" message="tns:IControlDocumentosService_ObtenerCantidadFormulariosPorUsuarioEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCantidadFormulariosActivar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerCantidadFormulariosActivar" message="tns:IControlDocumentosService_ObtenerCantidadFormulariosActivar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerCantidadFormulariosActivarResponse" message="tns:IControlDocumentosService_ObtenerCantidadFormulariosActivar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulariosActivar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosActivar" message="tns:IControlDocumentosService_ObtenerFormulariosActivar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosActivarResponse" message="tns:IControlDocumentosService_ObtenerFormulariosActivar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormulario" message="tns:IControlDocumentosService_ObtenerFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControlDocumentosService/ObtenerFormularioResponse" message="tns:IControlDocumentosService_ObtenerFormulario_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExtremoControlDocumentos" type="tns:IControlDocumentosService">
+    <wsp:PolicyReference URI="#ExtremoControlDocumentos_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerarFormularios">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/GenerarFormularios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarFormulariosWEB">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/GenerarFormulariosWEB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaisGeneraFormularioWEB">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerPaisGeneraFormularioWEB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormularios">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ListarFormularios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormulariosNoRadicados">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ListarFormulariosNoRadicados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFormulariosPorEstado">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ListarFormulariosPorEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarFormulario">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/AsignarFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarFormularioFiltro">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/AsignarFormularioFiltro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivarFormulario">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/InactivarFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SepararFormularioImprenta">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/SepararFormularioImprenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SepararFormularioImprentaFiltro">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/SepararFormularioImprentaFiltro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulariosPorUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosPorUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarcarDescargado">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/MarcarDescargado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarcarRadicado">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/MarcarRadicado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNumeroFormulario">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ValidarNumeroFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulariosPorUsuarioEstadoPaginado">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosPorUsuarioEstadoPaginado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCantidadFormulariosPorUsuarioEstado">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerCantidadFormulariosPorUsuarioEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCantidadFormulariosActivar">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerCantidadFormulariosActivar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulariosActivar">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerFormulariosActivar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFormulario">
+      <soap12:operation soapAction="http://tempuri.org/IControlDocumentosService/ObtenerFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ControlDocumentosService">
+    <wsdl:port name="ExtremoControlDocumentos" binding="tns:ExtremoControlDocumentos">
+      <soap12:address location="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_IControlDocumentosService" binding="i0:MetadataExchangeHttpBinding_IControlDocumentosService">
+      <soap12:address location="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

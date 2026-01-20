@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+  <appSettings>
+    <add key="Ambiente" value="Pruebas" />
+    <add key="UrlInventarioServicios" value="[Aqui la ubicacion del archivo XML que contine el direccionamiento de los servicios]\SERVICIOS.xml" />
+  </appSettings>
+</configuration>

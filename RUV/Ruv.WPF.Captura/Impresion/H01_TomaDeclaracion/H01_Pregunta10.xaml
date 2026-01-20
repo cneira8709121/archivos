@@ -1,0 +1,277 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.H01_Pregunta10"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="747">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:VictimaConsultaConverter x:Key="VCC" />
+      <conv:ConsultaDatoConverter x:Key="CDC" />
+      <conv:CantidadTiempoConverter x:Key="CTC" />
+      <conv:ParametroNumeroConverter x:Key="PNC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <!--=================================================-->
+    <sec:SubTituloEntrada Numero="10"
+                          Grid.Row="0"
+                          Texto="De acuerdo con lo manifestado en la entrevista previa, usted se considera víctima de: (registre el número de eventos con respecto al mismo hecho)" />
+    <Grid Margin="5" Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="17*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="17*" />
+        <ColumnDefinition Width="4*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition Height="5" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Texto="No. ANEXO" />
+      <sec:TituloConBorde Grid.Column="1"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="HECHO" />
+      <sec:TituloConBorde Grid.Column="2"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="NÚMERO EVENTOS" />
+      <sec:TituloConBorde Grid.Column="4"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="No. ANEXO" />
+      <sec:TituloConBorde Grid.Column="5"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="HECHO" />
+      <sec:TituloConBorde Grid.Column="6"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="NÚMERO EVENTOS" />
+      <!--FILAS-->
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="1"
+                          Texto="1" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="1"
+                          Texto="Acto terrorista / Atentados / Combates / Enfrentamientos / Hostigamientos" />
+      <congen:EntradaNumerica Grid.Column="2"
+                              Grid.Row="1"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[0], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="1"
+                          Texto="6" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="1"
+                          Texto="Homicidio/Masacre" />
+      <congen:EntradaNumerica Grid.Column="6"
+                              Grid.Row="1"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[5], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--FILAS-->
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="2"
+                          Texto="2" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="2"
+                          Texto="Amenaza" />
+      <congen:EntradaNumerica Grid.Column="2"
+                              Grid.Row="2"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="2"
+                          Texto="7" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="2"
+                          Texto="Minas Antipersonal, Munición sin Explotar y Artefacto Explosivo improvisado" />
+      <congen:EntradaNumerica Grid.Column="6"
+                              Grid.Row="2"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[6], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--FILAS-->
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="3"
+                          Texto="3" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="3"
+                          Texto="Delitos contra la libertad y la integridad sexual en desarrollo del conflicto armado" />
+      <congen:EntradaNumerica Grid.Column="2"
+                              Grid.Row="3"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Path=Hechos[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="3"
+                          Texto="8" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="3"
+                          Texto="Secuestro" />
+      <congen:EntradaNumerica Grid.Column="6"
+                              Grid.Row="3"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[7], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--FILAS-->
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="4"
+                          Texto="4" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="4"
+                          Texto="Desaparición forzada" />
+      <congen:EntradaNumerica Grid.Column="2"
+                              Grid.Row="4"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="4"
+                          Texto="9" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="4"
+                          Texto="Tortura" />
+      <congen:EntradaNumerica Grid.Column="6"
+                              Grid.Row="4"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[8], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--FILAS-->
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="5"
+                          Texto="5" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="5"
+                          Texto="Desplazamiento forzado" />
+      <congen:EntradaNumerica Grid.Column="2"
+                              Grid.Row="5"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="5"
+                          Texto="10" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="5"
+                          Texto="Vinculación de Niños Niñas y Adolescentes a actividades relacionadas con grupos armados" />
+      <congen:EntradaNumerica Grid.Column="6"
+                              Grid.Row="5"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[9], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--FILAS-->
+      <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="6"
+                          Texto="11" />
+      <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="6"
+                          Texto="Despojo y abandono forzado de tierras" />
+      <congen:EntradaNumerica Grid.Column="6"
+                              Grid.Row="6"
+                              CeroSiempreVisible="True"
+                              Text="{Binding Hechos[10], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+      <!--FILAS-->
+
+      <sec:TituloConBorde AlineacionHorizontal="Right"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="8"
+                          Grid.ColumnSpan="3"
+                          Texto="Otro (Especifique cuál en la siguiente casilla)" />
+      <TextBlock Grid.Column="3"
+                 Grid.Row="8"
+                 Text=""
+                 FontFamily="Wingdings"
+                 HorizontalAlignment="Center" />
+      <TextBlock Grid.Column="4"
+                 Grid.Row="8"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Text="¿Cuál?" />
+      <my:DatoColumna Texto="{Binding HechosOtrosCual}"
+                      Grid.Column="5"
+                      Grid.Row="8"
+                      Grid.ColumnSpan="2" />
+      <Border Grid.Column="4"
+              Grid.Row="8"
+              Grid.ColumnSpan="3"
+              Background="Transparent"
+              BorderBrush="Black"
+              BorderThickness="1" />
+    </Grid>
+    <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t007}"
+                         Grid.Row="2"
+                         TextWrapping="Wrap"
+                         TextAlignment="Justify" />
+  </Grid>
+</UserControl>

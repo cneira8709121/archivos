@@ -1,0 +1,82 @@
+﻿<Window x:Class="Ruv.WPF.Captura.Seguridad.DesplegarException"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Ruv.WPF.Captura;component/Recursos/Imagenes/RUV.ico"
+        Title="Se produjo una excepción"
+        Height="300"
+        Width="435">
+  <DockPanel>
+    <TextBlock Margin="12"
+               DockPanel.Dock="Top"
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               FontWeight="Bold"
+               FontSize="13"
+               Foreground="Red"
+               VerticalAlignment="Top">
+      LAMENTAMOS LOS INCONVENIENTES PRESENTADOS</TextBlock>
+    <TextBlock Margin="12,0"
+               DockPanel.Dock="Top"
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               VerticalAlignment="Top">
+      Por favor reporte el siguiente mensaje a soporte técnico<LineBreak />(puede copiar y pegar este mensaje en un correo electrónico).
+    </TextBlock>
+        <TextBlock  x:Name="txtHora"
+               Margin="8,0"
+               DockPanel.Dock="Top"
+               TextAlignment="Left"
+               TextWrapping="Wrap"
+               VerticalAlignment="Top">
+            Hora:
+        </TextBlock>
+        <Button DockPanel.Dock="Bottom"
+            Content="Cerrar"
+            HorizontalAlignment="Center"
+            Padding="10,5"
+            Margin="5"
+            Click="CerrarClick" />
+    <Border Margin="10"
+            VerticalAlignment="Stretch"
+            BorderBrush="Red"
+            CornerRadius="10"
+            Background="#FFFFDBDB">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="20" />
+          <RowDefinition />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="20" />
+          <ColumnDefinition />
+          <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Red"
+                Background="Transparent"
+                Grid.Column="1"
+                Grid.Row="1" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
+                      Grid.Column="1"
+                      Grid.Row="1">
+          <TextBox x:Name="tbxMensaje"
+                   Background="White"
+                   IsReadOnly="True"
+                   FontWeight="Bold"
+                   TextWrapping="Wrap"
+                   Padding="10" />
+        </ScrollViewer>
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Content="Copiar mensaje"
+                HorizontalAlignment="Right"
+                Margin="7,7,0,7"
+                Style="{StaticResource styLinkButton}"
+                Padding="10,5"
+                Click="CopiarMensaje" />
+      </Grid>
+    </Border>
+
+  </DockPanel>
+</Window>

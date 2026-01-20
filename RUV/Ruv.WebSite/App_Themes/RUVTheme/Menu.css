@@ -1,0 +1,132 @@
+﻿/*Menu Principal*/
+
+.accordionTitulo
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #004593;
+    font-family: Verdana;
+    font-size: smaller;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+}
+ 
+.accordionTituloSeleccion
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #004593;
+    font-family: Verdana;
+    font-size: smaller;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+}
+ 
+.accordionContenido
+{
+    background-color: #D3DEEF;
+    border: 1px solid #6C92C1;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.lnkMenuBlanco
+{
+    font-family:Verdana;
+    font-size:13px;
+    color:White;
+    text-decoration:none;
+}
+.lnkMenuAzul
+{
+    font-family:Verdana;
+    font-size:11px;
+    color:#004593;
+    text-decoration:none;
+}
+.lnkMenuRojo
+{
+    font-family:Verdana;
+    font-size:11px;
+    color:Red;
+    text-decoration:none;
+}
+
+/**Site Map*/
+
+.mSiteM
+{
+    font-family:Verdana;
+    font-size:smaller;
+}
+
+.CNodeSiteM
+{
+    color:White;
+}
+.NodeDefSiteM
+{
+    color:White;
+    font-weight:bold;
+}
+.PathStyleSite
+{
+    color:White;
+}
+.rootNodeSite
+{
+    color:White;
+    font-weight:bold;
+}
+
+/*Menu*/
+/*
+div.hideSkiplink
+{
+    background-color:#2F4F4F;
+}
+*/
+div.menu
+{
+    padding: 2px 2px 2px 2px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto; 
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #004593;
+    border: 1px #CBD8E9 solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.5em;
+    padding: 2px;
+    width:150px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: .8em;
+    font-family: "Verdana";
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #2F4F4F;
+    color: #cfdbe6;
+    text-decoration: none;
+}

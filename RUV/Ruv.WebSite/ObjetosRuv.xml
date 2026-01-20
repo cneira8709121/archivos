@@ -1,0 +1,68 @@
+﻿<objects xmlns="http://www.springframework.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">
+  <!-- Objetos Lógica de Negocio -->
+  <object id="CriticaN.BL" singleton="false"
+    type="Ruv.Business.CriticaN.Gestion, Ruv.Business.CriticaN">
+  </object>
+  <object id="GestionFormulario.BL" singleton="false"
+    type="Ruv.Business.GestionFormulario.Administrador, Ruv.Business.GestionFormulario">
+  </object>
+  <object id="LiderRadicacion.BL" singleton="false"
+    type="Ruv.Business.Radicacion.LiderRadicacion, Ruv.Business.Radicacion">
+  </object>
+  <object id="Devolucion.BL" singleton="false"
+    type="Ruv.Business.Devolucion.Administrador, Ruv.Business.Devolucion">
+  </object>
+  <object id="LiderValoracion.BL" singleton="false"
+    type="Ruv.Business.Valoracion.clsLiderValoracion, Ruv.Business.Valoracion">
+  </object>
+  <object id="Correcciones.BL" singleton="false"
+    type="Ruv.Business.Correcciones.CorreccionesBusiness, Ruv.Business.Correcciones">
+  </object>
+  <object id="Notificacion.BL" singleton="false"
+    type="Ruv.Business.Notificacion.NotificacionBusiness, Ruv.Business.Notificacion">
+  </object>
+  <object id="NotificacionInterna.BL" singleton="false"
+    type="Ruv.Business.Notificacion.NotificacionInternaBusiness, Ruv.Business.Notificacion">
+  </object>
+  <object id="Orfeo.BL" singleton="false"
+    type="Ruv.Business.Orfeo.General, Ruv.Business.Orfeo">
+  </object>
+  <object id="Feriados.BL" singleton="false"
+    type="Ruv.Business.Feriados.GestionFeriados, Ruv.Business.Feriados">
+  </object>
+  
+  <!--objetos acceso a DATOS-->
+  <object id="CriticaN.DL" singleton="false"
+    type="Ruv.Data.CriticaN.Gestion, Ruv.Data.CriticaN">
+  </object>
+  <object id="GestionFormulario.DL" singleton="false"
+    type="Ruv.Data.GestionFormulario.Administrador, Ruv.Data.GestionFormulario">
+  </object>
+  <object id="LiderRadicacion.DL" singleton="false"
+    type="Ruv.Data.Radicacion.LiderRadicacion, Ruv.Data.Radicacion">
+  </object>
+  <object id="Devolucion.DL" singleton="false"
+    type="Ruv.Data.Devolucion.Administrador, Ruv.Data.Devolucion">
+  </object>
+  <object id="LiderValoracion.DL" singleton="false"
+    type="Ruv.Data.Valoracion.Valoracion.clsLiderValoracion, Ruv.Data.Valoracion">
+  </object>
+  <object id="Correcciones.DL" singleton="false"
+    type="Ruv.Data.Correcciones.CorreccionesData, Ruv.Data.Correcciones">
+  </object>
+  <object id="Notificacion.DL" singleton="false"
+    type="Ruv.Data.Notificacion.NotificacionData, Ruv.Data.Notificacion">
+  </object>
+  <object id="NotificacionInterna.DL" singleton="false"
+    type="Ruv.Data.Notificacion.NotificacionInternaData, Ruv.Data.Notificacion">
+  </object>
+  <object id="Orfeo.DL" singleton="false"
+    type="Ruv.Data.Orfeo.General, Ruv.Data.Orfeo">
+  </object>
+  <object id="Feriados.DL" singleton="false"
+    type="Ruv.Data.Feriados.GestionFeriados, Ruv.Data.Feriados">
+  </object>
+  <object id="Glosas.DL" singleton="false"
+    type="Ruv.Data.GestionGlosa.clsGestionGlosa, Ruv.Data.GestionGlosa">
+  </object>
+</objects>

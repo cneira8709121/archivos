@@ -1,0 +1,200 @@
+﻿<error errorId="40bcfa31-81d2-4353-975a-a265c16a279c" application="/LM/W3SVC/2/ROOT" host="CRISTIAN-PC" type="System.MissingMethodException" message="Método no encontrado: 'System.String Ruv.Business.DTO.Reporteador.clsDetalleDeclaracion.get_CMarca()'." source="Ruv.Business.Reporteador" detail="System.MissingMethodException: Método no encontrado: 'System.String Ruv.Business.DTO.Reporteador.clsDetalleDeclaracion.get_CMarca()'.&#xD;&#xA;   at Ruv.Business.Reporteador.ConsultarEstado.&lt;&gt;c.&lt;ConsultarDetalleDeclaracion&gt;b__2_0(clsDetalleDeclaracion x)&#xD;&#xA;   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()&#xD;&#xA;   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)&#xD;&#xA;   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)&#xD;&#xA;   at Ruv.Business.Reporteador.ConsultarEstado.ConsultarDetalleDeclaracion(Int32 nIdDeclaracion, String&amp; cError)&#xD;&#xA;   at ConsultarEstadoPersonaService.ConsultarEstadoDetalleDeclaracion(Int32 nIdDeclaracion, String&amp; cError) in F:\source\UARIV\RUV\RUV\Ruv.WebApp\Old_App_Code\Services\ConsultarEstadoPersonaService.cs:line 57&#xD;&#xA;   at Consultas_DetalleFormulario.Page_Load(Object sender, EventArgs e) in F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx.cs:line 44&#xD;&#xA;   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.OnLoad(EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.LoadRecursive()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)" user="ADMIN  REGISTRO APRUEBAS" time="2025-09-05T16:37:06.1968812Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br, zstd&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.9&#xD;&#xA;HTTP_COOKIE:_ga=GA1.1.2059406850.1757038905; _gid=GA1.1.1448747070.1757038905; ASP.NET_SessionId=rfy1rbdhysufobx32e5euo2j; .ASPXAUTH=F2330FF61E925C1681BD86C73B8CF84976FA84535843E1B7562DA1527CB8422AFE2F6B8565799490D2F8ED88B6B2E6072A97418A64DA1F054D3EB7E12A1DF08B8505A1144CDBB6E7B3375A1DA34BEDEB98F9D46E27E143CCA62BF0A1D6A3ABE650EF0E252DE25D0A53FFE43D39A4287F5391D59E8F021A64387B732ED3E58579FE7D847E18285BCCB3B359368680031C23039A9CA07D737E00525C57FF69C19A9DC0349A7739DCDD8CC2BC92675E4A52&#xD;&#xA;HTTP_HOST:localhost:44302&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0&#xD;&#xA;HTTP_SEC_CH_UA:&quot;Chromium&quot;;v=&quot;140&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;140&quot;&#xD;&#xA;HTTP_SEC_CH_UA_MOBILE:?0&#xD;&#xA;HTTP_SEC_CH_UA_PLATFORM:&quot;Windows&quot;&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;HTTP_SEC_FETCH_SITE:none&#xD;&#xA;HTTP_SEC_FETCH_MODE:navigate&#xD;&#xA;HTTP_SEC_FETCH_USER:?1&#xD;&#xA;HTTP_SEC_FETCH_DEST:document&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#xD;&#xA;Accept-Encoding: gzip, deflate, br, zstd&#xD;&#xA;Accept-Language: en-US,en;q=0.9&#xD;&#xA;Cookie: _ga=GA1.1.2059406850.1757038905; _gid=GA1.1.1448747070.1757038905; ASP.NET_SessionId=rfy1rbdhysufobx32e5euo2j; .ASPXAUTH=F2330FF61E925C1681BD86C73B8CF84976FA84535843E1B7562DA1527CB8422AFE2F6B8565799490D2F8ED88B6B2E6072A97418A64DA1F054D3EB7E12A1DF08B8505A1144CDBB6E7B3375A1DA34BEDEB98F9D46E27E143CCA62BF0A1D6A3ABE650EF0E252DE25D0A53FFE43D39A4287F5391D59E8F021A64387B732ED3E58579FE7D847E18285BCCB3B359368680031C23039A9CA07D737E00525C57FF69C19A9DC0349A7739DCDD8CC2BC92675E4A52&#xD;&#xA;Host: localhost:44302&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0&#xD;&#xA;sec-ch-ua: &quot;Chromium&quot;;v=&quot;140&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;140&quot;&#xD;&#xA;sec-ch-ua-mobile: ?0&#xD;&#xA;sec-ch-ua-platform: &quot;Windows&quot;&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;Sec-Fetch-Site: none&#xD;&#xA;Sec-Fetch-Mode: navigate&#xD;&#xA;Sec-Fetch-User: ?1&#xD;&#xA;Sec-Fetch-Dest: document&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="F:\source\UARIV\RUV\RUV\Ruv.WebApp\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="ADMIN  REGISTRO APRUEBAS" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="ADMIN  REGISTRO APRUEBAS" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="ADMIN  REGISTRO APRUEBAS" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Consultas/DetalleFormulario.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="id=3409444&amp;urlEvio=/Consultas/ConsultaPersona.aspx" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="54649" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Consultas/DetalleFormulario.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="44302" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Consultas/DetalleFormulario.aspx" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br, zstd" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.9" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="_ga=GA1.1.2059406850.1757038905; _gid=GA1.1.1448747070.1757038905; ASP.NET_SessionId=rfy1rbdhysufobx32e5euo2j; .ASPXAUTH=F2330FF61E925C1681BD86C73B8CF84976FA84535843E1B7562DA1527CB8422AFE2F6B8565799490D2F8ED88B6B2E6072A97418A64DA1F054D3EB7E12A1DF08B8505A1144CDBB6E7B3375A1DA34BEDEB98F9D46E27E143CCA62BF0A1D6A3ABE650EF0E252DE25D0A53FFE43D39A4287F5391D59E8F021A64387B732ED3E58579FE7D847E18285BCCB3B359368680031C23039A9CA07D737E00525C57FF69C19A9DC0349A7739DCDD8CC2BC92675E4A52" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:44302" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" />
+    </item>
+    <item name="HTTP_SEC_CH_UA">
+      <value string="&quot;Chromium&quot;;v=&quot;140&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;140&quot;" />
+    </item>
+    <item name="HTTP_SEC_CH_UA_MOBILE">
+      <value string="?0" />
+    </item>
+    <item name="HTTP_SEC_CH_UA_PLATFORM">
+      <value string="&quot;Windows&quot;" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+    <item name="HTTP_SEC_FETCH_SITE">
+      <value string="none" />
+    </item>
+    <item name="HTTP_SEC_FETCH_MODE">
+      <value string="navigate" />
+    </item>
+    <item name="HTTP_SEC_FETCH_USER">
+      <value string="?1" />
+    </item>
+    <item name="HTTP_SEC_FETCH_DEST">
+      <value string="document" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="id">
+      <value string="3409444" />
+    </item>
+    <item name="urlEvio">
+      <value string="/Consultas/ConsultaPersona.aspx" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="_ga">
+      <value string="GA1.1.2059406850.1757038905" />
+    </item>
+    <item name="_gid">
+      <value string="GA1.1.1448747070.1757038905" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="rfy1rbdhysufobx32e5euo2j" />
+    </item>
+    <item name=".ASPXAUTH">
+      <value string="F2330FF61E925C1681BD86C73B8CF84976FA84535843E1B7562DA1527CB8422AFE2F6B8565799490D2F8ED88B6B2E6072A97418A64DA1F054D3EB7E12A1DF08B8505A1144CDBB6E7B3375A1DA34BEDEB98F9D46E27E143CCA62BF0A1D6A3ABE650EF0E252DE25D0A53FFE43D39A4287F5391D59E8F021A64387B732ED3E58579FE7D847E18285BCCB3B359368680031C23039A9CA07D737E00525C57FF69C19A9DC0349A7739DCDD8CC2BC92675E4A52" />
+    </item>
+  </cookies>
+</error>

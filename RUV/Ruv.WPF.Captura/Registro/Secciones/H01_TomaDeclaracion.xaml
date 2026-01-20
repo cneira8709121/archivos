@@ -1,0 +1,1283 @@
+﻿<UserControl xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             x:Class="Ruv.WPF.Captura.Registro.Secciones.H01_TomaDeclaracion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:blo="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:set="clr-namespace:Ruv.Infrastructure.Crosscutting.Common;assembly=Ruv.Infrastructure.Crosscutting.Common"
+             xmlns:imp="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:utils="clr-namespace:Ruv.WPF.Captura.Utils"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:common="clr-namespace:Ruv.Infrastructure.Crosscutting.Common;assembly=Ruv.Infrastructure.Crosscutting.Common"
+             mc:Ignorable="d"
+             xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             DataContext="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.TomaDeclaracion}"
+             d:DesignHeight="1900"
+             d:DesignWidth="959">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="RegistroDiccionario.xaml" />
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/RecursosGeoEntorno.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:ConsultaDatoConverter x:Key="CDC" />
+            <conv:IntegerNullableToBoolConverter x:Key="IntegerToBoolConverter" />
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+            <Style x:Key="styGrillaTutor"
+             TargetType="Grid">
+                <Setter Property="IsEnabled"
+                Value="False" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Encargado.RepresentanteTipo}"
+                       Value="5171">
+                        <Setter Property="IsEnabled"
+                    Value="True" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Encargado.RepresentanteTipo}"
+                       Value="5172">
+                        <Setter Property="IsEnabled"
+                    Value="True" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Encargado.RepresentanteTipo}"
+            Value="5173">
+                        <Setter Property="IsEnabled"
+        Value="True" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel x:Name="spMain">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource styNumeroDeclaracion}"
+                 Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.DeclaracionNumero}" />
+            <Border Grid.Column="1"
+              BorderThickness="1"
+              BorderBrush="Black"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+                <TextBlock VerticalAlignment="Center"
+                   Margin="5,2">HOJA 1 DE 4</TextBlock>
+            </Border>
+        </Grid>
+        <TextBlock  Style="{StaticResource styTituloSeccion}">I. ENTREVISTA PREVIA</TextBlock>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t001}"
+                         Style="{StaticResource styTextoDescripcion}" />
+        <TextBlock Style="{StaticResource styTituloSeccion}">I. TOMA DE LA DECLARACIÓN</TextBlock>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t002}"
+                         Style="{StaticResource styTextoDescripcion}" />
+        <Grid x:Name="grdLugarDeclaracion">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <sec:SubTituloEntrada Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="3"
+                            Numero="1"
+                            Texto="*Lugar de la Declaración" />
+            <sec:SubTituloEntrada Grid.Column="3"
+                            Grid.Row="0"
+                            Numero="2"
+                            Texto="*Entidad que atiende" />
+            <sec:SubTituloEntrada Grid.Column="5"
+                            Grid.Row="0"
+                            Numero="3"
+                            x:Name="se01"
+                            Texto="*Fecha de la Declaración" />
+            <!--ENTRADA DE DATOS-->
+            <congen:Geografia x:Name="geo01"
+                        Grid.Row="1" 
+                        Grid.ColumnSpan="4" 
+                        TodosLosPaises="False"   
+                        ComboPais="{Binding ElementName=cb01Pais}"
+                        ComboDepartamento="{Binding ElementName=cb01Departamento}"
+                        ComboMunicipio="{Binding ElementName=cb01Municipio}" 
+                        ComboEntidadMunicipio="{Binding ElementName=cb01EntidadMunicipio}"
+                        PaisId="{Binding LugarDeclaracionPais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        DepartamentoId="{Binding LugarDeclaracionDepartamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        MunicipioId="{Binding LugarDeclaracionMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        EntidadMunicipioId="{Binding LugarDeclaracionEntidadMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"      />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.Column="0"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center" Name="pnlCb01Pais">
+                    <TextBlock x:Name="txt01Pais" Style="{StaticResource styDescripcionCajaEntrada}">País</TextBlock>
+                    <ComboBox x:Name="cb01Pais"/>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.Column="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center" Name="pnlCb01Departamento">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Departamento</TextBlock>
+                    <ComboBox x:Name="cb01Departamento" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="2"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center" Name="pnlCb01Municipio">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Municipio</TextBlock>
+                    <ComboBox x:Name="cb01Municipio" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="3"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Entidad</TextBlock>
+                    <ComboBox x:Name="cb01EntidadMunicipio" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="5"
+              Grid.Row="1"
+              VerticalAlignment="Stretch"
+              Padding="5">
+                <sec:CajaIngresoFecha VerticalAlignment="Center"
+                              Fecha="{Binding FechaDeclaracion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            </Border>
+        </Grid>
+        <!--TEXTO DESCRIPTIVO-->
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t003}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify"
+                         Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"    />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t004}"
+                         Style="{StaticResource styTextoDescripcionGrande}" />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t005}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify" />
+        <sec:SubTituloEntrada Numero="4"
+                          Texto="Si en esta declaración se presenta alguno de los tres casos anteriores por favor diligencie la siguiente información. En caso contrario, pase directamente al punto 5." />
+        <!--Conjunto="TomaDeclaracion"-->
+        <sec:ListaOpciones VerticalAlignment="Center"
+                       IncluirNumero="True"
+                       TipoOpciones="Unica"
+                       TipoParametros="TipoEncargado"
+                       ValorSeleccionUnica="{Binding Encargado.RepresentanteTipo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                       TextoOtro="{Binding Encargado.RepresentanteTipoAutoridadCompetente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <sec:SubTituloEntrada Numero=""
+                          Texto="Registre a continuación los datos del intérprete, tutor o funcionario (Solo si aplica)" />
+        <!--Style="{StaticResource styGrillaTutor}" Se quita el style a la grilla, el cual bloqueaba controles, que ahora no se deben bloquear-->
+        <Grid Style="{StaticResource styGrillaTutor}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <!--ENTRADA DE DATOS-->
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Primer nombre</TextBlock>
+                    <TextBox x:Name="txbRepresentantePrimerNombre" Text="{Binding Encargado.RepresentantePrimerNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="1"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Demás nombres (si aplica)</TextBlock>
+                    <TextBox x:Name="txbRepresentanteSegundoNombre" Text="{Binding Encargado.RepresentanteSegundoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="2"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Primer apellido</TextBlock>
+                    <TextBox x:Name="txbRepresentantePrimerApellido" Text="{Binding Encargado.RepresentantePrimerApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="3"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Segundo apellido</TextBlock>
+                    <TextBox x:Name="txbRepresentanteSegundoApellido" Text="{Binding Encargado.RepresentanteSegundoApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+        </Grid>
+        <!--Style="{StaticResource styGrillaTutor}" Se quita el style a la grilla, el cual bloqueaba controles, que ahora no se deben bloquear-->
+        <Grid Style="{StaticResource styGrillaTutor}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <!--<sec:SubTituloEntrada Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="6"
+                            Numero="5"
+                            Texto="." />
+      <sec:SubTituloEntrada Grid.Column="8"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            Numero="8"
+                            Texto="Fecha de Nacimiento" />-->
+            <!--ENTRADA DE DATOS-->
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Tipo Doc</TextBlock>
+                    <ComboBox x:Name="cb01TipoDocTutor"
+                    SelectedValuePath="Id"
+                    DisplayMemberPath="Nombre"
+                    SelectionChanged="cb01TipoDocTutor_SelectionChanged"
+                    ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=TipoDeDocumentoDeIdentidad|TipoDocTutor}"
+                    SelectedValue="{Binding Encargado.RepresentanteTipoDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}">
+                    </ComboBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="1"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">No. Documento de identidad</TextBlock>
+                    <TextBox x:Name="tbx01NumeroDocumentoTutor"
+                   Text="{Binding Encargado.RepresentanteNumeroDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" LostFocus="tbx01NumeroDocumentoTutor_LostFocus" />
+
+                </DockPanel>
+            </Border>
+            <blo:BloqueadorControles Valor="{Binding Encargado.RepresentanteTipoDocumento}"
+                               Visibility="Collapsed">
+                <blo:BloqueadorControles.ValoresQueDesbloquean>
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaCiudadania }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.LibretaMilitar }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.TarjetaIdentidad }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.RegistroCivil }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NUIP }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NIP }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjeria }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoEspecialPermanencia}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Pasaporte}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.SalvoconductoPermanencia}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CarnetDiplomatico}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjera}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoProteccionTemporal}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoSabe}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoResponde}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.IndocumentadoExtranjero}" />
+                </blo:BloqueadorControles.ValoresQueDesbloquean>
+                <blo:ControlIndividual Elemento="{Binding ElementName=tbx01NumeroDocumentoTutor}" />
+            </blo:BloqueadorControles>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="2"
+              Grid.Row="1"
+              Grid.ColumnSpan="3">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Dirección</TextBlock>
+                    <TextBox Text="{Binding Encargado.RepresentanteDireccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="5"
+              Grid.Row="1"
+              Grid.ColumnSpan="2">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Teléfono</TextBlock>
+                    <TextBox Text="{Binding Encargado.RepresentanteTelefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+        </Grid>
+        <TextBlock Margin="0,10,0,0"><Run FontWeight="Bold">Compareció:</Run> (Me llamo como está dicho y descrito)</TextBlock>
+        <sec:SubTituloEntrada Numero="5"
+                          Texto="*Identificación del (de la) declarante" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <!--ENTRADA DE DATOS-->
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Primer Nombre</TextBlock>
+                    <TextBox x:Name="txbPrimerNombreDecl"
+              Text="{Binding DeclarantePrimerNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper" MaxLength="50">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="1"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Demás Nombres (si aplica)</TextBlock>
+                    <TextBox  x:Name="txbSegundoNombreDecl"
+                    Text="{Binding DeclaranteSegundoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper" MaxLength="50">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="2"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Primer Apellido</TextBlock>
+                    <TextBox  x:Name="txbPrimerApellidoDecl"
+                    Text="{Binding DeclarantePrimerApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper" MaxLength="50">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="3"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Segundo Apellido</TextBlock>
+                    <TextBox x:Name="txbSegundoApellidoDecl"
+                Text="{Binding DeclaranteSegundoApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                   CharacterCasing="Upper" MaxLength="50">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2.3*" />
+                <ColumnDefinition Width="2.3*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <sec:SubTituloEntrada Numero="6"
+                            Texto="Tipo y número del documento de indentidad"
+                            Grid.ColumnSpan="2" />
+            <sec:SubTituloEntrada Numero="7"
+                            Texto="Fecha de nacimiento"
+                            Grid.ColumnSpan="1"
+                            Grid.Column="2" />
+            <sec:SubTituloEntrada 
+                            Numero=""
+                            Texto="Nacionalidad"
+                            Grid.Column="3"/>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Tipo Doc</TextBlock>
+                    <ComboBox x:Name="cb01TipoDocDecl"
+                    SelectedValuePath="Id"
+                    SelectionChanged="cb01TipoDocDecl_SelectionChanged"
+                    DisplayMemberPath="Nombre"
+                    IsEnabled="{Binding ModificarTipoDocumentoDeclarante, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=TipoDeDocumentoDeIdentidad}"
+                    SelectedValue="{Binding DeclaranteTipoDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="1"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">No. Documento de identidad</TextBlock>
+                    <TextBox x:Name="tbx01NumeroDocumentoIdentidadDecl"
+                             IsEnabled="{Binding ModificarTipoDocumentoDeclarante, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Text="{Binding DeclaranteNumeroDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
+                             MaxLength="25" 
+                             LostFocus="tbx01NumeroDocumentoIdentidadDecl_LostFocus" />
+                </DockPanel>
+            </Border>
+            
+            <blo:BloqueadorControles Valor="{Binding DeclaranteTipoDocumento}"
+                               Visibility="Collapsed">
+                <blo:BloqueadorControles.ValoresQueDesbloquean>
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaCiudadania }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.LibretaMilitar }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.TarjetaIdentidad }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.RegistroCivil }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NUIP }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NIP }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjeria }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Visa }" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoEspecialPermanencia}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Pasaporte}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.SalvoconductoPermanencia}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CarnetDiplomatico}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjera}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoProteccionTemporal}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoSabe}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoResponde}" />
+                    <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.IndocumentadoExtranjero}" />
+                </blo:BloqueadorControles.ValoresQueDesbloquean>
+
+                <blo:ControlIndividual Elemento="{Binding ElementName=tbx01NumeroDocumentoIdentidadDecl}" />
+            </blo:BloqueadorControles>
+            <sec:CajaIngresoFecha VerticalAlignment="Center"
+                                  x:Name="cifFechaNacimiento"
+                            Fecha="{Binding DeclaranteFechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            Grid.Row="1"
+                            Grid.Column="2" />
+
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1" Grid.Column="3">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Pais Nacionalidad</TextBlock>
+                    <ComboBox x:Name="cb01NacionalidadDecla"
+                    SelectedValuePath="Id"
+                    DisplayMemberPath="Nacionalidad"
+                    ItemsSource="{Binding Converter={StaticResource NacionalidadConverter}}"
+                    SelectedValue="{Binding DeclaranteNacionalidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                </DockPanel>
+            </Border>
+
+        </Grid>
+        <sec:SubTituloEntrada Numero="8"
+                          Texto="Datos de contactos del (de la) Declarante" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.ColumnSpan="6">
+                <DockPanel>
+                    <imp:DatoSiNoColumna x:Name="dsncSiNo" Height="40" Width="45" MaxWidth="45" Margin="0 0 5 0"
+                        IncluirNsNr="False"
+                        DireccionTamaño="Both"
+                        Valor="{Binding TieneDireccionCorrespondencia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">*Dirección de residencia o correspondencia</TextBlock>
+                    <TextBox IsEnabled="{Binding TieneDireccionCorrespondencia, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToBoolConverter}}" Text="{Binding DatoContactoDireccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="250" />
+                </DockPanel>
+            </Border>
+
+            <congen:Geografia x:Name="geoDeclaranteContacto"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            ComboPais="{Binding ElementName=cbPaisDeclarante}"
+            ComboDepartamento="{Binding ElementName=cbDeptoDeclarante}"
+            ComboMunicipio="{Binding ElementName=cbMcpioDeclarante}"
+            TextBoxIndicativo="{Binding ElementName=txtIndicativo}" 
+            IndicativoMunicipio="{Binding DatoContactoIndicativo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+            PaisId="{Binding DatoContactoPais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+            DepartamentoId="{Binding DatoContactoDepartamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+            MunicipioId="{Binding DatoContactoMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+                Grid.Column="0"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">País</TextBlock>
+                    <ComboBox x:Name="cbPaisDeclarante" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+                Grid.Column="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Departamento</TextBlock>
+                    <ComboBox x:Name="cbDeptoDeclarante" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="2"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Municipio</TextBlock>
+                    <ComboBox x:Name="cbMcpioDeclarante" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="3"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Tipo entorno</TextBlock>
+                    <ComboBox x:Name="cbxDatoContactoTipoEntorno"
+                    VerticalAlignment="Center"
+                    DisplayMemberPath="Nombre"
+                    SelectedValuePath="Id"
+                    SelectedValue="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC},
+                      Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                    ItemsSource="{Binding Source={StaticResource RUV}, Path=InfoGeneral.ListaTipoEntorno}" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="4"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock"
+                       BasedOn="{StaticResource styDescripcionCajaEntrada}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="{x:Null}">
+                                        <Setter Property="Text"
+                              Value="" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="127">
+                                        <Setter Property="Text"
+                              Value="Localidad" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="128">
+                                        <Setter Property="Text"
+                              Value="Corregimiento" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <ComboBox x:Name="cbxDatoContactoLocalidadCorregimiento"
+                    IsEditable="true"
+                    VerticalAlignment="Center"
+                    DisplayMemberPath="Nombre"
+                    SelectedValuePath="Id">
+                        <i:Interaction.Behaviors>
+                            <congen:ComboMayusculaBehavior />
+                            <!--<congen:ComboSoloLetrasBehavior />-->
+                        </i:Interaction.Behaviors>
+                    </ComboBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="5"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock"
+                       BasedOn="{StaticResource styDescripcionCajaEntrada}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="{x:Null}">
+                                        <Setter Property="Text"
+                              Value="" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="127">
+                                        <Setter Property="Text"
+                              Value="Barrio" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="128">
+                                        <Setter Property="Text"
+                              Value="Vereda" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <ComboBox x:Name="cbxDatoContactoBarrioVereda"
+                    IsEditable="true"
+                    VerticalAlignment="Center"
+                    DisplayMemberPath="Nombre"
+                    SelectedValuePath="Id">
+                        <i:Interaction.Behaviors>
+                            <congen:ComboMayusculaBehavior />
+                            <!--<congen:ComboSoloLetrasBehavior />-->
+                        </i:Interaction.Behaviors>
+                    </ComboBox>
+                </DockPanel>
+            </Border>
+            <congen:GeoEntorno x:Name="geeEntornoDatoContacto"
+                         ComboMunicipio="{Binding ElementName=cbMcpioDeclarante}"
+                         TipoEntornoId="{Binding DatoContactoTipoEntorno}"
+                         ComboBarrioVereda="{Binding ElementName=cbxDatoContactoBarrioVereda}"
+                         ComboLocalidadCorregimiento="{Binding ElementName=cbxDatoContactoLocalidadCorregimiento}"
+                         BarrioVeredaId="{Binding DatoContactoBarrioVeredaId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         LocalidadCorregimientoId="{Binding DatoContactoLocalidadCorregimientoId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         BarrioVeredaNombre="{Binding DatoContactoBarrioVeredaNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         LocalidadCorregimientoNombre="{Binding DatoContactoLocalidadCorregimientoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         Grid.Row="1"
+                         Grid.Column="2"
+                         Grid.ColumnSpan="3" />
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Número telefónico al cual se enviarán avisos de notificación e información sobre oferta institucional (Este servicio será siempre gratuito)"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2" />
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Correo electrónico"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="4" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}" >Fijo</TextBlock>
+                    <TextBox MaxLength="4" Width="35" Text="{Binding DatoContactoPais, Converter={StaticResource CDC}, ConverterParameter=INDICATIVO_PAIS}" IsEnabled="False">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Style="{StaticResource styLabelCentrado}" >-</TextBlock>
+                    <TextBox Name="txtIndicativo" MaxLength="5" Width="45">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Style="{StaticResource styLabelCentrado}" >-</TextBlock>
+                    <TextBox Text="{Binding DatoContactoTelefonoFijo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="10">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3"
+              Grid.Column="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Celular</TextBlock>
+                    <TextBox MaxLength="4" Width="35" Text="{Binding DatoContactoPais, Converter={StaticResource CDC}, ConverterParameter=INDICATIVO_PAIS}" IsEnabled="False">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Style="{StaticResource styLabelCentrado}" >-</TextBlock>
+                    <TextBox Text="{Binding DatoContactoTelefonoCelular, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="13">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3"
+              Grid.Column="2"
+              Grid.ColumnSpan="4">
+                <DockPanel>
+                    <imp:DatoSiNoColumna x:Name="CorreoSiNo" Height="40" Width="45" MaxWidth="45" Margin="0 0 5 0"
+                        IncluirNsNr="False"
+                        DireccionTamaño="Both"
+                        Valor="{Binding TieneCorreoElectronico, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Correo electronico</TextBlock>
+                    <TextBox IsEnabled="{Binding TieneCorreoElectronico, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToBoolConverter}}" Text="{Binding DatoContactoCorreoElectronico, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="100" />
+                </DockPanel>
+            </Border>
+        </Grid>
+        <sec:SubTituloEntrada Numero="9"
+                          Texto="Datos alternos de Contacto del (de la) Declarante" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.ColumnSpan="6">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Dirección de residencia o correspondencia</TextBlock>
+                    <TextBox Text="{Binding DatoAlternoContactoDireccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="250" />
+                </DockPanel>
+            </Border>
+            <congen:Geografia x:Name="geo03"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        ComboPais="{Binding ElementName=cbPaisDeclaranteAlterno}"
+                        ComboDepartamento="{Binding ElementName=cbDeptoDeclaranteAlterno}"
+                        ComboMunicipio="{Binding ElementName=cbMcpioDeclaranteAlterno}"
+                        TextBoxIndicativo="{Binding ElementName=txtIndicativoAlterno}" 
+                        IndicativoMunicipio="{Binding DatoContactoAlternoIndicativo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        PaisId="{Binding DatoAlternoContactoPais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        DepartamentoId="{Binding DatoAlternoContactoDepartamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        MunicipioId="{Binding DatoAlternoContactoMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">País</TextBlock>
+                    <ComboBox x:Name="cbPaisDeclaranteAlterno" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.Column="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Departamento</TextBlock>
+                    <ComboBox x:Name="cbDeptoDeclaranteAlterno" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="2"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Municipio</TextBlock>
+                    <ComboBox x:Name="cbMcpioDeclaranteAlterno" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="3"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Tipo entorno</TextBlock>
+                    <ComboBox x:Name="cbxDatoContactoAlternoTipoEntorno"
+                    VerticalAlignment="Center"
+                    DisplayMemberPath="Nombre"
+                    SelectedValuePath="Id"
+                    SelectedValue="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC},
+                      Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                    ItemsSource="{Binding Source={StaticResource RUV}, Path=InfoGeneral.ListaTipoEntorno}" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="4"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock"
+                       BasedOn="{StaticResource styDescripcionCajaEntrada}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="{x:Null}">
+                                        <Setter Property="Text"
+                              Value="" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="127">
+                                        <Setter Property="Text"
+                              Value="Localidad" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="128">
+                                        <Setter Property="Text"
+                              Value="Corregimiento" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <ComboBox x:Name="cbxDatoAlternoContactoLocalidadCorregimiento"
+                    IsEditable="true"
+                    VerticalAlignment="Center"
+                    DisplayMemberPath="Nombre"
+                    SelectedValuePath="Id">
+                        <i:Interaction.Behaviors>
+                            <congen:ComboMayusculaBehavior />
+                            <!--<congen:ComboSoloLetrasBehavior />-->
+                        </i:Interaction.Behaviors>
+                    </ComboBox>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="5"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+
+                    <TextBlock DockPanel.Dock="Top">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock"
+                       BasedOn="{StaticResource styDescripcionCajaEntrada}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="{x:Null}">
+                                        <Setter Property="Text"
+                              Value="" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="127">
+                                        <Setter Property="Text"
+                              Value="Barrio" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding DatoAlternoContactoTipoEntorno, Converter={StaticResource TEC}}"
+                                 Value="128">
+                                        <Setter Property="Text"
+                              Value="Vereda" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <ComboBox x:Name="cbxDatoAlternoContactoBarrioVereda"
+                    IsEditable="true"
+                    VerticalAlignment="Center"
+                    DisplayMemberPath="Nombre"
+                    SelectedValuePath="Id">
+                        <i:Interaction.Behaviors>
+                            <congen:ComboMayusculaBehavior />
+                            <!--<congen:ComboSoloLetrasBehavior />-->
+                        </i:Interaction.Behaviors>
+                    </ComboBox>
+                </DockPanel>
+            </Border>
+            <congen:GeoEntorno x:Name="geeEntornoDatoAlternoContacto"
+                         ComboMunicipio="{Binding ElementName=cbMcpioDeclaranteAlterno}"
+                         TipoEntornoId="{Binding DatoAlternoContactoTipoEntorno}"
+                         ComboBarrioVereda="{Binding ElementName=cbxDatoAlternoContactoBarrioVereda}"
+                         ComboLocalidadCorregimiento="{Binding ElementName=cbxDatoAlternoContactoLocalidadCorregimiento}"
+                         BarrioVeredaId="{Binding DatoAlternoContactoBarrioVeredaId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         LocalidadCorregimientoId="{Binding DatoAlternoContactoLocalidadCorregimientoId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         BarrioVeredaNombre="{Binding DatoAlternoContactoBarrioVeredaNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         LocalidadCorregimientoNombre="{Binding DatoAlternoContactoLocalidadCorregimientoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         Grid.Row="1"
+                         Grid.Column="2"
+                         Grid.ColumnSpan="3" />
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Número telefónico al cual se enviarán avisos de notificación e información sobre oferta institucional (Este servicio será siempre gratuito)"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2" />
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Correo electrónico"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="4" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Fijo</TextBlock>
+                    <TextBox MaxLength="5" Width="35" Text="{Binding DatoAlternoContactoPais, Converter={StaticResource CDC}, ConverterParameter=INDICATIVO_PAIS}" IsEnabled="False">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Style="{StaticResource styLabelCentrado}" >-</TextBlock>
+                    <TextBox Name="txtIndicativoAlterno"  MaxLength="5" Width="45" >
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Style="{StaticResource styLabelCentrado}" >-</TextBlock>
+                    <TextBox Text="{Binding DatoAlternoContactoTelefonoFijo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="10" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3"
+              Grid.Column="1">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Celular</TextBlock>
+                    <TextBox MaxLength="4" Width="35" Text="{Binding DatoAlternoContactoPais, Converter={StaticResource CDC}, ConverterParameter=INDICATIVO_PAIS}" IsEnabled="False">
+                        <i:Interaction.Behaviors>
+                            <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="SoloDigitos" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <TextBlock Style="{StaticResource styLabelCentrado}" >-</TextBlock>
+                    <TextBox Text="{Binding DatoAlternoContactoTelefonoCelular, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="13" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3"
+              Grid.Column="2"
+              Grid.ColumnSpan="4">
+                <DockPanel>
+                    <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Correo electronico</TextBlock>
+                    <TextBox Text="{Binding DatoAlternoContactoCorreoElectronico, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MaxLength="100" />
+                </DockPanel>
+            </Border>
+        </Grid>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t006}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify" />
+        <!--<congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t006V2}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"/>-->
+        <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+               TextAlignment="Center"
+               Margin="0,10,0,0">Identifique a continuación los medios por los cuales la persona autoriza ser contactada:</TextBlock>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}">Mensajes de texto a través del celular</TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="2">Mensajes de voz a través del teléfono fijo</TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Row="1">Mensajes a través del correo electrónico</TextBlock>
+            <DockPanel Grid.Column="2"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="2">
+                <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                   DockPanel.Dock="Left">Otro medio ¿Cuál?</TextBlock>
+                <TextBox Text="{Binding MedioDeContactoOtro, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                 Margin="5,0,0,0" />
+            </DockPanel>
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding MedioDeContactoMensajeTexto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         Grid.Column="1"
+                         HorizontalAlignment="Left"
+                         TipoParametros="SiNo" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding MedioDeContactoCorreoElectronico, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         HorizontalAlignment="Left"
+                         TipoParametros="SiNo" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding MedioDeContactoMensajeVoz, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         Grid.Column="3"
+                         HorizontalAlignment="Left"
+                         TipoParametros="SiNo" />
+        </Grid>
+        <sec:SubTituloEntrada Numero="10"
+                          Texto="De acuerdo con lo manifestado en la entrevista previa, usted se considera víctima de: (registre el número de eventos con respecto al mismo hecho)" />
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="17*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="17*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition  Height="5" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Texto="No. ANEXO" />
+            <sec:TituloConBorde Grid.Column="1"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="HECHO" />
+            <sec:TituloConBorde Grid.Column="2"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="NÚMERO EVENTOS" />
+            <sec:TituloConBorde Grid.Column="4"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="No. ANEXO" />
+            <sec:TituloConBorde Grid.Column="5"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="HECHO" />
+            <sec:TituloConBorde Grid.Column="6"
+                          AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Texto="NÚMERO EVENTOS" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="1"
+                          Texto="1" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="1"
+                          Texto="Acto terrorista / Atentados / Combates / Enfrentamientos / Hostigamientos" />
+            <my:DatoColumna Texto="{Binding Hechos[0]}"
+                      Grid.Column="2"
+                      Grid.Row="1" />
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="1"
+                          Texto="6" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="1"
+                          Texto="Homicidio/Masacre" />
+            <my:DatoColumna Texto="{Binding Hechos[5]}"
+                      Grid.Column="6"
+                      Grid.Row="1" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="2"
+                          Texto="2" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="2"
+                          Texto="Amenaza" />
+            <my:DatoColumna Texto="{Binding Hechos[1]}"
+                      Grid.Column="2"
+                      Grid.Row="2" />
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="2"
+                          Texto="7" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="2"
+                          Texto="Minas Antipersonal, Munición sin Explotar y Artefacto Explosivo improvisado" />
+            <my:DatoColumna Texto="{Binding Hechos[6]}"
+                      Grid.Column="6"
+                      Grid.Row="2" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="3"
+                          Texto="3" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="3"
+                          Texto="Delitos contra la libertad y la integridad sexual en desarrollo del conflicto armado" />
+            <my:DatoColumna Texto="{Binding Hechos[2]}"
+                      Grid.Column="2"
+                      Grid.Row="3" />
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="3"
+                          Texto="8" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="3"
+                          Texto="Secuestro" />
+            <my:DatoColumna Texto="{Binding Hechos[7]}"
+                      Grid.Column="6"
+                      Grid.Row="3" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="4"
+                          Texto="4" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="4"
+                          Texto="Desaparición forzada" />
+            <my:DatoColumna Texto="{Binding Hechos[7]}"
+                      Grid.Column="6"
+                      Grid.Row="3" />
+            <my:DatoColumna Texto="{Binding Hechos[3]}"
+                      Grid.Column="2"
+                      Grid.Row="4" />
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="4"
+                          Texto="9" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="4"
+                          Texto="Tortura" />
+            <my:DatoColumna Texto="{Binding Hechos[8]}"
+                      Grid.Column="6"
+                      Grid.Row="4" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="5"
+                          Texto="5" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="1"
+                          Grid.Row="5"
+                          Texto="Desplazamiento forzado" />
+            <my:DatoColumna Texto="{Binding Hechos[4]}"
+                      Grid.Column="2"
+                      Grid.Row="5" />
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="5"
+                          Texto="10" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="5"
+                          Texto="Vinculación de Niños Niñas y Adolescentes a actividades relacionadas con grupos armados" />
+            <my:DatoColumna Texto="{Binding Hechos[9]}"
+                      Grid.Column="6"
+                      Grid.Row="5" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Center"
+                          AlineacionVertical="Center"
+                          Grid.Column="4"
+                          Grid.Row="6"
+                          Texto="11" />
+            <sec:TituloConBorde AlineacionHorizontal="Left"
+                          AlineacionVertical="Center"
+                          Grid.Column="5"
+                          Grid.Row="6"
+                          Texto="Despojo y abandono forzado de tierras" />
+            <my:DatoColumna Texto="{Binding Hechos[10]}"
+                      Grid.Column="6"
+                      Grid.Row="6" />
+            <!--FILAS-->
+            <sec:TituloConBorde AlineacionHorizontal="Right"
+                          AlineacionVertical="Center"
+                          Grid.Column="0"
+                          Grid.Row="8"
+                          Grid.ColumnSpan="3"
+                          Texto="Otro (Especifique cuál en la siguiente casilla)" />
+            <TextBlock Grid.Column="3"
+                 Grid.Row="8"
+                 Text=""
+                 FontFamily="Wingdings"
+                 HorizontalAlignment="Center" />
+            <TextBlock Grid.Column="4"
+                 Grid.Row="8"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Text="¿Cuál?" />
+
+            <Border Grid.Column="4"
+              Grid.Row="8"
+              Grid.ColumnSpan="3"
+              Background="Transparent"
+              BorderBrush="Black"
+              BorderThickness="1" />
+
+            <TextBox Grid.Column="5" Name="txtOtroCual"
+               Grid.Row="8"
+               Grid.ColumnSpan="2"
+               Text="{Binding HechosOtrosCual, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" GotFocus="txtOtroCual_GotFocus" />
+        </Grid>
+
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t007}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify" />
+
+        <blo:BloqueadorControles Valor="{Binding DeclaranteTipoDocumento}" Visibility="Collapsed">
+            <blo:BloqueadorControles.ValoresQueDesbloquean>
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjeria}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Visa}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoEspecialPermanencia}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Pasaporte}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.SalvoconductoPermanencia}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CarnetDiplomatico}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjera}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.IndocumentadoExtranjero}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoSabe}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoResponde}" />
+                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoProteccionTemporal}" />
+            </blo:BloqueadorControles.ValoresQueDesbloquean>
+            <blo:ControlIndividual Elemento="{Binding ElementName=cb01NacionalidadDecla}" />
+        </blo:BloqueadorControles>
+    </StackPanel>
+</UserControl>
+
+  
+  
+  
+  

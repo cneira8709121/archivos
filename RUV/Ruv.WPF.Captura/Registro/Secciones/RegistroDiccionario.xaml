@@ -1,0 +1,213 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/BasesParaEstilos.xaml" />
+    <ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/CheckBoxX.xaml" />
+    <ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/RadioButtonX.xaml" />
+    <ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/ComboBoxPrint.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+  <!--<Style TargetType="ComboBox"
+         BasedOn="{StaticResource styComboBoxPrint}" />-->
+  <Style TargetType="ComboBox"
+         BasedOn="{StaticResource styBaseComboboxNormal}" />
+
+  <Style x:Key="styNumeroDeclaracion"
+         BasedOn="{StaticResource styBaseTextBlockNormal}"
+         TargetType="TextBlock">
+    <Setter Property="FontSize"
+            Value="{StaticResource TamañoTextoGrande}" />
+    <Setter Property="FontWeight"
+            Value="Bold" />
+    <Setter Property="TextAlignment"
+            Value="Center" />
+    <Setter Property="Margin"
+            Value="5" />
+  </Style>
+  
+  <Style x:Key="styTituloSeccion"
+         BasedOn="{StaticResource styBaseTextBlockNormal}"
+         TargetType="TextBlock">
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="TextAlignment"
+            Value="Center" />
+    <Setter Property="Padding"
+            Value="5" />
+    <Setter Property="Background"
+            Value="Black" />
+    <Setter Property="Foreground"
+            Value="White" />
+  </Style>
+
+  <Style x:Key="styTextoDescripcion"
+         BasedOn="{StaticResource styBaseTextBlockNormal}"
+         TargetType="TextBlock">
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="TextAlignment"
+            Value="Center" />
+    <Setter Property="Padding"
+            Value="3" />
+  </Style>
+
+  <Style x:Key="styTextoDescripcionGrande"
+         BasedOn="{StaticResource styBaseTextBlockGrande}"
+         TargetType="TextBlock">
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="TextAlignment"
+            Value="Center" />
+    <Setter Property="Padding"
+            Value="3" />
+    <Setter Property="Foreground"
+            Value="Black" />
+  </Style>
+
+  <Style x:Key="styTextoDescripcionPequeño"
+         BasedOn="{StaticResource styBaseTextBlockPequeño}"
+         TargetType="TextBlock">
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="Padding"
+            Value="3" />
+    <Setter Property="Foreground"
+            Value="Black" />
+  </Style>
+
+  <Style x:Key="styTextoDescripcionIzq"
+         BasedOn="{StaticResource styBaseTextBlockNormal}"
+         TargetType="TextBlock">
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+    <Setter Property="TextAlignment"
+            Value="Left" />
+    <Setter Property="Padding"
+            Value="3" />
+  </Style>
+
+  <Style TargetType="Border">
+    <Setter Property="BorderThickness"
+            Value="1" />
+    <Setter Property="BorderBrush"
+            Value="Black" />
+  </Style>
+
+  <Style x:Key="styBordeCajaEntrada1"
+         TargetType="Border">
+    <Setter Property="BorderBrush"
+            Value="Black" />
+    <Setter Property="BorderThickness"
+            Value="1,0,1,1" />
+    <Setter Property="Padding"
+            Value="3" />
+  </Style>
+
+  <Style x:Key="styBordeCajaEntrada2"
+         TargetType="Border">
+    <Setter Property="BorderBrush"
+            Value="Black" />
+    <Setter Property="BorderThickness"
+            Value="0,0,1,1" />
+    <Setter Property="Padding"
+            Value="3" />
+  </Style>
+
+  <Style x:Key="styDescripcionCajaEntrada"
+         BasedOn="{StaticResource styBaseTextBlockNormal}"
+         TargetType="TextBlock">
+    <Setter Property="Margin"
+            Value="0,0,0,5" />
+    <Setter Property="DockPanel.Dock"
+            Value="Top" />
+  </Style>
+
+    <Style x:Key="styLabelCentrado"
+         BasedOn="{StaticResource styBaseTextBlockNormal}"
+         TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style x:Key="styGrillaLista1"
+         TargetType="DataGrid">
+        <Setter Property="AutoGenerateColumns"
+            Value="False" />
+        <Setter Property="CanUserAddRows"
+            Value="False" />
+        <Setter Property="CanUserDeleteRows"
+            Value="False" />
+        <Setter Property="CanUserResizeColumns"
+            Value="False" />
+        <Setter Property="CanUserReorderColumns"
+            Value="False" />
+        <Setter Property="CanUserResizeRows"
+            Value="False" />
+        <Setter Property="CanUserSortColumns"
+            Value="False" />
+        <Setter Property="SelectionMode"
+            Value="Single" />
+        <Setter Property="SelectionUnit"
+            Value="Cell" />
+        <Setter Property="HeadersVisibility"
+            Value="Column" />
+        <Setter Property="ColumnHeaderStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="FontWeight"
+                  Value="Bold" />
+                    <Setter Property="FontFamily"
+                  Value="{DynamicResource TipoLetraEstandar}" />
+                    <Setter Property="FontSize"
+                  Value="{DynamicResource TamañoTextoNormal}" />
+                    <Setter Property="Background"
+                  Value="LightGray" />
+                    <Setter Property="BorderBrush"
+                  Value="Black" />
+                    <Setter Property="BorderThickness"
+                  Value="1" />
+                    <Setter Property="Padding"
+                  Value="4" />
+                    <Setter Property="SeparatorVisibility"
+                  Value="Collapsed" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="styHyperlink"
+           TargetType="Hyperlink">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Seleccionado}"
+                     Value="True">
+                <DataTrigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="bsb02" />
+                    <BeginStoryboard x:Name="bsb01">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Background).Color"
+                                RepeatBehavior="4x"
+                                FillBehavior="HoldEnd"
+                                Duration="0:0:0.15"
+                                From="White"
+                                To="#FFFFC4C4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="bsb01" />
+                    <BeginStoryboard x:Name="bsb02">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Background).Color"
+                                FillBehavior="HoldEnd"
+                                Duration="0:0:0.5"
+                                To="White" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,7081 @@
+-- Create PKG_RECONOCIMIENTO package
+create or replace PACKAGE PKG_RECONOCIMIENTO IS
+
+TYPE cursor_type IS REF CURSOR;
+
+ RADICADO_PENDIENTE_CAPTURA NUMBER := 704;
+ RADICADO_INICIA_CAPTURA NUMBER := 737;
+
+ PROCESO_FINALIZADO NUMBER := 770;
+ 
+ VALORACION_PEND_PORASIGNAR NUMBER := 702;
+ PROCESO_DECLARACION NUMBER := 547;
+ RADICADO_PENDIENTE_CRITICA_5 NUMBER := 10015;
+ RADICADO_PENDIENTE_VERIFICAR NUMBER := 10016;
+
+ ROL_CRITICA_5 NUMBER := 1011;
+ ROL_LIDER_RADICACION NUMBER := 1012;
+ ROL_VALORACION NUMBER := 1002;
+ ROL_ASIGNADOR_VALORACION NUMBER := 1000;
+
+ SERIE_FORMULARIOS_TOMA_LINEA VARCHAR2(1) := 'B';
+
+  /*  DESCRIPCION:
+  **  AUTOR:
+  **  FECHA:
+  **  CAMBIOS:
+  **    20121204 - JAIRO VALDERRAMA
+  **    1- AL SER UNA DECLARACION POR TOMA EN LINEA ESTABA CREANDO UN NUMERO DE FORMULARIO
+  **    PERO NO EN LA TABLA TBIDENTIFICADORFORMULARIO
+  */
+ PROCEDURE sp_setDeclaracion
+ (
+    P_ID                          IN NUMBER
+  , P_ENTREVISTAPREVIA            NUMBER
+  , P_EXPLICACIONALCANCE          NUMBER
+  , P_PARAM_TIPODESPLAZAMIENTO    NUMBER
+  , P_ID_MUNICIPIODECLARACION     NUMBER
+  , P_ID_DEPARTAMENTODECLARACION  NUMBER
+  , P_ID_PAISDECLARACION          NUMBER
+  , P_PARAM_ENTIDADATIENDE        NUMBER
+  , P_FECHADECLARACION            DATE
+  , P_ID_MUNICIPIOACTUAL          NUMBER
+  , P_ID_DEPARTAMENTOACTUAL       NUMBER
+  , P_PARAM_ENTORNOACTUAL         NUMBER
+  , P_PARAM_TIPOENTORNOACTUAL     NUMBER
+  , P_ID_POBLADOACTUAL            NUMBER
+  , P_CUALPOBLADOACTUAL           VARCHAR2
+  , P_FECHAARRIBO                 DATE
+  , P_DIRECCIONCORRESPONDENCIA    VARCHAR2
+  , P_TELEFONOACTUAL              VARCHAR2
+  , P_PARAM_TIPOENTORNODESPLAZ    NUMBER
+  , P_PARAM_ENTORNODESPLAZ        NUMBER
+  , P_ID_DEPARTAMENTODESPLAZ      NUMBER
+  , P_ID_MUNICIPIODESPLAZ         NUMBER
+  , P_ID_POBLADODESPLAZ           NUMBER
+  , P_CUALPOBLADODESPLAZ          VARCHAR2
+  , P_ANHOSRESIDENCIA             NUMBER
+  , P_MESESRESIDENCIA             NUMBER
+  , P_FECHADESPLAZ                DATE
+  , P_PARAM_DECLAROANTERIORMENTE  NUMBER
+  , P_ID_MUNICIPIOANTERIOR        NUMBER
+  , P_ID_DEPARTAMENTOANTERIOR     NUMBER
+  , P_PARAM_ENTIDADATENDIO        NUMBER
+  , P_FECHADECLARACIONANTERIOR    DATE
+  , P_RAZONSITIO                  VARCHAR2
+  , P_PARAM_DESEOHOGAR            NUMBER
+  , P_ID_MUNICIPIODESEADO         NUMBER
+  , P_ID_DEPARTAMENTODESEADO      NUMBER
+  , P_PARAM_ENTORNODESEADO        NUMBER
+  , P_FECHATERMINACION            DATE
+  , P_REALIZOJURAMENTO            NUMBER
+  , P_LEYODECLARACION             NUMBER
+  , P_DOCUMENTOSADICIONALES       NUMBER
+  , P_CUANTOSFOLIOS               NUMBER
+  , P_ORIENTACIONENMENDADURAS     NUMBER
+  , P_TIENEENMENDADURAS           NUMBER
+  , P_ID_USUARIO                  NUMBER
+  , P_CODIGOANTIGUO               VARCHAR2
+  , P_PARAM_ESTADO                NUMBER
+  , P_FUNCIONARIO                 VARCHAR2
+  , P_CARGO                       VARCHAR2
+  , P_CAMPOPRUEBA                 VARCHAR2
+  , P_ID_DETALLERADICACION        NUMBER
+  , P_ID_UTERRITORIAL             NUMBER
+  , P_PUNTAJE_HOGAR               NUMBER
+  , P_PARAM_PROCESO               NUMBER
+  , P_FECHAFINALIZACION           DATE
+  , P_FECHAREGISTRO               DATE
+  , P_PARAM_TIPOREPRESENTANTE     NUMBER
+  , P_CORREGIRDECLARACION         NUMBER
+  , P_QUECORRECCIONES             VARCHAR2
+  , P_TELEFONOGERESS              VARCHAR2
+  , P_OBSERVACIONES               VARCHAR2
+  , P_FECHA_PRIMERA_INCLUSION     DATE
+  , P_VECES_HOGAR_NO_INCLUIDO     NUMBER
+  , P_ID_DECLARACION_PADRE        NUMBER
+  , P_MENSAJE_CELULAR             NUMBER
+  , P_MENSAJE_CORREOE             NUMBER
+  , P_MENSAJE_FIJO                NUMBER
+  , P_OTRO                        VARCHAR2
+  , P_CUANTOS_ANEXOS              NUMBER
+  , P_SABE_FIRMAR                 NUMBER
+  , P_ID_ENCARGADO                NUMBER
+  , P_ID_RADICACION               NUMBER
+  , P_NRO_FORMULARIO              IN OUT VARCHAR2
+  , P_OTROHECHO                   VARCHAR2
+  , P_IDENTIDADMUNICIPIODECLARA   NUMBER
+  , P_idCreado                    OUT NUMBER
+ );
+
+ PROCEDURE sp_updDeclaracion
+ (
+    P_ID                          IN NUMBER
+  , P_ENTREVISTAPREVIA            NUMBER
+  , P_EXPLICACIONALCANCE          NUMBER
+  , P_PARAM_TIPODESPLAZAMIENTO    NUMBER
+  , P_ID_MUNICIPIODECLARACION     NUMBER
+  , P_ID_DEPARTAMENTODECLARACION  NUMBER
+  , P_ID_PAISDECLARACION          NUMBER
+  , P_PARAM_ENTIDADATIENDE        NUMBER
+  , P_FECHADECLARACION            DATE
+  , P_ID_MUNICIPIOACTUAL          NUMBER
+  , P_ID_DEPARTAMENTOACTUAL       NUMBER
+  , P_PARAM_ENTORNOACTUAL         NUMBER
+  , P_PARAM_TIPOENTORNOACTUAL     NUMBER
+  , P_ID_POBLADOACTUAL            NUMBER
+  , P_CUALPOBLADOACTUAL           VARCHAR2
+  , P_FECHAARRIBO                 DATE
+  , P_DIRECCIONCORRESPONDENCIA    VARCHAR2
+  , P_TELEFONOACTUAL              VARCHAR2
+  , P_PARAM_TIPOENTORNODESPLAZ    NUMBER
+  , P_PARAM_ENTORNODESPLAZ        NUMBER
+  , P_ID_DEPARTAMENTODESPLAZ      NUMBER
+  , P_ID_MUNICIPIODESPLAZ         NUMBER
+  , P_ID_POBLADODESPLAZ           NUMBER
+  , P_CUALPOBLADODESPLAZ          VARCHAR2
+  , P_ANHOSRESIDENCIA             NUMBER
+  , P_MESESRESIDENCIA             NUMBER
+  , P_FECHADESPLAZ                DATE
+  , P_PARAM_DECLAROANTERIORMENTE  NUMBER
+  , P_ID_MUNICIPIOANTERIOR        NUMBER
+  , P_ID_DEPARTAMENTOANTERIOR     NUMBER
+  , P_PARAM_ENTIDADATENDIO        NUMBER
+  , P_FECHADECLARACIONANTERIOR    DATE
+  , P_RAZONSITIO                  VARCHAR2
+  , P_PARAM_DESEOHOGAR            NUMBER
+  , P_ID_MUNICIPIODESEADO         NUMBER
+  , P_ID_DEPARTAMENTODESEADO      NUMBER
+  , P_PARAM_ENTORNODESEADO        NUMBER
+  , P_FECHATERMINACION            DATE
+  , P_REALIZOJURAMENTO            NUMBER
+  , P_LEYODECLARACION             NUMBER
+  , P_DOCUMENTOSADICIONALES       NUMBER
+  , P_CUANTOSFOLIOS               NUMBER
+  , P_ORIENTACIONENMENDADURAS     NUMBER
+  , P_TIENEENMENDADURAS           NUMBER
+  , P_ID_USUARIO                  NUMBER
+  , P_CODIGOANTIGUO               VARCHAR2
+  , P_PARAM_ESTADO                NUMBER
+  , P_FUNCIONARIO                 VARCHAR2
+  , P_CARGO                       VARCHAR2
+  , P_CAMPOPRUEBA                 VARCHAR2
+  , P_ID_DETALLERADICACION        NUMBER
+  , P_ID_UTERRITORIAL             NUMBER
+  , P_PUNTAJE_HOGAR               NUMBER
+  , P_PARAM_PROCESO               NUMBER
+  , P_FECHAFINALIZACION           DATE
+  , P_FECHAREGISTRO               DATE
+  , P_PARAM_TIPOREPRESENTANTE     NUMBER
+  , P_CORREGIRDECLARACION         NUMBER
+  , P_QUECORRECCIONES             VARCHAR2
+  , P_TELEFONOGERESS              VARCHAR2
+  , P_OBSERVACIONES               VARCHAR2
+  , P_FECHA_PRIMERA_INCLUSION     DATE
+  , P_VECES_HOGAR_NO_INCLUIDO     NUMBER
+  , P_ID_DECLARACION_PADRE        NUMBER
+  , P_MENSAJE_CELULAR             NUMBER
+  , P_MENSAJE_CORREOE             NUMBER
+  , P_MENSAJE_FIJO                NUMBER
+  , P_OTRO                        VARCHAR2
+  , P_CUANTOS_ANEXOS              NUMBER
+  , P_SABE_FIRMAR                 NUMBER
+  , P_ID_ENCARGADO                NUMBER
+  , P_ID_RADICACION               NUMBER
+  , P_NRO_FORMULARIO              IN OUT VARCHAR2
+  , P_OTROHECHO                   VARCHAR2
+  , P_IDENTIDADMUNICIPIODECLARA   NUMBER
+  , P_idCreado                    OUT NUMBER
+ );
+
+ PROCEDURE sp_getDeclaracion
+ (
+    P_ID               IN NUMBER
+   ,cu_result          OUT cursor_type
+ );
+
+ PROCEDURE sp_getListaDeclaracion
+ (
+    P_CodigoDeclaracion            IN VARCHAR2
+  , P_DeclaranteNumeroIdentific    IN VARCHAR2
+  , P_DeclarantePrimerNombre       IN VARCHAR2
+  , P_DeclaranteDemasNombres       IN VARCHAR2
+  , P_DeclarantePrimerApellido     IN VARCHAR2
+  , P_DeclaranteSegundoApellido    IN VARCHAR2
+  , cu_result                      OUT cursor_type
+ );
+
+ PROCEDURE sp_setNarracion
+ (
+    P_ID_DECLARACION           IN NUMBER
+  , P_NARRACION                IN VARCHAR2
+ );
+
+ PROCEDURE sp_updNarracion
+ (
+    P_ID_DECLARACION           IN NUMBER
+  , P_NARRACION                IN VARCHAR2
+ );
+
+ PROCEDURE sp_getNarracion
+ (
+    P_ID_DECLARACION           IN NUMBER
+  , cu_result              OUT cursor_type
+  );
+
+PROCEDURE sp_setPersona
+  (
+      P_ID                            IN NUMBER
+    , P_PRIMERNOMBRE                  IN VARCHAR2
+    , P_SEGUNDONOMBRE                 IN VARCHAR2
+    , P_PRIMERAPELLIDO                IN VARCHAR2
+    , P_SEGUNDOAPELLIDO               IN VARCHAR2
+    , P_PARAM_TIPODOCUMENTO           IN NUMBER
+    , P_NUMERODOCUMENTO               IN VARCHAR2
+    , P_ID_DEPARTAMENTOEXPEDICION     IN NUMBER
+    , P_ID_MUNICIPIOEXPEDICION        IN NUMBER
+    , P_PARAM_ESTADOCIVIL             IN NUMBER
+    , P_PARAM_GENERO                  IN NUMBER
+    , P_PARAM_PROFESION               IN NUMBER
+    , P_CUALPROFESION                 IN VARCHAR2
+    , P_ID_DEPARTAMENTO               IN NUMBER
+    , P_ID_MUNICIPIO                  IN NUMBER
+    , P_PARAM_MINORIAETNICA           IN NUMBER
+    , P_GESTANTE                      IN NUMBER
+    , P_PARAM_REGIMENSALUD            IN NUMBER
+    , P_LEEYESCRIBE                   IN NUMBER
+    , P_ASISTIAALAESCUELA             IN NUMBER
+    , P_ASISTEAESCUELA                IN NUMBER
+    , P_ULTIMOGRADO                   IN NUMBER
+    , P_PARAM_NIVELESCOLAR            IN NUMBER
+    , P_PARAM_OCUPACIONANTERIOR       IN NUMBER
+    , P_PARAM_ACTVIDADANTERIOR        IN NUMBER
+    , P_PARAM_OCUPACIONACTUAL         IN NUMBER
+    , P_PARAM_ACTVIDADACTUAL          IN NUMBER
+    , P_FECHANACIMIENTO               IN DATE
+    , P_ESTAFALLECIDO                 IN NUMBER
+    , P_CUALREGIMENSALUD              IN VARCHAR2
+    , P_CUALACTIVIDADANTERIOR         IN VARCHAR2
+    , P_CUALACTIVIDADACTUAL           IN VARCHAR2
+    , P_PARAM_BIENESABANDONADOS       IN NUMBER
+    , P_PARAM_CREDITOSVIGENTES        IN NUMBER
+    , P_ID_PROCESO                    IN NUMBER
+    , P_PARAM_PROCESO                 IN NUMBER
+    , P_ID_USUARIO                    IN NUMBER
+    , P_ID_UTERRITORIAL               IN NUMBER
+    , P_ID_ORIGENFUENTE               IN NUMBER
+    , P_OBSERVACIONES                 IN VARCHAR2
+    , P_FECHAEXPEDICIONDOC            IN DATE
+    , P_REGISTRADURIA_1               IN NUMBER
+    , P_REGISTRADURIA_2               IN NUMBER
+    , P_ID_PERSONASIFA                IN NUMBER
+    , P_ID_PERSONAJUNTOS              IN NUMBER
+    , P_ESMUJERCABEZADEHOGAR          IN NUMBER
+    , P_ESMENORSINACUDIENTE           IN NUMBER
+    , P_PARAM_ETNIAPERTENECE          IN NUMBER
+    , P_PARAM_ROLCOMPLEMETARIO        IN NUMBER
+    , P_PARAM_RESGUARDO               IN NUMBER
+    , P_CUALETNIAOPUEBLO              IN VARCHAR2
+    , P_CUALROLCOMPLEMENTARIO         IN VARCHAR2
+    , P_CUALORGANIZACIONSOCIAL        IN VARCHAR2
+    , P_PARAM_PROTECCIONBIENES        IN NUMBER
+    , P_PORQUEPROTECCIONBIENES        IN VARCHAR2
+    , P_PARAM_PREDIOFUEDESPOJADO      IN NUMBER
+    , P_PARAM_FORMADESPOJO            IN NUMBER
+    , P_PARAM_AUTORDESPOJO            IN NUMBER
+    , P_PARAM_LEGISLAZIONTERRITORIO   IN NUMBER
+    , P_PARAM_AFECTACION              IN NUMBER
+    , P_COMUNAS_AFECTADAS             IN VARCHAR2
+    , P_PARAM_OTROSBIENESABANDONADOS  IN NUMBER
+    , P_VIGENCIA_REGISTRADURIA        IN VARCHAR2
+    , P_REGISTRADURIA                 IN NUMBER
+    , P_COMUNIDAD                     IN VARCHAR2
+    , p_idCreado                      OUT NUMBER
+  );
+
+PROCEDURE sp_updPersona
+  (
+      P_ID                            IN NUMBER
+    , P_PRIMERNOMBRE                  IN VARCHAR2
+    , P_SEGUNDONOMBRE                 IN VARCHAR2
+    , P_PRIMERAPELLIDO                IN VARCHAR2
+    , P_SEGUNDOAPELLIDO               IN VARCHAR2
+    , P_PARAM_TIPODOCUMENTO           IN NUMBER
+    , P_NUMERODOCUMENTO               IN VARCHAR2
+    , P_ID_DEPARTAMENTOEXPEDICION     IN NUMBER
+    , P_ID_MUNICIPIOEXPEDICION        IN NUMBER
+    , P_PARAM_ESTADOCIVIL             IN NUMBER
+    , P_PARAM_GENERO                  IN NUMBER
+    , P_PARAM_PROFESION               IN NUMBER
+    , P_CUALPROFESION                 IN VARCHAR2
+    , P_ID_DEPARTAMENTO               IN NUMBER
+    , P_ID_MUNICIPIO                  IN NUMBER
+    , P_PARAM_MINORIAETNICA           IN NUMBER
+    , P_GESTANTE                      IN NUMBER
+    , P_PARAM_REGIMENSALUD            IN NUMBER
+    , P_LEEYESCRIBE                   IN NUMBER
+    , P_ASISTIAALAESCUELA             IN NUMBER
+    , P_ASISTEAESCUELA                IN NUMBER
+    , P_ULTIMOGRADO                   IN NUMBER
+    , P_PARAM_NIVELESCOLAR            IN NUMBER
+    , P_PARAM_OCUPACIONANTERIOR       IN NUMBER
+    , P_PARAM_ACTVIDADANTERIOR        IN NUMBER
+    , P_PARAM_OCUPACIONACTUAL         IN NUMBER
+    , P_PARAM_ACTVIDADACTUAL          IN NUMBER
+    , P_FECHANACIMIENTO               IN DATE
+    , P_ESTAFALLECIDO                 IN NUMBER
+    , P_CUALREGIMENSALUD              IN VARCHAR2
+    , P_CUALACTIVIDADANTERIOR         IN VARCHAR2
+    , P_CUALACTIVIDADACTUAL           IN VARCHAR2
+    , P_PARAM_BIENESABANDONADOS       IN NUMBER
+    , P_PARAM_CREDITOSVIGENTES        IN NUMBER
+    , P_ID_PROCESO                    IN NUMBER
+    , P_PARAM_PROCESO                 IN NUMBER
+    , P_ID_USUARIO                    IN NUMBER
+    , P_ID_UTERRITORIAL               IN NUMBER
+    , P_ID_ORIGENFUENTE               IN NUMBER
+    , P_OBSERVACIONES                 IN VARCHAR2
+    , P_FECHAEXPEDICIONDOC            IN DATE
+    , P_REGISTRADURIA_1               IN NUMBER
+    , P_REGISTRADURIA_2               IN NUMBER
+    , P_ID_PERSONASIFA                IN NUMBER
+    , P_ID_PERSONAJUNTOS              IN NUMBER
+    , P_ESMUJERCABEZADEHOGAR          IN NUMBER
+    , P_ESMENORSINACUDIENTE           IN NUMBER
+    , P_PARAM_ETNIAPERTENECE          IN NUMBER
+    , P_PARAM_ROLCOMPLEMETARIO        IN NUMBER
+    , P_PARAM_RESGUARDO               IN NUMBER
+    , P_CUALETNIAOPUEBLO              IN VARCHAR2
+    , P_CUALROLCOMPLEMENTARIO         IN VARCHAR2
+    , P_CUALORGANIZACIONSOCIAL        IN VARCHAR2
+    , P_PARAM_PROTECCIONBIENES        IN NUMBER
+    , P_PORQUEPROTECCIONBIENES        IN VARCHAR2
+    , P_PARAM_PREDIOFUEDESPOJADO      IN NUMBER
+    , P_PARAM_FORMADESPOJO            IN NUMBER
+    , P_PARAM_AUTORDESPOJO            IN NUMBER
+    , P_PARAM_LEGISLAZIONTERRITORIO   IN NUMBER
+    , P_PARAM_AFECTACION              IN NUMBER
+    , P_COMUNAS_AFECTADAS             IN VARCHAR2
+    , P_PARAM_OTROSBIENESABANDONADOS  IN NUMBER
+    , P_VIGENCIA_REGISTRADURIA        IN VARCHAR2
+    , P_REGISTRADURIA                 IN NUMBER
+    , P_COMUNIDAD                     IN VARCHAR2
+    , p_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setRegitroPersona
+  (
+    P_ID                          IN NUMBER
+  , P_ID_DECLARACION              IN NUMBER
+  , P_ID_PERSONA                  IN NUMBER
+  , P_ESDECLARANTE                IN NUMBER
+  , P_CARACTERIZADO               IN NUMBER
+  , P_ACTIVO                      IN NUMBER
+  , P_ID_MIJEFEHOGAR              IN NUMBER
+  , P_PARAM_ESTADOAYUDAS          IN NUMBER
+  , P_PUNTAJE_PERSONA             IN NUMBER
+  , P_ID_PROCESO                  IN NUMBER
+  , P_PARAM_PROCESO               IN NUMBER
+  , P_ID_USUARIO                  IN NUMBER
+  , P_ID_UTERRITORIAL             IN NUMBER
+  , P_DIRECCION                   IN VARCHAR2
+  , P_TELEFONO                    IN VARCHAR2
+  , P_MOVIL                       IN VARCHAR2
+  , P_PARAM_RELACION              IN NUMBER
+  , P_SEDESPLAZO                  IN NUMBER
+  , P_RESTRINGIDA                 IN NUMBER
+  , P_NOVEDAD_INCLUSION           IN NUMBER
+  , P_OBS_RESTRINGIDA             IN VARCHAR2
+  , P_TIPO_RESTRICCION            IN NUMBER
+  , P_EMAIL                       IN VARCHAR2
+  , P_DIRECCION_ALTERNA           IN VARCHAR2
+  , P_ID_ENTORNO_ALTERNO          IN NUMBER
+  , P_OTRO_ENTORNO_ALTERNO        IN VARCHAR2
+  , P_ID_DEPARTAMENTO_ALTERNO     IN NUMBER
+  , P_ID_MUNICIPIO_ALTERNO        IN NUMBER
+  , P_TELEFONO_ALTERNO            IN VARCHAR2
+  , P_MOVIL_ALTERNO               IN VARCHAR2
+  , P_EMAIL_ALTERNO               IN VARCHAR2
+  , P_CONSECUTIVO_PERSONA         IN NUMBER
+  , P_ESMUJERCABEZADEHOGAR        IN NUMBER
+  , P_PARAM_REGIMENESPECIAL       IN NUMBER
+  , P_GESTANTE_LACTANTE           IN NUMBER
+  , P_ID_DEPARTAMENTO             IN NUMBER
+  , P_ID_MUNICIPIO                IN NUMBER
+  , P_ID_ENTORNO                  IN NUMBER
+  , P_OTRO_ENTORNO                IN VARCHAR2
+  , P_ID_TIPOPOBLACION            IN NUMBER
+  , P_ID_TIPOPOBLACION_ALTERNO    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG      IN NUMBER
+  , P_PARAM_BARRIO_VEREDA         IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG       IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA          IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO          IN NUMBER
+  , P_PARAM_TIPO_ENTORNO_ALT      IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_ALT  IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ALT     IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ALT   IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ALT      IN VARCHAR2
+  , P_ID_PAIS                     IN NUMBER
+  , P_ID_PAIS_ALTERNO             IN NUMBER
+  , P_CONSECUTIVO_FAMILIA         IN NUMBER
+  , P_INDICATIVO_TELEFONO         IN NUMBER
+  , P_INDICATIVO_TELEFONO_ALTERNO IN NUMBER
+  , P_IdCreado                    OUT NUMBER
+  );
+  
+  PROCEDURE sp_setRegPersonaFirma(p_IdRegPersona NUMBER, p_FirmaDigital BLOB);
+
+  PROCEDURE sp_updRegitroPersona
+  (
+    P_ID                          IN NUMBER
+  , P_ID_DECLARACION              IN NUMBER
+  , P_ID_PERSONA                  IN NUMBER
+  , P_ESDECLARANTE                IN NUMBER
+  , P_CARACTERIZADO               IN NUMBER
+  , P_ACTIVO                      IN NUMBER
+  , P_ID_MIJEFEHOGAR              IN NUMBER
+  , P_PARAM_ESTADOAYUDAS          IN NUMBER
+  , P_PUNTAJE_PERSONA             IN NUMBER
+  , P_ID_PROCESO                  IN NUMBER
+  , P_PARAM_PROCESO               IN NUMBER
+  , P_ID_USUARIO                  IN NUMBER
+  , P_ID_UTERRITORIAL             IN NUMBER
+  , P_DIRECCION                   IN VARCHAR2
+  , P_TELEFONO                    IN VARCHAR2
+  , P_MOVIL                       IN VARCHAR2
+  , P_PARAM_RELACION              IN NUMBER
+  , P_SEDESPLAZO                  IN NUMBER
+  , P_RESTRINGIDA                 IN NUMBER
+  , P_NOVEDAD_INCLUSION           IN NUMBER
+  , P_OBS_RESTRINGIDA             IN VARCHAR2
+  , P_TIPO_RESTRICCION            IN NUMBER
+  , P_EMAIL                       IN VARCHAR2
+  , P_DIRECCION_ALTERNA           IN VARCHAR2
+  , P_ID_ENTORNO_ALTERNO          IN NUMBER
+  , P_OTRO_ENTORNO_ALTERNO        IN VARCHAR2
+  , P_ID_DEPARTAMENTO_ALTERNO     IN NUMBER
+  , P_ID_MUNICIPIO_ALTERNO        IN NUMBER
+  , P_TELEFONO_ALTERNO            IN VARCHAR2
+  , P_MOVIL_ALTERNO               IN VARCHAR2
+  , P_EMAIL_ALTERNO               IN VARCHAR2
+  , P_CONSECUTIVO_PERSONA         IN NUMBER
+  , P_ESMUJERCABEZADEHOGAR        IN NUMBER
+  , P_PARAM_REGIMENESPECIAL       IN NUMBER
+  , P_GESTANTE_LACTANTE           IN NUMBER
+  , P_ID_DEPARTAMENTO             IN NUMBER
+  , P_ID_MUNICIPIO                IN NUMBER
+  , P_ID_ENTORNO                  IN NUMBER
+  , P_OTRO_ENTORNO                IN VARCHAR2
+  , P_ID_TIPOPOBLACION            IN NUMBER
+  , P_ID_TIPOPOBLACION_ALTERNO    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG      IN NUMBER
+  , P_PARAM_BARRIO_VEREDA         IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG       IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA          IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO          IN NUMBER
+  , P_PARAM_TIPO_ENTORNO_ALT      IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_ALT  IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ALT     IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ALT   IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ALT      IN VARCHAR2
+  , P_ID_PAIS                     IN NUMBER
+  , P_ID_PAIS_ALTERNO             IN NUMBER
+  , P_CONSECUTIVO_FAMILIA         IN NUMBER
+  , P_INDICATIVO_TELEFONO         IN NUMBER
+  , P_INDICATIVO_TELEFONO_ALTERNO IN NUMBER
+  , P_IdCreado                    OUT NUMBER
+  );
+  
+  PROCEDURE sp_updRegPersonaFirma(p_IdRegPersona NUMBER, p_FirmaDigital BLOB);
+
+  PROCEDURE sp_setEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDPARAMTIPODOCUMENTO  NUMBER
+    , P_NUMERODOCUMENTO       VARCHAR2
+    , P_PRIMERNOMBRE          VARCHAR2
+    , P_SEGUNDONOMBRE         VARCHAR2
+    , P_PRIMERAPELLIDO        VARCHAR2
+    , P_SEGUNDOAPELLIDO       VARCHAR2
+    , P_DIRECCION             VARCHAR2
+    , P_TELEFONO              VARCHAR2
+    , P_CARGO                 VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  );
+  
+  PROCEDURE sp_setEncargadoFirma(p_IdEncargado NUMBER, p_FirmaDigital BLOB);
+
+  PROCEDURE sp_updEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDPARAMTIPODOCUMENTO  NUMBER
+    , P_NUMERODOCUMENTO       VARCHAR2
+    , P_PRIMERNOMBRE          VARCHAR2
+    , P_SEGUNDONOMBRE         VARCHAR2
+    , P_PRIMERAPELLIDO        VARCHAR2
+    , P_SEGUNDOAPELLIDO       VARCHAR2
+    , P_DIRECCION             VARCHAR2
+    , P_TELEFONO              VARCHAR2
+    , P_CARGO                 VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  );
+  
+  PROCEDURE sp_updEncargadoFirma(p_IdEncargado NUMBER, p_FirmaDigital BLOB);
+
+  PROCEDURE sp_getEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDDECLARACION         NUMBER
+    , cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_setTipoEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDDECLARACION         NUMBER
+    , P_IDENCARGADO           NUMBER
+    , P_IDPARAMTIPOENCARGADO  NUMBER
+    , P_ENTIDADCOMPETENTE     VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  );
+
+  PROCEDURE sp_updTipoEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDDECLARACION         NUMBER
+    , P_IDENCARGADO           NUMBER
+    , P_IDPARAMTIPOENCARGADO  NUMBER
+    , P_ENTIDADCOMPETENTE     VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  );
+
+PROCEDURE sp_setDiscapacidadPersona
+  (
+    P_ID_REGPERSONA   IN NUMBER
+   ,P_PARAM_DISCAPACIDAD     IN NUMBER
+  );
+
+PROCEDURE sp_delDiscapacidadPersona
+  (
+    P_ID_REGPERSONA          IN NUMBER
+  );
+------------------------------------------------------
+ PROCEDURE sp_setDiscapacidadOtroPersona
+  (
+    P_ID_REGPERSONA           IN NUMBER
+   ,P_PARAM_DISCAPACIDAD      IN NUMBER
+   ,P_otro                    IN VARCHAR2
+  );
+
+  PROCEDURE sp_delDiscapacidadOtroPersona
+  (
+    P_ID_REGPERSONA          IN NUMBER
+  );
+
+
+  PROCEDURE sp_getDiscapacidadOtroPersona
+  (
+    P_ID_REGPERSONA         NUMBER
+    ,cu_result    OUT cursor_type
+  );
+-------------------------------------------------------
+  PROCEDURE sp_setHechosPersona
+  (
+    P_ID_REGISTRO_PERSONA     IN NUMBER
+   ,P_PARAM_HECHO             IN NUMBER
+   ,P_ACTIVO                  IN NUMBER
+  );
+
+  PROCEDURE sp_delHechosPersona
+  (
+    P_ID_REGISTRO_PERSONA       IN NUMBER
+  );
+
+  PROCEDURE sp_getHechosPersona
+  (
+    P_ID_REGISTRO_PERSONA         NUMBER
+    ,cu_result    OUT cursor_type
+  );
+-------------------------------------------------------
+
+  PROCEDURE sp_updJefeHogarRegistroPersona
+  (
+    P_ID_DECLARACION           IN NUMBER  --ID de la DECLARACION
+  , P_ID_MIJEFEHOGAR           IN NUMBER
+  , P_CONSECUTIVO_FAMILIA      IN NUMBER
+  );
+
+
+  PROCEDURE sp_setSiniestrosPersona
+  (
+    P_ID                        IN NUMBER
+  , P_PARAM_TIPOHECHO           IN NUMBER
+  , P_ID_REGPERSONA             IN NUMBER
+  , P_FECHASINIESTRO            IN DATE
+  , P_ID_DEPARTAMENTO           IN NUMBER
+  , P_ID_MUNICIPIO              IN NUMBER
+  , P_ID_ENTORNO                IN NUMBER
+  , P_ID_TIPOPOBLADO            IN NUMBER
+  , P_OTRO_ENTORNO              IN VARCHAR2
+  , P_PARAM_CCVOTAR             IN NUMBER
+  , P_ID_DEPARTAMENTO_VOTAR     IN NUMBER
+  , P_ID_MUNICIPIO_VOTAR        IN NUMBER
+  , P_ID_DPTO_ESTUDIO_HIJOS     IN NUMBER
+  , P_ID_MPIO_ESTUDIO_HIJOS     IN NUMBER
+  , P_INSTITUCION_EDUCATIVA     IN VARCHAR2
+  , P_PARAM_ENCUESTASISBEN      IN NUMBER
+  , P_ID_DPTO_ENCUESTASISBEN    IN NUMBER
+  , P_ID_MPIO_ENCUESTASISBEN    IN NUMBER
+  , P_NIVEL_SISBEN              IN NUMBER
+  , P_PARAM_FAMILIASACCION      IN NUMBER
+  , P_ID_DPTO_FAMILIASACCION    IN NUMBER
+  , P_ID_MPIO_FAMILIASACCION    IN NUMBER
+  , P_PARAM_ENTIDADCOBRA        IN NUMBER
+  , P_PARAM_SISTEMASALUD        IN NUMBER
+  , P_ID_DPTO_SISTEMASALUD      IN NUMBER
+  , P_ID_MPIO_SISTEMASALUD      IN NUMBER
+  , P_PARAM_TIPOAFILIZACION     IN NUMBER
+  , P_ID_DPTO_TRABAJO           IN NUMBER
+  , P_ID_MPIO_TRABAJO           IN NUMBER
+  , P_NOMBRE_EMPLEADOR          IN VARCHAR2
+  , P_VICTIMA_DEL_HECHO         IN NUMBER
+  , P_ACTIVO                    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG    IN NUMBER
+  , P_PARAM_BARRIO_VEREDA       IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG     IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA        IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO        IN NUMBER
+  , P_ENTIDADCOBRA              IN VARCHAR2
+  --, P_ID_relacionado            IN NUMBER
+  , P_idCreado                  OUT NUMBER
+  );
+
+  PROCEDURE sp_updSiniestrosPersona
+  (
+    P_ID                        IN NUMBER
+  , P_PARAM_TIPOHECHO           IN NUMBER
+  , P_ID_REGPERSONA             IN NUMBER
+  , P_FECHASINIESTRO            IN DATE
+  , P_ID_DEPARTAMENTO           IN NUMBER
+  , P_ID_MUNICIPIO              IN NUMBER
+  , P_ID_ENTORNO                IN NUMBER
+  , P_ID_TIPOPOBLADO            IN NUMBER
+  , P_OTRO_ENTORNO              IN VARCHAR2
+  , P_PARAM_CCVOTAR             IN NUMBER
+  , P_ID_DEPARTAMENTO_VOTAR     IN NUMBER
+  , P_ID_MUNICIPIO_VOTAR        IN NUMBER
+  , P_ID_DPTO_ESTUDIO_HIJOS     IN NUMBER
+  , P_ID_MPIO_ESTUDIO_HIJOS     IN NUMBER
+  , P_INSTITUCION_EDUCATIVA     IN VARCHAR2
+  , P_PARAM_ENCUESTASISBEN      IN NUMBER
+  , P_ID_DPTO_ENCUESTASISBEN    IN NUMBER
+  , P_ID_MPIO_ENCUESTASISBEN    IN NUMBER
+  , P_NIVEL_SISBEN              IN NUMBER
+  , P_PARAM_FAMILIASACCION      IN NUMBER
+  , P_ID_DPTO_FAMILIASACCION    IN NUMBER
+  , P_ID_MPIO_FAMILIASACCION    IN NUMBER
+  , P_PARAM_ENTIDADCOBRA        IN NUMBER
+  , P_PARAM_SISTEMASALUD        IN NUMBER
+  , P_ID_DPTO_SISTEMASALUD      IN NUMBER
+  , P_ID_MPIO_SISTEMASALUD      IN NUMBER
+  , P_PARAM_TIPOAFILIZACION     IN NUMBER
+  , P_ID_DPTO_TRABAJO           IN NUMBER
+  , P_ID_MPIO_TRABAJO           IN NUMBER
+  , P_NOMBRE_EMPLEADOR          IN VARCHAR2
+  , P_VICTIMA_DEL_HECHO         IN NUMBER
+  , P_ACTIVO                    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG    IN NUMBER
+  , P_PARAM_BARRIO_VEREDA       IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG     IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA        IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO        IN NUMBER
+  , P_ENTIDADCOBRA              IN VARCHAR2
+  --, P_ID_relacionado            IN NUMBER
+  , P_idCreado                  OUT NUMBER
+      );
+
+  PROCEDURE sp_setAnexo1
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV  IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_ATENCION_MEDICA               IN NUMBER
+  ,P_DETALLE_ATENCION_MEDICA       IN VARCHAR2
+  ,P_ID_DEPARTAMENTO_ATENCIONMED   IN NUMBER
+  ,P_ID_MUNICIPIO_ATENCIONMED      IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo1
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV  IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_ATENCION_MEDICA               IN NUMBER
+  ,P_DETALLE_ATENCION_MEDICA       IN VARCHAR2
+  ,P_ID_DEPARTAMENTO_ATENCIONMED   IN NUMBER
+  ,P_ID_MUNICIPIO_ATENCIONMED      IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  );
+
+   PROCEDURE sp_setAnexo1_BienAfectado
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_A1                         IN NUMBER
+  ,P_INMUEBLE                      IN NUMBER
+  ,P_PARAM_TIPOPERTENENCIA         IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_DESCRIPCION                   IN VARCHAR2
+  ,P_idCreado                      OUT NUMBER
+  );
+
+   PROCEDURE sp_updAnexo1_BienAfectado
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_A1                         IN NUMBER
+  ,P_INMUEBLE                      IN NUMBER
+  ,P_PARAM_TIPOPERTENENCIA         IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_DESCRIPCION                   IN VARCHAR2
+  ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo2
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_SOLICITA_PROTECCION           IN NUMBER
+  ,P_PROTECCION                    IN NUMBER
+  ,P_TIPO_PROTECCION               IN VARCHAR2
+  ,P_ENTIDAD_PROTECCION            IN VARCHAR2
+  ,P_FECHA_PROTECCION              IN DATE
+  ,P_VIGENCIA_PROTECCION           IN VARCHAR2
+  ,P_CONTINUA_AMENAZAS             IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo2
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_SOLICITA_PROTECCION           IN NUMBER
+  ,P_PROTECCION                    IN NUMBER
+  ,P_TIPO_PROTECCION               IN VARCHAR2
+  ,P_ENTIDAD_PROTECCION            IN VARCHAR2
+  ,P_FECHA_PROTECCION              IN DATE
+  ,P_VIGENCIA_PROTECCION           IN VARCHAR2
+  ,P_CONTINUA_AMENAZAS             IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo3
+  (
+    P_ID                              IN NUMBER
+  , P_ID_SINIESTRO                    IN NUMBER
+  , P_ID_REGPERSONA                   IN NUMBER
+  , P_VICTIMA                         IN NUMBER
+  , P_AFECTADO                        IN NUMBER
+  , P_OTRA_AFECTACION                 IN VARCHAR2
+  , P_DECLARACIONPREV                 IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV      IN NUMBER
+  , P_FECHA_DENUNCIAPREV              IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV    IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV       IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV    IN VARCHAR2
+  , P_PARAM_DELITO_SEXUAL             IN NUMBER
+  , P_SOLICITUD_AYUDA                 IN NUMBER
+  , P_DETALLE_SOLICITUD_AYUDA         IN VARCHAR2
+  , P_AYUDA                           IN NUMBER
+  , P_DETALLE_AYUDA                   IN VARCHAR2
+  , P_ATENCION_MEDICA                 IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA          IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA          IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA         IN VARCHAR2
+  , P_ACTIVO                          IN NUMBER
+  , P_IDCREADO                        OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo3
+  (
+    P_ID                              IN NUMBER
+  , P_ID_SINIESTRO                    IN NUMBER
+  , P_ID_REGPERSONA                   IN NUMBER
+  , P_VICTIMA                         IN NUMBER
+  , P_AFECTADO                        IN NUMBER
+  , P_OTRA_AFECTACION                 IN VARCHAR2
+  , P_DECLARACIONPREV                 IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV      IN NUMBER
+  , P_FECHA_DENUNCIAPREV              IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV    IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV       IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV    IN VARCHAR2
+  , P_PARAM_DELITO_SEXUAL             IN NUMBER
+  , P_SOLICITUD_AYUDA                 IN NUMBER
+  , P_DETALLE_SOLICITUD_AYUDA         IN VARCHAR2
+  , P_AYUDA                           IN NUMBER
+  , P_DETALLE_AYUDA                   IN VARCHAR2
+  , P_ATENCION_MEDICA                 IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA          IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA          IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA         IN VARCHAR2
+  , P_ACTIVO                          IN NUMBER
+  , P_IDCREADO                        OUT NUMBER
+  );
+
+ PROCEDURE sp_setAnexo3_NacidoViolacion
+  (
+   P_ID                              IN NUMBER
+
+  ,P_ID_SINIESTRO                    IN NUMBER
+  ,P_ID_REGISTRO_PERSONA             IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo3_NacidoViolacion
+  (
+  P_ID                               IN NUMBER
+  ,P_ID_SINIESTRO                    IN NUMBER
+  ,P_ID_REGISTRO_PERSONA             IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  );
+
+  PROCEDURE sp_delAnexo3_NacidoViolacion
+  (
+     P_ID_SINIESTRO          IN NUMBER
+  );
+
+  PROCEDURE sp_setAnexo3_DelitoSexual
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A3                           IN NUMBER
+  ,P_PARAM_DELITOSEXUAL              IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo3_DelitoSexual
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A3                           IN NUMBER
+  ,P_PARAM_DELITOSEXUAL              IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  );
+
+
+  PROCEDURE sp_delAnexo3_DelitoSexual
+  (
+     P_ID_A3          IN NUMBER
+  );
+
+  PROCEDURE sp_setAnexo4
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,p_desaparecida                  IN NUMBER
+  ,p_param_evento_antes_hecho      IN NUMBER
+  ,p_param_evento_despues_hecho    IN NUMBER
+  ,p_actividad_en_desaparicion     IN VARCHAR2
+  ,p_menor_desprotegido            IN NUMBER
+  ,p_id_menor_desprotegido         IN NUMBER
+  ,p_busqueda_victima              IN NUMBER
+  ,p_entidad_busqueda              IN VARCHAR2
+  ,p_activo                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo4
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,p_desaparecida                  IN NUMBER
+  ,p_param_evento_antes_hecho      IN NUMBER
+  ,p_param_evento_despues_hecho    IN NUMBER
+  ,p_actividad_en_desaparicion     IN VARCHAR2
+  ,p_menor_desprotegido            IN NUMBER
+  ,p_id_menor_desprotegido         IN NUMBER
+  ,p_busqueda_victima              IN NUMBER
+  ,p_entidad_busqueda              IN VARCHAR2
+  ,p_activo                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo5
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_OTRA_ENTIDAD_DENUNCIAPREV     IN VARCHAR2
+  , P_PARAM_TIPO_DESPLAZAMIENTO     IN NUMBER
+  , P_TIEMPO_RESIDENCIA_ANOS        IN NUMBER
+  , P_TIEMPO_RESIDENCIA_MESES       IN NUMBER
+  , P_TIEMPO_RESIDENCIA_DIAS        IN NUMBER
+  , P_FECHA_ARRIBO                  IN DATE
+  , P_ID_PAIS_ARRIBO                IN NUMBER
+  , P_ID_DEPARTAMENTO_ARRIBO        IN NUMBER
+  , P_ID_MUNICIPIO_ARRIBO           IN NUMBER
+  , P_ID_TIPOPOBLACION_ARRIBO       IN NUMBER
+  , P_ID_ENTORNO_ARRIBO             IN NUMBER
+  , P_OTRO_ENTORNO_ARRIBO           IN VARCHAR2
+  , P_PARAM_DESEOHOGAR              IN NUMBER
+  , P_ID_PAIS_REUBICACION           IN NUMBER
+  , P_ID_DPTO_REUBICACION           IN NUMBER
+  , P_ID_MUNICIPIO_REUBICACION      IN NUMBER
+  , P_ID_TIPOPOBLACION_REUBICACION  IN NUMBER
+  , P_ID_ENTORNO_REUBICACION        IN NUMBER
+  , P_OTRO_ENTORNO_REUBICACION      IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_DESPLAZAMIENTO_OTRO           IN VARCHAR2
+  , P_PARAM_LOCALIDAD_CORREG_ARRI   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ARRI      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ARRI    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ARRI       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_ARRI       IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_REUB   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_REUB      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_REUB    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_REUB       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_REUB       IN NUMBER
+  , P_PARAM_CAUSA_DESPLAZAMIENTO    IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo5
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_OTRA_ENTIDAD_DENUNCIAPREV     IN VARCHAR2
+  , P_PARAM_TIPO_DESPLAZAMIENTO     IN NUMBER
+  , P_TIEMPO_RESIDENCIA_ANOS        IN NUMBER
+  , P_TIEMPO_RESIDENCIA_MESES       IN NUMBER
+  , P_TIEMPO_RESIDENCIA_DIAS        IN NUMBER
+  , P_FECHA_ARRIBO                  IN DATE
+  , P_ID_PAIS_ARRIBO                IN NUMBER
+  , P_ID_DEPARTAMENTO_ARRIBO        IN NUMBER
+  , P_ID_MUNICIPIO_ARRIBO           IN NUMBER
+  , P_ID_TIPOPOBLACION_ARRIBO       IN NUMBER
+  , P_ID_ENTORNO_ARRIBO             IN NUMBER
+  , P_OTRO_ENTORNO_ARRIBO           IN VARCHAR2
+  , P_PARAM_DESEOHOGAR              IN NUMBER
+  , P_ID_PAIS_REUBICACION           IN NUMBER
+  , P_ID_DPTO_REUBICACION           IN NUMBER
+  , P_ID_MUNICIPIO_REUBICACION      IN NUMBER
+  , P_ID_TIPOPOBLACION_REUBICACION  IN NUMBER
+  , P_ID_ENTORNO_REUBICACION        IN NUMBER
+  , P_OTRO_ENTORNO_REUBICACION      IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_DESPLAZAMIENTO_OTRO           IN VARCHAR2
+  , P_PARAM_LOCALIDAD_CORREG_ARRI   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ARRI      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ARRI    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ARRI       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_ARRI       IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_REUB   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_REUB      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_REUB    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_REUB       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_REUB       IN NUMBER
+  , P_PARAM_CAUSA_DESPLAZAMIENTO    IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  );
+
+ PROCEDURE sp_setAnexo5_desplazado
+  (
+  p_id                           IN NUMBER,
+  p_id_anexo5                    IN NUMBER,
+  p_id_regpersona                IN NUMBER,
+  p_se_desplazo                  IN NUMBER,
+  p_jefe_hogar                   IN NUMBER,
+  p_activo                       IN NUMBER,
+  P_idCreado                     OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo5_desplazado
+  (
+  p_id                           IN NUMBER,
+  p_id_anexo5                    IN NUMBER,
+  p_id_regpersona                IN NUMBER,
+  p_se_desplazo                  IN NUMBER,
+  p_jefe_hogar                   IN NUMBER,
+  p_activo                       IN NUMBER,
+  P_idCreado                     OUT NUMBER
+  );
+
+  PROCEDURE sp_getAnexo5_desplazado
+  (
+    p_id_anexo5          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+
+  PROCEDURE sp_setAnexo6
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_FALLECIDA                     IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_QUEDO_ALGUN_HUERFANO          IN NUMBER
+  ,P_ID_HUERFANO                   IN NUMBER
+  ,P_PARAM_HUERFANO_DE             IN NUMBER
+  ,P_NUM_PERSONAS_MUERTAS          IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                    OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo6
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_FALLECIDA                     IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_QUEDO_ALGUN_HUERFANO          IN NUMBER
+  ,P_ID_HUERFANO                   IN NUMBER
+  ,P_PARAM_HUERFANO_DE             IN NUMBER
+  ,P_NUM_PERSONAS_MUERTAS          IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                    OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo7
+  (
+    P_ID                             IN NUMBER
+  , P_ID_SINIESTRO                   IN NUMBER
+  , P_ID_REGPERSONA                  IN NUMBER
+  , P_VICTIMA                        IN NUMBER
+  , P_PARAM_ESTADOVICTIMA            IN NUMBER
+  , P_AFECTADO                       IN NUMBER
+  , P_OTRA_AFECTACION                IN VARCHAR2
+  , P_DECLARACIONPREV                IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV     IN NUMBER
+  , P_FECHA_DENUNCIAPREV             IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV   IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV      IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV   IN VARCHAR2
+  , P_PARAM_TIPO_ACCIDENTE           IN NUMBER
+  , P_PARAM_ACTIVIDAD_MOMENTO_HECH   IN NUMBER
+  , P_QUEDO_ALGUN_HUERFANO           IN NUMBER
+  , P_ID_HUERFANO                    IN NUMBER
+  , P_PARAM_HUERFANO_DE              IN NUMBER
+  , P_ATENCION_MEDICA                IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA         IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA         IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA        IN VARCHAR2
+  , P_ACTIVO                         IN NUMBER
+  , P_IDCREADO                       OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo7
+  (
+    P_ID                             IN NUMBER
+  , P_ID_SINIESTRO                   IN NUMBER
+  , P_ID_REGPERSONA                  IN NUMBER
+  , P_VICTIMA                        IN NUMBER
+  , P_PARAM_ESTADOVICTIMA            IN NUMBER
+  , P_AFECTADO                       IN NUMBER
+  , P_OTRA_AFECTACION                IN VARCHAR2
+  , P_DECLARACIONPREV                IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV     IN NUMBER
+  , P_FECHA_DENUNCIAPREV             IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV   IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV      IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV   IN VARCHAR2
+  , P_PARAM_TIPO_ACCIDENTE           IN NUMBER
+  , P_PARAM_ACTIVIDAD_MOMENTO_HECH   IN NUMBER
+  , P_QUEDO_ALGUN_HUERFANO           IN NUMBER
+  , P_ID_HUERFANO                    IN NUMBER
+  , P_PARAM_HUERFANO_DE              IN NUMBER
+  , P_ATENCION_MEDICA                IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA         IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA         IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA        IN VARCHAR2
+  , P_ACTIVO                         IN NUMBER
+  , P_IDCREADO                       OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo8
+  (
+         P_ID                            NUMBER
+        ,P_ID_SINIESTRO                  NUMBER
+        ,P_ID_REGPERSONA                 NUMBER
+        ,P_VICTIMA                       NUMBER
+        ,P_SECUESTRADO                   NUMBER
+        ,P_AFECTADO                      NUMBER
+        ,P_OTRA_AFECTACION               VARCHAR2
+        ,P_DECLARACIONPREV               NUMBER
+        ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+        ,P_FECHA_DENUNCIAPREV            DATE
+        ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+        ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+        ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+        ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+        ,P_PARAM_TIPO_SECUESTRO          NUMBER
+        ,P_PARAM_FINALIDAD_SECUESTRO     NUMBER
+        ,P_OTRA_FINALIDAD_SECUESTRO      VARCHAR2
+        ,P_CONTRAPRESTACION              NUMBER
+        ,P_QUE_CONTRAPRESTACION          VARCHAR2
+        ,P_PARAM_SITUACIONACTUALVICTIMA  NUMBER
+        ,P_PARAM_LIBERACION_VICTIMA      NUMBER
+        ,P_FECHA_LIBERACION              DATE
+        ,P_ACTIVO                        IN NUMBER
+        ,P_idCreado                      OUT NUMBER
+  );
+
+    PROCEDURE sp_updAnexo8
+  (
+         P_ID                            NUMBER
+        ,P_ID_SINIESTRO                  NUMBER
+        ,P_ID_REGPERSONA                 NUMBER
+        ,P_VICTIMA                       NUMBER
+        ,P_SECUESTRADO                   NUMBER
+        ,P_AFECTADO                      NUMBER
+        ,P_OTRA_AFECTACION               VARCHAR2
+        ,P_DECLARACIONPREV               NUMBER
+        ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+        ,P_FECHA_DENUNCIAPREV            DATE
+        ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+        ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+        ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+        ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+        ,P_PARAM_TIPO_SECUESTRO          NUMBER
+        ,P_PARAM_FINALIDAD_SECUESTRO     NUMBER
+        ,P_OTRA_FINALIDAD_SECUESTRO      VARCHAR2
+        ,P_CONTRAPRESTACION              NUMBER
+        ,P_QUE_CONTRAPRESTACION          VARCHAR2
+        ,P_PARAM_SITUACIONACTUALVICTIMA  NUMBER
+        ,P_PARAM_LIBERACION_VICTIMA      NUMBER
+        ,P_FECHA_LIBERACION              DATE
+        ,P_ACTIVO                        IN NUMBER
+        ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo9
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_ID_REGPERSONA                 IN NUMBER
+  , P_VICTIMA                       IN NUMBER
+  , P_AFECTADO                      IN NUMBER
+  , P_OTRA_AFECTACION               IN VARCHAR2
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_RECIBIO_ATENCION_MEDICA       IN NUMBER
+  , P_SOLICITO_AYUDA                IN NUMBER
+  , P_ENTIDAD_SOLICITO_AYUDA        IN VARCHAR2
+  , P_RECIBIO_AYUDA                 IN NUMBER
+  , P_TIPO_AYUDA_RECIBIDA           IN VARCHAR2
+  , P_ID_DTO_ATENCION_MEDICA        IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA        IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA       IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo9
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_ID_REGPERSONA                 IN NUMBER
+  , P_VICTIMA                       IN NUMBER
+  , P_AFECTADO                      IN NUMBER
+  , P_OTRA_AFECTACION               IN VARCHAR2
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_RECIBIO_ATENCION_MEDICA       IN NUMBER
+  , P_SOLICITO_AYUDA                IN NUMBER
+  , P_ENTIDAD_SOLICITO_AYUDA        IN VARCHAR2
+  , P_RECIBIO_AYUDA                 IN NUMBER
+  , P_TIPO_AYUDA_RECIBIDA           IN VARCHAR2
+  , P_ID_DTO_ATENCION_MEDICA        IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA        IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA       IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo10
+  (
+        P_ID                            NUMBER
+       ,P_ID_SINIESTRO                  NUMBER
+       ,P_ID_REGPERSONA                 NUMBER
+       ,P_VICTIMA                       NUMBER
+       ,P_AFECTADO                      NUMBER
+       ,P_OTRA_AFECTACION               VARCHAR2
+       ,P_DECLARACIONPREV               NUMBER
+       ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+       ,P_FECHA_DENUNCIAPREV            DATE
+       ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+       ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+       ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+       ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+       ,P_GRUPO_ARMADO_PERTENECIO       VARCHAR2
+       ,P_FECHA_DESVINCULACION          DATE
+       ,P_ATENDIDO_ICBF                 NUMBER
+       ,P_FECHA_ATENCION_ICBF           DATE
+       ,P_ATENDIDO_OTRA_ENTIDAD         NUMBER
+       ,P_FECHA_ATENCION_OTRA           DATE
+       ,P_ENTIDAD_ATENDIO               VARCHAR2
+       ,P_ACTIVO                        NUMBER
+       ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo10
+  (
+        P_ID                            NUMBER
+       ,P_ID_SINIESTRO                  NUMBER
+       ,P_ID_REGPERSONA                 NUMBER
+       ,P_VICTIMA                       NUMBER
+       ,P_AFECTADO                      NUMBER
+       ,P_OTRA_AFECTACION               VARCHAR2
+       ,P_DECLARACIONPREV               NUMBER
+       ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+       ,P_FECHA_DENUNCIAPREV            DATE
+       ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+       ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+       ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+       ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+       ,P_GRUPO_ARMADO_PERTENECIO       VARCHAR2
+       ,P_FECHA_DESVINCULACION          DATE
+       ,P_ATENDIDO_ICBF                 NUMBER
+       ,P_FECHA_ATENCION_ICBF           DATE
+       ,P_ATENDIDO_OTRA_ENTIDAD         NUMBER
+       ,P_FECHA_ATENCION_OTRA           DATE
+       ,P_ENTIDAD_ATENDIO               VARCHAR2
+       ,P_ACTIVO                        NUMBER
+       ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo11
+  (
+       P_ID                                   NUMBER
+      ,P_ID_SINIESTRO                         NUMBER
+      ,P_DECLARACIONPREV                      NUMBER
+      ,P_PARAM_ENTIDAD_DENUNCIAPREV           NUMBER
+      ,P_FECHA_DENUNCIAPREV                   DATE
+      ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+      ,P_ID_DEPARTAMENTO_DENUNCIAPREV         NUMBER
+      ,P_ID_MUNICIPIO_DENUNCIAPREV            NUMBER
+      ,P_NUMERO_RADICADO_DENUNCIAPREV         VARCHAR2
+      ,P_PARAM_TIERRA_DESPOJADA               NUMBER
+      ,P_PARAM_TIPO_DESPOJADO                 NUMBER
+      ,P_AUTOR_DESPOJADO                      VARCHAR2
+      ,P_PARAM_SITUACION_ACT_TIERRA           NUMBER
+      ,P_PARAM_SOL_PROTECCION                 NUMBER
+      ,P_PROTECCION_PORQUE                    VARCHAR2
+      ,P_ACTIVO                               NUMBER
+      ,P_idCreado                             OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo11
+  (
+       P_ID                                   NUMBER
+      ,P_ID_SINIESTRO                         NUMBER
+      ,P_DECLARACIONPREV                      NUMBER
+      ,P_PARAM_ENTIDAD_DENUNCIAPREV           NUMBER
+      ,P_FECHA_DENUNCIAPREV                   DATE
+      ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+      ,P_ID_DEPARTAMENTO_DENUNCIAPREV         NUMBER
+      ,P_ID_MUNICIPIO_DENUNCIAPREV            NUMBER
+      ,P_NUMERO_RADICADO_DENUNCIAPREV         VARCHAR2
+      ,P_PARAM_TIERRA_DESPOJADA               NUMBER
+      ,P_PARAM_TIPO_DESPOJADO                 NUMBER
+      ,P_AUTOR_DESPOJADO                      VARCHAR2
+      ,P_PARAM_SITUACION_ACT_TIERRA           NUMBER
+      ,P_PARAM_SOL_PROTECCION                 NUMBER
+      ,P_PROTECCION_PORQUE                    VARCHAR2
+      ,P_ACTIVO                               NUMBER
+      ,P_idCreado                             OUT NUMBER
+
+  );
+
+  PROCEDURE sp_setAnexo11_Inmuebles
+  (
+       P_ID                      IN NUMBER
+     , P_ID_ANEXO11              IN NUMBER
+     , P_ID_REGPERSONA           IN NUMBER
+     , P_PARAM_TIPO_INMUBLE      IN NUMBER
+     , P_ID_DEPARTAMENTO         IN NUMBER
+     , P_ID_MUNICIPIO            IN NUMBER
+     , P_ID_ENTRONO              IN NUMBER
+     , P_ID_TIPOPOBLADO          IN NUMBER
+     , P_OTRO_ENTORNO            IN VARCHAR2
+     , P_PARAM_TIPO_TENENCIA     IN NUMBER
+     , P_NOMBRE_DIRECCION        IN VARCHAR2
+     , P_AREA                    IN NUMBER
+     , P_PARAM_UNIDAD_AREA       IN NUMBER
+     , P_ACTIVO                  IN NUMBER
+     , P_PARAM_LOCALIDAD_CORREG  IN NUMBER
+     , P_PARAM_BARRIO_VEREDA     IN NUMBER
+     , P_OTRO_LOCALIDAD_CORREG   IN VARCHAR2
+     , P_OTRO_BARRIO_VEREDA      IN VARCHAR2
+     , P_PARAM_TIPO_ENTORNO      IN NUMBER
+     , P_idCreado                OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo11_Inmuebles
+  (
+       P_ID                      IN NUMBER
+     , P_ID_ANEXO11              IN NUMBER
+     , P_ID_REGPERSONA           IN NUMBER
+     , P_PARAM_TIPO_INMUBLE      IN NUMBER
+     , P_ID_DEPARTAMENTO         IN NUMBER
+     , P_ID_MUNICIPIO            IN NUMBER
+     , P_ID_ENTRONO              IN NUMBER
+     , P_ID_TIPOPOBLADO          IN NUMBER
+     , P_OTRO_ENTORNO            IN VARCHAR2
+     , P_PARAM_TIPO_TENENCIA     IN NUMBER
+     , P_NOMBRE_DIRECCION        IN VARCHAR2
+     , P_AREA                    IN NUMBER
+     , P_PARAM_UNIDAD_AREA       IN NUMBER
+     , P_ACTIVO                  IN NUMBER
+     , P_PARAM_LOCALIDAD_CORREG  IN NUMBER
+     , P_PARAM_BARRIO_VEREDA     IN NUMBER
+     , P_OTRO_LOCALIDAD_CORREG   IN VARCHAR2
+     , P_OTRO_BARRIO_VEREDA      IN VARCHAR2
+     , P_PARAM_TIPO_ENTORNO      IN NUMBER
+     , P_idCreado                OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo11_muebles
+  (
+        P_ID                   NUMBER
+       ,P_ID_ANEXO11           NUMBER
+       ,P_ID_REGPERSONA        NUMBER
+       ,P_PARAM_TIPO_MUBLE     NUMBER
+       ,P_DESCRIPCION          VARCHAR2
+       ,P_PARAM_TIPO_TENENCIA  NUMBER
+       ,P_CANTIDAD             NUMBER
+       ,P_ACTIVO               NUMBER
+       ,P_idCreado             OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo11_muebles
+  (
+        P_ID                   NUMBER
+       ,P_ID_ANEXO11           NUMBER
+       ,P_ID_REGPERSONA        NUMBER
+       ,P_PARAM_TIPO_MUBLE     NUMBER
+       ,P_DESCRIPCION          VARCHAR2
+       ,P_PARAM_TIPO_TENENCIA  NUMBER
+       ,P_CANTIDAD             NUMBER
+       ,P_ACTIVO               NUMBER
+       ,P_idCreado             OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo11_creditos
+  (
+       P_ID                   NUMBER
+      ,P_ID_ANEXO11           NUMBER
+      ,P_PARAM_TIPO_ACREEDOR  NUMBER
+      ,P_NOMBRE_ACREEDOR      VARCHAR2
+      ,P_FECHA_DEUDA          DATE
+      ,P_MONTO_ADEUDADO       NUMBER
+      ,P_ACTIVO               NUMBER
+      ,P_idCreado             OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo11_creditos
+  (
+       P_ID                   NUMBER
+      ,P_ID_ANEXO11           NUMBER
+      --,P_ID_REGPERSONA        NUMBER
+      ,P_PARAM_TIPO_ACREEDOR  NUMBER
+      ,P_NOMBRE_ACREEDOR      VARCHAR2
+      ,P_FECHA_DEUDA          DATE
+      ,P_MONTO_ADEUDADO       NUMBER
+      ,P_ACTIVO               NUMBER
+      ,P_idCreado             OUT NUMBER
+  );
+
+PROCEDURE sp_setAnexo13
+  (
+     P_ID                            NUMBER
+    ,P_ID_SINIESTRO                  NUMBER
+    ,P_ID_REGPERSONA                 NUMBER
+    ,P_ACTIVO                        NUMBER
+    ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_updAnexo13
+  (
+     P_ID                            NUMBER
+    ,P_ID_SINIESTRO                  NUMBER
+    ,P_ID_REGPERSONA                 NUMBER
+    ,P_ACTIVO                        NUMBER
+    ,P_idCreado                      OUT NUMBER
+  );
+
+  PROCEDURE sp_setAnexo13_mensaje
+  (
+     P_ID_SINIESTRO                  NUMBER
+    ,P_MENSAJE_CELULAR               NUMBER
+    ,P_MENSAJE_CORREOE               NUMBER
+    ,P_MENSAJE_FIJO                   NUMBER
+    ,P_MENSAJE_OTRO                   VARCHAR2
+    ,P_ACTIVO                        NUMBER
+  );
+
+  PROCEDURE sp_updAnexo13_mensaje
+  (
+     P_ID_SINIESTRO                  NUMBER
+    ,P_MENSAJE_CELULAR               NUMBER
+    ,P_MENSAJE_CORREOE               NUMBER
+    ,P_MENSAJE_FIJO                   NUMBER
+    ,P_MENSAJE_OTRO                   VARCHAR2
+    ,P_ACTIVO                        NUMBER
+  );
+
+  PROCEDURE sp_getAnexos13_mensajes
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_setAfectacionAnexo
+  (
+     P_ID_ANEXO                 IN NUMBER
+   , P_PARAM_TIPO_HECHO         IN NUMBER
+   , P_PARAM_AFECTACION         IN NUMBER
+  );
+
+  PROCEDURE sp_delAfectacionesAnexo
+  (
+     P_ID_ANEXO                  IN NUMBER
+   , P_PARAM_TIPO_HECHO          IN NUMBER
+  );
+
+
+  PROCEDURE sp_getRegistrosPersonas
+  (
+    P_ID_DECLARACION         IN NUMBER
+    ,P_CONSECUTIVO_FAMILIA   NUMBER := NULL
+    ,cu_result               OUT cursor_type
+  );
+
+ PROCEDURE sp_getPersona
+  (
+    P_ID           IN NUMBER
+    ,cu_result     OUT cursor_type
+  );
+
+  PROCEDURE sp_getDiscapacidadPersona
+  (
+    P_ID_REGPERSONA         NUMBER
+    ,cu_result    OUT cursor_type
+  );
+
+  PROCEDURE sp_getSiniestroPersona
+  (
+     P_PARAM_TIPOHECHO      NUMBER
+    ,P_ID_DECLARACION       NUMBER
+    ,cu_result            OUT cursor_type
+  );
+
+  PROCEDURE sp_getAfectacionesAnexo
+  (
+    P_PARAM_TIPO_HECHO      NUMBER
+    ,P_ID_ANEXO              NUMBER
+    ,cu_result    OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos1
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result    OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getBienesAfectadosA1
+  (
+    P_ID_A1          NUMBER
+    ,cu_result       OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos2
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result    OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos3
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result    OUT cursor_type
+  );
+
+
+ PROCEDURE sp_getNacidosViolacionA3
+  (
+    P_ID_SINIESTRO      NUMBER
+    ,cu_result          OUT cursor_type
+  );
+
+
+ PROCEDURE sp_getDelitoSexualA3
+  (
+    P_ID_A3      NUMBER
+    ,cu_result          OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos4
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos5
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos6
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+
+  PROCEDURE sp_getAnexos7
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getLugarAccidenteA7
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getAnexos8
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getAnexos9
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getAnexos10
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getAnexos11
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+
+  PROCEDURE sp_geInmuebleA11
+  (
+    P_ID_ANEXO11            NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getMuebleA11
+  (
+    P_ID_ANEXO11            NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getCreditoA11
+  (
+    P_ID_ANEXO11            NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_getAnexos13
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  );
+
+  PROCEDURE sp_setAnexo7_LugarAcc
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A7                           IN NUMBER
+  ,P_DESCRIPCION                     IN VARCHAR2
+  ,P_idCreado                        OUT NUMBER
+
+
+  );
+
+  PROCEDURE sp_updAnexo7_LugarAcc
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A7                           IN NUMBER
+  ,P_DESCRIPCION                     IN VARCHAR2
+  ,P_idCreado                        OUT NUMBER
+  );
+
+
+PROCEDURE sp_generaNroFrm
+  (
+       P_ID                   NUMBER
+      --,P_idCreado            OUT NUMBER
+  );
+
+end PKG_RECONOCIMIENTO;
+/
+
+-- Create PKG_RECONOCIMIENTO package body
+CREATE OR REPLACE PACKAGE BODY PKG_RECONOCIMIENTO AS
+
+ PROCEDURE sp_setDeclaracion
+ (
+    P_ID                          IN NUMBER
+  , P_ENTREVISTAPREVIA            NUMBER
+  , P_EXPLICACIONALCANCE          NUMBER
+  , P_PARAM_TIPODESPLAZAMIENTO    NUMBER
+  , P_ID_MUNICIPIODECLARACION     NUMBER
+  , P_ID_DEPARTAMENTODECLARACION  NUMBER
+  , P_ID_PAISDECLARACION          NUMBER
+  , P_PARAM_ENTIDADATIENDE        NUMBER
+  , P_FECHADECLARACION            DATE
+  , P_ID_MUNICIPIOACTUAL          NUMBER
+  , P_ID_DEPARTAMENTOACTUAL       NUMBER
+  , P_PARAM_ENTORNOACTUAL         NUMBER
+  , P_PARAM_TIPOENTORNOACTUAL     NUMBER
+  , P_ID_POBLADOACTUAL            NUMBER
+  , P_CUALPOBLADOACTUAL           VARCHAR2
+  , P_FECHAARRIBO                 DATE
+  , P_DIRECCIONCORRESPONDENCIA    VARCHAR2
+  , P_TELEFONOACTUAL              VARCHAR2
+  , P_PARAM_TIPOENTORNODESPLAZ    NUMBER
+  , P_PARAM_ENTORNODESPLAZ        NUMBER
+  , P_ID_DEPARTAMENTODESPLAZ      NUMBER
+  , P_ID_MUNICIPIODESPLAZ         NUMBER
+  , P_ID_POBLADODESPLAZ           NUMBER
+  , P_CUALPOBLADODESPLAZ          VARCHAR2
+  , P_ANHOSRESIDENCIA             NUMBER
+  , P_MESESRESIDENCIA             NUMBER
+  , P_FECHADESPLAZ                DATE
+  , P_PARAM_DECLAROANTERIORMENTE  NUMBER
+  , P_ID_MUNICIPIOANTERIOR        NUMBER
+  , P_ID_DEPARTAMENTOANTERIOR     NUMBER
+  , P_PARAM_ENTIDADATENDIO        NUMBER
+  , P_FECHADECLARACIONANTERIOR    DATE
+  , P_RAZONSITIO                  VARCHAR2
+  , P_PARAM_DESEOHOGAR            NUMBER
+  , P_ID_MUNICIPIODESEADO         NUMBER
+  , P_ID_DEPARTAMENTODESEADO      NUMBER
+  , P_PARAM_ENTORNODESEADO        NUMBER
+  , P_FECHATERMINACION            DATE
+  , P_REALIZOJURAMENTO            NUMBER
+  , P_LEYODECLARACION             NUMBER
+  , P_DOCUMENTOSADICIONALES       NUMBER
+  , P_CUANTOSFOLIOS               NUMBER
+  , P_ORIENTACIONENMENDADURAS     NUMBER
+  , P_TIENEENMENDADURAS           NUMBER
+  , P_ID_USUARIO                  NUMBER
+  , P_CODIGOANTIGUO               VARCHAR2
+  , P_PARAM_ESTADO                NUMBER
+  , P_FUNCIONARIO                 VARCHAR2
+  , P_CARGO                       VARCHAR2
+  , P_CAMPOPRUEBA                 VARCHAR2
+  , P_ID_DETALLERADICACION        NUMBER
+  , P_ID_UTERRITORIAL             NUMBER
+  , P_PUNTAJE_HOGAR               NUMBER
+  , P_PARAM_PROCESO               NUMBER
+  , P_FECHAFINALIZACION           DATE
+  , P_FECHAREGISTRO               DATE
+
+  , P_PARAM_TIPOREPRESENTANTE     NUMBER
+  , P_CORREGIRDECLARACION         NUMBER
+  , P_QUECORRECCIONES             VARCHAR2
+  , P_TELEFONOGERESS              VARCHAR2
+  , P_OBSERVACIONES               VARCHAR2
+  , P_FECHA_PRIMERA_INCLUSION     DATE
+  , P_VECES_HOGAR_NO_INCLUIDO     NUMBER
+  , P_ID_DECLARACION_PADRE        NUMBER
+  , P_MENSAJE_CELULAR             NUMBER
+  , P_MENSAJE_CORREOE             NUMBER
+  , P_MENSAJE_FIJO                NUMBER
+  , P_OTRO                        VARCHAR2
+  , P_CUANTOS_ANEXOS              NUMBER
+  , P_SABE_FIRMAR                 NUMBER
+  , P_ID_ENCARGADO                NUMBER
+  , P_ID_RADICACION               NUMBER
+  , P_NRO_FORMULARIO              IN OUT VARCHAR2
+  , P_OTROHECHO                   VARCHAR2
+  , P_IDENTIDADMUNICIPIODECLARA   NUMBER
+  --, P_IDENTIFICACIONFUNCIONARIO   VARCHAR2
+  , P_idCreado                    OUT NUMBER
+ )AS
+    v_id NUMBER;
+    V_ESTADO_FIN NUMBER;
+    V_ID_DETALLE_RADICACION NUMBER;
+    V_ID_USUARIO NUMBER;
+    V_NRO_FORMULARIO VARCHAR2(50);
+    V_NRO_GENERADOS SYS_REFCURSOR;
+
+ BEGIN
+
+ SELECT SEQ_DECLARACION.NEXTVAL INTO v_id FROM dual;
+
+ insert into tbdeclaraciones
+             (id
+            , entrevistaprevia
+            , explicacionalcance
+            , param_tipodesplazamiento
+            , id_municipiodeclaracion
+            , id_departamentodeclaracion
+            , id_paisdeclaracion
+            , param_entidadatiende
+            , fechadeclaracion
+            , id_municipioactual
+            , id_departamentoactual
+            , param_entornoactual
+            , param_tipoentornoactual
+            , id_pobladoactual
+            , cualpobladoactual
+            , fechaarribo
+            , direccioncorrespondencia
+            , telefonoactual
+            , param_tipoentornodesplaz
+            , param_entornodesplaz
+            , id_departamentodesplaz
+            , id_municipiodesplaz
+            , id_pobladodesplaz
+            , cualpobladodesplaz
+            , anhosresidencia
+            , mesesresidencia
+            , fechadesplaz
+            , param_declaroanteriormente
+            , id_municipioanterior
+            , id_departamentoanterior
+            , param_entidadatendio
+            , fechadeclaracionanterior
+            , razonsitio
+            , param_deseohogar
+            , id_municipiodeseado
+            , id_departamentodeseado
+            , param_entornodeseado
+            , fechaterminacion
+            , realizojuramento
+            , leyodeclaracion
+            , documentosadicionales
+            , cuantosfolios
+            , orientacionenmendaduras
+            , tieneenmendaduras
+            , id_usuario
+            , codigoantiguo
+            , param_estado
+            , funcionario
+            , cargo
+            , campoprueba
+            , id_detalleradicacion
+            , id_uterritorial
+            , puntaje_hogar
+            , param_proceso
+            , fechafinalizacion
+            , fecharegistro
+            , param_tiporepresentante
+            , corregirdeclaracion
+            , quecorrecciones
+            , telefonogeress
+            , observaciones
+            , fecha_primera_inclusion
+            , veces_hogar_no_incluido
+            , id_declaracion_padre
+            , mensaje_celular
+            , mensaje_correoe
+            , mensaje_fijo
+            , otro
+            , cuantos_anexos
+            , sabe_firmar
+            , id_encargado
+            , numeroformulario
+            , otrohecho
+            , ID_ENTIDADMUNICIPIODECLARACION
+           -- , IDENTIFICACIONFUNCIONARIO
+           )
+           values
+             (v_id
+            , p_entrevistaprevia
+            , p_explicacionalcance
+            , p_param_tipodesplazamiento
+            , p_id_municipiodeclaracion
+            , p_id_departamentodeclaracion
+            , P_ID_PAISDECLARACION
+            , p_param_entidadatiende
+            , p_fechadeclaracion
+            , p_id_municipioactual
+            , p_id_departamentoactual
+            , p_param_entornoactual
+            , p_param_tipoentornoactual
+            , p_id_pobladoactual
+            , p_cualpobladoactual
+            , p_fechaarribo
+            , p_direccioncorrespondencia
+            , p_telefonoactual
+            , p_param_tipoentornodesplaz
+            , p_param_entornodesplaz
+            , p_id_departamentodesplaz
+            , p_id_municipiodesplaz
+            , p_id_pobladodesplaz
+            , p_cualpobladodesplaz
+            , p_anhosresidencia
+            , p_mesesresidencia
+            , p_fechadesplaz
+            , p_param_declaroanteriormente
+            , p_id_municipioanterior
+            , p_id_departamentoanterior
+            , p_param_entidadatendio
+            , p_fechadeclaracionanterior
+            , p_razonsitio
+            , p_param_deseohogar
+            , p_id_municipiodeseado
+            , p_id_departamentodeseado
+            , p_param_entornodeseado
+            , p_fechaterminacion
+            , p_realizojuramento
+            , p_leyodeclaracion
+            , p_documentosadicionales
+            , p_cuantosfolios
+            , p_orientacionenmendaduras
+            , p_tieneenmendaduras
+            , p_id_usuario
+            , p_codigoantiguo
+            , p_param_estado
+            , p_funcionario
+            , p_cargo
+            , p_campoprueba
+            , P_ID_RADICACION
+            , p_id_uterritorial
+            , p_puntaje_hogar
+            , p_param_proceso
+            , p_fechafinalizacion
+            , sysdate
+            , p_param_tiporepresentante
+            , p_corregirdeclaracion
+            , p_quecorrecciones
+            , p_telefonogeress
+            , p_observaciones
+            , p_fecha_primera_inclusion
+            , p_veces_hogar_no_incluido
+            , p_id_declaracion_padre
+            , p_mensaje_celular
+            , p_mensaje_correoe
+            , p_mensaje_fijo
+            , p_otro
+            , p_cuantos_anexos
+            , p_sabe_firmar
+            , p_id_encargado
+            , p_nro_formulario
+            , p_otrohecho
+            , P_IDENTIDADMUNICIPIODECLARA
+            --, P_IDENTIFICACIONFUNCIONARIO
+            );
+
+ IF(P_ID_RADICACION > 0) THEN
+    UPDATE TBRADICACION
+    SET    ID_DECLARACION = v_id
+    WHERE  ID = p_id_radicacion;
+
+    --Si esta en pendiente por verificar, la asigna al lide de radicaciÃ³n con menos carga
+    IF (P_PARAM_ESTADO = RADICADO_PENDIENTE_VERIFICAR) THEN
+      V_ID_USUARIO := pkg_common.F_USUARIOMENOSCARGA(ROL_LIDER_RADICACION);
+      IF (V_ID_USUARIO IS NOT NULL) THEN
+        pkg_common.sp_updestado_declaracion(v_id, V_ID_USUARIO, RADICADO_PENDIENTE_VERIFICAR);
+      END IF;
+    ELSE
+      V_ID_USUARIO := pkg_common.F_USUARIOMENOSCARGA(ROL_CRITICA_5);
+      IF (V_ID_USUARIO IS NOT NULL) THEN
+        pkg_common.sp_updestado_declaracion(v_id, V_ID_USUARIO, RADICADO_PENDIENTE_CRITICA_5);
+      END IF;
+    END IF;
+
+    --pkg_radicacion.sp_auto_asignar_proceso(p_id_radicacion);
+ ELSE
+      PKG_CONTROLIDFORMULARIO.sp_generarformularios(1, SERIE_FORMULARIOS_TOMA_LINEA, P_ID_USUARIO, 5, P_ID_PAISDECLARACION, p_id_departamentodeclaracion, p_id_municipiodeclaracion, P_IDENTIDADMUNICIPIODECLARA, V_NRO_GENERADOS);
+
+      SELECT I.NUMEROFORMULARIO
+      INTO   V_NRO_FORMULARIO
+      FROM   TBIDENTIFICADORFORMULARIO I
+      WHERE  I.ID = (SELECT MAX(ID) FROM TBIDENTIFICADORFORMULARIO);
+
+      P_NRO_FORMULARIO := V_NRO_FORMULARIO;
+
+      UPDATE  TBDECLARACIONES
+      SET     NUMEROFORMULARIO = P_NRO_FORMULARIO
+      WHERE   ID = v_id;
+
+      V_ID_USUARIO := pkg_common.F_USUARIOMENOSCARGA(ROL_ASIGNADOR_VALORACION);
+      --V_ID_USUARIO := pkg_common.F_USUARIOMENOSCARGA(ROL_VALORACION);
+      pkg_common.sp_updestado_declaracion(v_id, V_ID_USUARIO, VALORACION_PEND_PORASIGNAR);
+ END IF;
+
+ p_idCreado := v_id;
+
+ END;
+
+ PROCEDURE sp_updDeclaracion
+ (
+    P_ID                          IN NUMBER
+  , P_ENTREVISTAPREVIA            NUMBER
+  , P_EXPLICACIONALCANCE          NUMBER
+  , P_PARAM_TIPODESPLAZAMIENTO    NUMBER
+  , P_ID_MUNICIPIODECLARACION     NUMBER
+  , P_ID_DEPARTAMENTODECLARACION  NUMBER
+  , P_ID_PAISDECLARACION          NUMBER
+  , P_PARAM_ENTIDADATIENDE        NUMBER
+  , P_FECHADECLARACION            DATE
+  , P_ID_MUNICIPIOACTUAL          NUMBER
+  , P_ID_DEPARTAMENTOACTUAL       NUMBER
+  , P_PARAM_ENTORNOACTUAL         NUMBER
+  , P_PARAM_TIPOENTORNOACTUAL     NUMBER
+  , P_ID_POBLADOACTUAL            NUMBER
+  , P_CUALPOBLADOACTUAL           VARCHAR2
+  , P_FECHAARRIBO                 DATE
+  , P_DIRECCIONCORRESPONDENCIA    VARCHAR2
+  , P_TELEFONOACTUAL              VARCHAR2
+  , P_PARAM_TIPOENTORNODESPLAZ    NUMBER
+  , P_PARAM_ENTORNODESPLAZ        NUMBER
+  , P_ID_DEPARTAMENTODESPLAZ      NUMBER
+  , P_ID_MUNICIPIODESPLAZ         NUMBER
+  , P_ID_POBLADODESPLAZ           NUMBER
+  , P_CUALPOBLADODESPLAZ          VARCHAR2
+  , P_ANHOSRESIDENCIA             NUMBER
+  , P_MESESRESIDENCIA             NUMBER
+  , P_FECHADESPLAZ                DATE
+  , P_PARAM_DECLAROANTERIORMENTE  NUMBER
+  , P_ID_MUNICIPIOANTERIOR        NUMBER
+  , P_ID_DEPARTAMENTOANTERIOR     NUMBER
+  , P_PARAM_ENTIDADATENDIO        NUMBER
+  , P_FECHADECLARACIONANTERIOR    DATE
+  , P_RAZONSITIO                  VARCHAR2
+  , P_PARAM_DESEOHOGAR            NUMBER
+  , P_ID_MUNICIPIODESEADO         NUMBER
+  , P_ID_DEPARTAMENTODESEADO      NUMBER
+  , P_PARAM_ENTORNODESEADO        NUMBER
+  , P_FECHATERMINACION            DATE
+  , P_REALIZOJURAMENTO            NUMBER
+  , P_LEYODECLARACION             NUMBER
+  , P_DOCUMENTOSADICIONALES       NUMBER
+  , P_CUANTOSFOLIOS               NUMBER
+  , P_ORIENTACIONENMENDADURAS     NUMBER
+  , P_TIENEENMENDADURAS           NUMBER
+  , P_ID_USUARIO                  NUMBER
+  , P_CODIGOANTIGUO               VARCHAR2
+  , P_PARAM_ESTADO                NUMBER
+  , P_FUNCIONARIO                 VARCHAR2
+  , P_CARGO                       VARCHAR2
+  , P_CAMPOPRUEBA                 VARCHAR2
+  , P_ID_DETALLERADICACION        NUMBER
+  , P_ID_UTERRITORIAL             NUMBER
+  , P_PUNTAJE_HOGAR               NUMBER
+  , P_PARAM_PROCESO               NUMBER
+  , P_FECHAFINALIZACION           DATE
+  , P_FECHAREGISTRO               DATE
+  , P_PARAM_TIPOREPRESENTANTE     NUMBER
+  , P_CORREGIRDECLARACION         NUMBER
+  , P_QUECORRECCIONES             VARCHAR2
+  , P_TELEFONOGERESS              VARCHAR2
+  , P_OBSERVACIONES               VARCHAR2
+  , P_FECHA_PRIMERA_INCLUSION     DATE
+  , P_VECES_HOGAR_NO_INCLUIDO     NUMBER
+  , P_ID_DECLARACION_PADRE        NUMBER
+  , P_MENSAJE_CELULAR             NUMBER
+  , P_MENSAJE_CORREOE             NUMBER
+  , P_MENSAJE_FIJO                NUMBER
+  , P_OTRO                        VARCHAR2
+  , P_CUANTOS_ANEXOS              NUMBER
+  , P_SABE_FIRMAR                 NUMBER
+  , P_ID_ENCARGADO                NUMBER
+  , P_ID_RADICACION               NUMBER
+  , P_NRO_FORMULARIO              IN OUT VARCHAR2
+  , P_OTROHECHO                   VARCHAR2
+  , P_IDENTIDADMUNICIPIODECLARA   NUMBER
+ -- , P_IDENTIFICACIONFUNCIONARIO   VARCHAR2
+  , P_idCreado                    OUT NUMBER
+ )AS
+   V_Proceso_Finalizado NUMBER := 770;
+   V_ID_USUARIO NUMBER;
+ BEGIN
+     update tbdeclaraciones
+    set
+        entrevistaprevia = p_entrevistaprevia,
+        explicacionalcance = p_explicacionalcance,
+        param_tipodesplazamiento = p_param_tipodesplazamiento,
+        id_municipiodeclaracion = p_id_municipiodeclaracion,
+        id_departamentodeclaracion = p_id_departamentodeclaracion,
+        id_paisdeclaracion = p_id_paisdeclaracion,
+        param_entidadatiende = p_param_entidadatiende,
+        fechadeclaracion = p_fechadeclaracion,
+        id_municipioactual = p_id_municipioactual,
+        id_departamentoactual = p_id_departamentoactual,
+        param_entornoactual = p_param_entornoactual,
+        param_tipoentornoactual = p_param_tipoentornoactual,
+        id_pobladoactual = p_id_pobladoactual,
+        cualpobladoactual = p_cualpobladoactual,
+        fechaarribo = p_fechaarribo,
+        direccioncorrespondencia = p_direccioncorrespondencia,
+        telefonoactual = p_telefonoactual,
+        param_tipoentornodesplaz = p_param_tipoentornodesplaz,
+        param_entornodesplaz = p_param_entornodesplaz,
+        id_departamentodesplaz = p_id_departamentodesplaz,
+        id_municipiodesplaz = p_id_municipiodesplaz,
+        id_pobladodesplaz = p_id_pobladodesplaz,
+        cualpobladodesplaz = p_cualpobladodesplaz,
+        anhosresidencia = p_anhosresidencia,
+        mesesresidencia = p_mesesresidencia,
+        fechadesplaz = p_fechadesplaz,
+        param_declaroanteriormente = p_param_declaroanteriormente,
+        id_municipioanterior = p_id_municipioanterior,
+        id_departamentoanterior = p_id_departamentoanterior,
+        param_entidadatendio = p_param_entidadatendio,
+        fechadeclaracionanterior = p_fechadeclaracionanterior,
+        razonsitio = p_razonsitio,
+        param_deseohogar = p_param_deseohogar,
+        id_municipiodeseado = p_id_municipiodeseado,
+        id_departamentodeseado = p_id_departamentodeseado,
+        param_entornodeseado = p_param_entornodeseado,
+        fechaterminacion = p_fechaterminacion,
+        realizojuramento = p_realizojuramento,
+        leyodeclaracion = p_leyodeclaracion,
+        documentosadicionales = p_documentosadicionales,
+        cuantosfolios = p_cuantosfolios,
+        orientacionenmendaduras = p_orientacionenmendaduras,
+        tieneenmendaduras = p_tieneenmendaduras,
+        id_usuario = p_id_usuario,
+        codigoantiguo = p_codigoantiguo,
+        param_estado = p_param_estado,
+        funcionario = p_funcionario,
+        cargo = p_cargo,
+        campoprueba = p_campoprueba,
+        id_detalleradicacion = p_id_detalleradicacion,
+        id_uterritorial = p_id_uterritorial,
+        puntaje_hogar = p_puntaje_hogar,
+        param_proceso = p_param_proceso,
+        fechafinalizacion = p_fechafinalizacion,
+        --fecharegistro = p_fecharegistro,
+        param_tiporepresentante = p_param_tiporepresentante,
+        corregirdeclaracion = p_corregirdeclaracion,
+        quecorrecciones = p_quecorrecciones,
+        telefonogeress = p_telefonogeress,
+        observaciones = p_observaciones,
+        fecha_primera_inclusion = p_fecha_primera_inclusion,
+        veces_hogar_no_incluido = p_veces_hogar_no_incluido,
+        id_declaracion_padre = p_id_declaracion_padre,
+        mensaje_celular = p_mensaje_celular,
+        mensaje_correoe = p_mensaje_correoe,
+        mensaje_fijo = p_mensaje_fijo,
+        otro = p_otro,
+        cuantos_anexos = p_cuantos_anexos,
+        sabe_firmar = p_sabe_firmar,
+        id_encargado = p_id_encargado,
+        numeroformulario = p_nro_formulario,
+        otrohecho = p_otrohecho,
+        ID_ENTIDADMUNICIPIODECLARACION = P_IDENTIDADMUNICIPIODECLARA
+        --IDENTIFICACIONFUNCIONARIO = P_IDENTIFICACIONFUNCIONARIO
+  where id = p_id;
+
+
+  IF(P_ID_RADICACION > 0) THEN
+  -- AND P_ID_MUNICIPIODECLARACION IS NOT NULL
+      UPDATE TBESTADOPROCESOS
+      SET    param_estado = VALORACION_PEND_PORASIGNAR
+      WHERE  id_proceso = p_id
+      AND param_proceso = PROCESO_DECLARACION;
+
+      UPDATE TBESTADOPROCESOS
+      SET    param_estado = V_Proceso_Finalizado
+             ,id_proceso = p_id
+      WHERE  id_detalle_radicacion = P_ID_RADICACION
+      AND param_proceso = PROCESO_DECLARACION;
+
+      UPDATE TBRADICACION
+      SET    ID_DECLARACION = p_id
+      WHERE  ID = p_id_radicacion;
+
+
+
+  END IF;
+  IF p_param_estado = VALORACION_PEND_PORASIGNAR THEN
+     V_ID_USUARIO := pkg_common.F_USUARIOMENOSCARGA(ROL_ASIGNADOR_VALORACION);
+     pkg_common.sp_updestado_declaracion(p_id, V_ID_USUARIO, VALORACION_PEND_PORASIGNAR);
+  END IF;
+
+ END;
+
+  /* Modified: 09/01/2013: No debe fallar cuando no existe radicaciÃ³n */
+  PROCEDURE sp_getDeclaracion (P_ID IN NUMBER, cu_result OUT cursor_type) AS
+    RADICACIONID NUMBER;
+  BEGIN
+    BEGIN
+      SELECT ID INTO RADICACIONID FROM TBRADICACION R WHERE R.ID_DECLARACION = P_ID AND ROWNUM = 1
+      ORDER BY R.FECHAREGISTRO;
+    EXCEPTION WHEN NO_DATA_FOUND THEN
+      RADICACIONID := NULL;
+    END;
+
+    OPEN cu_result FOR
+      SELECT
+            id
+          , entrevistaprevia
+          , explicacionalcance
+          , param_tipodesplazamiento
+          , id_municipiodeclaracion
+          , id_departamentodeclaracion
+          , id_paisdeclaracion
+          , param_entidadatiende
+          , fechadeclaracion
+          , id_municipioactual
+          , id_departamentoactual
+          , param_entornoactual
+          , param_tipoentornoactual
+          , id_pobladoactual
+          , cualpobladoactual
+          , fechaarribo
+          , direccioncorrespondencia
+          , telefonoactual
+          , param_tipoentornodesplaz
+          , param_entornodesplaz
+          , id_departamentodesplaz
+          , id_municipiodesplaz
+          , id_pobladodesplaz
+          , cualpobladodesplaz
+          , anhosresidencia
+          , mesesresidencia
+          , fechadesplaz
+          , param_declaroanteriormente
+          , id_municipioanterior
+          , id_departamentoanterior
+          , param_entidadatendio
+          , fechadeclaracionanterior
+          , razonsitio
+          , param_deseohogar
+          , id_municipiodeseado
+          , id_departamentodeseado
+          , param_entornodeseado
+          , fechaterminacion
+          , realizojuramento
+          , leyodeclaracion
+          , documentosadicionales
+          , cuantosfolios
+          , orientacionenmendaduras
+          , tieneenmendaduras
+          , id_usuario
+          , codigoantiguo
+          , param_estado
+          , funcionario
+          , cargo
+          , campoprueba
+          , RADICACIONID AS ID_DETALLERADICACION
+          , id_uterritorial
+          , puntaje_hogar
+          , param_proceso
+          , fechafinalizacion
+          , fecharegistro
+          , param_tiporepresentante
+          , corregirdeclaracion
+          , quecorrecciones
+          , telefonogeress
+          , observaciones
+          , fecha_primera_inclusion
+          , veces_hogar_no_incluido
+          , id_declaracion_padre
+          , mensaje_celular
+          , mensaje_correoe
+          , mensaje_fijo
+          , otro
+          , cuantos_anexos
+          , sabe_firmar
+          , id_encargado
+          , numeroformulario
+          , otrohecho
+          , IDENTIFICACIONFUNCIONARIO
+          , ID_ENTIDADMUNICIPIODECLARACION
+      FROM  tbdeclaraciones t
+      WHERE t.id = p_id;
+  END;
+
+ PROCEDURE sp_getListaDeclaracion
+ (
+    P_CodigoDeclaracion            IN VARCHAR2
+  , P_DeclaranteNumeroIdentific    IN VARCHAR2
+  , P_DeclarantePrimerNombre       IN VARCHAR2
+  , P_DeclaranteDemasNombres       IN VARCHAR2
+  , P_DeclarantePrimerApellido     IN VARCHAR2
+  , P_DeclaranteSegundoApellido    IN VARCHAR2
+  , cu_result                      OUT cursor_type
+ )AS
+  V_CodigoDeclaracion            VARCHAR2(100) :=  UPPER(TRIM(P_CodigoDeclaracion));
+  V_DeclaranteNumeroIdentific    VARCHAR2(100) :=  UPPER(TRIM(P_DeclaranteNumeroIdentific));
+  V_DeclarantePrimerNombre       VARCHAR2(100) :=  PKG_CARACTERIZACION.fonetica(P_DeclarantePrimerNombre);
+  V_DeclaranteDemasNombres       VARCHAR2(100) :=  PKG_CARACTERIZACION.fonetica(P_DeclaranteDemasNombres);
+  V_DeclarantePrimerApellido     VARCHAR2(100) :=  PKG_CARACTERIZACION.fonetica(P_DeclarantePrimerApellido);
+  V_DeclaranteSegundoApellido    VARCHAR2(100) :=  PKG_CARACTERIZACION.fonetica(P_DeclaranteSegundoApellido);
+
+  V_SQL             VARCHAR2(3000);
+  V_WHERE           VARCHAR2(100);
+  V_RESTRINGIDA     VARCHAR2(25) :=  CHR(39) || 'RESTRINGIDA' || CHR(39);
+  BEGIN
+
+    V_SQL :=  'SELECT ' || CHR(10) ||
+              '  D.id AS ID_DECLARACION ' ||
+              ', decode(RESTRINGIDA, 1, ' || V_RESTRINGIDA || ', D.NUMEROFORMULARIO) AS CODIGODECLARACION' ||
+              ', to_date(decode(RESTRINGIDA, 1, NULL, D.FECHADECLARACION)) AS FECHADECLARACION' ||
+              --', decode(RESTRINGIDA, 1, ' || 0 || ', NVL(PA.ID, 0)) AS ID_ESTADO' ||
+              ', decode(RESTRINGIDA, 1, ' || 0 || ', NVL(EP.PARAM_ESTADO, 0)) AS ID_ESTADO' ||
+              ', decode(RESTRINGIDA, 1, ' || V_RESTRINGIDA || ', P.NUMERODOCUMENTO) AS NUMERODOCUMENTO' ||
+              ', decode(RESTRINGIDA, 1, ' || V_RESTRINGIDA || ', P.PRIMERNOMBRE) AS PRIMERNOMBRE' ||
+              ', decode(RESTRINGIDA, 1, ' || V_RESTRINGIDA || ', P.SEGUNDONOMBRE) AS SEGUNDONOMBRE' ||
+              ', decode(RESTRINGIDA, 1, ' || V_RESTRINGIDA || ', P.PRIMERAPELLIDO) AS PRIMERAPELLIDO' ||
+              ', decode(RESTRINGIDA, 1, ' || V_RESTRINGIDA || ', P.SEGUNDOAPELLIDO) AS SEGUNDOAPELLIDO' || CHR(10) ||
+              ' FROM  tbdeclaraciones D ' || CHR(10) ||
+              ' INNER JOIN tbregistros_personas RG ON D.Id = RG.Id_Declaracion  ' ||  CHR(10) ||
+              ' INNER JOIN tbpersonas P ON P.ID = RG.Id_Persona  ' || CHR(10) ||
+              ' LEFT  JOIN TBPERSONA_FONETICA F ON F.ID_PERSONA = P.ID ' || CHR(10) ||
+              ' LEFT  JOIN TBESTADOPROCESOS EP ON ep.id_proceso = D.ID ' || CHR(10) ||
+              ' LEFT  JOIN tbradicacion R ON R.ID = ep.id_detalle_radicacion ' || CHR(10) ||
+              --' LEFT JOIN tbparametros PA on PA.Id = EP.PARAM_ESTADO ' || CHR(10) ||
+              ' WHERE rownum < 100 AND ACTIVO = 1 ' || CHR(10);
+
+
+       IF V_CodigoDeclaracion is not null then
+        V_WHERE  :=  ' R.Nro_Formulario = ' || chr(39) || V_CodigoDeclaracion || chr(39);
+        V_SQL := V_SQL || ' AND ' || V_WHERE || CHR(10);
+      end if;
+
+      IF P_DeclaranteNumeroIdentific is not null then
+        V_WHERE  :=  'P.NUMERODOCUMENTO = ' || chr(39) || V_DeclaranteNumeroIdentific || chr(39);
+        V_SQL := V_SQL || ' AND ' || V_WHERE || CHR(10);
+      end if;
+
+      IF V_DeclarantePrimerNombre is not null then
+        V_WHERE  := 'F.PRIMERNOMBRE LIKE ' || chr(39) || '%' || V_DeclarantePrimerNombre || '%' || chr(39);
+        V_SQL := V_SQL || ' AND ' || V_WHERE || CHR(10);
+      end if;
+
+      IF V_DeclaranteDemasNombres is not null then
+        V_WHERE  := 'F.SEGUNDONOMBRE LIKE ' || chr(39) || '%' || V_DeclaranteDemasNombres || '%' || chr(39);
+        V_SQL := V_SQL || ' AND ' || V_WHERE || CHR(10);
+      end if;
+
+      IF V_DeclarantePrimerApellido is not null then
+        V_WHERE  := 'F.PRIMERAPELLIDO LIKE ' || chr(39) || '%' || V_DeclarantePrimerApellido || '%' || chr(39);
+        V_SQL := V_SQL || ' AND ' || V_WHERE || CHR(10);
+      end if;
+
+      IF V_DeclaranteSegundoApellido is not null then
+        V_WHERE  := 'F.SEGUNDOAPELLIDO LIKE ' || chr(39) || '%' || V_DeclaranteSegundoApellido || '%' || chr(39);
+        V_SQL := V_SQL || ' AND ' || V_WHERE || CHR(10);
+      end if;
+
+    V_SQL := V_SQL || ' ORDER BY P.PRIMERAPELLIDO';
+
+    DBMS_OUTPUT.put_line(V_SQL);
+
+    OPEN cu_result FOR V_SQL;
+END;
+
+ PROCEDURE sp_setNarracion
+ (
+    P_ID_DECLARACION           IN NUMBER
+  , P_NARRACION                IN VARCHAR2
+ )AS
+ BEGIN
+
+   insert into tbnarraciones
+   (
+     id_declaracion
+   , narracion
+   )
+   values
+   (
+     p_id_declaracion
+   , p_narracion
+   );
+
+ END;
+
+ PROCEDURE sp_updNarracion
+ (
+    P_ID_DECLARACION           IN NUMBER
+  , P_NARRACION                IN VARCHAR2
+ )AS
+ BEGIN
+  update tbnarraciones
+  set
+       id_declaracion = p_id_declaracion
+     , narracion = p_narracion
+  where id_declaracion = p_id_declaracion;
+
+ END;
+
+
+ PROCEDURE sp_getNarracion
+ (
+    P_ID_DECLARACION           IN NUMBER
+  , cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+              id_declaracion
+            , narracion
+      from tbnarraciones t
+      where t.id_declaracion = p_id_declaracion;
+ END;
+
+
+PROCEDURE sp_setPersona
+  (
+      P_ID                            IN NUMBER
+    , P_PRIMERNOMBRE                  IN VARCHAR2
+    , P_SEGUNDONOMBRE                 IN VARCHAR2
+    , P_PRIMERAPELLIDO                IN VARCHAR2
+    , P_SEGUNDOAPELLIDO               IN VARCHAR2
+    , P_PARAM_TIPODOCUMENTO           IN NUMBER
+    , P_NUMERODOCUMENTO               IN VARCHAR2
+    , P_ID_DEPARTAMENTOEXPEDICION     IN NUMBER
+    , P_ID_MUNICIPIOEXPEDICION        IN NUMBER
+    , P_PARAM_ESTADOCIVIL             IN NUMBER
+    , P_PARAM_GENERO                  IN NUMBER
+    , P_PARAM_PROFESION               IN NUMBER
+    , P_CUALPROFESION                 IN VARCHAR2
+    , P_ID_DEPARTAMENTO               IN NUMBER
+    , P_ID_MUNICIPIO                  IN NUMBER
+    , P_PARAM_MINORIAETNICA           IN NUMBER
+    , P_GESTANTE                      IN NUMBER
+    , P_PARAM_REGIMENSALUD            IN NUMBER
+    , P_LEEYESCRIBE                   IN NUMBER
+    , P_ASISTIAALAESCUELA             IN NUMBER
+    , P_ASISTEAESCUELA                IN NUMBER
+    , P_ULTIMOGRADO                   IN NUMBER
+    , P_PARAM_NIVELESCOLAR            IN NUMBER
+    , P_PARAM_OCUPACIONANTERIOR       IN NUMBER
+    , P_PARAM_ACTVIDADANTERIOR        IN NUMBER
+    , P_PARAM_OCUPACIONACTUAL         IN NUMBER
+    , P_PARAM_ACTVIDADACTUAL          IN NUMBER
+    , P_FECHANACIMIENTO               IN DATE
+    , P_ESTAFALLECIDO                 IN NUMBER
+    , P_CUALREGIMENSALUD              IN VARCHAR2
+    , P_CUALACTIVIDADANTERIOR         IN VARCHAR2
+    , P_CUALACTIVIDADACTUAL           IN VARCHAR2
+    , P_PARAM_BIENESABANDONADOS       IN NUMBER
+    , P_PARAM_CREDITOSVIGENTES        IN NUMBER
+    , P_ID_PROCESO                    IN NUMBER
+    , P_PARAM_PROCESO                 IN NUMBER
+    , P_ID_USUARIO                    IN NUMBER
+    , P_ID_UTERRITORIAL               IN NUMBER
+    , P_ID_ORIGENFUENTE               IN NUMBER
+    , P_OBSERVACIONES                 IN VARCHAR2
+    , P_FECHAEXPEDICIONDOC            IN DATE
+    , P_REGISTRADURIA_1               IN NUMBER
+    , P_REGISTRADURIA_2               IN NUMBER
+    , P_ID_PERSONASIFA                IN NUMBER
+    , P_ID_PERSONAJUNTOS              IN NUMBER
+    , P_ESMUJERCABEZADEHOGAR          IN NUMBER
+    , P_ESMENORSINACUDIENTE           IN NUMBER
+    , P_PARAM_ETNIAPERTENECE          IN NUMBER
+    , P_PARAM_ROLCOMPLEMETARIO        IN NUMBER
+    , P_PARAM_RESGUARDO               IN NUMBER
+    , P_CUALETNIAOPUEBLO              IN VARCHAR2
+    , P_CUALROLCOMPLEMENTARIO         IN VARCHAR2
+    , P_CUALORGANIZACIONSOCIAL        IN VARCHAR2
+    , P_PARAM_PROTECCIONBIENES        IN NUMBER
+    , P_PORQUEPROTECCIONBIENES        IN VARCHAR2
+    , P_PARAM_PREDIOFUEDESPOJADO      IN NUMBER
+    , P_PARAM_FORMADESPOJO            IN NUMBER
+    , P_PARAM_AUTORDESPOJO            IN NUMBER
+    , P_PARAM_LEGISLAZIONTERRITORIO   IN NUMBER
+    , P_PARAM_AFECTACION              IN NUMBER
+    , P_COMUNAS_AFECTADAS             IN VARCHAR2
+    , P_PARAM_OTROSBIENESABANDONADOS  IN NUMBER
+    , P_VIGENCIA_REGISTRADURIA        IN VARCHAR2
+    , P_REGISTRADURIA                 IN NUMBER
+    , P_COMUNIDAD                     IN VARCHAR2
+    , p_idCreado                      OUT NUMBER
+  ) AS
+    v_id                   NUMBER := NULL;
+    v_primernombre         VARCHAR2(100) := pkg_caracterizacion.fonetica( P_PRIMERNOMBRE );
+    v_primerapellido       VARCHAR2(100) := pkg_caracterizacion.fonetica( P_PRIMERAPELLIDO );
+    v_numerodocumento      VARCHAR2(100) := UPPER( TRIM(  P_NUMERODOCUMENTO ));
+    r_id                   TBPERSONAS.id%TYPE;
+    -- Buscar persona por: NUMERODOCUMENTO,  PRIMERNOMBRE, PRIMERAPELLIDO
+    CURSOR c1 IS
+      SELECT T.ID
+        FROM   TBPERSONAS T
+        LEFT JOIN TBPERSONA_FONETICA F ON F.ID_PERSONA = T.ID
+        WHERE  T.NUMERODOCUMENTO  =  v_numerodocumento
+          AND  F.PRIMERAPELLIDO   =  v_primerapellido
+          AND  F.PRIMERNOMBRE     =  v_primernombre
+          AND  ROWNUM = 1
+        ORDER BY F.ID_PERSONA;
+  BEGIN
+   open c1;
+   LOOP
+     fetch c1 into r_id;
+     EXIT WHEN c1%NOTFOUND;
+     v_id := r_id;
+
+  update tbpersonas t
+       set
+         primernombre                         = UPPER( TRIM(p_primernombre))
+       , segundonombre                       = UPPER( TRIM(p_segundonombre))
+       , primerapellido                      = UPPER( TRIM(p_primerapellido))
+       , segundoapellido                     = UPPER( TRIM(p_segundoapellido))
+       , param_tipodocumento                 = p_param_tipodocumento
+       , numerodocumento                     = REPLACE(UPPER(p_numerodocumento), ' ')
+       , id_departamentoexpedicion           = p_id_departamentoexpedicion
+       , id_municipioexpedicion              = p_id_municipioexpedicion
+       , param_estadocivil                   = p_param_estadocivil
+       , param_genero                        = p_param_genero
+       , param_profesion                     = p_param_profesion
+       , cualprofesion                       = UPPER( TRIM(p_cualprofesion))
+       , id_departamento                     = p_id_departamento
+       , id_municipio                        = p_id_municipio
+       , param_minoriaetnica                 = p_param_minoriaetnica
+       , gestante                            = p_gestante
+       , param_regimensalud                  = p_param_regimensalud
+       , leeyescribe                         = p_leeyescribe
+       , asistiaalaescuela                   = p_asistiaalaescuela
+       , asisteaescuela                      = p_asisteaescuela
+       , ultimogrado                         = p_ultimogrado
+       , param_nivelescolar                  = p_param_nivelescolar
+       , param_ocupacionanterior             = p_param_ocupacionanterior
+       , param_actvidadanterior              = p_param_actvidadanterior
+       , param_ocupacionactual               = p_param_ocupacionactual
+       , param_actvidadactual                = p_param_actvidadactual
+       , fechanacimiento                     = p_fechanacimiento
+       , estafallecido                       = p_estafallecido
+       , cualregimensalud                    = UPPER( TRIM(p_cualregimensalud))
+       , cualactividadanterior               = UPPER( TRIM(p_cualactividadanterior))
+       , cualactividadactual                 = UPPER( TRIM(p_cualactividadactual))
+       , param_bienesabandonados             = p_param_bienesabandonados
+       , param_creditosvigentes              = p_param_creditosvigentes
+       , id_proceso                          = p_id_proceso
+       , param_proceso                       = p_param_proceso
+       , id_usuario                          = p_id_usuario
+       , id_uterritorial                     = p_id_uterritorial
+       , id_origenfuente                     = p_id_origenfuente
+       , observaciones                       = p_observaciones
+       , fechaexpediciondoc                  = p_fechaexpediciondoc
+       , registraduria_1                     = p_registraduria_1
+       , registraduria_2                     = p_registraduria_2
+       , id_personasifa                      = p_id_personasifa
+       , id_personajuntos                    = p_id_personajuntos
+       , esmujercabezadehogar                = p_esmujercabezadehogar
+       , esmenorsinacudiente                 = p_esmenorsinacudiente
+       , param_etniapertenece                = p_param_etniapertenece
+       , param_rolcomplemetario              = p_param_rolcomplemetario
+       , param_resguardo                     = p_param_resguardo
+       , cualetniaopueblo                    = p_cualetniaopueblo
+       , cualrolcomplementario               = p_cualrolcomplementario
+       , cualorganizacionsocial              = p_cualorganizacionsocial
+       , param_proteccionbienes              = p_param_proteccionbienes
+       , porqueproteccionbienes              = p_porqueproteccionbienes
+       , param_prediofuedespojado            = p_param_prediofuedespojado
+       , param_formadespojo                  = p_param_formadespojo
+       , param_autordespojo                  = p_param_autordespojo
+       , param_legislazionterritorio         = p_param_legislazionterritorio
+       , param_afectacion                    = p_param_afectacion
+       , comunas_afectadas                   = p_comunas_afectadas
+       , param_otrosbienesabandonados        = p_param_otrosbienesabandonados
+       , vigencia_registraduria              = p_vigencia_registraduria
+       , registraduria                       = p_registraduria
+       , comunidad                           = p_comunidad
+     where t.id = v_id;
+
+     EXIT;
+   END LOOP;
+   close c1;
+
+   IF(v_id IS NULL)
+   THEN
+    SELECT SEQ_PERSONAS.NEXTVAL INTO v_id FROM dual;
+
+    insert into tbpersonas(
+       id
+     , primernombre
+     , segundonombre
+     , primerapellido
+     , segundoapellido
+     , param_tipodocumento
+     , numerodocumento
+     , id_departamentoexpedicion
+     , id_municipioexpedicion
+     , param_estadocivil
+     , param_genero
+     , param_profesion
+     , cualprofesion
+     , id_departamento
+     , id_municipio
+     , param_minoriaetnica
+     , gestante
+     , param_regimensalud
+     , leeyescribe
+     , asistiaalaescuela
+     , asisteaescuela
+     , ultimogrado
+     , param_nivelescolar
+     , param_ocupacionanterior
+     , param_actvidadanterior
+     , param_ocupacionactual
+     , param_actvidadactual
+     , fechanacimiento
+     , estafallecido
+     , cualregimensalud
+     , cualactividadanterior
+     , cualactividadactual
+     , param_bienesabandonados
+     , param_creditosvigentes
+     , id_proceso
+     , param_proceso
+     , id_usuario
+     , id_uterritorial
+     , id_origenfuente
+     , observaciones
+     , fechaexpediciondoc
+     , registraduria_1
+     , registraduria_2
+     , id_personasifa
+     , id_personajuntos
+     , esmujercabezadehogar
+     , esmenorsinacudiente
+     , param_etniapertenece
+     , param_rolcomplemetario
+     , param_resguardo
+     , cualetniaopueblo
+     , cualrolcomplementario
+     , cualorganizacionsocial
+     , param_proteccionbienes
+     , porqueproteccionbienes
+     , param_prediofuedespojado
+     , param_formadespojo
+     , param_autordespojo
+     , param_legislazionterritorio
+     , param_afectacion
+     , comunas_afectadas
+     , param_otrosbienesabandonados
+     , vigencia_registraduria
+     , registraduria
+     , comunidad
+    )
+    values
+    (
+       v_id
+     , UPPER( TRIM(p_primernombre))
+     , UPPER( TRIM(p_segundonombre))
+     , UPPER( TRIM(p_primerapellido))
+     , UPPER( TRIM(p_segundoapellido))
+     , p_param_tipodocumento
+     , REPLACE(UPPER(p_numerodocumento), ' ')
+     , p_id_departamentoexpedicion
+     , p_id_municipioexpedicion
+     , p_param_estadocivil
+     , p_param_genero
+     , p_param_profesion
+     , UPPER( TRIM(p_cualprofesion))
+     , p_id_departamento
+     , p_id_municipio
+     , p_param_minoriaetnica
+     , p_gestante
+     , p_param_regimensalud
+     , p_leeyescribe
+     , p_asistiaalaescuela
+     , p_asisteaescuela
+     , p_ultimogrado
+     , p_param_nivelescolar
+     , p_param_ocupacionanterior
+     , p_param_actvidadanterior
+     , p_param_ocupacionactual
+     , p_param_actvidadactual
+     , p_fechanacimiento
+     , p_estafallecido
+     , UPPER( TRIM(p_cualregimensalud))
+     , UPPER( TRIM(p_cualactividadanterior))
+     , UPPER( TRIM(p_cualactividadactual))
+     , p_param_bienesabandonados
+     , p_param_creditosvigentes
+     , p_id_proceso
+     , p_param_proceso
+     , p_id_usuario
+     , p_id_uterritorial
+     , p_id_origenfuente
+     , p_observaciones
+     , p_fechaexpediciondoc
+     , p_registraduria_1
+     , p_registraduria_2
+     , p_id_personasifa
+     , p_id_personajuntos
+     , p_esmujercabezadehogar
+     , p_esmenorsinacudiente
+     , p_param_etniapertenece
+     , p_param_rolcomplemetario
+     , p_param_resguardo
+     , p_cualetniaopueblo
+     , p_cualrolcomplementario
+     , p_cualorganizacionsocial
+     , p_param_proteccionbienes
+     , p_porqueproteccionbienes
+     , p_param_prediofuedespojado
+     , p_param_formadespojo
+     , p_param_autordespojo
+     , p_param_legislazionterritorio
+     , p_param_afectacion
+     , p_comunas_afectadas
+     , p_param_otrosbienesabandonados
+     , p_vigencia_registraduria
+     , p_registraduria
+     , p_comunidad);
+    END IF;
+
+    p_idCreado := v_id;
+
+ END;
+
+
+PROCEDURE sp_updPersona
+  (
+      P_ID                            IN NUMBER
+    , P_PRIMERNOMBRE                  IN VARCHAR2
+    , P_SEGUNDONOMBRE                 IN VARCHAR2
+    , P_PRIMERAPELLIDO                IN VARCHAR2
+    , P_SEGUNDOAPELLIDO               IN VARCHAR2
+    , P_PARAM_TIPODOCUMENTO           IN NUMBER
+    , P_NUMERODOCUMENTO               IN VARCHAR2
+    , P_ID_DEPARTAMENTOEXPEDICION     IN NUMBER
+    , P_ID_MUNICIPIOEXPEDICION        IN NUMBER
+    , P_PARAM_ESTADOCIVIL             IN NUMBER
+    , P_PARAM_GENERO                  IN NUMBER
+    , P_PARAM_PROFESION               IN NUMBER
+    , P_CUALPROFESION                 IN VARCHAR2
+    , P_ID_DEPARTAMENTO               IN NUMBER
+    , P_ID_MUNICIPIO                  IN NUMBER
+    , P_PARAM_MINORIAETNICA           IN NUMBER
+    , P_GESTANTE                      IN NUMBER
+    , P_PARAM_REGIMENSALUD            IN NUMBER
+    , P_LEEYESCRIBE                   IN NUMBER
+    , P_ASISTIAALAESCUELA             IN NUMBER
+    , P_ASISTEAESCUELA                IN NUMBER
+    , P_ULTIMOGRADO                   IN NUMBER
+    , P_PARAM_NIVELESCOLAR            IN NUMBER
+    , P_PARAM_OCUPACIONANTERIOR       IN NUMBER
+    , P_PARAM_ACTVIDADANTERIOR        IN NUMBER
+    , P_PARAM_OCUPACIONACTUAL         IN NUMBER
+    , P_PARAM_ACTVIDADACTUAL          IN NUMBER
+    , P_FECHANACIMIENTO               IN DATE
+    , P_ESTAFALLECIDO                 IN NUMBER
+    , P_CUALREGIMENSALUD              IN VARCHAR2
+    , P_CUALACTIVIDADANTERIOR         IN VARCHAR2
+    , P_CUALACTIVIDADACTUAL           IN VARCHAR2
+    , P_PARAM_BIENESABANDONADOS       IN NUMBER
+    , P_PARAM_CREDITOSVIGENTES        IN NUMBER
+    , P_ID_PROCESO                    IN NUMBER
+    , P_PARAM_PROCESO                 IN NUMBER
+    , P_ID_USUARIO                    IN NUMBER
+    , P_ID_UTERRITORIAL               IN NUMBER
+    , P_ID_ORIGENFUENTE               IN NUMBER
+    , P_OBSERVACIONES                 IN VARCHAR2
+    , P_FECHAEXPEDICIONDOC            IN DATE
+    , P_REGISTRADURIA_1               IN NUMBER
+    , P_REGISTRADURIA_2               IN NUMBER
+    , P_ID_PERSONASIFA                IN NUMBER
+    , P_ID_PERSONAJUNTOS              IN NUMBER
+    , P_ESMUJERCABEZADEHOGAR          IN NUMBER
+    , P_ESMENORSINACUDIENTE           IN NUMBER
+    , P_PARAM_ETNIAPERTENECE          IN NUMBER
+    , P_PARAM_ROLCOMPLEMETARIO        IN NUMBER
+    , P_PARAM_RESGUARDO               IN NUMBER
+    , P_CUALETNIAOPUEBLO              IN VARCHAR2
+    , P_CUALROLCOMPLEMENTARIO         IN VARCHAR2
+    , P_CUALORGANIZACIONSOCIAL        IN VARCHAR2
+    , P_PARAM_PROTECCIONBIENES        IN NUMBER
+    , P_PORQUEPROTECCIONBIENES        IN VARCHAR2
+    , P_PARAM_PREDIOFUEDESPOJADO      IN NUMBER
+    , P_PARAM_FORMADESPOJO            IN NUMBER
+    , P_PARAM_AUTORDESPOJO            IN NUMBER
+    , P_PARAM_LEGISLAZIONTERRITORIO   IN NUMBER
+    , P_PARAM_AFECTACION              IN NUMBER
+    , P_COMUNAS_AFECTADAS             IN VARCHAR2
+    , P_PARAM_OTROSBIENESABANDONADOS  IN NUMBER
+    , P_VIGENCIA_REGISTRADURIA        IN VARCHAR2
+    , P_REGISTRADURIA                 IN NUMBER
+    , P_COMUNIDAD                     IN VARCHAR2
+    , p_idCreado                      OUT NUMBER
+  ) AS
+     v_id_persona NUMBER;
+  BEGIN
+
+  select t.id_persona
+  into   v_id_persona
+  from   tbregistros_personas t
+  where  t.id = p_id;
+
+  update tbpersonas t
+       set
+         primernombre                         = UPPER( TRIM(p_primernombre))
+       , segundonombre                       = UPPER( TRIM(p_segundonombre))
+       , primerapellido                      = UPPER( TRIM(p_primerapellido))
+       , segundoapellido                     = UPPER( TRIM(p_segundoapellido))
+       , param_tipodocumento                 = p_param_tipodocumento
+       , numerodocumento                     = REPLACE(UPPER(p_numerodocumento), ' ')
+       , id_departamentoexpedicion           = p_id_departamentoexpedicion
+       , id_municipioexpedicion              = p_id_municipioexpedicion
+       , param_estadocivil                   = p_param_estadocivil
+       , param_genero                        = p_param_genero
+       , param_profesion                     = p_param_profesion
+       , cualprofesion                       = UPPER( TRIM(p_cualprofesion))
+       , id_departamento                     = p_id_departamento
+       , id_municipio                        = p_id_municipio
+       , param_minoriaetnica                 = p_param_minoriaetnica
+       , gestante                            = p_gestante
+       , param_regimensalud                  = p_param_regimensalud
+       , leeyescribe                         = p_leeyescribe
+       , asistiaalaescuela                   = p_asistiaalaescuela
+       , asisteaescuela                      = p_asisteaescuela
+       , ultimogrado                         = p_ultimogrado
+       , param_nivelescolar                  = p_param_nivelescolar
+       , param_ocupacionanterior             = p_param_ocupacionanterior
+       , param_actvidadanterior              = p_param_actvidadanterior
+       , param_ocupacionactual               = p_param_ocupacionactual
+       , param_actvidadactual                = p_param_actvidadactual
+       , fechanacimiento                     = p_fechanacimiento
+       , estafallecido                       = p_estafallecido
+       , cualregimensalud                    = UPPER( TRIM(p_cualregimensalud))
+       , cualactividadanterior               = UPPER( TRIM(p_cualactividadanterior))
+       , cualactividadactual                 = UPPER( TRIM(p_cualactividadactual))
+       , param_bienesabandonados             = p_param_bienesabandonados
+       , param_creditosvigentes              = p_param_creditosvigentes
+       , id_proceso                          = p_id_proceso
+       , param_proceso                       = p_param_proceso
+       , id_usuario                          = p_id_usuario
+       , id_uterritorial                     = p_id_uterritorial
+       , id_origenfuente                     = p_id_origenfuente
+       , observaciones                       = p_observaciones
+       , fechaexpediciondoc                  = p_fechaexpediciondoc
+       , registraduria_1                     = p_registraduria_1
+       , registraduria_2                     = p_registraduria_2
+       , id_personasifa                      = p_id_personasifa
+       , id_personajuntos                    = p_id_personajuntos
+       , esmujercabezadehogar                = p_esmujercabezadehogar
+       , esmenorsinacudiente                 = p_esmenorsinacudiente
+       , param_etniapertenece                = p_param_etniapertenece
+       , param_rolcomplemetario              = p_param_rolcomplemetario
+       , param_resguardo                     = p_param_resguardo
+       , cualetniaopueblo                    = p_cualetniaopueblo
+       , cualrolcomplementario               = p_cualrolcomplementario
+       , cualorganizacionsocial              = p_cualorganizacionsocial
+       , param_proteccionbienes              = p_param_proteccionbienes
+       , porqueproteccionbienes              = p_porqueproteccionbienes
+       , param_prediofuedespojado            = p_param_prediofuedespojado
+       , param_formadespojo                  = p_param_formadespojo
+       , param_autordespojo                  = p_param_autordespojo
+       , param_legislazionterritorio         = p_param_legislazionterritorio
+       , param_afectacion                    = p_param_afectacion
+       , comunas_afectadas                   = p_comunas_afectadas
+       , param_otrosbienesabandonados        = p_param_otrosbienesabandonados
+       , vigencia_registraduria              = p_vigencia_registraduria
+       , registraduria                       = p_registraduria
+       , comunidad                           = p_comunidad
+     WHERE t.ID = v_id_persona;
+
+  END;
+
+  PROCEDURE sp_setRegitroPersona
+  (
+    P_ID                          IN NUMBER
+  , P_ID_DECLARACION              IN NUMBER
+  , P_ID_PERSONA                  IN NUMBER
+  , P_ESDECLARANTE                IN NUMBER
+  , P_CARACTERIZADO               IN NUMBER
+  , P_ACTIVO                      IN NUMBER
+  , P_ID_MIJEFEHOGAR              IN NUMBER
+  , P_PARAM_ESTADOAYUDAS          IN NUMBER
+  , P_PUNTAJE_PERSONA             IN NUMBER
+  , P_ID_PROCESO                  IN NUMBER
+  , P_PARAM_PROCESO               IN NUMBER
+  , P_ID_USUARIO                  IN NUMBER
+  , P_ID_UTERRITORIAL             IN NUMBER
+  , P_DIRECCION                   IN VARCHAR2
+  , P_TELEFONO                    IN VARCHAR2
+  , P_MOVIL                       IN VARCHAR2
+  , P_PARAM_RELACION              IN NUMBER
+  , P_SEDESPLAZO                  IN NUMBER
+  , P_RESTRINGIDA                 IN NUMBER
+  , P_NOVEDAD_INCLUSION           IN NUMBER
+  , P_OBS_RESTRINGIDA             IN VARCHAR2
+  , P_TIPO_RESTRICCION            IN NUMBER
+  , P_EMAIL                       IN VARCHAR2
+  , P_DIRECCION_ALTERNA           IN VARCHAR2
+  , P_ID_ENTORNO_ALTERNO          IN NUMBER
+  , P_OTRO_ENTORNO_ALTERNO        IN VARCHAR2
+  , P_ID_DEPARTAMENTO_ALTERNO     IN NUMBER
+  , P_ID_MUNICIPIO_ALTERNO        IN NUMBER
+  , P_TELEFONO_ALTERNO            IN VARCHAR2
+  , P_MOVIL_ALTERNO               IN VARCHAR2
+  , P_EMAIL_ALTERNO               IN VARCHAR2
+  , P_CONSECUTIVO_PERSONA         IN NUMBER
+  , P_ESMUJERCABEZADEHOGAR        IN NUMBER
+  , P_PARAM_REGIMENESPECIAL       IN NUMBER
+  , P_GESTANTE_LACTANTE           IN NUMBER
+  , P_ID_DEPARTAMENTO             IN NUMBER
+  , P_ID_MUNICIPIO                IN NUMBER
+  , P_ID_ENTORNO                  IN NUMBER
+  , P_OTRO_ENTORNO                IN VARCHAR2
+  , P_ID_TIPOPOBLACION            IN NUMBER
+  , P_ID_TIPOPOBLACION_ALTERNO    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG      IN NUMBER
+  , P_PARAM_BARRIO_VEREDA         IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG       IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA          IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO          IN NUMBER
+  , P_PARAM_TIPO_ENTORNO_ALT      IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_ALT  IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ALT     IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ALT   IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ALT      IN VARCHAR2
+  , P_ID_PAIS                     IN NUMBER
+  , P_ID_PAIS_ALTERNO             IN NUMBER
+  , P_CONSECUTIVO_FAMILIA         IN NUMBER
+  , P_INDICATIVO_TELEFONO         IN NUMBER
+  , P_INDICATIVO_TELEFONO_ALTERNO IN NUMBER
+  , P_IdCreado                    OUT NUMBER
+  ) AS
+    V_ID NUMBER := 0;
+    cont number := 0;
+  BEGIN
+
+    SELECT SEQ_REGISTRO_PERSONAS.NEXTVAL INTO V_ID FROM DUAL;
+
+    select count(*) into cont from tbregistros_personas where id_persona = p_id_persona and id_declaracion = P_ID_DECLARACION;
+
+    if cont = 0 then
+      insert into tbregistros_personas
+      ( id
+      , id_declaracion
+      , id_persona
+      , esdeclarante
+      , caracterizado
+      , activo
+      , id_mijefehogar
+      , param_estadoayudas
+      , puntaje_persona
+      , id_proceso
+      , param_proceso
+      , id_usuario
+      , id_uterritorial
+      , direccion
+      , telefono
+      , movil
+      , param_relacion
+      , sedesplazo
+      , restringida
+      , novedad_inclusion
+      , obs_restringida
+      , tipo_restriccion
+      , email
+      , direccion_alterna
+      , id_entorno_alterno
+      , otro_entorno_alterno
+      , id_departamento_alterno
+      , id_municipio_alterno
+      , telefono_alterno
+      , movil_alterno
+      , email_alterno
+      , consecutivo_persona
+      , esmujercabezadehogar
+      , param_regimenespecial
+      , gestante_lactante
+      , id_departamento
+      , id_municipio
+      , id_entorno
+      , otro_entorno
+      , id_tipopoblacion
+      , id_tipopoblacion_alterno
+      , param_localidad_correg
+      , param_barrio_vereda
+      , otro_localidad_correg
+      , otro_barrio_vereda
+      , param_tipo_entorno
+      , param_tipo_entorno_alt
+      , param_localidad_correg_alt
+      , param_barrio_vereda_alt
+      , otro_localidad_correg_alt
+      , otro_barrio_vereda_alt
+      , ID_PAIS
+      , ID_PAIS_ALTERNO
+      , CONSECUTIVO_FAMILIA
+      , INDICATIVO_TELEFONO
+      , INDICATIVO_TELEFONO_ALTERNO
+      )
+         values
+        ( v_id
+      , p_id_declaracion
+      , p_id_persona
+      , p_esdeclarante
+      , p_caracterizado
+      , p_activo
+      , p_id_mijefehogar
+      , p_param_estadoayudas
+      , p_puntaje_persona
+      , p_id_proceso
+      , p_param_proceso
+      , p_id_usuario
+      , p_id_uterritorial
+      , p_direccion
+      , p_telefono
+      , p_movil
+      , p_param_relacion
+      , p_sedesplazo
+      , p_restringida
+      , p_novedad_inclusion
+      , p_obs_restringida
+      , p_tipo_restriccion
+      , p_email
+      , p_direccion_alterna
+      , p_id_entorno_alterno
+      , p_otro_entorno_alterno
+      , p_id_departamento_alterno
+      , p_id_municipio_alterno
+      , p_telefono_alterno
+      , p_movil_alterno
+      , p_email_alterno
+      , p_consecutivo_persona
+      , p_esmujercabezadehogar
+      , p_param_regimenespecial
+      , p_gestante_lactante
+      , p_id_departamento
+      , p_id_municipio
+      , p_id_entorno
+      , p_otro_entorno
+      , p_id_tipopoblacion
+      , p_id_tipopoblacion_alterno
+      , p_param_localidad_correg
+      , p_param_barrio_vereda
+      , p_otro_localidad_correg
+      , p_otro_barrio_vereda
+      , p_param_tipo_entorno
+      , p_param_tipo_entorno_alt
+      , p_param_localidad_correg_alt
+      , p_param_barrio_vereda_alt
+      , p_otro_localidad_correg_alt
+      , p_otro_barrio_vereda_alt
+      , P_ID_PAIS
+      , P_ID_PAIS_ALTERNO
+      , P_CONSECUTIVO_FAMILIA
+      , P_INDICATIVO_TELEFONO
+      , P_INDICATIVO_TELEFONO_ALTERNO
+      );
+
+      P_IdCreado := V_ID;
+    else
+      select id into V_ID from tbregistros_personas where id_persona = p_id_persona and id_declaracion = P_ID_DECLARACION and rownum = 1;
+      P_IdCreado := V_ID; 
+    end if;
+  END;
+
+  PROCEDURE sp_setRegPersonaFirma(p_IdRegPersona NUMBER, p_FirmaDigital BLOB) AS
+  BEGIN
+    INSERT INTO TBREGPERSONASFIRMA (ID_REGPERSONA, FIRMADIGITAL)
+    VALUES (p_IdRegPersona, p_FirmaDigital);
+  END;
+
+  PROCEDURE sp_updRegitroPersona
+  (
+    P_ID                          IN NUMBER
+  , P_ID_DECLARACION              IN NUMBER
+  , P_ID_PERSONA                  IN NUMBER
+  , P_ESDECLARANTE                IN NUMBER
+  , P_CARACTERIZADO               IN NUMBER
+  , P_ACTIVO                      IN NUMBER
+  , P_ID_MIJEFEHOGAR              IN NUMBER
+  , P_PARAM_ESTADOAYUDAS          IN NUMBER
+  , P_PUNTAJE_PERSONA             IN NUMBER
+  , P_ID_PROCESO                  IN NUMBER
+  , P_PARAM_PROCESO               IN NUMBER
+  , P_ID_USUARIO                  IN NUMBER
+  , P_ID_UTERRITORIAL             IN NUMBER
+  , P_DIRECCION                   IN VARCHAR2
+  , P_TELEFONO                    IN VARCHAR2
+  , P_MOVIL                       IN VARCHAR2
+  , P_PARAM_RELACION              IN NUMBER
+  , P_SEDESPLAZO                  IN NUMBER
+  , P_RESTRINGIDA                 IN NUMBER
+  , P_NOVEDAD_INCLUSION           IN NUMBER
+  , P_OBS_RESTRINGIDA             IN VARCHAR2
+  , P_TIPO_RESTRICCION            IN NUMBER
+  , P_EMAIL                       IN VARCHAR2
+  , P_DIRECCION_ALTERNA           IN VARCHAR2
+  , P_ID_ENTORNO_ALTERNO          IN NUMBER
+  , P_OTRO_ENTORNO_ALTERNO        IN VARCHAR2
+  , P_ID_DEPARTAMENTO_ALTERNO     IN NUMBER
+  , P_ID_MUNICIPIO_ALTERNO        IN NUMBER
+  , P_TELEFONO_ALTERNO            IN VARCHAR2
+  , P_MOVIL_ALTERNO               IN VARCHAR2
+  , P_EMAIL_ALTERNO               IN VARCHAR2
+  , P_CONSECUTIVO_PERSONA         IN NUMBER
+  , P_ESMUJERCABEZADEHOGAR        IN NUMBER
+  , P_PARAM_REGIMENESPECIAL       IN NUMBER
+  , P_GESTANTE_LACTANTE           IN NUMBER
+  , P_ID_DEPARTAMENTO             IN NUMBER
+  , P_ID_MUNICIPIO                IN NUMBER
+  , P_ID_ENTORNO                  IN NUMBER
+  , P_OTRO_ENTORNO                IN VARCHAR2
+  , P_ID_TIPOPOBLACION            IN NUMBER
+  , P_ID_TIPOPOBLACION_ALTERNO    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG      IN NUMBER
+  , P_PARAM_BARRIO_VEREDA         IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG       IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA          IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO          IN NUMBER
+  , P_PARAM_TIPO_ENTORNO_ALT      IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_ALT  IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ALT     IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ALT   IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ALT      IN VARCHAR2
+  , P_ID_PAIS                     IN NUMBER
+  , P_ID_PAIS_ALTERNO             IN NUMBER
+  , P_CONSECUTIVO_FAMILIA         IN NUMBER
+  , P_INDICATIVO_TELEFONO         IN NUMBER
+  , P_INDICATIVO_TELEFONO_ALTERNO IN NUMBER
+  , P_IdCreado                    OUT NUMBER
+  )AS
+    v_id_persona NUMBER;
+  BEGIN
+
+  select t.id_persona
+  into   v_id_persona
+  from   tbregistros_personas t
+  where  t.id = p_id;
+    --SE DEBE INSERTAR EN LA TABLA TBREGISTROSPERSONAS LA RELACION
+
+    update tbregistros_personas
+       set
+           id_declaracion = p_id_declaracion,
+           id_persona = v_id_persona,
+           esdeclarante = p_esdeclarante,
+           caracterizado = p_caracterizado,
+           activo = p_activo,
+           id_mijefehogar = p_id_mijefehogar,
+           param_estadoayudas = p_param_estadoayudas,
+           puntaje_persona = p_puntaje_persona,
+           id_proceso = p_id_proceso,
+           param_proceso = p_param_proceso,
+           id_usuario = p_id_usuario,
+           id_uterritorial = p_id_uterritorial,
+           direccion = p_direccion,
+           telefono = p_telefono,
+           movil = p_movil,
+           param_relacion = p_param_relacion,
+           sedesplazo = p_sedesplazo,
+           restringida = p_restringida,
+           novedad_inclusion = p_novedad_inclusion,
+           obs_restringida = p_obs_restringida,
+           tipo_restriccion = p_tipo_restriccion,
+           email = p_email,
+           direccion_alterna = p_direccion_alterna,
+           id_entorno_alterno = p_id_entorno_alterno,
+           otro_entorno_alterno = p_otro_entorno_alterno,
+           id_departamento_alterno = p_id_departamento_alterno,
+           id_municipio_alterno = p_id_municipio_alterno,
+           telefono_alterno = p_telefono_alterno,
+           movil_alterno = p_movil_alterno,
+           email_alterno = p_email_alterno,
+           consecutivo_persona = p_consecutivo_persona,
+           esmujercabezadehogar = p_esmujercabezadehogar,
+           param_regimenespecial = p_param_regimenespecial,
+           gestante_lactante = p_gestante_lactante,
+           id_departamento = p_id_departamento,
+           id_municipio = p_id_municipio,
+           id_entorno = p_id_entorno,
+           otro_entorno = p_otro_entorno,
+           id_tipopoblacion = p_id_tipopoblacion,
+           id_tipopoblacion_alterno = p_id_tipopoblacion_alterno,
+           param_localidad_correg = p_param_localidad_correg,
+           param_barrio_vereda = p_param_barrio_vereda,
+           otro_localidad_correg = p_otro_localidad_correg,
+           otro_barrio_vereda = p_otro_barrio_vereda,
+           param_tipo_entorno = p_param_tipo_entorno,
+           param_tipo_entorno_alt = p_param_tipo_entorno_alt,
+           param_localidad_correg_alt = p_param_localidad_correg_alt,
+           param_barrio_vereda_alt = p_param_barrio_vereda_alt,
+           otro_localidad_correg_alt = p_otro_localidad_correg_alt,
+           otro_barrio_vereda_alt = p_otro_barrio_vereda_alt,
+           ID_PAIS = P_ID_PAIS,
+           ID_PAIS_ALTERNO = P_ID_PAIS_ALTERNO,
+           CONSECUTIVO_FAMILIA = P_CONSECUTIVO_FAMILIA,
+           INDICATIVO_TELEFONO = P_INDICATIVO_TELEFONO,
+           INDICATIVO_TELEFONO_ALTERNO = P_INDICATIVO_TELEFONO_ALTERNO
+    where id = p_id;
+
+    P_IdCreado := p_ID;
+
+  END;
+
+  PROCEDURE sp_updRegPersonaFirma(p_IdRegPersona NUMBER, p_FirmaDigital BLOB) AS
+  BEGIN
+    UPDATE TBREGPERSONASFIRMA SET FIRMADIGITAL = p_FirmaDigital
+    WHERE ID_REGPERSONA = p_IdRegPersona;
+  END;
+
+  PROCEDURE sp_setEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDPARAMTIPODOCUMENTO  NUMBER
+    , P_NUMERODOCUMENTO       VARCHAR2
+    , P_PRIMERNOMBRE          VARCHAR2
+    , P_SEGUNDONOMBRE         VARCHAR2
+    , P_PRIMERAPELLIDO        VARCHAR2
+    , P_SEGUNDOAPELLIDO       VARCHAR2
+    , P_DIRECCION             VARCHAR2
+    , P_TELEFONO              VARCHAR2
+    , P_CARGO                 VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  ) AS
+    V_IDNUEVO NUMBER;
+  BEGIN
+
+    SELECT nvl( MAX(ID), 0) + 1 INTO V_IDNUEVO  FROM tbencargado;
+
+    --SE DEBE INSERTAR EN LA TABLA TBREGISTROSPERSONAS LA RELACION
+    insert into tbencargado
+    (
+     id
+    ,idparamtipodocumento
+    ,numerodocumento
+    ,primernombre
+    ,segundonombre
+    ,primerapellido
+    ,segundoapellido
+    ,direccion
+    ,telefono
+    ,cargo
+    )
+    values
+    (
+     V_IDNUEVO
+    ,p_idparamtipodocumento
+    ,p_numerodocumento
+    ,p_primernombre
+    ,p_segundonombre
+    ,p_primerapellido
+    ,p_segundoapellido
+    ,p_direccion
+    ,p_telefono
+    ,p_cargo
+    );
+
+     P_IdCreado := V_IDNUEVO;
+
+  END;
+
+  PROCEDURE sp_setEncargadoFirma(p_IdEncargado NUMBER, p_FirmaDigital BLOB) AS
+  BEGIN
+    INSERT INTO TBENCARGADOFIRMA (ID_ENCARGADO, FIRMADIGITAL)
+    VALUES (p_IdEncargado, p_FirmaDigital);
+  END;
+
+  PROCEDURE sp_updEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDPARAMTIPODOCUMENTO  NUMBER
+    , P_NUMERODOCUMENTO       VARCHAR2
+    , P_PRIMERNOMBRE          VARCHAR2
+    , P_SEGUNDONOMBRE         VARCHAR2
+    , P_PRIMERAPELLIDO        VARCHAR2
+    , P_SEGUNDOAPELLIDO       VARCHAR2
+    , P_DIRECCION             VARCHAR2
+    , P_TELEFONO              VARCHAR2
+    , P_CARGO                 VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  ) AS
+  BEGIN
+    --SE DEBE INSERTAR EN LA TABLA TBREGISTROSPERSONAS LA RELACION
+   update tbencargado
+      set id = p_id,
+          idparamtipodocumento = p_idparamtipodocumento,
+          numerodocumento = p_numerodocumento,
+          primernombre = p_primernombre,
+          segundonombre = p_segundonombre,
+          primerapellido = p_primerapellido,
+          segundoapellido = p_segundoapellido,
+          direccion = p_direccion,
+          telefono = p_telefono,
+          cargo = p_cargo
+    where id = p_id;
+
+    P_IdCreado := p_ID;
+
+  END;
+
+  PROCEDURE sp_updEncargadoFirma(p_IdEncargado NUMBER, p_FirmaDigital BLOB) AS
+  BEGIN
+    UPDATE TBENCARGADOFIRMA SET FIRMADIGITAL = p_FirmaDigital WHERE ID_ENCARGADO = p_IdEncargado;
+  END;
+
+  PROCEDURE sp_getEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDDECLARACION         NUMBER
+    , cu_result               OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+        e.id
+        , e.idparamtipodocumento
+        , e.numerodocumento
+        , e.primernombre
+        , e.segundonombre
+        , e.primerapellido
+        , e.segundoapellido
+        , e.direccion
+        , e.telefono
+        , e.cargo
+        , te.idparamtipoencargado
+        , te.entidadcompetente
+      from tbencargado e
+      left join tbdeclaracion_encargado te on te.idencargado = e.id
+      where e.id = p_id  and te.iddeclaracion = p_iddeclaracion;
+
+  END;
+
+
+  PROCEDURE sp_setTipoEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDDECLARACION         NUMBER
+    , P_IDENCARGADO           NUMBER
+    , P_IDPARAMTIPOENCARGADO  NUMBER
+    , P_ENTIDADCOMPETENTE     VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  ) AS
+    V_IDNUEVO NUMBER;
+  BEGIN
+
+    SELECT nvl( MAX(ID), 0) + 1 INTO V_IDNUEVO  FROM tbdeclaracion_encargado;
+
+    --SE DEBE INSERTAR EN LA TABLA TBREGISTROSPERSONAS LA RELACION
+    insert into tbdeclaracion_encargado
+    (
+       id
+      ,iddeclaracion
+      ,idencargado
+      ,idparamtipoencargado
+      ,entidadcompetente)
+    values
+    (
+       V_IDNUEVO
+      ,p_iddeclaracion
+      ,p_idencargado
+      ,p_idparamtipoencargado
+      ,p_entidadcompetente
+    );
+
+
+     P_IdCreado := V_IDNUEVO;
+
+  END;
+
+
+  PROCEDURE sp_updTipoEncargado
+  (
+      P_ID                    NUMBER
+    , P_IDDECLARACION         NUMBER
+    , P_IDENCARGADO           NUMBER
+    , P_IDPARAMTIPOENCARGADO  NUMBER
+    , P_ENTIDADCOMPETENTE     VARCHAR2
+    , P_IdCreado              OUT NUMBER
+  ) AS
+  BEGIN
+    --SE DEBE INSERTAR EN LA TABLA TBREGISTROSPERSONAS LA RELACION
+   update tbdeclaracion_encargado
+      set id = p_id,
+          iddeclaracion = p_iddeclaracion,
+          idencargado = p_idencargado,
+          idparamtipoencargado = p_idparamtipoencargado,
+          entidadcompetente = p_entidadcompetente
+    where id = p_id;
+
+    P_IdCreado := p_ID;
+
+  END;
+
+  PROCEDURE sp_setDiscapacidadPersona
+  (
+    P_ID_REGPERSONA           IN NUMBER
+   ,P_PARAM_DISCAPACIDAD      IN NUMBER
+  ) AS
+  BEGIN
+    update tbdiscapacidad_persona t
+    set t.activo = 1
+    where t.id_regpersona  = p_id_regpersona
+      and  t.param_discapacidad = p_param_discapacidad;
+
+
+    if SQL%ROWCOUNT < 1 then
+      insert into tbdiscapacidad_persona
+        (id_regpersona, param_discapacidad, activo)
+      values
+        (p_id_regpersona, p_param_discapacidad, 1);
+    end if;
+
+  END;
+
+  PROCEDURE sp_delDiscapacidadPersona
+  (
+    P_ID_REGPERSONA          IN NUMBER
+  ) AS
+  BEGIN
+
+    update tbdiscapacidad_persona t
+    set t.activo = 0
+    where   id_regpersona = p_id_regpersona;
+
+  END;
+
+------------------------------------------------------
+  PROCEDURE sp_setDiscapacidadOtroPersona
+  (
+    P_ID_REGPERSONA           IN NUMBER
+   ,P_PARAM_DISCAPACIDAD      IN NUMBER
+   ,P_otro                    IN VARCHAR2
+  ) AS
+  BEGIN
+    update tbdiscapacidadotro_persona t
+    set t.activo = 1, otro = P_otro
+    where t.id_regpersona  = p_id_regpersona
+      and  t.param_discapacidad = p_param_discapacidad;
+
+
+    if SQL%ROWCOUNT < 1 then
+      insert into tbdiscapacidadotro_persona
+        (id_regpersona, param_discapacidad,otro, activo)
+      values
+        (p_id_regpersona, p_param_discapacidad, p_otro, 1);
+    end if;
+
+  END;
+
+  PROCEDURE sp_delDiscapacidadOtroPersona
+  (
+    P_ID_REGPERSONA          IN NUMBER
+  ) AS
+  BEGIN
+
+    update tbdiscapacidadotro_persona t
+    set t.activo = 0
+    where   id_regpersona = p_id_regpersona;
+
+  END;
+
+
+  PROCEDURE sp_getDiscapacidadOtroPersona
+  (
+    P_ID_REGPERSONA         NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT otro
+      FROM tbdiscapacidadotro_persona d
+      WHERE d.id_regpersona = p_id_regpersona and d.activo = 1;
+  END;
+-------------------------------------------------------
+  PROCEDURE sp_setHechosPersona
+  (
+    P_ID_REGISTRO_PERSONA     IN NUMBER
+   ,P_PARAM_HECHO             IN NUMBER
+   ,P_ACTIVO                  IN NUMBER
+  ) AS
+  BEGIN
+    update tbreg_persona_hechos t
+    set t.activo = 1
+    where t.id_registro_persona  = p_id_registro_persona
+      and  t.param_hecho = p_param_hecho;
+
+    if SQL%ROWCOUNT < 1 then
+      insert into tbreg_persona_hechos
+        (id_registro_persona, param_hecho, activo)
+      values
+        (p_id_registro_persona, p_param_hecho, 1);
+    end if;
+
+  END;
+
+
+  PROCEDURE sp_delHechosPersona
+  (
+    P_ID_REGISTRO_PERSONA       IN NUMBER
+  ) AS
+  BEGIN
+
+    update tbreg_persona_hechos t
+    set t.activo = 0
+    where   id_registro_persona  = p_id_registro_persona;
+
+  END;
+
+  PROCEDURE sp_getHechosPersona
+  (
+    P_ID_REGISTRO_PERSONA         NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id_registro_persona
+           , param_hecho
+      FROM tbreg_persona_hechos t
+      WHERE t.id_registro_persona = p_id_registro_persona and t.activo = 1;
+  END;
+-------------------------------------------------------
+  PROCEDURE sp_updJefeHogarRegistroPersona
+  (
+    P_ID_DECLARACION           IN NUMBER  --ID de la DECLARACION
+  , P_ID_MIJEFEHOGAR           IN NUMBER
+  , P_CONSECUTIVO_FAMILIA      IN NUMBER
+  ) AS
+  BEGIN
+
+    UPDATE   tbregistros_personas t
+    SET
+             t.id_mijefehogar             = p_id_mijefehogar
+    WHERE    t.id_declaracion             = p_id_declaracion
+             and t.CONSECUTIVO_FAMILIA    = P_CONSECUTIVO_FAMILIA;
+
+  END;
+
+  PROCEDURE sp_setSiniestrosPersona
+  (
+    P_ID                        IN NUMBER
+  , P_PARAM_TIPOHECHO           IN NUMBER
+  , P_ID_REGPERSONA             IN NUMBER
+  , P_FECHASINIESTRO            IN DATE
+  , P_ID_DEPARTAMENTO           IN NUMBER
+  , P_ID_MUNICIPIO              IN NUMBER
+  , P_ID_ENTORNO                IN NUMBER
+  , P_ID_TIPOPOBLADO            IN NUMBER
+  , P_OTRO_ENTORNO              IN VARCHAR2
+  , P_PARAM_CCVOTAR             IN NUMBER
+  , P_ID_DEPARTAMENTO_VOTAR     IN NUMBER
+  , P_ID_MUNICIPIO_VOTAR        IN NUMBER
+  , P_ID_DPTO_ESTUDIO_HIJOS     IN NUMBER
+  , P_ID_MPIO_ESTUDIO_HIJOS     IN NUMBER
+  , P_INSTITUCION_EDUCATIVA     IN VARCHAR2
+  , P_PARAM_ENCUESTASISBEN      IN NUMBER
+  , P_ID_DPTO_ENCUESTASISBEN    IN NUMBER
+  , P_ID_MPIO_ENCUESTASISBEN    IN NUMBER
+  , P_NIVEL_SISBEN              IN NUMBER
+  , P_PARAM_FAMILIASACCION      IN NUMBER
+  , P_ID_DPTO_FAMILIASACCION    IN NUMBER
+  , P_ID_MPIO_FAMILIASACCION    IN NUMBER
+  , P_PARAM_ENTIDADCOBRA        IN NUMBER
+  , P_PARAM_SISTEMASALUD        IN NUMBER
+  , P_ID_DPTO_SISTEMASALUD      IN NUMBER
+  , P_ID_MPIO_SISTEMASALUD      IN NUMBER
+  , P_PARAM_TIPOAFILIZACION     IN NUMBER
+  , P_ID_DPTO_TRABAJO           IN NUMBER
+  , P_ID_MPIO_TRABAJO           IN NUMBER
+  , P_NOMBRE_EMPLEADOR          IN VARCHAR2
+  , P_VICTIMA_DEL_HECHO         IN NUMBER
+  , P_ACTIVO                    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG    IN NUMBER
+  , P_PARAM_BARRIO_VEREDA       IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG     IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA        IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO        IN NUMBER
+  , P_ENTIDADCOBRA              IN VARCHAR2
+ -- , P_ID_relacionado            IN NUMBER
+  , P_idCreado                  OUT NUMBER
+  )
+      AS
+        v_id NUMBER;
+      BEGIN     
+
+      
+      SELECT SEQ_SINIESTROPERSONA.NEXTVAL INTO v_id FROM dual;
+       insert into tbsiniestros_persona
+          ( id
+        , param_tipohecho
+        , id_regpersona
+        , fechasiniestro
+        , id_departamento
+        , id_municipio
+        , id_entorno
+        , id_tipopoblado
+        , otro_entorno
+        , param_ccvotar
+        , id_departamento_votar
+        , id_municipio_votar
+        , id_dpto_estudio_hijos
+        , id_mpio_estudio_hijos
+        , institucion_educativa
+        , param_encuestasisben
+        , id_dpto_encuestasisben
+        , id_mpio_encuestasisben
+        , nivel_sisben
+        , param_familiasaccion
+        , id_dpto_familiasaccion
+        , id_mpio_familiasaccion
+        , param_entidadcobra
+        , param_sistemasalud
+        , id_dpto_sistemasalud
+        , id_mpio_sistemasalud
+        , param_tipoafilizacion
+        , id_dpto_trabajo
+        , id_mpio_trabajo
+        , nombre_empleador
+        , victima_del_hecho
+        , activo
+        , param_localidad_correg
+        , param_barrio_vereda
+        , otro_localidad_correg
+        , otro_barrio_vereda
+        , param_tipo_entorno
+        , entidadcobra)
+      values
+        ( v_id
+        , p_param_tipohecho
+        , p_id_regpersona
+        , p_fechasiniestro
+        , p_id_departamento
+        , p_id_municipio
+        , p_id_entorno
+        , p_id_tipopoblado
+        , p_otro_entorno
+        , p_param_ccvotar
+        , p_id_departamento_votar
+        , p_id_municipio_votar
+        , p_id_dpto_estudio_hijos
+        , p_id_mpio_estudio_hijos
+        , p_institucion_educativa
+        , p_param_encuestasisben
+        , p_id_dpto_encuestasisben
+        , p_id_mpio_encuestasisben
+        , p_nivel_sisben
+        , p_param_familiasaccion
+        , p_id_dpto_familiasaccion
+        , p_id_mpio_familiasaccion
+        , p_param_entidadcobra
+        , p_param_sistemasalud
+        , p_id_dpto_sistemasalud
+        , p_id_mpio_sistemasalud
+        , p_param_tipoafilizacion
+        , p_id_dpto_trabajo
+        , p_id_mpio_trabajo
+        , p_nombre_empleador
+        , p_victima_del_hecho
+        , p_activo
+        , p_param_localidad_correg
+        , p_param_barrio_vereda
+        , p_otro_localidad_correg
+        , p_otro_barrio_vereda
+        , p_param_tipo_entorno
+        , p_entidadcobra);
+
+       p_idCreado := v_id;
+
+END;
+
+
+  PROCEDURE sp_updSiniestrosPersona
+  (
+    P_ID                        IN NUMBER
+  , P_PARAM_TIPOHECHO           IN NUMBER
+  , P_ID_REGPERSONA             IN NUMBER
+  , P_FECHASINIESTRO            IN DATE
+  , P_ID_DEPARTAMENTO           IN NUMBER
+  , P_ID_MUNICIPIO              IN NUMBER
+  , P_ID_ENTORNO                IN NUMBER
+  , P_ID_TIPOPOBLADO            IN NUMBER
+  , P_OTRO_ENTORNO              IN VARCHAR2
+  , P_PARAM_CCVOTAR             IN NUMBER
+  , P_ID_DEPARTAMENTO_VOTAR     IN NUMBER
+  , P_ID_MUNICIPIO_VOTAR        IN NUMBER
+  , P_ID_DPTO_ESTUDIO_HIJOS     IN NUMBER
+  , P_ID_MPIO_ESTUDIO_HIJOS     IN NUMBER
+  , P_INSTITUCION_EDUCATIVA     IN VARCHAR2
+  , P_PARAM_ENCUESTASISBEN      IN NUMBER
+  , P_ID_DPTO_ENCUESTASISBEN    IN NUMBER
+  , P_ID_MPIO_ENCUESTASISBEN    IN NUMBER
+  , P_NIVEL_SISBEN              IN NUMBER
+  , P_PARAM_FAMILIASACCION      IN NUMBER
+  , P_ID_DPTO_FAMILIASACCION    IN NUMBER
+  , P_ID_MPIO_FAMILIASACCION    IN NUMBER
+  , P_PARAM_ENTIDADCOBRA        IN NUMBER
+  , P_PARAM_SISTEMASALUD        IN NUMBER
+  , P_ID_DPTO_SISTEMASALUD      IN NUMBER
+  , P_ID_MPIO_SISTEMASALUD      IN NUMBER
+  , P_PARAM_TIPOAFILIZACION     IN NUMBER
+  , P_ID_DPTO_TRABAJO           IN NUMBER
+  , P_ID_MPIO_TRABAJO           IN NUMBER
+  , P_NOMBRE_EMPLEADOR          IN VARCHAR2
+  , P_VICTIMA_DEL_HECHO         IN NUMBER
+  , P_ACTIVO                    IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG    IN NUMBER
+  , P_PARAM_BARRIO_VEREDA       IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG     IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA        IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO        IN NUMBER
+  , P_ENTIDADCOBRA              IN VARCHAR2
+  --, P_ID_relacionado            IN NUMBER
+  , P_idCreado                  OUT NUMBER
+      )
+      AS
+      v_ID_REGPERSONA NUMBER := P_ID_REGPERSONA;
+      BEGIN
+      
+      IF v_ID_REGPERSONA = 0 THEN
+         v_ID_REGPERSONA := null;
+      END IF;
+      
+      
+      update tbsiniestros_persona
+        set
+            param_tipohecho = p_param_tipohecho,
+            --id_regpersona = p_id_regpersona,
+            id_regpersona = v_ID_REGPERSONA,
+            fechasiniestro = p_fechasiniestro,
+            id_departamento = p_id_departamento,
+            id_municipio = p_id_municipio,
+            id_entorno = p_id_entorno,
+            id_tipopoblado = p_id_tipopoblado,
+            otro_entorno = p_otro_entorno,
+            param_ccvotar = p_param_ccvotar,
+            id_departamento_votar = p_id_departamento_votar,
+            id_municipio_votar = p_id_municipio_votar,
+            id_dpto_estudio_hijos = p_id_dpto_estudio_hijos,
+            id_mpio_estudio_hijos = p_id_mpio_estudio_hijos,
+            institucion_educativa = p_institucion_educativa,
+            param_encuestasisben = p_param_encuestasisben,
+            id_dpto_encuestasisben = p_id_dpto_encuestasisben,
+            id_mpio_encuestasisben = p_id_mpio_encuestasisben,
+            nivel_sisben = p_nivel_sisben,
+            param_familiasaccion = p_param_familiasaccion,
+            id_dpto_familiasaccion = p_id_dpto_familiasaccion,
+            id_mpio_familiasaccion = p_id_mpio_familiasaccion,
+            param_entidadcobra = p_param_entidadcobra,
+            param_sistemasalud = p_param_sistemasalud,
+            id_dpto_sistemasalud = p_id_dpto_sistemasalud,
+            id_mpio_sistemasalud = p_id_mpio_sistemasalud,
+            param_tipoafilizacion = p_param_tipoafilizacion,
+            id_dpto_trabajo = p_id_dpto_trabajo,
+            id_mpio_trabajo = p_id_mpio_trabajo,
+            nombre_empleador = p_nombre_empleador,
+            victima_del_hecho = p_victima_del_hecho,
+            activo = p_activo,
+            param_localidad_correg = p_param_localidad_correg,
+            param_barrio_vereda = p_param_barrio_vereda,
+            otro_localidad_correg = p_otro_localidad_correg,
+            otro_barrio_vereda = p_otro_barrio_vereda,
+            param_tipo_entorno = p_param_tipo_entorno,
+            entidadcobra = p_entidadcobra
+     where id = p_id;
+     /*
+     WHERE param_tipohecho           =  p_param_tipohecho
+         AND id_regpersona         = P_id_regpersona;
+     */
+     p_idCreado := p_id;
+
+  END;
+
+
+ PROCEDURE sp_setAnexo1
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_ATENCION_MEDICA               IN NUMBER
+  ,P_DETALLE_ATENCION_MEDICA       IN VARCHAR2
+  ,P_ID_DEPARTAMENTO_ATENCIONMED   IN NUMBER
+  ,P_ID_MUNICIPIO_ATENCIONMED      IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO1.NEXTVAL INTO v_id FROM dual;
+  insert into tbanexo1
+    (    id
+       , id_siniestro
+       , id_regpersona
+       , victima
+       , afectado
+       , otra_afectacion
+       , declaracionprev
+       , param_entidad_denunciaprev
+       , fecha_denunciaprev
+       , id_pais_denunciaprev
+       , id_departamento_denunciaprev
+       , id_municipio_denunciaprev
+       , numero_radicado_denunciaprev
+       , atencion_medica
+       , detalle_atencion_medica
+       , id_departamento_atencionmed
+       , id_municipio_atencionmed
+       , activo)
+  values
+    (    v_id
+       , p_id_siniestro
+       , p_id_regpersona
+       , p_victima
+       , p_afectado
+       , p_otra_afectacion
+       , p_declaracionprev
+       , p_param_entidad_denunciaprev
+       , p_fecha_denunciaprev
+       , p_id_pais_denunciaprev
+       , p_id_departamento_denunciaprev
+       , p_id_municipio_denunciaprev
+       , p_numero_radicado_denunciaprev
+       , p_atencion_medica
+       , p_detalle_atencion_medica
+       , p_id_departamento_atencionmed
+       , p_id_municipio_atencionmed
+       , p_activo);
+
+    p_idCreado := v_id;
+    END;
+
+  PROCEDURE sp_updAnexo1
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_ATENCION_MEDICA               IN NUMBER
+  ,P_DETALLE_ATENCION_MEDICA       IN VARCHAR2
+  ,P_ID_DEPARTAMENTO_ATENCIONMED   IN NUMBER
+  ,P_ID_MUNICIPIO_ATENCIONMED      IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  update tbanexo1
+     set
+         id_siniestro = p_id_siniestro,
+         id_regpersona = p_id_regpersona,
+         victima = p_victima,
+         afectado = p_afectado,
+         otra_afectacion = p_otra_afectacion,
+         declaracionprev = p_declaracionprev,
+         param_entidad_denunciaprev = p_param_entidad_denunciaprev,
+         fecha_denunciaprev = p_fecha_denunciaprev,
+         id_pais_denunciaprev = p_id_pais_denunciaprev,
+         id_departamento_denunciaprev = p_id_departamento_denunciaprev,
+         id_municipio_denunciaprev = p_id_municipio_denunciaprev,
+         numero_radicado_denunciaprev = p_numero_radicado_denunciaprev,
+         atencion_medica = p_atencion_medica,
+         detalle_atencion_medica = p_detalle_atencion_medica,
+         id_departamento_atencionmed = p_id_departamento_atencionmed,
+         id_municipio_atencionmed = p_id_municipio_atencionmed,
+         activo = p_activo
+   WHERE id = p_id;
+
+    END;
+
+
+ PROCEDURE sp_setAnexo1_BienAfectado
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_A1                         IN NUMBER
+  ,P_INMUEBLE                      IN NUMBER
+  ,P_PARAM_TIPOPERTENENCIA         IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_DESCRIPCION                   IN VARCHAR2
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO1_BienAfectado.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbbien_afectado_a1
+    (id,
+    id_A1,
+    inmueble,
+    PARAM_TipoPertenencia,
+    activo,
+    descripcion)
+  VALUES
+    (v_id,
+    p_id_A1,
+    p_inmueble,
+    p_param_tipopertenencia,
+    p_activo,
+    p_descripcion);
+
+    p_idCreado := v_id;
+
+    END;
+
+
+   PROCEDURE sp_updAnexo1_BienAfectado
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_A1                         IN NUMBER
+  ,P_INMUEBLE                      IN NUMBER
+  ,P_PARAM_TIPOPERTENENCIA         IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_DESCRIPCION                   IN VARCHAR2
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbbien_afectado_a1
+     SET inmueble                  = p_inmueble,
+         param_tipopertenencia     = p_PARAM_tipoPertenencia,
+         activo                    = p_activo,
+         descripcion               = p_descripcion
+   WHERE id = p_id and activo = 1;
+
+    END;
+
+
+ PROCEDURE sp_setAnexo2
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_SOLICITA_PROTECCION           IN NUMBER
+  ,P_PROTECCION                    IN NUMBER
+  ,P_TIPO_PROTECCION               IN VARCHAR2
+  ,P_ENTIDAD_PROTECCION            IN VARCHAR2
+  ,P_FECHA_PROTECCION              IN DATE
+  ,P_VIGENCIA_PROTECCION           IN VARCHAR2
+  ,P_CONTINUA_AMENAZAS             IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO2.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbanexo2
+    (id,
+    id_siniestro,
+    id_regpersona,
+    victima,
+    afectado,
+    otra_afectacion,
+    declaracionprev,
+    param_entidad_denunciaprev,
+    fecha_denunciaprev,
+    ID_PAIS_DENUNCIAPREV,
+    id_departamento_denunciaprev,
+    id_municipio_denunciaprev,
+    numero_radicado_denunciaprev,
+    solicita_Proteccion,
+    proteccion,
+    tipo_Proteccion,
+    entidad_Proteccion,
+    fecha_Proteccion,
+    vigencia_Proteccion,
+    continua_Amenazas,
+    activo
+    )
+  VALUES
+    (v_id
+    ,p_id_siniestro
+    ,p_id_regpersona
+    ,p_victima
+    ,p_afectado
+    ,p_otra_afectacion
+    ,p_declaracionprev
+    ,p_param_entidad_denunciaprev
+    ,p_fecha_denunciaprev
+    ,P_ID_PAIS_DENUNCIAPREV
+    ,P_id_departamento_denunciaprev
+    ,p_id_municipio_denunciaprev
+    ,p_numero_radicado_denunciaprev
+    ,p_solicita_proteccion
+    ,P_Proteccion
+    ,p_tipo_proteccion
+    ,p_entidad_proteccion
+    ,p_fecha_proteccion
+    ,p_vigencia_proteccion
+    ,p_continua_amenazas
+    ,p_activo
+    );
+
+    p_idCreado := v_id;
+
+    END;
+
+ PROCEDURE sp_updAnexo2
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_SOLICITA_PROTECCION           IN NUMBER
+  ,P_PROTECCION                    IN NUMBER
+  ,P_TIPO_PROTECCION               IN VARCHAR2
+  ,P_ENTIDAD_PROTECCION            IN VARCHAR2
+  ,P_FECHA_PROTECCION              IN DATE
+  ,P_VIGENCIA_PROTECCION           IN VARCHAR2
+  ,P_CONTINUA_AMENAZAS             IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbanexo2
+     SET victima                       = P_victima,
+         afectado                      = P_afectado,
+         otra_afectacion               = P_otra_afectacion,
+         declaracionprev               = P_declaracionprev,
+         param_entidad_denunciaprev    = P_param_entidad_denunciaprev,
+         fecha_denunciaprev            = P_fecha_denunciaprev,
+         ID_PAIS_DENUNCIAPREV          = P_ID_PAIS_DENUNCIAPREV,
+         id_departamento_denunciaprev  = P_id_departamento_denunciaprev,
+         id_municipio_denunciaprev     = P_id_municipio_denunciaprev,
+         numero_radicado_denunciaprev  = P_numero_radicado_denunciaprev,
+         Solicita_Proteccion           = P_Solicita_Proteccion,
+         Proteccion                    = P_Proteccion,
+         Tipo_Proteccion               = P_Tipo_Proteccion,
+         Entidad_Proteccion            = p_Entidad_Proteccion,
+         Fecha_Proteccion              = p_Fecha_Proteccion,
+         Vigencia_Proteccion           = P_Vigencia_Proteccion,
+         Continua_Amenazas             = P_Continua_Amenazas,
+         activo                        = p_activo
+   WHERE id = P_id;
+
+    END;
+
+
+  PROCEDURE sp_setAnexo3
+  (
+    P_ID                              IN NUMBER
+  , P_ID_SINIESTRO                    IN NUMBER
+  , P_ID_REGPERSONA                   IN NUMBER
+  , P_VICTIMA                         IN NUMBER
+  , P_AFECTADO                        IN NUMBER
+  , P_OTRA_AFECTACION                 IN VARCHAR2
+  , P_DECLARACIONPREV                 IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV      IN NUMBER
+  , P_FECHA_DENUNCIAPREV              IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV    IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV       IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV    IN VARCHAR2
+  , P_PARAM_DELITO_SEXUAL             IN NUMBER
+  , P_SOLICITUD_AYUDA                 IN NUMBER
+  , P_DETALLE_SOLICITUD_AYUDA         IN VARCHAR2
+  , P_AYUDA                           IN NUMBER
+  , P_DETALLE_AYUDA                   IN VARCHAR2
+  , P_ATENCION_MEDICA                 IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA          IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA          IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA         IN VARCHAR2
+  , P_ACTIVO                          IN NUMBER
+  , P_IDCREADO                        OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO3.NEXTVAL INTO v_id FROM dual;
+
+  insert into tbanexo3
+  ( id
+  , id_siniestro
+  , id_regpersona
+  , victima
+  , afectado
+  , otra_afectacion
+  , declaracionprev
+  , param_entidad_denunciaprev
+  , fecha_denunciaprev
+  , id_pais_denunciaprev
+  , id_departamento_denunciaprev
+  , id_municipio_denunciaprev
+  , numero_radicado_denunciaprev
+  , param_delito_sexual
+  , solicitud_ayuda
+  , detalle_solicitud_ayuda
+  , ayuda
+  , detalle_ayuda
+  , atencion_medica
+  , id_dto_atencion_medica
+  , id_mun_atencion_medica
+  , entidad_atencion_medica
+  , activo)
+  values
+    (
+    v_id
+  , p_id_siniestro
+  , p_id_regpersona
+  , p_victima
+  , p_afectado
+  , p_otra_afectacion
+  , p_declaracionprev
+  , p_param_entidad_denunciaprev
+  , p_fecha_denunciaprev
+   , p_id_pais_denunciaprev
+  , p_id_departamento_denunciaprev
+  , p_id_municipio_denunciaprev
+  , p_numero_radicado_denunciaprev
+  , p_param_delito_sexual
+  , p_solicitud_ayuda
+  , p_detalle_solicitud_ayuda
+  , p_ayuda
+  , p_detalle_ayuda
+  , p_atencion_medica
+  , p_id_dto_atencion_medica
+  , p_id_mun_atencion_medica
+  , p_entidad_atencion_medica
+  , p_activo);
+
+    p_idCreado := v_id;
+
+    END;
+
+ PROCEDURE sp_updAnexo3
+  (
+    P_ID                              IN NUMBER
+  , P_ID_SINIESTRO                    IN NUMBER
+  , P_ID_REGPERSONA                   IN NUMBER
+  , P_VICTIMA                         IN NUMBER
+  , P_AFECTADO                        IN NUMBER
+  , P_OTRA_AFECTACION                 IN VARCHAR2
+  , P_DECLARACIONPREV                 IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV      IN NUMBER
+  , P_FECHA_DENUNCIAPREV              IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV    IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV       IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV    IN VARCHAR2
+  , P_PARAM_DELITO_SEXUAL             IN NUMBER
+  , P_SOLICITUD_AYUDA                 IN NUMBER
+  , P_DETALLE_SOLICITUD_AYUDA         IN VARCHAR2
+  , P_AYUDA                           IN NUMBER
+  , P_DETALLE_AYUDA                   IN VARCHAR2
+  , P_ATENCION_MEDICA                 IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA          IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA          IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA         IN VARCHAR2
+  , P_ACTIVO                          IN NUMBER
+  , P_IDCREADO                        OUT NUMBER
+  )
+  AS
+  BEGIN
+
+  update tbanexo3
+     set
+         id_siniestro = p_id_siniestro,
+         id_regpersona = p_id_regpersona,
+         victima = p_victima,
+         afectado = p_afectado,
+         otra_afectacion = p_otra_afectacion,
+         declaracionprev = p_declaracionprev,
+         param_entidad_denunciaprev = p_param_entidad_denunciaprev,
+         fecha_denunciaprev = p_fecha_denunciaprev,
+         id_pais_denunciaprev = p_id_pais_denunciaprev,
+         id_departamento_denunciaprev = p_id_departamento_denunciaprev,
+         id_municipio_denunciaprev = p_id_municipio_denunciaprev,
+         numero_radicado_denunciaprev = p_numero_radicado_denunciaprev,
+         param_delito_sexual = p_param_delito_sexual,
+         solicitud_ayuda = p_solicitud_ayuda,
+         detalle_solicitud_ayuda = p_detalle_solicitud_ayuda,
+         ayuda = p_ayuda,
+         detalle_ayuda = p_detalle_ayuda,
+         atencion_medica = p_atencion_medica,
+         id_dto_atencion_medica = p_id_dto_atencion_medica,
+         id_mun_atencion_medica = p_id_mun_atencion_medica,
+         entidad_atencion_medica = p_entidad_atencion_medica,
+         activo = p_activo
+   where id = p_id;
+
+    END;
+
+
+ PROCEDURE sp_setAnexo3_NacidoViolacion
+  (
+   P_ID                              IN NUMBER
+
+  ,P_ID_SINIESTRO                    IN NUMBER
+  ,P_ID_REGISTRO_PERSONA             IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+      UPDATE tbnacido_violacion_a3
+         SET
+             activo = P_activo
+       WHERE
+             id_siniestro = p_id_siniestro AND
+             id_registro_persona   = p_id_registro_persona;
+
+      IF(SQL%ROWCOUNT < 1) THEN
+          SELECT SEQ_ANEXO3_NacidoViolacion.NEXTVAL INTO v_id FROM dual;
+
+          INSERT INTO tbnacido_violacion_a3
+            ( id
+            , id_siniestro
+            , id_registro_persona
+            , activo
+            )
+          VALUES
+            ( v_id
+            , p_id_siniestro
+            , p_id_registro_persona
+            , p_activo
+            );
+
+            --p_idCreado := v_id;
+      END IF;
+
+      SELECT id INTO p_idCreado
+      FROM tbnacido_violacion_a3
+      WHERE  id_siniestro = p_id_siniestro AND
+
+             id_registro_persona   = p_id_registro_persona AND
+             ROWNUM  = 1;
+
+    END;
+
+ PROCEDURE sp_updAnexo3_NacidoViolacion
+  (
+  P_ID                               IN NUMBER
+  ,P_ID_SINIESTRO                    IN NUMBER
+  ,P_ID_REGISTRO_PERSONA             IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbnacido_violacion_a3
+     SET id_registro_persona       = P_id_registro_persona,
+         activo                    = p_activo
+   WHERE id = P_id;
+
+    END;
+
+  PROCEDURE sp_delAnexo3_NacidoViolacion
+  (
+     P_ID_SINIESTRO          IN NUMBER
+  )
+  AS
+  BEGIN
+
+      UPDATE tbnacido_violacion_a3
+         SET
+           activo = 0
+      WHERE id_siniestro = p_id_siniestro;
+
+  END;
+
+  PROCEDURE sp_setAnexo3_DelitoSexual
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A3                           IN NUMBER
+  ,P_PARAM_DELITOSEXUAL              IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+      UPDATE tbdelito_sexual_a3
+         SET
+             activo = P_activo
+       WHERE
+             id_a3 = p_id_a3 AND
+             param_delitoSexual   = p_param_delitoSexual;
+
+      IF(SQL%ROWCOUNT < 1) THEN
+          SELECT SEQ_ANEXO3_DelitoSexual.NEXTVAL INTO v_id FROM dual;
+
+          INSERT INTO tbdelito_sexual_a3
+            (id
+            , id_A3
+            , PARAM_delitoSexual
+            , activo
+            )
+          VALUES
+            (v_id
+            , p_id_A3
+            , p_PARAM_delitoSexual
+            , p_activo
+            );
+
+            --p_idCreado := v_id;
+      END IF;
+
+      SELECT id INTO p_idCreado
+      FROM tbdelito_sexual_a3
+      WHERE  id_a3 = p_id_a3 AND
+             param_delitoSexual = p_param_delitoSexual AND
+             ROWNUM  = 1;
+
+    END;
+
+
+  PROCEDURE sp_updAnexo3_DelitoSexual
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A3                           IN NUMBER
+  ,P_PARAM_DELITOSEXUAL              IN NUMBER
+  ,P_ACTIVO                          IN NUMBER
+  ,P_idCreado                        OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbdelito_sexual_a3
+     SET PARAM_delitoSexual       = p_PARAM_delitoSexual,
+         activo                    = p_activo
+   WHERE id = P_id;
+
+    END;
+
+  PROCEDURE sp_delAnexo3_DelitoSexual
+  (
+     P_ID_A3          IN NUMBER
+  )
+  AS
+  BEGIN
+      UPDATE tbdelito_sexual_a3
+         SET
+           activo = 0
+      WHERE id_a3 = p_id_a3;
+
+  END;
+
+  PROCEDURE sp_setAnexo4
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,p_desaparecida                  IN NUMBER
+  ,p_param_evento_antes_hecho      IN NUMBER
+  ,p_param_evento_despues_hecho    IN NUMBER
+  ,p_actividad_en_desaparicion     IN VARCHAR2
+  ,p_menor_desprotegido            IN NUMBER
+  ,p_id_menor_desprotegido         IN NUMBER
+  ,p_busqueda_victima              IN NUMBER
+  ,p_entidad_busqueda              IN VARCHAR2
+  ,p_activo                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+      v_id_menor number;
+
+  BEGIN
+
+  if (p_id_menor_desprotegido <> 0) then
+      v_id_menor := p_id_menor_desprotegido;
+    end  if;
+
+  SELECT SEQ_ANEXO4.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbanexo4
+    (id
+    , id_siniestro
+    , id_regpersona
+    , victima
+    , afectado
+    , otra_afectacion
+    , declaracionprev
+    , param_entidad_denunciaprev
+    , fecha_denunciaprev
+    , id_pais_denunciaprev
+    , id_departamento_denunciaprev
+    , id_municipio_denunciaprev
+    , numero_radicado_denunciaprev
+    , desaparecida
+    , param_evento_antes_hecho
+    , param_evento_despues_hecho
+    , actividad_en_desaparicion
+    , menor_desprotegido
+    , id_menor_desprotegido
+    , busqueda_victima
+    , entidad_busqueda
+    , activo
+    )
+  VALUES
+    (v_id
+    , p_id_siniestro
+    , p_id_regpersona
+    , p_victima
+    , p_afectado
+    , p_otra_afectacion
+    , p_declaracionprev
+    , p_param_entidad_denunciaprev
+    , p_fecha_denunciaprev
+    , p_id_pais_denunciaprev
+    , p_id_departamento_denunciaprev
+    , p_id_municipio_denunciaprev
+    , p_numero_radicado_denunciaprev
+    , p_desaparecida
+    , p_param_evento_antes_hecho
+    , p_param_evento_despues_hecho
+    , p_actividad_en_desaparicion
+    , p_menor_desprotegido
+    , v_id_menor
+    , p_busqueda_victima
+    , p_entidad_busqueda
+    , p_activo
+    );
+
+    p_idCreado := v_id;
+
+    END;
+
+  PROCEDURE sp_updAnexo4
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,p_desaparecida                  IN NUMBER
+  ,p_param_evento_antes_hecho      IN NUMBER
+  ,p_param_evento_despues_hecho    IN NUMBER
+  ,p_actividad_en_desaparicion     IN VARCHAR2
+  ,p_menor_desprotegido            IN NUMBER
+  ,p_id_menor_desprotegido         IN NUMBER
+  ,p_busqueda_victima              IN NUMBER
+  ,p_entidad_busqueda              IN VARCHAR2
+  ,p_activo                        IN NUMBER
+  ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbanexo4
+     SET victima                       = P_victima,
+         afectado                      = P_afectado,
+         otra_afectacion               = P_otra_afectacion,
+         declaracionprev               = P_declaracionprev,
+         param_entidad_denunciaprev    = P_param_entidad_denunciaprev,
+         fecha_denunciaprev            = P_fecha_denunciaprev,
+         id_pais_denunciaprev          = P_id_pais_denunciaprev,
+         id_departamento_denunciaprev  = P_id_departamento_denunciaprev,
+         id_municipio_denunciaprev     = P_id_municipio_denunciaprev,
+         numero_radicado_denunciaprev  = P_numero_radicado_denunciaprev ,
+         desaparecida                  = p_desaparecida,
+         param_evento_antes_hecho      = p_param_evento_antes_hecho,
+         param_evento_despues_hecho    = p_param_evento_despues_hecho,
+         actividad_en_desaparicion     = p_actividad_en_desaparicion,
+         menor_desprotegido            = p_menor_desprotegido,
+         id_menor_desprotegido         = p_id_menor_desprotegido,
+         busqueda_victima              = p_busqueda_victima,
+         entidad_busqueda              = p_entidad_busqueda,
+         activo                        = p_activo
+   WHERE id = P_id;
+
+  END;
+
+  PROCEDURE sp_setAnexo5
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_OTRA_ENTIDAD_DENUNCIAPREV     IN VARCHAR2
+  , P_PARAM_TIPO_DESPLAZAMIENTO     IN NUMBER
+  , P_TIEMPO_RESIDENCIA_ANOS        IN NUMBER
+  , P_TIEMPO_RESIDENCIA_MESES       IN NUMBER
+  , P_TIEMPO_RESIDENCIA_DIAS        IN NUMBER
+  , P_FECHA_ARRIBO                  IN DATE
+  , P_ID_PAIS_ARRIBO                IN NUMBER
+  , P_ID_DEPARTAMENTO_ARRIBO        IN NUMBER
+  , P_ID_MUNICIPIO_ARRIBO           IN NUMBER
+  , P_ID_TIPOPOBLACION_ARRIBO       IN NUMBER
+  , P_ID_ENTORNO_ARRIBO             IN NUMBER
+  , P_OTRO_ENTORNO_ARRIBO           IN VARCHAR2
+  , P_PARAM_DESEOHOGAR              IN NUMBER
+  , P_ID_PAIS_REUBICACION           IN NUMBER
+  , P_ID_DPTO_REUBICACION           IN NUMBER
+  , P_ID_MUNICIPIO_REUBICACION      IN NUMBER
+  , P_ID_TIPOPOBLACION_REUBICACION  IN NUMBER
+  , P_ID_ENTORNO_REUBICACION        IN NUMBER
+  , P_OTRO_ENTORNO_REUBICACION      IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_DESPLAZAMIENTO_OTRO           IN VARCHAR2
+  , P_PARAM_LOCALIDAD_CORREG_ARRI   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ARRI      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ARRI    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ARRI       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_ARRI       IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_REUB   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_REUB      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_REUB    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_REUB       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_REUB       IN NUMBER
+  , P_PARAM_CAUSA_DESPLAZAMIENTO    IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO5.NEXTVAL INTO v_id FROM dual;
+
+  insert into tbanexo5
+    (   id
+      , id_siniestro
+      , declaracionprev
+      , param_entidad_denunciaprev
+      , fecha_denunciaprev
+      , id_pais_denunciaprev
+      , id_departamento_denunciaprev
+      , id_municipio_denunciaprev
+      , numero_radicado_denunciaprev
+      , otra_entidad_denunciaprev
+      , param_tipo_desplazamiento
+      , tiempo_residencia_anos
+      , tiempo_residencia_meses
+      , tiempo_residencia_dias
+      , fecha_arribo
+      , id_pais_arribo
+      , id_departamento_arribo
+      , id_municipio_arribo
+      , id_tipopoblacion_arribo
+      , id_entorno_arribo
+      , otro_entorno_arribo
+      , param_deseohogar
+      , id_pais_reubicacion
+      , id_dpto_reubicacion
+      , id_municipio_reubicacion
+      , id_tipopoblacion_reubicacion
+      , id_entorno_reubicacion
+      , otro_entorno_reubicacion
+      , activo
+      , desplazamiento_otro
+      , param_localidad_correg_arri
+      , param_barrio_vereda_arri
+      , otro_localidad_correg_arri
+      , otro_barrio_vereda_arri
+      , param_tipo_entorno_arri
+      , param_localidad_correg_reub
+      , param_barrio_vereda_reub
+      , otro_localidad_correg_reub
+      , otro_barrio_vereda_reub
+      , param_tipo_entorno_reub
+      , param_causa_desplazamiento)
+  values
+    (   v_id
+      , p_id_siniestro
+      , p_declaracionprev
+      , p_param_entidad_denunciaprev
+      , p_fecha_denunciaprev
+      , p_id_pais_denunciaprev
+      , p_id_departamento_denunciaprev
+      , p_id_municipio_denunciaprev
+      , p_numero_radicado_denunciaprev
+      , p_otra_entidad_denunciaprev
+      , p_param_tipo_desplazamiento
+      , p_tiempo_residencia_anos
+      , p_tiempo_residencia_meses
+      , p_tiempo_residencia_dias
+      , p_fecha_arribo
+      , p_id_pais_arribo
+      , p_id_departamento_arribo
+      , p_id_municipio_arribo
+      , p_id_tipopoblacion_arribo
+      , p_id_entorno_arribo
+      , p_otro_entorno_arribo
+      , p_param_deseohogar
+      , p_id_pais_reubicacion
+      , p_id_dpto_reubicacion
+      , p_id_municipio_reubicacion
+      , p_id_tipopoblacion_reubicacion
+      , p_id_entorno_reubicacion
+      , p_otro_entorno_reubicacion
+      , p_activo
+      , p_desplazamiento_otro
+      , p_param_localidad_correg_arri
+      , p_param_barrio_vereda_arri
+      , p_otro_localidad_correg_arri
+      , p_otro_barrio_vereda_arri
+      , p_param_tipo_entorno_arri
+      , p_param_localidad_correg_reub
+      , p_param_barrio_vereda_reub
+      , p_otro_localidad_correg_reub
+      , p_otro_barrio_vereda_reub
+      , p_param_tipo_entorno_reub
+      , p_param_causa_desplazamiento);
+
+    p_idCreado := v_id;
+
+    END;
+
+  PROCEDURE sp_updAnexo5
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_OTRA_ENTIDAD_DENUNCIAPREV     IN VARCHAR2
+  , P_PARAM_TIPO_DESPLAZAMIENTO     IN NUMBER
+  , P_TIEMPO_RESIDENCIA_ANOS        IN NUMBER
+  , P_TIEMPO_RESIDENCIA_MESES       IN NUMBER
+  , P_TIEMPO_RESIDENCIA_DIAS        IN NUMBER
+  , P_FECHA_ARRIBO                  IN DATE
+  , P_ID_PAIS_ARRIBO                IN NUMBER
+  , P_ID_DEPARTAMENTO_ARRIBO        IN NUMBER
+  , P_ID_MUNICIPIO_ARRIBO           IN NUMBER
+  , P_ID_TIPOPOBLACION_ARRIBO       IN NUMBER
+  , P_ID_ENTORNO_ARRIBO             IN NUMBER
+  , P_OTRO_ENTORNO_ARRIBO           IN VARCHAR2
+  , P_PARAM_DESEOHOGAR              IN NUMBER
+  , P_ID_PAIS_REUBICACION           IN NUMBER
+  , P_ID_DPTO_REUBICACION           IN NUMBER
+  , P_ID_MUNICIPIO_REUBICACION      IN NUMBER
+  , P_ID_TIPOPOBLACION_REUBICACION  IN NUMBER
+  , P_ID_ENTORNO_REUBICACION        IN NUMBER
+  , P_OTRO_ENTORNO_REUBICACION      IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_DESPLAZAMIENTO_OTRO           IN VARCHAR2
+  , P_PARAM_LOCALIDAD_CORREG_ARRI   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_ARRI      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_ARRI    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_ARRI       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_ARRI       IN NUMBER
+  , P_PARAM_LOCALIDAD_CORREG_REUB   IN NUMBER
+  , P_PARAM_BARRIO_VEREDA_REUB      IN NUMBER
+  , P_OTRO_LOCALIDAD_CORREG_REUB    IN VARCHAR2
+  , P_OTRO_BARRIO_VEREDA_REUB       IN VARCHAR2
+  , P_PARAM_TIPO_ENTORNO_REUB       IN NUMBER
+  , P_PARAM_CAUSA_DESPLAZAMIENTO    IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+
+    update tbanexo5
+        set
+            id_siniestro = p_id_siniestro,
+            declaracionprev = p_declaracionprev,
+            param_entidad_denunciaprev = p_param_entidad_denunciaprev,
+            fecha_denunciaprev = p_fecha_denunciaprev,
+            id_pais_denunciaprev = p_id_pais_denunciaprev,
+            id_departamento_denunciaprev = p_id_departamento_denunciaprev,
+            id_municipio_denunciaprev = p_id_municipio_denunciaprev,
+            numero_radicado_denunciaprev = p_numero_radicado_denunciaprev,
+            otra_entidad_denunciaprev = p_otra_entidad_denunciaprev,
+            param_tipo_desplazamiento = p_param_tipo_desplazamiento,
+            tiempo_residencia_anos = p_tiempo_residencia_anos,
+            tiempo_residencia_meses = p_tiempo_residencia_meses,
+            tiempo_residencia_dias = p_tiempo_residencia_dias,
+            fecha_arribo = p_fecha_arribo,
+            id_pais_arribo = p_id_pais_arribo,
+            id_departamento_arribo = p_id_departamento_arribo,
+            id_municipio_arribo = p_id_municipio_arribo,
+            id_tipopoblacion_arribo = p_id_tipopoblacion_arribo,
+            id_entorno_arribo = p_id_entorno_arribo,
+            otro_entorno_arribo = p_otro_entorno_arribo,
+            param_deseohogar = p_param_deseohogar,
+            id_pais_reubicacion = p_id_pais_reubicacion,
+            id_dpto_reubicacion = p_id_dpto_reubicacion,
+            id_municipio_reubicacion = p_id_municipio_reubicacion,
+            id_tipopoblacion_reubicacion = p_id_tipopoblacion_reubicacion,
+            id_entorno_reubicacion = p_id_entorno_reubicacion,
+            otro_entorno_reubicacion = p_otro_entorno_reubicacion,
+            activo = p_activo,
+            desplazamiento_otro = p_desplazamiento_otro,
+            param_localidad_correg_arri = p_param_localidad_correg_arri,
+            param_barrio_vereda_arri = p_param_barrio_vereda_arri,
+            otro_localidad_correg_arri = p_otro_localidad_correg_arri,
+            otro_barrio_vereda_arri = p_otro_barrio_vereda_arri,
+            param_tipo_entorno_arri = p_param_tipo_entorno_arri,
+            param_localidad_correg_reub = p_param_localidad_correg_reub,
+            param_barrio_vereda_reub = p_param_barrio_vereda_reub,
+            otro_localidad_correg_reub = p_otro_localidad_correg_reub,
+            otro_barrio_vereda_reub = p_otro_barrio_vereda_reub,
+            param_tipo_entorno_reub = p_param_tipo_entorno_reub,
+            param_causa_desplazamiento = p_param_causa_desplazamiento
+      where id = p_id;
+
+  END;
+
+PROCEDURE sp_setAnexo5_desplazado
+  (
+  p_id                           IN NUMBER,
+  p_id_anexo5                    IN NUMBER,
+  p_id_regpersona                IN NUMBER,
+  p_se_desplazo                  IN NUMBER,
+  p_jefe_hogar                   IN NUMBER,
+  p_activo                       IN NUMBER,
+  P_idCreado                     OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO5_desplazado.NEXTVAL INTO v_id FROM dual;
+
+  insert into tbanexo5_desplazados
+    (
+    id
+    , id_anexo5
+    , id_regpersona
+    , se_desplazo
+    , jefe_hogar
+    , activo
+    )
+  values
+    (
+      v_id
+    , p_id_anexo5
+    , p_id_regpersona
+    , p_se_desplazo
+    , p_jefe_hogar
+    , p_activo
+    );
+
+    p_idCreado := v_id;
+
+    END;
+
+
+PROCEDURE sp_updAnexo5_desplazado
+  (
+  p_id                           IN NUMBER,
+  p_id_anexo5                    IN NUMBER,
+  p_id_regpersona                IN NUMBER,
+  p_se_desplazo                  IN NUMBER,
+  p_jefe_hogar                   IN NUMBER,
+  p_activo                       IN NUMBER,
+  P_idCreado                     OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbanexo5_desplazados
+  SET
+      se_desplazo = p_se_desplazo
+    , activo      = p_activo
+    , jefe_hogar  = p_jefe_hogar
+  WHERE     id = P_ID;
+
+    END;
+
+
+  PROCEDURE sp_getAnexo5_desplazado
+  (
+    p_id_anexo5          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT   id
+             , id_anexo5
+             , id_regpersona
+             , se_desplazo
+             , jefe_hogar
+             , activo
+      FROM tbanexo5_desplazados t
+      WHERE t.id_anexo5 = p_id_anexo5 and t.activo = 1;
+  END;
+
+  PROCEDURE sp_setAnexo6
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_FALLECIDA                     IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_QUEDO_ALGUN_HUERFANO          IN NUMBER
+  ,P_ID_HUERFANO                   IN NUMBER
+  ,P_PARAM_HUERFANO_DE             IN NUMBER
+  ,P_NUM_PERSONAS_MUERTAS          IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                    OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO6.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbanexo6
+    (id,
+    id_regPersona,
+    id_siniestro,
+    victima,
+    fallecida,
+    afectado,
+    otra_afectacion,
+    declaracionprev,
+    param_entidad_denunciaprev,
+    fecha_denunciaprev,
+    id_pais_denunciaprev,
+    id_departamento_denunciaprev,
+    id_municipio_denunciaprev,
+    numero_radicado_denunciaprev,
+    quedo_algun_huerfano,
+    id_huerfano,
+    param_huerfano_de,
+    num_personas_muertas,
+    ACTIVO)
+  VALUES
+    (v_id,
+    P_ID_REGPERSONA,
+    P_id_siniestro,
+    P_victima,
+    P_fallecida,
+    P_afectado,
+    P_otra_afectacion,
+    P_declaracionprev,
+    P_param_entidad_denunciaprev,
+    P_fecha_denunciaprev,
+    P_id_pais_denunciaprev,
+    P_id_departamento_denunciaprev,
+    P_id_municipio_denunciaprev,
+    P_numero_radicado_denunciaprev,
+    P_quedo_algun_huerfano,
+    p_id_huerfano,
+    P_param_huerfano_de,
+    P_num_personas_muertas,
+    P_ACTIVO);
+
+    p_idCreado := v_id;
+
+    END;
+
+ PROCEDURE sp_updAnexo6
+  (
+   P_ID                            IN NUMBER
+  ,P_ID_SINIESTRO                  IN NUMBER
+  ,P_ID_REGPERSONA                 IN NUMBER
+  ,P_VICTIMA                       IN NUMBER
+  ,P_FALLECIDA                     IN NUMBER
+  ,P_AFECTADO                      IN NUMBER
+  ,P_OTRA_AFECTACION               IN VARCHAR2
+  ,P_DECLARACIONPREV               IN NUMBER
+  ,P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  ,P_FECHA_DENUNCIAPREV            IN DATE
+  ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  ,P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  ,P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  ,P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  ,P_QUEDO_ALGUN_HUERFANO          IN NUMBER
+  ,P_ID_HUERFANO                   IN NUMBER
+  ,P_PARAM_HUERFANO_DE             IN NUMBER
+  ,P_NUM_PERSONAS_MUERTAS          IN NUMBER
+  ,P_ACTIVO                        IN NUMBER
+  ,P_idCreado                    OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbanexo6
+     SET victima                       = P_victima,
+         fallecida                     = P_fallecida,
+         afectado                      = P_afectado,
+         otra_afectacion               = P_otra_afectacion,
+         declaracionprev               = P_declaracionprev,
+         param_entidad_denunciaprev    = P_param_entidad_denunciaprev,
+         fecha_denunciaprev            = P_fecha_denunciaprev,
+         id_pais_denunciaprev          = P_id_pais_denunciaprev,
+         id_departamento_denunciaprev  = P_id_departamento_denunciaprev,
+         id_municipio_denunciaprev     = P_id_municipio_denunciaprev,
+         numero_radicado_denunciaprev  = P_numero_radicado_denunciaprev,
+         quedo_algun_huerfano          = P_quedo_algun_huerfano,
+         id_huerfano                   = P_id_huerfano,
+         param_huerfano_de             = P_param_huerfano_de,
+         num_personas_muertas          = P_num_personas_muertas,
+         ACTIVO                        = P_ACTIVO
+   WHERE id = P_id;
+
+    END;
+
+
+  PROCEDURE sp_setAnexo7
+  (
+    P_ID                             IN NUMBER
+  , P_ID_SINIESTRO                   IN NUMBER
+  , P_ID_REGPERSONA                  IN NUMBER
+  , P_VICTIMA                        IN NUMBER
+  , P_PARAM_ESTADOVICTIMA            IN NUMBER
+  , P_AFECTADO                       IN NUMBER
+  , P_OTRA_AFECTACION                IN VARCHAR2
+  , P_DECLARACIONPREV                IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV     IN NUMBER
+  , P_FECHA_DENUNCIAPREV             IN DATE
+  , P_ID_PAIS_DENUNCIAPREV           IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV   IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV      IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV   IN VARCHAR2
+  , P_PARAM_TIPO_ACCIDENTE           IN NUMBER
+  , P_PARAM_ACTIVIDAD_MOMENTO_HECH   IN NUMBER
+  , P_QUEDO_ALGUN_HUERFANO           IN NUMBER
+  , P_ID_HUERFANO                    IN NUMBER
+  , P_PARAM_HUERFANO_DE              IN NUMBER
+  , P_ATENCION_MEDICA                IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA         IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA         IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA        IN VARCHAR2
+  , P_ACTIVO                         IN NUMBER
+  , P_IDCREADO                       OUT NUMBER
+  )
+  AS
+       v_id                              NUMBER;
+       v_id_lugar                        NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO7.NEXTVAL INTO v_id FROM dual;
+
+  insert into tbanexo7
+  ( id
+  , id_siniestro
+  , id_regpersona
+  , victima
+  , param_estadovictima
+  , afectado
+  , otra_afectacion
+  , declaracionprev
+  , param_entidad_denunciaprev
+  , fecha_denunciaprev
+  , id_pais_denunciaprev
+  , id_departamento_denunciaprev
+  , id_municipio_denunciaprev
+  , numero_radicado_denunciaprev
+  , param_tipo_accidente
+  , param_actividad_momento_hecho
+  , quedo_algun_huerfano
+  , id_huerfano
+  , param_huerfano_de
+  , atencion_medica
+  , id_dto_atencion_medica
+  , id_mun_atencion_medica
+  , entidad_atencion_medica
+  , activo)
+  values
+    ( v_id
+  , p_id_siniestro
+  , p_id_regpersona
+  , p_victima
+  , p_param_estadovictima
+  , p_afectado
+  , p_otra_afectacion
+  , p_declaracionprev
+  , p_param_entidad_denunciaprev
+  , p_fecha_denunciaprev
+  , p_id_pais_denunciaprev
+  , p_id_departamento_denunciaprev
+  , p_id_municipio_denunciaprev
+  , p_numero_radicado_denunciaprev
+  , p_param_tipo_accidente
+  , p_param_actividad_momento_hech
+  , p_quedo_algun_huerfano
+  , p_id_huerfano
+  , p_param_huerfano_de
+  , p_atencion_medica
+  , p_id_dto_atencion_medica
+  , p_id_mun_atencion_medica
+  , p_entidad_atencion_medica
+  , p_activo);
+
+    p_idCreado := v_id;
+
+    END;
+
+
+  PROCEDURE sp_updAnexo7
+  (
+    P_ID                             IN NUMBER
+  , P_ID_SINIESTRO                   IN NUMBER
+  , P_ID_REGPERSONA                  IN NUMBER
+  , P_VICTIMA                        IN NUMBER
+  , P_PARAM_ESTADOVICTIMA            IN NUMBER
+  , P_AFECTADO                       IN NUMBER
+  , P_OTRA_AFECTACION                IN VARCHAR2
+  , P_DECLARACIONPREV                IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV     IN NUMBER
+  , P_FECHA_DENUNCIAPREV             IN DATE
+  , P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV   IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV      IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV   IN VARCHAR2
+  , P_PARAM_TIPO_ACCIDENTE           IN NUMBER
+  , P_PARAM_ACTIVIDAD_MOMENTO_HECH   IN NUMBER
+  , P_QUEDO_ALGUN_HUERFANO           IN NUMBER
+  , P_ID_HUERFANO                    IN NUMBER
+  , P_PARAM_HUERFANO_DE              IN NUMBER
+  , P_ATENCION_MEDICA                IN NUMBER
+  , P_ID_DTO_ATENCION_MEDICA         IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA         IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA        IN VARCHAR2
+  , P_ACTIVO                         IN NUMBER
+  , P_IDCREADO                       OUT NUMBER
+  )
+  AS
+  BEGIN
+
+
+  update tbanexo7
+     set
+         id_siniestro = p_id_siniestro,
+         id_regpersona = p_id_regpersona,
+         victima = p_victima,
+         param_estadovictima = p_param_estadovictima,
+         afectado = p_afectado,
+         otra_afectacion = p_otra_afectacion,
+         declaracionprev = p_declaracionprev,
+         param_entidad_denunciaprev = p_param_entidad_denunciaprev,
+         fecha_denunciaprev = p_fecha_denunciaprev,
+         id_pais_denunciaprev = p_id_pais_denunciaprev,
+         id_departamento_denunciaprev = p_id_departamento_denunciaprev,
+         id_municipio_denunciaprev = p_id_municipio_denunciaprev,
+         numero_radicado_denunciaprev = p_numero_radicado_denunciaprev,
+         param_tipo_accidente = p_param_tipo_accidente,
+         param_actividad_momento_hecho = p_param_actividad_momento_hech,
+         quedo_algun_huerfano = p_quedo_algun_huerfano,
+         id_huerfano = p_id_huerfano,
+         param_huerfano_de = p_param_huerfano_de,
+         atencion_medica = p_atencion_medica,
+         id_dto_atencion_medica = p_id_dto_atencion_medica,
+         id_mun_atencion_medica = p_id_mun_atencion_medica,
+         entidad_atencion_medica = p_entidad_atencion_medica,
+         activo = p_activo
+   where id = p_id;
+
+    END;
+
+
+  PROCEDURE sp_setAnexo8
+  (
+         P_ID                            NUMBER
+        ,P_ID_SINIESTRO                  NUMBER
+        ,P_ID_REGPERSONA                 NUMBER
+        ,P_VICTIMA                       NUMBER
+        ,P_SECUESTRADO                   NUMBER
+        ,P_AFECTADO                      NUMBER
+        ,P_OTRA_AFECTACION               VARCHAR2
+        ,P_DECLARACIONPREV               NUMBER
+        ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+        ,P_FECHA_DENUNCIAPREV            DATE
+        ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+        ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+        ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+        ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+        ,P_PARAM_TIPO_SECUESTRO          NUMBER
+        ,P_PARAM_FINALIDAD_SECUESTRO     NUMBER
+        ,P_OTRA_FINALIDAD_SECUESTRO      VARCHAR2
+        ,P_CONTRAPRESTACION              NUMBER
+        ,P_QUE_CONTRAPRESTACION          VARCHAR2
+        ,P_PARAM_SITUACIONACTUALVICTIMA  NUMBER
+        ,P_PARAM_LIBERACION_VICTIMA      NUMBER
+        ,P_FECHA_LIBERACION              DATE
+        ,P_ACTIVO                        IN NUMBER
+        ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO8.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbanexo8
+    (id,
+    id_siniestro,
+    id_regpersona,
+    victima,
+    secuestrado,
+    afectado,
+    otra_afectacion,
+    declaracionprev,
+    param_entidad_denunciaprev,
+    fecha_denunciaprev,
+    id_pais_denunciaprev,
+    id_departamento_denunciaprev,
+    id_municipio_denunciaprev,
+    numero_radicado_denunciaprev,
+    param_tipo_secuestro,
+    param_finalidad_secuestro,
+    otra_finalidad_secuestro,
+    contraprestacion,
+    que_contraprestacion,
+    param_situacionactualvictima,
+    param_liberacion_victima,
+    fecha_liberacion,
+    ACTIVO
+    )
+  VALUES
+    (
+    v_id,
+    P_id_siniestro,
+    p_id_regpersona,
+    P_victima,
+    P_secuestrado,
+    P_afectado,
+    P_otra_afectacion,
+    P_declaracionprev,
+    P_param_entidad_denunciaprev,
+    P_fecha_denunciaprev,
+    P_id_pais_denunciaprev,
+    P_id_departamento_denunciaprev,
+    P_id_municipio_denunciaprev,
+    P_numero_radicado_denunciaprev,
+    P_param_tipo_secuestro,
+    P_param_finalidad_secuestro,
+    P_otra_finalidad_secuestro,
+    P_contraprestacion,
+    P_que_contraprestacion,
+    P_param_situacionactualvictima,
+    P_param_liberacion_victima,
+    P_fecha_liberacion,
+    P_ACTIVO
+    );
+
+
+    p_idCreado := v_id;
+
+    END;
+
+    PROCEDURE sp_updAnexo8
+  (
+         P_ID                            NUMBER
+        ,P_ID_SINIESTRO                  NUMBER
+        ,P_ID_REGPERSONA                 NUMBER
+        ,P_VICTIMA                       NUMBER
+        ,P_SECUESTRADO                   NUMBER
+        ,P_AFECTADO                      NUMBER
+        ,P_OTRA_AFECTACION               VARCHAR2
+        ,P_DECLARACIONPREV               NUMBER
+        ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+        ,P_FECHA_DENUNCIAPREV            DATE
+        ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+        ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+        ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+        ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+        ,P_PARAM_TIPO_SECUESTRO          NUMBER
+        ,P_PARAM_FINALIDAD_SECUESTRO     NUMBER
+        ,P_OTRA_FINALIDAD_SECUESTRO      VARCHAR2
+        ,P_CONTRAPRESTACION              NUMBER
+        ,P_QUE_CONTRAPRESTACION          VARCHAR2
+        ,P_PARAM_SITUACIONACTUALVICTIMA  NUMBER
+        ,P_PARAM_LIBERACION_VICTIMA      NUMBER
+        ,P_FECHA_LIBERACION              DATE
+        ,P_ACTIVO                        IN NUMBER
+        ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+      UPDATE tbanexo8
+         SET
+             victima                                   = P_victima,
+             secuestrado                               = P_secuestrado,
+             afectado                                  = P_afectado,
+             otra_afectacion                           = P_otra_afectacion,
+             declaracionprev                           = P_declaracionprev,
+             param_entidad_denunciaprev                = P_param_entidad_denunciaprev,
+             fecha_denunciaprev                        = P_fecha_denunciaprev,
+             id_pais_denunciaprev              = P_id_pais_denunciaprev,
+             id_departamento_denunciaprev              = P_id_departamento_denunciaprev,
+             id_municipio_denunciaprev                 = P_id_municipio_denunciaprev,
+             numero_radicado_denunciaprev              = P_numero_radicado_denunciaprev,
+             param_tipo_secuestro                      = P_param_tipo_secuestro,
+             param_finalidad_secuestro                 = P_param_finalidad_secuestro,
+             otra_finalidad_secuestro                  = P_otra_finalidad_secuestro,
+             contraprestacion                          = P_contraprestacion,
+             que_contraprestacion                      = P_que_contraprestacion,
+             param_situacionactualvictima              = P_param_situacionactualvictima,
+             param_liberacion_victima                  = P_param_liberacion_victima,
+             fecha_liberacion                          = P_fecha_liberacion,
+             ACTIVO                                    = P_ACTIVO
+       WHERE id = P_id;
+
+    END;
+
+  PROCEDURE sp_setAnexo9
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_ID_REGPERSONA                 IN NUMBER
+  , P_VICTIMA                       IN NUMBER
+  , P_AFECTADO                      IN NUMBER
+  , P_OTRA_AFECTACION               IN VARCHAR2
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_RECIBIO_ATENCION_MEDICA       IN NUMBER
+  , P_SOLICITO_AYUDA                IN NUMBER
+  , P_ENTIDAD_SOLICITO_AYUDA        IN VARCHAR2
+  , P_RECIBIO_AYUDA                 IN NUMBER
+  , P_TIPO_AYUDA_RECIBIDA           IN VARCHAR2
+  , P_ID_DTO_ATENCION_MEDICA        IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA        IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA       IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO9.NEXTVAL INTO v_id FROM dual;
+
+  insert into tbanexo9
+    (id
+   , id_siniestro
+   , id_regpersona
+   , victima
+   , afectado
+   , otra_afectacion
+   , declaracionprev
+   , param_entidad_denunciaprev
+   , fecha_denunciaprev
+   , id_pais_denunciaprev
+   , id_departamento_denunciaprev
+   , id_municipio_denunciaprev
+   , numero_radicado_denunciaprev
+   , recibio_atencion_medica
+   , solicito_ayuda
+   , entidad_solicito_ayuda
+   , recibio_ayuda
+   , tipo_ayuda_recibida
+   , id_dto_atencion_medica
+   , id_mun_atencion_medica
+   , entidad_atencion_medica
+   , activo)
+  values
+    (v_id
+   , p_id_siniestro
+   , p_id_regpersona
+   , p_victima
+   , p_afectado
+   , p_otra_afectacion
+   , p_declaracionprev
+   , p_param_entidad_denunciaprev
+   , p_fecha_denunciaprev
+   , p_id_pais_denunciaprev
+   , p_id_departamento_denunciaprev
+   , p_id_municipio_denunciaprev
+   , p_numero_radicado_denunciaprev
+   , p_recibio_atencion_medica
+   , p_solicito_ayuda
+   , p_entidad_solicito_ayuda
+   , p_recibio_ayuda
+   , p_tipo_ayuda_recibida
+   , p_id_dto_atencion_medica
+   , p_id_mun_atencion_medica
+   , p_entidad_atencion_medica
+   , p_activo);
+
+
+    p_idCreado := v_id;
+
+    END;
+
+   PROCEDURE sp_updAnexo9
+  (
+    P_ID                            IN NUMBER
+  , P_ID_SINIESTRO                  IN NUMBER
+  , P_ID_REGPERSONA                 IN NUMBER
+  , P_VICTIMA                       IN NUMBER
+  , P_AFECTADO                      IN NUMBER
+  , P_OTRA_AFECTACION               IN VARCHAR2
+  , P_DECLARACIONPREV               IN NUMBER
+  , P_PARAM_ENTIDAD_DENUNCIAPREV    IN NUMBER
+  , P_FECHA_DENUNCIAPREV            IN DATE
+  , P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+  , P_ID_DEPARTAMENTO_DENUNCIAPREV  IN NUMBER
+  , P_ID_MUNICIPIO_DENUNCIAPREV     IN NUMBER
+  , P_NUMERO_RADICADO_DENUNCIAPREV  IN VARCHAR2
+  , P_RECIBIO_ATENCION_MEDICA       IN NUMBER
+  , P_SOLICITO_AYUDA                IN NUMBER
+  , P_ENTIDAD_SOLICITO_AYUDA        IN VARCHAR2
+  , P_RECIBIO_AYUDA                 IN NUMBER
+  , P_TIPO_AYUDA_RECIBIDA           IN VARCHAR2
+  , P_ID_DTO_ATENCION_MEDICA        IN NUMBER
+  , P_ID_MUN_ATENCION_MEDICA        IN NUMBER
+  , P_ENTIDAD_ATENCION_MEDICA       IN VARCHAR2
+  , P_ACTIVO                        IN NUMBER
+  , P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+     update tbanexo9
+       set
+           id_siniestro = p_id_siniestro,
+           id_regpersona = p_id_regpersona,
+           victima = p_victima,
+           afectado = p_afectado,
+           otra_afectacion = p_otra_afectacion,
+           declaracionprev = p_declaracionprev,
+           param_entidad_denunciaprev = p_param_entidad_denunciaprev,
+           fecha_denunciaprev = p_fecha_denunciaprev,
+           id_pais_denunciaprev = p_id_pais_denunciaprev,
+           id_departamento_denunciaprev = p_id_departamento_denunciaprev,
+           id_municipio_denunciaprev = p_id_municipio_denunciaprev,
+           numero_radicado_denunciaprev = p_numero_radicado_denunciaprev,
+           recibio_atencion_medica = p_recibio_atencion_medica,
+           solicito_ayuda = p_solicito_ayuda,
+           entidad_solicito_ayuda = p_entidad_solicito_ayuda,
+           recibio_ayuda = p_recibio_ayuda,
+           tipo_ayuda_recibida = p_tipo_ayuda_recibida,
+           id_dto_atencion_medica = p_id_dto_atencion_medica,
+           id_mun_atencion_medica = p_id_mun_atencion_medica,
+           entidad_atencion_medica = p_entidad_atencion_medica,
+           activo = p_activo
+     where id = p_id;
+
+    END;
+
+  PROCEDURE sp_setAnexo10
+  (
+        P_ID                            NUMBER
+       ,P_ID_SINIESTRO                  NUMBER
+       ,P_ID_REGPERSONA                 NUMBER
+       ,P_VICTIMA                       NUMBER
+       ,P_AFECTADO                      NUMBER
+       ,P_OTRA_AFECTACION               VARCHAR2
+       ,P_DECLARACIONPREV               NUMBER
+       ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+       ,P_FECHA_DENUNCIAPREV            DATE
+       ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+       ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+       ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+       ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+       ,P_GRUPO_ARMADO_PERTENECIO       VARCHAR2
+       ,P_FECHA_DESVINCULACION          DATE
+       ,P_ATENDIDO_ICBF                 NUMBER
+       ,P_FECHA_ATENCION_ICBF           DATE
+       ,P_ATENDIDO_OTRA_ENTIDAD         NUMBER
+       ,P_FECHA_ATENCION_OTRA           DATE
+       ,P_ENTIDAD_ATENDIO               VARCHAR2
+       ,P_ACTIVO                        NUMBER
+       ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO10.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbanexo10
+    (
+    id,
+    id_siniestro,
+    id_regpersona,
+    victima,
+    afectado,
+    otra_afectacion,
+    declaracionprev,
+    param_entidad_denunciaprev,
+    fecha_denunciaprev,
+    id_pais_denunciaprev,
+    id_departamento_denunciaprev,
+    id_municipio_denunciaprev,
+    numero_radicado_denunciaprev,
+    grupo_armado_pertenecio,
+    fecha_desvinculacion,
+    atendido_icbf,
+    fecha_atencion_icbf,
+    atendido_otra_entidad,
+    fecha_atencion_otra,
+    entidad_atendio,
+    ACTIVO
+    )
+  VALUES
+    (
+    v_id,
+    P_id_siniestro,
+    p_id_regpersona,
+    P_victima,
+    P_afectado,
+    P_otra_afectacion,
+    P_declaracionprev,
+    P_param_entidad_denunciaprev,
+    P_fecha_denunciaprev,
+    P_id_pais_denunciaprev,
+    P_id_departamento_denunciaprev,
+    P_id_municipio_denunciaprev,
+    P_numero_radicado_denunciaprev,
+    P_grupo_armado_pertenecio,
+    P_fecha_desvinculacion,
+    P_atendido_icbf,
+    P_fecha_atencion_icbf,
+    P_atendido_otra_entidad,
+    P_fecha_atencion_otra,
+    P_entidad_atendio,
+    P_ACTIVO
+    );
+
+
+    p_idCreado := v_id;
+
+    END;
+
+  PROCEDURE sp_updAnexo10
+  (
+        P_ID                            NUMBER
+       ,P_ID_SINIESTRO                  NUMBER
+       ,P_ID_REGPERSONA                 NUMBER
+       ,P_VICTIMA                       NUMBER
+       ,P_AFECTADO                      NUMBER
+       ,P_OTRA_AFECTACION               VARCHAR2
+       ,P_DECLARACIONPREV               NUMBER
+       ,P_PARAM_ENTIDAD_DENUNCIAPREV    NUMBER
+       ,P_FECHA_DENUNCIAPREV            DATE
+       ,P_ID_PAIS_DENUNCIAPREV            IN NUMBER
+       ,P_ID_DEPARTAMENTO_DENUNCIAPREV  NUMBER
+       ,P_ID_MUNICIPIO_DENUNCIAPREV     NUMBER
+       ,P_NUMERO_RADICADO_DENUNCIAPREV  VARCHAR2
+       ,P_GRUPO_ARMADO_PERTENECIO       VARCHAR2
+       ,P_FECHA_DESVINCULACION          DATE
+       ,P_ATENDIDO_ICBF                 NUMBER
+       ,P_FECHA_ATENCION_ICBF           DATE
+       ,P_ATENDIDO_OTRA_ENTIDAD         NUMBER
+       ,P_FECHA_ATENCION_OTRA           DATE
+       ,P_ENTIDAD_ATENDIO               VARCHAR2
+       ,P_ACTIVO                        NUMBER
+       ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+      UPDATE tbanexo10
+         SET
+             id_siniestro                 = P_id_siniestro,
+             victima                      = P_victima,
+             afectado                     = P_afectado,
+             otra_afectacion              = P_otra_afectacion,
+             declaracionprev              = P_declaracionprev,
+             param_entidad_denunciaprev   = P_param_entidad_denunciaprev,
+             fecha_denunciaprev           = P_fecha_denunciaprev,
+             id_pais_denunciaprev         = P_id_pais_denunciaprev,
+             id_departamento_denunciaprev = P_id_departamento_denunciaprev,
+             id_municipio_denunciaprev    = P_id_municipio_denunciaprev,
+             numero_radicado_denunciaprev = P_numero_radicado_denunciaprev,
+             grupo_armado_pertenecio      = P_grupo_armado_pertenecio,
+             fecha_desvinculacion         = P_fecha_desvinculacion,
+             atendido_icbf                = P_atendido_icbf,
+             fecha_atencion_icbf          = P_fecha_atencion_icbf,
+             atendido_otra_entidad        = P_atendido_otra_entidad,
+             fecha_atencion_otra          = P_fecha_atencion_otra,
+             entidad_atendio              = P_entidad_atendio,
+             ACTIVO                       = P_ACTIVO
+       WHERE id = P_id;
+
+    END;
+
+  PROCEDURE sp_setAnexo11
+  (
+       P_ID                                   NUMBER
+      ,P_ID_SINIESTRO                         NUMBER
+      ,P_DECLARACIONPREV                      NUMBER
+      ,P_PARAM_ENTIDAD_DENUNCIAPREV           NUMBER
+      ,P_FECHA_DENUNCIAPREV                   DATE
+      ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+      ,P_ID_DEPARTAMENTO_DENUNCIAPREV         NUMBER
+      ,P_ID_MUNICIPIO_DENUNCIAPREV            NUMBER
+      ,P_NUMERO_RADICADO_DENUNCIAPREV         VARCHAR2
+      ,P_PARAM_TIERRA_DESPOJADA      NUMBER
+      ,P_PARAM_TIPO_DESPOJADO        NUMBER
+      ,P_AUTOR_DESPOJADO             VARCHAR2
+      ,P_PARAM_SITUACION_ACT_TIERRA  NUMBER
+      ,P_PARAM_SOL_PROTECCION        NUMBER
+      ,P_PROTECCION_PORQUE           VARCHAR2
+      ,P_ACTIVO                               NUMBER
+      ,P_idCreado                             OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO11.NEXTVAL INTO v_id FROM dual;
+
+   INSERT INTO tbanexo11
+     (
+     id,
+     id_siniestro,
+     declaracionprev,
+     param_entidad_denunciaprev,
+     fecha_denunciaprev,
+     id_pais_denunciaprev,
+     id_departamento_denunciaprev,
+     id_municipio_denunciaprev,
+     numero_radicado_denunciaprev,
+     param_tierra_despojada,
+     param_tipo_despojado,
+     autor_despojado,
+     param_situacion_act_tierra,
+     param_sol_proteccion,
+     proteccion_porque,
+
+     activo
+     )
+   VALUES
+     (
+     v_id,
+     P_id_siniestro,
+     P_declaracionprev,
+     P_param_entidad_denunciaprev,
+     P_fecha_denunciaprev,
+     P_id_pais_denunciaprev,
+     P_id_departamento_denunciaprev,
+     P_id_municipio_denunciaprev,
+     P_numero_radicado_denunciaprev,
+     P_PARAM_TIERRA_DESPOJADA,
+     P_PARAM_TIPO_DESPOJADO,
+     P_AUTOR_DESPOJADO,
+     P_PARAM_SITUACION_ACT_TIERRA,
+     P_PARAM_SOL_PROTECCION,
+     P_PROTECCION_PORQUE,
+     p_activo
+     );
+
+    p_idCreado := v_id;
+
+    END;
+
+
+    PROCEDURE sp_updAnexo11
+  (
+       P_ID                                   NUMBER
+      ,P_ID_SINIESTRO                         NUMBER
+      ,P_DECLARACIONPREV                      NUMBER
+      ,P_PARAM_ENTIDAD_DENUNCIAPREV           NUMBER
+      ,P_FECHA_DENUNCIAPREV                   DATE
+      ,P_ID_PAIS_DENUNCIAPREV          IN NUMBER
+      ,P_ID_DEPARTAMENTO_DENUNCIAPREV         NUMBER
+      ,P_ID_MUNICIPIO_DENUNCIAPREV            NUMBER
+      ,P_NUMERO_RADICADO_DENUNCIAPREV         VARCHAR2
+      ,P_PARAM_TIERRA_DESPOJADA               NUMBER
+      ,P_PARAM_TIPO_DESPOJADO                 NUMBER
+      ,P_AUTOR_DESPOJADO                      VARCHAR2
+      ,P_PARAM_SITUACION_ACT_TIERRA           NUMBER
+      ,P_PARAM_SOL_PROTECCION                 NUMBER
+      ,P_PROTECCION_PORQUE                    VARCHAR2
+      ,P_ACTIVO                               NUMBER
+      ,P_idCreado                             OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+      UPDATE tbanexo11
+         SET id                               = P_id,
+             id_siniestro                     = P_id_siniestro,
+             declaracionprev                  = P_declaracionprev,
+             param_entidad_denunciaprev       = P_param_entidad_denunciaprev,
+             fecha_denunciaprev               = P_fecha_denunciaprev,
+             id_pais_denunciaprev             = P_id_pais_denunciaprev,
+             id_departamento_denunciaprev     = P_id_departamento_denunciaprev,
+             id_municipio_denunciaprev        = P_id_municipio_denunciaprev,
+             numero_radicado_denunciaprev     = P_numero_radicado_denunciaprev,
+             param_tierra_despojada           = P_param_tierra_despojada,
+             param_tipo_despojado             = P_param_tipo_despojado,
+             autor_despojado                  = P_autor_despojado,
+             param_situacion_act_tierra       = P_param_situacion_act_tierra,
+             param_sol_proteccion             = P_param_sol_proteccion,
+             proteccion_porque                = P_proteccion_porque,
+             activo                           = p_activo
+       WHERE id = P_id;
+
+    END;
+
+
+  PROCEDURE sp_setAnexo11_Inmuebles
+  (
+       P_ID                      IN NUMBER
+     , P_ID_ANEXO11              IN NUMBER
+     , P_ID_REGPERSONA           IN NUMBER
+     , P_PARAM_TIPO_INMUBLE      IN NUMBER
+     , P_ID_DEPARTAMENTO         IN NUMBER
+     , P_ID_MUNICIPIO            IN NUMBER
+     , P_ID_ENTRONO              IN NUMBER
+     , P_ID_TIPOPOBLADO          IN NUMBER
+     , P_OTRO_ENTORNO            IN VARCHAR2
+     , P_PARAM_TIPO_TENENCIA     IN NUMBER
+     , P_NOMBRE_DIRECCION        IN VARCHAR2
+     , P_AREA                    IN NUMBER
+     , P_PARAM_UNIDAD_AREA       IN NUMBER
+     , P_ACTIVO                  IN NUMBER
+     , P_PARAM_LOCALIDAD_CORREG  IN NUMBER
+     , P_PARAM_BARRIO_VEREDA     IN NUMBER
+     , P_OTRO_LOCALIDAD_CORREG   IN VARCHAR2
+     , P_OTRO_BARRIO_VEREDA      IN VARCHAR2
+     , P_PARAM_TIPO_ENTORNO      IN NUMBER
+     , P_idCreado                OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  select seq_anexo11_I.nextval into v_id from dual;
+
+  insert into tbanexo11_inmuebles
+  (       id
+        , id_anexo11
+        , id_regpersona
+        , param_tipo_inmuble
+        , id_departamento
+        , id_municipio
+        , id_entrono
+        , id_tipopoblado
+        , otro_entorno
+        , param_tipo_tenencia
+        , nombre_direccion
+        , area
+        , param_unidad_area
+        , activo
+        , param_localidad_correg
+        , param_barrio_vereda
+        , otro_localidad_correg
+        , otro_barrio_vereda
+        , param_tipo_entorno)
+  values
+  (       v_id
+        , p_id_anexo11
+        , p_id_regpersona
+        , p_param_tipo_inmuble
+        , p_id_departamento
+        , p_id_municipio
+        , p_id_entrono
+        , p_id_tipopoblado
+        , p_otro_entorno
+        , p_param_tipo_tenencia
+        , p_nombre_direccion
+        , p_area
+        , p_param_unidad_area
+        , p_activo
+        , p_param_localidad_correg
+        , p_param_barrio_vereda
+        , p_otro_localidad_correg
+        , p_otro_barrio_vereda
+        , p_param_tipo_entorno);
+
+    p_idCreado := v_id;
+
+    END;
+
+
+  PROCEDURE sp_updAnexo11_Inmuebles
+  (
+       P_ID                      IN NUMBER
+     , P_ID_ANEXO11              IN NUMBER
+     , P_ID_REGPERSONA           IN NUMBER
+     , P_PARAM_TIPO_INMUBLE      IN NUMBER
+     , P_ID_DEPARTAMENTO         IN NUMBER
+     , P_ID_MUNICIPIO            IN NUMBER
+     , P_ID_ENTRONO              IN NUMBER
+     , P_ID_TIPOPOBLADO          IN NUMBER
+     , P_OTRO_ENTORNO            IN VARCHAR2
+     , P_PARAM_TIPO_TENENCIA     IN NUMBER
+     , P_NOMBRE_DIRECCION        IN VARCHAR2
+     , P_AREA                    IN NUMBER
+     , P_PARAM_UNIDAD_AREA       IN NUMBER
+     , P_ACTIVO                  IN NUMBER
+     , P_PARAM_LOCALIDAD_CORREG  IN NUMBER
+     , P_PARAM_BARRIO_VEREDA     IN NUMBER
+     , P_OTRO_LOCALIDAD_CORREG   IN VARCHAR2
+     , P_OTRO_BARRIO_VEREDA      IN VARCHAR2
+     , P_PARAM_TIPO_ENTORNO      IN NUMBER
+     , P_idCreado                OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  update tbanexo11_inmuebles
+     set
+         id_anexo11 = p_id_anexo11,
+         id_regpersona = p_id_regpersona,
+         param_tipo_inmuble = p_param_tipo_inmuble,
+         id_departamento = p_id_departamento,
+         id_municipio = p_id_municipio,
+         id_entrono = p_id_entrono,
+         id_tipopoblado = p_id_tipopoblado,
+         otro_entorno = p_otro_entorno,
+         param_tipo_tenencia = p_param_tipo_tenencia,
+         nombre_direccion = p_nombre_direccion,
+         area = p_area,
+         param_unidad_area = p_param_unidad_area,
+         activo = p_activo,
+         param_localidad_correg = p_param_localidad_correg,
+         param_barrio_vereda = p_param_barrio_vereda,
+         otro_localidad_correg = p_otro_localidad_correg,
+         otro_barrio_vereda = p_otro_barrio_vereda,
+         param_tipo_entorno = p_param_tipo_entorno
+   where id = p_id;
+
+    END;
+
+
+  PROCEDURE sp_setAnexo11_muebles
+  (
+        P_ID                   NUMBER
+       ,P_ID_ANEXO11           NUMBER
+       ,P_ID_REGPERSONA        NUMBER
+       ,P_PARAM_TIPO_MUBLE     NUMBER
+       ,P_DESCRIPCION          VARCHAR2
+       ,P_PARAM_TIPO_TENENCIA  NUMBER
+       ,P_CANTIDAD             NUMBER
+       ,P_ACTIVO               NUMBER
+       ,P_idCreado             OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+      v_ID_REGPERSONA NUMBER := P_ID_REGPERSONA;
+  BEGIN
+  
+  IF v_ID_REGPERSONA = 0 THEN
+         v_ID_REGPERSONA := null;
+  END IF;
+  select seq_anexo11_M.nextval into v_id from dual;
+
+  insert into tbanexo11_muebles
+    (
+    id,
+    id_anexo11,
+    id_regpersona,
+    param_tipo_muble,
+    descripcion,
+    param_tipo_tenencia,
+    cantidad,
+    activo
+    )
+  values
+    (
+    v_id,
+    P_id_anexo11,
+    --P_id_regpersona,
+    v_ID_REGPERSONA,
+    P_param_tipo_muble,
+    P_descripcion,
+    P_param_tipo_tenencia,
+    P_cantidad,
+    P_activo
+    );
+
+
+    p_idCreado := v_id;
+
+    END;
+
+ PROCEDURE sp_setAnexo13
+  (
+     P_ID                            NUMBER
+    ,P_ID_SINIESTRO                  NUMBER
+    ,P_ID_REGPERSONA                 NUMBER
+    ,P_ACTIVO                        NUMBER
+    ,P_idCreado                      OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+  SELECT SEQ_ANEXO13.NEXTVAL INTO v_id FROM dual;
+
+  INSERT INTO tbanexo13
+    (
+    id,
+    id_siniestro,
+    id_regpersona,
+    ACTIVO
+    )
+  VALUES
+    (
+    v_id,
+    P_id_siniestro,
+    p_id_regpersona,
+    P_ACTIVO
+    );
+
+    p_idCreado := v_id;
+
+    END;
+
+  PROCEDURE sp_updAnexo13
+  (
+     P_ID                            NUMBER
+    ,P_ID_SINIESTRO                  NUMBER
+    ,P_ID_REGPERSONA                 NUMBER
+    ,P_ACTIVO                        NUMBER
+    ,P_idCreado                      OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+      UPDATE tbanexo13
+         SET ACTIVO                       = P_ACTIVO
+       WHERE id = P_id;
+
+    END;
+
+PROCEDURE sp_setAnexo13_mensaje
+  (
+     P_ID_SINIESTRO                  NUMBER
+    ,P_MENSAJE_CELULAR               NUMBER
+    ,P_MENSAJE_CORREOE               NUMBER
+    ,P_MENSAJE_FIJO                   NUMBER
+    ,P_MENSAJE_OTRO                   VARCHAR2
+    ,P_ACTIVO                        NUMBER
+  )
+  AS
+  BEGIN
+
+
+  INSERT INTO TBANEXO13_MENSAJE
+    (
+    id_siniestro,
+    MENSAJE_CELULAR,
+    MENSAJE_CORREOE,
+    MENSAJE_FIJO,
+    MENSAJE_OTRO,
+    ACTIVO
+    )
+  VALUES
+    (
+    P_id_siniestro,
+    P_MENSAJE_CELULAR,
+    P_MENSAJE_CORREOE,
+    P_MENSAJE_FIJO,
+    P_MENSAJE_OTRO,
+    P_ACTIVO
+    );
+
+    END;
+
+PROCEDURE sp_updAnexo13_mensaje
+  (
+     P_ID_SINIESTRO                  NUMBER
+    ,P_MENSAJE_CELULAR               NUMBER
+    ,P_MENSAJE_CORREOE               NUMBER
+    ,P_MENSAJE_FIJO                   NUMBER
+    ,P_MENSAJE_OTRO                   VARCHAR2
+    ,P_ACTIVO                        NUMBER
+  )
+  AS
+
+  BEGIN
+
+      UPDATE TBANEXO13_MENSAJE
+         SET
+             MENSAJE_CELULAR              = P_MENSAJE_CELULAR
+            ,MENSAJE_CORREOE              = P_MENSAJE_CORREOE
+            ,MENSAJE_FIJO                  = P_MENSAJE_FIJO
+            ,MENSAJE_OTRO                 = P_MENSAJE_OTRO
+            ,ACTIVO                       = P_ACTIVO
+       WHERE id_siniestro = P_id_siniestro;
+
+    END;
+
+  PROCEDURE sp_updAnexo11_muebles
+  (
+        P_ID                   NUMBER
+       ,P_ID_ANEXO11           NUMBER
+       ,P_ID_REGPERSONA        NUMBER
+       ,P_PARAM_TIPO_MUBLE     NUMBER
+       ,P_DESCRIPCION          VARCHAR2
+       ,P_PARAM_TIPO_TENENCIA  NUMBER
+       ,P_CANTIDAD             NUMBER
+       ,P_ACTIVO               NUMBER
+       ,P_idCreado             OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbanexo11_muebles
+     SET
+         id_anexo11            = P_id_anexo11,
+         id_regpersona         = P_id_regpersona,
+         param_tipo_muble      = P_param_tipo_muble,
+         descripcion           = P_descripcion,
+         param_tipo_tenencia   = P_param_tipo_tenencia,
+         cantidad              = P_cantidad,
+         activo                = P_activo
+   WHERE id = P_id;
+
+    END;
+
+
+  PROCEDURE sp_setAnexo11_creditos
+  (
+      P_ID                   NUMBER
+      , P_ID_ANEXO11           NUMBER
+
+      ,P_PARAM_TIPO_ACREEDOR  NUMBER
+      ,P_NOMBRE_ACREEDOR      VARCHAR2
+      ,P_FECHA_DEUDA          DATE
+      ,P_MONTO_ADEUDADO       NUMBER
+      ,P_ACTIVO               NUMBER
+      ,P_idCreado             OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+--  Revisar
+  select seq_anexo11_credito.nextval into v_id from dual;
+
+  insert into tbanexo11_creditos
+    (
+    id,
+    id_anexo11,
+    --id_regpersona,
+    param_tipo_acreedor,
+    nombre_acreedor,
+    fecha_deuda,
+    monto_adeudado,
+    activo
+    )
+  values
+    (
+    v_id,
+    P_id_anexo11,
+    --P_id_regpersona,
+    P_param_tipo_acreedor,
+    P_nombre_acreedor,
+    P_fecha_deuda,
+    P_monto_adeudado,
+    P_activo
+    );
+
+    p_idCreado := v_id;
+
+    END;
+
+
+  PROCEDURE sp_updAnexo11_creditos
+  (
+       P_ID                   NUMBER
+      ,P_ID_ANEXO11           NUMBER
+      --,P_ID_REGPERSONA        NUMBER
+      ,P_PARAM_TIPO_ACREEDOR  NUMBER
+      ,P_NOMBRE_ACREEDOR      VARCHAR2
+      ,P_FECHA_DEUDA          DATE
+      ,P_MONTO_ADEUDADO       NUMBER
+      ,P_ACTIVO               NUMBER
+      ,P_idCreado             OUT NUMBER
+  )
+  AS
+  BEGIN
+
+  UPDATE tbanexo11_creditos
+     SET
+         id_anexo11            = P_id_anexo11,
+         --id_regpersona         = P_id_regpersona,
+         param_tipo_acreedor   = P_param_tipo_acreedor,
+         nombre_acreedor       = P_nombre_acreedor,
+         fecha_deuda           = P_fecha_deuda,
+         monto_adeudado        = P_monto_adeudado,
+         activo                = P_activo
+   WHERE id = P_id;
+
+   END;
+
+----------------------------------------------------------//
+  PROCEDURE sp_setAfectacionAnexo
+  (
+     P_ID_ANEXO                 IN NUMBER
+   , P_PARAM_TIPO_HECHO         IN NUMBER
+   , P_PARAM_AFECTACION         IN NUMBER
+  )
+  AS
+  BEGIN
+
+    insert into tbafectacion
+      (
+           id_anexo
+         , param_tipo_hecho
+         , param_afectacion
+      )
+    values
+      (
+           p_id_anexo
+         , p_param_tipo_hecho
+         , p_param_afectacion
+      );
+
+   END;
+
+  PROCEDURE sp_delAfectacionesAnexo
+  (
+     P_ID_ANEXO                  IN NUMBER
+   , P_PARAM_TIPO_HECHO          IN NUMBER
+  )
+  AS
+  BEGIN
+
+    delete tbafectacion
+    where  id_anexo = p_id_anexo and
+         param_tipo_hecho = p_param_tipo_hecho;
+
+   END;
+
+----------------------------------------------------------//
+
+  PROCEDURE sp_getRegistrosPersonas
+  (
+    P_ID_DECLARACION         IN NUMBER
+    ,P_CONSECUTIVO_FAMILIA   NUMBER := NULL
+    ,cu_result               OUT cursor_type
+  )AS
+  BEGIN
+
+    OPEN cu_result FOR
+      select
+          id
+        , id_declaracion
+        , id_persona
+        , esdeclarante
+        , caracterizado
+        , activo
+        , id_mijefehogar
+        , param_estadoayudas
+        , puntaje_persona
+        , id_proceso
+        , param_proceso
+        , id_usuario
+        , id_uterritorial
+        , direccion
+        , telefono
+        , movil
+        , param_relacion
+        , sedesplazo
+        , restringida
+        , novedad_inclusion
+        , obs_restringida
+        , tipo_restriccion
+        , email
+        , direccion_alterna
+        , id_entorno_alterno
+        , otro_entorno_alterno
+        , id_pais_alterno
+        , id_departamento_alterno
+        , id_municipio_alterno
+        , telefono_alterno
+        , movil_alterno
+        , email_alterno
+        , consecutivo_persona
+        , esmujercabezadehogar
+        , param_regimenespecial
+        , gestante_lactante
+        , id_pais
+        , id_departamento
+        , id_municipio
+        , id_entorno
+        , otro_entorno
+        , id_tipopoblacion
+        , id_tipopoblacion_alterno
+        , param_localidad_correg
+        , param_barrio_vereda
+        , otro_localidad_correg
+        , otro_barrio_vereda
+        , param_tipo_entorno
+        , param_tipo_entorno_alt
+        , param_localidad_correg_alt
+        , param_barrio_vereda_alt
+        , otro_localidad_correg_alt
+        , otro_barrio_vereda_alt
+        , CONSECUTIVO_FAMILIA
+        , indicativo_telefono
+        , indicativo_telefono_alterno
+      from tbregistros_personas rp
+      WHERE rp.id_declaracion = p_id_declaracion
+      AND   (CONSECUTIVO_FAMILIA = P_CONSECUTIVO_FAMILIA OR P_CONSECUTIVO_FAMILIA IS NULL);
+
+  END;
+
+
+ PROCEDURE sp_getPersona
+  (
+    P_ID           IN NUMBER
+    ,cu_result     OUT cursor_type
+  )AS
+  BEGIN
+
+    OPEN cu_result FOR
+      select
+          id
+        , primernombre
+        , segundonombre
+        , primerapellido
+        , segundoapellido
+        , param_tipodocumento
+        , numerodocumento
+        , id_departamentoexpedicion
+        , id_municipioexpedicion
+        , param_estadocivil
+        , param_genero
+        , param_profesion
+        , cualprofesion
+        , id_departamento
+        , id_municipio
+        , param_minoriaetnica
+        , gestante
+        , param_regimensalud
+        , leeyescribe
+        , asistiaalaescuela
+        , asisteaescuela
+        , ultimogrado
+        , param_nivelescolar
+        , param_ocupacionanterior
+        , param_actvidadanterior
+        , param_ocupacionactual
+        , param_actvidadactual
+        , fechanacimiento
+        , estafallecido
+        , cualregimensalud
+        , cualactividadanterior
+        , cualactividadactual
+        , param_bienesabandonados
+        , param_creditosvigentes
+        , id_proceso
+        , param_proceso
+        , id_usuario
+        , id_uterritorial
+        , id_origenfuente
+        , observaciones
+        , fechaexpediciondoc
+        , registraduria_1
+        , registraduria_2
+        , id_personasifa
+        , id_personajuntos
+        , esmujercabezadehogar
+        , esmenorsinacudiente
+        , param_etniapertenece
+        , param_rolcomplemetario
+        , param_resguardo
+        , cualetniaopueblo
+        , cualrolcomplementario
+        , cualorganizacionsocial
+        , param_proteccionbienes
+        , porqueproteccionbienes
+        , param_prediofuedespojado
+        , param_formadespojo
+        , param_autordespojo
+        , param_legislazionterritorio
+        , param_afectacion
+        , comunas_afectadas
+        , param_otrosbienesabandonados
+        , vigencia_registraduria
+        , registraduria
+        , comunidad
+      from tbpersonas p
+      WHERE p.id = p_id;
+
+  END;
+
+  PROCEDURE sp_getDiscapacidadPersona
+  (
+    P_ID_REGPERSONA         NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+           id_regpersona
+           , param_discapacidad
+      FROM tbdiscapacidad_persona d
+      WHERE d.id_regpersona = p_id_regpersona and d.activo = 1;
+  END;
+
+  PROCEDURE sp_getSiniestroPersona
+  (
+     P_PARAM_TIPOHECHO      NUMBER
+    ,P_ID_DECLARACION       NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      select
+         s.id
+       , s.param_tipohecho
+       , s.id_regpersona
+       , s.fechasiniestro
+       , s.id_departamento
+       , s.id_municipio
+       , s.id_entorno
+       , s.id_tipopoblado
+       , s.otro_entorno
+       , s.param_ccvotar
+       , s.id_departamento_votar
+       , s.id_municipio_votar
+       , s.id_dpto_estudio_hijos
+       , s.id_mpio_estudio_hijos
+       , s.institucion_educativa
+       , s.param_encuestasisben
+       , s.id_dpto_encuestasisben
+       , s.id_mpio_encuestasisben
+       , s.nivel_sisben
+       , s.param_familiasaccion
+       , s.id_dpto_familiasaccion
+       , s.id_mpio_familiasaccion
+       , s.param_entidadcobra
+       , s.param_sistemasalud
+       , s.id_dpto_sistemasalud
+       , s.id_mpio_sistemasalud
+       , s.param_tipoafilizacion
+       , s.id_dpto_trabajo
+       , s.id_mpio_trabajo
+       , s.nombre_empleador
+       , s.victima_del_hecho
+       , s.activo
+       , s.param_localidad_correg
+       , s.param_barrio_vereda
+       , s.otro_localidad_correg
+       , s.otro_barrio_vereda
+       , s.param_tipo_entorno
+       , s.entidadcobra
+       , r.consecutivo_familia
+      FROM  tbsiniestros_persona s
+            inner join tbregistros_personas r on r.id = s.id_regpersona
+      WHERE
+            s.activo = 1 AND
+            s.param_tipohecho = p_param_tipohecho AND
+            s.id_regpersona IN (
+            select id from tbregistros_personas rp
+            where rp.id_declaracion = p_id_declaracion);
+  END;
+
+  PROCEDURE sp_getAfectacionesAnexo
+  (
+    P_PARAM_TIPO_HECHO      NUMBER
+    ,P_ID_ANEXO              NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             param_tipo_hecho
+           , id_anexo
+           , param_afectacion
+      FROM tbafectacion s
+      WHERE
+           s.id_anexo = p_id_anexo AND
+           s.param_tipo_hecho = p_param_tipo_hecho;
+  END;
+
+  PROCEDURE sp_getAnexos1
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_regpersona
+           , victima
+           , afectado
+           , otra_afectacion
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , ID_PAIS_DENUNCIAPREV
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , atencion_medica
+           , detalle_atencion_medica
+           , id_departamento_atencionmed
+           , id_municipio_atencionmed
+           , activo
+      FROM tbanexo1 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+
+  END;
+
+  PROCEDURE sp_getBienesAfectadosA1
+  (
+    P_ID_A1          NUMBER
+    ,cu_result       OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+            id
+          , id_a1
+          , inmueble
+          , param_tipopertenencia
+          , activo
+          , descripcion
+      FROM tbbien_afectado_a1 a
+      WHERE a.id_a1 = p_id_a1 and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getAnexos2
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_regpersona
+           , victima
+           , afectado
+           , otra_afectacion
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , ID_PAIS_DENUNCIAPREV
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , solicita_proteccion
+           , proteccion
+           , tipo_proteccion
+           , entidad_proteccion
+           , fecha_proteccion
+           , vigencia_proteccion
+           , continua_amenazas
+           , activo
+      FROM tbanexo2 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+
+  END;
+
+  PROCEDURE sp_getAnexos3
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result    OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      select
+          id
+        , id_siniestro
+        , id_regpersona
+        , victima
+        , afectado
+        , otra_afectacion
+        , declaracionprev
+        , param_entidad_denunciaprev
+        , fecha_denunciaprev
+        , id_pais_denunciaprev
+        , id_departamento_denunciaprev
+        , id_municipio_denunciaprev
+        , numero_radicado_denunciaprev
+        , param_delito_sexual
+        , solicitud_ayuda
+        , detalle_solicitud_ayuda
+        , ayuda
+        , detalle_ayuda
+        , atencion_medica
+        , id_dto_atencion_medica
+        , id_mun_atencion_medica
+        , entidad_atencion_medica
+        , activo
+      from tbanexo3 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+
+  END;
+
+ PROCEDURE sp_getNacidosViolacionA3
+  (
+    P_ID_SINIESTRO      NUMBER
+    ,cu_result          OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_registro_persona
+           , activo
+      FROM  tbnacido_violacion_a3 nv
+      WHERE nv.id_siniestro = p_id_siniestro and nv.activo = 1;
+
+  END;
+
+ PROCEDURE sp_getDelitoSexualA3
+  (
+    P_ID_A3      NUMBER
+    ,cu_result          OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_a3
+           , param_delitosexual
+           , activo
+      FROM  tbdelito_sexual_a3 ds
+      WHERE ds.id_a3  = p_id_a3 AND ds.activo = 1;
+
+  END;
+
+  PROCEDURE sp_getAnexos4
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_regpersona
+           , victima
+           , afectado
+           , otra_afectacion
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , id_pais_denunciaprev
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , desaparecida
+           , param_evento_antes_hecho
+           , param_evento_despues_hecho
+           , actividad_en_desaparicion
+           , menor_desprotegido
+           , id_menor_desprotegido
+           , busqueda_victima
+           , entidad_busqueda
+           , activo
+      FROM tbanexo4 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+
+  END;
+
+  PROCEDURE sp_getAnexos5
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+    select
+         id
+       , id_siniestro
+       , declaracionprev
+       , param_entidad_denunciaprev
+       , fecha_denunciaprev
+       , id_pais_denunciaprev
+       , id_departamento_denunciaprev
+       , id_municipio_denunciaprev
+       , numero_radicado_denunciaprev
+       , otra_entidad_denunciaprev
+       , param_tipo_desplazamiento
+       , tiempo_residencia_anos
+       , tiempo_residencia_meses
+       , tiempo_residencia_dias
+       , fecha_arribo
+       , id_pais_arribo
+       , id_departamento_arribo
+       , id_municipio_arribo
+       , id_tipopoblacion_arribo
+       , id_entorno_arribo
+       , otro_entorno_arribo
+       , param_deseohogar
+       , id_pais_reubicacion
+       , id_dpto_reubicacion
+       , id_municipio_reubicacion
+       , id_tipopoblacion_reubicacion
+       , id_entorno_reubicacion
+       , otro_entorno_reubicacion
+       , activo
+       , desplazamiento_otro
+       , param_localidad_correg_arri
+       , param_barrio_vereda_arri
+       , otro_localidad_correg_arri
+       , otro_barrio_vereda_arri
+       , param_tipo_entorno_arri
+       , param_localidad_correg_reub
+       , param_barrio_vereda_reub
+       , otro_localidad_correg_reub
+       , otro_barrio_vereda_reub
+       , param_tipo_entorno_reub
+       , param_causa_desplazamiento
+    from tbanexo5 a
+        WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getAnexos6
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_regpersona
+           , victima
+           , fallecida
+           , afectado
+           , otra_afectacion
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , id_pais_denunciaprev
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , quedo_algun_huerfano
+           , id_huerfano
+           , param_huerfano_de
+           , num_personas_muertas
+           , activo
+      FROM tbanexo6 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getAnexos7
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      select
+          id
+        , id_siniestro
+        , id_regpersona
+        , victima
+        , param_estadovictima
+        , afectado
+        , otra_afectacion
+        , declaracionprev
+        , param_entidad_denunciaprev
+        , fecha_denunciaprev
+        , id_pais_denunciaprev
+        , id_departamento_denunciaprev
+        , id_municipio_denunciaprev
+        , numero_radicado_denunciaprev
+        , param_tipo_accidente
+        , param_actividad_momento_hecho
+        , quedo_algun_huerfano
+        , id_huerfano
+        , param_huerfano_de
+        , atencion_medica
+        , id_dto_atencion_medica
+        , id_mun_atencion_medica
+        , entidad_atencion_medica
+        , activo
+      from tbanexo7 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getLugarAccidenteA7
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , descripcion
+      FROM tbanexo7_lugaraccidente t
+      WHERE t.id_siniestro = p_id_siniestro;
+  END;
+
+  PROCEDURE sp_getAnexos8
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_regpersona
+           , victima
+           , secuestrado
+           , afectado
+           , otra_afectacion
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , id_pais_denunciaprev
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , param_tipo_secuestro
+           , param_finalidad_secuestro
+           , otra_finalidad_secuestro
+           , contraprestacion
+           , que_contraprestacion
+           , param_situacionactualvictima
+           , param_liberacion_victima
+           , fecha_liberacion
+           , activo
+      FROM tbanexo8 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getAnexos9
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+       SELECT
+           id
+         , id_siniestro
+         , id_regpersona
+         , victima
+         , afectado
+         , otra_afectacion
+         , declaracionprev
+         , param_entidad_denunciaprev
+         , fecha_denunciaprev
+         , id_pais_denunciaprev
+         , id_departamento_denunciaprev
+         , id_municipio_denunciaprev
+         , numero_radicado_denunciaprev
+         , recibio_atencion_medica
+         , solicito_ayuda
+         , entidad_solicito_ayuda
+         , recibio_ayuda
+         , tipo_ayuda_recibida
+         , id_dto_atencion_medica
+         , id_mun_atencion_medica
+         , entidad_atencion_medica
+         , activo
+      FROM tbanexo9 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getAnexos10
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , id_regpersona
+           , victima
+           , afectado
+           , otra_afectacion
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , id_pais_denunciaprev
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , grupo_armado_pertenecio
+           , fecha_desvinculacion
+           , atendido_icbf
+           , fecha_atencion_icbf
+           , atendido_otra_entidad
+           , fecha_atencion_otra
+           , entidad_atendio
+           , activo
+      FROM tbanexo10 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_getAnexos11
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_siniestro
+           , declaracionprev
+           , param_entidad_denunciaprev
+           , fecha_denunciaprev
+           , id_pais_denunciaprev
+           , id_departamento_denunciaprev
+           , id_municipio_denunciaprev
+           , numero_radicado_denunciaprev
+           , param_tierra_despojada
+           , param_tipo_despojado
+           , autor_despojado
+           , param_situacion_act_tierra
+           , param_sol_proteccion
+           , proteccion_porque
+           , activo
+      FROM tbanexo11 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+
+  PROCEDURE sp_geInmuebleA11
+  (
+     P_ID_ANEXO11           NUMBER
+   , cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      select
+           id
+         , id_anexo11
+         , id_regpersona
+         , param_tipo_inmuble
+         , id_departamento
+         , id_municipio
+         , id_entrono
+         , id_tipopoblado
+         , otro_entorno
+         , param_tipo_tenencia
+         , nombre_direccion
+         , area
+         , param_unidad_area
+         , activo
+         , param_localidad_correg
+         , param_barrio_vereda
+         , otro_localidad_correg
+         , otro_barrio_vereda
+         , param_tipo_entorno
+       from tbanexo11_inmuebles t
+      WHERE t.id_anexo11 = p_id_anexo11 and t.activo = 1;
+  END;
+
+  PROCEDURE sp_getMuebleA11
+  (
+    P_ID_ANEXO11            NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_anexo11
+           , id_regpersona
+           , descripcion
+           , param_tipo_muble
+           , param_tipo_tenencia
+           , cantidad
+           , activo
+      FROM  tbanexo11_muebles t
+      WHERE t.id_anexo11 = p_id_anexo11 and t.activo = 1;
+  END;
+
+  PROCEDURE sp_getCreditoA11
+  (
+    P_ID_ANEXO11            NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id
+           , id_anexo11
+           --, id_regpersona
+           , param_tipo_acreedor
+           , nombre_acreedor
+           , fecha_deuda
+           , monto_adeudado
+           , activo
+      FROM  tbanexo11_creditos  t
+      WHERE t.id_anexo11 = p_id_anexo11 and t.activo = 1;
+  END;
+
+PROCEDURE sp_getAnexos13
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+           id
+           , id_siniestro
+           , id_regpersona
+           , activo
+      FROM tbanexo13 a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+PROCEDURE sp_getAnexos13_mensajes
+  (
+    P_ID_SINIESTRO          NUMBER
+    ,cu_result              OUT cursor_type
+  )AS
+  BEGIN
+    OPEN cu_result FOR
+      SELECT
+             id_siniestro
+           , MENSAJE_CELULAR
+           , MENSAJE_CORREOE
+           , MENSAJE_FIJO
+           , MENSAJE_OTRO
+           , activo
+      FROM tbanexo13_mensaje a
+      WHERE a.id_siniestro = p_id_siniestro and a.activo = 1;
+  END;
+
+  PROCEDURE sp_setAnexo7_LugarAcc
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A7                           IN NUMBER
+  ,P_DESCRIPCION                     IN VARCHAR2
+  ,P_idCreado                        OUT NUMBER
+
+
+  )
+  AS
+      v_id NUMBER;
+  BEGIN
+
+
+    IF P_descripcion IS NOT NULL THEN
+
+    SELECT SEQ_ANEXO7_LUGAR.NEXTVAL INTO v_id FROM dual;
+
+    INSERT INTO tbanexo7_lugaraccidente
+      (
+      id,
+      id_siniestro,
+      descripcion
+      )
+    VALUES
+      (
+      v_id,
+      P_ID_A7,
+      P_descripcion
+      );
+
+     END IF;
+
+
+    p_idCreado := v_id;
+
+    END;
+
+
+  PROCEDURE sp_updAnexo7_LugarAcc
+  (
+   P_ID                              IN NUMBER
+  ,P_ID_A7                           IN NUMBER
+  ,P_DESCRIPCION                     IN VARCHAR2
+  ,P_idCreado                        OUT NUMBER
+  )
+  AS
+
+  BEGIN
+
+  UPDATE tbanexo7_lugaraccidente
+     SET descripcion = P_DESCRIPCION
+   WHERE id = P_id;
+
+    END;
+
+ PROCEDURE sp_generaNroFrm
+  (
+       P_ID                   NUMBER
+      --,P_idCreado            OUT NUMBER
+  )
+  AS
+      v_id NUMBER;
+      v_sum NUMBER;
+      v_contador NUMBER;
+      v_tam NUMBER;
+
+      v_sum1 number;
+      v_contador1 NUMBER;
+      v_tam1 NUMBER;
+
+      v_car2 varchar2(10);
+      nro varchar2(50);
+      cns varchar2(9);
+  BEGIN
+
+      v_sum := 0;
+      select seq_nroformulario.nextval into v_id from dual;
+      v_tam := length(v_id);
+      for v_contador in 1..v_tam loop
+          v_sum := v_sum + substr(v_id, v_contador,1);
+      end loop;
+
+
+      v_sum1 := 0;
+
+      v_tam1 := length(v_sum);
+      for v_contador1 in 1..v_tam1 loop
+          v_sum1 := v_sum1 + substr(v_id, v_contador1,1);
+      end loop;
+
+      if (v_sum1 = 1) then
+        v_car2 := 'M';
+      elsif (v_sum1 = 2) then
+        v_car2 := 'L';
+      elsif (v_sum1 = 3) then
+        v_car2 := 'K';
+      elsif (v_sum1 = 4) then
+        v_car2 := 'J';
+      elsif (v_sum1 = 5) then
+        v_car2 := 'I';
+      elsif (v_sum1 = 6) then
+        v_car2 := 'H';
+      elsif (v_sum1 = 7) then
+        v_car2 := 'G';
+      elsif (v_sum1 = 8) then
+        v_car2 := 'F';
+      elsif (v_sum1 = 9) then
+        v_car2 := 'E';
+      elsif (v_sum1 = 10) then
+        v_car2 := 'D';
+      elsif (v_sum1 = 11) then
+        v_car2 := 'C';
+      else
+        v_car2 := 'Z';
+      end if;
+
+      SELECT LPAD(v_id,9,'0') into cns from dual; --relleno_izquierda
+
+      nro := 'B' || v_car2 || cns;
+
+      update tbdeclaraciones set numeroformulario = nro
+      where id = p_id;
+
+
+    --p_idCreado := v_id;
+
+       COMMIT;
+  EXCEPTION
+    WHEN OTHERS THEN
+      ROLLBACK;
+      RAISE;
+
+  END;
+
+end PKG_RECONOCIMIENTO;
+/

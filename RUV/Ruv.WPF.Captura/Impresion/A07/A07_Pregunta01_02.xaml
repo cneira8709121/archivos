@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A07_Pregunta01_02"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="1159">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <TextBlock Margin="0,5"
+               Style="{StaticResource styTituloSeccion}"
+               Text="{Binding Nombre}" />
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="54*" />
+        <ColumnDefinition Width="38*"/>
+        <ColumnDefinition Width="15*"/>
+      </Grid.ColumnDefinitions>
+      <sec:FechaLugar_Imp FechaYLugar="{Binding FechaYLugar}"
+                          Numero="1" />
+      <Border Grid.Column="1"
+              HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a07t001}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <StackPanel Orientation="Horizontal">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a07t002}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+      <Border Grid.Column="2"
+              HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a07t003}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <StackPanel Orientation="Horizontal">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a07t004}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+    <sec:SubTituloEntrada Numero="2"
+                          Texto="Describa en este campo el lugar en el cual ocurrió el accidente. Especifique si se trató de un camino, escuela, carretera, oleoducto, infraestructura eléctrica, cercanías de una fuente de agua, cercanías a una vivienda, finca o cultivos. 
+Especifique también señales particulares que puedan servir para ubicar el lugar del accidente."
+                          AlineacionTexto="Center"
+                          HorizontalAlignment="Stretch"
+                          ColorTexto="Normal"
+                          Margin="0,5" />
+  </StackPanel>
+</UserControl>

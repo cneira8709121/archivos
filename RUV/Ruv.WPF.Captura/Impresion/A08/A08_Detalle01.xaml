@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A08_Detalle01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="131"
+             d:DesignWidth="1528">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:VictimaConsultaConverter x:Key="VCC" />
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+            <conv:ConsultaDatoConverter x:Key="CDC" />
+            <conv:ParametroNumeroConverter x:Key="PNC" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" x:Name="Columna3" />
+
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="4*" />
+
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="4*" />
+
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="3*" />
+
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="4*" />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--PRIMERA COLUMNAS-->
+            <my:DatoColumna Texto="{Binding PersonaAfectadaId, Converter={StaticResource VCC}, ConverterParameter=NumeroConsecutivo }"
+                      Grid.Column="0"
+                      AlineacionTexto="Center" />
+            <my:DatoSiNoColumna Valor="{Binding VictimaDeEsteHecho}"
+                          Grid.Column="1" />
+            <my:DatoSiNoColumna Valor="{Binding PersonaEstaSecuestrada}" 
+                          Grid.Column="2" />
+            <!--AFECTACION-->
+            <my:DatoSiNoColumna Valor="{Binding Afectacion.Afectado}"
+                          Grid.Column="3" />
+            <my:DatoGrillaNumericaColumna ListaValores="{Binding Afectacion.TiposDeAfectacion}"
+                                    Conjunto="Afectacion_Anexo_8"
+                                    Grid.Column="4" />
+            <my:DatoColumna Texto="{Binding Afectacion.Otro}"
+                      Grid.Column="5"
+                      AlineacionTexto="Center" />
+            <!--DENUNCIA PREVIA-->
+            <my:DatoSiNoColumna Valor="{Binding DenunciaPrevia.SePresento}"
+                          Grid.Column="6" />
+            <my:DatoColumna Texto="{Binding DenunciaPrevia.Entidad, Converter={StaticResource CDC}, ConverterParameter=Parametro }"
+                      Grid.Column="7"
+                      AlineacionTexto="Center" />
+            <my:DatoFechaColumna FechaTexto="{Binding DenunciaPrevia.Fecha}"
+                           Grid.Column="8" />
+            <Border Grid.Column="9" />
+            <StackPanel Grid.Column="9"
+                  VerticalAlignment="Center">
+                <my:DatoColumna Texto="{Binding DenunciaPrevia.Pais, Converter={StaticResource CDC}, ConverterParameter=Pais }"
+                            BordeVisible="False" />
+                <my:DatoColumna Texto="{Binding DenunciaPrevia.Departamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                        BordeVisible="False" />
+                <my:DatoColumna Texto="{Binding DenunciaPrevia.Municipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                        BordeVisible="False" />
+            </StackPanel>
+            <my:DatoColumna Texto="{Binding DenunciaPrevia.Codigo }"
+                      Grid.Column="10" />
+            <!--DATOS DEL SECUESTRO-->
+            <my:DatoColumna Texto="{Binding TipoDeSecuestro, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                      Grid.Column="11" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}" />
+            <my:DatoColumna Texto="{Binding FinalidadSecuestroExtorsivo, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                      Grid.Column="12" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"/>
+            <my:DatoColumna Texto="{Binding OtraFinalidadSecuestroOtro}"
+                      Grid.Column="13" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}" />
+            <my:DatoSiNoColumna Valor="{Binding HanPedidoContraprestacionPorLibertad}" x:Name="Columna14"
+                          Grid.Column="14"  />
+            <my:DatoColumna Texto="{Binding ContraprestacionPedida}" x:Name="Columna15"
+                      Grid.Column="15"  />
+            <my:DatoColumna Texto="{Binding SituacionActualVictima, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}" x:Name="Columna16"
+                      Grid.Column="16" />
+            <!--LIBERTAD DE LA VÍCTIMA-->
+            <my:DatoColumna Texto="{Binding ComoSeProdujoLiberacion, Converter={StaticResource PNC}}"
+                      Grid.Column="17" x:Name="Columna17" />
+            <my:DatoFechaColumna FechaTexto="{Binding FechaLiberacion}"
+                           Grid.Column="18" x:Name="Columna18" />
+        </Grid>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A05_DetallePregunta09"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:VictimaConsultaConverter x:Key="VCC" />
+      <conv:ConsultaDatoConverter x:Key="CDC" />
+      <conv:CantidadTiempoConverter x:Key="CTC" />
+      <conv:Victima05Converter x:Key="V05C" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <Grid x:Name="grdMain"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Center">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="60" />
+      <ColumnDefinition Width="43" />
+      <ColumnDefinition Width="10" />
+      <ColumnDefinition Width="60" />
+      <ColumnDefinition Width="43" />
+      <ColumnDefinition Width="10" />
+      <ColumnDefinition Width="60" />
+      <ColumnDefinition Width="43" />
+      <ColumnDefinition Width="10" />
+      <ColumnDefinition Width="60" />
+      <ColumnDefinition Width="43" />
+      <ColumnDefinition Width="10" />
+      <ColumnDefinition Width="60" />
+      <ColumnDefinition Width="43" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <my:DatoColumna Texto="{Binding Path=.[0], Converter={StaticResource V05C}, ConverterParameter=NUMEROCONSECUTIVO, FallbackValue=N/A}"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    AlineacionTexto="Center" />
+    <my:DatoSiNoColumna Valor="{Binding Path=.[0], Converter={StaticResource V05C}, ConverterParameter=SEDESPLAZO}"
+                        Grid.Column="1"
+                        Grid.Row="0" />
+    <my:DatoColumna Texto="{Binding Path=.[1], Converter={StaticResource V05C}, ConverterParameter=NUMEROCONSECUTIVO, FallbackValue=N/A}"
+                    Grid.Column="3"
+                    Grid.Row="0"
+                    AlineacionTexto="Center" />
+    <my:DatoSiNoColumna Valor="{Binding Path=.[1], Converter={StaticResource V05C}, ConverterParameter=SEDESPLAZO}"
+                        Grid.Column="4"
+                        Grid.Row="0" />
+    <my:DatoColumna Texto="{Binding Path=.[2], Converter={StaticResource V05C}, ConverterParameter=NUMEROCONSECUTIVO, FallbackValue=N/A}"
+                    Grid.Column="6"
+                    Grid.Row="0"
+                    AlineacionTexto="Center" />
+    <my:DatoSiNoColumna Valor="{Binding Path=.[2], Converter={StaticResource V05C}, ConverterParameter=SEDESPLAZO}"
+                        Grid.Column="7"
+                        Grid.Row="0" />
+    <my:DatoColumna Texto="{Binding Path=.[3], Converter={StaticResource V05C}, ConverterParameter=NUMEROCONSECUTIVO, FallbackValue=N/A}"
+                    Grid.Column="9"
+                    Grid.Row="0"
+                    AlineacionTexto="Center" />
+    <my:DatoSiNoColumna Valor="{Binding Path=.[3], Converter={StaticResource V05C}, ConverterParameter=SEDESPLAZO}"
+                        Grid.Column="10"
+                        Grid.Row="0" />
+    <my:DatoColumna Texto="{Binding Path=.[4], Converter={StaticResource V05C}, ConverterParameter=NUMEROCONSECUTIVO, FallbackValue=N/A}"
+                    Grid.Column="12"
+                    Grid.Row="0"
+                    AlineacionTexto="Center" />
+    <my:DatoSiNoColumna Valor="{Binding Path=.[4], Converter={StaticResource V05C}, ConverterParameter=SEDESPLAZO}"
+                        Grid.Column="13"
+                        Grid.Row="0" />
+
+  </Grid>
+
+</UserControl>

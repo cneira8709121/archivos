@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" />
+  <xs:complexType name="Credencial">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContrasenaWsFachada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAplicacion" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioWsFachada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Credencial" nillable="true" type="tns:Credencial" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idSolicitud" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="RadicarActoAdministrativoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentoAsociado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTipoDocumentoPersonaANotificar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombrePersonaANotificar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDocumentoPersonaANotificar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadicadoArcadoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadicadoEntradaArcadoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subserie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumental" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RadicarActoAdministrativoRequest" nillable="true" type="tns:RadicarActoAdministrativoRequest" />
+  <xs:complexType name="RadicarActoAdministrativoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RadicarActoAdministrativoResponse" nillable="true" type="tns:RadicarActoAdministrativoResponse" />
+  <xs:complexType name="NotificacionRadicadoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaNotificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Notificado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumeroRadicado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificacionRadicadoRequest" nillable="true" type="tns:NotificacionRadicadoRequest" />
+  <xs:complexType name="NotificacionRadicadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificacionRadicadoResponse" nillable="true" type="tns:NotificacionRadicadoResponse" />
+  <xs:complexType name="ArrayOfActoAdministrativoConfirmado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActoAdministrativoConfirmado" nillable="true" type="tns:ActoAdministrativoConfirmado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActoAdministrativoConfirmado" nillable="true" type="tns:ArrayOfActoAdministrativoConfirmado" />
+  <xs:complexType name="ActoAdministrativoConfirmado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FECHA_NOTIFICACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NUMERO_RADICADO_ENTRADA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_RADICADO_SALIDA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActoAdministrativoConfirmado" nillable="true" type="tns:ActoAdministrativoConfirmado" />
+  <xs:complexType name="CrearExpedienteOfertaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoDependencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentoAsociado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaResolucion" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="Firmantes" nillable="true" type="q1:ArrayOfEntFirmanteRequest" />
+      <xs:element minOccurs="0" name="GestorExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdExp" type="xs:int" />
+      <xs:element minOccurs="0" name="InteresadoOferta" nillable="true" type="tns:InteresadoOferta" />
+      <xs:element minOccurs="0" name="MarcoNormativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumRadicado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroRadicadoSistemaOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroResolucion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subserie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumental" nillable="true" type="xs:string" />
+      <xs:element name="TipoEnvio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoExpediente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrearExpedienteOfertaRequest" nillable="true" type="tns:CrearExpedienteOfertaRequest" />
+  <xs:complexType name="InteresadoOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreEntidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoPersona" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InteresadoOferta" nillable="true" type="tns:InteresadoOferta" />
+  <xs:complexType name="RespuestaCrearExpediente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codError" type="xs:int" />
+      <xs:element minOccurs="0" name="descError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idExpCCOO" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="radicado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespuestaCrearExpediente" nillable="true" type="tns:RespuestaCrearExpediente" />
+  <xs:complexType name="ParametrosConsultaDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametrosConsultaDC" nillable="true" type="tns:ParametrosConsultaDC" />
+  <xs:complexType name="ConsultaCertificadoResponseDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Certificados" nillable="true" type="tns:ArrayOfFlujoAplicacionRadicarRespuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaCertificadoResponseDC" nillable="true" type="tns:ConsultaCertificadoResponseDC" />
+  <xs:complexType name="ArrayOfFlujoAplicacionRadicarRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlujoAplicacionRadicarRespuesta" nillable="true" type="tns:FlujoAplicacionRadicarRespuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlujoAplicacionRadicarRespuesta" nillable="true" type="tns:ArrayOfFlujoAplicacionRadicarRespuesta" />
+  <xs:complexType name="FlujoAplicacionRadicarRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARCHIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEDULA_REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_GESTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO_REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPCION_ARCHIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MUNICIPIO_REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_ARCHIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_APELLIDO_REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_NOMBRE_REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_APELLIDO_REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_NOMBRE_REMITENTE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlujoAplicacionRadicarRespuesta" nillable="true" type="tns:FlujoAplicacionRadicarRespuesta" />
+  <xs:complexType name="RespuestaRadicacionSistema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descResultado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idRadicado" type="xs:int" />
+      <xs:element minOccurs="0" name="resultado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespuestaRadicacionSistema" nillable="true" type="tns:RespuestaRadicacionSistema" />
+  <xs:complexType name="ConsultaGeografiaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdMunicipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSistemaDestino" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSistemaOrigen" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaGeografiaRequest" nillable="true" type="tns:ConsultaGeografiaRequest" />
+  <xs:complexType name="ConsultaGeografiaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdMunicipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreMunicipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombrePais" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaGeografiaResponse" nillable="true" type="tns:ConsultaGeografiaResponse" />
+</xs:schema>

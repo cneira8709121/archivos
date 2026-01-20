@@ -1,0 +1,25 @@
+﻿LLAVE CLAVE: ruv
+
+<PRUEBAS>:
+PRUEBAS - Registro Único de Víctimas
+http://ruvpruebas.unidadvictimas.gov.co/ClientApp
+69FEA4C7-9E2A-4813-B475-6D8A6CC297E6
+Version: 1.0.1.177
+
+
+<PROD>:
+Registro Único de Víctimas
+http://ruv.unidadvictimas.gov.co/ClientApp/
+69FEA4C7-9E2A-4813-B475-6D8A6CC297E5
+Servicios: 172.20.2.126
+Version: 1.0.1.51
+
+
+DESARROLLO
+ruvtemporal.unidadvictimas.gov.co
+
+CAPACITACION
+CAPACITACION - Registro Único de Víctimas
+http://ruvcapacitacion.unidadvictimas.gov.co/ClientApp
+69FEA4C7-9E2A-4813-B475-6D8A6CC297E7
+Version: 1.0.0.1

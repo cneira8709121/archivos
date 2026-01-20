@@ -1,0 +1,80 @@
+﻿<Page x:Class="Ruv.WPF.Captura.Opciones.Impresoras"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="275"
+      d:DesignWidth="462"
+      Title="Impresoras">
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Estilos/EstilosInfraestructura.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="Button"
+             BasedOn="{StaticResource styBotonInfraestructura}" />
+    </ResourceDictionary>
+  </Page.Resources>
+  <DockPanel>
+    <StackPanel DockPanel.Dock="Bottom"
+                HorizontalAlignment="Left"
+                Margin="5">
+      <Button Click="Aceptar_Click">Grabar configuración</Button>
+    </StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+      <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition  Height="Auto" />
+          <RowDefinition  Height="10" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition  Height="Auto" />
+          <RowDefinition  Height="10" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition  Height="Auto" />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource styLabel}">Impresora preferida</TextBlock>
+        <ComboBox x:Name="cbxImpresoras"
+                  Grid.Column="1"
+                  Width="300"
+                  HorizontalAlignment="Left" />
+        <TextBlock Style="{StaticResource styExplicacion}"
+                   Width="300"
+                   HorizontalAlignment="Left"
+                   Grid.Row="1"
+                   Grid.Column="1">La impresora preferida es la impresora que se utilizará para imprimir las declaraciones. No corresponde necesariamente a la impresora por defecto del sistema, ni cambia la impresora por defecto del sistema.</TextBlock>
+        <TextBlock Style="{StaticResource styLabel}"
+                   Grid.Row="3">Tipo de papel</TextBlock>
+        <TextBlock Style="{StaticResource styExplicacion}"
+                   Width="300"
+                   HorizontalAlignment="Left"
+                   Grid.Row="4"
+                   Grid.Column="1">Define el tamaño de papel a utilizar en la impresión de las declaraciones.</TextBlock>
+        <ComboBox x:Name="cbxTipoPapel"
+                  Grid.Row="3"
+                  Grid.Column="1"
+                  Width="300"
+                  HorizontalAlignment="Left" />
+        <TextBlock Style="{StaticResource styLabel}"
+                   Grid.Row="6">Número de copias</TextBlock>
+        <ComboBox x:Name="cbxNumeroCopias"
+                  Grid.Row="6"
+                  Grid.Column="1"
+                  Width="300"
+                  HorizontalAlignment="Left" />
+        <TextBlock Style="{StaticResource styExplicacion}"
+                   Width="300"
+                   HorizontalAlignment="Left"
+                   Grid.Row="7"
+                   Grid.Column="1">Define número de copias a imprimir por cada declaración..</TextBlock>
+      </Grid>
+    </ScrollViewer>
+  </DockPanel>
+</Page>

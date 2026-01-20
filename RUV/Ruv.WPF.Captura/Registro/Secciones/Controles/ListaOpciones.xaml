@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Secciones.ListaOpciones"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             Background="White"
+             PreviewKeyDown="sp01_PreviewKeyDown"
+             d:DesignHeight="119"
+             d:DesignWidth="264">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="RadioButton"
+             BasedOn="{StaticResource styRadioButtonX}">
+        <Setter Property="Margin"
+                Value="0,0,10,3" />
+      </Style>
+      <Style TargetType="CheckBox"
+             BasedOn="{StaticResource styCheckBoxX}">
+        <Setter Property="Margin"
+                Value="0,0,10,3" />
+      </Style>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Disabled">
+    <Grid IsKeyboardFocusWithinChanged="Grid_IsKeyboardFocusWithinChanged">
+      <!--EL BORDE QUE INDICA EL FOCO.-->
+      <Rectangle Margin="0,0,3,3"
+                 Name="recFoco"
+                 Stroke="Black"
+                 Visibility="Hidden"
+                 StrokeDashArray="2 4" />
+      <StackPanel x:Name="sp01"
+                  Orientation="Vertical">
+        <WrapPanel x:Name="wp01"
+                   Orientation="Horizontal"
+                   Margin="3">
+        </WrapPanel>
+      </StackPanel>
+      <Border x:Name="borNumero"
+              Focusable="True"
+              BorderBrush="Blue"
+              BorderThickness="2"
+              Width="22"
+              Height="20"
+              Tag="1">
+        <Border.RenderTransform>
+          <ScaleTransform ScaleX="0"
+                          ScaleY="0"
+                          CenterX="11"
+                          CenterY="10" />
+        </Border.RenderTransform>
+        <Border.Style>
+          <Style TargetType="Border">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding Tag, ElementName=borNumero}"
+                           Value="{x:Null}">
+                <DataTrigger.EnterActions>
+                  <StopStoryboard BeginStoryboardName="sbNumeroAparece" />
+                  <BeginStoryboard Name="sbNumeroDesaparece">
+                    <Storyboard BeginTime="0:0:0.3">
+                      <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleX"
+                                       FillBehavior="HoldEnd"
+                                       To="0"
+                                       Duration="0:0:0.1" />
+                      <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleY"
+                                       FillBehavior="HoldEnd"
+                                       To="0"
+                                       Duration="0:0:0.1" />
+                    </Storyboard>
+                  </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                  <StopStoryboard BeginStoryboardName="sbNumeroDesaparece" />
+                  <BeginStoryboard Name="sbNumeroAparece">
+                    <Storyboard>
+                      <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleX"
+                                       FillBehavior="HoldEnd"
+                                       From="0"
+                                       To="1"
+                                       Duration="0:0:0.1" />
+                      <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).ScaleY"
+                                       FillBehavior="HoldEnd"
+                                       From="0"
+                                       To="1"
+                                       Duration="0:0:0.1" />
+                    </Storyboard>
+                  </BeginStoryboard>
+                </DataTrigger.ExitActions>
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Border.Style>
+        <TextBlock x:Name="txtNumero"
+                   Background="Transparent"
+                   Padding="0,3"
+                   Height="20"
+                   FontWeight="Bold"
+                   Foreground="Blue"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"></TextBlock>
+      </Border>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

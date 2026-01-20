@@ -1,0 +1,13 @@
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ruv.Business.DTO.dll
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ruv.Business.DTO.pdb
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ruv.Infrastructure.Crosscutting.Common.dll
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ruv.Infrastructure.Crosscutting.Resources.dll
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ionic.Zip.Reduced.dll
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\itextsharp.dll
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ruv.Infrastructure.Crosscutting.Common.pdb
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\bin\Release\Ruv.Infrastructure.Crosscutting.Resources.pdb
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\obj\Release\Ruv.Business.DTO.csproj.AssemblyReference.cache
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\obj\Release\Ruv.Business.DTO.csproj.CoreCompileInputs.cache
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\obj\Release\Ruv.Business.DTO.csproj.CopyComplete
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\obj\Release\Ruv.Business.DTO.dll
+E:\source\UARIV\RUV\RUV\Ruv.Business.DTO\obj\Release\Ruv.Business.DTO.pdb

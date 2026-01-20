@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<INVENTARIO>
+  <SERVICIOS>
+    <SERVICIO>
+      <ID>1</ID>
+      <COMPONENETE>ADMINISTRACION</COMPONENETE>
+      <NOMBRE>BUSINESS</NOMBRE>
+      <DESCRIPCION>Servicio de entidades de negoción, que son usadas por el negocio de forma general</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:64594/BusinessService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Administracion/BusinessService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Administracion/BusinessService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>2</ID>
+      <COMPONENETE>ADMINISTRACION</COMPONENETE>
+      <NOMBRE>RECURSOS</NOMBRE>
+      <DESCRIPCION>Servicio de utilidades de la aplicación</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:64594/ResourcesService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Administracion/ResourcesService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Administracion/ResourcesService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>3</ID>
+      <COMPONENETE>ADMINISTRACION</COMPONENETE>
+      <NOMBRE>POLITICA</NOMBRE>
+      <DESCRIPCION>Servicio que administra y provee politicas de acceso</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:64594/PoliticaService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Administracion/PoliticaService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Administracion/PoliticaService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>4</ID>
+      <COMPONENETE>ADMINISTRACION</COMPONENETE>
+      <NOMBRE>ROL</NOMBRE>
+      <DESCRIPCION>Servicio que administra y valida roles</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:64594/PoliticaService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Administracion/RolService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Administracion/RolService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>5</ID>
+      <COMPONENETE>ADMINISTRACION</COMPONENETE>
+      <NOMBRE>SESION</NOMBRE>
+      <DESCRIPCION>Servicio que administra y controla las sesiones</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:64594/SesionService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Administracion/SesionService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Administracion/SesionService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>6</ID>
+      <COMPONENETE>ADMINISTRACION</COMPONENETE>
+      <NOMBRE>USUARIO</NOMBRE>
+      <DESCRIPCION>Servicio que administra y provee usuarios</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:64594/UsuarioService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Administracion/UsuarioService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Administracion/UsuarioService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>7</ID>
+      <COMPONENETE>ACTOS ADMINISTRATIVOS</COMPONENETE>
+      <NOMBRE>COMBINACION</NOMBRE>
+      <DESCRIPCION>Servicio que hace combinada de Correspondencia según plantillas NO EXISTE</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>8</ID>
+      <COMPONENETE>DEVOLUCIONES </COMPONENETE>
+      <NOMBRE>ACTUALIZA ADJUNTOS</NOMBRE>
+      <DESCRIPCION>Servicio que Actualiza los estados de la tabla Notificacion según Archivo de carga</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>9</ID>
+      <COMPONENETE>EXCLUSIONES</COMPONENETE>
+      <NOMBRE>CASO</NOMBRE>
+      <DESCRIPCION>Servicio de Administracion que manipula los casos</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>10</ID>
+      <COMPONENETE>EXCLUSIONES</COMPONENETE>
+      <NOMBRE>GENERAL</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de traer informacion y entidades</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>11</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>ASIGNACION</NOMBRE>
+      <DESCRIPCION>Servicio que consulta entidades y manipula informacion</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:8084/Servicios/AsignacionService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>12</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>COMENTARIO</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de manipular la informacion</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:8084/Servicios/ComentarioService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>13</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>DECISION</NOMBRE>
+      <DESCRIPCION>Servicio que administra y consulta Desiciones</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:54806/Servicios/DecisionService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>14</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>ESTADO RECURSO</NOMBRE>
+      <DESCRIPCION>Servicio que consulta entidades y manipula informacion de los resursos</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:54806/Servicios/EstadoRecursoService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>15</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>FUENTE PRIORIDAD</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de manipular la informacion</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:54806/Servicios/FuentePrioridadService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>16</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>TIPO RECURSO</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de manipular la informacion</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:54806/Servicios/RecursoTipoRecursoService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>17</ID>
+      <COMPONENETE>VIA GUBERNATIVA</COMPONENETE>
+      <NOMBRE>TRAMITE</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de manipular la informacion</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:54806/Servicios/TramiteService.svc</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>18</ID>
+      <COMPONENETE>NOTIFICACION</COMPONENETE>
+      <NOMBRE>NOTIFICACION</NOMBRE>
+      <DESCRIPCION>Servicio que manipula los datos, tablas y registros en Notificaciones</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:8084/NotificacionService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Notificacion/NotificacionService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Notificacion/NotificacionService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>19</ID>
+      <COMPONENETE>NOTIFICACION</COMPONENETE>
+      <NOMBRE>PAQUETE</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de gestionar todo la informacion en paquetes</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:8084/PaqueteService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Notificacion/PaqueteService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Notificacion/PaqueteService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>20</ID>
+      <COMPONENETE>ORFEO</COMPONENETE>
+      <NOMBRE>RADICADO</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de generar radicado, cargar documento y retornar ruta del documento</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:8095/RadicacionService</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Orfeo/SIRAV.Service.Orfeo.RadicadoService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Orfeo/SIRAV.Service.Orfeo.RadicadoService.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>21</ID>
+      <COMPONENETE>RADICACIONES</COMPONENETE>
+      <NOMBRE>ADJUNTO RADICADO</NOMBRE>
+      <DESCRIPCION>Servicio que manipula la informacion de los adjuntos de los Radicados</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>22</ID>
+      <COMPONENETE>RADICACIONES</COMPONENETE>
+      <NOMBRE>DETALLE </NOMBRE>
+      <DESCRIPCION>Servicio que manipula la informacion del Detalle</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>23</ID>
+      <COMPONENETE>RADICACIONES</COMPONENETE>
+      <NOMBRE>RADICACION</NOMBRE>
+      <DESCRIPCION>Servicio que manipula la informacion de los Radicados</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:50089/RadicacionService</URLDEV>
+      <URLTEST>http://</URLTEST>
+      <URLPRODUCCION>http://</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>24</ID>
+      <COMPONENETE>RUV</COMPONENETE>
+      <NOMBRE>CONSULTA DECLARACION</NOMBRE>
+      <DESCRIPCION>servicio que nos trae la informacion que necesitamos en Actos Administrativos para registrar las declaraciones</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:51783/Servicios/ServiceConsultaDeclaracion.svc</URLDEV> 
+      <URLTEST>http://190.60.234.84:8084/Ruv/Servicios/ServiceConsultaDeclaracion.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Ruv/Servicios/ServiceConsultaDeclaracion.svc</URLPRODUCCION>
+    </SERVICIO>
+    <SERVICIO>
+      <ID>25</ID>
+      <COMPONENETE>RUV</COMPONENETE>
+      <NOMBRE>DECLARACION POR VICTIMA</NOMBRE>
+      <DESCRIPCION>servicio que retorna informacion de Ruv </DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Ruv/Servicios/ServiceDeclaracionxVictimas.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Ruv/Servicios/ServiceDeclaracionxVictimas.svc</URLPRODUCCION>
+    </SERVICIO>
+	    <SERVICIO>
+      <ID>26</ID>
+      <COMPONENETE>AUDITORIA</COMPONENETE>
+      <NOMBRE>INSERTAR LOG ORFEO</NOMBRE>
+      <DESCRIPCION>servicio que inserta registros de auditoria </DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:8084/RadicacionService</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Auditoria/SIRAV.Service.Auditoria.AuditoriaService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Auditoria/SIRAV.Service.Auditoria.AuditoriaService.svc</URLPRODUCCION>
+    </SERVICIO>
+	<SERVICIO>
+      <ID>27</ID>
+      <COMPONENETE>NOTIFICACION</COMPONENETE>
+      <NOMBRE>COMPLEMENTO</NOMBRE>
+      <DESCRIPCION>Servicio que manipula los datos, tablas y registros de los complementos de Notificaciones</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+	  <URLDEV>http://localhost:8084/ComplementoService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Notificacion/ComplementoService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Notificacion/ComplementoService.svc</URLPRODUCCION>
+    </SERVICIO>
+	<SERVICIO>
+      <ID>28</ID>
+      <COMPONENETE>SIPOD</COMPONENETE>
+      <NOMBRE>SIPOD_INFORMACION</NOMBRE>
+      <DESCRIPCION>Servicio que se encarga de obtener informacion directamente de SIPOD para AA</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+	  <URLDEV>http://localhost:65383/InformacionService.svc</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Sipod/InformacionService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Sipod/InformacionService.svc</URLPRODUCCION>
+    </SERVICIO>
+	<SERVICIO>
+      <ID>29</ID>
+      <COMPONENETE>ACTOS ADMINISTRATIVOS</COMPONENETE>
+      <NOMBRE>GENERARDOCUMENTOS</NOMBRE>
+      <DESCRIPCION>Servicio para generar y combinar documentos</DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+	  <URLDEV>http://localhost:11659/GenerarDocumentoService.svc</URLDEV>
+      <URLTEST>http://localhost:11572/GenerarDocumentoService.svc</URLTEST>
+      <URLPRODUCCION>http://localhost:11572/GenerarDocumentoService.svc</URLPRODUCCION> 
+    </SERVICIO>
+	<SERVICIO>
+      <ID>30</ID>
+      <COMPONENETE>ACTOS ADMINISTRATIVOS</COMPONENETE>
+      <NOMBRE>ACTOSADMINISTRATIVOS</NOMBRE>
+      <DESCRIPCION>Servicio de actos administrativos funcionalidades</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+	  <URLDEV>http://localhost:11659/GenerarDocumentoService.svc</URLDEV>
+      <URLTEST>http://localhost:11572/GenerarDocumentoService.svc</URLTEST>
+      <URLPRODUCCION>http://localhost:11572/GenerarDocumentoService.svc</URLPRODUCCION> 
+    </SERVICIO>
+	<SERVICIO>
+      <ID>31</ID>
+      <COMPONENETE>CONSULTA IMAGENES</COMPONENETE>
+      <NOMBRE>CONSULTA_IMAGENES_RUV</NOMBRE>
+      <DESCRIPCION>Servicio para imagenes de RUV</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+	  <URLDEV>http://localhost:11676/Servicios/ConsultaImagenService.svc</URLDEV>
+      <URLTEST>http://localhost:11676/Servicios/ConsultaImagenService.svc</URLTEST>
+      <URLPRODUCCION>http://localhost:11676/Servicios/ConsultaImagenService.svc</URLPRODUCCION> 
+    </SERVICIO>
+	<SERVICIO>
+      <ID>32</ID>
+      <COMPONENETE>CONSULTA IMAGENES</COMPONENETE>
+      <NOMBRE>CONSULTA_IMAGENES_SIPOD</NOMBRE>
+      <DESCRIPCION>Servicio para imagenes de SIPOD</DESCRIPCION>
+      <TIPO>Negocio</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+	  <URLDEV>http://localhost:65383/ConsultaImagenService.svc</URLDEV>
+      <URLTEST>http://localhost:65383/ConsultaImagenService.svc</URLTEST>
+      <URLPRODUCCION>http://localhost:65383/ConsultaImagenService.svc</URLPRODUCCION> 
+    </SERVICIO>
+  </SERVICIOS>
+</INVENTARIO>

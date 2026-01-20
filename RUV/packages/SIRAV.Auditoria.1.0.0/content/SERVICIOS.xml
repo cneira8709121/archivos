@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<INVENTARIO>
+  <SERVICIOS>
+	<SERVICIO>
+      <ID>26</ID>
+      <COMPONENETE>AUDITORIA</COMPONENETE>
+      <NOMBRE>INSERTAR LOG ORFEO</NOMBRE>
+      <DESCRIPCION>servicio que inserta registros de auditoria </DESCRIPCION>
+      <TIPO>Aplicación</TIPO>
+      <MODOIMPLEMENTACIÓN>REST</MODOIMPLEMENTACIÓN>
+      <URLDEV>http://localhost:50099/AuditoriaService</URLDEV>
+      <URLTEST>http://190.60.234.84:8084/Auditoria/SIRAV.Service.Auditoria.AuditoriaService.svc</URLTEST>
+      <URLPRODUCCION>http://172.20.210.44:8084/Auditoria/SIRAV.Service.Auditoria.AuditoriaService.svc</URLPRODUCCION>
+    </SERVICIO>
+  </SERVICIOS>
+</INVENTARIO>

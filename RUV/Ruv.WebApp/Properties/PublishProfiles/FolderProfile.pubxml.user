@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Desarrollos\UARIV\RUV\RUV\Ruv.WebApp\bin\Release\Publish</_PublishTargetUrl>
+    <History>True|2021-05-06T14:33:28.1965968Z;True|2021-05-01T18:35:06.6071616-05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ActosAdmin/Default.aspx">
+      <publishTime>09/18/2020 13:46:57</publishTime>
+    </File>
+    <File Include="ActosAdmin/Editar.aspx">
+      <publishTime>09/18/2020 13:46:57</publishTime>
+    </File>
+    <File Include="ActosAdmin/LiderValoracionJefe.aspx">
+      <publishTime>09/18/2020 13:46:57</publishTime>
+    </File>
+    <File Include="ActosAdmin/Nuevo.aspx">
+      <publishTime>09/18/2020 13:46:57</publishTime>
+    </File>
+    <File Include="ActosAdminService.svc">
+      <publishTime>09/18/2020 13:46:57</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/DPS.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/DPSkin.skin">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Grillas.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Agregar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Asignar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/banner_sup.jpg">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/banner_sup.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Buscar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Calendario.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Cargando.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/CargandoG.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/CargandoGrande.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/CargandoLT.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Cerrar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Deshacer.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Editar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/First.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/GenerarPDF.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/history.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/house.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Last.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/logo.jpg">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/logo.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/logosUnidad.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Next.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/paper.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Previous.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Quitar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/richtexteditor.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/tip-darkgray.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/tip-darkgray_arrows.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/Trabajar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/windows-arrow.gif">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Imagenes/wordIcono.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Login.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/Menu.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="App_Themes/RUVTheme/tip-darkgray.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>05/06/2021 09:33:18</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>05/06/2021 09:33:17</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Criptografia.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/Elmah.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>01/03/2011 14:16:38</publishTime>
+    </File>
+    <File Include="bin/Ionic.Zip.Reduced.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>06/28/2012 11:45:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>06/28/2012 11:45:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Services.Client.dll">
+      <publishTime>06/28/2012 11:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Services.dll">
+      <publishTime>06/28/2012 11:45:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Configuration.dll">
+      <publishTime>04/16/2010 13:42:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Configuration.pdb">
+      <publishTime>04/16/2010 13:42:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.Configuration.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/09/2019 00:56:46</publishTime>
+    </File>
+    <File Include="bin/Oracle.DataAccess.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/Reportes/Asignar/DecNoValo.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Incluido/ReporteValoracionAviso.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Incluido/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Incluido/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Incluido/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/IncluidoAntiguo/Edicto.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/IncluidoAntiguo/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/IncluidoAntiguo/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/IncluidoAntiguo/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Mixto/ReporteValoracionAviso.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Mixto/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Mixto/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/Mixto/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/MixtoAntiguo/Edicto.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/MixtoAntiguo/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/MixtoAntiguo/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/MixtoAntiguo/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluido/ReporteValoracionAviso.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluido/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluido/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluido/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluidoAntiguo/Edicto.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluidoAntiguo/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluidoAntiguo/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/NoIncluidoAntiguo/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/Reportes/Valoracion/ReporteValoracion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.ActosAdmin.dll">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.ActosAdmin.pdb">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Captura.dll">
+      <publishTime>04/30/2021 20:15:09</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Captura.pdb">
+      <publishTime>04/30/2021 20:15:09</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Correcciones.dll">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Correcciones.pdb">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.CriticaN.dll">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.CriticaN.pdb">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Devolucion.dll">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Devolucion.pdb">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.DTO.dll">
+      <publishTime>04/30/2021 20:14:59</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.DTO.pdb">
+      <publishTime>04/30/2021 20:14:59</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Feriados.dll">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Feriados.pdb">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.General.dll">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.General.pdb">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.GestionFormulario.dll">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.GestionFormulario.pdb">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.GestionValorador.dll">
+      <publishTime>04/30/2021 20:15:09</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.GestionValorador.pdb">
+      <publishTime>04/30/2021 20:15:09</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Notificacion.dll">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Notificacion.pdb">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Orfeo.dll">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Orfeo.pdb">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Radicacion.dll">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Radicacion.pdb">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Reporteador.dll">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Reporteador.pdb">
+      <publishTime>04/30/2021 20:15:08</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.ServiciosComunicacion.dll">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.ServiciosComunicacion.pdb">
+      <publishTime>04/30/2021 20:15:10</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Valoracion.dll">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Valoracion.dll.config">
+      <publishTime>12/14/2020 11:27:32</publishTime>
+    </File>
+    <File Include="bin/Ruv.Business.Valoracion.pdb">
+      <publishTime>04/30/2021 20:15:11</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.ActosAdmin.dll">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.ActosAdmin.pdb">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Correcciones.dll">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Correcciones.pdb">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.CriticaN.dll">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.CriticaN.pdb">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Devolucion.dll">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Devolucion.pdb">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.dll">
+      <publishTime>04/30/2021 20:15:01</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.dll.config">
+      <publishTime>12/14/2020 12:26:44</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Feriados.dll">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Feriados.pdb">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.General.dll">
+      <publishTime>04/30/2021 20:15:04</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.General.pdb">
+      <publishTime>04/30/2021 20:15:04</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.GestionFormulario.dll">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.GestionFormulario.pdb">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.GestionGlosa.dll">
+      <publishTime>04/30/2021 20:15:03</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.GestionGlosa.pdb">
+      <publishTime>04/30/2021 20:15:03</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.GestionValorador.dll">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.GestionValorador.pdb">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Notificacion.dll">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Notificacion.pdb">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Orfeo.dll">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Orfeo.dll.config">
+      <publishTime>09/18/2020 13:46:54</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Orfeo.pdb">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.pdb">
+      <publishTime>04/30/2021 20:15:01</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Radicacion.dll">
+      <publishTime>04/30/2021 20:15:04</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Radicacion.dll.config">
+      <publishTime>09/18/2020 13:46:54</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Radicacion.pdb">
+      <publishTime>04/30/2021 20:15:04</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Reconocimiento.dll">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Reconocimiento.pdb">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Reporteador.dll">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Reporteador.pdb">
+      <publishTime>04/30/2021 20:15:06</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.ServiciosComunicacion.dll">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.ServiciosComunicacion.pdb">
+      <publishTime>04/30/2021 20:15:05</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Valoracion.dll">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Data.Valoracion.pdb">
+      <publishTime>04/30/2021 20:15:07</publishTime>
+    </File>
+    <File Include="bin/Ruv.Infrastructure.Crosscutting.Common.dll">
+      <publishTime>04/30/2021 20:14:58</publishTime>
+    </File>
+    <File Include="bin/Ruv.Infrastructure.Crosscutting.Common.pdb">
+      <publishTime>04/30/2021 20:14:58</publishTime>
+    </File>
+    <File Include="bin/Ruv.Infrastructure.Crosscutting.Resources.dll">
+      <publishTime>04/20/2021 17:45:55</publishTime>
+    </File>
+    <File Include="bin/Ruv.Infrastructure.Crosscutting.Resources.pdb">
+      <publishTime>04/20/2021 17:45:55</publishTime>
+    </File>
+    <File Include="bin/Ruv.Infrastructure.Crosscutting.Utilities.dll">
+      <publishTime>04/30/2021 20:15:00</publishTime>
+    </File>
+    <File Include="bin/Ruv.Infrastructure.Crosscutting.Utilities.pdb">
+      <publishTime>04/30/2021 20:15:00</publishTime>
+    </File>
+    <File Include="bin/Ruv.WebApp.dll">
+      <publishTime>05/05/2021 18:53:23</publishTime>
+    </File>
+    <File Include="bin/Ruv.WebApp.pdb">
+      <publishTime>05/05/2021 18:53:23</publishTime>
+    </File>
+    <File Include="bin/Ruv.WPF.Data.dll">
+      <publishTime>04/30/2021 20:15:03</publishTime>
+    </File>
+    <File Include="bin/Ruv.WPF.Data.pdb">
+      <publishTime>04/30/2021 20:15:03</publishTime>
+    </File>
+    <File Include="bin/Ruv.WPF.Server.dll">
+      <publishTime>04/30/2021 20:15:04</publishTime>
+    </File>
+    <File Include="bin/Ruv.WPF.Server.pdb">
+      <publishTime>04/30/2021 20:15:04</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Cliente.ActosAdmin.dll">
+      <publishTime>12/30/2015 15:20:30</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Cliente.Administracion.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Cliente.Auditoria.dll">
+      <publishTime>01/06/2016 15:02:36</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Common.ActosAdmin.dll">
+      <publishTime>12/30/2015 15:20:30</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Common.Administracion.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Common.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/SIRAV.DTO.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Entidades.ActosAdmin.dll">
+      <publishTime>12/30/2015 15:20:30</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Entidades.Administracion.dll">
+      <publishTime>12/30/2015 15:20:14</publishTime>
+    </File>
+    <File Include="bin/SIRAV.Entidades.Auditoria.dll">
+      <publishTime>01/06/2016 15:02:36</publishTime>
+    </File>
+    <File Include="bin/Spring.Core.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>04/20/2020 13:23:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/WintabDN.dll">
+      <publishTime>09/18/2020 13:46:49</publishTime>
+    </File>
+    <File Include="CargaDatosValoracionService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Configuracion/Calendario.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Configuracion/Index.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ConsultarEstadoPersonaService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Consultas/ConsultaPersona.aspx">
+      <publishTime>10/15/2020 15:11:22</publishTime>
+    </File>
+    <File Include="Consultas/DetalleFormulario.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Consultas/WebUserControl/WebUserControlConsulta.ascx">
+      <publishTime>10/15/2020 16:30:15</publishTime>
+    </File>
+    <File Include="ControlDocumentos/CodigosAsignados.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ControlDocumentos/ControlDocumentos.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ControlDocumentosService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Correcciones/AprobarRechazarCorreccion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Correcciones/ConsultaPersona.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Correcciones/SolicitudCorreccion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="CorreccionesService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="CriticaNService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Descargar.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="DevolucionService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Error.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="FeriadosService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="GeneralService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Gestion/Valoracion/DetalleValorador.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Gestion/Valoracion/GestionValoracion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="GestionValoradorService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="HTMLPage.htm">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="iisstart.htm">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Inicio.htm">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/CheckBoxCheck.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/enhancedModals.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/General/ruv.log.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/General/ruv.objects.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/General/ruv.prototype.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/General/ruv.session.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/JGeografia.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/JListaTareasHelper.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/JNotificacion.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/jquery-1.8.2.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/jquery.center.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/jquery.expander.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/jquery.poshytip.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/JUtils.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/MicrosoftAjax.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/namespace.min.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Notificaciones/ruv.notificaciones-centrosatencion.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Notificaciones/ruv.notificaciones-editardireccioncorrespondencia.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Notificaciones/ruv.notificaciones-editarpuntonotificacion.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Notificaciones/ruv.notificaciones-paquetedetalle.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Notificaciones/ruv.notificaciones-pendienteenvio.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/search.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Shared/ext.nicedit.min.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JHechos.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JHistorico.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JPuntosNotificacion.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JValoracionHelper.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JValoracionTierras.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JValorarPersona.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/JValoresAA.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/ruv.valoracion-listavaloraciones.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="JScripts/Valoracion/ruv.valoracion-valoresactos.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="LiderValoracionService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ListaTareas/UCListaTareas.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ListaTareas/UCTarea.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="LoginService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Logout.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Logs/RUV.txt">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Logs/SIPOD_2013_12.txt">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Mensajeria/NotificacionesInternas.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/css/main.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/css/normalize.css">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/favicon.ico">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/fonts/FuturaStd-Book.eot">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/fonts/FuturaStd-Book.otf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/fonts/FuturaStd-Book.svg">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/fonts/FuturaStd-Book.ttf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/fonts/FuturaStd-Book.woff">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/.gitignore">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/color-bar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-fb.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-fl.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-ig.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-sm-key.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-sm-mail.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-sm-tel.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-sm-user.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-sm-world.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-tw.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/icon-yt.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/img/logo-unidad-herramienta.jpg">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/js/main.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/js/plugins.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/js/vendor/jquery-1.12.0.min.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NewStyle/js/vendor/modernizr-2.8.3.min.js">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/ConsultaDatosCentrosAtencion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/ConsultarNotificaciones.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/DetallesDatosCentroAtencion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/EntregaNotificacionesDetalle.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/EntregaNotificacionesDetalleENotificado.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/FueraTerminosNotificacionesDetalle.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/NotificacionDetalle.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/NotificacionDetalleEntregados.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/NotificacionesEntregadas.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/PaqueteDetalle.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/PaquetesNotificacion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/PendientePublicacionEdicto.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Notificaciones/PrepararNotificaciones.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NotificacionInternaService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="NotificacionService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ObjetosRuv.xml">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="OptimizationService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="OrfeoService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/14/2020 18:08:32</publishTime>
+    </File>
+    <File Include="PdfHelperService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>05/06/2021 09:33:02</publishTime>
+    </File>
+    <File Include="RadicacionService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Asignar/DecNoValo.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Incluido/ReporteValoracionAviso.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Incluido/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Incluido/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Incluido/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/IncluidoAntiguo/Edicto.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/IncluidoAntiguo/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/IncluidoAntiguo/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/IncluidoAntiguo/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Mixto/ReporteValoracionAviso.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Mixto/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Mixto/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/Mixto/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/MixtoAntiguo/Edicto.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/MixtoAntiguo/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/MixtoAntiguo/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/MixtoAntiguo/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluido/ReporteValoracionAviso.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluido/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluido/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluido/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluidoAntiguo/Edicto.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluidoAntiguo/ReporteValoracionCitacion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluidoAntiguo/ReporteValoracionNotificacionPersonal.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/NoIncluidoAntiguo/ReporteValoracionResolucion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Reportes/Valoracion/ReporteValoracion.rdlc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ResumenValoracoinService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Service.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="SERVICIOS.xml">
+      <publishTime>09/18/2020 14:06:02</publishTime>
+    </File>
+    <File Include="ServiciosComunicacion/ServicioComunicacion.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="UsuarioService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/Calendar.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/GridCustomPager.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/MenuAcciones.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ModalPopUp.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/Notificacion/ruvEdicionDireccionCorrespondencia.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/Notificacion/ruvEdicionPuntoNotificacion.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/PrincipalMenu.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvArbol.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvCheckBoxList.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvDropDownList.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvFiltros.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvGeografia.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvHerramientasOld.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvListBox.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvModalPopUp.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvTextBox.ascx">
+      <publishTime>10/15/2020 16:13:14</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/ruvTextCalendar.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Controles/WebUserControl1.ascx">
+      <publishTime>10/15/2020 16:18:52</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/FormatoConstanciaAtencion.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/GENERA_DEVOLUCION.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/GENERA_FUD.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/GENERA_FUD_CONNACIONALES.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/GENERA_FUD_CONNACIONALES_V2.1.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/GENERA_FUD_V2.1.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/GENERA_FUD_V2.pdf">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Anular.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Atras.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Buscar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Descargar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Editar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/favicon.ico">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Finalizar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Firmar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Guardar.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Nuevo.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/NuevoDocumento.jpg">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/PersonasAsociadas.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/PuntoNotificacion.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Recurso.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/Templates/Imagenes/Tutela.png">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/XMLs/FormatosViaGubernativa.xml">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Utilidades/XMLs/ValoresDefault.xml">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/App_LocalResources/Default.aspx.resx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Asignacion/AsignarPendientes.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Asignacion/AsignarValoraciones.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Asignacion/ReasignarValoraciones.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/AgregarPersonaValoracion.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/CamposActoAdministrativo.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/HechoVictimizante.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/Herramientas.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/PersonasAsociadasVal.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/PuntosNotificacion.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/Validaciones.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/ValoracionHistoricoPopUp.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Controles/ValorarPersona.ascx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Default.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Nueva.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="Valoracion/Valoracion/Resumen.aspx">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="ValoracionService.svc">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>05/06/2021 09:33:01</publishTime>
+    </File>
+    <File Include="Web.sitemap">
+      <publishTime>09/18/2020 13:46:58</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

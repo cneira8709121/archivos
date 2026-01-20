@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A05_Pregunta13_15"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:VictimaConsultaConverter x:Key="VCC" />
+            <conv:ConsultaDatoConverter x:Key="CDC" />
+            <conv:CantidadTiempoConverter x:Key="CTC" />
+            <conv:Victima05JefeHogarConverter x:Key="V05FHC" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="9*" />
+                <ColumnDefinition Width="9*" />
+
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="9*" />
+                <ColumnDefinition Width="7*" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="cTitulo" />
+                <RowDefinition x:Name="cSubtitulo" />
+                <RowDefinition x:Name="cDetalle" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--LOS BORDES-->
+            <Border Grid.Column="0"
+              Grid.Row="2" />
+            <Border Grid.Column="1"
+              Grid.Row="2" />
+            <Border Grid.Column="2"
+              Grid.Row="2" />
+            <Border Grid.Column="3"
+              Grid.Row="2" />
+            <Border Grid.Column="4"
+              Grid.Row="2" />
+            <Border Grid.Column="5"
+              Grid.Row="2" />
+            <Border Grid.Column="0" Grid.ColumnSpan="3"
+              Grid.Row="5" />
+            <Border Grid.Column="3" Grid.ColumnSpan="3"
+              Grid.Row="5" />
+            <!--PREGUNTA INSCRITO EN FAMILIAS EN ACCION-->
+            <sec:SubTituloEntrada Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Numero="13"
+                            Texto="¿Estaba inscrito en el programa (Familias en Acción)?" />
+            <my:EncabezadoColumna Texto="Si No\nNs/Nr"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            OrientacionTexto="Horizontal" />
+            <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            AlineacionVerticalTexto="Center"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Texto="LUGAR" />
+            <my:EncabezadoColumna Texto="Entidad en\nla cual cobra"
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            OrientacionTexto="Horizontal" />
+            <my:DatoSiNoColumna Valor="{Binding InformacionJefeGrupo.InscritoEnPrograma}"
+                          Grid.Column="0"
+                          Grid.Row="2" />
+            <StackPanel Grid.Column="1"
+                  Grid.Row="2">
+                <my:DatoColumna Texto="{Binding InformacionJefeGrupo.InscritoEnProgramaDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                        BordeVisible="False" />
+                <my:DatoColumna Texto="{Binding InformacionJefeGrupo.InscritoEnProgramaMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                        BordeVisible="False" />
+            </StackPanel>
+            <my:DatoColumna Texto="{Binding InformacionJefeGrupo.InscritoEnProgramaEntidadDondeLabora}"
+                      Grid.Column="2"
+                      Grid.Row="2" />
+            <!--PREGUNTA SALUD-->
+            <sec:SubTituloEntrada x:Name="seSalud"
+                            Grid.Column="3"
+                            Grid.ColumnSpan="3"
+                            Numero="14"
+                            Texto="¿Se encontraba vinculado al sistema de salud?" />
+            <my:EncabezadoColumna Texto="Si No\nNs/Nr"
+                            Grid.Column="3"
+                            Grid.Row="1"
+                            OrientacionTexto="Horizontal" />
+            <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            AlineacionVerticalTexto="Center"
+                            Grid.Column="4"
+                            Grid.Row="1"
+                            Texto="LUGAR" />
+            <my:EncabezadoColumna Texto="Tipo de\nAfiliación"
+                            Grid.Column="5"
+                            Grid.Row="1"
+                            OrientacionTexto="Horizontal" />
+            <my:DatoSiNoColumna Valor="{Binding InformacionJefeGrupo.VinculadoSistemaSalud}"
+                          Grid.Column="3"
+                          Grid.Row="2" />
+            <StackPanel Grid.Column="4"
+                  Grid.Row="2">
+                <my:DatoColumna Texto="{Binding InformacionJefeGrupo.VinculadoSistemaSaludDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                        BordeVisible="False" />
+                <my:DatoColumna Texto="{Binding InformacionJefeGrupo.VinculadoSistemaSaludMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                        BordeVisible="False" />
+            </StackPanel>
+            <my:DatoColumna Texto="{Binding InformacionJefeGrupo.VinculadoSistemaSaludTipoAfiliacion, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                      Grid.Column="5"
+                      Grid.Row="2" />
+            <!--PREGUNTA ESTUDIO HIJOS-->
+            <sec:SubTituloEntrada Grid.Column="0"
+                            Grid.ColumnSpan="6"
+                                  Grid.Row="3"
+                            Numero="15"
+                            Texto="Indique el lugar en el cual desempeñaba sus actividades laborales" />
+            <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            AlineacionVerticalTexto="Center"
+                            Grid.Column="0"
+                                  Grid.ColumnSpan="3"
+                            Grid.Row="4"
+                            Texto="LUGAR" />
+            <my:EncabezadoColumna Texto="Nombre\nempleador"
+                            Grid.Column="3"
+                                  Grid.ColumnSpan="3"
+                            Grid.Row="4"
+                            OrientacionTexto="Horizontal" />
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="3"
+                  Grid.Row="5">
+                <my:DatoColumna Texto="{Binding InformacionJefeGrupo.LugarLaboralDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                        BordeVisible="False" />
+                <my:DatoColumna Texto="{Binding InformacionJefeGrupo.LugarLaboralMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                        BordeVisible="False" />
+            </StackPanel>
+            <my:DatoColumna Texto="{Binding InformacionJefeGrupo.LugarLaboralEmpleador}"
+                      Grid.Column="3"
+                            Grid.ColumnSpan="3"
+                      Grid.Row="5" />
+        </Grid>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.a05t003}"
+                         Margin="0,5"
+                         TextWrapping="Wrap"
+                         HorizontalAlignment="Center" />
+    </StackPanel>
+</UserControl>

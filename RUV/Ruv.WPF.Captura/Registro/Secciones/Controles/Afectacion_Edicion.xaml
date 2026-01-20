@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Secciones.Controles.Afectacion_Edicion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:my1="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             Background="Transparent"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="527">
+  <StackPanel Orientation="Vertical">
+    <sec:SubTituloEntrada Numero=""
+                          Texto="Afectación"
+                          HorizontalAlignment="Stretch"
+                          ColorTexto="Inverso"
+                          Margin="0,0,0,5" />
+    <Grid VerticalAlignment="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"
+                          SharedSizeGroup="grpEdicion01" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <!--===============================-->
+      <TextBlock Grid.Row="0">Afectado</TextBlock>
+      <my:DatoSiNoColumna Valor="{Binding Afectado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                          IncluirNsNr="False"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          Background="White"
+                          HorizontalAlignment="Left" />
+      <!--===============================-->
+      <TextBlock Grid.Row="1">Tipo de afectación</TextBlock>
+      <sec:ListaOpciones x:Name="loTiposAfectaciones"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Background="White"
+                         MaxHeight="100"
+                         VerticalAlignment="Center"
+                         IncluirNumero="True"
+                         TipoOpciones="Multiple"
+                         ValoresUsuario="{Binding TiposDeAfectacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TextoOtro="{Binding Otro, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         MaxCaracteresOtro="250" />
+      <!--===================================-->
+      <my1:BloqueadorControles Valor="{Binding Afectado}">
+        <my1:ControlIndividual Elemento="{Binding ElementName=loTiposAfectaciones}" />
+      </my1:BloqueadorControles>
+    </Grid>
+  </StackPanel>
+
+</UserControl>

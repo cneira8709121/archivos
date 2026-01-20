@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="EntInformacionRadicadoEntradaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARCHIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASUNTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASIFICACION_DOCUMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_GRUPO_TRABAJO" type="xs:int" />
+      <xs:element minOccurs="0" name="DANE_DEPARTAMENTO_RADICADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DANE_MUNICIPIO_RADICADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPENDENCIA_DESTINO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_NOTIFICACION" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FECHA_VENCIMIENTO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_GESTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_JUZGADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MEDIO_RECEPCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcoNormativo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_ARCHIVO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_EXPEDIENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DECLARACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_FOLIOS" type="xs:int" />
+      <xs:element minOccurs="0" name="NUMERO_PROCESO" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NUMERO_RADICADO_ENTRADA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIORIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PUNTO_RADICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USUARIO_RADICADOR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntInformacionRadicadoEntradaRequest" nillable="true" type="tns:EntInformacionRadicadoEntradaRequest" />
+  <xs:complexType name="ArrayOfEntInformacionInteresadoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntInformacionInteresadoRequest" nillable="true" type="tns:EntInformacionInteresadoRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntInformacionInteresadoRequest" nillable="true" type="tns:ArrayOfEntInformacionInteresadoRequest" />
+  <xs:complexType name="EntInformacionInteresadoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATOS_REPRESENTANTE" nillable="true" type="tns:EntInformacionRepresentanteRequest" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GENERO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DOCUMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_SOCIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntInformacionInteresadoRequest" nillable="true" type="tns:EntInformacionInteresadoRequest" />
+  <xs:complexType name="EntInformacionRepresentanteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CELULAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INTR_DATOS_REPRESENTANTE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DOCUMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERS_NATURAL_JURIDICA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMER_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_APELLIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEGUNDO_NOMBRE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntInformacionRepresentanteRequest" nillable="true" type="tns:EntInformacionRepresentanteRequest" />
+  <xs:complexType name="EntMaestroDatosRemitenteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_POSTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIRECCION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DOCUMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntMaestroDatosRemitenteRequest" nillable="true" type="tns:EntMaestroDatosRemitenteRequest" />
+  <xs:complexType name="EntDatosExpediente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_DEPENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SERIE_DOCUMENTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SUBSERIE_DOCUMENTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDEXPSUPERIOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_EXPEDIENTE" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IMAGE" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="NOMBRE_DEPENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_EXPEDIENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_SERIE_DOCUMENTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRE_SUBSERIE_DOCUMENTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_EXPEDIENTE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntDatosExpediente" nillable="true" type="tns:EntDatosExpediente" />
+  <xs:complexType name="EntMensajeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESC_ERROR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESULT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntMensajeResponse" nillable="true" type="tns:EntMensajeResponse" />
+  <xs:complexType name="EntInformacionRadicadoSalidaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CODIGO_DEPENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SEGUIM_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SEGUIM_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_SEGUIM_3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_EXPEDIENTE" type="xs:int" />
+      <xs:element minOccurs="0" name="IMAGEN_DOC_FIRMADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_EXPEDIENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_RADICADO_SALIDA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntInformacionRadicadoSalidaRequest" nillable="true" type="tns:EntInformacionRadicadoSalidaRequest" />
+  <xs:complexType name="EntPeticionAvanzarTareaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoDependencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroCedulaGestor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicadoEntrada" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntPeticionAvanzarTareaRequest" nillable="true" type="tns:EntPeticionAvanzarTareaRequest" />
+  <xs:complexType name="EntRespuestaWSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gestor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="archivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codError" type="xs:int" />
+      <xs:element minOccurs="0" name="descError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idGestor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntRespuestaWSResponse" nillable="true" type="tns:EntRespuestaWSResponse" />
+  <xs:complexType name="EntPeticionAdjuntarDocumentosRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departamento" type="xs:int" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpedientesAsociados" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaResolucion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdProceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSubOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificadorCasoOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificadorExpediente" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreEntidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroResolucion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerNombreRemitente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RedacDocOficio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoNombreRemitente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoEnvio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoRemitente" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codSeguimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codSeguimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codSeguimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="documentos" nillable="true" type="tns:ArrayOfEntDocumentoRequest" />
+      <xs:element minOccurs="0" name="esNotificable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="firmantes" nillable="true" type="tns:ArrayOfEntFirmanteRequest" />
+      <xs:element minOccurs="0" name="numeroRadicado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntPeticionAdjuntarDocumentosRequest" nillable="true" type="tns:EntPeticionAdjuntarDocumentosRequest" />
+  <xs:complexType name="ArrayOfEntDocumentoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntDocumentoRequest" nillable="true" type="tns:EntDocumentoRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntDocumentoRequest" nillable="true" type="tns:ArrayOfEntDocumentoRequest" />
+  <xs:complexType name="EntDocumentoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codTipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contenidoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="esDocAfirma" type="xs:boolean" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntDocumentoRequest" nillable="true" type="tns:EntDocumentoRequest" />
+  <xs:complexType name="ArrayOfEntFirmanteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntFirmanteRequest" nillable="true" type="tns:EntFirmanteRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntFirmanteRequest" nillable="true" type="tns:ArrayOfEntFirmanteRequest" />
+  <xs:complexType name="EntFirmanteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroCedula" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntFirmanteRequest" nillable="true" type="tns:EntFirmanteRequest" />
+</xs:schema>

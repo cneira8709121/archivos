@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ruv.Business.DTO.ServiciosComunicacion.clsGrupoFamiliar">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAgAgAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>ServiciosComunicacion\clsGrupoFamiliar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ruv.Business.DTO.ServiciosComunicacion.clsPersona">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAQAAAgAIAAAAAAAAAAAAAAAgAAAQAA=</HashCode>
+      <FileName>ServiciosComunicacion\clsPersona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ruv.Business.DTO.ServiciosComunicacion.clsSiniestro">
+    <Position X="5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAgAAAAAAAEEAAAAQAgAAAAAAAAAEAAAAgAAAAA=</HashCode>
+      <FileName>ServiciosComunicacion\clsSiniestro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

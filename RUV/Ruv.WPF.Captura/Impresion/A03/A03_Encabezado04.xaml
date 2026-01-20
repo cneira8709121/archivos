@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A03_Encabezado04"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             mc:Ignorable="d"
+             d:DesignHeight="192"
+             d:DesignWidth="1528">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="4*" />
+
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="2*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="4*" />
+
+        <ColumnDefinition Width="4*" />
+
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="4*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="4*" />
+
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <sec:SubTituloEntrada Grid.Column="0"
+                            Grid.ColumnSpan="1"
+                            Numero="9"
+                            Texto="." />
+      <my:EncabezadoColumna Texto="N° Consecutivo\n(Hoja 2 de 4)"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <sec:SubTituloEntrada Grid.Column="1"
+                            Grid.ColumnSpan="1"
+                            Numero="10"
+                            Texto="." />
+      <my:EncabezadoColumna Texto="Víctima de\neste hecho"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <!--AFECTACION-->
+      <sec:SubTituloEntrada Grid.Column="2"
+                            Grid.ColumnSpan="3"
+                            Numero="11"
+                            Texto="AFECTACIÓN" />
+      <my:EncabezadoColumna Texto="Afectado"
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <my:EncabezadoColumna Texto="Tipo de afectación"
+                            Grid.Column="3"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Horizontal" />
+      <my:EncabezadoColumna Texto="En caso de\nhaber marcado\nla casilla 15 (Otro) en\nel campo anterior, registre\nen este campo\nla afectación sufrida"
+                            Grid.Column="4"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Horizontal" />
+      <!--DENUNCIA PREVIA-->
+      <sec:SubTituloEntrada Grid.Column="5"
+                            Grid.ColumnSpan="5"
+                            Numero="12"
+                            Texto="DECLARACIÓN O DENUNCIA PREVIA" />
+      <my:EncabezadoColumna Texto="¿Con respecto a estos\nhechos ya presentó\ndeclaración o denuncia?"
+                            Grid.Column="5"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <my:EncabezadoColumna Texto="Indique la Entidad"
+                            Grid.Column="6"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Horizontal" />
+      <my:EncabezadoColumna Texto="Fecha denuncia\no declaración"
+                            Grid.Column="7"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+      <my:EncabezadoColumna Texto="Lugar denuncia\no declaración"
+                            Grid.Column="8"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+      <my:EncabezadoColumna Texto="Registre en caso\nde conocerlo el código\nde proceso, radicado\no algún dato\nde la denuncia o declaración"
+                            Grid.Column="9"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+      <!--DELITOS SEXUALES-->
+      <sec:SubTituloEntrada Grid.Column="10"
+                            Numero="13"
+                            Texto="DELITO SEXUAL DEL CUAL FUÉ VÍCTIMA" />
+      <my:EncabezadoColumna Texto=" "
+                            Grid.Column="10"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+
+      <!--ATENCIÓN MÉDICA-->
+      <sec:SubTituloEntrada Grid.Column="11"
+                            Grid.ColumnSpan="6"
+                            Numero="14"
+                            Texto="ATENCIÓN MÉDICA" />
+      <my:EncabezadoColumna Texto="¿Recibió\natención médica?"
+                            Grid.Column="11"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <my:EncabezadoColumna Texto="Indique la entidad\nen que recibió\nla atención y\nel departamento y municipio\nen que esta entidad\nestá ubicada"
+                            Grid.Column="12"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+      <my:EncabezadoColumna Texto="¿Solicitó algún\ntipo de apoyo\no ayuda?"
+                            Grid.Column="13"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <my:EncabezadoColumna Texto="¿A qué entidad pidió\napoyo o ayuda?"
+                            Grid.Column="14"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+      <my:EncabezadoColumna Texto="¿Recibió algún\ntipo de apoyo\no ayuda?"
+                            Grid.Column="15"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            OrientacionTexto="Vertical" />
+      <my:EncabezadoColumna Texto="Indique el tipo de\napoyo o ayuda\nrecibidos"
+                            Grid.Column="16"
+                            Grid.Row="1"
+                            Grid.RowSpan="2" />
+    </Grid>
+
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,132 @@
+﻿<Page x:Class="Ruv.WPF.Captura.Registro.Secciones.Radicacion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:Design="529"
+      d:DesignWidth="681"
+      Title="Radicacion"
+      xmlns:my="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+      xmlns:my1="clr-namespace:Ruv.WPF.Captura.Controles"
+      xmlns:utils="clr-namespace:Ruv.WPF.Captura.Utils"
+      xmlns:Converter="clr-namespace:Ruv.WPF.Captura.Converters"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" d:DesignHeight="601">
+    <Page.Resources> 
+        <Converter:VisibilidadConverter x:Key="Modo"></Converter:VisibilidadConverter>
+    </Page.Resources>
+        <!--<Border BorderBrush="Black" BorderThickness="1" Padding="{DynamicResource Thickness-10}">-->
+        <Grid HorizontalAlignment="Center">
+        <DockPanel>
+            <!--CONTENEDOR PARA LOS VALIDATION SUMMARY-->
+            <StackPanel x:Name="spValidadores" DockPanel.Dock="Bottom"></StackPanel>
+            <AdornerDecorator >
+                <!--LOS CONTROLES DE INGRESO DE DATOS.-->
+                <!--<ScrollViewer x:Name="svMain" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="5" Width="674" Height="655">-->
+                    <!--<StackPanel x:Name="spMain">-->
+                <Border BorderBrush="Black" BorderThickness="1" Padding="{DynamicResource Thickness-10}">
+                    <WrapPanel Orientation="Vertical">
+                        <Grid Name="grid1"  >
+                            <!--===============Fecha llegada=================-->
+                            <TextBlock HorizontalAlignment="Left" Margin="138,6,0,0" Name="textBlock1" Text="Fecha de llegada" Height="19" VerticalAlignment="Top" />
+                            <DatePicker Height="23" Text="caca" HorizontalAlignment="Left" Margin="232,6,0,0" Name="datePicker1" VerticalAlignment="Top" Width="120" SelectedDate="{Binding FECHALLEGADA, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" TabIndex="1" />
+                            <!--===============Tipo Radicación=================-->
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="140,35,0,0" Name="textBlockTipoRad" Text="Tipo Radicación" VerticalAlignment="Top" Width="80" />
+                            <ComboBox x:Name="cb01TipoRad" Margin="232,35,0,0" SelectedValuePath="Id" DisplayMemberPath="Nombre" ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=TipoDeRadicacion}" SelectedValue="{Binding ID_TIPORADICACION, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Height="23" HorizontalAlignment="Left" Width="160" TabIndex="2" VerticalAlignment="Top"/>
+                            <!--===============Número formulario=================-->
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="111,62,0,0" Name="textBlock3" Text="Número de Formulario" VerticalAlignment="Top" />
+                            <TextBox Text="{Binding NRO_FORMULARIO, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Height="23" HorizontalAlignment="Left" Margin="232,62,0,0" Name="tbNroFormulario" VerticalAlignment="Top" Width="120" TabIndex="3" CharacterCasing="Upper">
+                                <i:Interaction.Behaviors>
+                                    <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="LetrasNumeros" />
+                                </i:Interaction.Behaviors>
+                            </TextBox>
+                        </Grid>
+                        <Grid Name="grdGeografia" Visibility="{Binding Path=MODOFORMULARIO, Converter={StaticResource Modo}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" >
+                            <my1:Geografia x:Name="geo01" TodosLosPaises="False" ComboPais="{Binding ElementName=cbPaisDeclarante}" ComboDepartamento="{Binding ElementName=cbDeptoDeclarante}" ComboMunicipio="{Binding ElementName=cbMcpioDeclarante}" ComboEntidadMunicipio="{Binding ElementName=cmbEntidad}" PaisId="{Binding ID_PAIS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" DepartamentoId="{Binding ID_DEPARTAMENTO, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" MunicipioId="{Binding ID_MUNICIPIO, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" EntidadMunicipioId="{Binding ID_ENTIDADMUNICIPIO, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Margin="6" />
+                            <!--===============Pais=================-->
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="171,14,0,0" Name="textPais" Text="País Envío" VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="232,14,0,0" Name="cbPaisDeclarante" VerticalAlignment="Top" Width="160" TabIndex="4" />
+                            <!--===============Departamento=================-->
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="121,43,0,0" Name="textBlock4" Text="Departamento Envío" VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="232,43,0,0" Name="cbDeptoDeclarante" VerticalAlignment="Top" Width="160" TabIndex="5" />
+                            <!--=================Municipio===============-->
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="145,72,0,0" Name="textBlock5" Text="Municipio Envío" VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="232,72,0,0" Name="cbMcpioDeclarante" VerticalAlignment="Top" Width="160" TabIndex="6" />
+                            <!--=================EntidadMunicipio===============-->
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="184,101,0,0" Name="textBlock9" Text="Entidad" VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="232,101,0,0" Name="cmbEntidad" VerticalAlignment="Top" Width="160" TabIndex="7" />
+                        </Grid>
+                        <GroupBox Header="Declarante" Name="grbDeclarante"  Visibility="{Binding Path=MODOFORMULARIO, Converter={StaticResource Modo}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" >
+                            <Grid>
+                                <!--==========================================-->
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="16,17,0,0" Name="textBlock08" Text="Primer Nombre" VerticalAlignment="Top" Width="74" />
+                                <TextBox Margin="96,17,0,0" Text="{Binding PrimerNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" CharacterCasing="Upper" Height="23" TabIndex="9" VerticalAlignment="Top" HorizontalAlignment="Left" Width="173">
+                                    <i:Interaction.Behaviors>
+                                        <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                <!--==========================================-->
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="273,17,0,0" Name="textBlock09" Text="Demás Nombres (si aplica)" VerticalAlignment="Top" Width="132" />
+                                <TextBox Margin="411,17,0,0" Text="{Binding SegundoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" CharacterCasing="Upper" Height="23" VerticalAlignment="Top" TabIndex="10" HorizontalAlignment="Left" Width="218">
+                                    <i:Interaction.Behaviors>
+                                        <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                <!--==========================================-->
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="16,46,0,0" Name="textBlock10" Text="Primer Apellido" VerticalAlignment="Top" Width="74" />
+                                <TextBox Margin="96,46,0,0" Text="{Binding PrimerApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" CharacterCasing="Upper" TabIndex="11" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="173">
+                                    <i:Interaction.Behaviors>
+                                        <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                <!--==========================================-->
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="321,46,0,0" Name="textBlock11" Text="Segundo Apellido" VerticalAlignment="Top" />
+                                <TextBox Margin="411,46,0,0" Text="{Binding SegundoApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" CharacterCasing="Upper" TabIndex="12" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="218">
+                                    <i:Interaction.Behaviors>
+                                        <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                <!--==========================================-->
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="8,75,0,0" Name="textBlock12" Text="Tipo Documento" VerticalAlignment="Top" Width="82" />
+                                <ComboBox x:Name="cb01TipoDocDecl" Margin="96,75,0,0" SelectedValuePath="Id" DisplayMemberPath="Nombre" ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=TipoDeDocumentoDeIdentidad}" SelectedValue="{Binding TipoDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Height="23" HorizontalAlignment="Left" Width="173" TabIndex="13" VerticalAlignment="Top" />
+                                <!--==========================================-->
+                                <TextBlock Height="23" HorizontalAlignment="Left" Margin="292,75,0,0" Name="textBlock13" Text="Número de Documento" VerticalAlignment="Top" />
+                                <TextBox x:Name="tbx01NumeroDocumentoIdentidadDecl" Margin="411,75,0,0" Text="{Binding NumeroDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" HorizontalAlignment="Left" Width="218" TabIndex="14" Height="23" VerticalAlignment="Top" />
+                            </Grid>
+                        </GroupBox>
+                        <Grid Name="grdObvervaciones">
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="26,6,0,0" Name="textBlock7" Text="Observaciones" VerticalAlignment="Top" />
+                            <!--=================Observaciones===============-->
+                            <TextBox Height="83" Text="{Binding OBSERVACIONES, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Margin="102,6,0,0" Name="txtObservaciones" VerticalAlignment="Top" MaxLength="2000" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" TabIndex="15" HorizontalAlignment="Left" Width="533" />
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="59,101,0,0" Name="textBlock8" Text="Imagen" VerticalAlignment="Top" />
+                            <!--=================Imagen===============-->
+                            <TextBox Height="23" Text="{Binding RUTAIMAGEN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" HorizontalAlignment="Right" Margin="0,102,87,0" Name="txtRutaImagen" VerticalAlignment="Top" Width="532" MaxLength="255" IsReadOnly="True" />
+                            <Button Content="Seleccionar" Height="23" HorizontalAlignment="Right" Margin="0,101,6,0" Name="btnSeleccionar" VerticalAlignment="Top" Width="75" Click="btnSeleccionar_Click" TabIndex="16" />
+                        </Grid>
+                        <!--<Rectangle Name="rectangle1" Stroke="Black" Height="589" VerticalAlignment="Top" />-->
+                        <Grid Name="grdBoton" >
+                            <Button Content="Registrar Radicación" Click="Radicar_Click" IsDefault="True" HorizontalAlignment="Left" Margin="261,6,0,0" Padding="10,2" VerticalAlignment="Top" TabIndex="17" Height="23">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=HayParametrosMinimosParaRegistrar}" Value="True">
+                                                <Setter Property="Button.IsEnabled" Value="True" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Path=HayParametrosMinimosParaRegistrar}" Value="False">
+                                                <Setter Property="Button.IsEnabled" Value="False" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <TextBlock Height="23" Margin="26,35,0,0" Name="textBlock2" Text="Último Consecutivo generado" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Visibility="Collapsed" />
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="26,64,0,0" Name="tbConsecutivo" Text="" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Foreground="#FFF82929" Width="709" />
+                        </Grid>
+                    </WrapPanel>
+                </Border>
+                <!--</StackPanel>-->
+                <!--</ScrollViewer>-->
+            </AdornerDecorator>
+        </DockPanel>
+        </Grid>
+</Page>

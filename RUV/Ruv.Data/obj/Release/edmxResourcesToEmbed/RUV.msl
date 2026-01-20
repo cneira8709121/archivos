@@ -1,0 +1,1829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RuvModelStoreContainer" CdmEntityContainer="RuvEntities">
+    <EntitySetMapping Name="TBACTO_ADMINISTRATIVO">
+      <EntityTypeMapping TypeName="RuvModel.TBACTO_ADMINISTRATIVO">
+        <MappingFragment StoreEntitySet="TBACTO_ADMINISTRATIVO">
+          <ScalarProperty Name="ID_USUARIOFIRMA" ColumnName="ID_USUARIOFIRMA" />
+          <ScalarProperty Name="ID_USUARIOAPRUEBA" ColumnName="ID_USUARIOAPRUEBA" />
+          <ScalarProperty Name="AREADOCACTOADMIN" ColumnName="AREADOCACTOADMIN" />
+          <ScalarProperty Name="TIPODOCACTOADMIN" ColumnName="TIPODOCACTOADMIN" />
+          <ScalarProperty Name="PARAM_ESTADO" ColumnName="PARAM_ESTADO" />
+          <ScalarProperty Name="FECHA_MODIFICA" ColumnName="FECHA_MODIFICA" />
+          <ScalarProperty Name="ID_USUARIOMOD" ColumnName="ID_USUARIOMOD" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="DIRIGIDO" ColumnName="DIRIGIDO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="NUM_INTERNO" ColumnName="NUM_INTERNO" />
+          <ScalarProperty Name="PARAM_DOCUMENTO" ColumnName="PARAM_DOCUMENTO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBAFECTACION">
+      <EntityTypeMapping TypeName="RuvModel.TBAFECTACION">
+        <MappingFragment StoreEntitySet="TBAFECTACION">
+          <ScalarProperty Name="PARAM_AFECTACION" ColumnName="PARAM_AFECTACION" />
+          <ScalarProperty Name="PARAM_TIPO_HECHO" ColumnName="PARAM_TIPO_HECHO" />
+          <ScalarProperty Name="ID_ANEXO" ColumnName="ID_ANEXO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO1">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO1">
+        <MappingFragment StoreEntitySet="TBANEXO1">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ID_MUNICIPIO_ATENCIONMED" ColumnName="ID_MUNICIPIO_ATENCIONMED" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_ATENCIONMED" ColumnName="ID_DEPARTAMENTO_ATENCIONMED" />
+          <ScalarProperty Name="DETALLE_ATENCION_MEDICA" ColumnName="DETALLE_ATENCION_MEDICA" />
+          <ScalarProperty Name="ATENCION_MEDICA" ColumnName="ATENCION_MEDICA" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO10">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO10">
+        <MappingFragment StoreEntitySet="TBANEXO10">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ENTIDAD_ATENDIO" ColumnName="ENTIDAD_ATENDIO" />
+          <ScalarProperty Name="FECHA_ATENCION_OTRA" ColumnName="FECHA_ATENCION_OTRA" />
+          <ScalarProperty Name="ATENDIDO_OTRA_ENTIDAD" ColumnName="ATENDIDO_OTRA_ENTIDAD" />
+          <ScalarProperty Name="FECHA_ATENCION_ICBF" ColumnName="FECHA_ATENCION_ICBF" />
+          <ScalarProperty Name="ATENDIDO_ICBF" ColumnName="ATENDIDO_ICBF" />
+          <ScalarProperty Name="FECHA_DESVINCULACION" ColumnName="FECHA_DESVINCULACION" />
+          <ScalarProperty Name="GRUPO_ARMADO_PERTENECIO" ColumnName="GRUPO_ARMADO_PERTENECIO" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO11">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO11">
+        <MappingFragment StoreEntitySet="TBANEXO11">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PROTECCION_PORQUE" ColumnName="PROTECCION_PORQUE" />
+          <ScalarProperty Name="PARAM_SOL_PROTECCION" ColumnName="PARAM_SOL_PROTECCION" />
+          <ScalarProperty Name="PARAM_SITUACION_ACT_TIERRA" ColumnName="PARAM_SITUACION_ACT_TIERRA" />
+          <ScalarProperty Name="AUTOR_DESPOJADO" ColumnName="AUTOR_DESPOJADO" />
+          <ScalarProperty Name="PARAM_TIPO_DESPOJADO" ColumnName="PARAM_TIPO_DESPOJADO" />
+          <ScalarProperty Name="PARAM_TIERRA_DESPOJADA" ColumnName="PARAM_TIERRA_DESPOJADA" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO11_CREDITOS">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO11_CREDITOS">
+        <MappingFragment StoreEntitySet="TBANEXO11_CREDITOS">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="MONTO_ADEUDADO" ColumnName="MONTO_ADEUDADO" />
+          <ScalarProperty Name="FECHA_DEUDA" ColumnName="FECHA_DEUDA" />
+          <ScalarProperty Name="NOMBRE_ACREEDOR" ColumnName="NOMBRE_ACREEDOR" />
+          <ScalarProperty Name="PARAM_TIPO_ACREEDOR" ColumnName="PARAM_TIPO_ACREEDOR" />
+          <ScalarProperty Name="ID_ANEXO11" ColumnName="ID_ANEXO11" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO11_INMUEBLES">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO11_INMUEBLES">
+        <MappingFragment StoreEntitySet="TBANEXO11_INMUEBLES">
+          <ScalarProperty Name="PARAM_TIPO_ENTORNO" ColumnName="PARAM_TIPO_ENTORNO" />
+          <ScalarProperty Name="OTRO_BARRIO_VEREDA" ColumnName="OTRO_BARRIO_VEREDA" />
+          <ScalarProperty Name="OTRO_LOCALIDAD_CORREG" ColumnName="OTRO_LOCALIDAD_CORREG" />
+          <ScalarProperty Name="PARAM_BARRIO_VEREDA" ColumnName="PARAM_BARRIO_VEREDA" />
+          <ScalarProperty Name="PARAM_LOCALIDAD_CORREG" ColumnName="PARAM_LOCALIDAD_CORREG" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PARAM_UNIDAD_AREA" ColumnName="PARAM_UNIDAD_AREA" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="NOMBRE_DIRECCION" ColumnName="NOMBRE_DIRECCION" />
+          <ScalarProperty Name="PARAM_TIPO_TENENCIA" ColumnName="PARAM_TIPO_TENENCIA" />
+          <ScalarProperty Name="OTRO_ENTORNO" ColumnName="OTRO_ENTORNO" />
+          <ScalarProperty Name="ID_TIPOPOBLADO" ColumnName="ID_TIPOPOBLADO" />
+          <ScalarProperty Name="ID_ENTRONO" ColumnName="ID_ENTRONO" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="PARAM_TIPO_INMUBLE" ColumnName="PARAM_TIPO_INMUBLE" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_ANEXO11" ColumnName="ID_ANEXO11" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO11_MUEBLES">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO11_MUEBLES">
+        <MappingFragment StoreEntitySet="TBANEXO11_MUEBLES">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="PARAM_TIPO_TENENCIA" ColumnName="PARAM_TIPO_TENENCIA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PARAM_TIPO_MUBLE" ColumnName="PARAM_TIPO_MUBLE" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_ANEXO11" ColumnName="ID_ANEXO11" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO13">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO13">
+        <MappingFragment StoreEntitySet="TBANEXO13">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO13_MENSAJE">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO13_MENSAJE">
+        <MappingFragment StoreEntitySet="TBANEXO13_MENSAJE">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="MENSAJE_OTRO" ColumnName="MENSAJE_OTRO" />
+          <ScalarProperty Name="MENSAJE_FIJO" ColumnName="MENSAJE_FIJO" />
+          <ScalarProperty Name="MENSAJE_CORREOE" ColumnName="MENSAJE_CORREOE" />
+          <ScalarProperty Name="MENSAJE_CELULAR" ColumnName="MENSAJE_CELULAR" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO2">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO2">
+        <MappingFragment StoreEntitySet="TBANEXO2">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="CONTINUA_AMENAZAS" ColumnName="CONTINUA_AMENAZAS" />
+          <ScalarProperty Name="VIGENCIA_PROTECCION" ColumnName="VIGENCIA_PROTECCION" />
+          <ScalarProperty Name="FECHA_PROTECCION" ColumnName="FECHA_PROTECCION" />
+          <ScalarProperty Name="ENTIDAD_PROTECCION" ColumnName="ENTIDAD_PROTECCION" />
+          <ScalarProperty Name="TIPO_PROTECCION" ColumnName="TIPO_PROTECCION" />
+          <ScalarProperty Name="PROTECCION" ColumnName="PROTECCION" />
+          <ScalarProperty Name="SOLICITA_PROTECCION" ColumnName="SOLICITA_PROTECCION" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO3">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO3">
+        <MappingFragment StoreEntitySet="TBANEXO3">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ENTIDAD_ATENCION_MEDICA" ColumnName="ENTIDAD_ATENCION_MEDICA" />
+          <ScalarProperty Name="ID_MUN_ATENCION_MEDICA" ColumnName="ID_MUN_ATENCION_MEDICA" />
+          <ScalarProperty Name="ID_DTO_ATENCION_MEDICA" ColumnName="ID_DTO_ATENCION_MEDICA" />
+          <ScalarProperty Name="ATENCION_MEDICA" ColumnName="ATENCION_MEDICA" />
+          <ScalarProperty Name="DETALLE_AYUDA" ColumnName="DETALLE_AYUDA" />
+          <ScalarProperty Name="AYUDA" ColumnName="AYUDA" />
+          <ScalarProperty Name="DETALLE_SOLICITUD_AYUDA" ColumnName="DETALLE_SOLICITUD_AYUDA" />
+          <ScalarProperty Name="SOLICITUD_AYUDA" ColumnName="SOLICITUD_AYUDA" />
+          <ScalarProperty Name="PARAM_DELITO_SEXUAL" ColumnName="PARAM_DELITO_SEXUAL" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO4">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO4">
+        <MappingFragment StoreEntitySet="TBANEXO4">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ENTIDAD_BUSQUEDA" ColumnName="ENTIDAD_BUSQUEDA" />
+          <ScalarProperty Name="BUSQUEDA_VICTIMA" ColumnName="BUSQUEDA_VICTIMA" />
+          <ScalarProperty Name="ID_MENOR_DESPROTEGIDO" ColumnName="ID_MENOR_DESPROTEGIDO" />
+          <ScalarProperty Name="MENOR_DESPROTEGIDO" ColumnName="MENOR_DESPROTEGIDO" />
+          <ScalarProperty Name="ACTIVIDAD_EN_DESAPARICION" ColumnName="ACTIVIDAD_EN_DESAPARICION" />
+          <ScalarProperty Name="PARAM_EVENTO_DESPUES_HECHO" ColumnName="PARAM_EVENTO_DESPUES_HECHO" />
+          <ScalarProperty Name="PARAM_EVENTO_ANTES_HECHO" ColumnName="PARAM_EVENTO_ANTES_HECHO" />
+          <ScalarProperty Name="DESAPARECIDA" ColumnName="DESAPARECIDA" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO5">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO5">
+        <MappingFragment StoreEntitySet="TBANEXO5">
+          <ScalarProperty Name="ID_PAIS_REUBICACION" ColumnName="ID_PAIS_REUBICACION" />
+          <ScalarProperty Name="ID_PAIS_ARRIBO" ColumnName="ID_PAIS_ARRIBO" />
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_CAUSA_DESPLAZAMIENTO" ColumnName="PARAM_CAUSA_DESPLAZAMIENTO" />
+          <ScalarProperty Name="PARAM_TIPO_ENTORNO_REUB" ColumnName="PARAM_TIPO_ENTORNO_REUB" />
+          <ScalarProperty Name="OTRO_BARRIO_VEREDA_REUB" ColumnName="OTRO_BARRIO_VEREDA_REUB" />
+          <ScalarProperty Name="OTRO_LOCALIDAD_CORREG_REUB" ColumnName="OTRO_LOCALIDAD_CORREG_REUB" />
+          <ScalarProperty Name="PARAM_BARRIO_VEREDA_REUB" ColumnName="PARAM_BARRIO_VEREDA_REUB" />
+          <ScalarProperty Name="PARAM_LOCALIDAD_CORREG_REUB" ColumnName="PARAM_LOCALIDAD_CORREG_REUB" />
+          <ScalarProperty Name="PARAM_TIPO_ENTORNO_ARRI" ColumnName="PARAM_TIPO_ENTORNO_ARRI" />
+          <ScalarProperty Name="OTRO_BARRIO_VEREDA_ARRI" ColumnName="OTRO_BARRIO_VEREDA_ARRI" />
+          <ScalarProperty Name="OTRO_LOCALIDAD_CORREG_ARRI" ColumnName="OTRO_LOCALIDAD_CORREG_ARRI" />
+          <ScalarProperty Name="PARAM_BARRIO_VEREDA_ARRI" ColumnName="PARAM_BARRIO_VEREDA_ARRI" />
+          <ScalarProperty Name="PARAM_LOCALIDAD_CORREG_ARRI" ColumnName="PARAM_LOCALIDAD_CORREG_ARRI" />
+          <ScalarProperty Name="DESPLAZAMIENTO_OTRO" ColumnName="DESPLAZAMIENTO_OTRO" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="OTRO_ENTORNO_REUBICACION" ColumnName="OTRO_ENTORNO_REUBICACION" />
+          <ScalarProperty Name="ID_ENTORNO_REUBICACION" ColumnName="ID_ENTORNO_REUBICACION" />
+          <ScalarProperty Name="ID_TIPOPOBLACION_REUBICACION" ColumnName="ID_TIPOPOBLACION_REUBICACION" />
+          <ScalarProperty Name="ID_MUNICIPIO_REUBICACION" ColumnName="ID_MUNICIPIO_REUBICACION" />
+          <ScalarProperty Name="ID_DPTO_REUBICACION" ColumnName="ID_DPTO_REUBICACION" />
+          <ScalarProperty Name="PARAM_DESEOHOGAR" ColumnName="PARAM_DESEOHOGAR" />
+          <ScalarProperty Name="OTRO_ENTORNO_ARRIBO" ColumnName="OTRO_ENTORNO_ARRIBO" />
+          <ScalarProperty Name="ID_ENTORNO_ARRIBO" ColumnName="ID_ENTORNO_ARRIBO" />
+          <ScalarProperty Name="ID_TIPOPOBLACION_ARRIBO" ColumnName="ID_TIPOPOBLACION_ARRIBO" />
+          <ScalarProperty Name="ID_MUNICIPIO_ARRIBO" ColumnName="ID_MUNICIPIO_ARRIBO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_ARRIBO" ColumnName="ID_DEPARTAMENTO_ARRIBO" />
+          <ScalarProperty Name="FECHA_ARRIBO" ColumnName="FECHA_ARRIBO" />
+          <ScalarProperty Name="TIEMPO_RESIDENCIA_DIAS" ColumnName="TIEMPO_RESIDENCIA_DIAS" />
+          <ScalarProperty Name="TIEMPO_RESIDENCIA_MESES" ColumnName="TIEMPO_RESIDENCIA_MESES" />
+          <ScalarProperty Name="TIEMPO_RESIDENCIA_ANOS" ColumnName="TIEMPO_RESIDENCIA_ANOS" />
+          <ScalarProperty Name="PARAM_TIPO_DESPLAZAMIENTO" ColumnName="PARAM_TIPO_DESPLAZAMIENTO" />
+          <ScalarProperty Name="OTRA_ENTIDAD_DENUNCIAPREV" ColumnName="OTRA_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO5_DESPLAZADOS">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO5_DESPLAZADOS">
+        <MappingFragment StoreEntitySet="TBANEXO5_DESPLAZADOS">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="JEFE_HOGAR" ColumnName="JEFE_HOGAR" />
+          <ScalarProperty Name="SE_DESPLAZO" ColumnName="SE_DESPLAZO" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_ANEXO5" ColumnName="ID_ANEXO5" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO6">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO6">
+        <MappingFragment StoreEntitySet="TBANEXO6">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="NUM_PERSONAS_MUERTAS" ColumnName="NUM_PERSONAS_MUERTAS" />
+          <ScalarProperty Name="PARAM_HUERFANO_DE" ColumnName="PARAM_HUERFANO_DE" />
+          <ScalarProperty Name="ID_HUERFANO" ColumnName="ID_HUERFANO" />
+          <ScalarProperty Name="QUEDO_ALGUN_HUERFANO" ColumnName="QUEDO_ALGUN_HUERFANO" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="FALLECIDA" ColumnName="FALLECIDA" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO7">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO7">
+        <MappingFragment StoreEntitySet="TBANEXO7">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ENTIDAD_ATENCION_MEDICA" ColumnName="ENTIDAD_ATENCION_MEDICA" />
+          <ScalarProperty Name="ID_MUN_ATENCION_MEDICA" ColumnName="ID_MUN_ATENCION_MEDICA" />
+          <ScalarProperty Name="ID_DTO_ATENCION_MEDICA" ColumnName="ID_DTO_ATENCION_MEDICA" />
+          <ScalarProperty Name="ATENCION_MEDICA" ColumnName="ATENCION_MEDICA" />
+          <ScalarProperty Name="PARAM_HUERFANO_DE" ColumnName="PARAM_HUERFANO_DE" />
+          <ScalarProperty Name="ID_HUERFANO" ColumnName="ID_HUERFANO" />
+          <ScalarProperty Name="QUEDO_ALGUN_HUERFANO" ColumnName="QUEDO_ALGUN_HUERFANO" />
+          <ScalarProperty Name="PARAM_ACTIVIDAD_MOMENTO_HECHO" ColumnName="PARAM_ACTIVIDAD_MOMENTO_HECHO" />
+          <ScalarProperty Name="PARAM_TIPO_ACCIDENTE" ColumnName="PARAM_TIPO_ACCIDENTE" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="PARAM_ESTADOVICTIMA" ColumnName="PARAM_ESTADOVICTIMA" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO7_LUGARACCIDENTE">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO7_LUGARACCIDENTE">
+        <MappingFragment StoreEntitySet="TBANEXO7_LUGARACCIDENTE">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO8">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO8">
+        <MappingFragment StoreEntitySet="TBANEXO8">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="FECHA_LIBERACION" ColumnName="FECHA_LIBERACION" />
+          <ScalarProperty Name="PARAM_LIBERACION_VICTIMA" ColumnName="PARAM_LIBERACION_VICTIMA" />
+          <ScalarProperty Name="PARAM_SITUACIONACTUALVICTIMA" ColumnName="PARAM_SITUACIONACTUALVICTIMA" />
+          <ScalarProperty Name="QUE_CONTRAPRESTACION" ColumnName="QUE_CONTRAPRESTACION" />
+          <ScalarProperty Name="CONTRAPRESTACION" ColumnName="CONTRAPRESTACION" />
+          <ScalarProperty Name="OTRA_FINALIDAD_SECUESTRO" ColumnName="OTRA_FINALIDAD_SECUESTRO" />
+          <ScalarProperty Name="PARAM_FINALIDAD_SECUESTRO" ColumnName="PARAM_FINALIDAD_SECUESTRO" />
+          <ScalarProperty Name="PARAM_TIPO_SECUESTRO" ColumnName="PARAM_TIPO_SECUESTRO" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="SECUESTRADO" ColumnName="SECUESTRADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBANEXO9">
+      <EntityTypeMapping TypeName="RuvModel.TBANEXO9">
+        <MappingFragment StoreEntitySet="TBANEXO9">
+          <ScalarProperty Name="ID_PAIS_DENUNCIAPREV" ColumnName="ID_PAIS_DENUNCIAPREV" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ENTIDAD_ATENCION_MEDICA" ColumnName="ENTIDAD_ATENCION_MEDICA" />
+          <ScalarProperty Name="ID_MUN_ATENCION_MEDICA" ColumnName="ID_MUN_ATENCION_MEDICA" />
+          <ScalarProperty Name="ID_DTO_ATENCION_MEDICA" ColumnName="ID_DTO_ATENCION_MEDICA" />
+          <ScalarProperty Name="TIPO_AYUDA_RECIBIDA" ColumnName="TIPO_AYUDA_RECIBIDA" />
+          <ScalarProperty Name="RECIBIO_AYUDA" ColumnName="RECIBIO_AYUDA" />
+          <ScalarProperty Name="ENTIDAD_SOLICITO_AYUDA" ColumnName="ENTIDAD_SOLICITO_AYUDA" />
+          <ScalarProperty Name="SOLICITO_AYUDA" ColumnName="SOLICITO_AYUDA" />
+          <ScalarProperty Name="RECIBIO_ATENCION_MEDICA" ColumnName="RECIBIO_ATENCION_MEDICA" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="OTRA_AFECTACION" ColumnName="OTRA_AFECTACION" />
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBAREADOCUMENTO">
+      <EntityTypeMapping TypeName="RuvModel.TBAREADOCUMENTO">
+        <MappingFragment StoreEntitySet="TBAREADOCUMENTO">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBAUTORHV">
+      <EntityTypeMapping TypeName="RuvModel.TBAUTORHV">
+        <MappingFragment StoreEntitySet="TBAUTORHV">
+          <ScalarProperty Name="FECHA_DESMOVILIZACION" ColumnName="FECHA_DESMOVILIZACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBBIEN_AFECTADO_A1">
+      <EntityTypeMapping TypeName="RuvModel.TBBIEN_AFECTADO_A1">
+        <MappingFragment StoreEntitySet="TBBIEN_AFECTADO_A1">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PARAM_TIPOPERTENENCIA" ColumnName="PARAM_TIPOPERTENENCIA" />
+          <ScalarProperty Name="INMUEBLE" ColumnName="INMUEBLE" />
+          <ScalarProperty Name="ID_A1" ColumnName="ID_A1" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCAUSALES">
+      <EntityTypeMapping TypeName="RuvModel.TBCAUSALES">
+        <MappingFragment StoreEntitySet="TBCAUSALES">
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="PARTEEMOTIVA" ColumnName="PARTEEMOTIVA" />
+          <ScalarProperty Name="NOMBRECAUSAL" ColumnName="NOMBRECAUSAL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCODIGOORFEO">
+      <EntityTypeMapping TypeName="RuvModel.TBCODIGOORFEO">
+        <MappingFragment StoreEntitySet="TBCODIGOORFEO">
+          <ScalarProperty Name="NIDVALORACION" ColumnName="NIDVALORACION" />
+          <ScalarProperty Name="ID_USUARIOSOLICITANTE" ColumnName="ID_USUARIOSOLICITANTE" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCONTROLESTADO">
+      <EntityTypeMapping TypeName="RuvModel.TBCONTROLESTADO">
+        <MappingFragment StoreEntitySet="TBCONTROLESTADO">
+          <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="FECHAREGISTRO" ColumnName="FECHAREGISTRO" />
+          <ScalarProperty Name="PARAM_ESTADO" ColumnName="PARAM_ESTADO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCORRECCION">
+      <EntityTypeMapping TypeName="RuvModel.TBCORRECCION">
+        <MappingFragment StoreEntitySet="TBCORRECCION">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="FECHASOLICITUD" ColumnName="FECHASOLICITUD" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_USUARIOSOLICITUD" ColumnName="ID_USUARIOSOLICITUD" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCORRECCIONCAMPOS">
+      <EntityTypeMapping TypeName="RuvModel.TBCORRECCIONCAMPOS">
+        <MappingFragment StoreEntitySet="TBCORRECCIONCAMPOS">
+          <ScalarProperty Name="VALORNUEVO" ColumnName="VALORNUEVO" />
+          <ScalarProperty Name="VALORANTERIOR" ColumnName="VALORANTERIOR" />
+          <ScalarProperty Name="CAMPO" ColumnName="CAMPO" />
+          <ScalarProperty Name="ID_CORRECCION" ColumnName="ID_CORRECCION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCRITICAN">
+      <EntityTypeMapping TypeName="RuvModel.TBCRITICAN">
+        <MappingFragment StoreEntitySet="TBCRITICAN">
+          <ScalarProperty Name="ID_CAUSAL" ColumnName="ID_CAUSAL" />
+          <ScalarProperty Name="NOMBREPREGUNTA" ColumnName="NOMBREPREGUNTA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDECLARACION_ENCARGADO">
+      <EntityTypeMapping TypeName="RuvModel.TBDECLARACION_ENCARGADO">
+        <MappingFragment StoreEntitySet="TBDECLARACION_ENCARGADO">
+          <ScalarProperty Name="ENTIDADCOMPETENTE" ColumnName="ENTIDADCOMPETENTE" />
+          <ScalarProperty Name="IDPARAMTIPOENCARGADO" ColumnName="IDPARAMTIPOENCARGADO" />
+          <ScalarProperty Name="IDENCARGADO" ColumnName="IDENCARGADO" />
+          <ScalarProperty Name="IDDECLARACION" ColumnName="IDDECLARACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDECLARACION_HISTORICO">
+      <EntityTypeMapping TypeName="RuvModel.TBDECLARACION_HISTORICO">
+        <MappingFragment StoreEntitySet="TBDECLARACION_HISTORICO">
+          <ScalarProperty Name="ID_USUARIO_RESPONSABLE" ColumnName="ID_USUARIO_RESPONSABLE" />
+          <ScalarProperty Name="FECHA_ASIGNACION" ColumnName="FECHA_ASIGNACION" />
+          <ScalarProperty Name="PARAM_ESTADO" ColumnName="PARAM_ESTADO" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDECLARACIONES">
+      <EntityTypeMapping TypeName="RuvModel.TBDECLARACIONES">
+        <MappingFragment StoreEntitySet="TBDECLARACIONES">
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIODECLARACION" ColumnName="ID_ENTIDADMUNICIPIODECLARACION" />
+          <ScalarProperty Name="ID_USUARIO_ACTUAL" ColumnName="ID_USUARIO_ACTUAL" />
+          <ScalarProperty Name="ID_PAISDECLARACION" ColumnName="ID_PAISDECLARACION" />
+          <ScalarProperty Name="IDENTIFICACIONFUNCIONARIO" ColumnName="IDENTIFICACIONFUNCIONARIO" />
+          <ScalarProperty Name="OTROHECHO" ColumnName="OTROHECHO" />
+          <ScalarProperty Name="NUMEROFORMULARIO" ColumnName="NUMEROFORMULARIO" />
+          <ScalarProperty Name="ID_ENCARGADO" ColumnName="ID_ENCARGADO" />
+          <ScalarProperty Name="SABE_FIRMAR" ColumnName="SABE_FIRMAR" />
+          <ScalarProperty Name="CUANTOS_ANEXOS" ColumnName="CUANTOS_ANEXOS" />
+          <ScalarProperty Name="OTRO" ColumnName="OTRO" />
+          <ScalarProperty Name="MENSAJE_FIJO" ColumnName="MENSAJE_FIJO" />
+          <ScalarProperty Name="MENSAJE_CORREOE" ColumnName="MENSAJE_CORREOE" />
+          <ScalarProperty Name="MENSAJE_CELULAR" ColumnName="MENSAJE_CELULAR" />
+          <ScalarProperty Name="ID_DECLARACION_PADRE" ColumnName="ID_DECLARACION_PADRE" />
+          <ScalarProperty Name="VECES_HOGAR_NO_INCLUIDO" ColumnName="VECES_HOGAR_NO_INCLUIDO" />
+          <ScalarProperty Name="FECHA_PRIMERA_INCLUSION" ColumnName="FECHA_PRIMERA_INCLUSION" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="TELEFONOGERESS" ColumnName="TELEFONOGERESS" />
+          <ScalarProperty Name="QUECORRECCIONES" ColumnName="QUECORRECCIONES" />
+          <ScalarProperty Name="CORREGIRDECLARACION" ColumnName="CORREGIRDECLARACION" />
+          <ScalarProperty Name="PARAM_TIPOREPRESENTANTE" ColumnName="PARAM_TIPOREPRESENTANTE" />
+          <ScalarProperty Name="FECHAREGISTRO" ColumnName="FECHAREGISTRO" />
+          <ScalarProperty Name="FECHAFINALIZACION" ColumnName="FECHAFINALIZACION" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="PUNTAJE_HOGAR" ColumnName="PUNTAJE_HOGAR" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_DETALLERADICACION" ColumnName="ID_DETALLERADICACION" />
+          <ScalarProperty Name="CAMPOPRUEBA" ColumnName="CAMPOPRUEBA" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="FUNCIONARIO" ColumnName="FUNCIONARIO" />
+          <ScalarProperty Name="PARAM_ESTADO" ColumnName="PARAM_ESTADO" />
+          <ScalarProperty Name="CODIGOANTIGUO" ColumnName="CODIGOANTIGUO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="TIENEENMENDADURAS" ColumnName="TIENEENMENDADURAS" />
+          <ScalarProperty Name="ORIENTACIONENMENDADURAS" ColumnName="ORIENTACIONENMENDADURAS" />
+          <ScalarProperty Name="CUANTOSFOLIOS" ColumnName="CUANTOSFOLIOS" />
+          <ScalarProperty Name="DOCUMENTOSADICIONALES" ColumnName="DOCUMENTOSADICIONALES" />
+          <ScalarProperty Name="LEYODECLARACION" ColumnName="LEYODECLARACION" />
+          <ScalarProperty Name="REALIZOJURAMENTO" ColumnName="REALIZOJURAMENTO" />
+          <ScalarProperty Name="FECHATERMINACION" ColumnName="FECHATERMINACION" />
+          <ScalarProperty Name="PARAM_ENTORNODESEADO" ColumnName="PARAM_ENTORNODESEADO" />
+          <ScalarProperty Name="ID_DEPARTAMENTODESEADO" ColumnName="ID_DEPARTAMENTODESEADO" />
+          <ScalarProperty Name="ID_MUNICIPIODESEADO" ColumnName="ID_MUNICIPIODESEADO" />
+          <ScalarProperty Name="PARAM_DESEOHOGAR" ColumnName="PARAM_DESEOHOGAR" />
+          <ScalarProperty Name="RAZONSITIO" ColumnName="RAZONSITIO" />
+          <ScalarProperty Name="FECHADECLARACIONANTERIOR" ColumnName="FECHADECLARACIONANTERIOR" />
+          <ScalarProperty Name="PARAM_ENTIDADATENDIO" ColumnName="PARAM_ENTIDADATENDIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTOANTERIOR" ColumnName="ID_DEPARTAMENTOANTERIOR" />
+          <ScalarProperty Name="ID_MUNICIPIOANTERIOR" ColumnName="ID_MUNICIPIOANTERIOR" />
+          <ScalarProperty Name="PARAM_DECLAROANTERIORMENTE" ColumnName="PARAM_DECLAROANTERIORMENTE" />
+          <ScalarProperty Name="FECHADESPLAZ" ColumnName="FECHADESPLAZ" />
+          <ScalarProperty Name="MESESRESIDENCIA" ColumnName="MESESRESIDENCIA" />
+          <ScalarProperty Name="ANHOSRESIDENCIA" ColumnName="ANHOSRESIDENCIA" />
+          <ScalarProperty Name="CUALPOBLADODESPLAZ" ColumnName="CUALPOBLADODESPLAZ" />
+          <ScalarProperty Name="ID_POBLADODESPLAZ" ColumnName="ID_POBLADODESPLAZ" />
+          <ScalarProperty Name="ID_MUNICIPIODESPLAZ" ColumnName="ID_MUNICIPIODESPLAZ" />
+          <ScalarProperty Name="ID_DEPARTAMENTODESPLAZ" ColumnName="ID_DEPARTAMENTODESPLAZ" />
+          <ScalarProperty Name="PARAM_ENTORNODESPLAZ" ColumnName="PARAM_ENTORNODESPLAZ" />
+          <ScalarProperty Name="PARAM_TIPOENTORNODESPLAZ" ColumnName="PARAM_TIPOENTORNODESPLAZ" />
+          <ScalarProperty Name="TELEFONOACTUAL" ColumnName="TELEFONOACTUAL" />
+          <ScalarProperty Name="DIRECCIONCORRESPONDENCIA" ColumnName="DIRECCIONCORRESPONDENCIA" />
+          <ScalarProperty Name="FECHAARRIBO" ColumnName="FECHAARRIBO" />
+          <ScalarProperty Name="CUALPOBLADOACTUAL" ColumnName="CUALPOBLADOACTUAL" />
+          <ScalarProperty Name="ID_POBLADOACTUAL" ColumnName="ID_POBLADOACTUAL" />
+          <ScalarProperty Name="PARAM_TIPOENTORNOACTUAL" ColumnName="PARAM_TIPOENTORNOACTUAL" />
+          <ScalarProperty Name="PARAM_ENTORNOACTUAL" ColumnName="PARAM_ENTORNOACTUAL" />
+          <ScalarProperty Name="ID_DEPARTAMENTOACTUAL" ColumnName="ID_DEPARTAMENTOACTUAL" />
+          <ScalarProperty Name="ID_MUNICIPIOACTUAL" ColumnName="ID_MUNICIPIOACTUAL" />
+          <ScalarProperty Name="FECHADECLARACION" ColumnName="FECHADECLARACION" />
+          <ScalarProperty Name="PARAM_ENTIDADATIENDE" ColumnName="PARAM_ENTIDADATIENDE" />
+          <ScalarProperty Name="ID_DEPARTAMENTODECLARACION" ColumnName="ID_DEPARTAMENTODECLARACION" />
+          <ScalarProperty Name="ID_MUNICIPIODECLARACION" ColumnName="ID_MUNICIPIODECLARACION" />
+          <ScalarProperty Name="PARAM_TIPODESPLAZAMIENTO" ColumnName="PARAM_TIPODESPLAZAMIENTO" />
+          <ScalarProperty Name="EXPLICACIONALCANCE" ColumnName="EXPLICACIONALCANCE" />
+          <ScalarProperty Name="ENTREVISTAPREVIA" ColumnName="ENTREVISTAPREVIA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDELITO_SEXUAL_A3">
+      <EntityTypeMapping TypeName="RuvModel.TBDELITO_SEXUAL_A3">
+        <MappingFragment StoreEntitySet="TBDELITO_SEXUAL_A3">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PARAM_DELITOSEXUAL" ColumnName="PARAM_DELITOSEXUAL" />
+          <ScalarProperty Name="ID_A3" ColumnName="ID_A3" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDETALLERADICACION">
+      <EntityTypeMapping TypeName="RuvModel.TBDETALLERADICACION">
+        <MappingFragment StoreEntitySet="TBDETALLERADICACION">
+          <ScalarProperty Name="VIA_FECHANOTIFICACIONRES" ColumnName="VIA_FECHANOTIFICACIONRES" />
+          <ScalarProperty Name="ID_DEPTOCORRES" ColumnName="ID_DEPTOCORRES" />
+          <ScalarProperty Name="ID_MUNICIPIOCORRES" ColumnName="ID_MUNICIPIOCORRES" />
+          <ScalarProperty Name="VIA_IMAGENCITACIONRUTA" ColumnName="VIA_IMAGENCITACIONRUTA" />
+          <ScalarProperty Name="VIA_IMAGENCITACION" ColumnName="VIA_IMAGENCITACION" />
+          <ScalarProperty Name="VIA_IMAGENRESOLUCIONRUTA" ColumnName="VIA_IMAGENRESOLUCIONRUTA" />
+          <ScalarProperty Name="VIA_IMAGENRESOLUCION" ColumnName="VIA_IMAGENRESOLUCION" />
+          <ScalarProperty Name="VIA_IMAGENNOTIFICACIONRUTA" ColumnName="VIA_IMAGENNOTIFICACIONRUTA" />
+          <ScalarProperty Name="VIA_IMAGENNOTIFICACION" ColumnName="VIA_IMAGENNOTIFICACION" />
+          <ScalarProperty Name="VIA_FECHAUA" ColumnName="VIA_FECHAUA" />
+          <ScalarProperty Name="VIA_UAID" ColumnName="VIA_UAID" />
+          <ScalarProperty Name="VIA_DIRNOTIFICACION" ColumnName="VIA_DIRNOTIFICACION" />
+          <ScalarProperty Name="VIA_TELNOTIFICACION" ColumnName="VIA_TELNOTIFICACION" />
+          <ScalarProperty Name="DEC_IMAGENSOPORTERUTA" ColumnName="DEC_IMAGENSOPORTERUTA" />
+          <ScalarProperty Name="DEC_IMAGENSOPORTE" ColumnName="DEC_IMAGENSOPORTE" />
+          <ScalarProperty Name="PARAM_MOTIVOURGENCIA" ColumnName="PARAM_MOTIVOURGENCIA" />
+          <ScalarProperty Name="DEC_VALORAURGENTE" ColumnName="DEC_VALORAURGENTE" />
+          <ScalarProperty Name="DEC_MASIVO" ColumnName="DEC_MASIVO" />
+          <ScalarProperty Name="DEC_OBSERVACIONES" ColumnName="DEC_OBSERVACIONES" />
+          <ScalarProperty Name="DEC_TIEMPORESANIOS" ColumnName="DEC_TIEMPORESANIOS" />
+          <ScalarProperty Name="DEC_TIEMPORESMES" ColumnName="DEC_TIEMPORESMES" />
+          <ScalarProperty Name="DEC_TIEMPORESDIAS" ColumnName="DEC_TIEMPORESDIAS" />
+          <ScalarProperty Name="DEC_BENEFICIARIOS" ColumnName="DEC_BENEFICIARIOS" />
+          <ScalarProperty Name="DEC_FECHAENVOUTSOUR" ColumnName="DEC_FECHAENVOUTSOUR" />
+          <ScalarProperty Name="DEC_VEREDADESPLAZ" ColumnName="DEC_VEREDADESPLAZ" />
+          <ScalarProperty Name="ID_DEPTODESPLAZ" ColumnName="ID_DEPTODESPLAZ" />
+          <ScalarProperty Name="ID_MUNICIPIODESPLAZ" ColumnName="ID_MUNICIPIODESPLAZ" />
+          <ScalarProperty Name="DEC_FECHDESPLAZA" ColumnName="DEC_FECHDESPLAZA" />
+          <ScalarProperty Name="DEC_COMUNRO" ColumnName="DEC_COMUNRO" />
+          <ScalarProperty Name="ID_PERSONA_RELACIONADA" ColumnName="ID_PERSONA_RELACIONADA" />
+          <ScalarProperty Name="ID_PROCESO_RELACIONADO" ColumnName="ID_PROCESO_RELACIONADO" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_USUARIO_ASIGNADO" ColumnName="ID_USUARIO_ASIGNADO" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NUMERORESOLUCION" ColumnName="NUMERORESOLUCION" />
+          <ScalarProperty Name="PARAM_RECURSOINTERPUESTO" ColumnName="PARAM_RECURSOINTERPUESTO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="FUNCIONARIO" ColumnName="FUNCIONARIO" />
+          <ScalarProperty Name="NUMERODOCUMENTO" ColumnName="NUMERODOCUMENTO" />
+          <ScalarProperty Name="PARAM_TIPOIDENTIFICACION" ColumnName="PARAM_TIPOIDENTIFICACION" />
+          <ScalarProperty Name="SEGUNDONOMBRE" ColumnName="SEGUNDONOMBRE" />
+          <ScalarProperty Name="PRIMERNOMBRE" ColumnName="PRIMERNOMBRE" />
+          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
+          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
+          <ScalarProperty Name="NUMEROFOLIOS" ColumnName="NUMEROFOLIOS" />
+          <ScalarProperty Name="PARAM_TIPODOCUMENTO" ColumnName="PARAM_TIPODOCUMENTO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_RADICACION" ColumnName="ID_RADICACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDEVOLUCION">
+      <EntityTypeMapping TypeName="RuvModel.TBDEVOLUCION">
+        <MappingFragment StoreEntitySet="TBDEVOLUCION">
+          <ScalarProperty Name="ID_USUARIOSOLICITANTE" ColumnName="ID_USUARIOSOLICITANTE" />
+          <ScalarProperty Name="IDACTOADMINISTRATIVO" ColumnName="IDACTOADMINISTRATIVO" />
+          <ScalarProperty Name="NROGUIA" ColumnName="NROGUIA" />
+          <ScalarProperty Name="PARTEEMOTIVAMOD" ColumnName="PARTEEMOTIVAMOD" />
+          <ScalarProperty Name="OBSERVACOINDEVO" ColumnName="OBSERVACOINDEVO" />
+          <ScalarProperty Name="FECHARADICACION" ColumnName="FECHARADICACION" />
+          <ScalarProperty Name="FECHADEVOLUCION" ColumnName="FECHADEVOLUCION" />
+          <ScalarProperty Name="FECHASOLICITUD" ColumnName="FECHASOLICITUD" />
+          <ScalarProperty Name="ESTADODECLANTERIOR" ColumnName="ESTADODECLANTERIOR" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID_RADICACION" ColumnName="ID_RADICACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDISCAPACIDAD_PERSONA">
+      <EntityTypeMapping TypeName="RuvModel.TBDISCAPACIDAD_PERSONA">
+        <MappingFragment StoreEntitySet="TBDISCAPACIDAD_PERSONA">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PARAM_DISCAPACIDAD" ColumnName="PARAM_DISCAPACIDAD" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBDISCAPACIDADOTRO_PERSONA">
+      <EntityTypeMapping TypeName="RuvModel.TBDISCAPACIDADOTRO_PERSONA">
+        <MappingFragment StoreEntitySet="TBDISCAPACIDADOTRO_PERSONA">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="OTRO" ColumnName="OTRO" />
+          <ScalarProperty Name="PARAM_DISCAPACIDAD" ColumnName="PARAM_DISCAPACIDAD" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBENCARGADO">
+      <EntityTypeMapping TypeName="RuvModel.TBENCARGADO">
+        <MappingFragment StoreEntitySet="TBENCARGADO">
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
+          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
+          <ScalarProperty Name="SEGUNDONOMBRE" ColumnName="SEGUNDONOMBRE" />
+          <ScalarProperty Name="PRIMERNOMBRE" ColumnName="PRIMERNOMBRE" />
+          <ScalarProperty Name="NUMERODOCUMENTO" ColumnName="NUMERODOCUMENTO" />
+          <ScalarProperty Name="IDPARAMTIPODOCUMENTO" ColumnName="IDPARAMTIPODOCUMENTO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBENCARGADOENTIDAD">
+      <EntityTypeMapping TypeName="RuvModel.TBENCARGADOENTIDAD">
+        <MappingFragment StoreEntitySet="TBENCARGADOENTIDAD">
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="ID_ENCARGADO" ColumnName="ID_ENCARGADO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBENCARGADOFIRMA">
+      <EntityTypeMapping TypeName="RuvModel.TBENCARGADOFIRMA">
+        <MappingFragment StoreEntitySet="TBENCARGADOFIRMA">
+          <ScalarProperty Name="FIRMADIGITAL" ColumnName="FIRMADIGITAL" />
+          <ScalarProperty Name="ID_ENCARGADO" ColumnName="ID_ENCARGADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBENTIDAD">
+      <EntityTypeMapping TypeName="RuvModel.TBENTIDAD">
+        <MappingFragment StoreEntitySet="TBENTIDAD">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBENTIDADMUNICIPIO">
+      <EntityTypeMapping TypeName="RuvModel.TBENTIDADMUNICIPIO">
+        <MappingFragment StoreEntitySet="TBENTIDADMUNICIPIO">
+          <ScalarProperty Name="ESPUNTONOTIFICACION" ColumnName="ESPUNTONOTIFICACION" />
+          <ScalarProperty Name="NOMBREFUNCIONARIO" ColumnName="NOMBREFUNCIONARIO" />
+          <ScalarProperty Name="TELEFONOENTIDAD" ColumnName="TELEFONOENTIDAD" />
+          <ScalarProperty Name="DIRECCIONENTIDAD" ColumnName="DIRECCIONENTIDAD" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="NOMBREENCARGADO" ColumnName="NOMBREENCARGADO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_ENTIDAD" ColumnName="ID_ENTIDAD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADO_VAL">
+      <EntityTypeMapping TypeName="RuvModel.TBESTADO_VAL">
+        <MappingFragment StoreEntitySet="TBESTADO_VAL">
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADOIDFORMULARIO">
+      <EntityTypeMapping TypeName="RuvModel.TBESTADOIDFORMULARIO">
+        <MappingFragment StoreEntitySet="TBESTADOIDFORMULARIO">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADOPROCESOS">
+      <EntityTypeMapping TypeName="RuvModel.TBESTADOPROCESOS">
+        <MappingFragment StoreEntitySet="TBESTADOPROCESOS">
+          <ScalarProperty Name="ID_ULTIMOUSUARIO" ColumnName="ID_ULTIMOUSUARIO" />
+          <ScalarProperty Name="FECHATENTATENCION" ColumnName="FECHATENTATENCION" />
+          <ScalarProperty Name="ID_DETALLE_RADICACION" ColumnName="ID_DETALLE_RADICACION" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="FECHAPROCESO" ColumnName="FECHAPROCESO" />
+          <ScalarProperty Name="PARAM_ESTADO" ColumnName="PARAM_ESTADO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADOSADMINISTRATIVOS">
+      <EntityTypeMapping TypeName="RuvModel.TBESTADOSADMINISTRATIVOS">
+        <MappingFragment StoreEntitySet="TBESTADOSADMINISTRATIVOS">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADOSCORRECCION">
+      <EntityTypeMapping TypeName="RuvModel.TBESTADOSCORRECCION">
+        <MappingFragment StoreEntitySet="TBESTADOSCORRECCION">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBESTADOSNOTIFICACION">
+      <EntityTypeMapping TypeName="RuvModel.TBESTADOSNOTIFICACION">
+        <MappingFragment StoreEntitySet="TBESTADOSNOTIFICACION">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBETNIACOMUNIDADES">
+      <EntityTypeMapping TypeName="RuvModel.TBETNIACOMUNIDADES">
+        <MappingFragment StoreEntitySet="TBETNIACOMUNIDADES">
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ETNIAGRUPOID" ColumnName="ETNIAGRUPOID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBETNIAGRUPOS">
+      <EntityTypeMapping TypeName="RuvModel.TBETNIAGRUPOS">
+        <MappingFragment StoreEntitySet="TBETNIAGRUPOS">
+          <ScalarProperty Name="ETNIAID" ColumnName="ETNIAID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBFESTIVO">
+      <EntityTypeMapping TypeName="RuvModel.TBFESTIVO">
+        <MappingFragment StoreEntitySet="TBFESTIVO">
+          <ScalarProperty Name="ANOFEST" ColumnName="ANOFEST" />
+          <ScalarProperty Name="MESFEST" ColumnName="MESFEST" />
+          <ScalarProperty Name="DIAFEST" ColumnName="DIAFEST" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBFUENTEACTUALIZACION">
+      <EntityTypeMapping TypeName="RuvModel.TBFUENTEACTUALIZACION">
+        <MappingFragment StoreEntitySet="TBFUENTEACTUALIZACION">
+          <ScalarProperty Name="TIPOCRUCE" ColumnName="TIPOCRUCE" />
+          <ScalarProperty Name="FECHACRUCE" ColumnName="FECHACRUCE" />
+          <ScalarProperty Name="NUMOFICIO" ColumnName="NUMOFICIO" />
+          <ScalarProperty Name="FECHAARCHIVO" ColumnName="FECHAARCHIVO" />
+          <ScalarProperty Name="ORIGENFUENTE" ColumnName="ORIGENFUENTE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBFUNCIONARIOFIRMA">
+      <EntityTypeMapping TypeName="RuvModel.TBFUNCIONARIOFIRMA">
+        <MappingFragment StoreEntitySet="TBFUNCIONARIOFIRMA">
+          <ScalarProperty Name="FIRMADIGITAL" ColumnName="FIRMADIGITAL" />
+          <ScalarProperty Name="ID_FUNCIONARIO" ColumnName="ID_FUNCIONARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGEOGRAFIA">
+      <EntityTypeMapping TypeName="RuvModel.TBGEOGRAFIA">
+        <MappingFragment StoreEntitySet="TBGEOGRAFIA">
+          <ScalarProperty Name="CODIGOCODAZZI" ColumnName="CODIGOCODAZZI" />
+          <ScalarProperty Name="REPRESENTACION" ColumnName="REPRESENTACION" />
+          <ScalarProperty Name="CODTEL" ColumnName="CODTEL" />
+          <ScalarProperty Name="PADREID" ColumnName="PADREID" />
+          <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGEOGRAFIAS">
+      <EntityTypeMapping TypeName="RuvModel.TBGEOGRAFIAS">
+        <MappingFragment StoreEntitySet="TBGEOGRAFIAS">
+          <ScalarProperty Name="GEOGRAFIA_PADRE" ColumnName="GEOGRAFIA_PADRE" />
+          <ScalarProperty Name="NIVEL_GEOGRAFICO" ColumnName="NIVEL_GEOGRAFICO" />
+          <ScalarProperty Name="NOMBRE_INGLES" ColumnName="NOMBRE_INGLES" />
+          <ScalarProperty Name="NACIONALIDAD" ColumnName="NACIONALIDAD" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ISO3166" ColumnName="ISO3166" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_GEOGRAFIA" ColumnName="ID_GEOGRAFIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGLOSAINTENCION">
+      <EntityTypeMapping TypeName="RuvModel.TBGLOSAINTENCION">
+        <MappingFragment StoreEntitySet="TBGLOSAINTENCION">
+          <ScalarProperty Name="PARAM_ESTADOGLOSA" ColumnName="PARAM_ESTADOGLOSA" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_USUARIOCOORDINA" ColumnName="ID_USUARIOCOORDINA" />
+          <ScalarProperty Name="ID_USUARIOATIENDE" ColumnName="ID_USUARIOATIENDE" />
+          <ScalarProperty Name="ID_USUARIOCREA" ColumnName="ID_USUARIOCREA" />
+          <ScalarProperty Name="MOTIVONOATEN" ColumnName="MOTIVONOATEN" />
+          <ScalarProperty Name="GLOSANOATEND" ColumnName="GLOSANOATEND" />
+          <ScalarProperty Name="GLOSAATEND" ColumnName="GLOSAATEND" />
+          <ScalarProperty Name="FECHAESPERADAATEN" ColumnName="FECHAESPERADAATEN" />
+          <ScalarProperty Name="FECHAATENCION" ColumnName="FECHAATENCION" />
+          <ScalarProperty Name="FECHAINGLOSA" ColumnName="FECHAINGLOSA" />
+          <ScalarProperty Name="DESCRIPCIONINGLOSA" ColumnName="DESCRIPCIONINGLOSA" />
+          <ScalarProperty Name="PARAM_CATEGORIAINGLOSA" ColumnName="PARAM_CATEGORIAINGLOSA" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGLOSAS">
+      <EntityTypeMapping TypeName="RuvModel.TBGLOSAS">
+        <MappingFragment StoreEntitySet="TBGLOSAS">
+          <ScalarProperty Name="PARAM_ESTADOGLOSA" ColumnName="PARAM_ESTADOGLOSA" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="PARAM_CONCEPTODEVOLUCION" ColumnName="PARAM_CONCEPTODEVOLUCION" />
+          <ScalarProperty Name="DEVOLUCION" ColumnName="DEVOLUCION" />
+          <ScalarProperty Name="MOTIVOSIATEN" ColumnName="MOTIVOSIATEN" />
+          <ScalarProperty Name="ID_USUARIOCOORDINA" ColumnName="ID_USUARIOCOORDINA" />
+          <ScalarProperty Name="ID_USUARIOATIENDE" ColumnName="ID_USUARIOATIENDE" />
+          <ScalarProperty Name="ID_USUARIOCREA" ColumnName="ID_USUARIOCREA" />
+          <ScalarProperty Name="MOTIVONOATEN" ColumnName="MOTIVONOATEN" />
+          <ScalarProperty Name="GLOSANOATEND" ColumnName="GLOSANOATEND" />
+          <ScalarProperty Name="GLOSAATEND" ColumnName="GLOSAATEND" />
+          <ScalarProperty Name="FECHAESPERADAATEN" ColumnName="FECHAESPERADAATEN" />
+          <ScalarProperty Name="FECHAATENCION" ColumnName="FECHAATENCION" />
+          <ScalarProperty Name="FECHAGLOSA" ColumnName="FECHAGLOSA" />
+          <ScalarProperty Name="DESCRIPCIONGLOSA" ColumnName="DESCRIPCIONGLOSA" />
+          <ScalarProperty Name="PARAM_CONCEPTOGLOSA" ColumnName="PARAM_CONCEPTOGLOSA" />
+          <ScalarProperty Name="PARAM_CATEGORIAGLOSA" ColumnName="PARAM_CATEGORIAGLOSA" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGRUPOSPARAMDETALLE">
+      <EntityTypeMapping TypeName="RuvModel.TBGRUPOSPARAMDETALLE">
+        <MappingFragment StoreEntitySet="TBGRUPOSPARAMDETALLE">
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+          <ScalarProperty Name="GRUPOPARAMETROID" ColumnName="GRUPOPARAMETROID" />
+          <ScalarProperty Name="PARAMETROID" ColumnName="PARAMETROID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGRUPOSPARAMETROS">
+      <EntityTypeMapping TypeName="RuvModel.TBGRUPOSPARAMETROS">
+        <MappingFragment StoreEntitySet="TBGRUPOSPARAMETROS">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBHECHOS_VICTIMIZANTES">
+      <EntityTypeMapping TypeName="RuvModel.TBHECHOS_VICTIMIZANTES">
+        <MappingFragment StoreEntitySet="TBHECHOS_VICTIMIZANTES">
+          <ScalarProperty Name="NOMBRE_HECHO_VICTIMIZANTE" ColumnName="NOMBRE_HECHO_VICTIMIZANTE" />
+          <ScalarProperty Name="ID_HECHO_VICTIMIZANTE" ColumnName="ID_HECHO_VICTIMIZANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBHERRAMIENTA_ANEXO_PER">
+      <EntityTypeMapping TypeName="RuvModel.TBHERRAMIENTA_ANEXO_PER">
+        <MappingFragment StoreEntitySet="TBHERRAMIENTA_ANEXO_PER">
+          <ScalarProperty Name="USAPARADESICION" ColumnName="USAPARADESICION" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="ID_HERRAMIENTA" ColumnName="ID_HERRAMIENTA" />
+          <ScalarProperty Name="ID_VALANEXO_PER" ColumnName="ID_VALANEXO_PER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBHERRAMIENTAVAL">
+      <EntityTypeMapping TypeName="RuvModel.TBHERRAMIENTAVAL">
+        <MappingFragment StoreEntitySet="TBHERRAMIENTAVAL">
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_TIPO_HERRAMIENTA" ColumnName="ID_TIPO_HERRAMIENTA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBHISTORICONOTIFICACION">
+      <EntityTypeMapping TypeName="RuvModel.TBHISTORICONOTIFICACION">
+        <MappingFragment StoreEntitySet="TBHISTORICONOTIFICACION">
+          <ScalarProperty Name="FECHAMODIFICACION" ColumnName="FECHAMODIFICACION" />
+          <ScalarProperty Name="FECHAFINAL" ColumnName="FECHAFINAL" />
+          <ScalarProperty Name="FECHAESTADOCOURIER" ColumnName="FECHAESTADOCOURIER" />
+          <ScalarProperty Name="ESTADOCOURIER" ColumnName="ESTADOCOURIER" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="ID_PAQUETENOTIFICACION" ColumnName="ID_PAQUETENOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="TELEFONONOTIFICACION" ColumnName="TELEFONONOTIFICACION" />
+          <ScalarProperty Name="DIRECCIONNOTIFICACION" ColumnName="DIRECCIONNOTIFICACION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBIDENTIFICADORFORMULARIO">
+      <EntityTypeMapping TypeName="RuvModel.TBIDENTIFICADORFORMULARIO">
+        <MappingFragment StoreEntitySet="TBIDENTIFICADORFORMULARIO">
+          <ScalarProperty Name="DGENERADO" ColumnName="DGENERADO" />
+          <ScalarProperty Name="DESCARGADO" ColumnName="DESCARGADO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ESTADOIDFORMULARIO" ColumnName="ID_ESTADOIDFORMULARIO" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+          <ScalarProperty Name="NUMEROFORMULARIO" ColumnName="NUMEROFORMULARIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBIDFORMULARIOHISTORICO">
+      <EntityTypeMapping TypeName="RuvModel.TBIDFORMULARIOHISTORICO">
+        <MappingFragment StoreEntitySet="TBIDFORMULARIOHISTORICO">
+          <ScalarProperty Name="DMODIFICACION" ColumnName="DMODIFICACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIONUEVO" ColumnName="ID_ENTIDADMUNICIPIONUEVO" />
+          <ScalarProperty Name="ID_ESTADONUEVO" ColumnName="ID_ESTADONUEVO" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIOANTERIOR" ColumnName="ID_ENTIDADMUNICIPIOANTERIOR" />
+          <ScalarProperty Name="ID_ESTADOANTERIOR" ColumnName="ID_ESTADOANTERIOR" />
+          <ScalarProperty Name="ID_IDENTIFICADORFORMULARIO" ColumnName="ID_IDENTIFICADORFORMULARIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBIMAGENES">
+      <EntityTypeMapping TypeName="RuvModel.TBIMAGENES">
+        <MappingFragment StoreEntitySet="TBIMAGENES">
+          <ScalarProperty Name="SUBRUTAFISICO" ColumnName="SUBRUTAFISICO" />
+          <ScalarProperty Name="NOMBREIMAGENFISICO" ColumnName="NOMBREIMAGENFISICO" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="NOMBREIMAGEN" ColumnName="NOMBREIMAGEN" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBINFRACCION_DIH">
+      <EntityTypeMapping TypeName="RuvModel.TBINFRACCION_DIH">
+        <MappingFragment StoreEntitySet="TBINFRACCION_DIH">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBNACIDO_VIOLACION_A3">
+      <EntityTypeMapping TypeName="RuvModel.TBNACIDO_VIOLACION_A3">
+        <MappingFragment StoreEntitySet="TBNACIDO_VIOLACION_A3">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ID_REGISTRO_PERSONA" ColumnName="ID_REGISTRO_PERSONA" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBNARRACIONES">
+      <EntityTypeMapping TypeName="RuvModel.TBNARRACIONES">
+        <MappingFragment StoreEntitySet="TBNARRACIONES">
+          <ScalarProperty Name="NARRACION" ColumnName="NARRACION" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBNOTIFICACION">
+      <EntityTypeMapping TypeName="RuvModel.TBNOTIFICACION">
+        <MappingFragment StoreEntitySet="TBNOTIFICACION">
+          <ScalarProperty Name="APROBADO" ColumnName="APROBADO" />
+          <ScalarProperty Name="FECHAFINAL" ColumnName="FECHAFINAL" />
+          <ScalarProperty Name="FECHAESTADOCOURIER" ColumnName="FECHAESTADOCOURIER" />
+          <ScalarProperty Name="ESTADOCOURIER" ColumnName="ESTADOCOURIER" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="ID_PAQUETENOTIFICACION" ColumnName="ID_PAQUETENOTIFICACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="TELEFONONOTIFICACION" ColumnName="TELEFONONOTIFICACION" />
+          <ScalarProperty Name="DIRECCIONNOTIFICACION" ColumnName="DIRECCIONNOTIFICACION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBNOTIFICACIONINTERNA">
+      <EntityTypeMapping TypeName="RuvModel.TBNOTIFICACIONINTERNA">
+        <MappingFragment StoreEntitySet="TBNOTIFICACIONINTERNA">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="FECHALEIDO" ColumnName="FECHALEIDO" />
+          <ScalarProperty Name="TIPOPROCESO" ColumnName="TIPOPROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="ID_USUARIORECIBE" ColumnName="ID_USUARIORECIBE" />
+          <ScalarProperty Name="FECHAGENERADO" ColumnName="FECHAGENERADO" />
+          <ScalarProperty Name="ID_USUARIOGENERA" ColumnName="ID_USUARIOGENERA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOBSERVACION_VAL">
+      <EntityTypeMapping TypeName="RuvModel.TBOBSERVACION_VAL">
+        <MappingFragment StoreEntitySet="TBOBSERVACION_VAL">
+          <ScalarProperty Name="ID_ESTADO_VAL" ColumnName="ID_ESTADO_VAL" />
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPAQUETENOTIFICACION">
+      <EntityTypeMapping TypeName="RuvModel.TBPAQUETENOTIFICACION">
+        <MappingFragment StoreEntitySet="TBPAQUETENOTIFICACION">
+          <ScalarProperty Name="ORDENSERVICIO" ColumnName="ORDENSERVICIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ID_USUARIOGENERACION" ColumnName="ID_USUARIOGENERACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPARAMETROS">
+      <EntityTypeMapping TypeName="RuvModel.TBPARAMETROS">
+        <MappingFragment StoreEntitySet="TBPARAMETROS">
+          <ScalarProperty Name="OTRO" ColumnName="OTRO" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_TIPOPARAMETRO" ColumnName="ID_TIPOPARAMETRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPERSONA_FONETICA">
+      <EntityTypeMapping TypeName="RuvModel.TBPERSONA_FONETICA">
+        <MappingFragment StoreEntitySet="TBPERSONA_FONETICA">
+          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
+          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
+          <ScalarProperty Name="SEGUNDONOMBRE" ColumnName="SEGUNDONOMBRE" />
+          <ScalarProperty Name="PRIMERNOMBRE" ColumnName="PRIMERNOMBRE" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPERSONAS">
+      <EntityTypeMapping TypeName="RuvModel.TBPERSONAS">
+        <MappingFragment StoreEntitySet="TBPERSONAS">
+          <ScalarProperty Name="COMUNIDAD" ColumnName="COMUNIDAD" />
+          <ScalarProperty Name="REGISTRADURIA" ColumnName="REGISTRADURIA" />
+          <ScalarProperty Name="VIGENCIA_REGISTRADURIA" ColumnName="VIGENCIA_REGISTRADURIA" />
+          <ScalarProperty Name="PARAM_OTROSBIENESABANDONADOS" ColumnName="PARAM_OTROSBIENESABANDONADOS" />
+          <ScalarProperty Name="COMUNAS_AFECTADAS" ColumnName="COMUNAS_AFECTADAS" />
+          <ScalarProperty Name="PARAM_AFECTACION" ColumnName="PARAM_AFECTACION" />
+          <ScalarProperty Name="PARAM_LEGISLAZIONTERRITORIO" ColumnName="PARAM_LEGISLAZIONTERRITORIO" />
+          <ScalarProperty Name="PARAM_AUTORDESPOJO" ColumnName="PARAM_AUTORDESPOJO" />
+          <ScalarProperty Name="PARAM_FORMADESPOJO" ColumnName="PARAM_FORMADESPOJO" />
+          <ScalarProperty Name="PARAM_PREDIOFUEDESPOJADO" ColumnName="PARAM_PREDIOFUEDESPOJADO" />
+          <ScalarProperty Name="PORQUEPROTECCIONBIENES" ColumnName="PORQUEPROTECCIONBIENES" />
+          <ScalarProperty Name="PARAM_PROTECCIONBIENES" ColumnName="PARAM_PROTECCIONBIENES" />
+          <ScalarProperty Name="CUALORGANIZACIONSOCIAL" ColumnName="CUALORGANIZACIONSOCIAL" />
+          <ScalarProperty Name="CUALROLCOMPLEMENTARIO" ColumnName="CUALROLCOMPLEMENTARIO" />
+          <ScalarProperty Name="CUALETNIAOPUEBLO" ColumnName="CUALETNIAOPUEBLO" />
+          <ScalarProperty Name="PARAM_RESGUARDO" ColumnName="PARAM_RESGUARDO" />
+          <ScalarProperty Name="PARAM_ROLCOMPLEMETARIO" ColumnName="PARAM_ROLCOMPLEMETARIO" />
+          <ScalarProperty Name="PARAM_ETNIAPERTENECE" ColumnName="PARAM_ETNIAPERTENECE" />
+          <ScalarProperty Name="ESMENORSINACUDIENTE" ColumnName="ESMENORSINACUDIENTE" />
+          <ScalarProperty Name="ESMUJERCABEZADEHOGAR" ColumnName="ESMUJERCABEZADEHOGAR" />
+          <ScalarProperty Name="ID_PERSONAJUNTOS" ColumnName="ID_PERSONAJUNTOS" />
+          <ScalarProperty Name="ID_PERSONASIFA" ColumnName="ID_PERSONASIFA" />
+          <ScalarProperty Name="REGISTRADURIA_2" ColumnName="REGISTRADURIA_2" />
+          <ScalarProperty Name="REGISTRADURIA_1" ColumnName="REGISTRADURIA_1" />
+          <ScalarProperty Name="FECHAEXPEDICIONDOC" ColumnName="FECHAEXPEDICIONDOC" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="ID_ORIGENFUENTE" ColumnName="ID_ORIGENFUENTE" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="PARAM_CREDITOSVIGENTES" ColumnName="PARAM_CREDITOSVIGENTES" />
+          <ScalarProperty Name="PARAM_BIENESABANDONADOS" ColumnName="PARAM_BIENESABANDONADOS" />
+          <ScalarProperty Name="CUALACTIVIDADACTUAL" ColumnName="CUALACTIVIDADACTUAL" />
+          <ScalarProperty Name="CUALACTIVIDADANTERIOR" ColumnName="CUALACTIVIDADANTERIOR" />
+          <ScalarProperty Name="CUALREGIMENSALUD" ColumnName="CUALREGIMENSALUD" />
+          <ScalarProperty Name="ESTAFALLECIDO" ColumnName="ESTAFALLECIDO" />
+          <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+          <ScalarProperty Name="PARAM_ACTVIDADACTUAL" ColumnName="PARAM_ACTVIDADACTUAL" />
+          <ScalarProperty Name="PARAM_OCUPACIONACTUAL" ColumnName="PARAM_OCUPACIONACTUAL" />
+          <ScalarProperty Name="PARAM_ACTVIDADANTERIOR" ColumnName="PARAM_ACTVIDADANTERIOR" />
+          <ScalarProperty Name="PARAM_OCUPACIONANTERIOR" ColumnName="PARAM_OCUPACIONANTERIOR" />
+          <ScalarProperty Name="PARAM_NIVELESCOLAR" ColumnName="PARAM_NIVELESCOLAR" />
+          <ScalarProperty Name="ULTIMOGRADO" ColumnName="ULTIMOGRADO" />
+          <ScalarProperty Name="ASISTEAESCUELA" ColumnName="ASISTEAESCUELA" />
+          <ScalarProperty Name="ASISTIAALAESCUELA" ColumnName="ASISTIAALAESCUELA" />
+          <ScalarProperty Name="LEEYESCRIBE" ColumnName="LEEYESCRIBE" />
+          <ScalarProperty Name="PARAM_REGIMENSALUD" ColumnName="PARAM_REGIMENSALUD" />
+          <ScalarProperty Name="GESTANTE" ColumnName="GESTANTE" />
+          <ScalarProperty Name="PARAM_MINORIAETNICA" ColumnName="PARAM_MINORIAETNICA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="CUALPROFESION" ColumnName="CUALPROFESION" />
+          <ScalarProperty Name="PARAM_PROFESION" ColumnName="PARAM_PROFESION" />
+          <ScalarProperty Name="PARAM_GENERO" ColumnName="PARAM_GENERO" />
+          <ScalarProperty Name="PARAM_ESTADOCIVIL" ColumnName="PARAM_ESTADOCIVIL" />
+          <ScalarProperty Name="ID_MUNICIPIOEXPEDICION" ColumnName="ID_MUNICIPIOEXPEDICION" />
+          <ScalarProperty Name="ID_DEPARTAMENTOEXPEDICION" ColumnName="ID_DEPARTAMENTOEXPEDICION" />
+          <ScalarProperty Name="NUMERODOCUMENTO" ColumnName="NUMERODOCUMENTO" />
+          <ScalarProperty Name="PARAM_TIPODOCUMENTO" ColumnName="PARAM_TIPODOCUMENTO" />
+          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
+          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
+          <ScalarProperty Name="SEGUNDONOMBRE" ColumnName="SEGUNDONOMBRE" />
+          <ScalarProperty Name="PRIMERNOMBRE" ColumnName="PRIMERNOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPOBLADOS">
+      <EntityTypeMapping TypeName="RuvModel.TBPOBLADOS">
+        <MappingFragment StoreEntitySet="TBPOBLADOS">
+          <ScalarProperty Name="ID_PAISDECLARACION" ColumnName="ID_PAISDECLARACION" />
+          <ScalarProperty Name="ID_POBLADOPADRE" ColumnName="ID_POBLADOPADRE" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ENTORNO" ColumnName="ID_ENTORNO" />
+          <ScalarProperty Name="ID_TIPOENTORNO" ColumnName="ID_TIPOENTORNO" />
+          <ScalarProperty Name="TIPO_ENTORNO" ColumnName="TIPO_ENTORNO" />
+          <ScalarProperty Name="ENTORNO" ColumnName="ENTORNO" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="CODIGO_MUNICIPIO" ColumnName="CODIGO_MUNICIPIO" />
+          <ScalarProperty Name="CLASE" ColumnName="CLASE" />
+          <ScalarProperty Name="POBLADO" ColumnName="POBLADO" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPRINCIPIO">
+      <EntityTypeMapping TypeName="RuvModel.TBPRINCIPIO">
+        <MappingFragment StoreEntitySet="TBPRINCIPIO">
+          <ScalarProperty Name="ID_ESTADO_VAL" ColumnName="ID_ESTADO_VAL" />
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPROCESOESTADO">
+      <EntityTypeMapping TypeName="RuvModel.TBPROCESOESTADO">
+        <MappingFragment StoreEntitySet="TBPROCESOESTADO">
+          <ScalarProperty Name="PARAM_ESTADO" ColumnName="PARAM_ESTADO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBRADICACION">
+      <EntityTypeMapping TypeName="RuvModel.TBRADICACION">
+        <MappingFragment StoreEntitySet="TBRADICACION">
+          <ScalarProperty Name="PARAM_RESULTADO_VALIDACION" ColumnName="PARAM_RESULTADO_VALIDACION" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="RUTAIMAGEN" ColumnName="RUTAIMAGEN" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="OBSERVACIONCRITICA" ColumnName="OBSERVACIONCRITICA" />
+          <ScalarProperty Name="RESULTADOCRITICA" ColumnName="RESULTADOCRITICA" />
+          <ScalarProperty Name="ID_TIPO_RADICACION" ColumnName="ID_TIPO_RADICACION" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="NRO_FORMULARIO" ColumnName="NRO_FORMULARIO" />
+          <ScalarProperty Name="ID_TIPODOCUMENTAL" ColumnName="ID_TIPODOCUMENTAL" />
+          <ScalarProperty Name="PARAM_ENTIDADENVIANOMBRE" ColumnName="PARAM_ENTIDADENVIANOMBRE" />
+          <ScalarProperty Name="MODIFICACION" ColumnName="MODIFICACION" />
+          <ScalarProperty Name="PARAM_TIPOACCIONES" ColumnName="PARAM_TIPOACCIONES" />
+          <ScalarProperty Name="ID_RADICA_URGENCIA" ColumnName="ID_RADICA_URGENCIA" />
+          <ScalarProperty Name="ID_USUARIO_RADICA" ColumnName="ID_USUARIO_RADICA" />
+          <ScalarProperty Name="ID_UTERRITORIALRADICA" ColumnName="ID_UTERRITORIALRADICA" />
+          <ScalarProperty Name="CANTIDADDOCUMENTOS" ColumnName="CANTIDADDOCUMENTOS" />
+          <ScalarProperty Name="FECHALLEGADA" ColumnName="FECHALLEGADA" />
+          <ScalarProperty Name="FECHAENVIO" ColumnName="FECHAENVIO" />
+          <ScalarProperty Name="NOMBREENTIDAD" ColumnName="NOMBREENTIDAD" />
+          <ScalarProperty Name="PARAM_TIPOENTIDAD" ColumnName="PARAM_TIPOENTIDAD" />
+          <ScalarProperty Name="ID_UTERRITORIALRECIBE" ColumnName="ID_UTERRITORIALRECIBE" />
+          <ScalarProperty Name="ID_UTERRITORIALENVIA" ColumnName="ID_UTERRITORIALENVIA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="CONSECUTIVO" ColumnName="CONSECUTIVO" />
+          <ScalarProperty Name="FECHAREGISTRO" ColumnName="FECHAREGISTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBRADICACION_HISTORICO">
+      <EntityTypeMapping TypeName="RuvModel.TBRADICACION_HISTORICO">
+        <MappingFragment StoreEntitySet="TBRADICACION_HISTORICO">
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+          <ScalarProperty Name="OBSERVACIONESLIDERRADICA" ColumnName="OBSERVACIONESLIDERRADICA" />
+          <ScalarProperty Name="ID_ENTIDADMUNICIPIO" ColumnName="ID_ENTIDADMUNICIPIO" />
+          <ScalarProperty Name="NUMEROFORMULARIO" ColumnName="NUMEROFORMULARIO" />
+          <ScalarProperty Name="ID_RADICACION" ColumnName="ID_RADICACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBRADICACRITICAN">
+      <EntityTypeMapping TypeName="RuvModel.TBRADICACRITICAN">
+        <MappingFragment StoreEntitySet="TBRADICACRITICAN">
+          <ScalarProperty Name="TEXTO_CAUSAL_MOD" ColumnName="TEXTO_CAUSAL_MOD" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="RESPUESTA" ColumnName="RESPUESTA" />
+          <ScalarProperty Name="ID_CRITICAN" ColumnName="ID_CRITICAN" />
+          <ScalarProperty Name="ID_RADICACION" ColumnName="ID_RADICACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBREG_PERSONA_HECHOS">
+      <EntityTypeMapping TypeName="RuvModel.TBREG_PERSONA_HECHOS">
+        <MappingFragment StoreEntitySet="TBREG_PERSONA_HECHOS">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PARAM_HECHO" ColumnName="PARAM_HECHO" />
+          <ScalarProperty Name="ID_REGISTRO_PERSONA" ColumnName="ID_REGISTRO_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBREGISTROS_ANTERIORES">
+      <EntityTypeMapping TypeName="RuvModel.TBREGISTROS_ANTERIORES">
+        <MappingFragment StoreEntitySet="TBREGISTROS_ANTERIORES">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBREGISTROS_PERSONAS">
+      <EntityTypeMapping TypeName="RuvModel.TBREGISTROS_PERSONAS">
+        <MappingFragment StoreEntitySet="TBREGISTROS_PERSONAS">
+          <ScalarProperty Name="INDICATIVO_TELEFONO_ALTERNO" ColumnName="INDICATIVO_TELEFONO_ALTERNO" />
+          <ScalarProperty Name="INDICATIVO_TELEFONO" ColumnName="INDICATIVO_TELEFONO" />
+          <ScalarProperty Name="CONSECUTIVO_FAMILIA" ColumnName="CONSECUTIVO_FAMILIA" />
+          <ScalarProperty Name="ID_PAIS_ALTERNO" ColumnName="ID_PAIS_ALTERNO" />
+          <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+          <ScalarProperty Name="OTRO_BARRIO_VEREDA_ALT" ColumnName="OTRO_BARRIO_VEREDA_ALT" />
+          <ScalarProperty Name="OTRO_LOCALIDAD_CORREG_ALT" ColumnName="OTRO_LOCALIDAD_CORREG_ALT" />
+          <ScalarProperty Name="PARAM_BARRIO_VEREDA_ALT" ColumnName="PARAM_BARRIO_VEREDA_ALT" />
+          <ScalarProperty Name="PARAM_LOCALIDAD_CORREG_ALT" ColumnName="PARAM_LOCALIDAD_CORREG_ALT" />
+          <ScalarProperty Name="PARAM_TIPO_ENTORNO_ALT" ColumnName="PARAM_TIPO_ENTORNO_ALT" />
+          <ScalarProperty Name="PARAM_TIPO_ENTORNO" ColumnName="PARAM_TIPO_ENTORNO" />
+          <ScalarProperty Name="OTRO_BARRIO_VEREDA" ColumnName="OTRO_BARRIO_VEREDA" />
+          <ScalarProperty Name="OTRO_LOCALIDAD_CORREG" ColumnName="OTRO_LOCALIDAD_CORREG" />
+          <ScalarProperty Name="PARAM_BARRIO_VEREDA" ColumnName="PARAM_BARRIO_VEREDA" />
+          <ScalarProperty Name="PARAM_LOCALIDAD_CORREG" ColumnName="PARAM_LOCALIDAD_CORREG" />
+          <ScalarProperty Name="ID_TIPOPOBLACION_ALTERNO" ColumnName="ID_TIPOPOBLACION_ALTERNO" />
+          <ScalarProperty Name="ID_TIPOPOBLACION" ColumnName="ID_TIPOPOBLACION" />
+          <ScalarProperty Name="OTRO_ENTORNO" ColumnName="OTRO_ENTORNO" />
+          <ScalarProperty Name="ID_ENTORNO" ColumnName="ID_ENTORNO" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="GESTANTE_LACTANTE" ColumnName="GESTANTE_LACTANTE" />
+          <ScalarProperty Name="PARAM_REGIMENESPECIAL" ColumnName="PARAM_REGIMENESPECIAL" />
+          <ScalarProperty Name="ESMUJERCABEZADEHOGAR" ColumnName="ESMUJERCABEZADEHOGAR" />
+          <ScalarProperty Name="CONSECUTIVO_PERSONA" ColumnName="CONSECUTIVO_PERSONA" />
+          <ScalarProperty Name="EMAIL_ALTERNO" ColumnName="EMAIL_ALTERNO" />
+          <ScalarProperty Name="MOVIL_ALTERNO" ColumnName="MOVIL_ALTERNO" />
+          <ScalarProperty Name="TELEFONO_ALTERNO" ColumnName="TELEFONO_ALTERNO" />
+          <ScalarProperty Name="ID_MUNICIPIO_ALTERNO" ColumnName="ID_MUNICIPIO_ALTERNO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_ALTERNO" ColumnName="ID_DEPARTAMENTO_ALTERNO" />
+          <ScalarProperty Name="OTRO_ENTORNO_ALTERNO" ColumnName="OTRO_ENTORNO_ALTERNO" />
+          <ScalarProperty Name="ID_ENTORNO_ALTERNO" ColumnName="ID_ENTORNO_ALTERNO" />
+          <ScalarProperty Name="DIRECCION_ALTERNA" ColumnName="DIRECCION_ALTERNA" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TIPO_RESTRICCION" ColumnName="TIPO_RESTRICCION" />
+          <ScalarProperty Name="OBS_RESTRINGIDA" ColumnName="OBS_RESTRINGIDA" />
+          <ScalarProperty Name="NOVEDAD_INCLUSION" ColumnName="NOVEDAD_INCLUSION" />
+          <ScalarProperty Name="RESTRINGIDA" ColumnName="RESTRINGIDA" />
+          <ScalarProperty Name="SEDESPLAZO" ColumnName="SEDESPLAZO" />
+          <ScalarProperty Name="PARAM_RELACION" ColumnName="PARAM_RELACION" />
+          <ScalarProperty Name="MOVIL" ColumnName="MOVIL" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="PUNTAJE_PERSONA" ColumnName="PUNTAJE_PERSONA" />
+          <ScalarProperty Name="PARAM_ESTADOAYUDAS" ColumnName="PARAM_ESTADOAYUDAS" />
+          <ScalarProperty Name="ID_MIJEFEHOGAR" ColumnName="ID_MIJEFEHOGAR" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="CARACTERIZADO" ColumnName="CARACTERIZADO" />
+          <ScalarProperty Name="ESDECLARANTE" ColumnName="ESDECLARANTE" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBREGPERSONASFIRMA">
+      <EntityTypeMapping TypeName="RuvModel.TBREGPERSONASFIRMA">
+        <MappingFragment StoreEntitySet="TBREGPERSONASFIRMA">
+          <ScalarProperty Name="FIRMADIGITAL" ColumnName="FIRMADIGITAL" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBSINIESTRO_AFECTACIONES">
+      <EntityTypeMapping TypeName="RuvModel.TBSINIESTRO_AFECTACIONES">
+        <MappingFragment StoreEntitySet="TBSINIESTRO_AFECTACIONES">
+          <ScalarProperty Name="ID_ANEXO" ColumnName="ID_ANEXO" />
+          <ScalarProperty Name="PARAM_TIPOHECHO" ColumnName="PARAM_TIPOHECHO" />
+          <ScalarProperty Name="PARAM_AFECTACION" ColumnName="PARAM_AFECTACION" />
+          <ScalarProperty Name="ID_SINIESTRO_AFECTACION" ColumnName="ID_SINIESTRO_AFECTACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBSINIESTROS_PERSONA">
+      <EntityTypeMapping TypeName="RuvModel.TBSINIESTROS_PERSONA">
+        <MappingFragment StoreEntitySet="TBSINIESTROS_PERSONA">
+          <ScalarProperty Name="ENTIDADCOBRA" ColumnName="ENTIDADCOBRA" />
+          <ScalarProperty Name="PARAM_TIPO_ENTORNO" ColumnName="PARAM_TIPO_ENTORNO" />
+          <ScalarProperty Name="OTRO_BARRIO_VEREDA" ColumnName="OTRO_BARRIO_VEREDA" />
+          <ScalarProperty Name="OTRO_LOCALIDAD_CORREG" ColumnName="OTRO_LOCALIDAD_CORREG" />
+          <ScalarProperty Name="PARAM_BARRIO_VEREDA" ColumnName="PARAM_BARRIO_VEREDA" />
+          <ScalarProperty Name="PARAM_LOCALIDAD_CORREG" ColumnName="PARAM_LOCALIDAD_CORREG" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="VICTIMA_DEL_HECHO" ColumnName="VICTIMA_DEL_HECHO" />
+          <ScalarProperty Name="NOMBRE_EMPLEADOR" ColumnName="NOMBRE_EMPLEADOR" />
+          <ScalarProperty Name="ID_MPIO_TRABAJO" ColumnName="ID_MPIO_TRABAJO" />
+          <ScalarProperty Name="ID_DPTO_TRABAJO" ColumnName="ID_DPTO_TRABAJO" />
+          <ScalarProperty Name="PARAM_TIPOAFILIZACION" ColumnName="PARAM_TIPOAFILIZACION" />
+          <ScalarProperty Name="ID_MPIO_SISTEMASALUD" ColumnName="ID_MPIO_SISTEMASALUD" />
+          <ScalarProperty Name="ID_DPTO_SISTEMASALUD" ColumnName="ID_DPTO_SISTEMASALUD" />
+          <ScalarProperty Name="PARAM_SISTEMASALUD" ColumnName="PARAM_SISTEMASALUD" />
+          <ScalarProperty Name="PARAM_ENTIDADCOBRA" ColumnName="PARAM_ENTIDADCOBRA" />
+          <ScalarProperty Name="ID_MPIO_FAMILIASACCION" ColumnName="ID_MPIO_FAMILIASACCION" />
+          <ScalarProperty Name="ID_DPTO_FAMILIASACCION" ColumnName="ID_DPTO_FAMILIASACCION" />
+          <ScalarProperty Name="PARAM_FAMILIASACCION" ColumnName="PARAM_FAMILIASACCION" />
+          <ScalarProperty Name="NIVEL_SISBEN" ColumnName="NIVEL_SISBEN" />
+          <ScalarProperty Name="ID_MPIO_ENCUESTASISBEN" ColumnName="ID_MPIO_ENCUESTASISBEN" />
+          <ScalarProperty Name="ID_DPTO_ENCUESTASISBEN" ColumnName="ID_DPTO_ENCUESTASISBEN" />
+          <ScalarProperty Name="PARAM_ENCUESTASISBEN" ColumnName="PARAM_ENCUESTASISBEN" />
+          <ScalarProperty Name="INSTITUCION_EDUCATIVA" ColumnName="INSTITUCION_EDUCATIVA" />
+          <ScalarProperty Name="ID_MPIO_ESTUDIO_HIJOS" ColumnName="ID_MPIO_ESTUDIO_HIJOS" />
+          <ScalarProperty Name="ID_DPTO_ESTUDIO_HIJOS" ColumnName="ID_DPTO_ESTUDIO_HIJOS" />
+          <ScalarProperty Name="ID_MUNICIPIO_VOTAR" ColumnName="ID_MUNICIPIO_VOTAR" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_VOTAR" ColumnName="ID_DEPARTAMENTO_VOTAR" />
+          <ScalarProperty Name="PARAM_CCVOTAR" ColumnName="PARAM_CCVOTAR" />
+          <ScalarProperty Name="OTRO_ENTORNO" ColumnName="OTRO_ENTORNO" />
+          <ScalarProperty Name="ID_TIPOPOBLADO" ColumnName="ID_TIPOPOBLADO" />
+          <ScalarProperty Name="ID_ENTORNO" ColumnName="ID_ENTORNO" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="FECHASINIESTRO" ColumnName="FECHASINIESTRO" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="PARAM_TIPOHECHO" ColumnName="PARAM_TIPOHECHO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTIPO_HERRAMIENTAVAL">
+      <EntityTypeMapping TypeName="RuvModel.TBTIPO_HERRAMIENTAVAL">
+        <MappingFragment StoreEntitySet="TBTIPO_HERRAMIENTAVAL">
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTIPODOCUMENTO">
+      <EntityTypeMapping TypeName="RuvModel.TBTIPODOCUMENTO">
+        <MappingFragment StoreEntitySet="TBTIPODOCUMENTO">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTIPOSPARAMETROS">
+      <EntityTypeMapping TypeName="RuvModel.TBTIPOSPARAMETROS">
+        <MappingFragment StoreEntitySet="TBTIPOSPARAMETROS">
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTUTOR">
+      <EntityTypeMapping TypeName="RuvModel.TBTUTOR">
+        <MappingFragment StoreEntitySet="TBTUTOR">
+          <ScalarProperty Name="CUALETNIAOPUEBLO" ColumnName="CUALETNIAOPUEBLO" />
+          <ScalarProperty Name="PARAM_ETNIAPERTENECE" ColumnName="PARAM_ETNIAPERTENECE" />
+          <ScalarProperty Name="PARAM_TIPOREPRESENTANTE" ColumnName="PARAM_TIPOREPRESENTANTE" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="RATIFICADO_REG" ColumnName="RATIFICADO_REG" />
+          <ScalarProperty Name="REGISTRADURIA" ColumnName="REGISTRADURIA" />
+          <ScalarProperty Name="FECHAEXPEDICIONDOC" ColumnName="FECHAEXPEDICIONDOC" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="ID_ORIGENFUENTE" ColumnName="ID_ORIGENFUENTE" />
+          <ScalarProperty Name="ID_UTERRITORIAL" ColumnName="ID_UTERRITORIAL" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="PARAM_PROCESO" ColumnName="PARAM_PROCESO" />
+          <ScalarProperty Name="ID_PROCESO" ColumnName="ID_PROCESO" />
+          <ScalarProperty Name="PARAM_CREDITOSVIGENTES" ColumnName="PARAM_CREDITOSVIGENTES" />
+          <ScalarProperty Name="PARAM_BIENESABANDONADOS" ColumnName="PARAM_BIENESABANDONADOS" />
+          <ScalarProperty Name="CUALACTIVIDADACTUAL" ColumnName="CUALACTIVIDADACTUAL" />
+          <ScalarProperty Name="CUALACTIVIDADANTERIOR" ColumnName="CUALACTIVIDADANTERIOR" />
+          <ScalarProperty Name="CUALREGIMENSALUD" ColumnName="CUALREGIMENSALUD" />
+          <ScalarProperty Name="ESTAFALLECIDO" ColumnName="ESTAFALLECIDO" />
+          <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+          <ScalarProperty Name="PARAM_ACTVIDADACTUAL" ColumnName="PARAM_ACTVIDADACTUAL" />
+          <ScalarProperty Name="PARAM_OCUPACIONACTUAL" ColumnName="PARAM_OCUPACIONACTUAL" />
+          <ScalarProperty Name="PARAM_ACTVIDADANTERIOR" ColumnName="PARAM_ACTVIDADANTERIOR" />
+          <ScalarProperty Name="PARAM_OCUPACIONANTERIOR" ColumnName="PARAM_OCUPACIONANTERIOR" />
+          <ScalarProperty Name="PARAM_NIVELESCOLAR" ColumnName="PARAM_NIVELESCOLAR" />
+          <ScalarProperty Name="ULTIMOGRADO" ColumnName="ULTIMOGRADO" />
+          <ScalarProperty Name="ASISTEAESCUELA" ColumnName="ASISTEAESCUELA" />
+          <ScalarProperty Name="ASISTIAALAESCUELA" ColumnName="ASISTIAALAESCUELA" />
+          <ScalarProperty Name="LEEYESCRIBE" ColumnName="LEEYESCRIBE" />
+          <ScalarProperty Name="PARAM_REGIMENSALUD" ColumnName="PARAM_REGIMENSALUD" />
+          <ScalarProperty Name="GESTANTE" ColumnName="GESTANTE" />
+          <ScalarProperty Name="PARAM_MINORIAETNICA" ColumnName="PARAM_MINORIAETNICA" />
+          <ScalarProperty Name="ID_MUNICIPIO" ColumnName="ID_MUNICIPIO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO" ColumnName="ID_DEPARTAMENTO" />
+          <ScalarProperty Name="CUALPROFESION" ColumnName="CUALPROFESION" />
+          <ScalarProperty Name="PARAM_PROFESION" ColumnName="PARAM_PROFESION" />
+          <ScalarProperty Name="PARAM_SEXO" ColumnName="PARAM_SEXO" />
+          <ScalarProperty Name="PARAM_ESTADOCIVIL" ColumnName="PARAM_ESTADOCIVIL" />
+          <ScalarProperty Name="ID_MUNICIPIOEXPEDICION" ColumnName="ID_MUNICIPIOEXPEDICION" />
+          <ScalarProperty Name="ID_DEPARTAMENTOEXPEDICION" ColumnName="ID_DEPARTAMENTOEXPEDICION" />
+          <ScalarProperty Name="NUMERODOCUMENTO" ColumnName="NUMERODOCUMENTO" />
+          <ScalarProperty Name="PARAM_TIPODOCUMENTO" ColumnName="PARAM_TIPODOCUMENTO" />
+          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
+          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
+          <ScalarProperty Name="SEGUNDONOMBRE" ColumnName="SEGUNDONOMBRE" />
+          <ScalarProperty Name="PRIMERNOMBRE" ColumnName="PRIMERNOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVAL_ANEXO_PERSONA">
+      <EntityTypeMapping TypeName="RuvModel.TBVAL_ANEXO_PERSONA">
+        <MappingFragment StoreEntitySet="TBVAL_ANEXO_PERSONA">
+          <ScalarProperty Name="ID_ANEXO" ColumnName="ID_ANEXO" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="ID_VAL_ANEXO" ColumnName="ID_VAL_ANEXO" />
+          <ScalarProperty Name="ESAFECTADO" ColumnName="ESAFECTADO" />
+          <ScalarProperty Name="ESVICITMA" ColumnName="ESVICITMA" />
+          <ScalarProperty Name="ID_ESTADO_VAL" ColumnName="ID_ESTADO_VAL" />
+          <ScalarProperty Name="ID_OBSERVACION_VAL" ColumnName="ID_OBSERVACION_VAL" />
+          <ScalarProperty Name="ID_REGPERSONA" ColumnName="ID_REGPERSONA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORACION">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORACION">
+        <MappingFragment StoreEntitySet="TBVALORACION">
+          <ScalarProperty Name="IDENTIDADMUNICIPIO" ColumnName="IDENTIDADMUNICIPIO" />
+          <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
+          <ScalarProperty Name="IDACTOADMINISTRATIVO" ColumnName="IDACTOADMINISTRATIVO" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="ESDECLARACION" ColumnName="ESDECLARACION" />
+          <ScalarProperty Name="MOTIVACION" ColumnName="MOTIVACION" />
+          <ScalarProperty Name="FECHAVALORACIONREAL" ColumnName="FECHAVALORACIONREAL" />
+          <ScalarProperty Name="FECHAVALORACION" ColumnName="FECHAVALORACION" />
+          <ScalarProperty Name="ID_ASIGNADOR" ColumnName="ID_ASIGNADOR" />
+          <ScalarProperty Name="ID_VALORADOR" ColumnName="ID_VALORADOR" />
+          <ScalarProperty Name="FECHAASIGNACION" ColumnName="FECHAASIGNACION" />
+          <ScalarProperty Name="ID_ESTADO_VAL" ColumnName="ID_ESTADO_VAL" />
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORACION_ANEXO">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORACION_ANEXO">
+        <MappingFragment StoreEntitySet="TBVALORACION_ANEXO">
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="TIPO_ANEXO" ColumnName="TIPO_ANEXO" />
+          <ScalarProperty Name="ULTIMA_FECHAEDICION" ColumnName="ULTIMA_FECHAEDICION" />
+          <ScalarProperty Name="ID_VALORACION" ColumnName="ID_VALORACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORACION_ESTADO">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORACION_ESTADO">
+        <MappingFragment StoreEntitySet="TBVALORACION_ESTADO">
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+          <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORACION_MOTIVACION">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORACION_MOTIVACION">
+        <MappingFragment StoreEntitySet="TBVALORACION_MOTIVACION">
+          <ScalarProperty Name="TIPOMOTIVACION" ColumnName="TIPOMOTIVACION" />
+          <ScalarProperty Name="RESUELVE_ARTICULO2" ColumnName="RESUELVE_ARTICULO2" />
+          <ScalarProperty Name="RESUELVE_ARTICULO1" ColumnName="RESUELVE_ARTICULO1" />
+          <ScalarProperty Name="MOTIVACION_NOINCLUSION" ColumnName="MOTIVACION_NOINCLUSION" />
+          <ScalarProperty Name="MOTIVACION_INCLUSION" ColumnName="MOTIVACION_INCLUSION" />
+          <ScalarProperty Name="ID_VALORACION" ColumnName="ID_VALORACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORACION_REGISTROS">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORACION_REGISTROS">
+        <MappingFragment StoreEntitySet="TBVALORACION_REGISTROS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_VALORACION" ColumnName="ID_VALORACION" />
+          <ScalarProperty Name="ID_REGISTRO" ColumnName="ID_REGISTRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORACIONHISTORICO">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORACIONHISTORICO">
+        <MappingFragment StoreEntitySet="TBVALORACIONHISTORICO">
+          <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+          <ScalarProperty Name="IDVALORACION" ColumnName="IDVALORACION" />
+          <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBVALORANEXPERHISTORICO">
+      <EntityTypeMapping TypeName="RuvModel.TBVALORANEXPERHISTORICO">
+        <MappingFragment StoreEntitySet="TBVALORANEXPERHISTORICO">
+          <ScalarProperty Name="AFECTADO" ColumnName="AFECTADO" />
+          <ScalarProperty Name="VICTIMA" ColumnName="VICTIMA" />
+          <ScalarProperty Name="OBSERVACIONESTADO" ColumnName="OBSERVACIONESTADO" />
+          <ScalarProperty Name="ESTADOPERSONA" ColumnName="ESTADOPERSONA" />
+          <ScalarProperty Name="IDVALANEXPERSONA" ColumnName="IDVALANEXPERSONA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEMP_TBANEXO5">
+      <EntityTypeMapping TypeName="RuvModel.TEMP_TBANEXO5">
+        <MappingFragment StoreEntitySet="TEMP_TBANEXO5">
+          <ScalarProperty Name="DESPLAZAMIENTO_OTRO" ColumnName="DESPLAZAMIENTO_OTRO" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="OTRO_ENTORNO_REUBICACION" ColumnName="OTRO_ENTORNO_REUBICACION" />
+          <ScalarProperty Name="ID_ENTORNO_REUBICACION" ColumnName="ID_ENTORNO_REUBICACION" />
+          <ScalarProperty Name="ID_TIPOPOBLADO_REUBICACION" ColumnName="ID_TIPOPOBLADO_REUBICACION" />
+          <ScalarProperty Name="ID_MUNICIPIO_REUBICACION" ColumnName="ID_MUNICIPIO_REUBICACION" />
+          <ScalarProperty Name="ID_DPTO_REUBICACION" ColumnName="ID_DPTO_REUBICACION" />
+          <ScalarProperty Name="PARAM_DESEOHOGAR" ColumnName="PARAM_DESEOHOGAR" />
+          <ScalarProperty Name="OTRO_ENTORNO_ARRIBO" ColumnName="OTRO_ENTORNO_ARRIBO" />
+          <ScalarProperty Name="ID_ENTORNO_ARRIBO" ColumnName="ID_ENTORNO_ARRIBO" />
+          <ScalarProperty Name="ID_TIPOPOBLADO_ARRIBO" ColumnName="ID_TIPOPOBLADO_ARRIBO" />
+          <ScalarProperty Name="ID_MUNICIPIO_ARRIBO" ColumnName="ID_MUNICIPIO_ARRIBO" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_ARRIBO" ColumnName="ID_DEPARTAMENTO_ARRIBO" />
+          <ScalarProperty Name="FECHA_ARRIBO" ColumnName="FECHA_ARRIBO" />
+          <ScalarProperty Name="TIEMPO_RESIDENCIA_DIAS" ColumnName="TIEMPO_RESIDENCIA_DIAS" />
+          <ScalarProperty Name="TIEMPO_RESIDENCIA_MESES" ColumnName="TIEMPO_RESIDENCIA_MESES" />
+          <ScalarProperty Name="TIEMPO_RESIDENCIA_ANOS" ColumnName="TIEMPO_RESIDENCIA_ANOS" />
+          <ScalarProperty Name="PARAM_TIPO_DESPLAZAMIENTO" ColumnName="PARAM_TIPO_DESPLAZAMIENTO" />
+          <ScalarProperty Name="OTRA_ENTIDAD_DENUNCIAPREV" ColumnName="OTRA_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="NUMERO_RADICADO_DENUNCIAPREV" ColumnName="NUMERO_RADICADO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_MUNICIPIO_DENUNCIAPREV" ColumnName="ID_MUNICIPIO_DENUNCIAPREV" />
+          <ScalarProperty Name="ID_DEPARTAMENTO_DENUNCIAPREV" ColumnName="ID_DEPARTAMENTO_DENUNCIAPREV" />
+          <ScalarProperty Name="FECHA_DENUNCIAPREV" ColumnName="FECHA_DENUNCIAPREV" />
+          <ScalarProperty Name="PARAM_ENTIDAD_DENUNCIAPREV" ColumnName="PARAM_ENTIDAD_DENUNCIAPREV" />
+          <ScalarProperty Name="DECLARACIONPREV" ColumnName="DECLARACIONPREV" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMP_SOLICITUD_SINIESTRO">
+      <EntityTypeMapping TypeName="RuvModel.TMP_SOLICITUD_SINIESTRO">
+        <MappingFragment StoreEntitySet="TMP_SOLICITUD_SINIESTRO">
+          <ScalarProperty Name="ID_DECLARACION" ColumnName="ID_DECLARACION" />
+          <ScalarProperty Name="ID_TIPOSINIESTRO" ColumnName="ID_TIPOSINIESTRO" />
+          <ScalarProperty Name="ID_ESTADOSINIESTRO" ColumnName="ID_ESTADOSINIESTRO" />
+          <ScalarProperty Name="ID_SINIESTRO" ColumnName="ID_SINIESTRO" />
+          <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+          <ScalarProperty Name="ID_SOLICITUDSINIESTRO" ColumnName="ID_SOLICITUDSINIESTRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMP_TRANSACTIONTEST">
+      <EntityTypeMapping TypeName="RuvModel.TMP_TRANSACTIONTEST">
+        <MappingFragment StoreEntitySet="TMP_TRANSACTIONTEST">
+          <ScalarProperty Name="CDESCRIPTION" ColumnName="CDESCRIPTION" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TBAFECTACION_VAL" TypeName="RuvModel.TBAFECTACION_VAL" StoreEntitySet="TBAFECTACION_VAL">
+      <EndProperty Name="TBVAL_ANEXO_PERSONA">
+        <ScalarProperty Name="ID" ColumnName="ID_VALANEXOPERSON" />
+      </EndProperty>
+      <EndProperty Name="TBPARAMETROS">
+        <ScalarProperty Name="ID" ColumnName="PARAM_AFECTACION" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBAREA_DOCUMENTO" TypeName="RuvModel.TBAREA_DOCUMENTO" StoreEntitySet="TBAREA_DOCUMENTO">
+      <EndProperty Name="TBPARAMETROS1">
+        <ScalarProperty Name="ID" ColumnName="PARAM_DOCUMENTO" />
+      </EndProperty>
+      <EndProperty Name="TBPARAMETROS">
+        <ScalarProperty Name="ID" ColumnName="PARAM_AREA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBAUTORHV_VAL_ANEXO" TypeName="RuvModel.TBAUTORHV_VAL_ANEXO" StoreEntitySet="TBAUTORHV_VAL_ANEXO">
+      <EndProperty Name="TBVAL_ANEXO_PERSONA">
+        <ScalarProperty Name="ID" ColumnName="ID_VAL_ANEXO_PERSONA" />
+      </EndProperty>
+      <EndProperty Name="TBAUTORHV">
+        <ScalarProperty Name="ID" ColumnName="ID_AUTORHV" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBCAUSALESDEVOLUCION" TypeName="RuvModel.TBCAUSALESDEVOLUCION" StoreEntitySet="TBCAUSALESDEVOLUCION">
+      <EndProperty Name="TBDEVOLUCION">
+        <ScalarProperty Name="ID" ColumnName="ID_DEVOLUCION" />
+      </EndProperty>
+      <EndProperty Name="TBCAUSALES">
+        <ScalarProperty Name="ID" ColumnName="ID_CAUSAL" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBINFRACCION_DIH_VALANEXOPER" TypeName="RuvModel.TBINFRACCION_DIH_VALANEXOPER" StoreEntitySet="TBINFRACCION_DIH_VALANEXOPER">
+      <EndProperty Name="TBVAL_ANEXO_PERSONA">
+        <ScalarProperty Name="ID" ColumnName="ID_VAL_ANEXO_PER" />
+      </EndProperty>
+      <EndProperty Name="TBINFRACCION_DIH">
+        <ScalarProperty Name="ID" ColumnName="ID_INFRACCIONDIH" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBPRINCIPIO_VAL" TypeName="RuvModel.TBPRINCIPIO_VAL" StoreEntitySet="TBPRINCIPIO_VAL">
+      <EndProperty Name="TBVAL_ANEXO_PERSONA">
+        <ScalarProperty Name="ID" ColumnName="ID_VAL_ANEXO_PER" />
+      </EndProperty>
+      <EndProperty Name="TBPRINCIPIO">
+        <ScalarProperty Name="ID" ColumnName="ID_PRINCIPIO" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBVALORACION_PRINCIPO" TypeName="RuvModel.TBVALORACION_PRINCIPO" StoreEntitySet="TBVALORACION_PRINCIPO">
+      <EndProperty Name="TBVALORACION">
+        <ScalarProperty Name="ID" ColumnName="ID_VALORACION" />
+      </EndProperty>
+      <EndProperty Name="TBPRINCIPIO">
+        <ScalarProperty Name="ID" ColumnName="ID_PRINCIPIO" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBVALREG_PERSONA" TypeName="RuvModel.TBVALREG_PERSONA" StoreEntitySet="TBVALREG_PERSONA">
+      <EndProperty Name="TBVALORACION_REGISTROS">
+        <ScalarProperty Name="ID" ColumnName="ID_VALREG" />
+      </EndProperty>
+      <EndProperty Name="TBREGISTROS_PERSONAS">
+        <ScalarProperty Name="ID" ColumnName="ID_REGPERSONA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TBVALREG_PREGUNTA" TypeName="RuvModel.TBVALREG_PREGUNTA" StoreEntitySet="TBVALREG_PREGUNTA">
+      <EndProperty Name="TBPARAMETROS">
+        <ScalarProperty Name="ID" ColumnName="PARAM_PREGUNTA" />
+      </EndProperty>
+      <EndProperty Name="TBVALORACION_REGISTROS">
+        <ScalarProperty Name="ID" ColumnName="ID_VALREG" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

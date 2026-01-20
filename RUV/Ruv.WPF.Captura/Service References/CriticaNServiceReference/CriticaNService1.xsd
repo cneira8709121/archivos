@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/CriticaNService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.CriticaN" />
+  <xs:element name="ObtenerImagenRadicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nId" type="xs:long" />
+        <xs:element minOccurs="0" name="cNombreImagen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerImagenRadicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerImagenRadicacionResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cNombreImagen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertaCriticaN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.CriticaN" minOccurs="0" name="lstRespuesta" nillable="true" type="q1:ArrayOfclsRespuestaCritica" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertaCriticaNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertaCriticaNResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

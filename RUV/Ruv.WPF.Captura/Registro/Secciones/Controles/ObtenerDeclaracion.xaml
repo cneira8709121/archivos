@@ -1,0 +1,227 @@
+﻿<Window xmlns:my="clr-namespace:Ruv.WPF.Captura.Controles"
+        x:Class="Ruv.WPF.Captura.Registro.Secciones.Controles.ObtenerDeclaracion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dt="clr-namespace:WpfMentor.TriggerTracingSample"
+        xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+        Icon="/Ruv.WPF.Captura;component/Recursos/Imagenes/RUV.ico"
+        Title="Obtener una Declaracion"
+        WindowStyle="ToolWindow"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        Height="401"
+        Width="770">
+  <Window.Resources>
+    <Style TargetType="TextBox">
+      <Setter Property="CharacterCasing"
+              Value="Upper" />
+    </Style>
+  </Window.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto">
+    <Grid Background="LightGray">
+      <Grid.Resources>
+        <Style TargetType="Button">
+          <Setter Property="Padding"
+                  Value="10,2" />
+        </Style>
+      </Grid.Resources>
+      <TextBlock HorizontalAlignment="Left"
+                 Margin="12,13,0,0"
+                 Text="Número de formulario"
+                 VerticalAlignment="Top" />
+      <TextBox Text="{Binding CodigoDeclaracion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               x:Name="tbxCodigoDeclaracion"
+               Height="23"
+               HorizontalAlignment="Left"
+               Margin="167,13,0,0"
+               VerticalAlignment="Top"
+               Width="212"
+               TabIndex="1" />
+      <TextBlock HorizontalAlignment="Left"
+                 FontWeight="Bold"
+                 Margin="167,42,0,0"
+                 Text="DATOS DEL DECLARANTE"
+                 VerticalAlignment="Top" />
+      <TextBox Text="{Binding DeclaranteNumeroIdentificacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               Height="23"
+               HorizontalAlignment="Left"
+               Margin="167,70,0,0"
+               Name="textBox2"
+               VerticalAlignment="Top"
+               Width="212"
+               TabIndex="2" />
+      <TextBlock HorizontalAlignment="Left"
+                 Margin="12,98,0,0"
+                 Text="Primer nombre"
+                 VerticalAlignment="Top" />
+      <TextBlock HorizontalAlignment="Left"
+                 Margin="13,123,0,0"
+                 Text="Demás nombres"
+                 VerticalAlignment="Top" />
+      <TextBlock HorizontalAlignment="Left"
+                 Margin="393,98,0,0"
+                 Text="Primer apellido"
+                 VerticalAlignment="Top" />
+      <TextBlock HorizontalAlignment="Left"
+                 Margin="392,123,0,0"
+                 Text="Segundo apellido"
+                 VerticalAlignment="Top" />
+      <TextBlock HorizontalAlignment="Left"
+                 Margin="12,73,0,0"
+                 Text="Número de identificación"
+                 VerticalAlignment="Top" />
+      <TextBox Text="{Binding DeclarantePrimerNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               Height="23"
+               HorizontalAlignment="Left"
+               Margin="167,95,0,0"
+               Name="textBox3"
+               VerticalAlignment="Top"
+               Width="212"
+               TabIndex="3" />
+      <TextBox Text="{Binding DeclaranteDemasNombres, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               Height="23"
+               HorizontalAlignment="Left"
+               Margin="167,120,0,0"
+               Name="textBox4"
+               VerticalAlignment="Top"
+               Width="212"
+               TabIndex="4" />
+      <TextBox Text="{Binding DeclarantePrimerApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               Height="23"
+               HorizontalAlignment="Left"
+               Margin="497,95,0,0"
+               Name="textBox5"
+               VerticalAlignment="Top"
+               Width="212"
+               TabIndex="5" />
+      <TextBox Text="{Binding DeclaranteSegundoApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               Height="23"
+               HorizontalAlignment="Left"
+               Margin="497,120,0,0"
+               Name="textBox6"
+               VerticalAlignment="Top"
+               Width="212"
+               TabIndex="6" />
+      <Button Content="Buscar"
+              Click="Buscar"
+              IsDefault="True"
+              HorizontalAlignment="Left"
+              Margin="167,149,0,0"
+              Padding="10,2"
+              VerticalAlignment="Top"
+              TabIndex="7">
+        <Button.Style>
+          <Style TargetType="Button">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding Path=HayParametrosMinimosParaBusqueda}"
+                           Value="True">
+                <Setter Property="Button.IsEnabled"
+                        Value="True" />
+              </DataTrigger>
+              <DataTrigger Binding="{Binding Path=HayParametrosMinimosParaBusqueda}"
+                           Value="False">
+                <Setter Property="Button.IsEnabled"
+                        Value="False" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Button.Style>
+      </Button>
+      <Button Content="Cerrar"
+              Click="Cerrar"
+              IsCancel="True"
+              Margin="0,0,12,12"
+              VerticalAlignment="Bottom"
+              HorizontalAlignment="Right"
+              TabIndex="10" />
+      <Grid Margin="20,191,22,0"
+            Height="32"
+            VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1.3*" />
+          <ColumnDefinition Width="3.5*" />
+          <ColumnDefinition Width="1.5*" />
+          <ColumnDefinition Width="1.7*" />
+          <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+          <Style TargetType="TextBlock">
+            <Setter Property="FontStyle"
+                    Value="Italic" />
+          </Style>
+        </Grid.Resources>
+        <TextBlock Grid.Row="1">Declaración</TextBlock>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1">Estado</TextBlock>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2">Fecha</TextBlock>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="3">Identificación</TextBlock>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="4" TextAlignment="Left">Nombre completo</TextBlock>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="3">Declarante</TextBlock>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="4">Declarante</TextBlock>
+      </Grid>
+      <ListBox Margin="13,222,12,42"
+               Name="lbxResultado"
+               HorizontalContentAlignment="Stretch"
+               MouseDoubleClick="SeleccionarLista"
+               TabIndex="8">
+        <ListBox.Resources>
+          <conv:SeparadorTextoConverter x:Key="STC" />
+          <Style TargetType="TextBlock">
+            <Setter Property="TextAlignment"
+                    Value="Center" />
+          </Style>
+        </ListBox.Resources>
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.3*" />
+                <ColumnDefinition Width="3.5*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1.7*" />
+                <ColumnDefinition Width="4*" />
+              </Grid.ColumnDefinitions>
+              <TextBlock Text="{Binding CodigoDeclaracion}" />
+              <TextBlock Text="{Binding EstadoDeclaracion, Converter={StaticResource STC}}"
+                         FontWeight="Bold"
+                         Foreground="Blue"
+                         Grid.Column="1" />
+              <TextBlock Text="{Binding FechaDeclaracion, StringFormat='{}dd-MMM-yyyy'}"
+                         Grid.Column="2" />
+              <TextBlock Text="{Binding DeclaranteNumeroIdentificacion}"
+                         TextAlignment="Center"
+                         Grid.Column="3" />
+              <TextBlock Text="{Binding NombreCompleto}"
+                         Foreground="Blue"
+                         Grid.Column="4" />
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <Button Content="Limpiar búsqueda"
+              Click="LimpiarBusqueda"
+              HorizontalAlignment="Left"
+              Margin="150,0,0,12"
+              TabIndex="9"
+              VerticalAlignment="Bottom" />
+      <Button Content="Obtener declaración"
+              Click="Obtener"
+              HorizontalAlignment="Left"
+              Margin="13,0,0,12"
+              TabIndex="9"
+              VerticalAlignment="Bottom" />
+      <my:BloqueoInterfase x:Name="ControlBloqueoInterfase" />
+            <TextBlock x:Name="tbHoraUltimaBusqueda" HorizontalAlignment="Left" Margin="247,153,0,0" Text="Hora búsqueda: " VerticalAlignment="Top" Foreground="#FF868686" FontStyle="Italic" />
+        </Grid>
+  </ScrollViewer>
+</Window>

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruv.unidadvictimas.gov.co/GeneralService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" />
+  <xs:import schemaLocation="http://ruv.unidadvictimas.gov.co/GeneralService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:import schemaLocation="http://ruv.unidadvictimas.gov.co/GeneralService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://ruv.unidadvictimas.gov.co/GeneralService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" />
+  <xs:import schemaLocation="http://ruv.unidadvictimas.gov.co/GeneralService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Validacion" />
+  <xs:element name="ObtenerParametrosGenerales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoParams" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerParametrosGeneralesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerParametrosGeneralesResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeclaracionAlmacenar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="declaracion" nillable="true" type="q1:clsDeclaracion" />
+        <xs:element minOccurs="0" name="numeroDeclaracion" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="usuario" nillable="true" type="q2:clsUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeclaracionAlmacenarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DeclaracionAlmacenarResult" nillable="true" type="q3:clsResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDeclaracion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="parametros" nillable="true" type="q4:clsBusquedaDeclaracion" />
+        <xs:element minOccurs="0" name="tipoParams" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarDeclaracionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="BuscarDeclaracionResult" nillable="true" type="q5:ArrayOfclsBusquedaDeclaracion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDeclaracion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoDeclaracion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDeclaracionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="ObtenerDeclaracionResult" nillable="true" type="q6:clsDeclaracion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RadicacionAlmacenar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="radicacion" nillable="true" type="q7:clsRadicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RadicacionAlmacenarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RadicacionAlmacenarResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarRadicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="radicacion" nillable="true" type="q8:clsRadicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarRadicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GuardarRadicacionResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarRadicacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="radicacion" nillable="true" type="q9:clsRadicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarRadicacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarRadicacionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargarImagen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imageData" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargarImagenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CargarImagenResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargarPdf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileData" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargarPdfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CargarPdfResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoParams" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FecharadicadoInicia" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaRadicadofinal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PageNumber" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="ObtenerListaTareasResult" nillable="true" type="q10:ArrayOfclsListaTareas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasPaginado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoParams" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startRow" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="sortColumns" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterEx" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasPaginadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="ObtenerListaTareasPaginadoResult" nillable="true" type="q11:ArrayOfclsListaTareas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasCantidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasCantidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerListaTareasCantidadResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasWPFCantidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="FecharadicadoInicia" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaRadicadofinal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListaTareasWPFCantidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerListaTareasWPFCantidadResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RadicacionActualizarEstado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRadicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="param_estado" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoParams" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idDeclaracion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RadicacionActualizarEstadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="RadicacionActualizarEstadoResult" nillable="true" type="q12:clsResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGlosasxDeclaracion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="laDeclaracion" nillable="true" type="q13:clsDeclaracion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGlosasxDeclaracionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="getGlosasxDeclaracionResult" nillable="true" type="q14:ArrayOfclsGlosa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIGlosasxDeclaracion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="laDeclaracion" nillable="true" type="q15:clsDeclaracion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIGlosasxDeclaracionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="getIGlosasxDeclaracionResult" nillable="true" type="q16:ArrayOfclsGlosaIntencion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setGlosas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="myGlosa" nillable="true" type="q17:clsGlosa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setGlosasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="setGlosasResult" nillable="true" type="q18:clsGlosa" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setIntenGlosas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="myIntencionGlosa" nillable="true" type="q19:clsGlosaIntencion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setIntenGlosasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="setIntenGlosasResult" nillable="true" type="q20:clsGlosaIntencion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoDeclaracion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="declaracion" nillable="true" type="q21:clsDeclaracion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoDeclaracionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ActualizarEstadoDeclaracionResult" nillable="true" type="q22:clsResultado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGeografiaCompleta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerGeografiaCompletaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="ObtenerGeografiaCompletaResult" nillable="true" type="q23:ArrayOfclsGeografiaCompleta" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPaises">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPaisesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="ObtenerPaisesResult" nillable="true" type="q24:ArrayOfclsGeografiaCompleta" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDepartamentosPorPais">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPais" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDepartamentosPorPaisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="ObtenerDepartamentosPorPaisResult" nillable="true" type="q25:ArrayOfclsGeografiaCompleta" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMunicipiosPorDepartamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDepartamento" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerMunicipiosPorDepartamentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="ObtenerMunicipiosPorDepartamentoResult" nillable="true" type="q26:ArrayOfclsGeografiaCompleta" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDireccionPuntoNotificacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPuntoNotificacion" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoPunto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDireccionPuntoNotificacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerDireccionPuntoNotificacionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDireccionPuntoNotificacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPuntoNotificacion" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoPunto" type="xs:int" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDireccionPuntoNotificacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarIdentidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTipoToma" type="xs:int" />
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="idTipoDoc" type="xs:int" />
+        <xs:element minOccurs="0" name="numDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primerNombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundoNombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primerApellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundoApellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="celular" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarIdentidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Validacion" minOccurs="0" name="ValidarIdentidadResult" nillable="true" type="q27:ArrayOfclsPersonaIdentidad" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarValidacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="celular" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="alCelular" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarValidacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EnviarValidacionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCodigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="numDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="celular" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="alCelular" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCodigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarCodigoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

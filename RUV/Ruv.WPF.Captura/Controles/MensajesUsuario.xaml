@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ruv.WPF.Captura.Controles"
+        xmlns:Impresion="clr-namespace:Ruv.WPF.Captura.Impresion" x:Name="MensajesUser" x:Class="Ruv.WPF.Captura.Controles.MensajesUsuario"
+        mc:Ignorable="d"
+        Title="MensajesUsuario" Height="181.25" Width="428.188">
+    <Grid Margin="10,20,10,20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" Grid.Row="0" x:Name="tbxMensaje">
+        </TextBlock>
+        <Button x:Name="btnAceptar" Content="Aceptar" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="25" Margin="290,5,0,0" Click="btnAceptar_Click"/>
+    </Grid>
+</Window>

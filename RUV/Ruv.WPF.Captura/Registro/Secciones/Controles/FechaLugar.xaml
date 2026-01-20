@@ -1,0 +1,197 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Secciones.FechaLugar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:controles="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             mc:Ignorable="d"
+             d:DesignHeight="125"
+             d:DesignWidth="695">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/RecursosGeoEntorno.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="RadioButton"
+             BasedOn="{StaticResource styRadioButtonX}" />
+      <Style TargetType="CheckBox"
+             BasedOn="{StaticResource styCheckBoxX}" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+
+    <sec:SubTituloEntrada x:Name="steTitulo"
+                          Margin="0,0,0,5"
+                          Numero="."
+                          Texto="Relacione la fecha y lugar de los hechos" />
+        
+    <Grid x:Name="grdMain"
+          VerticalAlignment="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            Texto="LUGAR" />
+        <sec:SubTituloEntrada Numero=""
+                        AlineacionTexto="Center"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Texto="PAIS"/>
+        <sec:SubTituloEntrada Numero=""
+                        AlineacionTexto="Center"
+                        Grid.Column="2"
+                        Grid.Row="1"
+                        Texto="DEPARTAMENTO" />
+      <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.Column="3"
+                            Grid.Row="1"
+                            Texto="MUNICIPIO" />
+      <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.Column="4"
+                            Grid.ColumnSpan="3"
+                            Texto="ENTORNO" />
+      <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.Column="4"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="1"
+                            Texto="TIPO" />
+      <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.Column="5"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="1"
+                            Style="{StaticResource stySubTituloEntradaGeoEntorno02}" />
+      <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.Column="6"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="1"
+                            Style="{StaticResource stySubTituloEntradaGeoEntorno01}" />
+      <sec:SubTituloEntrada x:Name="steFecha"
+                            Numero=""
+                            AlineacionTexto="Center"
+                            Grid.RowSpan="2"
+                            Texto="Fecha" />
+      <TextBlock x:Name="txtRedondeoFecha"
+                 Grid.Row="1"
+                 FontSize="{StaticResource TamañoTextoMedio}"
+                 TextWrapping="Wrap"
+                 TextAlignment="Center">(si no es precisa aproxime día, mes y año)</TextBlock>
+            <sec:CajaIngresoFecha x:Name="cifFecha"
+                            Grid.Row="2" GotFocus="cifFecha_GotFocus"
+                            Grid.RowSpan="3"
+                            Fecha="{Binding HechosFecha, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" >
+            </sec:CajaIngresoFecha>
+            <controles:Geografia x:Name="geo01"
+                           Grid.Row="2" 
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"   
+                           ComboPais="{Binding ElementName=cbPais}"
+                           ComboDepartamento="{Binding ElementName=cbDepartamento}"
+                           ComboMunicipio="{Binding ElementName=cbMunicipio}"
+                           PaisId="{Binding HechosPais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                           DepartamentoId="{Binding HechosDepartamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                           MunicipioId="{Binding HechosMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+        <Border Style="{StaticResource styBordeCajaEntrada1}"
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalAlignment="Stretch">
+            <ComboBox x:Name="cbPais" SelectionChanged="cbPais_SelectionChanged"
+                VerticalAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="2"
+              Grid.Column="2"
+              VerticalAlignment="Stretch">
+        <ComboBox x:Name="cbDepartamento"
+                  VerticalAlignment="Center" />
+      </Border>
+      <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="2"
+              Grid.Column="3"
+              VerticalAlignment="Stretch">
+        <ComboBox x:Name="cbMunicipio"
+                  VerticalAlignment="Center" />
+      </Border>
+      <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="2"
+              Grid.Column="4"
+              VerticalAlignment="Stretch">
+        <ComboBox x:Name="cbxTipoEntorno"
+                  VerticalAlignment="Center"
+                  DisplayMemberPath="Nombre"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding TipoEntorno, Converter={StaticResource TEC},
+                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                  ItemsSource="{Binding Source={StaticResource RUV}, Path=InfoGeneral.ListaTipoEntorno}" />
+      </Border>
+      <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="2"
+              Grid.Column="5"
+              VerticalAlignment="Stretch">
+        <ComboBox x:Name="cbxLocalidadCorregimiento"
+                  IsEditable="true"
+                  VerticalAlignment="Center"
+                  DisplayMemberPath="Nombre"
+                  SelectedValuePath="Id">
+          <i:Interaction.Behaviors>
+            <congen:ComboMayusculaBehavior />
+            <!--<congen:ComboSoloLetrasBehavior />-->
+          </i:Interaction.Behaviors>
+        </ComboBox>
+
+      </Border>
+      <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="2"
+              Grid.Column="6"
+              VerticalAlignment="Stretch">
+        <ComboBox x:Name="cbxBarrioVereda"
+                  IsEditable="true"
+                  VerticalAlignment="Center"
+                  DisplayMemberPath="Nombre"
+                  SelectedValuePath="Id">
+          <i:Interaction.Behaviors>
+            <congen:ComboMayusculaBehavior />
+            <!--<congen:ComboSoloLetrasBehavior />-->
+          </i:Interaction.Behaviors>
+        </ComboBox>
+      </Border>
+      <controles:GeoEntorno x:Name="geeEntorno"
+                            ComboMunicipio="{Binding ElementName=cbMunicipio}"
+                            TipoEntornoId="{Binding TipoEntorno}"
+                            ComboBarrioVereda="{Binding ElementName=cbxBarrioVereda}"
+                            ComboLocalidadCorregimiento="{Binding ElementName=cbxLocalidadCorregimiento}"
+                            BarrioVeredaId="{Binding BarrioVeredaId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            LocalidadCorregimientoId="{Binding LocalidadCorregimientoId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            BarrioVeredaNombre="{Binding BarrioVeredaNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            LocalidadCorregimientoNombre="{Binding LocalidadCorregimientoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            Grid.Row="2"
+                            Grid.Column="4"
+                            Grid.ColumnSpan="3" />
+    </Grid>
+        <Label x:Name="lblMensajeFechaLugar" Foreground="Blue" ></Label>
+    </StackPanel>
+</UserControl>

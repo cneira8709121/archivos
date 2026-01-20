@@ -1,0 +1,499 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.H01_Pregunta01_08"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             mc:Ignorable="d"
+             d:DesignHeight="576"
+             d:DesignWidth="747">
+    <!--Height="879"-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:VictimaConsultaConverter x:Key="VCC" />
+            <conv:ConsultaDatoConverter x:Key="CDC" />
+            <conv:ConsultaDatoImpresionConverter x:Key="CDCI" />
+            <conv:CantidadTiempoConverter x:Key="CTC" />
+            <conv:ParametroNumeroConverter x:Key="PNC" />
+            <conv:GeoEntornoConverter x:Key="GEC" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock  Style="{StaticResource styTituloSeccion}">I. ENTREVISTA PREVIA</TextBlock>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t001}" />
+        <TextBlock Style="{StaticResource styTituloSeccion}">I. TOMA DE LA DECLARACIÓN</TextBlock>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t002}"
+                         HorizontalAlignment="Center" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <sec:SubTituloEntrada Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="3"
+                            Numero="1"
+                            Texto="*Lugar de la Declaración" />
+            <sec:SubTituloEntrada Grid.Column="3"
+                            Grid.Row="0"
+                            Numero="2"
+                            Texto="*Entidad que atiende" />
+            <sec:SubTituloEntrada Grid.Column="4"
+                            Grid.Row="0"
+                            Numero="3"
+                            x:Name="se01"
+                            Texto="*Fecha de la Declaración" />
+            <!--ENTRADA DE DATOS-->
+            <congen:Geografia x:Name="geo01"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        ComboPais="{Binding ElementName=cb01Pais}"
+                        ComboDepartamento="{Binding ElementName=cb01Departamento}"
+                        ComboMunicipio="{Binding ElementName=cb01Municipio}"
+                        PaisId="{Binding LugarDeclaracionPais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        DepartamentoId="{Binding LugarDeclaracionDepartamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        MunicipioId="{Binding LugarDeclaracionMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.Column="0"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">País</TextBlock>
+                    <my:DatoColumna Texto="{Binding LugarDeclaracionPais, Converter={StaticResource CDC}, ConverterParameter=Pais }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.Column="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">Departamento</TextBlock>
+                    <my:DatoColumna Texto="{Binding LugarDeclaracionDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="2"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">Municipio</TextBlock>
+                    <my:DatoColumna Texto="{Binding LugarDeclaracionMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="3"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">Entidad</TextBlock>
+                    <my:DatoColumna Texto="{Binding LugarDeclaracionEntidadMunicipio, Converter={StaticResource CDC}, ConverterParameter=ENTIDAD_MUNICIPIO }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            
+            <my:DatoFechaColumna FechaTexto="{Binding FechaDeclaracion}"
+                           Grid.Column="5"
+                           Grid.Row="1" />
+        </Grid>
+        <!--TEXTO DESCRIPTIVO-->
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t003}"
+                         TextAlignment="Justify"
+                         TextWrapping="Wrap" />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t004}"
+                         FontSize="{StaticResource TamañoTextoNormal}"
+                         TextAlignment="Center"
+                         TextWrapping="Wrap" />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h01t005}"
+                         TextAlignment="Justify"
+                         TextWrapping="Wrap" />
+        <sec:SubTituloEntrada Numero="4"
+                          Texto="Si en esta declaración se presenta alguno de los tres casos anteriores por favor diligencie la siguiente información. En caso contrario, pase directamente al punto 5." />
+        <!--Conjunto="TomaDeclaracion"-->
+        <DockPanel>
+            <my:DatoColumna Texto="{Binding Encargado.RepresentanteTipo, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                      Margin="0,0,5,0"
+                      DockPanel.Dock="Left"
+                      BordeVisible="False" />
+            <my:DatoColumna Texto="{Binding Encargado.RepresentanteTipoAutoridadCompetente}"
+                      BordeVisible="False" />
+        </DockPanel>
+        <sec:SubTituloEntrada Numero=""
+                          Texto="Registre a continuación los datos del intérprete, tutor o funcionario (Solo si aplica)" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <!--ENTRADA DE DATOS-->
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Primer nombre</TextBlock>
+                    <my:DatoColumna Texto="{Binding Encargado.RepresentantePrimerNombre}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="1"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Demás nombres (si aplica)</TextBlock>
+                    <my:DatoColumna Texto="{Binding Encargado.RepresentanteSegundoNombre}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="2"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Primer apellido</TextBlock>
+                    <my:DatoColumna Texto="{Binding Encargado.RepresentantePrimerApellido}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="3"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Segundo apellido</TextBlock>
+                    <my:DatoColumna Texto="{Binding Encargado.RepresentanteSegundoApellido}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <!--<sec:SubTituloEntrada Grid.Column="0"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="6"
+                            Numero="5"
+                            Texto="." />
+      <sec:SubTituloEntrada Grid.Column="8"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            Numero="8"
+                            Texto="Fecha de Nacimiento" />-->
+            <!--ENTRADA DE DATOS-->
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.ColumnSpan="2">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Documento de identidad</TextBlock>
+                    <DockPanel>
+                        <my:DatoColumna Texto="{Binding Encargado.RepresentanteTipoDocumento, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                            Margin="0,0,5,0"
+                            DockPanel.Dock="Left"
+                            BordeVisible="False" />
+                        <my:DatoColumna Texto="{Binding Encargado.RepresentanteNumeroDocumento}"
+                            BordeVisible="False" />
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="2"
+              Grid.Row="1"
+              Grid.ColumnSpan="3">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Dirección</TextBlock>
+                    <my:DatoColumna Texto="{Binding Encargado.RepresentanteDireccion}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="5"
+              Grid.Row="1"
+              Grid.ColumnSpan="2">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Teléfono</TextBlock>
+                    <my:DatoColumna Texto="{Binding Encargado.RepresentanteTelefono}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+        </Grid>
+        <TextBlock Margin="0,10,0,0"><Run FontWeight="Bold">Compareció:</Run> (Me llamo como está dicho y descrito)</TextBlock>
+        <sec:SubTituloEntrada Numero="5"
+                          Texto="*Identificación del (de la) declarante" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--TITULOS-->
+            <!--ENTRADA DE DATOS-->
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Primer Nombre</TextBlock>
+                    <my:DatoColumna Texto="{Binding DeclarantePrimerNombre}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="1"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Demás Nombres (si aplica)</TextBlock>
+                    <my:DatoColumna Texto="{Binding DeclaranteSegundoNombre}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="2"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Primer Apellido</TextBlock>
+                    <my:DatoColumna Texto="{Binding DeclarantePrimerApellido}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="3"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Segundo Apellido</TextBlock>
+                    <my:DatoColumna Texto="{Binding DeclaranteSegundoApellido}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2.3*" />
+                <ColumnDefinition Width="2.3*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <sec:SubTituloEntrada Numero="6"
+                            Texto="Tipo y número del documento de indentidad"
+                            Grid.ColumnSpan="2" />
+            <sec:SubTituloEntrada Numero="7"
+                            Texto="Fecha de nacimiento"
+                            Grid.ColumnSpan="1"
+                            Grid.Column="2" />
+            <sec:SubTituloEntrada 
+                            Texto="Nacionalidad"
+                            Grid.ColumnSpan="1"
+                            Grid.Column="3" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.ColumnSpan="2">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Documento de identidad</TextBlock>
+                    <DockPanel>
+                        <my:DatoColumna Texto="{Binding DeclaranteTipoDocumento, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                            Margin="0,0,5,0"
+                            DockPanel.Dock="Left"
+                            BordeVisible="False" />
+                        <my:DatoColumna Texto="{Binding DeclaranteNumeroDocumento}"
+                            BordeVisible="False" />
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+            <my:DatoFechaColumna FechaTexto="{Binding DeclaranteFechaNacimiento}"
+                           Grid.Row="1"
+                           Grid.Column="2"
+                           VerticalAlignment="Stretch" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Column="3"
+              Grid.Row="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Pais de nacionalidad</TextBlock>
+                    <my:DatoColumna Texto="{Binding DeclaranteNacionalidad, Converter={StaticResource CDC}, ConverterParameter=Pais}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            
+        </Grid>
+        <sec:SubTituloEntrada Numero="8"
+                          Texto="Datos de contactos del (de la) Declarante" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.ColumnSpan="5">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">*Dirección de residencia o correspondencia</TextBlock>
+                    <my:DatoColumna Texto="{Binding DatoContactoDireccion}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+
+            <congen:Geografia x:Name="geo02"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="6"
+                        ComboPais="{Binding ElementName=cbPaisDeclarante}"
+                        ComboDepartamento="{Binding ElementName=cbDeptoDeclarante}"
+                        ComboMunicipio="{Binding ElementName=cbMcpioDeclarante}"
+                        PaisId="{Binding DatoContactoPais, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        DepartamentoId="{Binding DatoContactoDepartamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        MunicipioId="{Binding DatoContactoMunicipio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">País</TextBlock>
+                    <my:DatoColumna Texto="{Binding DatoContactoPais, Converter={StaticResource CDC}, ConverterParameter=Pais }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="1"
+              Grid.Column="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">Departamento</TextBlock>
+                    <my:DatoColumna Texto="{Binding DatoContactoDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="2"
+              Grid.Row="1"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top">Municipio</TextBlock>
+                    <my:DatoColumna Texto="{Binding DatoContactoMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada2}"
+              Grid.Column="3"
+              Grid.Row="1"
+              Grid.ColumnSpan="3"
+              VerticalAlignment="Stretch">
+                <DockPanel VerticalAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top"
+                     Text="{Binding DatoContactoTipoEntorno, Converter={StaticResource CDC}, ConverterParameter=TIPOENTORNOPOBLACIONES}" />
+                    <my:DatoColumna BordeVisible="False">
+                        <my:DatoColumna.Texto>
+                            <MultiBinding Converter="{StaticResource GEC}"
+                            ConverterParameter="ENTORNOCOMPLETO">
+                                <Binding Path="DatoContactoTipoEntorno" />
+                                <Binding Path="DatoContactoBarrioVeredaId" />
+                                <Binding Path="DatoContactoLocalidadCorregimientoId" />
+                                <Binding Path="DatoContactoBarrioVeredaNombre" />
+                                <Binding Path="DatoContactoLocalidadCorregimientoNombre" />
+                            </MultiBinding>
+                        </my:DatoColumna.Texto>
+                    </my:DatoColumna>
+                </DockPanel>
+            </Border>
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Número telefónico al cual se enviarán avisos de notificación e información sobre oferta institucional (Este servicio será siempre gratuito)"
+                            Grid.Row="2"
+                            Grid.ColumnSpan="2" />
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Correo electrónico"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="3" />
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Fijo</TextBlock>
+                    <my:DatoColumna 
+                          BordeVisible="False" >
+                        <my:DatoColumna.Texto>
+                            <MultiBinding Converter="{StaticResource CDCI}" ConverterParameter="INDICATIVO_FIJO" >
+                                <!--<Binding Path="DatoContactoMunicipio" />
+                                <Binding Path="DatoContactoTelefonoFijo" />-->
+                                <Binding Path="DatoContactoPais" />
+                                <Binding Path="DatoContactoIndicativo" />
+                                <Binding Path="DatoContactoTelefonoFijo" />
+                            </MultiBinding>
+                        </my:DatoColumna.Texto>
+                    </my:DatoColumna>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3"
+              Grid.Column="1">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top">Celular</TextBlock>
+                    <my:DatoColumna 
+                          BordeVisible="False" >
+                        <my:DatoColumna.Texto>
+                            <MultiBinding Converter="{StaticResource CDCI}" ConverterParameter="INDICATIVO_CELULAR" >
+                                <Binding Path="DatoContactoPais" />
+                                <Binding Path="DatoContactoTelefonoCelular" />
+                            </MultiBinding>
+                        </my:DatoColumna.Texto>
+                    </my:DatoColumna>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource styBordeCajaEntrada1}"
+              Grid.Row="3"
+              Grid.Column="2"
+              Grid.ColumnSpan="3">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top"></TextBlock>
+                    <my:DatoColumna Texto="{Binding DatoContactoCorreoElectronico}"
+                          BordeVisible="False" />
+                </DockPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
+</UserControl>

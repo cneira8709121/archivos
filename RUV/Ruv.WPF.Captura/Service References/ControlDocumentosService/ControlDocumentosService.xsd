@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:complexType name="clsRadicacion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsEntidadBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CANTIDADDOCUMENTOS" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CONSECUTIVO" type="xs:long" />
+          <xs:element minOccurs="0" name="DocumentoDigital" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="FECHAENVIO" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FECHALLEGADA" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FECHAREGISTRO" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_DECLARACION" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_DEPARTAMENTO" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ID_ENTIDADMUNICIPIO" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="ID_MUNICIPIO" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ID_PAIS" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ID_RADICA_URGENCIA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_TIPODOCUMENTAL" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_TIPORADICACION" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_USUARIO_RADICA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_UTERRITORIALENVIA" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_UTERRITORIALRADICA" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="ID_UTERRITORIALRECIBE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MODIFICACION" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="NOMBREENTIDAD" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NRO_FORMULARIO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OBSERVACIONES" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PARAM_ENTIDADENVIANOMBRE" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PARAM_RESULTADO_VALIDACION" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PARAM_TIPOACCIONES" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PARAM_TIPOENTIDAD" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUTAIMAGEN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsRadicacion" nillable="true" type="tns:clsRadicacion" />
+  <xs:complexType name="clsEntidadBase">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EstadoRegistro" type="q1:eEstadoRegistro" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsEntidadBase" nillable="true" type="tns:clsEntidadBase" />
+</xs:schema>

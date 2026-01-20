@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:complexType name="ArrayOfclsFormulario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFormulario" nillable="true" type="tns:clsFormulario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFormulario" nillable="true" type="tns:ArrayOfclsFormulario" />
+  <xs:complexType name="clsFormulario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BDescargado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BSelected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEntidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEstado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CMunicipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CObservacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DGenerado" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DUltimaModificacion" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EfId" type="q1:eEstadoFormulario" />
+      <xs:element minOccurs="0" name="NId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="NIdDepartamento" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdEntidad" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="NIdMunicipio" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdPais" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdUsuario" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFormulario" nillable="true" type="tns:clsFormulario" />
+  <xs:complexType name="clsFormularioSolicitudNoRadicados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EAccion" type="q2:eAccionEnFormulario" />
+      <xs:element minOccurs="0" name="NIdDepartamento" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdEntidad" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="NIdMunicipio" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdPais" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFormularioSolicitudNoRadicados" nillable="true" type="tns:clsFormularioSolicitudNoRadicados" />
+  <xs:complexType name="clsSolicitudFormularioEstado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DGenerado" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="IdEstado" nillable="true" type="q3:eEstadoFormulario" />
+      <xs:element minOccurs="0" name="NDatosPorPg" type="xs:int" />
+      <xs:element minOccurs="0" name="NDesde" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NHasta" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NIdDepartamento" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdEntidad" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="NIdMunicipio" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdPais" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NIdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="NPagina" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsSolicitudFormularioEstado" nillable="true" type="tns:clsSolicitudFormularioEstado" />
+  <xs:complexType name="ArrayOfclsSeparacionFormularioSolicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsSeparacionFormularioSolicitud" nillable="true" type="tns:clsSeparacionFormularioSolicitud" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsSeparacionFormularioSolicitud" nillable="true" type="tns:ArrayOfclsSeparacionFormularioSolicitud" />
+  <xs:complexType name="clsSeparacionFormularioSolicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NIdUsuario" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsSeparacionFormularioSolicitud" nillable="true" type="tns:clsSeparacionFormularioSolicitud" />
+</xs:schema>

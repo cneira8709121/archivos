@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Linq.Mapping;
+
+namespace Ruv.Business.DTO.General
+{
+    public class clsGeografia
+    {
+        [Column(Name = "ID")]
+        public int Id { get; set; }
+
+        [Column(Name = "NOMBRE")]
+        public string Nombre { get; set; }
+
+        [Column(Name = "TIPO")]
+        public int Tipo { get; set; }
+
+        [Column(Name = "PADRE")]
+        public int Padre { get; set; }
+    }
+}

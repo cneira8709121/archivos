@@ -1,0 +1,263 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.H04_Bloque05"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             mc:Ignorable="d"
+             d:DesignHeight="735"
+             d:DesignWidth="915">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:DeclaranteImpresionConverter x:Key="DIC" />
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+            <conv:FirmasConverter x:Key="FC" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <DockPanel Margin="10,5,10,5">
+            <sec:SubTituloEntrada Numero="33"
+                            Texto=""
+                            VerticalAlignment="Top" />
+
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t002V2}" TextWrapping="Wrap"  Margin="10,0,10,0"
+                     Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextAlignment="Justify" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t002}" TextWrapping="Wrap" Margin="10,0,10,0" Height="60"
+                                 Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                           TextAlignment="Justify" />
+        </DockPanel>
+        <my:DatoSiNoColumna Valor="{Binding UsoDatosPersonales}" Margin="40,0,0,0"
+            VerticalAlignment="Bottom"
+            Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+            HorizontalAlignment="Left" />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t003}" Margin="40,0,0,0"
+             TextAlignment="Justify" />
+        <Grid Margin="40,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83*" />
+                <ColumnDefinition Width="283*"/>
+                <ColumnDefinition Width="183*" />
+                <ColumnDefinition Width="366*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t004}"
+                           TextAlignment="Left"
+                           Grid.ColumnSpan="3" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t005}"
+                           TextAlignment="Left" Grid.ColumnSpan="2" Margin="0,9,0,0" Grid.RowSpan="2" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t006}" TextWrapping="Wrap"
+                           TextAlignment="Justify"
+                           Grid.Column="3"
+                           Grid.RowSpan="2" />
+            <!--<sec:ListaOpciones ValorSeleccionUnica="{Binding DeclaranteSabeFirmar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         VerticalAlignment="Bottom"
+                         HorizontalAlignment="Left" />-->
+            <my:DatoSiNoColumna Valor="{Binding DeclaranteSabeFirmar}"
+                          Grid.Column="2"
+                          Grid.Row="1"
+                          VerticalAlignment="Bottom"
+                          HorizontalAlignment="Left" />
+
+        </Grid>
+
+        <Grid Margin="5">
+            <Grid.Resources>
+                <!--<Style BasedOn="{StaticResource styDescripcionCajaEntrada}"
+               TargetType="TextBlock">
+          <Setter Property="Margin"
+                  Value="6,3,0,3" />
+          <Setter Property="VerticalAlignment"
+                  Value="Bottom" />
+        </Style>-->
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="3">
+                <sec:SubTituloEntrada Numero="34"
+                              ColorTexto="FondoBlanco"
+                              Texto="* Declarante"
+                              HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.ColumnSpan="3"
+              Grid.Column="5">
+                <sec:SubTituloEntrada Numero="35"
+                              ColorTexto="FondoBlanco"
+                              Texto="* Funcionario (a)"
+                              HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="1"
+              Grid.ColumnSpan="3"
+              Grid.RowSpan="4"
+              BorderThickness="1,0,1,1" />
+            <Border Grid.Row="1"
+              Grid.ColumnSpan="3"
+              Grid.Column="5"
+              Grid.RowSpan="4"
+              BorderThickness="1,0,1,1" />
+            <Border Grid.Row="0"
+              Grid.RowSpan="5"
+              Grid.Column="3"
+              BorderThickness="0,1,1,1" />
+            <TextBlock Grid.Row="1"
+                 VerticalAlignment="Bottom">Firma</TextBlock>
+            <Image x:Name="imgFirmaDeclarante" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+            <TextBlock Grid.Row="2">Nombre:</TextBlock>
+            <TextBlock Grid.Column="3"
+                 Grid.Row="4"
+                 HorizontalAlignment="Center"
+                 TextAlignment="Center">HUELLA DACTILAR<LineBreak />DECLARANTE</TextBlock>
+            <TextBlock Grid.Column="5"
+                 VerticalAlignment="Bottom"
+                 Grid.Row="1">Firma</TextBlock>
+            <Image Grid.Row="1" x:Name="imgFirmaFuncionario" Grid.Column="6" Grid.ColumnSpan="2" />
+            <TextBlock Grid.Column="5"
+                 Grid.Row="2">Nombre:</TextBlock>
+            <TextBlock Grid.Column="5"
+                 Grid.Row="3">Cargo:</TextBlock>
+
+            <Border BorderThickness="0,0,0,1"
+              Grid.Column="1"
+              Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="0,0,5,0" />
+            <Border BorderThickness="0,0,0,1"
+              Grid.Column="6"
+              Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="0,0,5,0" />
+            <DockPanel Grid.ColumnSpan="3"
+                 Grid.Row="4">
+                <TextBlock DockPanel.Dock="Left"
+                   VerticalAlignment="Center">No. de Documento de identidad</TextBlock>
+                <Border VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0">
+                    <TextBlock Margin="3"
+                     Text="{Binding Converter={StaticResource DIC}, ConverterParameter=NUMERODOCUMENTO}" />
+                </Border>
+            </DockPanel>
+            <DockPanel Grid.ColumnSpan="3"
+                 Grid.Column="5"
+                 Grid.Row="4">
+                <TextBlock DockPanel.Dock="Left"
+                   VerticalAlignment="Center">No. de Documento de identidad</TextBlock>
+                <Border VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0">
+                    <TextBlock Margin="3"
+                     Text="{Binding FuncionarioDocumentoIdentidad}" />
+                </Border>
+            </DockPanel>
+            <TextBlock Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding Converter={StaticResource DIC}, ConverterParameter=NOMBRECOMPLETO}" />
+            <TextBlock Grid.Row="2"
+                 Grid.Column="6"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding FuncionarioNombre}" />
+            <TextBlock Grid.Row="3"
+                 Grid.Column="6"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding FuncionarioCargo}" />
+        </Grid>
+        <sec:SubTituloEntrada Numero="36"
+                          ColorTexto="FondoBlanco"
+                          Texto="Firma Intérprete, tutor o funcionario (Solo si aplica)" />
+        <Grid Margin="5">
+            <Grid.Resources>
+                <!--<Style BasedOn="{StaticResource styDescripcionCajaEntrada}"
+               TargetType="TextBlock">
+          <Setter Property="Margin"
+                  Value="6,3,0,3" />
+          <Setter Property="VerticalAlignment"
+                  Value="Bottom" />
+        </Style>-->
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5.5*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t007}"
+                           TextAlignment="Justify"
+                           TextWrapping="Wrap"
+                           Grid.RowSpan="4"
+                           Margin="0,0,10,0" />
+            <Border Grid.ColumnSpan="2"
+              Grid.Column="1"
+              Grid.RowSpan="4" />
+            <TextBlock VerticalAlignment="Bottom"
+                 Grid.Column="1"
+                 Grid.Row="0">Firma</TextBlock>
+            <Image Grid.Column="2" x:Name="imgFirmaTutor" Grid.ColumnSpan="2" Width="270" />
+            <TextBlock Grid.Column="1"
+                 Grid.Row="1">Nombre:</TextBlock>
+            <!--<TextBlock Grid.Column="1"
+                 Grid.Row="2">Cargo:</TextBlock>-->
+            <DockPanel Grid.ColumnSpan="2"
+                 Grid.Column="1"
+                 Grid.Row="3">
+                <TextBlock DockPanel.Dock="Left"
+                   VerticalAlignment="Center">No. de Documento de identidad</TextBlock>
+                <Border VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0">
+                    <TextBlock Margin="3"
+                     Text="{Binding Source={StaticResource RUV}, Path=Configuraciones.Impresion.DeclaracionEnImpresion.TomaDeclaracion.Encargado.RepresentanteNumeroDocumento}" />
+                </Border>
+            </DockPanel>
+            <Border BorderThickness="0,0,0,1"
+              Grid.Column="2"
+              Grid.Row="0"
+              Margin="0,0,5,0" />
+            <TextBlock Grid.Row="1"
+                 Grid.Column="2"
+                 Text="{Binding Source={StaticResource RUV}, Path=Configuraciones.Impresion.DeclaracionEnImpresion.TomaDeclaracion.Encargado.RepresentanteNombreCompleto}" />
+            <!--
+        Text="{Binding RepresentanteNombreCompleto}"
+        
+        -->
+            <!--<TextBlock Grid.Row="2"
+        
+                 Grid.Column="2" />-->
+        </Grid>
+    </StackPanel>
+</UserControl>

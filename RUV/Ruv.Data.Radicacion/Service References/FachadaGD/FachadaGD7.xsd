@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Negocio.ServicioBPM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SIV.IntegradorGD.Negocio.ServicioBPM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+  <xs:complexType name="listOfDocuments">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:status">
+        <xs:sequence>
+          <xs:element name="documentsField" nillable="true" type="tns:ArrayOfdocument" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="listOfDocuments" nillable="true" type="tns:listOfDocuments" />
+  <xs:complexType name="status">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" />
+      <xs:element name="codeField" nillable="true" type="xs:string" />
+      <xs:element name="errorCodeField" type="xs:int" />
+      <xs:element name="errorCodeFieldSpecified" type="xs:boolean" />
+      <xs:element name="messageField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="status" nillable="true" type="tns:status" />
+  <xs:complexType name="ArrayOfdocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="document" nillable="true" type="tns:document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdocument" nillable="true" type="tns:ArrayOfdocument" />
+  <xs:complexType name="document">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" />
+      <xs:element name="guidField" nillable="true" type="xs:string" />
+      <xs:element name="nameField" nillable="true" type="xs:string" />
+      <xs:element name="radicadoNumberField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="document" nillable="true" type="tns:document" />
+  <xs:complexType name="attachResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:status">
+        <xs:sequence>
+          <xs:element name="documentField" nillable="true" type="tns:document" />
+          <xs:element name="radicadoNumberField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="attachResponse" nillable="true" type="tns:attachResponse" />
+  <xs:complexType name="b64File">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:status">
+        <xs:sequence>
+          <xs:element name="fileField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="b64File" nillable="true" type="tns:b64File" />
+  <xs:complexType name="listOfCities">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:status">
+        <xs:sequence>
+          <xs:element name="citiesField" nillable="true" type="tns:ArrayOfcity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="listOfCities" nillable="true" type="tns:listOfCities" />
+  <xs:complexType name="ArrayOfcity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="city" nillable="true" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcity" nillable="true" type="tns:ArrayOfcity" />
+  <xs:complexType name="city">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:thirdCommon">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="city" nillable="true" type="tns:city" />
+  <xs:complexType name="thirdCommon">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" />
+      <xs:element name="cod_daneField" nillable="true" type="xs:string" />
+      <xs:element name="idField" type="xs:int" />
+      <xs:element name="nameField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="thirdCommon" nillable="true" type="tns:thirdCommon" />
+  <xs:complexType name="listOfDepartments">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:status">
+        <xs:sequence>
+          <xs:element name="deparmentsField" nillable="true" type="tns:ArrayOfdepartment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="listOfDepartments" nillable="true" type="tns:listOfDepartments" />
+  <xs:complexType name="ArrayOfdepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="department" nillable="true" type="tns:department" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdepartment" nillable="true" type="tns:ArrayOfdepartment" />
+  <xs:complexType name="department">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:thirdCommon">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="department" nillable="true" type="tns:department" />
+  <xs:complexType name="listOfCountries">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:status">
+        <xs:sequence>
+          <xs:element name="countriesField" nillable="true" type="tns:ArrayOfcountry" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="listOfCountries" nillable="true" type="tns:listOfCountries" />
+  <xs:complexType name="ArrayOfcountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="country" nillable="true" type="tns:country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcountry" nillable="true" type="tns:ArrayOfcountry" />
+  <xs:complexType name="country">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:thirdCommon">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="country" nillable="true" type="tns:country" />
+  <xs:complexType name="respuestaWSCrearExpediente">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q4:PropertyChangedEventHandler" />
+      <xs:element name="codErrorField" type="xs:int" />
+      <xs:element name="codErrorFieldSpecified" type="xs:boolean" />
+      <xs:element name="codigoDependenciaField" nillable="true" type="xs:string" />
+      <xs:element name="descErrorField" nillable="true" type="xs:string" />
+      <xs:element name="idExpCCOOField" type="xs:int" />
+      <xs:element name="idExpCCOOFieldSpecified" type="xs:boolean" />
+      <xs:element name="idExpOficioField" type="xs:int" />
+      <xs:element name="idExpOficioFieldSpecified" type="xs:boolean" />
+      <xs:element name="idSerieField" type="xs:int" />
+      <xs:element name="idSerieFieldSpecified" type="xs:boolean" />
+      <xs:element name="idSubSerieField" type="xs:int" />
+      <xs:element name="idSubSerieFieldSpecified" type="xs:boolean" />
+      <xs:element name="nombreDependenciaField" nillable="true" type="xs:string" />
+      <xs:element name="nombreExpedienteField" nillable="true" type="xs:string" />
+      <xs:element name="nombreSerieField" nillable="true" type="xs:string" />
+      <xs:element name="nombreSubSerieField" nillable="true" type="xs:string" />
+      <xs:element name="numeroExpedienteField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="respuestaWSCrearExpediente" nillable="true" type="tns:respuestaWSCrearExpediente" />
+</xs:schema>

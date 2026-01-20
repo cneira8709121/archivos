@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A08_Encabezado01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="1159">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <TextBlock Margin="0,5"
+               Style="{StaticResource styTituloSeccion}"
+               Text="{Binding Nombre}" />
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <sec:FechaLugar_Imp FechaYLugar="{Binding FechaYLugar}"
+                          Numero="1" />
+      <Border Grid.Column="1"
+              HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a03t001}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <StackPanel Orientation="Horizontal">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a08t001}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a08t002}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+    <congen:TextoRecurso Recurso="{x:Static rec:Textos.a01t004}"
+                         Margin="0,5"
+                         TextWrapping="Wrap"
+                         HorizontalAlignment="Stretch" />
+    <sec:InfoVictima_Imp JefeDeGrupo="{Binding InformacionJefeGrupo}"
+                         Numero="2" />
+    <sec:SubTituloEntrada Numero=""
+                          Texto="DILIGENCIE LA INFORMACIÓN CORRESPONDIENTE A LA(S) VÍCTIMA(S) DE ESTE HECHO"
+                          AlineacionTexto="Center"
+                          HorizontalAlignment="Stretch"
+                          ColorTexto="Normal"
+                          Margin="0,5" />
+    <congen:TextoRecurso Recurso="{x:Static rec:Textos.a01t005}"
+                         Margin="0,0,0,5"
+                         TextWrapping="Wrap"
+                         HorizontalAlignment="Stretch" />
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A05_Pregunta05_06"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:VictimaConsultaConverter x:Key="VCC" />
+      <conv:ConsultaDatoConverter x:Key="CDC" />
+      <conv:CantidadTiempoConverter x:Key="CTC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+
+    <DockPanel>
+
+      <Grid DockPanel.Dock="Left">
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <sec:SubTituloEntrada Numero="5"
+                              Texto="¿Cuáles fueron las causas del desplazamiento?" />
+        <!--<my:DatoColumna Texto="{Binding CausaDesplazamiento, Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                        Grid.Row="1" />-->
+        <ListBox ItemsSource="{Binding CausaDesplazamiento}"
+                 Grid.Row="1">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <DockPanel>
+                <TextBlock FontFamily="Wingdings"
+                           Foreground="Gray"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           Text=""
+                           DockPanel.Dock="Left" />
+                <TextBlock Text="{Binding Converter={StaticResource CDC}, ConverterParameter=PARAMETRO}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           TextWrapping="Wrap" />
+              </DockPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <my:DatoColumna Texto="{Binding CausaDesplazamientoOtro}"
+                        Grid.Row="2" />
+      </Grid>
+
+            <sec:FechaLugar_Imp FechaYLugar="{Binding InformacionDeArribo}"
+                          TextoTitulo="INFORMACIÓN DE ARRIBO"
+                          CajaPaisEsVisible="True"
+                          Numero="6"
+                          Margin="5,0,0,0" />
+    </DockPanel>
+
+  </StackPanel>
+</UserControl>

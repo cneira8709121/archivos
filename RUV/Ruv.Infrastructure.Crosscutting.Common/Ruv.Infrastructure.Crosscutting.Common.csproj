@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4661210F-645E-4C3D-95A5-F80AC3FBB86C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ruv.Infrastructure.Crosscutting.Common</RootNamespace>
+    <AssemblyName>Ruv.Infrastructure.Crosscutting.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\Referencias\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Referencias\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActosAdmin\clsActosAdminstrativos.cs" />
+    <Compile Include="BindingCollection.cs" />
+    <Compile Include="clsExtensiones.cs" />
+    <Compile Include="clsInterfaseRed.cs" />
+    <Compile Include="clsPersonaRNEC.cs" />
+    <Compile Include="clsUsuario.cs" />
+    <Compile Include="clsUtil.cs" />
+    <Compile Include="clsUtils.cs" />
+    <Compile Include="clsValidadorEntidades.cs" />
+    <Compile Include="DataSourceBase\IDataSourceBase.cs" />
+    <Compile Include="Delegados.cs" />
+    <Compile Include="Entidades\clsAgregarPersonaValoracion.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Victima.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Victima_Bien.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Victima_Bien_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo02\clsAnexo02_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo03\clsAnexo03_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo03\clsAnexo03.cs" />
+    <Compile Include="Entidades\Anexo04\clsAnexo04_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo04\clsAnexo04_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo04\clsAnexo04.cs" />
+    <Compile Include="Entidades\Anexo04\clsAnexo04_Validacion.cs" />
+    <Compile Include="Entidades\Anexo04\clsAnexo04_Victima.cs" />
+    <Compile Include="Entidades\Anexo05\clsAnexo05_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo05\clsAnexo05.cs" />
+    <Compile Include="Entidades\Anexo05\clsAnexo05_Validacion.cs" />
+    <Compile Include="Entidades\Anexo05\clsAnexo05_Victima.cs" />
+    <Compile Include="Entidades\Anexo05\clsAnexo05_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo06\clsAnexo06_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo06\clsAnexo06.cs" />
+    <Compile Include="Entidades\Anexo06\clsAnexo06_Validacion.cs" />
+    <Compile Include="Entidades\Anexo06\clsAnexo06_Victima.cs" />
+    <Compile Include="Entidades\Anexo06\clsAnexo06_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo07\clsAnexo07_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo07\clsAnexo07.cs" />
+    <Compile Include="Entidades\Anexo07\clsAnexo07_Validacion.cs" />
+    <Compile Include="Entidades\Anexo07\clsAnexo07_Victima.cs" />
+    <Compile Include="Entidades\Anexo07\clsAnexo07_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo08\clsAnexo08_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo08\clsAnexo08.cs" />
+    <Compile Include="Entidades\Anexo08\clsAnexo08_Validacion.cs" />
+    <Compile Include="Entidades\Anexo08\clsAnexo08_Victima.cs" />
+    <Compile Include="Entidades\Anexo08\clsAnexo08_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo08\Ivali.cs" />
+    <Compile Include="Entidades\Anexo09\clsAnexo09_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo09\clsAnexo09.cs" />
+    <Compile Include="Entidades\Anexo09\clsAnexo09_Validacion.cs" />
+    <Compile Include="Entidades\Anexo09\clsAnexo09_Victima.cs" />
+    <Compile Include="Entidades\Anexo09\clsAnexo09_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo10\clsAnexo10_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo10\clsAnexo10.cs" />
+    <Compile Include="Entidades\Anexo10\clsAnexo10_Validacion.cs" />
+    <Compile Include="Entidades\Anexo10\clsAnexo10_Victima.cs" />
+    <Compile Include="Entidades\Anexo10\clsAnexo10_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_BienInmueble_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_BienInmueble.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_BienMueble.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_CreditoPasivo.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_Validacion.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_BienInmueble_Validacion.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_BienMueble_Validacion.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_CreditoPasivo_Validacion.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_BienMueble_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo11\clsAnexo11_CreditoPasivo_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo13\clsAnexo13_Victima.cs" />
+    <Compile Include="Entidades\Anexo13\clsAnexo13_Victima_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo13\clsAnexo13_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo13\clsAnexo13.cs" />
+    <Compile Include="Entidades\Anexo13\clsAnexo13_Funcionalidad.cs" />
+    <Compile Include="Entidades\Anexo13\clsAnexo13_Validacion.cs" />
+    <Compile Include="Entidades\clsDeclaracion_Serializacion.cs" />
+    <Compile Include="Entidades\clsNotificacionElectronica.cs" />
+    <Compile Include="Entidades\clsVincularAnexos.cs" />
+    <Compile Include="Entidades\Correcciones\clsCargaDatosCorreccion.cs" />
+    <Compile Include="Entidades\Correcciones\clsCorreccion.cs" />
+    <Compile Include="Entidades\Devolucion\clsDevolucion.cs" />
+    <Compile Include="Entidades\clsGeografia.cs" />
+    <Compile Include="Entidades\CriticaN\clsCriticaN.cs" />
+    <Compile Include="Entidades\CriticaN\clsRespuestaCritica.cs" />
+    <Compile Include="Entidades\FirmaDeclaracion\clsFirma.cs" />
+    <Compile Include="Entidades\GestionFormulario\clsControlFormulario_Validacion.cs" />
+    <Compile Include="Entidades\Notificacion\clsNotificacion.cs" />
+    <Compile Include="Entidades\Notificacion\clsNotificacionExcel.cs" />
+    <Compile Include="Entidades\Orfeo\Dignatario.cs" />
+    <Compile Include="Entidades\Orfeo\Direccion.cs" />
+    <Compile Include="Entidades\Orfeo\Evento.cs" />
+    <Compile Include="Entidades\Orfeo\Radicado.cs" />
+    <Compile Include="Entidades\ServiciosComunicacion\GrupoFamiliar.cs" />
+    <Compile Include="Entidades\ServiciosComunicacion\Persona.cs" />
+    <Compile Include="Entidades\GestionFormulario\clsControlFormulario.cs" />
+    <Compile Include="Entidades\GestionFormulario\clsFormulario.cs" />
+    <Compile Include="Entidades\clsRadicacion.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_DenunciaPrevia.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_FechaYLugar.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_JefeDeGrupo.cs" />
+    <Compile Include="Entidades\clsDeclaracion.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_Afectacion.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_Afectacion_Validacion.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_Afectacion_Funcionalidad.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_DenunciaPrevia_Funcionalidad.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_FechaYLugar_Funcionalidad.cs" />
+    <Compile Include="Entidades\Comunes\IPersonaAfectada.cs" />
+    <Compile Include="Entidades\Comunes\IPertenenciaEtnica.cs" />
+    <Compile Include="Entidades\Comunes\IVictima.cs" />
+    <Compile Include="Entidades\clsDeclaracion_Funcionalidad.cs" />
+    <Compile Include="Entidades\clsRadicacion_Validacion.cs" />
+    <Compile Include="Entidades\GestionFormulario\clsFormularioSolicitud.cs" />
+    <Compile Include="Entidades\GestionFormulario\clsSeparacionFormularioSolicitud.cs" />
+    <Compile Include="Entidades\Glosas\clsGlosa.cs" />
+    <Compile Include="Entidades\Glosas\clsGlosaIntencion.cs" />
+    <Compile Include="Entidades\Hoja01\clsTomaDeclaracion_Encargado.cs" />
+    <Compile Include="Entidades\Hoja01\clsTomaDeclaracion_Encargado_Validacion.cs" />
+    <Compile Include="Entidades\Hoja01\clsTomaDeclaracion_Funcionalidad.cs" />
+    <Compile Include="Entidades\Hoja02\clsPersonaAfectada_Funcionalidad.cs" />
+    <Compile Include="Entidades\Hoja02\clsPersonasAfectadas_Funcionalidad.cs" />
+    <Compile Include="Entidades\Hoja03\clsDescripcionHechos.cs" />
+    <Compile Include="Entidades\Comunes\clsEntidadBase.cs" />
+    <Compile Include="Entidades\Hoja02\clsPersonaAfectada.cs" />
+    <Compile Include="Entidades\Hoja01\clsTomaDeclaracion.cs" />
+    <Compile Include="Entidades\Hoja01\clsTomaDeclaracion_Validacion.cs" />
+    <Compile Include="Entidades\Hoja03\clsDescripcionHechos_Validacion.cs" />
+    <Compile Include="Entidades\Hoja04\clsVerificacionProcedimiento.cs" />
+    <Compile Include="Entidades\Hoja04\clsVerificacionProcedimiento_Validacion.cs" />
+    <Compile Include="Entidades\Hoja02\clsPersonaAfectada_Validacion.cs" />
+    <Compile Include="Entidades\Hoja02\clsPersonasAfectadas.cs" />
+    <Compile Include="Entidades\Hoja02\clsPersonasAfectadas_Validacion.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Validacion.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo01\clsAnexo01_Victima_Bien_Validacion.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_JefeDeGrupo_Validacion.cs" />
+    <Compile Include="Entidades\Anexo02\clsAnexo02.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_FechaYLugar_Validacion.cs" />
+    <Compile Include="Entidades\Comunes\clsAnexo_DenunciaPrevia_Validacion.cs" />
+    <Compile Include="Entidades\Anexo03\clsAnexo03_Validacion.cs" />
+    <Compile Include="Entidades\Anexo02\clsAnexo02_Validacion.cs" />
+    <Compile Include="Entidades\Anexo02\clsAnexo02_Victima.cs" />
+    <Compile Include="Entidades\Anexo03\clsAnexo03_Victima.cs" />
+    <Compile Include="Entidades\Anexo02\clsAnexo02_Victima_Validacion.cs" />
+    <Compile Include="Entidades\Anexo03\clsAnexo03_Victima_Validacion.cs" />
+    <Compile Include="Entidades\IValidationEntity.cs" />
+    <Compile Include="Entidades\LiderRadicacion\clsLiderRadicacion.cs" />
+    <Compile Include="Entidades\ListaTareas\clsListaTareas.cs" />
+    <Compile Include="Entidades\Reporteador\clsConsultarEstadoDeclaracionRespuesta.cs" />
+    <Compile Include="Entidades\Reporteador\clsConsultarEstadoDeclaracionSolicitud.cs" />
+    <Compile Include="Entidades\Reporteador\clsConsultarEstadoDetalleDeclaracionRespuesta.cs" />
+    <Compile Include="Entidades\ServiciosComunicacion\Siniestro.cs" />
+    <Compile Include="Entidades\Validacion\clsValidacion.cs" />
+    <Compile Include="Entidades\Validacion\clsOpcionesPreguntas.cs" />
+    <Compile Include="Entidades\Validacion\clsPersonaIdentidad.cs" />
+    <Compile Include="Entidades\Validacion\clsPreguntasValidacion.cs" />
+    <Compile Include="Entidades\Validacion\clsValidacionIdentidad.cs" />
+    <Compile Include="Entidades\Versiones.cs" />
+    <Compile Include="Enumeraciones.cs" />
+    <Compile Include="General\clsBusquedaDeclaracion.cs" />
+    <Compile Include="General\clsCausal.cs" />
+    <Compile Include="General\clsComunidadEtnica.cs" />
+    <Compile Include="General\clsParametroNacionalidad.cs" />
+    <Compile Include="General\clsParametrosExtendidosVersionFUD.cs" />
+    <Compile Include="General\clsParametrosExtendidosMensajesTL.cs" />
+    <Compile Include="Valoracion\clsConceptoDeclaracion.cs" />
+    <Compile Include="General\clsEntidadMunicipio.cs" />
+    <Compile Include="General\clsFiltro.cs" />
+    <Compile Include="General\clsGeografiaCompleta.cs" />
+    <Compile Include="General\clsGrupoEtnica.cs" />
+    <Compile Include="General\clsGrupoParamDetalle.cs" />
+    <Compile Include="General\clsDatosGenerales.cs" />
+    <Compile Include="General\clsParametroDepartamento.cs" />
+    <Compile Include="General\clsParametroGeneral.cs" />
+    <Compile Include="General\clsParametroMunicipio.cs" />
+    <Compile Include="General\clsPoblacion.cs" />
+    <Compile Include="General\clsParametroUT.cs" />
+    <Compile Include="General\clsBusquedaDeclaracion_Funcionalidad.cs" />
+    <Compile Include="General\clsParametroPais.cs" />
+    <Compile Include="General\clsPreguntaCriticaN.cs" />
+    <Compile Include="General\clsSubEtnias.cs" />
+    <Compile Include="General\clsValidaciones.cs" />
+    <Compile Include="General\clsPuntoNotificacion.cs" />
+    <Compile Include="IAnexo.cs" />
+    <Compile Include="PDFHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="clsSecurity.cs" />
+    <Compile Include="USUARIO_BASICO.cs" />
+    <Compile Include="Validaciones\ValidationManager.cs" />
+    <Compile Include="Valoracion\clsConsultaValoracion.cs" />
+    <Compile Include="Valoracion\clsDecretoLey.cs" />
+    <Compile Include="Valoracion\clsHecho.cs" />
+    <Compile Include="Valoracion\clsDeclaracionInfoValoracion.cs" />
+    <Compile Include="Valoracion\clsDeclaracionValoraracion.cs" />
+    <Compile Include="Valoracion\clsEstadosValoracion.cs" />
+    <Compile Include="Valoracion\clsHechoEnmarcado.cs" />
+    <Compile Include="Valoracion\clsHechosValoracion.cs" />
+    <Compile Include="Valoracion\clsHerramientaAnexoPer.cs" />
+    <Compile Include="Valoracion\clsHerramientas.cs" />
+    <Compile Include="Valoracion\clsHerramietasOrganizar.cs" />
+    <Compile Include="Valoracion\clsListasGeneralesValoracion.cs" />
+    <Compile Include="Valoracion\clsPersonaAnexo.cs" />
+    <Compile Include="Valoracion\clsPersonaNuevoHecho.cs" />
+    <Compile Include="Valoracion\clsPrincipioEstado.cs" />
+    <Compile Include="Valoracion\clsRegistrosValoracion.cs" />
+    <Compile Include="Valoracion\clsSiniestro.cs" />
+    <Compile Include="Valoracion\clsTipoHerramienta.cs" />
+    <Compile Include="Valoracion\clsValoracion.cs" />
+    <Compile Include="Valoracion\clsValoradorTareas.cs" />
+    <Compile Include="Valoracion\clsValorador.cs" />
+    <Compile Include="Valoracion\clsAutores.cs" />
+    <Compile Include="Valoracion\clsInfracciones.cs" />
+    <Compile Include="Valoracion\clsParteMotiva.cs" />
+    <Compile Include="Valoracion\clsValoracionHerramientas.cs" />
+    <Compile Include="Valoracion\clsObservacionEstado.cs" />
+    <Compile Include="Valoracion\clsPersona.cs" />
+    <Compile Include="Valoracion\clsRegistrosAnteriores.cs" />
+    <Compile Include="Valoracion\clsPreguntasRegAnt.cs" />
+    <Compile Include="Valoracion\clsGeografia.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Resources\Ruv.Infrastructure.Crosscutting.Resources.csproj">
+      <Project>{1425A669-13B2-4E12-B886-C36B16375913}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entidades\ServiciosComunicacion\ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b59c04b1-cb57-479a-a10a-53795aabefb1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FachadaGD8.xsd" MetadataType="Schema" ID="02406e54-11e7-47bc-a509-8128f932c7d9" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd8" />
+    <MetadataFile FileName="FachadaGD.xsd" MetadataType="Schema" ID="464bc89c-e9c4-44c1-96d2-d99f4fea00a3" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd4" />
+    <MetadataFile FileName="FachadaGD1.xsd" MetadataType="Schema" ID="2da61e9d-4b6a-44e6-8ab2-f11d83a4a702" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd5" />
+    <MetadataFile FileName="FachadaGD2.xsd" MetadataType="Schema" ID="61ffedf7-5bcc-43b2-8184-a2a144b98ca4" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd6" />
+    <MetadataFile FileName="FachadaGD3.xsd" MetadataType="Schema" ID="41d4df0f-409a-432f-9f31-936c09dbb7be" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd7" />
+    <MetadataFile FileName="FachadaGD4.xsd" MetadataType="Schema" ID="42b89608-46e6-49db-be19-823f11c18f68" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd0" />
+    <MetadataFile FileName="FachadaGD5.xsd" MetadataType="Schema" ID="0afe67e4-ad84-4e52-a8c9-e13cde179e11" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd1" />
+    <MetadataFile FileName="FachadaGD6.xsd" MetadataType="Schema" ID="be037b4c-c44d-4e0b-b324-c338ebe3a8fc" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd2" />
+    <MetadataFile FileName="FachadaGD7.xsd" MetadataType="Schema" ID="2c2c4b7e-afc7-43c5-99ce-3276a8ff6508" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?xsd=xsd3" />
+    <MetadataFile FileName="FachadaGD.wsdl" MetadataType="Wsdl" ID="6480dce0-233f-4757-abc4-67b0c14b6c80" SourceId="1" SourceUrl="http://pruebas.unidadvictimas.gov.co/ServiciosPruebas/SIV.IntegradorGD/FachadaGD.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

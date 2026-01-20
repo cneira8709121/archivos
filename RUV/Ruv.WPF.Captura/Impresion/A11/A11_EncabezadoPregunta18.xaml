@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A11_EncabezadoPregunta18"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="53"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:ParametroNumeroConverter x:Key="PNC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="12*"/>
+      <ColumnDefinition Width="3*"/>
+      <ColumnDefinition Width="3*"/>
+    </Grid.ColumnDefinitions>
+    <my:EncabezadoColumna Texto="Tipo de\nacreedor"
+                          OrientacionTexto="Vertical"
+                          Grid.Column="0" />
+    <my:EncabezadoColumna Texto="Nombre del acreedor"
+                          Grid.Column="1" />
+    <my:EncabezadoColumna Texto="Fecha en que contrajo\nla deuda u obligación"
+                          Grid.Column="2" />
+    <my:EncabezadoColumna Texto="Monto\nadeudado"
+                          Grid.Column="3" />
+  </Grid>
+</UserControl>

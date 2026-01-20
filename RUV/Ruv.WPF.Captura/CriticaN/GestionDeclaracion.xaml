@@ -1,0 +1,75 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Converters="clr-namespace:Ruv.WPF.Captura.Converters" xmlns:CriticaN="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades.CriticaN;assembly=Ruv.Infrastructure.Crosscutting.Common" x:Class="Ruv.WPF.Captura.CriticaN.GestionDeclaracion" 
+      xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones" 
+      mc:Ignorable="d" 
+     
+	Title="GestionDeclaracion" d:DesignHeight="658" d:DesignWidth="520">
+
+    <Page.Resources>
+        <Converters:VisibilidadConverter x:Key="VisibilidadConverter"/>
+    </Page.Resources>
+
+    <Grid x:Name="gContenedor" Height="600" Width="500" VerticalAlignment="Center" >
+        <Grid.DataContext>
+            <CriticaN:clsCriticaN/>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ver imagen adjunta" VerticalAlignment="Center" IsEnabled="False" Margin="{DynamicResource Thickness-Right-10}"/>
+            <Button x:Name="btnImagen" Content="Imagen" Width="75" VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" Click="btnImagen_Click" />
+            <GroupBox Header="¿Imagen legible y es declaración?" Padding="{DynamicResource Thickness-10}">
+                <StackPanel>
+                    <RadioButton x:Name="rbtNoVisible" Content="No" GroupName="LegibleDeclaracion" />
+                    <RadioButton x:Name="rbtVisible" Content="Si" GroupName="LegibleDeclaracion" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <GroupBox Header="Causales" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource VisibilidadConverter}, ElementName=rbtNoVisible}" Margin="{DynamicResource Thickness-10}" Width="400" Height="500">
+            <WrapPanel HorizontalAlignment="Center" Height="400">
+                <sec:ListaOpciones x:Name="loCausal"
+                                   IncluirNumero="False"
+                                   UsarDosColumnas="False"
+                                   VerticalAlignment="Center"
+                                   Orientacion="Vertical"
+                                   TipoOpciones="Multiple" 
+                                   TipoParametros="CausalesTodos"
+                                   ValoresUsuario="{Binding Path=LstCausal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DockPanel VerticalAlignment="Bottom" >
+                    <Label DockPanel.Dock="Top">Observacion</Label>
+                    <TextBox Name="ObservacionCriticaN" MaxLength="500" MaxLines="4" TextWrapping="Wrap" Height="100"  Width="300" Text="{Binding Path=CObservacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </DockPanel>
+
+                <DockPanel Margin="{DynamicResource Thickness-10}" VerticalAlignment="Bottom">
+                    <Button Content="Guardar y Continuar" Width="150" VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" Click="Button_Causales" />
+                    <Button Content="Cancelar" Width="150" VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" Click="Button_Cancelar" />
+                </DockPanel>
+            </WrapPanel> 
+        </GroupBox>
+
+        <GroupBox Header="Validaciones" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Visibility="{Binding IsChecked, Converter={StaticResource VisibilidadConverter}, ElementName=rbtVisible}" Margin="{DynamicResource Thickness-10}" Width="400" Height="500">
+            <WrapPanel HorizontalAlignment="Center" Height="400">
+                <sec:ListaOpciones x:Name="loValidacion"
+                                   IncluirNumero="False"
+                                   UsarDosColumnas="False"
+                                   VerticalAlignment="Center"
+                                   Orientacion="Vertical"
+                                   TipoOpciones="Multiple"
+                                   TipoParametros="PreguntaCriticaN"
+                                   ValoresUsuario="{Binding Path=LstValidacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DockPanel VerticalAlignment="Bottom">
+                    <Button Content="Guardar y Continuar" Width="150" VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" Click="Button_Validacion" />
+                    <Button Content="Cancelar" Width="150" VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" Click="Button_Cancelar" />
+                </DockPanel>
+            </WrapPanel>
+        </GroupBox>
+    </Grid>
+</Page>

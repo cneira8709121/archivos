@@ -1,0 +1,203 @@
+﻿<error errorId="70720356-4525-4b26-b61e-02f43cf92c91" application="/LM/W3SVC/2/ROOT" host="CRISTIAN-PC" type="System.Web.HttpException" message="No se encontró ningún campo o propiedad 'CMarca' en el origen de datos seleccionado." source="System.Web" detail="System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.Web.HttpException (0x80004005): No se encontró ningún campo o propiedad 'CMarca' en el origen de datos seleccionado.&#xD;&#xA;   at System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object&amp; data)&#xD;&#xA;   at System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)&#xD;&#xA;   at System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.OnDataBinding(EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)&#xD;&#xA;   at System.Web.UI.Control.DataBind()&#xD;&#xA;   at System.Web.UI.Control.DataBindChildren()&#xD;&#xA;   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)&#xD;&#xA;   at System.Web.UI.Control.DataBind()&#xD;&#xA;   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)&#xD;&#xA;   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)&#xD;&#xA;   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)&#xD;&#xA;   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)&#xD;&#xA;   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)&#xD;&#xA;   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)&#xD;&#xA;   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()&#xD;&#xA;   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()&#xD;&#xA;   at System.Web.UI.WebControls.GridView.DataBind()&#xD;&#xA;   at Consultas_DetalleFormulario.HechosVictimizantesRepeater_ItemDataBound(Object sender, RepeaterItemEventArgs e) in F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx.cs:line 107&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.OnItemDataBound(RepeaterItemEventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource)&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource)&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)&#xD;&#xA;   at System.Web.UI.WebControls.Repeater.DataBind()&#xD;&#xA;   at Consultas_DetalleFormulario.Page_Load(Object sender, EventArgs e) in F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx.cs:line 79&#xD;&#xA;   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.OnLoad(EventArgs e)&#xD;&#xA;   at System.Web.UI.Control.LoadRecursive()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at ASP.consultas_detalleformulario_aspx.ProcessRequest(HttpContext context) in c:\Users\neira\AppData\Local\Temp\Temporary ASP.NET Files\vs\0b7557ce\8c0748dc\App_Web_pcujlbyb.1.cs:line 0&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="ADMIN  REGISTRO APRUEBAS" time="2025-09-05T02:25:28.7050670Z" statusCode="500" webHostHtmlMessage="&lt;!DOCTYPE html&gt;&#xD;&#xA;&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;No se encontr&amp;#243; ning&amp;#250;n campo o propiedad 'CMarca' en el origen de datos seleccionado.&lt;/title&gt;&#xD;&#xA;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Consolas&quot;,&quot;Lucida Console&quot;,Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:pointer; }&#xD;&#xA;         @media screen and (max-width: 639px) {&#xD;&#xA;          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }&#xD;&#xA;         }&#xD;&#xA;         @media screen and (max-width: 479px) {&#xD;&#xA;          pre { width: 280px; }&#xD;&#xA;         }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;No se encontr&amp;#243; ning&amp;#250;n campo o propiedad 'CMarca' en el origen de datos seleccionado.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.Web.HttpException: No se encontr&amp;#243; ning&amp;#250;n campo o propiedad 'CMarca' en el origen de datos seleccionado.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;Line 105:            hechoLabel.Text = firstElement != null ? firstElement.CHechoVictimizante : &amp;quot;Sin Hecho Victimizante&amp;quot;;&#xD;&#xA;Line 106:            grid.DataSource = datasource.ToList();&#xD;&#xA;&lt;font color=red&gt;Line 107:            grid.DataBind();&#xD;&#xA;&lt;/font&gt;Line 108:        }&#xD;&#xA;Line 109:    }&lt;/pre&gt;                      &lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Source File: &lt;/b&gt; F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx.cs&lt;b&gt; &amp;nbsp;&amp;nbsp; Line: &lt;/b&gt; 107&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[HttpException (0x80004005): No se encontr&amp;#243; ning&amp;#250;n campo o propiedad &amp;#39;CMarca&amp;#39; en el origen de datos seleccionado.]&#xD;&#xA;   System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object&amp;amp; data) +2839995&#xD;&#xA;   System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer) +215&#xD;&#xA;   System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e) +59&#xD;&#xA;   System.Web.UI.Control.OnDataBinding(EventArgs e) +86&#xD;&#xA;   System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding) +154&#xD;&#xA;   System.Web.UI.Control.DataBind() +17&#xD;&#xA;   System.Web.UI.Control.DataBindChildren() +187&#xD;&#xA;   System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding) +164&#xD;&#xA;   System.Web.UI.Control.DataBind() +17&#xD;&#xA;   System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource) +170&#xD;&#xA;   System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding) +3839&#xD;&#xA;   System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data) +67&#xD;&#xA;   System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data) +15&#xD;&#xA;   System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data) +133&#xD;&#xA;   System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback) +34&#xD;&#xA;   System.Web.UI.WebControls.DataBoundControl.PerformSelect() +151&#xD;&#xA;   System.Web.UI.WebControls.BaseDataBoundControl.DataBind() +76&#xD;&#xA;   System.Web.UI.WebControls.GridView.DataBind() +10&#xD;&#xA;   Consultas_DetalleFormulario.HechosVictimizantesRepeater_ItemDataBound(Object sender, RepeaterItemEventArgs e) in F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx.cs:107&#xD;&#xA;   System.Web.UI.WebControls.Repeater.OnItemDataBound(RepeaterItemEventArgs e) +116&#xD;&#xA;   System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem) +140&#xD;&#xA;   System.Web.UI.WebControls.Repeater.AddDataItemsIntoItemsArray(IEnumerable dataSource, Boolean useDataSource) +220&#xD;&#xA;   System.Web.UI.WebControls.Repeater.PostGetDataAction(IEnumerable dataSource) +73&#xD;&#xA;   System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource) +229&#xD;&#xA;   System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e) +63&#xD;&#xA;   System.Web.UI.WebControls.Repeater.DataBind() +81&#xD;&#xA;   Consultas_DetalleFormulario.Page_Load(Object sender, EventArgs e) in F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx.cs:79&#xD;&#xA;   System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e) +52&#xD;&#xA;   System.Web.UI.Control.OnLoad(EventArgs e) +97&#xD;&#xA;   System.Web.UI.Control.LoadRecursive() +61&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +693&#xD;&#xA;&lt;/pre&gt;                      &lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;/font&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br, zstd&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.9&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=qxm0c503x3spfxyhwsgfxxsa; _ga=GA1.1.2059406850.1757038905; _gid=GA1.1.1448747070.1757038905; .ASPXAUTH=EBE63E77D26775A61FF5DCA00737800B2BDAE99CD397A8E8D3B7720E67EACBBF48A0C00A2006EC8C4D6E2E0F5FC99FE7DC7CE256DF5986F27FE2A5714BDFBC7B484ADA2F7B5B4830D37BF24F156AEDDF4D6CBF6A7B75DD3FACD7DF922CDCF2B842AAFB6B15D5653B6BB88B19BED0D806A79EF15D7D5E6D02FF62C389C532BC72150B395326B2348C81531A7B43F532D929EB50B8339D4A1C278326F33D17C42A3F046AA10859B4BE37B9CEB9267AA955&#xD;&#xA;HTTP_HOST:localhost:44302&#xD;&#xA;HTTP_REFERER:http://localhost:44302/Consultas/ConsultaPersona.aspx&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0&#xD;&#xA;HTTP_SEC_CH_UA:&quot;Chromium&quot;;v=&quot;140&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;140&quot;&#xD;&#xA;HTTP_SEC_CH_UA_MOBILE:?0&#xD;&#xA;HTTP_SEC_CH_UA_PLATFORM:&quot;Windows&quot;&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;HTTP_SEC_FETCH_SITE:same-origin&#xD;&#xA;HTTP_SEC_FETCH_MODE:navigate&#xD;&#xA;HTTP_SEC_FETCH_USER:?1&#xD;&#xA;HTTP_SEC_FETCH_DEST:document&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#xD;&#xA;Accept-Encoding: gzip, deflate, br, zstd&#xD;&#xA;Accept-Language: en-US,en;q=0.9&#xD;&#xA;Cookie: ASP.NET_SessionId=qxm0c503x3spfxyhwsgfxxsa; _ga=GA1.1.2059406850.1757038905; _gid=GA1.1.1448747070.1757038905; .ASPXAUTH=EBE63E77D26775A61FF5DCA00737800B2BDAE99CD397A8E8D3B7720E67EACBBF48A0C00A2006EC8C4D6E2E0F5FC99FE7DC7CE256DF5986F27FE2A5714BDFBC7B484ADA2F7B5B4830D37BF24F156AEDDF4D6CBF6A7B75DD3FACD7DF922CDCF2B842AAFB6B15D5653B6BB88B19BED0D806A79EF15D7D5E6D02FF62C389C532BC72150B395326B2348C81531A7B43F532D929EB50B8339D4A1C278326F33D17C42A3F046AA10859B4BE37B9CEB9267AA955&#xD;&#xA;Host: localhost:44302&#xD;&#xA;Referer: http://localhost:44302/Consultas/ConsultaPersona.aspx&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0&#xD;&#xA;sec-ch-ua: &quot;Chromium&quot;;v=&quot;140&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;140&quot;&#xD;&#xA;sec-ch-ua-mobile: ?0&#xD;&#xA;sec-ch-ua-platform: &quot;Windows&quot;&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;Sec-Fetch-Site: same-origin&#xD;&#xA;Sec-Fetch-Mode: navigate&#xD;&#xA;Sec-Fetch-User: ?1&#xD;&#xA;Sec-Fetch-Dest: document&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="F:\source\UARIV\RUV\RUV\Ruv.WebApp\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="ADMIN  REGISTRO APRUEBAS" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="ADMIN  REGISTRO APRUEBAS" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="ADMIN  REGISTRO APRUEBAS" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Consultas/DetalleFormulario.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="F:\source\UARIV\RUV\RUV\Ruv.WebApp\Consultas\DetalleFormulario.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="id=3357250&amp;urlEvio=/Consultas/ConsultaPersona.aspx" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="56343" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Consultas/DetalleFormulario.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="44302" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Consultas/DetalleFormulario.aspx" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br, zstd" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.9" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=qxm0c503x3spfxyhwsgfxxsa; _ga=GA1.1.2059406850.1757038905; _gid=GA1.1.1448747070.1757038905; .ASPXAUTH=EBE63E77D26775A61FF5DCA00737800B2BDAE99CD397A8E8D3B7720E67EACBBF48A0C00A2006EC8C4D6E2E0F5FC99FE7DC7CE256DF5986F27FE2A5714BDFBC7B484ADA2F7B5B4830D37BF24F156AEDDF4D6CBF6A7B75DD3FACD7DF922CDCF2B842AAFB6B15D5653B6BB88B19BED0D806A79EF15D7D5E6D02FF62C389C532BC72150B395326B2348C81531A7B43F532D929EB50B8339D4A1C278326F33D17C42A3F046AA10859B4BE37B9CEB9267AA955" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:44302" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:44302/Consultas/ConsultaPersona.aspx" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" />
+    </item>
+    <item name="HTTP_SEC_CH_UA">
+      <value string="&quot;Chromium&quot;;v=&quot;140&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;, &quot;Microsoft Edge&quot;;v=&quot;140&quot;" />
+    </item>
+    <item name="HTTP_SEC_CH_UA_MOBILE">
+      <value string="?0" />
+    </item>
+    <item name="HTTP_SEC_CH_UA_PLATFORM">
+      <value string="&quot;Windows&quot;" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+    <item name="HTTP_SEC_FETCH_SITE">
+      <value string="same-origin" />
+    </item>
+    <item name="HTTP_SEC_FETCH_MODE">
+      <value string="navigate" />
+    </item>
+    <item name="HTTP_SEC_FETCH_USER">
+      <value string="?1" />
+    </item>
+    <item name="HTTP_SEC_FETCH_DEST">
+      <value string="document" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="id">
+      <value string="3357250" />
+    </item>
+    <item name="urlEvio">
+      <value string="/Consultas/ConsultaPersona.aspx" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="qxm0c503x3spfxyhwsgfxxsa" />
+    </item>
+    <item name="_ga">
+      <value string="GA1.1.2059406850.1757038905" />
+    </item>
+    <item name="_gid">
+      <value string="GA1.1.1448747070.1757038905" />
+    </item>
+    <item name=".ASPXAUTH">
+      <value string="EBE63E77D26775A61FF5DCA00737800B2BDAE99CD397A8E8D3B7720E67EACBBF48A0C00A2006EC8C4D6E2E0F5FC99FE7DC7CE256DF5986F27FE2A5714BDFBC7B484ADA2F7B5B4830D37BF24F156AEDDF4D6CBF6A7B75DD3FACD7DF922CDCF2B842AAFB6B15D5653B6BB88B19BED0D806A79EF15D7D5E6D02FF62C389C532BC72150B395326B2348C81531A7B43F532D929EB50B8339D4A1C278326F33D17C42A3F046AA10859B4BE37B9CEB9267AA955" />
+    </item>
+  </cookies>
+</error>

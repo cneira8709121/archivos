@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" />
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" />
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/ControlDocumentosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:element name="GenerarFormularios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nCantidad" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="cSerie" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nIdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdEstado" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdPais" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdDepartamento" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdMunicipio" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdEntidadmunicipio" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarFormulariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="GenerarFormulariosResult" nillable="true" type="q1:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarFormulariosWEB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nCantidad" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="cSerie" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nIdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdEstado" type="xs:int" />
+        <xs:element minOccurs="0" name="nIdEntidadmunicipio" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarFormulariosWEBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="GenerarFormulariosWEBResult" nillable="true" type="q2:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPaisGeneraFormularioWEB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdEntidadmunicipio" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPaisGeneraFormularioWEBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerPaisGeneraFormularioWEBResult" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarFormularios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarFormulariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ListarFormulariosResult" nillable="true" type="q3:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarFormulariosNoRadicados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="frmSolicitud" nillable="true" type="q4:clsFormularioSolicitudNoRadicados" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarFormulariosNoRadicadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ListarFormulariosNoRadicadosResult" nillable="true" type="q5:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarFormulariosPorEstado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdEstado" type="xs:unsignedShort" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarFormulariosPorEstadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ListarFormulariosPorEstadoResult" nillable="true" type="q6:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarFormulario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="FormulariosEnviar" nillable="true" type="q7:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarFormularioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarFormularioFiltro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="frm" nillable="true" type="q8:clsSolicitudFormularioEstado" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarFormularioFiltroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignarFormularioFiltroResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InactivarFormulario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdFormulario" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InactivarFormularioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InactivarFormularioResult" nillable="true" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SepararFormularioImprenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="frmFormularioASeparar" nillable="true" type="q9:ArrayOfclsSeparacionFormularioSolicitud" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SepararFormularioImprentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SepararFormularioImprentaFiltro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="frm" nillable="true" type="q10:clsSolicitudFormularioEstado" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SepararFormularioImprentaFiltroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="SepararFormularioImprentaFiltroResult" nillable="true" type="q11:ArrayOfclsSeparacionFormularioSolicitud" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulariosPorUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdUsuario" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulariosPorUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ObtenerFormulariosPorUsuarioResult" nillable="true" type="q12:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarcarDescargado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdFormulario" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarcarDescargadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarcarDescargadoResult" nillable="true" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarcarRadicado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cNumeroFormulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarcarRadicadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarcarRadicadoResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarNumeroFormulario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" minOccurs="0" name="radicacion" nillable="true" type="q13:clsRadicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarNumeroFormularioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="ValidarNumeroFormularioResult" type="q14:eResultadoValidacionRadicacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulariosPorUsuarioEstadoPaginado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="frm" nillable="true" type="q15:clsSolicitudFormularioEstado" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulariosPorUsuarioEstadoPaginadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ObtenerFormulariosPorUsuarioEstadoPaginadoResult" nillable="true" type="q16:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCantidadFormulariosPorUsuarioEstado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="frm" nillable="true" type="q17:clsSolicitudFormularioEstado" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCantidadFormulariosPorUsuarioEstadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerCantidadFormulariosPorUsuarioEstadoResult" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCantidadFormulariosActivar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="Solicitud" nillable="true" type="q18:clsFormularioSolicitudNoRadicados" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCantidadFormulariosActivarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerCantidadFormulariosActivarResult" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulariosActivar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="Solicitud" nillable="true" type="q19:clsFormularioSolicitudNoRadicados" />
+        <xs:element minOccurs="0" name="nPagina" type="xs:int" />
+        <xs:element minOccurs="0" name="nTamaño" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulariosActivarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ObtenerFormulariosActivarResult" nillable="true" type="q20:ArrayOfclsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormulario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cNumeroFormulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerFormularioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario" minOccurs="0" name="ObtenerFormularioResult" nillable="true" type="q21:clsFormulario" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruv.unidadvictimas.gov.co/GeneralService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:complexType name="clsBusquedaDeclaracion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoDeclaracion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeclaranteDemasNombres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeclaranteNumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeclarantePrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeclarantePrimerNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeclaranteSegundoApellido" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EstadoDeclaracion" type="q1:eEstadoDeclaracion" />
+      <xs:element minOccurs="0" name="FechaDeclaracion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsBusquedaDeclaracion" nillable="true" type="tns:clsBusquedaDeclaracion" />
+  <xs:complexType name="ArrayOfclsBusquedaDeclaracion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsBusquedaDeclaracion" nillable="true" type="tns:clsBusquedaDeclaracion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsBusquedaDeclaracion" nillable="true" type="tns:ArrayOfclsBusquedaDeclaracion" />
+  <xs:complexType name="ArrayOfclsGeografiaCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsGeografiaCompleta" nillable="true" type="tns:clsGeografiaCompleta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsGeografiaCompleta" nillable="true" type="tns:ArrayOfclsGeografiaCompleta" />
+  <xs:complexType name="clsGeografiaCompleta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Padre" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsGeografiaCompleta" nillable="true" type="tns:clsGeografiaCompleta" />
+</xs:schema>

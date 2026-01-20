@@ -1,0 +1,2867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F065452B-58E4-4979-9EAF-E35A2EAED58E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ruv.WPF.Captura</RootNamespace>
+    <AssemblyName>Ruv.WPF.Captura</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <PublishUrl>C:\Publicacion\RUV\Pruebas\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://ruvpruebas.unidadvictimas.gov.co/ClientApp/</InstallUrl>
+    <UpdateUrl>http://ruvpruebas.unidadvictimas.gov.co/ClientApp/</UpdateUrl>
+    <ProductName>PRUEBAS - Registro Único de Víctimas</ProductName>
+    <PublisherName>Unidad para la Atención y Reparación Integral a las Víctimas</PublisherName>
+    <SuiteName>PRUEBAS - Registro Único de Víctimas</SuiteName>
+    <MinimumRequiredVersion>1.0.1.256</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>ruv.htm</WebPage>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>256</ApplicationRevision>
+    <ApplicationVersion>1.0.1.256</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B22FDF2CBB4CDA1B6653C24A52A56E53FABE980E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Ruv.WPF.Captura_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Recursos\Imagenes\RUV.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ruv.WPF.Captura.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>..\Referencias\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>..\Referencias\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Referencias\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=0.12.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MahApps.Metro.0.12.0.0\lib\net40\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Royale" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="ServiceStack, Version=3.9.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.3.9.7\lib\net40\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=1.0.4339.6048, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.3.0.6\lib\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4339.6048, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.3.0.6\lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.2.9\lib\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.2.9\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Razor, Version=3.9.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.3.9.7\lib\net40\ServiceStack.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=2.0.9.195, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.2.9\lib\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.3.9.7\lib\net40\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=2.0.9.42099, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.2.9\lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Referencias\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Wintellect.Sterling.Server">
+      <HintPath>..\Referencias\Wintellect.Sterling.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Wintellect.Sterling.Server.FileSystem">
+      <HintPath>..\Referencias\Wintellect.Sterling.Server.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFDeveloperTools.Controls">
+      <HintPath>..\Referencias\WPFDeveloperTools.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFDeveloperTools.Tools">
+      <HintPath>..\Referencias\WPFDeveloperTools.Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controles\BloqueoInterfase.xaml.cs">
+      <DependentUpon>BloqueoInterfase.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\BotonMenu.xaml.cs">
+      <DependentUpon>BotonMenu.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboMayusculaBehavior.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboSoloLetrasBehavior.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\DocumentPaginatorWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\DummyControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\EditorObservableCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\EntradaDouble.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\EntradaNumerica.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\FocusAdorner.xaml.cs">
+      <DependentUpon>FocusAdorner.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\GeoEntorno.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\Geografia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MensajesUsuario.xaml.cs">
+      <DependentUpon>MensajesUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Notificaciones.xaml.cs">
+      <DependentUpon>Notificaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\PaggingControl.cs" />
+    <Compile Include="Controles\ResumenValidacion.xaml.cs">
+      <DependentUpon>ResumenValidacion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\TextoRecurso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controles\ucCausalesDevolucion.xaml.cs">
+      <DependentUpon>ucCausalesDevolucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ucInfoRadicacion.xaml.cs">
+      <DependentUpon>ucInfoRadicacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Wacom\SignatureHost.cs" />
+    <Compile Include="Controles\Wacom\ucFirmaDigital.xaml.cs">
+      <DependentUpon>ucFirmaDigital.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\CantidadTiempoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ConsultaDatoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ConsultaDatoImpresionConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\DeclaranteEdicionConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\DeclaranteImpresionConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\EliminadosConverter.cs" />
+    <Compile Include="Converters\EntidadTituloConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ErroresEstadoIngresoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ErroresTransmisionVisibilidadConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\EstadoProcesoColorConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\EstadoRedColorConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\EtniaTextoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\FirmasConverter.cs" />
+    <Compile Include="Converters\FormularioActivoConverter.cs" />
+    <Compile Include="Converters\GeoEntornoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\HayValorVisibilidadConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaAfectadosConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaDetallesGrupoParamConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaParametrosConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaParametrosNombreConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaPersonasAfectadasNuloConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaPersonasAnexoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\ListaVictimasConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\LstEnteroALstCausalConverter.cs" />
+    <Compile Include="Converters\NacionalidadConverter.cs" />
+    <Compile Include="Converters\ParametroNombreConverter.cs" />
+    <Compile Include="Converters\ParametroNumeroConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\SeparadorTextoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\TipoEntornoConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\VersionFUDConverter.cs" />
+    <Compile Include="Converters\Victima05Converter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\Victima05JefeHogarConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\VictimaA01BienesConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\VictimaA03NiñosConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\VictimaA11BienInmuebleConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\VictimaConsultaConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\VisibilidadConverter.cs" />
+    <Compile Include="Converters\VisibilidadSegunRolConverter.cs" />
+    <Compile Include="CriticaN\GestionDeclaracion.xaml.cs">
+      <DependentUpon>GestionDeclaracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignTime\clsDesignTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DesignTime\clsHechoMotivo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Devolucion\GestionDevolucion.xaml.cs">
+      <DependentUpon>GestionDevolucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Devolucion\SolicitudDevolucion.xaml.cs">
+      <DependentUpon>SolicitudDevolucion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestorFormulario\GeneracionFormulario.xaml.cs">
+      <DependentUpon>GeneracionFormulario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestorFormulario\InactivacionFormulario.xaml.cs">
+      <DependentUpon>InactivacionFormulario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Impresion\A01\A01_Detalle01.xaml.cs">
+      <DependentUpon>A01_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A01\A01_Encabezado00.xaml.cs">
+      <DependentUpon>A01_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A01\A01_Encabezado01.xaml.cs">
+      <DependentUpon>A01_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A01\A01_Encabezado02.xaml.cs">
+      <DependentUpon>A01_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A01\A01_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A02\A02_Detalle01.xaml.cs">
+      <DependentUpon>A02_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A02\A02_Encabezado00.xaml.cs">
+      <DependentUpon>A02_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A02\A02_Encabezado01.xaml.cs">
+      <DependentUpon>A02_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A02\A02_Encabezado02.xaml.cs">
+      <DependentUpon>A02_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A02\A02_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Detalle01.xaml.cs">
+      <DependentUpon>A03_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Detalle02.xaml.cs">
+      <DependentUpon>A03_Detalle02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Encabezado00.xaml.cs">
+      <DependentUpon>A03_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Encabezado01.xaml.cs">
+      <DependentUpon>A03_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Encabezado02.xaml.cs">
+      <DependentUpon>A03_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Encabezado03.xaml.cs">
+      <DependentUpon>A03_Encabezado03.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Encabezado04.xaml.cs">
+      <DependentUpon>A03_Encabezado04.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A03\A03_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A04\A04_Detalle01.xaml.cs">
+      <DependentUpon>A04_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A04\A04_Encabezado00.xaml.cs">
+      <DependentUpon>A04_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A04\A04_Encabezado01.xaml.cs">
+      <DependentUpon>A04_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A04\A04_Encabezado02.xaml.cs">
+      <DependentUpon>A04_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A04\A04_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_DetallePregunta09.xaml.cs">
+      <DependentUpon>A05_DetallePregunta09.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Encabezado00.xaml.cs">
+      <DependentUpon>A05_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_EncabezadoPregunta09.xaml.cs">
+      <DependentUpon>A05_EncabezadoPregunta09.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Pregunta01.xaml.cs">
+      <DependentUpon>A05_Pregunta01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Pregunta02_04.xaml.cs">
+      <DependentUpon>A05_Pregunta02_04.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Pregunta05_06.xaml.cs">
+      <DependentUpon>A05_Pregunta05_06.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Pregunta07_08.xaml.cs">
+      <DependentUpon>A05_Pregunta07_08.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Pregunta10_12.xaml.cs">
+      <DependentUpon>A05_Pregunta10_12.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A05\A05_Pregunta13_15.xaml.cs">
+      <DependentUpon>A05_Pregunta13_15.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A06\A06_Detalle01.xaml.cs">
+      <DependentUpon>A06_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A06\A06_Encabezado00.xaml.cs">
+      <DependentUpon>A06_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A06\A06_Encabezado01.xaml.cs">
+      <DependentUpon>A06_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A06\A06_Encabezado02.xaml.cs">
+      <DependentUpon>A06_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A06\A06_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A07\A07_DetallePregunta09_17.xaml.cs">
+      <DependentUpon>A07_DetallePregunta09_17.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A07\A07_Encabezado00.xaml.cs">
+      <DependentUpon>A07_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A07\A07_EncabezadoPregunta09_17.xaml.cs">
+      <DependentUpon>A07_EncabezadoPregunta09_17.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A07\A07_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A07\A07_Pregunta01_02.xaml.cs">
+      <DependentUpon>A07_Pregunta01_02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A07\A07_Pregunta03_08.xaml.cs">
+      <DependentUpon>A07_Pregunta03_08.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A08\A08_Detalle01.xaml.cs">
+      <DependentUpon>A08_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A08\A08_Encabezado00.xaml.cs">
+      <DependentUpon>A08_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A08\A08_Encabezado01.xaml.cs">
+      <DependentUpon>A08_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A08\A08_Encabezado02.xaml.cs">
+      <DependentUpon>A08_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A08\A08_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A09\A09_Detalle01.xaml.cs">
+      <DependentUpon>A09_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A09\A09_Encabezado00.xaml.cs">
+      <DependentUpon>A09_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A09\A09_Encabezado01.xaml.cs">
+      <DependentUpon>A09_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A09\A09_Encabezado02.xaml.cs">
+      <DependentUpon>A09_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A09\A09_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A10\A10_Detalle01.xaml.cs">
+      <DependentUpon>A10_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A10\A10_Encabezado00.xaml.cs">
+      <DependentUpon>A10_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A10\A10_Encabezado01.xaml.cs">
+      <DependentUpon>A10_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A10\A10_Encabezado02.xaml.cs">
+      <DependentUpon>A10_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A10\A10_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_DetallePregunta04_08.xaml.cs">
+      <DependentUpon>A11_DetallePregunta04_08.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_DetallePregunta14_17.xaml.cs">
+      <DependentUpon>A11_DetallePregunta14_17.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_DetallePregunta18.xaml.cs">
+      <DependentUpon>A11_DetallePregunta18.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Encabezado00.xaml.cs">
+      <DependentUpon>A11_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_EncabezadoPregunta04_08.xaml.cs">
+      <DependentUpon>A11_EncabezadoPregunta04_08.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_EncabezadoPregunta14_17.xaml.cs">
+      <DependentUpon>A11_EncabezadoPregunta14_17.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_EncabezadoPregunta18.xaml.cs">
+      <DependentUpon>A11_EncabezadoPregunta18.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Pregunta01.xaml.cs">
+      <DependentUpon>A11_Pregunta01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Pregunta02.xaml.cs">
+      <DependentUpon>A11_Pregunta02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Pregunta03.xaml.cs">
+      <DependentUpon>A11_Pregunta03.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Pregunta09_12.xaml.cs">
+      <DependentUpon>A11_Pregunta09_12.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Pregunta13.xaml.cs">
+      <DependentUpon>A11_Pregunta13.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A11\A11_Pregunta18.xaml.cs">
+      <DependentUpon>A11_Pregunta18.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A13\A13_Detalle01.xaml.cs">
+      <DependentUpon>A13_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A13\A13_Encabezado00.xaml.cs">
+      <DependentUpon>A13_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A13\A13_Encabezado01.xaml.cs">
+      <DependentUpon>A13_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A13\A13_Encabezado02.xaml.cs">
+      <DependentUpon>A13_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A13\A13_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\A13\A13_Pregunta15_16.xaml.cs">
+      <DependentUpon>A13_Pregunta15_16.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\clsInformacionImpresion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\Colilla\ColillaRecibo_Bloque00.xaml.cs">
+      <DependentUpon>ColillaRecibo_Bloque00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\Colilla\ColillaRecibo_Bloque01.xaml.cs">
+      <DependentUpon>ColillaRecibo_Bloque01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\Colilla\ColillaRecibo_Imp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\DatoColumna.xaml.cs">
+      <DependentUpon>DatoColumna.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\DatoFechaColumna.xaml.cs">
+      <DependentUpon>DatoFechaColumna.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\DatoGrillaNumericaColumna.xaml.cs">
+      <DependentUpon>DatoGrillaNumericaColumna.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\DatoMarcaColumna.xaml.cs">
+      <DependentUpon>DatoMarcaColumna.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\DatoSiNoColumna.xaml.cs">
+      <DependentUpon>DatoSiNoColumna.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\Encabezado.xaml.cs">
+      <DependentUpon>Encabezado.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\EncabezadoColumna.xaml.cs">
+      <DependentUpon>EncabezadoColumna.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\FechaLuga_Imp.xaml.cs">
+      <DependentUpon>FechaLuga_Imp.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\InfoVictima_Imp.xaml.cs">
+      <DependentUpon>InfoVictima_Imp.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\General\MarcaFinalSeccion.xaml.cs">
+      <DependentUpon>MarcaFinalSeccion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H01_TomaDeclaracion\H01_Encabezado00.xaml.cs">
+      <DependentUpon>H01_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H01_TomaDeclaracion\H01_Pregunta01_08.xaml.cs">
+      <DependentUpon>H01_Pregunta01_08.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H01_TomaDeclaracion\H01_Pregunta09.xaml.cs">
+      <DependentUpon>H01_Pregunta09.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H01_TomaDeclaracion\H01_Pregunta10.xaml.cs">
+      <DependentUpon>H01_Pregunta10.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H01_TomaDeclaracion\H01_TomaDeclaracionImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\EtniaComunidadQueryConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\EtniaQueryConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\H02_Detalle01.xaml.cs">
+      <DependentUpon>H02_Detalle01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\H02_Encabezado00.xaml.cs">
+      <DependentUpon>H02_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\H02_Encabezado01.xaml.cs">
+      <DependentUpon>H02_Encabezado01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\H02_Encabezado02.xaml.cs">
+      <DependentUpon>H02_Encabezado02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H02_PersonasAfectadas\H02_PersonasAfectadasImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H03_DescripcionHechos\H03_DescripcionHechosImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H03_DescripcionHechos\H03_Encabezado00.xaml.cs">
+      <DependentUpon>H03_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H03_DescripcionHechos\H03_TextoPregunta01.xaml.cs">
+      <DependentUpon>H03_TextoPregunta01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H04_VerificacionProcedimiento\H04_Bloque01.xaml.cs">
+      <DependentUpon>H04_Bloque01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H04_VerificacionProcedimiento\H04_Bloque03.xaml.cs">
+      <DependentUpon>H04_Bloque03.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H04_VerificacionProcedimiento\H04_Bloque05.xaml.cs">
+      <DependentUpon>H04_Bloque05.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H04_VerificacionProcedimiento\H04_Encabezado00.xaml.cs">
+      <DependentUpon>H04_Encabezado00.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\H04_VerificacionProcedimiento\H04_VerificacionProdedimientoImp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\IEncabezadoImpresion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Impresion\ILogicaImpresion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsConfiguracionRUV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsCryptoUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsElementoSeleccionable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsImpresion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsImpresion_Generacion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsInfoGeneral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsMultiTarea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsRed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsSeguridad.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\clsUserControlBase.cs" />
+    <Compile Include="Infrastructure\clsUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\ColaProcesos\clsColaProcesos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\ColaProcesos\clsColaProcesos_Transmision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\ColaProcesos\clsProceso.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\ColaProcesos\clsProcesoExcel.cs" />
+    <Compile Include="Infrastructure\Delegados.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Enumeraciones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Configuracion\clsConfiguracion.cs" />
+    <Compile Include="Infrastructure\Impresion\clsConfiguracionImpresion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Configuracion\clsConfiguracionUbicaciones.cs" />
+    <Compile Include="Infrastructure\LocalStorage\DatabaseService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\LocalStorage\Serializadores\clsSerializador.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\LocalStorage\SterlingDatabaseInstance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\RUV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTareas\BorrarColaConfirmacion.xaml.cs">
+      <DependentUpon>BorrarColaConfirmacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTareas\ColaProcesos.xaml.cs">
+      <DependentUpon>ColaProcesos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTareas\ListaTareas.xaml.cs">
+      <DependentUpon>ListaTareas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTareas\ListaTareasV2.xaml.cs">
+      <DependentUpon>ListaTareasV2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow_CargueParametros.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow_ObtenerDeclaracion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Opciones\Ubicaciones.xaml.cs">
+      <DependentUpon>Ubicaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Opciones\Configuracion.xaml.cs">
+      <DependentUpon>Configuracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Opciones\ConfiguracionImpresora.xaml.cs">
+      <DependentUpon>ConfiguracionImpresora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Opciones\Impresoras.xaml.cs">
+      <DependentUpon>Impresoras.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Radicacion\LiderRadicacion.xaml.cs">
+      <DependentUpon>LiderRadicacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\Controles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controles.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\ExtensionesImagenes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExtensionesImagenes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Colilla\BloquesColilla.xaml.cs">
+      <DependentUpon>BloquesColilla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Colilla\Recibo.xaml.cs">
+      <DependentUpon>Recibo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\ComandosRegistro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\manejoGlosas.xaml.cs">
+      <DependentUpon>manejoGlosas.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\NotificacionElectronica.xaml.cs">
+      <DependentUpon>NotificacionElectronica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\CargarSoportes.xaml.cs">
+      <DependentUpon>CargarSoportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ConsultaRNEC.xaml.cs">
+      <DependentUpon>ConsultaRNEC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Imprimir.xaml.cs">
+      <DependentUpon>Imprimir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\Secciones\ElementoImprimir.cs" />
+    <Compile Include="Registro\Secciones\HojaBlanca.xaml.cs">
+      <DependentUpon>HojaBlanca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\ValidacionIdentidad\EnvioConfirmacion.xaml.cs">
+      <DependentUpon>EnvioConfirmacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\ValidacionIdentidad\PreguntasValidacion.xaml.cs">
+      <DependentUpon>PreguntasValidacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\RegistroVista.xaml.cs">
+      <DependentUpon>RegistroVista.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroVista_CargueBorrador.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroVista_Comandos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroVista_EnviarDeclaracion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroVista_ValidarDeclaracionActual.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A01.xaml.cs">
+      <DependentUpon>A01.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A01_EdicionBienes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A02.xaml.cs">
+      <DependentUpon>A02.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A03.xaml.cs">
+      <DependentUpon>A03.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A04.xaml.cs">
+      <DependentUpon>A04.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A05.xaml.cs">
+      <DependentUpon>A05.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A06.xaml.cs">
+      <DependentUpon>A06.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A07.xaml.cs">
+      <DependentUpon>A07.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A08.xaml.cs">
+      <DependentUpon>A08.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A09.xaml.cs">
+      <DependentUpon>A09.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A10.xaml.cs">
+      <DependentUpon>A10.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A11.xaml.cs">
+      <DependentUpon>A11.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\A13.xaml.cs">
+      <DependentUpon>A13.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Afectacion.xaml.cs">
+      <DependentUpon>Afectacion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Afectacion_Detalle.xaml.cs">
+      <DependentUpon>Afectacion_Detalle.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Afectacion_Edicion.xaml.cs">
+      <DependentUpon>Afectacion_Edicion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Anexo06_DatoHomicidio.xaml.cs">
+      <DependentUpon>Anexo06_DatoHomicidio.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Anexo06_DatoHomicidio_Detalle.xaml.cs">
+      <DependentUpon>Anexo06_DatoHomicidio_Detalle.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\AtencionMedica.xaml.cs">
+      <DependentUpon>AtencionMedica.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\AutorDespojo.xaml.cs">
+      <DependentUpon>AutorDespojo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\BloqueadorControles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\CajaIngresoFecha.xaml.cs">
+      <DependentUpon>CajaIngresoFecha.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\CajaTextoTitulo.xaml.cs">
+      <DependentUpon>CajaTextoTitulo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ColumnaSencilla.xaml.cs">
+      <DependentUpon>ColumnaSencilla.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\DenunciaPrevia.xaml.cs">
+      <DependentUpon>DenunciaPrevia.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\DenunciaPrevia_Detalle.xaml.cs">
+      <DependentUpon>DenunciaPrevia_Detalle.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\DenunciaPrevia_Edicion.xaml.cs">
+      <DependentUpon>DenunciaPrevia_Edicion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\DocumentoDigital.xaml.cs">
+      <DependentUpon>DocumentoDigital.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\EdicionComunidadEtnica.xaml.cs">
+      <DependentUpon>EdicionComunidadEtnica.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\EdicionPertenenciaEtnica.xaml.cs">
+      <DependentUpon>EdicionPertenenciaEtnica.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\FechaLugar.xaml.cs">
+      <DependentUpon>FechaLugar.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\InfoVictima_Cedula.xaml.cs">
+      <DependentUpon>InfoVictima_Cedula.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\InfoVictima_EstudioHijos.xaml.cs">
+      <DependentUpon>InfoVictima_EstudioHijos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\InfoVictima_Inscrito.xaml.cs">
+      <DependentUpon>InfoVictima_Inscrito.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\InfoVictima_Laboral.xaml.cs">
+      <DependentUpon>InfoVictima_Laboral.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\InfoVictima_Salud.xaml.cs">
+      <DependentUpon>InfoVictima_Salud.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\InfoVictima_Sisben.xaml.cs">
+      <DependentUpon>InfoVictima_Sisben.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\IntegerNullableToBoolConverter.cs" />
+    <Compile Include="Registro\Secciones\Controles\ListaBotonesAnexos.xaml.cs">
+      <DependentUpon>ListaBotonesAnexos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ListaOpciones.xaml.cs">
+      <DependentUpon>ListaOpciones.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ListaOpciones_Teclado.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ListaPersonasDesplazadas.xaml.cs">
+      <DependentUpon>ListaPersonasDesplazadas.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ObtenerDeclaracion.xaml.cs">
+      <DependentUpon>ObtenerDeclaracion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\PersonaDesplazada.xaml.cs">
+      <DependentUpon>PersonaDesplazada.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ReporteEnvioDeclaracion.xaml.cs">
+      <DependentUpon>ReporteEnvioDeclaracion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\ResumenValidacionDeclaracion.xaml.cs">
+      <DependentUpon>ResumenValidacionDeclaracion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\SeleccionAnexo.xaml.cs">
+      <DependentUpon>SeleccionAnexo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\SiNo.xaml.cs">
+      <DependentUpon>SiNo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\SubTituloEntrada.xaml.cs">
+      <DependentUpon>SubTituloEntrada.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\TituloConBorde.xaml.cs">
+      <DependentUpon>TituloConBorde.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Victima.xaml.cs">
+      <DependentUpon>Victima.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Controles\Victima_Detalle.xaml.cs">
+      <DependentUpon>Victima_Detalle.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\H01_TomaDeclaracion.xaml.cs">
+      <DependentUpon>H01_TomaDeclaracion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\H02_PersonasAfectadas.xaml.cs">
+      <DependentUpon>H02_PersonasAfectadas.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\H03_DescripcionHechos.xaml.cs">
+      <DependentUpon>H03_DescripcionHechos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\H04_VerificacionProcedimiento.xaml.cs">
+      <DependentUpon>H04_VerificacionProcedimiento.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\ISeccionRegistro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\Secciones\Radicacion.xaml.cs">
+      <DependentUpon>Radicacion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Registro\ValidacionIdentidad\TomaDeclaracion.xaml.cs">
+      <DependentUpon>TomaDeclaracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\TomaFirma.xaml.cs">
+      <DependentUpon>TomaFirma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\ValidacionIdentidad\Validacion.xaml.cs">
+      <DependentUpon>Validacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\clsPreEjecucion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\DesplegarException.xaml.cs">
+      <DependentUpon>DesplegarException.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\DesplegarWarning.xaml.cs">
+      <DependentUpon>DesplegarWarning.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FondoVacio.xaml.cs">
+      <DependentUpon>FondoVacio.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\LoginVista.xaml.cs">
+      <DependentUpon>LoginVista.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seguridad\VerificarInformacionGeneral.xaml.cs">
+      <DependentUpon>VerificarInformacionGeneral.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service References\ControlDocumentosService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CriticaNServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DevolucionServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FachadaGestorDocumental\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GeneralService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LoginService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\Textos.Designer.cs">
+      <DependentUpon>Textos.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Service References\PdfHelperServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RadicacionServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSComunicacionSiravRuv\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Tmp\clsDatos.cs" />
+    <Compile Include="Tmp\clsTestConverter.cs" />
+    <Compile Include="Tmp\FirmaDigital.xaml.cs">
+      <DependentUpon>FirmaDigital.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Pachito.xaml.cs">
+      <DependentUpon>Pachito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\PaginaCapturaRegistroPachitoxaml.xaml.cs">
+      <DependentUpon>PaginaCapturaRegistroPachitoxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\TriggerTracing.cs" />
+    <Compile Include="Tmp\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Window3.xaml.cs">
+      <DependentUpon>Window3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Window4.xaml.cs">
+      <DependentUpon>Window4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Window5.xaml.cs">
+      <DependentUpon>Window5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Window6.xaml.cs">
+      <DependentUpon>Window6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp\Window7.xaml.cs">
+      <DependentUpon>Window7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\CapturaGlosa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\clsNotificaciones.cs" />
+    <Compile Include="Utils\clsTextBoxFilterBehavior.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\clsTipoImagen.cs" />
+    <Compile Include="Utils\clsUIHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\DataSources\ListaTareasDataSource.cs" />
+    <Compile Include="Utils\DataSources\FormulariosActivarDataSource.cs" />
+    <Compile Include="Utils\DataSources\FormulariosUsuarioDataSource.cs" />
+    <Compile Include="Utils\Extensiones.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Validations\CampoVacioRule.cs" />
+    <Compile Include="Validations\FormularioActivoRule.cs" />
+    <Page Include="Controles\BloqueoInterfase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\BotonMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\FocusAdorner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ImageButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\MensajesUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\Notificaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ResumenValidacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\ucCausalesDevolucion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\ucInfoRadicacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controles\Wacom\ucFirmaDigital.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CriticaN\GestionDeclaracion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Devolucion\GestionDevolucion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Devolucion\SolicitudDevolucion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\BasesParaEstilos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\CheckBoxX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\CheckBoxXOnly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\ColoresEstadosProcesos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\ComboBoxPrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\EstilosInfraestructura.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\RadioButtonX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Estilos\WPFColoresOriginales.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GestorFormulario\GeneracionFormulario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GestorFormulario\InactivacionFormulario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Impresion\A01\A01_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A01\A01_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A01\A01_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A01\A01_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A02\A02_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A02\A02_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A02\A02_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A02\A02_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Detalle02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Encabezado03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A03\A03_Encabezado04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A04\A04_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A04\A04_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A04\A04_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A04\A04_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_DetallePregunta09.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_EncabezadoPregunta09.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Pregunta01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Pregunta02_04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Pregunta05_06.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Pregunta07_08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Pregunta10_12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A05\A05_Pregunta13_15.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A06\A06_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A06\A06_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A06\A06_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A06\A06_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A07\A07_DetallePregunta09_17.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A07\A07_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A07\A07_EncabezadoPregunta09_17.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A07\A07_Pregunta01_02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A07\A07_Pregunta03_08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A08\A08_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A08\A08_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A08\A08_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A08\A08_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A09\A09_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A09\A09_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A09\A09_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A09\A09_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A10\A10_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A10\A10_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A10\A10_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A10\A10_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_DetallePregunta04_08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_DetallePregunta14_17.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_DetallePregunta18.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_EncabezadoPregunta04_08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_EncabezadoPregunta14_17.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_EncabezadoPregunta18.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Pregunta01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Pregunta02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Pregunta03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Pregunta09_12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Pregunta13.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A11\A11_Pregunta18.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A13\A13_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A13\A13_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A13\A13_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A13\A13_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\A13\A13_Pregunta15_16.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\Colilla\ColillaRecibo_Bloque00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\Colilla\ColillaRecibo_Bloque01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\DatoColumna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\DatoFechaColumna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\DatoGrillaNumericaColumna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\DatoMarcaColumna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\DatoSiNoColumna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\Encabezado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\EncabezadoColumna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\FechaLuga_Imp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\InfoVictima_Imp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\General\MarcaFinalSeccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H01_TomaDeclaracion\H01_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H01_TomaDeclaracion\H01_Pregunta01_08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H01_TomaDeclaracion\H01_Pregunta09.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H01_TomaDeclaracion\H01_Pregunta10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H02_PersonasAfectadas\H02_Detalle01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H02_PersonasAfectadas\H02_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H02_PersonasAfectadas\H02_Encabezado01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H02_PersonasAfectadas\H02_Encabezado02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H03_DescripcionHechos\H03_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H03_DescripcionHechos\H03_TextoPregunta01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H04_VerificacionProcedimiento\H04_Bloque01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H04_VerificacionProcedimiento\H04_Bloque03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H04_VerificacionProcedimiento\H04_Bloque05.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Impresion\H04_VerificacionProcedimiento\H04_Encabezado00.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inicio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ListaTareas\BorrarColaConfirmacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListaTareas\ColaProcesos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ListaTareas\ListaTareas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ListaTareas\ListaTareasV2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Opciones\Ubicaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Opciones\Configuracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Opciones\ConfiguracionImpresora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Opciones\Impresoras.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Radicacion\LiderRadicacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Recursos\EstilosGenerales.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Recursos\EstilosImpresion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Recursos\ImagesDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Recursos\RecursosGeoEntorno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Registro\Colilla\BloquesColilla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Colilla\Recibo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\manejoGlosas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\NotificacionElectronica.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\CargarSoportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ConsultaRNEC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Imprimir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\HojaBlanca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\ValidacionIdentidad\EnvioConfirmacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\ValidacionIdentidad\PreguntasValidacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\RegistroVista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A05.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A06.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A07.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A08.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A09.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\A13.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Afectacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Afectacion_Detalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Afectacion_Edicion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Anexo06_DatoHomicidio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Anexo06_DatoHomicidio_Detalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\AtencionMedica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\AutorDespojo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\CajaIngresoFecha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\CajaTextoTitulo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ColumnaSencilla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\DenunciaPrevia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\DenunciaPrevia_Detalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\DenunciaPrevia_Edicion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\DocumentoDigital.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\EdicionComunidadEtnica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\EdicionPertenenciaEtnica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\FechaLugar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\InfoVictima_Cedula.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\InfoVictima_EstudioHijos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\InfoVictima_Inscrito.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\InfoVictima_Laboral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\InfoVictima_Salud.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\InfoVictima_Sisben.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ListaBotonesAnexos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ListaOpciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ListaPersonasDesplazadas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ObtenerDeclaracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\PersonaDesplazada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ReporteEnvioDeclaracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\ResumenValidacionDeclaracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\SeleccionAnexo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\SiNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\SubTituloEntrada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\TituloConBorde.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Victima.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Controles\Victima_Detalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\H01_TomaDeclaracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\H02_PersonasAfectadas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\H03_DescripcionHechos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\H04_VerificacionProcedimiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\Radicacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\Secciones\RegistroDiccionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\ValidacionIdentidad\TomaDeclaracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\TomaFirma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registro\ValidacionIdentidad\Validacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seguridad\DesplegarException.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seguridad\DesplegarWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seguridad\FondoVacio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seguridad\LoginVista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seguridad\VerificarInformacionGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tmp\FirmaDigital.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Pachito.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Page1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\PaginaCapturaRegistroPachitoxaml.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tmp\Window7.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\Controles.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Controles.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\ExtensionesImagenes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExtensionesImagenes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\Textos.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Textos.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Ruv.WPF.Captura.Recursos</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.Produccion.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.Pruebas.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Ruv.Infrastructure.Crosscutting.Common.clsPersonaRNEC.datasource" />
+    <None Include="Properties\DataSources\Ruv.Infrastructure.Crosscutting.Common.clsUsuario.datasource" />
+    <None Include="Properties\DataSources\Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion.clsDevolucion.datasource" />
+    <None Include="Properties\DataSources\Ruv.Infrastructure.Crosscutting.Common.Entidades.LiderRadicacion.clsLiderRadicacion.datasource" />
+    <None Include="Properties\DataSources\Ruv.Infrastructure.Crosscutting.Common.Entidades.Validacion.clsPersonaIdentidad.datasource" />
+    <None Include="Properties\DataSources\Ruv.Infrastructure.Crosscutting.Common.General.clsCausal.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.Entidades.clsDeclaracion1.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.Entidades.clsGlosa1.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.Entidades.clsGlosaIntencion1.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.Entidades.clsListaTareas1.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario.clsFormulario.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario.clsSeparacionFormularioSolicitud.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.General.clsBusquedaDeclaracion1.datasource" />
+    <None Include="Ruv.Infrastructure.Crosscutting.Common.General.clsGeografiaCompleta1.datasource" />
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService.wsdl" />
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService1.wsdl" />
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService2.wsdl" />
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService21.wsdl" />
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService.wsdl" />
+    <None Include="Service References\CriticaNServiceReference\CriticaNService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService1.wsdl" />
+    <None Include="Service References\CriticaNServiceReference\CriticaNService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService2.wsdl" />
+    <None Include="Service References\CriticaNServiceReference\CriticaNService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService21.wsdl" />
+    <None Include="Service References\CriticaNServiceReference\CriticaNService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService.wsdl" />
+    <None Include="Service References\DevolucionServiceReference\DevolucionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService1.wsdl" />
+    <None Include="Service References\DevolucionServiceReference\DevolucionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService2.wsdl" />
+    <None Include="Service References\DevolucionServiceReference\DevolucionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService21.wsdl" />
+    <None Include="Service References\DevolucionServiceReference\DevolucionService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.attachResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.b64File.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.documento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.entHomoGeografiaSalida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.entInfoPersona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.EntInfoRadicado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.EntInfoRadicadosVictimasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.EntMensajeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.entSalidaGeografia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.listOfCities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.listOfCountries.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.listOfDepartments.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.listOfDependencies.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.listOfDocuments.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.listOfRadicados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.radicadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\Ruv.WPF.Captura.FachadaGestorDocumental.status.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental.wsdl" />
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FachadaGestorDocumental\ServicioGestorDocumental7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService22.wsdl" />
+    <None Include="Service References\GeneralService\GeneralService23.wsdl" />
+    <None Include="Service References\GeneralService\GeneralService910.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService911.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService912.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService913.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService914.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService915.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService916.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService917.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService99.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeneralService\Ruv.WPF.Captura.GeneralService.clsResultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LoginService\LoginService.wsdl" />
+    <None Include="Service References\LoginService\LoginService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService1.wsdl" />
+    <None Include="Service References\LoginService\LoginService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService2.wsdl" />
+    <None Include="Service References\LoginService\LoginService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService21.wsdl" />
+    <None Include="Service References\LoginService\LoginService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoginService\LoginService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService.wsdl" />
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService1.wsdl" />
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService2.wsdl" />
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService21.wsdl" />
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService.wsdl" />
+    <None Include="Service References\RadicacionServiceReference\RadicacionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService1.wsdl" />
+    <None Include="Service References\RadicacionServiceReference\RadicacionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService2.wsdl" />
+    <None Include="Service References\RadicacionServiceReference\RadicacionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService21.wsdl" />
+    <None Include="Service References\RadicacionServiceReference\RadicacionService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSComunicacionSiravRuv\ComunicacionSiravRuv.wsdl" />
+    <None Include="Service References\WSComunicacionSiravRuv\ComunicacionSiravRuv.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSComunicacionSiravRuv\ComunicacionSiravRuv1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSComunicacionSiravRuv\ComunicacionSiravRuv2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSComunicacionSiravRuv\Ruv.WPF.Captura.WSComunicacionSiravRuv.RadicadoSirav.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DesignTime\boligan.jpg" />
+    <Page Include="DesignTime\ListaHechoMotivo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignTime\ListaHechoMotivo2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Recursos\Imagenes\Escudo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\banner_sup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\ProsperidadParaTodos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\RUV.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Recursos\Imagenes\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\LogoSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ruv.Data\Ruv.Data.csproj">
+      <Project>{A87E504A-E863-4B6D-90F7-38EB4BA50F53}</Project>
+      <Name>Ruv.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Common\Ruv.Infrastructure.Crosscutting.Common.csproj">
+      <Project>{4661210F-645E-4C3D-95A5-F80AC3FBB86C}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Resources\Ruv.Infrastructure.Crosscutting.Resources.csproj">
+      <Project>{1425A669-13B2-4E12-B886-C36B16375913}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Utilities\Ruv.Infrastructure.Crosscutting.Utilities.csproj">
+      <Project>{3E4419A0-7040-43A5-A262-451F5DD62D38}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\LogoBW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PubliConfig.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\LogoSmall_UPARIV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ControlDocumentosService\" />
+    <WCFMetadataStorage Include="Service References\CriticaNServiceReference\" />
+    <WCFMetadataStorage Include="Service References\DevolucionServiceReference\" />
+    <WCFMetadataStorage Include="Service References\FachadaGestorDocumental\" />
+    <WCFMetadataStorage Include="Service References\GeneralService\" />
+    <WCFMetadataStorage Include="Service References\LoginService\" />
+    <WCFMetadataStorage Include="Service References\PdfHelperServiceReference\" />
+    <WCFMetadataStorage Include="Service References\RadicacionServiceReference\" />
+    <WCFMetadataStorage Include="Service References\WSComunicacionSiravRuv\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoginService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoginService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoginService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\GenerarPDF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CriticaNServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CriticaNServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CriticaNServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RadicacionServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RadicacionServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RadicacionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DevolucionServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DevolucionServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DevolucionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\close_26.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfHelperServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfHelperServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfHelperServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\spacer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ControlDocumentosService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ControlDocumentosService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ControlDocumentosService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ControlDocumentosService\ControlDocumentosService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CriticaNServiceReference\CriticaNService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DevolucionServiceReference\DevolucionService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LoginService\LoginService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PdfHelperServiceReference\PdfHelperService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RadicacionServiceReference\RadicacionService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\logo-unidad-herramienta1.jpg" />
+    <Resource Include="Recursos\Imagenes\logo-unidad-herramienta.jpg" />
+    <Content Include="Service References\ControlDocumentosService\ControlDocumentosService.disco" />
+    <Content Include="Service References\CriticaNServiceReference\CriticaNService.disco" />
+    <Content Include="Service References\DevolucionServiceReference\DevolucionService.disco" />
+    <None Include="Service References\FachadaGestorDocumental\configuration91.svcinfo" />
+    <None Include="Service References\FachadaGestorDocumental\configuration.svcinfo" />
+    <None Include="Service References\FachadaGestorDocumental\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSComunicacionSiravRuv\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSComunicacionSiravRuv\configuration.svcinfo" />
+    <None Include="Service References\WSComunicacionSiravRuv\configuration91.svcinfo" />
+    <None Include="Service References\GeneralService\configuration91.svcinfo" />
+    <None Include="Service References\GeneralService\configuration.svcinfo" />
+    <None Include="Service References\GeneralService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\GeneralService\GeneralService11.disco" />
+    <Content Include="Service References\LoginService\LoginService.disco" />
+    <Content Include="Service References\PdfHelperServiceReference\PdfHelperService.disco" />
+    <Content Include="Service References\RadicacionServiceReference\RadicacionService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

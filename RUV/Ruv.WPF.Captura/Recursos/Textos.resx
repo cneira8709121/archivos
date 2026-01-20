@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="a01t001" xml:space="preserve">
+    <value>10. Tipo de afectación (Selección múltiple):</value>
+  </data>
+  <data name="a01t002" xml:space="preserve">
+    <value>1 Daños en bienes muebles o inmuebles
+2 Fracturas
+3 Heridas o laceraciones
+4 Infección
+5 Muerte
+6 Parálisis total o parcial
+7 Pérdida de la audición total o parcial
+8 Pérdida de la vista total o parcial</value>
+  </data>
+  <data name="a01t003" xml:space="preserve">
+    <value>9 Pérdida del habla total o parcial
+10 Pérdida o amputación de algún miembro u órgano
+11 Pérdida total o parcial de la funcionalidad de algún miembro u órgano diferente a vista, audición o habla.
+12 Quemaduras
+13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a01t004" xml:space="preserve">
+    <value>Por favor responda las siguientes preguntas en relación con la víctima 1, es decir, la persona que se registrará en la primera fila del siguiente cuadro (ver flecha). 
+Estas preguntas hacen referencia al momento en el que ocurrieron los hechos.</value>
+  </data>
+  <data name="a01t005" xml:space="preserve">
+    <value>En la primera fila del siguiente cuadro, registre a la víctima de este hecho. A continuación, registre a los miembros del grupo familiar de la víctima.
+En caso de haber más de una víctima como consecuencia de este mismo hecho, registre cualquiera de las víctimas en la primera fila y continúe diligenciando el grupo familiar de esta persona en los renglones subsiguientes.</value>
+  </data>
+  <data name="a01t006" xml:space="preserve">
+    <value>En el siguiente cuadro registre a la víctima de este hecho. A continuación, registre a los miembros del grupo familiar de la víctima.
+En caso de haber más de una víctima como consecuencia de este mismo hecho, registre cualquiera de las víctimas en la primera fila y continúe diligenciando el grupo familiar de esta persona en los renglones subsiguientes.</value>
+  </data>
+  <data name="a01t006V2" xml:space="preserve">
+    <value>Relacione las demás victimas si las hay.</value>
+  </data>
+  <data name="a02t001" xml:space="preserve">
+    <value>10. Tipo de afectación (Selección múltiple):</value>
+  </data>
+  <data name="a02t002" xml:space="preserve">
+    <value>13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a03t001" xml:space="preserve">
+    <value>11. Tipo de afectación (Selección múltiple):</value>
+  </data>
+  <data name="a03t002" xml:space="preserve">
+    <value>2 Fracturas
+3 Heridas o laceraciones
+4 Infección
+5 Muerte
+6 Parálisis total o parcial
+7 Pérdida de la audición total o parcial
+8 Pérdida de la vista total o parcial
+9 Pérdida del habla total o parcial</value>
+  </data>
+  <data name="a03t003" xml:space="preserve">
+    <value>10 Pérdida o amputación de algún miembro u órgano
+11 Pérdida total o parcial de la funcionalidad de algún miembro u órgano diferente a vista, audición o habla.
+12 Quemaduras
+13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a04t001" xml:space="preserve">
+    <value>13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a04t002" xml:space="preserve">
+    <value>En el siguiente cuadro registre como víctima 1 a la persona que se encuentra desaparecida. A continuación, registre a los miembros del grupo familiar de la víctima.
+En caso de haber más de una víctima como consecuencia de este mismo hecho, registre cualquiera de las víctimas en la primera fila y continúe diligenciando el grupo familiar de esta persona en los renglones subsiguientes.</value>
+  </data>
+  <data name="a05t001" xml:space="preserve">
+    <value>Por favor indique para cada miembro del hogar si este se desplazó.</value>
+  </data>
+  <data name="a05t002" xml:space="preserve">
+    <value>Por favor responda las siguientes preguntas en relación con la persona Jefe de Hogar especificada en el cuadro anterior. 
+Estas preguntas hacen referencia al momento en el que ocurrieron los hechos.</value>
+  </data>
+  <data name="a05t003" xml:space="preserve">
+    <value>Si el (la) Declarante manifiesta ser víctima de abandono forzado de bienes inmuebles (tierras, lotes o viviendas) o muebles (herramientas, animales, cultivos, vehículos, etc.), diligencie el anexo 11.</value>
+  </data>
+  <data name="a05t004" xml:space="preserve">
+    <value>Por favor responda las siguientes preguntas en relación con la persona Jefe de Hogar especificada en el cuadro anterior. Estas preguntas hacen referencia al momento en el que ocurrieron los hechos.</value>
+  </data>
+  <data name="a06t001" xml:space="preserve">
+    <value>En caso de necesitar más hojas para registrar a todos los miembros del grupo familiar, utilice tantos anexos como sea necesario y numere los folios que correspondan a este grupo familiar.</value>
+  </data>
+  <data name="a06t002" xml:space="preserve">
+    <value>11. Tipo de afectación (Selección múltiple):</value>
+  </data>
+  <data name="a06t003" xml:space="preserve">
+    <value>3 Heridas o laceraciones
+5 Muerte
+13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a06t004" xml:space="preserve">
+    <value>Por favor responda las siguientes preguntas en relación con la víctima 1, es decir, la persona que se registrará en la primera fila del siguiente cuadro (ver flecha). 
+Estas preguntas hacen referencia al momento en el que ocurrieron los hechos.</value>
+  </data>
+  <data name="a06t005" xml:space="preserve">
+    <value>En la primera fila del siguiente cuadro, registre a la víctima de este hecho. A continuación, registre a los miembros del grupo familiar de la víctima.
+En caso de haber más de una víctima como consecuencia de este mismo hecho, registre cualquiera de las víctimas en la primera fila y continúe diligenciando el grupo familiar de esta persona en los renglones subsiguientes.</value>
+  </data>
+  <data name="a06t006" xml:space="preserve">
+    <value>En el siguiente cuadro registre como víctima 1 a la persona fallecida. A continuación, registre a los miembros del grupo familiar de la víctima.
+En caso de haber más de una víctima como consecuencia de este mismo hecho, registre cualquiera de las víctimas en la primera fila y continúe diligenciando el grupo familiar de esta persona en los renglones subsiguientes.</value>
+  </data>
+  <data name="a07t001" xml:space="preserve">
+    <value>12. Tipo de afectación (Selección múltiple):</value>
+  </data>
+  <data name="a07t002" xml:space="preserve">
+    <value>1 Daño en bienes muebles o inmuebles
+2 Fracturas
+3 Heridas o laceraciones
+4 Infección
+5 Muerte
+6 Parálisis total o parcial
+7 Pérdida de la audición total o parcial
+8 Pérdida de la vista total o parcial
+9 Pérdida del habla total o parcial
+10 Pérdida o amputación de algún miembro u órgano
+11 Pérdida total o parcial de la funcionalidad de algún miembro u órgano diferente a vista, audición o habla.
+12 Quemaduras
+13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a07t003" xml:space="preserve">
+    <value>15. Actividad al momento del hecho:</value>
+  </data>
+  <data name="a07t004" xml:space="preserve">
+    <value>1 Agricultura
+2 Ganadería
+3 Tránsito por vía inusual
+4 Juego
+5 Recolección de comida, madera
+6 Labores domésticas
+7 Militar
+8 Erradicación de cultivos ilicitos
+9 Desconocida
+10 Otra</value>
+  </data>
+  <data name="a08t001" xml:space="preserve">
+    <value>2 Fracturas
+3 Heridas o laceraciones
+4 Infección
+5 Muerte
+6 Parálisis total o parcial
+7 Pérdida de la audición total o parcial
+8 Pérdida de la vista total o parcial
+9 Pérdida del habla total o parcial</value>
+  </data>
+  <data name="a08t002" xml:space="preserve">
+    <value>10 Pérdida o amputación de algún miembro u órgano
+11 Pérdida total o parcial de la funcionalidad de algún miembro u órgano diferente a vista, audición o habla.
+12 Quemaduras
+13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Disminución o pérdida de sus fuentes de ingresos
+15 Otro</value>
+  </data>
+  <data name="a08t003" xml:space="preserve">
+    <value>En el siguiente cuadro registre como víctima 1 a la persona secuestrada. A continuación, registre a los miembros del grupo familiar de la víctima.
+En caso de haber más de una víctima como consecuencia de este mismo hecho, registre cualquiera de las víctimas en la primera fila y continúe diligenciando el grupo familiar de esta persona en los renglones subsiguientes.</value>
+  </data>
+  <data name="a11t001" xml:space="preserve">
+    <value>Informe al (a la) Declarante que el diligenciamiento de este formulario no reemplaza la solicitud de restitución que debe hacerse ante un(a) representante de la Unidad Administrativa Especial de Gestión para la Restitución de Tierras y, por lo tanto, no inicia el trámite de restitución contemplado en la Ley 1448. 
+Para efectos de la restitución, oriente al (a la) Declarante para que surta el trámite correspondiente en el punto de atención de la Unidad Administrativa Especial de Gestión para la Restitución de Tierras más cercano.</value>
+  </data>
+  <data name="a11t002" xml:space="preserve">
+    <value>4 Tipo de Inmueble:</value>
+  </data>
+  <data name="a11t003" xml:space="preserve">
+    <value>1. Tierra / Lote sin vivienda 
+2. Tierra / Lote con vivienda</value>
+  </data>
+  <data name="a11t004" xml:space="preserve">
+    <value>6 Tipo tenencia</value>
+  </data>
+  <data name="a11t005" xml:space="preserve">
+    <value>1. Propiedad
+2. Posesión
+3. Tenencia</value>
+  </data>
+  <data name="a11t006" xml:space="preserve">
+    <value>8 Unidad de área</value>
+  </data>
+  <data name="a11t007" xml:space="preserve">
+    <value>1 Hectáreas
+2 Metro cuadrado 
+3 Fanegadas 
+4 Plazas</value>
+  </data>
+  <data name="a11t008" xml:space="preserve">
+    <value>5 Cuadras
+98 No Sabe
+99 No Responde</value>
+  </data>
+  <data name="a11t009" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Nota:&lt;/Run&gt; En caso que la respuesta a la anterior pregunta sea afirmativa (SI), diligencie el formulario único de solicitud individual de protección de predios abandonados a causa de la violencia. Si el (la) Declarante pertenece a un grupo étnico, diligencie el Formulario Único de solicitud de Protección de los Derechos Territoriales de Grupos Étnicos Afectados a Causa de la Violencia. El diligenciamiento de estos formatos es responsabilidad de los(as) representantes del Ministerio Público. Estos formatos son requisito para que los bienes protegidos sean inscritos en el Registro Único de Predios y Territorios Abandonados (RUPTA).</value>
+  </data>
+  <data name="a11t010" xml:space="preserve">
+    <value>15. Tipo Bien</value>
+  </data>
+  <data name="a11t011" xml:space="preserve">
+    <value>1. Semovientes
+2. Muebles, enseres y electrodomésticos
+3. Herramientas</value>
+  </data>
+  <data name="a11t012" xml:space="preserve">
+    <value>4. Cultivos y plantaciones
+5. Maquinaria y vehículos
+6. Otros</value>
+  </data>
+  <data name="a11t013" xml:space="preserve">
+    <value>Tipo de acreedor:</value>
+  </data>
+  <data name="a11t014" xml:space="preserve">
+    <value>1. Empresa de servicios públicos
+2. Tesorería o Hacienda Municipal o Departamental
+3. Entidad financiera pública</value>
+  </data>
+  <data name="a11t015" xml:space="preserve">
+    <value>4. Entidad financiera privada
+5. Persona natural
+6. Establecimiento comercial</value>
+  </data>
+  <data name="a13t001" xml:space="preserve">
+    <value>Señor(a) funcionario(a), relacione a continuación los integrantes de un mismo grupo familiar afectado por el hecho declarado en este formato. El campo (7) relación debe ser diligenciado de acuerdo a la relación de parentesco o consanguinidad de cada persona  &lt;Run TextDecorations="Underline"&gt;con  respecto al Jefe de Hogar&lt;/Run&gt;.</value>
+  </data>
+  <data name="c01t001" xml:space="preserve">
+    <value>Señor(a) funcionario(a) firme el siguiente comprobante y entréguelo al(a la) declarante.</value>
+  </data>
+  <data name="c01t002" xml:space="preserve">
+    <value>Cantidad de anexos, soportes y folios que hacen parte de la declaración</value>
+  </data>
+  <data name="c01t003" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Confidencialidad de la Información&lt;/Run&gt;: De conformidad con lo dispuesto en el parágrafo 1º del artículo 156 de la Ley 1448 de 2011, con el fin de proteger el derecho a la intimidad de las víctimas y su seguridad, toda la información suministrada con ocasión de esta declaración es de carácter reservado en concordancia con lo establecido en el artículo 15 de la Constitución Política.</value>
+  </data>
+  <data name="c01t004" xml:space="preserve">
+    <value>Señor declarante recuerde que la Unidad de Atención y Reparación Integral puede tomar hasta 60 días hábiles para tramitar su solicitud de inscripción en el Registro Único de Víctimas, el consecutivo impreso en este documento es el mismo registrado en las 4 hojas básicas del formato de declaración por lo tanto debe mantenerse en perfecto estado para poder realizar el seguimiento correspondiente ante alguna eventualidad, consulta o solicitud, para lo cual puede dirigirse al punto de atención de esta entidad más cercano.
+
+El presente documento no tiene validez para trámite alguno ante las diferentes entidades, su única función es certificar que el declarante acudió al ministerio publico a realizar la diligencia de rendir la declaración.</value>
+  </data>
+  <data name="e01t001" xml:space="preserve">
+    <value>*Este documento es distribuido por la Unidad Administrativa Especial para la Atención y Reparación Intergral a las Víctimas de manera GRATUITA, por lo cual NO tiene ningún costo para los ciudadanos.</value>
+  </data>
+  <data name="e01t002" xml:space="preserve">
+    <value>Unidad Administrativa Especial para la Atención y Reparación Integral a las Víctimas</value>
+  </data>
+  <data name="e01t003" xml:space="preserve">
+    <value>FORMATO ÚNICO DE DECLARACIÓN PARA LA SOLICITUD DE INSCRIPCIÓN EN EL REGISTRO ÚNICO DE VÍCTIMAS</value>
+  </data>
+  <data name="e01t004" xml:space="preserve">
+    <value>Registro Único de Víctimas</value>
+  </data>
+  <data name="e01t005" xml:space="preserve">
+    <value>Código: F-UAV-001</value>
+  </data>
+  <data name="e01t006" xml:space="preserve">
+    <value>Fecha aprobación: 2011-12-09</value>
+  </data>
+  <data name="e01t007" xml:space="preserve">
+    <value>Versión: 01</value>
+  </data>
+  <data name="eA13t001" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;3 Tipo Documento:&lt;/Run&gt;
+1 Cédula de Ciudadanía
+2 Tarjeta de Identidad
+3 Registro Civil
+4 Cédula de Extranjería
+5 Indocumentado (No ha tramitado su documento)
+98 No sabe (NS)-(No recuerda el número)
+99 No responde (NR)</value>
+  </data>
+  <data name="eA13t002" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;5 Hechos (Selección múltiple):&lt;/Run&gt;</value>
+  </data>
+  <data name="eA13t005" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;7 Relación:&lt;/Run&gt;
+1 Jefe(a) de hogar
+2 Esposo(a)/Compañero(a)
+3 Hijo(a)/Hijastro(a)
+4 Hijo(a) de crianza
+5 Yerno/Nuera
+6 Nieto(a)
+7 Nieto(a) de crianza
+8 Padre o Madre
+9 Padre o Madre de crianza
+10 Suegros
+11 Cuñados
+12 Hermanos (as)
+13 Hermanos (as) de crianza
+14 Abuelo (a)
+15 Abuelo (a) de crianza
+16 Otros Parientes
+17 No pariente
+98 No sabe (NS)/No responde (NR)</value>
+  </data>
+  <data name="eA13t006" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;8 Estado Civil:&lt;/Run&gt;
+1 Unión marital de hecho
+2 Casado(a)
+3 Viudo(a)
+4 Separado(a) / Divorciado(a)
+5 Soltero(a)
+97 Otro
+98 No Sabe (NS)
+99 No Responde (NR)</value>
+  </data>
+  <data name="eA13t007" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;9 Régimen especial:&lt;/Run&gt;
+1 Policia
+2 Fuerzas Militares</value>
+  </data>
+  <data name="eA13t008" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;10 Género:&lt;/Run&gt;
+1 Mujer
+2 Hombre
+3 LGBTI</value>
+  </data>
+  <data name="eA13t009" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;11 Discapacidad para llevar a cabo una o varias de las siguientes actividades:&lt;/Run&gt;</value>
+  </data>
+  <data name="eA13t010" xml:space="preserve">
+    <value>6. Afectación (Selección múltiple):</value>
+  </data>
+  <data name="eA13t011" xml:space="preserve">
+    <value>1 Daños en bienes o inmuebles 
+2 Fracturas
+3 Heridas o laceraciones
+4 Infección
+5 Muerte
+6 Parálisis total o parcial
+7 Pérdida de la audición total o parcial
+8 Pérdida de la vista total o parcial
+9 Pérdida del habla total o parcial</value>
+  </data>
+  <data name="eA13t012" xml:space="preserve">
+    <value>9 Pérdida del habla total o parcial
+10 Pérdida o amputación de algún miembro u órgano
+11 Pérdida total o parcial de la funcionalidad de algún miembro u órgano diferente a vista, audición o habla.
+12 Quemaduras
+13 Trastornos psicológicos o psiquiátricos que afectan notablemente el funcionamiento o desempeño en las actividades cotidianas
+14 Otro</value>
+  </data>
+  <data name="eh02t001" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;13 Tipo Documento:&lt;/Run&gt;
+1. Registro Civil
+2. Tarjeta de Identidad
+3. Cédula de Ciudadanía
+4. Cédula de Extranjería
+5. Pasaporte
+6. Documento Extranjero
+7. Permiso por Protección Temporal (PPT)
+8. Indocumentado
+99. Sin Información</value>
+  </data>
+  <data name="eh02t002" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;15 Hechos (Selección múltiple):&lt;/Run&gt;</value>
+  </data>
+  <data name="eh02t003" xml:space="preserve">
+    <value>1 Acto terrorista/Atentados/Combates
+Enfrentamientos/Hostigamientos
+2 Amenaza
+3 Delitos contra la libertad y la integridad sexual en desarrollo del conflicto armado
+4 Desaparición forzada
+5 Desplazamiento forzado
+6 Homicidio/Masacre</value>
+  </data>
+  <data name="eh02t003_1" xml:space="preserve">
+    <value>1 Acto terrorista/Atentados/Combates
+Enfrentamientos/Hostigamientos
+2 Amenaza
+3 Delitos contra la libertad y la integridad sexual en desarrollo del conflicto armado
+4 Desaparición forzada
+5 Desplazamiento forzado
+6 Homicidio/Masacre
+7 Minas Antipersonal, Munición sin Explotar y Artefacto Explosivo improvisado
+8 Secuestro
+9 Tortura</value>
+  </data>
+  <data name="eh02t004" xml:space="preserve">
+    <value>7 Minas Antipersonal, Munición sin Explotar y Artefacto Explosivo improvisado
+8 Secuestro
+9 Tortura
+10 Vinculación de Niños Niñas y Adolescentes a Actividades Relacionadas con grupos armados
+11 Abandono o Despojo Forzado de Tierras
+12 Otro
+13 No Víctima</value>
+  </data>
+  <data name="eh02t004_1" xml:space="preserve">
+    <value>10 Vinculación de Niños Niñas y Adolescentes a Actividades Relacionadas con grupos armados
+11 Abandono y/o Despojo Forzado de Bienes Inmueble
+12 Abandono y/o Despojo Forzado de Bienes Mueble
+13 Formato Censo Masivo
+14 Confinamiento
+15 Lesiones personales Psicológicas y/o Físicas
+16 Otro
+17 No Víctima</value>
+  </data>
+  <data name="eh02t005" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;16 Relación:&lt;/Run&gt;
+1 Jefe(a) de hogar
+2 Esposo(a)/Compañero(a)
+3 Hijo(a)/Hijastro(a)
+4 Hijo(a) de crianza
+5 Yerno/Nuera
+6 Nieto(a)
+7 Nieto(a) de crianza
+8 Padre o Madre
+9 Padre o Madre de crianza
+10 Suegros
+11 Cuñados
+12 Hermanos (as)
+13 Hermanos (as) de crianza
+14 Abuelo (a)
+15 Abuelo (a) de crianza
+16 Otros Parientes
+17 No pariente
+98 No sabe (NS)/No responde (NR)</value>
+  </data>
+  <data name="eh02t006" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;17 Estado Civil:&lt;/Run&gt;
+1 Unión marital de hecho
+2 Casado(a)
+3 Viudo(a)
+4 Separado(a) / Divorciado(a)
+5 Soltero(a)
+97 Otro
+98 No Sabe (NS) / No Responde (NR)</value>
+  </data>
+  <data name="eh02t007" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;18 Régimen especial:&lt;/Run&gt;
+1 Policia
+2 Fuerzas Militares
+3 Fuerza Aérea Colombiana
+4 Armada Nacional</value>
+  </data>
+  <data name="eh02t008" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;19 Género:&lt;/Run&gt;
+1 Mujer
+2 Hombre
+3 LGBTI</value>
+  </data>
+  <data name="eh02t009" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;20 Discapacidad para llevar a cabo una o varias de las siguientes actividades:&lt;/Run&gt;</value>
+  </data>
+  <data name="eh02t010" xml:space="preserve">
+    <value>1 Pensar, memorizar
+2 Percibir la luz, distinguir objetos o personas a pesar de usar lentes o gafas
+3 Oír, aun con aparatos especiales
+4 Distinguir sabores u olores
+5 Dificultades para hablar y comunicarse
+6 Desplazarse en trechos cortos por problemas respiratorios o de corazón
+7 Masticar, tragar, asimilar y transformar los alimentos
+8 Retener o expulsar la orina, tener relaciones sexuales, tener hijos</value>
+  </data>
+  <data name="eh02t011" xml:space="preserve">
+    <value>9 Caminar, correr, saltar
+10 Mantener piel, uñas y cabellos sanos
+11 Relacionarse con las demás personas y el entorno
+12 Llevar, mover, utilizar objetos con las manos
+13 Cambiar y mantener las posiciones del cuerpo
+14 Alimentarse, asearse y vestirse por sí mismo
+15 Otra
+16 Ninguna
+98 No Sabe (NS)
+99 No Responde (NR)</value>
+  </data>
+  <data name="eh02t012" xml:space="preserve">
+    <value>Señor(a) funcionario(a), en el siguiente cuadro relacione los datos de todas las personas que hayan resultado afectadas por los hechos referidos en esta Declaración.
+El campo 16 (Relación) debe ser diligenciado de acuerdo a la relación de parentesco o consanguinidad de cada persona &lt;Run FontWeight="Bold"&gt;con respecto al declarante&lt;/Run&gt;.</value>
+  </data>
+  <data name="eh02t013" xml:space="preserve">
+    <value>1. Física
+2. Auditiva 
+3. Sordo Ceguera
+4. Intelectual
+5. Visual
+6. Psicosocial (mental)
+7. Múltiple
+15 Otra
+16 Ninguna
+98 No Sabe (NS) / No Responde (NR)</value>
+  </data>
+  <data name="eh02t014" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;19 Sexo:&lt;/Run&gt;
+1. Mujer
+2. Hombre
+3. Intersexual
+98. No sabe/No responde</value>
+  </data>
+  <data name="eh02t015" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;19 Orientación Sexual:&lt;/Run&gt;
+1. Heterosexual
+2. Homosexual (Lesbiana-Gay)
+3. Bisexual
+4. Asexual
+5. Pansexual
+98. No sabe/no responde</value>
+  </data>
+  <data name="eh02t016" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;19 Identidad de Género:&lt;/Run&gt;
+1. Masculino
+2. Femenino
+3. Hombre trans
+4. Mujer trans
+5. Persona no binaria
+6. Género fluido
+98. No sabe / No responde</value>
+  </data>
+  <data name="h01t001" xml:space="preserve">
+    <value>Señor(a) funcionario(a), realice una entrevista previa al (a la) declarante con el fin de orientarlo(a) sobre el propósito y alcance de esta diligencia y de identificar los hechos victimizantes a los que se hará referencia.</value>
+  </data>
+  <data name="h01t002" xml:space="preserve">
+    <value>* En los costados se han señalado los campos cuyo diligenciamiento es obligatorio. 
+Por favor &lt;Run TextDecorations="Underline"&gt;NO&lt;/Run&gt; remita este formato sin diligenciar estos campos en su totalidad.</value>
+  </data>
+  <data name="h01t003" xml:space="preserve">
+    <value>Con el propósito de acceder a los beneficios que trata la Ley 1448 del 2011 y demás normas que la adicionan modifican o reforman, el (la) declarante jura decir la verdad, sólo la verdad y nada más que la verdad en lo que va a declarar.</value>
+  </data>
+  <data name="h01t004" xml:space="preserve">
+    <value>Señor(a) funcionario(a), recuérdele al (a la) solicitante que los trámites que realice ante la Unidad Administrativa Especial para la Atención y Reparación Integral a las víctimas no tienen ningún costo y no requieren de intermediarios o apoderados.</value>
+  </data>
+  <data name="h01t005" xml:space="preserve">
+    <value>Señor(a) funcionario(a) diligencie la pregunta 4 de acuerdo con la siguiente información: Recuerde su deber de garantizar las condiciones para la toma de la declaración en los siguientes casos: 
+
+1. Si detecta que el (la) declarante no habla el español y requiere de un intérprete. 
+2. Si la declaración va a ser presentada por un menor de edad, para lo cual el (la) niño, niña o adolescente deberá presentarse con su tutor. A falta de éste, el (la) niño, niña o adolescente, deberá estar acompañado por el funcionario de la entidad encargada de promover la realización y restablecimiento de los derechos reconocidos a los(as) menores en los tratados internacionales y la Constitución Política de acuerdo con lo dispuesto en los artículos 96, 97 y 98 de la Ley 1098 de 2006. 
+3. Si la declaración va a ser presentada por una persona con discapacidad que requiere de un apoyo o interprete.</value>
+  </data>
+  <data name="h01t006" xml:space="preserve">
+    <value>"Autorizo para que instituciones del estado, a través de los medios señalados a continuación, me envíen información sobre el acceso a medidas de atención, asistencia y reparación, lo cual se realizará sin que me genere ningún costo adicional".</value>
+  </data>
+  <data name="h01t006V2" xml:space="preserve">
+    <value>"Declaro que los datos personales suministrados en este formato son verídicos y autorizo expresamente su recolección, almacenamiento y tratamiento, de conformidad con lo establecido en la Ley de Habeas Data (Ley 1581 de 2012) y sus disposiciones reglamentarias. Entiendo que los datos proporcionados serán utilizados únicamente para los fines relacionados con la aplicación y cumplimiento de la Ley 1448 de 2011 y los programas de asistencia, atención y reparación integral a las víctimas. Asimismo, me comprometo a informar cualquier modificación o actualización de mis datos personales y/o cualquier miembro de mi grupo familiar relacionado en la hoja 2 del presente formato, con el fin de mantener su veracidad y actualidad en los registros correspondientes."</value>
+  </data>
+  <data name="h01t007" xml:space="preserve">
+    <value>Señor(a) funcionario(a): Diligencie en la siguiente hoja la caracterización básica de las personas a que se refieren los hechos relacionados en el cuadro anterior. A continuación, diligencie un anexo por cada hecho. Finalmente, tome la narración general de los hechos con base en las preguntas guía indicadas al respaldo de cada hoja y diligencie la hoja de verificación (Hoja 4).</value>
+  </data>
+  <data name="h02t001" xml:space="preserve">
+    <value>Señor(a) funcionario(a), en el siguiente cuadro relacione los datos de todas las personas que hayan resultado afectadas por los hechos referidos en esta Declaración.
+El campo 16 (Relación) debe ser diligenciado de acuerdo a la relación de parentesco o consanguinidad de cada persona &lt;Run TextDecorations="Underline"&gt;con respecto al declarante&lt;/Run&gt;.</value>
+  </data>
+  <data name="h03t001" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;*Describa las circunstancias de tiempo, modo y lugar en que se dieron los hechos:&lt;/Run&gt; Oriente la declaración de modo tal que la narración describa con &lt;Run FontWeight="Bold"&gt;suficiencia&lt;/Run&gt; el modo en que ocurrieron los hechos, así como los antecedentes, elementos relevantes y fuentes de verificación de la información.</value>
+  </data>
+  <data name="h03t002" xml:space="preserve">
+    <value>* Señor(a) funcionario(a): Con el fin de mejorar la calidad de la información recopilada y de facilitar la valoración de esta solicitud, puede orientar la narración de los hechos con las preguntas guía que se encuentran al respaldo de los Anexos 1 a 11 de este Formato, según el (los) hecho(s) victimizante(s) a que se refiera esta declaración.</value>
+  </data>
+  <data name="h04t001" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Observaciones:&lt;/Run&gt; Señor(a) funcionario(a): Escriba las observaciones sobre el diligenciamiento del formato que considere pertinentes.</value>
+  </data>
+  <data name="h04t002" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Confidencialidad de la Información:&lt;/Run&gt; De conformidad con lo dispuesto en el parágrafo  1º  del artículo 156 de la Ley 1448 de  2011, con el fin de proteger el derecho a la intimidad de las víctimas y su seguridad, toda la información suministrada con ocasión de esta Declaración es de carácter reservado en concordancia con lo establecido en el artículo 15 de la Constitución Política.</value>
+  </data>
+  <data name="h04t002V2" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Confidencialidad de la Información:&lt;/Run&gt; Confidencialidad de la información y tratamiento de datos: De conformidad con lo dispuesto en el parágrafo 1 del artículo 156 de la Ley 1448 de 2011, con el fin de proteger el derecho a la intimidad de las víctimas y su seguridad, toda la información suministrada con ocasión de esta Declaración es de carácter reservado en concordancia con lo establecido en el artículo 19 de la constitución. Asimismo, y teniendo en cuenta la sensibilidad de los datos contenidos en la declaración, se conservará la información bajo las condiciones de seguridad necesarias para impedir su adulteración, pérdida, consulta, uso o acceso no autorizado o fraudulento según lo dispuesto en numeral artículo 17 de la ley 1581 de 2012.
+&lt;Run FontWeight="Bold"&gt;Uso de Datos Personales:&lt;/Run&gt;Declaro que los datos personales suministrados en este formato son verídicos y autorizo expresamente su recolección, almacenamiento y tratamiento, de conformidad con lo establecido en la Ley de Habeas Data (Ley 1581 de 2012) y sus disposiciones reglamentarias. Entiendo que los datos proporcionados serán utilizados únicamente para los fines relacionados con la aplicación y cumplimiento de la Ley 1448 de 2011 y los programas de asistencia, atención y reparación integral a las víctimas. Asimismo, me comprometo a informar cualquier modificación o actualización de mis datos personales y/o cualquier miembro del grupo familiar relacionado en la hoja 2 del presente formato, con el fin de mantener su veracidad y actualidad en los registros correspondientes.</value>
+  </data>
+  <data name="h04t003" xml:space="preserve">
+    <value>No siendo otro el objeto de la presente declaración se lee y firma por quienes en ella intervienen:*Favor diligenciar todos los campos sin excepción con letra legible.</value>
+  </data>
+  <data name="h04t004" xml:space="preserve">
+    <value>Manifiesto que el funcionario público que tomó mi declaración me orientó sobre el trámite de esta diligencia.</value>
+  </data>
+  <data name="h04t005" xml:space="preserve">
+    <value>Por favor registre a continuación si el declarante sabe o no firmar 
+(En caso negativo tome la huella dactilar)</value>
+  </data>
+  <data name="h04t006" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Señor (a) funcionario (a):&lt;/Run&gt; antes de remitir esta declaración a la Unidad Administrativa Especial para la Atención y Reparación Integral a las Víctimas, asegúrese de que todos los campos marcados como obligatorios estén diligenciados en su totalidad.</value>
+  </data>
+  <data name="h04t007" xml:space="preserve">
+    <value>&lt;Run FontWeight="Bold"&gt;Intérprete:&lt;/Run&gt; Con la presente firma, el intérprete, en aquellos casos en que fue autorizado por la autoridad competente, da fe que asistió de forma adecuada al  (a la) declarante, permitiéndole entender los alcances de esta diligencia y facilitando que los hechos narrados hayan quedado debidamente registrados en el presente Formato.
+
+&lt;Run FontWeight="Bold"&gt;Tutor o representante legal:&lt;/Run&gt; Con la presente firma, el representante legal da fe que el &lt;Run TextDecorations="Underline"&gt;niño, niña o adolescente&lt;/Run&gt; compareció a la diligencia y que las manifestaciones realizadas por éste(a) han sido libres y espontáneas. Cuando el representante legal sea funcionario público (Defensor de familia, funcionario del ICBF o comisario de Familia), la presente firma da fe que el &lt;Run TextDecorations="Underline"&gt;niño, niña o adolescente&lt;/Run&gt; compareció a la diligencia y que las manifestaciones realizadas han sido libres y espontáneas. De igual forma, esta firma da fe que se cumplió con los procedimientos establecidos cuando se trata de la atención y protección a &lt;Run TextDecorations="Underline"&gt;niños, niñas o adolescentes&lt;/Run&gt;, de conformidad con lo establecido en la Constitución Nacional y la Ley 1098 de 2006.</value>
+  </data>
+  <data name="h04t003V2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="e01t008" xml:space="preserve">
+    <value>Versión: 02</value>
+  </data>
+  <data name="e01t009" xml:space="preserve">
+    <value>Fecha aprobación: 18-10-2024</value>
+  </data>
+  <data name="e01t010" xml:space="preserve">
+    <value>Código: 610,05,15-1</value>
+  </data>
+</root>

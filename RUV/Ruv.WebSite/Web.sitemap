@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="Inicio"  description="Inicio">
+    <siteMapNode url="~/Valoracion/Asignacion/AsignarValoraciones.aspx" title="Asignar"  description="Asignar" />
+    <siteMapNode url="~/Valoracion/Asignacion/ReasignarValoraciones.aspx" title="Reasignar"  description="Asignar" />
+    <siteMapNode url="~/Valoracion/Valoracion/Default.aspx" title="Valorar"  description="Valorar">
+      <siteMapNode url="~/Valoracion/Valoracion/Nueva.aspx" title="Nueva Valoración"  description="Nueva Valoración" />
+    </siteMapNode>
+    <siteMapNode url="~/ActosAdmin/Default.aspx" title="Actos Administrativos"  description="Actos Administrativos">
+      <siteMapNode url="~/ActosAdmin/Nuevo.aspx" title="Nuevo"  description="Nuevo" />
+      <siteMapNode url="~/ActosAdmin/Editar.aspx" title="Modificar"  description="Modificar" />
+    </siteMapNode>
+  </siteMapNode>
+
+</siteMap>

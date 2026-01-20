@@ -1,0 +1,56 @@
+﻿<Window x:Class="Ruv.WPF.Captura.Registro.Secciones.Controles.ConsultaRNEC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Ruv.WPF.Captura;component/Recursos/Imagenes/RUV.ico"
+        Title="Consulta RNEC"
+        WindowStyle="ToolWindow"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        Closing="CerrarVentana"
+        Height="292.293"
+        Width="786.712"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="ListBoxItem" />
+        </Grid.Resources>
+        <DataGrid  x:Name="dgPersonasEncontradas" HorizontalAlignment="Left" VerticalAlignment="Top" AutoGenerateColumns="False" Margin="12,35,0,0" Width="753" Height="166" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tipo Documento" Binding="{Binding tipo_doc}" />
+                <DataGridTextColumn Header="Número" Binding="{Binding nuip}" />
+                <DataGridTextColumn Header="Primer Nombre" Binding="{Binding nom1}" />
+                <DataGridTextColumn Header="Segundo Nombre" Binding="{Binding nom2}" />
+                <DataGridTextColumn Header="Primer Apellido" Binding="{Binding ape1}" />
+                <DataGridTextColumn Header="Segundo Apellido" Binding="{Binding ape2}" />
+                <DataGridTextColumn Header="Fecha de Nacimiento" Binding="{Binding fechaNacimiento}" />
+                <DataGridTextColumn Header="Estado" Binding="{Binding estado_cedula}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Si"
+            Click="Aceptar_Click"
+            IsDefault="True"
+            HorizontalAlignment="Left"
+            Margin="12,0,0,10"
+            Width="80"
+            Height="23"
+            VerticalAlignment="Bottom" />
+        <Button Content="No"
+            Click="Cancelar_Click"
+            IsCancel="True"
+            Height="23"
+            Margin="99,0,0,10"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Width="80" />
+        <TextBlock Height="23"
+               Margin="12,12,12,0"
+               Text="Personas encontradas en Registraduria "
+               TextWrapping="Wrap"
+               VerticalAlignment="Top" />
+        <TextBlock Height="23"
+            Margin="14,201,10,0"
+            Text="¿Desea utilizar la persona seleccionada para la declaración?"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" />
+    </Grid>
+</Window>

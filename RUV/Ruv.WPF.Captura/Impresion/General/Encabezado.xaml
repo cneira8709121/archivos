@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.Encabezado"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="170"
+             d:DesignWidth="840">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+            <!--<Style TargetType="{x:Type congen:TextoRecurso}">
+        <Setter Property="FontSize"
+                Value="{StaticResource TamañoTextoPequeño}" />
+      </Style>-->
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t001}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         FontSize="{StaticResource TamañoTextoPequeño}"
+                         Grid.ColumnSpan="3"
+                         TextAlignment="Center"
+                         VerticalAlignment="Center" />
+        <Border Grid.RowSpan="3"
+            Grid.Row="1">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t002}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           FontWeight="Bold"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center" />
+        </Border>
+        <Border Grid.Column="1"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Background="Black"
+            BorderThickness="0,1,1,1">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t003}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           TextAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border Grid.Column="1"
+            Grid.Row="3"
+            BorderThickness="0,0,1,1">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t004}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           FontWeight="Bold"
+                           TextAlignment="Center" />
+        </Border>
+        <Border Grid.Column="2"
+            Grid.Row="1"
+            BorderThickness="0,1,1,1">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t010}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           Style="{StaticResource styTextoDescripcionIzq}" />
+        </Border>
+        <Border Grid.Column="2"
+            Grid.Row="2"
+            BorderThickness="0,0,1,1">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t009}"
+                           FontSize="{StaticResource TamañoTextoPequeño}"
+                           Style="{StaticResource styTextoDescripcionIzq}" />
+
+        </Border>
+        <Border Grid.Column="2"
+            Grid.Row="3"
+            BorderThickness="0,0,1,1">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.e01t008}"
+                                 FontSize="{StaticResource TamañoTextoPequeño}"
+                                 Style="{StaticResource styTextoDescripcionIzq}" />
+
+        </Border>
+
+    </Grid>
+</UserControl>

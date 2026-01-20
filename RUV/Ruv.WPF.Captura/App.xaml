@@ -1,0 +1,139 @@
+﻿<Application x:Class="Ruv.WPF.Captura.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:diseño="clr-namespace:Ruv.WPF.Captura.DesignTime"
+             xmlns:RS="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             
+             StartupUri="MainWindow.xaml"
+             DispatcherUnhandledException="Current_DispatcherUnhandledException"
+             >
+    <Application.Resources>
+        <!--===================================================================-->
+
+
+
+        <!--Tamaño Pequeño-->
+        <!--<sys:Double x:Key="TamañoTextoNormal">10</sys:Double>
+    <sys:Double x:Key="TamañoTextoGrande">14</sys:Double>
+    <sys:Double x:Key="TamañoTextoPequeño">7</sys:Double>
+    <sys:Double x:Key="RadioCajaAncho">20</sys:Double>
+    <sys:Double x:Key="RadioCajaAlto">16</sys:Double>-->
+
+        <!--Tamaño Grande-->
+
+        <!--===================================================================-->
+
+        <!--Hace que los items siempre se vean del mismo color aunque no estén activos-->
+        <!--<Style TargetType="ListBoxItem">
+      <Style.Resources>
+        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                         Color="LightBlue" />
+        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}"
+                         Color="LightBlue" />
+      </Style.Resources>
+    </Style>-->
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Recursos/EstilosGenerales.xaml"/>
+                <ResourceDictionary Source="Recursos/ImagesDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--Cargar alguna información en tiempo de diseño -->
+            <diseño:clsDesignTime x:Key="tmpDesignData" />
+
+
+
+            <!--Tamaño Mediano-->
+            <sys:Double x:Key="TamañoTextoPequeño">8</sys:Double>
+            <sys:Double x:Key="TamañoTextoMedio">10</sys:Double>
+            <sys:Double x:Key="TamañoTextoNormal">12</sys:Double>
+            <sys:Double x:Key="TamañoTextoGrande">17</sys:Double>
+            <sys:Double x:Key="RadioCajaAncho">24</sys:Double>
+            <sys:Double x:Key="RadioCajaAlto">20</sys:Double>
+
+            <!--<sys:Double x:Key="TamañoTextoNormal">16</sys:Double>
+    <sys:Double x:Key="TamañoTextoGrande">22</sys:Double>
+    <sys:Double x:Key="TamañoTextoPequeño">11</sys:Double>
+    <sys:Double x:Key="RadioCajaAncho">30</sys:Double>
+    <sys:Double x:Key="RadioCajaAlto">25</sys:Double>-->
+
+            <sys:String x:Key="TituloAplicacion">Registro Único De Víctimas</sys:String>
+
+            <FontFamily x:Key="TipoLetraEstandar">Arial</FontFamily>
+            <SolidColorBrush x:Key="ColorValorEntrada">Blue</SolidColorBrush>
+            <SolidColorBrush x:Key="ColorValorImpresion">Black</SolidColorBrush>
+
+            <!--El convertor de booleano a visibilidad.-->
+            <BooleanToVisibilityConverter x:Key="BoolVisiConverter" />
+            <conv:ListaDetallesGrupoParamConverter x:Key="ListaGrupoDetalleConverter" />
+
+            <conv:ListaParametrosConverter x:Key="ParametrosConverter" />
+            <conv:ParametroNumeroConverter x:Key="ParametroNumeroConverter" />
+            <conv:NacionalidadConverter x:Key="NacionalidadConverter" />
+
+
+
+            <!--Para habilitar el despliegue de los tooltips al encontrarse un error.-->
+            <Style TargetType="{x:Type ComboBox}">
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError"
+  					Value="true">
+                        <Setter Property="ToolTip"
+  						Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource Self}}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="{x:Type RS:ListaOpciones}">
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError"
+  					Value="true">
+                        <Setter Property="ToolTip"
+  						Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource Self}}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!--Simula la apariencia de un Link Button-->
+            <Style x:Key="styLinkButton"
+  			TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <TextBlock TextDecorations="Underline"><InlineUIContainer>
+  								<ContentPresenter />
+  							</InlineUIContainer></TextBlock>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground"
+  				Value="Blue" />
+                <Setter Property="Cursor"
+  				Value="Hand" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"
+  					Value="true">
+                        <Setter Property="Foreground"
+  						Value="Red" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!--COLORES DE LA COLA DE TRANSMISION-->
+            <SolidColorBrush x:Key="ColorPendienteTransmitir"
+  			Color="White" />
+            <SolidColorBrush x:Key="ColorTransmitiendo"
+  			Color="#FFDFFFD1" />
+            <SolidColorBrush x:Key="ColorTransmitido"
+  			Color="#FFE2E2E2" />
+            <SolidColorBrush x:Key="ColorRequiereRevision"
+  			Color="#FFFFD1D1" />
+            <SolidColorBrush x:Key="ColorNinguno"
+  			Color="Transparent" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

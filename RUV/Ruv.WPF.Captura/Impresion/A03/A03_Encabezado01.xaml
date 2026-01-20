@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A03_Encabezado01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="1159">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel>
+    <TextBlock Margin="0,5"
+               Style="{StaticResource styTituloSeccion}"
+               Text="{Binding Nombre}" />
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <sec:FechaLugar_Imp FechaYLugar="{Binding FechaYLugar}"
+                          Numero="1" />
+      <Border Grid.Column="1"
+              HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical">
+          <congen:TextoRecurso Recurso="{x:Static rec:Textos.a03t001}"
+                               TextAlignment="Center"
+                               Background="LightGray"
+                               HorizontalAlignment="Stretch" />
+          <StackPanel Orientation="Horizontal">
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a03t002}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.a03t003}"
+                                 TextWrapping="Wrap"
+                                 Margin="0,0,5,0"
+                                 MaxWidth="350" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+    <sec:SubTituloEntrada x:Name="steTitulo"
+                          Margin="0,5"
+                          Numero="2"
+                          Texto="Indague si existe algún niño o niña nacido como consecuencia del abuso sexual. De ser así, registre los datos del (de la) menor en el siguiente espacio. Asegúrese que esta información también quede registrada en el cuadro de caracterización (Hoja 2)." />
+  </StackPanel>
+</UserControl>

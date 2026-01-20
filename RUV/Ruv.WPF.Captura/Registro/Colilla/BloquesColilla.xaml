@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Colilla.BloquesColilla"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:Ruv_Infrastructure_Crosscutting_Common_Entidades="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades;assembly=Ruv.Infrastructure.Crosscutting.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="500"
+             d:DesignWidth="840">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <conv:ConsultaDatoConverter x:Key="CDC" />
+            <conv:DeclaranteImpresionConverter x:Key="DIC" />
+            <rec:Controles x:Key="ControlesDataSource" d:IsDataSource="True"/>
+            <Ruv_Infrastructure_Crosscutting_Common_Entidades:clsDeclaracion x:Key="clsDeclaracionDataSource" d:IsDataSource="True"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Source="{StaticResource clsDeclaracionDataSource}"/>
+    </UserControl.DataContext>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal"
+                Margin="5">
+            <TextBlock Margin="0,5"
+            TextWrapping="Wrap">Certifico que recibí declaración bajo el código de formato No. <Run Text="{Binding DeclaracionNumero}" /></TextBlock>
+        </StackPanel>
+        <TextBlock Margin="0,5" Text="{Binding ConstanciaSolicitudInscripcion, Source={StaticResource ControlesDataSource}}" />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.c01t001}"
+                         Margin="5"
+                         TextWrapping="Wrap"
+                         HorizontalAlignment="Stretch" />
+        <Grid Margin="20,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <sec:SubTituloEntrada Numero=""
+                            AlineacionTexto="Center"
+                            Grid.ColumnSpan="5"
+                            Texto="Lugar y Fecha de la Declaración" />
+            <Border Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch">
+                <StackPanel>
+                    <TextBlock>País</TextBlock>
+                    <TextBlock Text="{Binding TomaDeclaracion.LugarDeclaracionPais, Converter={StaticResource CDC}, ConverterParameter=Pais}" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch">
+                <StackPanel>
+                    <TextBlock>Departamento</TextBlock>
+                    <TextBlock Text="{Binding TomaDeclaracion.LugarDeclaracionDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento}" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch">
+                <StackPanel>
+                    <TextBlock>Municipio</TextBlock>
+                    <TextBlock Text="{Binding TomaDeclaracion.LugarDeclaracionMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio}" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="3" VerticalAlignment="Stretch">
+                <StackPanel>
+                    <TextBlock>Entidad</TextBlock>
+                    <TextBlock Text="{Binding TomaDeclaracion.LugarDeclaracionEntidadMunicipio, Converter={StaticResource CDC}, ConverterParameter=Entidad_Municipio}" TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="4" VerticalAlignment="Stretch">
+                <TextBlock Text="{Binding TomaDeclaracion.FechaDeclaracion, StringFormat='{}dd-MMM-yyyy'}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+            </Border>
+        </Grid>
+        <Border HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.c01t002}"
+                         Margin="0,0,0,5"
+                         TextWrapping="Wrap"
+                         HorizontalAlignment="Stretch" />
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1"
+                 TextWrapping="Wrap">a) Número total de anexos diligenciados</TextBlock>
+            <TextBlock Grid.Column="1"
+                 Grid.Row="1"
+                 TextWrapping="Wrap">c) Número total de folios en esta declaración</TextBlock>
+            <TextBlock Grid.Column="4"
+                 TextWrapping="Wrap">b) Número total soportes aportados por el declarante</TextBlock>
+            <Border Grid.Column="2"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding NumeroDeAnexos}" />
+            </Border>
+            <Border Grid.Column="2"
+              Grid.Row="1"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding VerificacionProcedimiento.NumeroTotalFolios}" />
+            </Border>
+            <Border Grid.Column="5"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding VerificacionProcedimiento.NumeroTotalSoportes}" />
+            </Border>
+        </Grid>
+        <Border HorizontalAlignment="Stretch"
+            Margin="0,0,0,5" />
+        <!--<TextBlock TextWrapping="Wrap"
+               FontSize="{StaticResource TamañoTextoNormal}"
+               Margin="5,0,5,0">
+      Certificó que el (la) señor(a) <Run TextDecorations="Underline"
+                                          Text="{Binding TomaDeclaracion.DeclaranteNombreCompleto, Mode=OneWay}" />
+      <Run Text="{Binding TomaDeclaracion, Mode=OneWay, Converter={StaticResource DIC}, ConverterParameter=IDENTIFICACIONCOLILLA}" />, presentó la declaración mediante la cual solicita su inscripción en el Registro Único de Víctimas.
+    </TextBlock>-->
+
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.c01t003}"
+                           Grid.RowSpan="4"
+                           Margin="0,0,10,5"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Stretch"
+                           TextAlignment="Justify" />
+            <Border Grid.Column="1">
+                <TextBlock FontWeight="Bold"
+                   HorizontalAlignment="Center">* Funcionario (a)</TextBlock>
+            </Border>
+            <Border Grid.Column="1"
+              Grid.Row="1"
+              Grid.RowSpan="3" />
+            <DockPanel Grid.Column="1"
+                 Grid.Row="1"
+                 Margin="5,0">
+                <Image DockPanel.Dock="Top" Width="270" Height="87" HorizontalAlignment="Center" Source="{Binding Source={StaticResource RUV}, Path=Usuario.ImagenFirmaDigital}" />
+                <TextBlock VerticalAlignment="Bottom">Firma:</TextBlock>
+                <Border VerticalAlignment="Bottom" />
+            </DockPanel>
+        </Grid>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.c01t004}"
+                         Grid.RowSpan="4"
+                         Margin="10,0"
+                         TextWrapping="Wrap"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Stretch"
+                         TextAlignment="Center" />
+    </StackPanel>
+</UserControl>

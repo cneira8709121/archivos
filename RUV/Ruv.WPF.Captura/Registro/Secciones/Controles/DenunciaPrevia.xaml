@@ -1,0 +1,105 @@
+﻿<UserControl xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             x:Class="Ruv.WPF.Captura.Registro.Secciones.DenunciaPrevia"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             d:DesignHeight="300"
+             d:DesignWidth="1243">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="RadioButton"
+             BasedOn="{StaticResource styRadioButtonX}" />
+      <Style TargetType="CheckBox"
+             BasedOn="{StaticResource styCheckBoxX}" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <Grid VerticalAlignment="Top">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="4*" />
+      <ColumnDefinition Width="8*" />
+      <ColumnDefinition Width="8*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <!--PREGUNTA CÉDULA-->
+    <sec:SubTituloEntrada x:Name="seTitulo"
+                          Grid.ColumnSpan="12"
+                          Numero="."
+                          AlineacionTexto="Center"
+                          Texto="DECLARACIÓN O DENUNCIA PREVIA" />
+    <my:EncabezadoColumna Texto="Indique la Entidad"
+                          Grid.ColumnSpan="8"
+                          Grid.Column="1"
+                          Grid.Row="1" />
+    <my:EncabezadoColumna Texto="¿Con respecto a\nestos hechos ya\npresentó\ndeclaración o\ndenuncia?"
+                          Grid.RowSpan="2"
+                          Grid.Column="0"
+                          Grid.Row="1"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Fiscalía"
+                          Grid.Column="1"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Comisión Nal. de\nbúsqueda de\npersonas\ndesaparecidas"
+                          Grid.Column="2"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Inspección\nde Policía"
+                          Grid.Column="3"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Policía"
+                          Grid.Column="4"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Personería\nMunicipal"
+                          Grid.Column="5"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Defensoría\ndel Pueblo"
+                          Grid.Column="6"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Procuraduría"
+                          Grid.Column="7"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="No Sabe\nNo Responde"
+                          Grid.Column="8"
+                          Grid.Row="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Fecha Denuncia\no Declaración"
+                          Grid.Column="9"
+                          Grid.Row="1"
+                          Grid.RowSpan="2"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Lugar Denuncia\no Declaración"
+                          Grid.Column="10"
+                          Grid.Row="1"
+                          Grid.RowSpan="2" />
+    <my:EncabezadoColumna Texto="Registre en caso de\nconocerlo el código de\nproceso, radicado o algún\ndato de la denuncia o\ndeclaración"
+                          Grid.Column="11"
+                          Grid.Row="1"
+                          Grid.RowSpan="2" />
+
+  </Grid>
+</UserControl>

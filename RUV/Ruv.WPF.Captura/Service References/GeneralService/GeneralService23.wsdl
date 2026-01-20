@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeneralService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ExtremoGeneral_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost:39318/GeneralService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.FirmaDeclaracion" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" />
+      <xsd:import schemaLocation="http://localhost:39318/GeneralService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Validacion" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGeneralService_ObtenerParametrosGenerales_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerParametrosGenerales" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerParametrosGenerales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerParametrosGeneralesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_DeclaracionAlmacenar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeclaracionAlmacenar" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_DeclaracionAlmacenar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeclaracionAlmacenarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_BuscarDeclaracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarDeclaracion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_BuscarDeclaracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarDeclaracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerDeclaracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDeclaracion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerDeclaracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDeclaracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_RadicacionAlmacenar_InputMessage">
+    <wsdl:part name="parameters" element="tns:RadicacionAlmacenar" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_RadicacionAlmacenar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RadicacionAlmacenarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GuardarRadicacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarRadicacion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_GuardarRadicacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarRadicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ActualizarRadicacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarRadicacion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ActualizarRadicacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarRadicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_CargarImagen_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargarImagen" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_CargarImagen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargarImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_CargarPdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargarPdf" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_CargarPdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargarPdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareas" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareasPaginado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasPaginado" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareasPaginado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasPaginadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareasCantidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasCantidad" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareasCantidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasCantidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareasWPFCantidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasWPFCantidad" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerListaTareasWPFCantidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListaTareasWPFCantidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_RadicacionActualizarEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:RadicacionActualizarEstado" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_RadicacionActualizarEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RadicacionActualizarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_getGlosasxDeclaracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGlosasxDeclaracion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_getGlosasxDeclaracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGlosasxDeclaracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_getIGlosasxDeclaracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIGlosasxDeclaracion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_getIGlosasxDeclaracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIGlosasxDeclaracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_setGlosas_InputMessage">
+    <wsdl:part name="parameters" element="tns:setGlosas" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_setGlosas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setGlosasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_setIntenGlosas_InputMessage">
+    <wsdl:part name="parameters" element="tns:setIntenGlosas" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_setIntenGlosas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setIntenGlosasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ActualizarEstadoDeclaracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoDeclaracion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ActualizarEstadoDeclaracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoDeclaracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerGeografiaCompleta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGeografiaCompleta" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerGeografiaCompleta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerGeografiaCompletaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaises" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerDepartamentosPorPais_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDepartamentosPorPais" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerDepartamentosPorPais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDepartamentosPorPaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerMunicipiosPorDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMunicipiosPorDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerMunicipiosPorDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMunicipiosPorDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerDireccionPuntoNotificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDireccionPuntoNotificacion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ObtenerDireccionPuntoNotificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDireccionPuntoNotificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ActualizarDireccionPuntoNotificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDireccionPuntoNotificacion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ActualizarDireccionPuntoNotificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDireccionPuntoNotificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ValidarIdentidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarIdentidad" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ValidarIdentidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarIdentidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_EnviarValidacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarValidacion" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_EnviarValidacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarValidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ValidarCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_ValidarCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCodigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_AsociarAnexo13Activo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsociarAnexo13Activo" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_AsociarAnexo13Activo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsociarAnexo13ActivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_BuscarPersonaRNEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonaRNEC" />
+  </wsdl:message>
+  <wsdl:message name="IGeneralService_BuscarPersonaRNEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPersonaRNECResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGeneralService">
+    <wsdl:operation name="ObtenerParametrosGenerales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerParametrosGenerales" message="tns:IGeneralService_ObtenerParametrosGenerales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerParametrosGeneralesResponse" message="tns:IGeneralService_ObtenerParametrosGenerales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeclaracionAlmacenar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/DeclaracionAlmacenar" message="tns:IGeneralService_DeclaracionAlmacenar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/DeclaracionAlmacenarResponse" message="tns:IGeneralService_DeclaracionAlmacenar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDeclaracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/BuscarDeclaracion" message="tns:IGeneralService_BuscarDeclaracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/BuscarDeclaracionResponse" message="tns:IGeneralService_BuscarDeclaracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDeclaracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerDeclaracion" message="tns:IGeneralService_ObtenerDeclaracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerDeclaracionResponse" message="tns:IGeneralService_ObtenerDeclaracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RadicacionAlmacenar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/RadicacionAlmacenar" message="tns:IGeneralService_RadicacionAlmacenar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/RadicacionAlmacenarResponse" message="tns:IGeneralService_RadicacionAlmacenar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarRadicacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/GuardarRadicacion" message="tns:IGeneralService_GuardarRadicacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/GuardarRadicacionResponse" message="tns:IGeneralService_GuardarRadicacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRadicacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ActualizarRadicacion" message="tns:IGeneralService_ActualizarRadicacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ActualizarRadicacionResponse" message="tns:IGeneralService_ActualizarRadicacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarImagen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/CargarImagen" message="tns:IGeneralService_CargarImagen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/CargarImagenResponse" message="tns:IGeneralService_CargarImagen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarPdf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/CargarPdf" message="tns:IGeneralService_CargarPdf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/CargarPdfResponse" message="tns:IGeneralService_CargarPdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareas" message="tns:IGeneralService_ObtenerListaTareas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasResponse" message="tns:IGeneralService_ObtenerListaTareas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareasPaginado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasPaginado" message="tns:IGeneralService_ObtenerListaTareasPaginado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasPaginadoResponse" message="tns:IGeneralService_ObtenerListaTareasPaginado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareasCantidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasCantidad" message="tns:IGeneralService_ObtenerListaTareasCantidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasCantidadResponse" message="tns:IGeneralService_ObtenerListaTareasCantidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareasWPFCantidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasWPFCantidad" message="tns:IGeneralService_ObtenerListaTareasWPFCantidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerListaTareasWPFCantidadResponse" message="tns:IGeneralService_ObtenerListaTareasWPFCantidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RadicacionActualizarEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/RadicacionActualizarEstado" message="tns:IGeneralService_RadicacionActualizarEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/RadicacionActualizarEstadoResponse" message="tns:IGeneralService_RadicacionActualizarEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGlosasxDeclaracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/getGlosasxDeclaracion" message="tns:IGeneralService_getGlosasxDeclaracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/getGlosasxDeclaracionResponse" message="tns:IGeneralService_getGlosasxDeclaracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIGlosasxDeclaracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/getIGlosasxDeclaracion" message="tns:IGeneralService_getIGlosasxDeclaracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/getIGlosasxDeclaracionResponse" message="tns:IGeneralService_getIGlosasxDeclaracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setGlosas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/setGlosas" message="tns:IGeneralService_setGlosas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/setGlosasResponse" message="tns:IGeneralService_setGlosas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setIntenGlosas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/setIntenGlosas" message="tns:IGeneralService_setIntenGlosas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/setIntenGlosasResponse" message="tns:IGeneralService_setIntenGlosas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoDeclaracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ActualizarEstadoDeclaracion" message="tns:IGeneralService_ActualizarEstadoDeclaracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ActualizarEstadoDeclaracionResponse" message="tns:IGeneralService_ActualizarEstadoDeclaracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGeografiaCompleta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerGeografiaCompleta" message="tns:IGeneralService_ObtenerGeografiaCompleta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerGeografiaCompletaResponse" message="tns:IGeneralService_ObtenerGeografiaCompleta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerPaises" message="tns:IGeneralService_ObtenerPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerPaisesResponse" message="tns:IGeneralService_ObtenerPaises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDepartamentosPorPais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerDepartamentosPorPais" message="tns:IGeneralService_ObtenerDepartamentosPorPais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerDepartamentosPorPaisResponse" message="tns:IGeneralService_ObtenerDepartamentosPorPais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMunicipiosPorDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerMunicipiosPorDepartamento" message="tns:IGeneralService_ObtenerMunicipiosPorDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerMunicipiosPorDepartamentoResponse" message="tns:IGeneralService_ObtenerMunicipiosPorDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDireccionPuntoNotificacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ObtenerDireccionPuntoNotificacion" message="tns:IGeneralService_ObtenerDireccionPuntoNotificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ObtenerDireccionPuntoNotificacionResponse" message="tns:IGeneralService_ObtenerDireccionPuntoNotificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDireccionPuntoNotificacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ActualizarDireccionPuntoNotificacion" message="tns:IGeneralService_ActualizarDireccionPuntoNotificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ActualizarDireccionPuntoNotificacionResponse" message="tns:IGeneralService_ActualizarDireccionPuntoNotificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarIdentidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ValidarIdentidad" message="tns:IGeneralService_ValidarIdentidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ValidarIdentidadResponse" message="tns:IGeneralService_ValidarIdentidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarValidacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/EnviarValidacion" message="tns:IGeneralService_EnviarValidacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/EnviarValidacionResponse" message="tns:IGeneralService_EnviarValidacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/ValidarCodigo" message="tns:IGeneralService_ValidarCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/ValidarCodigoResponse" message="tns:IGeneralService_ValidarCodigo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsociarAnexo13Activo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/AsociarAnexo13Activo" message="tns:IGeneralService_AsociarAnexo13Activo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/AsociarAnexo13ActivoResponse" message="tns:IGeneralService_AsociarAnexo13Activo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersonaRNEC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeneralService/BuscarPersonaRNEC" message="tns:IGeneralService_BuscarPersonaRNEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeneralService/BuscarPersonaRNECResponse" message="tns:IGeneralService_BuscarPersonaRNEC_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExtremoGeneral" type="tns:IGeneralService">
+    <wsp:PolicyReference URI="#ExtremoGeneral_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerParametrosGenerales">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerParametrosGenerales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeclaracionAlmacenar">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/DeclaracionAlmacenar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDeclaracion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/BuscarDeclaracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDeclaracion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerDeclaracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RadicacionAlmacenar">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/RadicacionAlmacenar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarRadicacion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/GuardarRadicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarRadicacion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ActualizarRadicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarImagen">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/CargarImagen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarPdf">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/CargarPdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareas">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerListaTareas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareasPaginado">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerListaTareasPaginado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareasCantidad">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerListaTareasCantidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListaTareasWPFCantidad">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerListaTareasWPFCantidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RadicacionActualizarEstado">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/RadicacionActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGlosasxDeclaracion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/getGlosasxDeclaracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIGlosasxDeclaracion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/getIGlosasxDeclaracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setGlosas">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/setGlosas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setIntenGlosas">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/setIntenGlosas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoDeclaracion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ActualizarEstadoDeclaracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerGeografiaCompleta">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerGeografiaCompleta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPaises">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerPaises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDepartamentosPorPais">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerDepartamentosPorPais" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMunicipiosPorDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerMunicipiosPorDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDireccionPuntoNotificacion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ObtenerDireccionPuntoNotificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDireccionPuntoNotificacion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ActualizarDireccionPuntoNotificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarIdentidad">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ValidarIdentidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarValidacion">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/EnviarValidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCodigo">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/ValidarCodigo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsociarAnexo13Activo">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/AsociarAnexo13Activo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPersonaRNEC">
+      <soap12:operation soapAction="http://tempuri.org/IGeneralService/BuscarPersonaRNEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralService">
+    <wsdl:port name="ExtremoGeneral" binding="tns:ExtremoGeneral">
+      <soap12:address location="https://localhost:44302/GeneralService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost:44302/GeneralService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_IGeneralService" binding="i0:MetadataExchangeHttpBinding_IGeneralService">
+      <soap12:address location="http://localhost:39318/GeneralService.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:39318/GeneralService.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

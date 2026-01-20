@@ -1,0 +1,122 @@
+﻿<Window x:Class="Ruv.WPF.Captura.Registro.manejoGlosas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+        xmlns:my1="clr-namespace:Ruv.WPF.Captura.Controles"
+        xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+        Title="Creación de Glosas e Intenciones de Glosas para una Declaración" Height="627"
+        Width="1026">
+    <Window.Resources>
+        <conv:ConsultaDatoConverter x:Key="CDC"/>
+    </Window.Resources>
+    <Grid Height="588" Width="923">
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="8,40,0,0" Name="textBlock2" Text="Categoria" VerticalAlignment="Top" Width="107" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="8,69,0,0" Name="textBlock3" Text="Concepto" VerticalAlignment="Top" Width="107" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="285,8,0,0" Name="textBlock4" Text="Descripción del Motivo para crear la glosa" VerticalAlignment="Top" Width="245" />
+        <TextBlock Height="44" HorizontalAlignment="Left" Margin="8,107,0,0" Name="textBlock5" Text="Fecha esperada de Atención de la Glosa" VerticalAlignment="Top" Width="126" TextWrapping="Wrap" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="101,40,0,0" Name="cbCategoria" VerticalAlignment="Top"
+                  ItemsSource="{Binding Source={StaticResource RUV}, Path=InfoGeneral.ListaCategoriasGlosa}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Nombre"
+                  SelectedValue="{Binding Categoria, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                  Width="178" SelectionChanged="cbCategoria_SelectionChanged" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="101,69,0,0" Name="cbConcepto" VerticalAlignment="Top" Width="178" 
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Nombre"
+                  SelectedValue="{Binding Concepto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="121,111,0,0" 
+                    Name="dtpFechaAten" VerticalAlignment="Top" 
+                    Width="158"
+                    SelectedDate="{Binding FechaAtencion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                    />
+        <TextBox Height="108" HorizontalAlignment="Left" Margin="285,28,0,0" Name="tbDescripcion" VerticalAlignment="Top" Width="626" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" 
+                  Text="{Binding Descripcion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                 />
+        <Button Content="Crear Glosa" Height="23" HorizontalAlignment="Left" 
+                Margin="14,157,0,0" Name="btnCrearGlosa" 
+                IsEnabled="{Binding HayParametrosMinimosParaRegistrar}"
+                VerticalAlignment="Top" Width="101" Click="btnCrearGlosa_Click">
+            <!--<Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=HayParametrosMinimosParaRegistrar}"
+                         Value="True">
+                            <Setter Property="Button.IsEnabled"
+                      Value="True" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=HayParametrosMinimosParaRegistrar}"
+                         Value="False">
+                            <Setter Property="Button.IsEnabled"
+                      Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>-->
+        </Button>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="8,12,0,0" Name="textBlock6" Text="Tipo de  Registro" VerticalAlignment="Top" Width="107" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="101,8,0,0" Name="cbTipoGlosa" VerticalAlignment="Top" Width="178" SelectionChanged="cbTipoGlosa_SelectionChanged"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding TipoDeRegistro, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" >
+        </ComboBox>
+        <DataGrid AutoGenerateColumns="False"
+              Margin="12,211,478,12"
+              x:Name="GridGlosas"
+              HorizontalAlignment="Center" Width="433" CanUserReorderColumns="False"
+                    CanUserResizeRows="False"
+                    IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}"
+                            Header="ID" />
+                <DataGridTextColumn Binding="{Binding PARAM_CATEGORIAGLOSA, Converter={StaticResource CDC}, ConverterParameter=CATEGORIAGLOSA}"
+                            Header="Categoría de GLosa" />
+                <DataGridTextColumn Binding="{Binding PARAM_CONCEPTOGLOSA, Converter={StaticResource CDC},ConverterParameter=CONCEPTOGLOSA}"
+                            Header="Concepto de Glosa" />
+                <DataGridTextColumn Width="100" TextOptions.TextFormattingMode="Display"  Binding="{Binding DESCRIPCIONGLOSA, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                            Header="Descripción" />
+                <DataGridTextColumn Binding="{Binding PARAM_ESTADOGLOSA, Converter={StaticResource CDC},ConverterParameter=ESTADOGLOSA}"
+                            Header="Estado de Glosa" />
+                <DataGridTextColumn Binding="{Binding EstadoRegistro, Converter={StaticResource CDC},ConverterParameter=ESTADO_REGISTRO}"
+                            Header="Estado del Registro" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Borrar" 
+                      CommandParameter="{Binding Path=ID}">Eliminar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid AutoGenerateColumns="False" 
+                  HorizontalAlignment="Right" Margin="0,0,12,0" Name="GridIntenGlosas" Width="460" Height="377" VerticalAlignment="Bottom" 
+                  CanUserReorderColumns="False"
+                    CanUserResizeRows="False"
+                    IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}"
+                            Header="ID" />
+                <DataGridTextColumn Binding="{Binding PARAM_CATEGORIAINGLOSA, Converter={StaticResource CDC},ConverterParameter=CATEGORIAINTENCIONGLOSA}"
+                            Header="Cod.Categoria" />
+                <DataGridTextColumn Width="250" Binding="{Binding DESCRIPCIONINGLOSA}"
+                            Header="Descripción" />
+                <DataGridTextColumn Binding="{Binding PARAM_ESTADOGLOSA, Converter={StaticResource CDC},ConverterParameter=ESTADOGLOSA}"
+                            Header="Estado de Glosa" />
+                <DataGridTextColumn Binding="{Binding EstadoRegistro, Converter={StaticResource CDC},ConverterParameter=ESTADO_REGISTRO}"
+                            Header="Estado del Registro" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="BorrarI" 
+                      CommandParameter="{Binding Path=ID}">Eliminar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Margin="12,195,0,0" Name="textBlock1" Text="Glosas" HorizontalAlignment="Left" Width="39" Height="23" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="451,195,0,0" Name="textBlock7" Text="Intenciones de Glosas" VerticalAlignment="Top" Width="131" />
+    </Grid>
+</Window>

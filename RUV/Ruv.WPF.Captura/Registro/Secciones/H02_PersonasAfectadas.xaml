@@ -1,0 +1,605 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Secciones.H02_PersonasAfectadas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:blo="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:utils="clr-namespace:Ruv.WPF.Captura.Utils"
+             xmlns:common="clr-namespace:Ruv.Infrastructure.Crosscutting.Common;assembly=Ruv.Infrastructure.Crosscutting.Common"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d"
+             DataContext="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.PersonasAfectadas}"
+             d:DesignHeight="1200"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="RegistroDiccionario.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:HayValorVisibilidadConverter x:Key="HayValorVisibilidad" />
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+            <conv:ConsultaDatoConverter x:Key="ConsultaDato" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel x:Name="spMain">
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource styNumeroDeclaracion}"
+                 Text="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.DeclaracionNumero}" />
+
+            <Border Grid.Column="1"
+              BorderThickness="1"
+              BorderBrush="Black"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+                <TextBlock VerticalAlignment="Center"
+                   Margin="5,2">HOJA 2 DE 4</TextBlock>
+            </Border>
+        </Grid>
+        <congen:TextoRecurso DockPanel.Dock="Top"
+                         Recurso="{x:Static rec:Textos.h02t001}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify" />
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin"
+                  Value="5" />
+                    <Setter Property="Padding"
+                  Value="5,2" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition x:Name="cdAcciones"
+                          Width="1*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Left">
+                <Button Click="PrepararAgregarNuevaPersona">Agregar nueva persona</Button>
+                <Button Click="EiminarPersonas">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=lbxListaPersonas, Path=SelectedItems.Count}"
+                             Value="0">
+                                    <Setter Property="Visibility"
+                          Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                            <Setter Property="Margin"
+                      Value="5" />
+                            <Setter Property="Padding"
+                      Value="5,2" />
+                        </Style>
+                    </Button.Style>
+                    Quitar persona
+                </Button>
+            </StackPanel>
+            <StackPanel x:Name="spAcciones"
+                  Orientation="Horizontal"
+                  HorizontalAlignment="Right"
+                  Grid.Column="1"
+                  Visibility="Visible">
+                <Button Click="AceptarEdicion"
+                IsDefault="True">Aceptar</Button>
+                <Button Click="CancelarEdicion"
+                IsCancel="True">Cancelar</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition x:Name="cdEdicion"
+                          Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <sec:SubTituloEntrada Numero=""
+                            Texto="Personas afectadas"
+                            Grid.ColumnSpan="2" />
+            <DockPanel Grid.Row="1"
+                 Grid.RowSpan="2"
+                 Margin="0,0,9,0">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left"
+                     VerticalAlignment="Center"
+                     Margin="5">Declarante:</TextBlock>
+                    <ComboBox x:Name="cmbDeclarante"
+                    Margin="5"
+                    HorizontalAlignment="Left"
+                    MaxWidth="250"
+                    MinWidth="100" IsEnabled="False"
+                    ItemsSource="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.PersonasAfectadas.ListaPersonas}"
+                    DisplayMemberPath="NombreCompleto"
+                    SelectedValuePath="ID"
+                    SelectedValue="{Binding DeclaranteId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}">
+                    </ComboBox>
+                </DockPanel>
+                <ListBox ItemsSource="{Binding ListaPersonasOrdenada, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                 SelectionChanged="PersonaSeleccionada"
+                 x:Name="lbxListaPersonas"
+                 DisplayMemberPath="NombreCompleto"
+                 BorderThickness="0"
+                 SelectionMode="Extended" />
+            </DockPanel>
+
+            <GridSplitter x:Name="gsSeparador"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Stretch"
+                    Visibility="Visible"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    Grid.Row="1"
+                    Width="7" />
+            <ScrollViewer x:Name="svEdicion"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled"
+                    Background="LightGray"
+                    Padding="5">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style BasedOn="{StaticResource styDescripcionCajaEntrada}"
+                   TargetType="TextBlock">
+                            <Setter Property="Margin"
+                      Value="6,3,3,3" />
+                            <Setter Property="VerticalAlignment"
+                      Value="Top" />
+                        </Style>
+                        <Style BasedOn="{StaticResource styBaseTextBoxNormal}"
+                   TargetType="TextBox">
+                            <Setter Property="VerticalAlignment"
+                      Value="Bottom" />
+                            <Setter Property="Margin"
+                      Value="0,1,4,1" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <sec:SubTituloEntrada Numero=""
+                                Texto="Campos obligatorios"
+                                HorizontalAlignment="Stretch"
+                                ColorTexto="Inverso"
+                                Margin="0,0,0,5" />
+                    <Grid VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="0">Consecutivo persona</TextBlock>
+                        <TextBlock Text="{Binding NumeroConsecutivo, Mode=OneWay}"
+                       Grid.Row="0"
+                       Grid.Column="1" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="1">Tipo documento</TextBlock>
+                        <ComboBox x:Name="cb01TipoDoc"
+                      SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding TipoDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=TipoDeDocumentoDeIdentidad}"
+                      SelectionChanged="cb01TipoDoc_SelectionChanged"
+                      SelectedIndex="0"
+                      Grid.Row="1"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="2">Número documento</TextBlock>
+                        <TextBox x:Name="tbxNumeroDocumento"
+                     Text="{Binding NumeroDocumento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                     Grid.Row="2"
+                     Grid.Column="1" MaxLength="25" LostFocus="tbxNumeroDocumento_LostFocus" />
+                        <blo:BloqueadorControles Valor="{Binding TipoDocumento}"
+                                     Visibility="Collapsed">
+                            <blo:BloqueadorControles.ValoresQueDesbloquean>
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaCiudadania }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.LibretaMilitar }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.TarjetaIdentidad }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.RegistroCivil }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NUIP }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NIP }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjeria }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Visa }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoEspecialPermanencia}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Pasaporte}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.SalvoconductoPermanencia}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CarnetDiplomatico}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjera}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoProteccionTemporal}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoSabe}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoResponde}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.IndocumentadoExtranjero}" />
+                            </blo:BloqueadorControles.ValoresQueDesbloquean>
+                            <blo:ControlIndividual Elemento="{Binding ElementName=tbxNumeroDocumento}" />
+                        </blo:BloqueadorControles>
+                        <!--===============================-->
+                        
+                        <TextBlock Grid.Row="3">Primer nombre</TextBlock>
+                        <TextBox Text="{Binding PrimerNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                     x:Name="tbxPrimerNombre"
+                     CharacterCasing="Upper"
+                     Grid.Row="3"
+                     Grid.Column="1" MaxLength="50">
+                            <i:Interaction.Behaviors>
+                                <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                            </i:Interaction.Behaviors>
+                        </TextBox>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="4">Demás nombres</TextBlock>
+                        <TextBox Text="{Binding SegundoNombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                     CharacterCasing="Upper"
+                     Grid.Row="4"
+                     x:Name="tbxSegundoNombre"
+                     Grid.Column="1" MaxLength="50">
+                            <i:Interaction.Behaviors>
+                                <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                            </i:Interaction.Behaviors>
+                        </TextBox>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="5">Primer apellido</TextBlock>
+                        <TextBox Text="{Binding PrimerApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                     CharacterCasing="Upper"
+                     Grid.Row="5"
+                     x:Name="tbxPrimerApellido"
+                     Grid.Column="1" MaxLength="50">
+                            <i:Interaction.Behaviors>
+                                <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                            </i:Interaction.Behaviors>
+                        </TextBox>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="6">Segundo apellido</TextBlock>
+                        <TextBox Text="{Binding SegundoApellido, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                     CharacterCasing="Upper"
+                     Grid.Row="6"
+                     x:Name="tbxSegundoApellido"
+                     Grid.Column="1" MaxLength="50">
+                            <i:Interaction.Behaviors>
+                                <utils:clsTextBoxFilterBehavior ConjuntoDeCaracteres="OmitirDigitos" />
+                            </i:Interaction.Behaviors>
+                        </TextBox>
+                        <!--===============================-->
+                        
+                        
+                        <TextBlock Grid.Row="7">Fecha de nacimiento</TextBlock>
+                        <sec:CajaIngresoFecha x:Name="cifFechaNacimiento" Fecha="{Binding FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                                  Grid.Row="7"
+                                  Grid.Column="1"
+                                  HorizontalAlignment="Left"
+                                  Width="120" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="8" >Nacionalidad</TextBlock>
+                        <ComboBox x:Name="cb01NacionalidadDecla"
+                            SelectedValuePath="Id"
+                                  Grid.Row="8"
+                                  Grid.Column="1"
+                            DisplayMemberPath="Nacionalidad"
+                            ItemsSource="{Binding Converter={StaticResource NacionalidadConverter}}"
+                            SelectedValue="{Binding Nacionalidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                        <TextBlock Grid.Row="9">Hechos victimizantes</TextBlock>
+                        <ScrollViewer ToolTip="Seleccione todos los que apliquen"
+                          Background="White"
+                          MaxHeight="150"
+                          Grid.Row="9"
+                          Grid.Column="1"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto"
+                          VerticalAlignment="Top">
+                            <sec:ListaOpciones IncluirNumero="True"
+                                 VerticalAlignment="Center"
+                                 Orientacion="Vertical"
+                                 TipoOpciones="Multiple"
+                                 TipoParametros="HechosVictimizantes"
+                                 ValoresUsuario="{Binding HechosVictimizantes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                                 TextoOtro="{Binding RepresentanteTipoAutoridadCompetente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                        </ScrollViewer>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="10">Relación</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding Relacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=Relacion}"
+                      SelectedIndex="0"
+                      Grid.Row="10"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="11">Estado civil</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding EstadoCivil, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=EstadoCivil}"
+                      SelectedIndex="0"
+                      Grid.Row="11"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="12">Régimen especial</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding RegimenEspecial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=RegimenEspecial}"
+                      SelectedIndex="0"
+                      Grid.Row="12"
+                      Grid.Column="1" />
+                    </Grid>
+                    <sec:SubTituloEntrada Numero=""
+                                Texto="Enfoque diferencial"
+                                HorizontalAlignment="Stretch"
+                                ColorTexto="Inverso"
+                                Margin="0,10,0,05" />
+                    <Grid VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="0"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}">Género</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding Genero, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=Genero}"
+                      Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                      SelectedIndex="0"
+                      Grid.Row="0"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <!--===============================-->
+                        <TextBlock Grid.Row="0"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">Sexo</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding Genero, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=Genero}"
+                      Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                      SelectedIndex="0"
+                      Grid.Row="0"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <!--===============================-->
+                        <TextBlock Grid.Row="1"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">Orientación Sexual</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                      DisplayMemberPath="Nombre"
+                      SelectedValue="{Binding OrientacionSexual, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=OrientacionSexual}"
+                      SelectedIndex="0"
+                      Grid.Row="1"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <!--===============================-->
+                        <TextBlock Grid.Row="2"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">Identidad de Género</TextBlock>
+                        <ComboBox SelectedValuePath="Id"
+                      DisplayMemberPath="Nombre"
+                      Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                      SelectedValue="{Binding IdentidadGenero, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                      ItemsSource="{Binding Converter={StaticResource ParametrosConverter}, ConverterParameter=IdentidadGenero}"
+                      SelectedIndex="0"
+                      Grid.Row="2"
+                      Grid.Column="1" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="3" TextWrapping="Wrap" Width="150">Discapacidad para llevar a cabo una o varias de las siguientes actividades</TextBlock>
+                        <ScrollViewer ToolTip="Seleccione todos los que apliquen"
+                          MaxHeight="150"
+                          Grid.Row="3"
+                          Grid.Column="1"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto"
+                          VerticalAlignment="Top"
+                          Background="White">
+                            <sec:ListaOpciones VerticalAlignment="Center"
+                                 IncluirNumero="True"
+                                 Orientacion="Vertical"
+                                 TipoOpciones="Multiple"
+                                 TipoParametros="DiscapacidadEnActividades"
+                                 ValoresUsuario="{Binding Discapacidades, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                                 TextoOtro="{Binding OtraDiscapacidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                                 />
+                        </ScrollViewer>
+                        <!--===============================-->
+                        <!--<TextBlock Grid.Row="2"
+                       Margin="5,15,2,0"
+                       VerticalAlignment="Bottom">Pertenencia étnica</TextBlock>-->
+                        <Button Content="Pertenencia étnica"
+                    Click="PertenenciaEtnica_Cambiar"
+                    ToolTip="Click para modificar este dato"
+                    Style="{StaticResource styLinkButton}"
+                    Grid.Row="4"
+                    Margin="5,15,2,2" />
+                        <!--<DockPanel Grid.Row="2"
+                       Grid.Column="1"
+                       Margin="0,15,0,0">
+              <Button Click="PertenenciaEtnica_Cambiar"
+                      DockPanel.Dock="Right">Cambiar</Button>-->
+                        <congen:DummyControl Grid.Row="4"
+                                 Grid.Column="1"
+                                 FuenteDeDatos="{Binding PertenenciaEtnica, ValidatesOnDataErrors=True, NotifyOnValidationError=True}">
+                            <TextBlock VerticalAlignment="Bottom"
+                         Margin="0"
+                         Text="{Binding PertenenciaEtnica, Converter={StaticResource ConsultaDato}, ConverterParameter=ETNIA}" />
+                            <!--Text="{Binding PertenenciaEtnica, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True, Converter={StaticResource ConsultaDato}, ConverterParameter=ETNIA}" />-->
+                        </congen:DummyControl>
+                        <!--</DockPanel>-->
+                        <!--===============================-->
+                        <TextBlock x:Name="txtComunidadEtnica1"
+                       Grid.Row="5"
+                       Visibility="{Binding ComunidadEtnica1, Converter={StaticResource HayValorVisibilidad}}"
+                       Text="{Binding ComunidadEtnica1, Mode=OneWay, Converter={StaticResource ConsultaDato}, ConverterParameter=GRUPOETNICOPORCOMUNIDAD}" />
+                        <TextBlock Grid.Row="5"
+                       Grid.Column="1"
+                       Margin="0"
+                       VerticalAlignment="Center"
+                       Visibility="{Binding ComunidadEtnica1, Converter={StaticResource HayValorVisibilidad}}"
+                       Text="{Binding ComunidadEtnica1, Converter={StaticResource ConsultaDato}, ConverterParameter=COMUNIDADETNICA, Mode=OneWay}" />
+                        <!--===============================-->
+                        <TextBlock x:Name="txtComunidadEtnica2"
+                       Grid.Row="6"
+                       Visibility="{Binding ComunidadEtnica2, Converter={StaticResource HayValorVisibilidad}}"
+                       Text="{Binding ComunidadEtnica2, Mode=OneWay, Converter={StaticResource ConsultaDato}, ConverterParameter=GRUPOETNICOPORCOMUNIDAD}" />
+                        <TextBlock Grid.Row="6"
+                       Grid.Column="1"
+                       Margin="0"
+                       VerticalAlignment="Center"
+                       Visibility="{Binding ComunidadEtnica2, Converter={StaticResource HayValorVisibilidad}}"
+                       Text="{Binding ComunidadEtnica2, Converter={StaticResource ConsultaDato}, ConverterParameter=COMUNIDADETNICA, Mode=OneWay}" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="7">Comunidad</TextBlock>
+                        <TextBox x:Name="txtOtraComunidadEtnica"
+                     Text="{Binding OtraComunidadEtnica, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                     ToolTip="Si aplica, excepto para 'Ninguna'"
+                     Grid.Row="7"
+                     Grid.Column="1" />
+
+                        <blo:BloqueadorControles Valor="{Binding PertenenciaEtnica}"
+                                        Visibility="Collapsed">
+                            <blo:BloqueadorControles.ValoresQueBloquean>
+                                <blo:ValorParametroBloqueante Valor="{x:Null}" />
+                            </blo:BloqueadorControles.ValoresQueBloquean>
+
+                            <blo:ControlIndividual Elemento="{Binding ElementName=txtOtraComunidadEtnica}" />
+                        </blo:BloqueadorControles>
+                        <!--===============================-->
+                        <TextBlock Grid.Row="8"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">Campesinado</TextBlock>
+                        <sec:ListaOpciones x:Name="loCampesinado"
+                               ValorSeleccionUnica="{Binding Campesinado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                               Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                               Grid.Column="1"
+                               Grid.Row="8"
+                               Background="White"
+                               HorizontalAlignment="Left"
+                               TipoParametros="SiNo" />
+                        
+                        <TextBlock Grid.Row="9" Margin="5,15,2,0"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">Cabeza de familia</TextBlock>
+                        <TextBlock Grid.Row="8" Margin="5,15,2,0"
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}">Mujer cabeza de hogar</TextBlock>
+                        <sec:ListaOpciones x:Name="loMujerCabezaDeHogarV1"
+                               ValorSeleccionUnica="{Binding MujerCabezaDeHogar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                               Grid.Column="1"
+                               Grid.Row="8"
+                               Background="White"
+                               HorizontalAlignment="Left"
+                               TipoParametros="SiNo"
+                               Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                               Margin="0,15,0,0" />
+                        <sec:ListaOpciones x:Name="loMujerCabezaDeHogar"
+                               ValorSeleccionUnica="{Binding MujerCabezaDeHogar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                               Grid.Column="1"
+                               Grid.Row="9"
+                               Background="White"
+                               HorizontalAlignment="Left"
+                               TipoParametros="SiNo"
+                               Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                               Margin="0,15,0,0" />
+                        <!--===============================-->
+                        <TextBlock Grid.Row="10" >Gestante o lactante</TextBlock>
+                        <sec:ListaOpciones x:Name="loGestanteLactante"
+                               ValorSeleccionUnica="{Binding GestanteLactante, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                               Grid.Column="1"
+                               Grid.Row="10"
+                               Background="White"
+                               HorizontalAlignment="Left"
+                               TipoParametros="SiNo" />
+                        
+                        <TextBlock Grid.Row="11" 
+                                   Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">Persona Buscadora</TextBlock>
+                        <sec:ListaOpciones x:Name="loPersonaBuscadora"
+                               ValorSeleccionUnica="{Binding PersonaBuscadora, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                               Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                               Grid.Column="1"
+                               Grid.Row="11"
+                               Background="White"
+                               HorizontalAlignment="Left"
+                               TipoParametros="SiNo" />
+                        <!--<TextBlock Grid.Row="10" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                       Margin="5,15,2,0">Padre cabeza de familia</TextBlock>
+                        <sec:ListaOpciones x:Name="loHombreCabezaDeHogar"
+                               ValorSeleccionUnica="{Binding HombreCabezaDeHogar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                               Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                               Grid.Column="1"
+                               Grid.Row="10"
+                               Background="White"
+                               HorizontalAlignment="Left"
+                               TipoParametros="SiNo"
+                               Margin="0,15,0,0" />-->
+                        <!--<blo:BloqueadorControles Valor="{Binding Genero}"
+                                     Visibility="Collapsed">
+                            <blo:BloqueadorControles.ValoresQueDesbloquean>
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Mujer }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Hombre }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.LGBTI }" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Intersexual }" />
+                            </blo:BloqueadorControles.ValoresQueDesbloquean>
+                            <blo:ControlIndividual Elemento="{Binding ElementName=loMujerCabezaDeHogar}" />
+                            <blo:ControlIndividual Elemento="{Binding ElementName=loGestanteLactante}" />
+                        </blo:BloqueadorControles>-->
+                        
+                        <blo:BloqueadorControles Valor="{Binding TipoDocumento}" Visibility="Collapsed">
+                            <blo:BloqueadorControles.ValoresQueDesbloquean>
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjeria}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Visa}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoEspecialPermanencia}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.Pasaporte}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.SalvoconductoPermanencia}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CarnetDiplomatico}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.CedulaExtranjera}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.IndocumentadoExtranjero}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoSabe}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.NoResponde}" />
+                                <blo:ValorParametroHabilitante Valor="{x:Static Member=common:eParametrosHabilitantes.PermisoProteccionTemporal}" />
+                            </blo:BloqueadorControles.ValoresQueDesbloquean>
+                            <blo:ControlIndividual Elemento="{Binding ElementName=cb01NacionalidadDecla}" />
+                        </blo:BloqueadorControles>
+
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+
+    </DockPanel>
+</UserControl>

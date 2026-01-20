@@ -1,0 +1,134 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Ruv_Infrastructure_Crosscutting_Common_Entidades_GestionFormulario="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario;assembly=Ruv.Infrastructure.Crosscutting.Common"
+	xmlns:Ruv.WPF.Captura_Converters="clr-namespace:Ruv.WPF.Captura.Converters" xmlns:Ruv.WPF.Captura_Validations="clr-namespace:Ruv.WPF.Captura.Validations" xmlns:Ruv_WPF_Captura_Controles="clr-namespace:Ruv.WPF.Captura.Controles" xmlns:Ruv_Infrastructure_Crosscutting_Common_Entidades="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades;assembly=Ruv.Infrastructure.Crosscutting.Common" xmlns:GestionFormulario="clr-namespace:Ruv.Infrastructure.Crosscutting.Common.Entidades.GestionFormulario;assembly=Ruv.Infrastructure.Crosscutting.Common"  xmlns:Recursos="clr-namespace:Ruv.WPF.Captura.Recursos" mc:Ignorable="d"
+	x:Class="Ruv.WPF.Captura.InactivacionFormulario"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:Enumeraciones="clr-namespace:Ruv.Infrastructure.Crosscutting.Common;assembly=Ruv.Infrastructure.Crosscutting.Common"
+    xmlns:DataSource="clr-namespace:Ruv.WPF.Captura.Utils.DataSources"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight" Height="584"
+	WindowWidth="640" WindowHeight="480" Width="908" Loaded="Window_Loaded">
+
+    <Page.Resources>
+        <Recursos:Controles x:Key="ControlesDataSource" d:IsDataSource="True"/>
+        <Ruv_Infrastructure_Crosscutting_Common_Entidades:clsGeografia x:Key="GeografiaDataSource" d:IsDataSource="True"/>
+        <Ruv.WPF.Captura_Converters:FormularioActivoConverter x:Key="FormularioActivoConverter"/>
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type System:Enum}" x:Key="sysEnum">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Enumeraciones:eAccionEnFormulario" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <DataSource:FormulariosActivarDataSource x:Key="Datos" />
+        <Style TargetType="{x:Type Ruv_WPF_Captura_Controles:PaggingControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Ruv_WPF_Captura_Controles:PaggingControl}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="23" >
+                            <Button Name="PART_FirstPageButton" Content="&lt;&lt;" Width="40" Height="23" />
+                            <Button Name="PART_PreviousPageButton" Content="&lt;" Width="40" Height="23" />
+                            <TextBlock Text="Pagina Actual:" TextAlignment="Center" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Center"  />
+                            <TextBox Name="PART_PageTextBox" Width="40" Height="23"  />
+                            <TextBlock Text="Total paginas:" TextAlignment="Center" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Center"  />
+                            <TextBlock Text="{Binding TotalPages, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="50" />
+                            <Button Name="PART_NextPageButton" Content="&gt;" Width="40" Height="23" />
+                            <Button Name="PART_LastPageButton" Content="&gt;&gt;" Width="40" Height="23" />
+                            <ComboBox Name="PART_PageSizesCombobox" Width="60" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Page.DataContext>
+        <GestionFormulario:clsControlFormulario />
+    </Page.DataContext>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="gbxFiltros" Grid.Row="0" Header="{Binding Path=FiltroBusqueda, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Padding="{DynamicResource Thickness-10}">
+            <StackPanel Orientation="Horizontal">
+                <DockPanel VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}">
+                    <TextBlock TextWrapping="Wrap" DockPanel.Dock="Top" Text="Accion a Realizar"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource sysEnum}}" SelectedValue="{Binding Accion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></ComboBox>
+                </DockPanel>
+                <DockPanel VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}">
+                    <TextBlock TextWrapping="Wrap" DockPanel.Dock="Top" Text="Número de formulario"/>
+                    <TextBox x:Name="txbNumeroFormulario" TextWrapping="Wrap"/>
+                </DockPanel>
+                <DockPanel VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" DataContext="{Binding Source={StaticResource ControlesDataSource}}">
+                    <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Text="{Binding Pais, Source={StaticResource GeografiaDataSource}, Mode=OneWay}"/>
+                    <ComboBox x:Name="cbxPais" Width="120"/>
+                </DockPanel>
+                <DockPanel VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" DataContext="{Binding Source={StaticResource ControlesDataSource}}">
+                    <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Text="{Binding Departamento, Mode=OneWay,Source={StaticResource GeografiaDataSource}}"/>
+                    <ComboBox x:Name="cbxDepartamento" Width="120" />
+                </DockPanel>
+                <DockPanel VerticalAlignment="Center" Margin="{DynamicResource Thickness-Right-10}" DataContext="{Binding Source={StaticResource ControlesDataSource}}">
+                    <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Text="{Binding Municipio, Mode=OneWay, Source={StaticResource GeografiaDataSource}}"/>
+                    <ComboBox x:Name="cbxMunicipio" Width="120"/>
+                </DockPanel>
+                <DockPanel VerticalAlignment="Center" DataContext="{Binding Source={StaticResource ControlesDataSource}}">
+                    <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Text="{Binding Entidad, Mode=OneWay, Source={StaticResource GeografiaDataSource}}"/>
+                    <ComboBox x:Name="cbxEntidad" Width="120"/>
+                </DockPanel>
+                <Ruv_WPF_Captura_Controles:Geografia ComboPais="{Binding ElementName=cbxPais}" ComboDepartamento="{Binding ElementName=cbxDepartamento}" ComboMunicipio="{Binding ElementName=cbxMunicipio}" ComboEntidadMunicipio="{Binding ElementName=cbxEntidad}" PaisId="{Binding Path=NPaisId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DepartamentoId="{Binding Path=NDepartamentoId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MunicipioId="{Binding Path=NMunicipioId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" EntidadMunicipioId="{Binding Path=NEntidadMunicipioId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="btnBuscar" Content="{Binding Buscar, Source={StaticResource ControlesDataSource}, Mode=OneWay}" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="75" Margin="{DynamicResource Thickness-10}" Click="btnBuscar_Click"/>
+        <DataGrid x:Name="dgFormulario" Grid.Row="2" CanUserAddRows="False" ItemsSource="{Binding Path=LstFormularios, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Width="43">
+                    <DataGridCheckBoxColumn.Binding>
+                        <Binding Path="BSelected" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                        </Binding>
+                    </DataGridCheckBoxColumn.Binding>
+                    <DataGridCheckBoxColumn.Header>
+                        <CheckBox Name="chkAll" Checked="cbx_CheckedUncheckedAll" Unchecked="cbx_CheckedUncheckedAll" HorizontalAlignment="Center" ></CheckBox>
+                    </DataGridCheckBoxColumn.Header>
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn IsReadOnly="True" Width="130" Header="{Binding CodigoFormulario, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding CNumeroFormulario, Mode=OneWay}"/>
+                <DataGridTextColumn IsReadOnly="True" Width="130" Header="{Binding FechaModificado, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding DUltimaModificacion, Mode=OneWay, StringFormat={}{0:dd-MMM-yy HH:mm:ss}}" />
+                <DataGridTextColumn IsReadOnly="True" Width="130" Header="{Binding Pais, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding CPais, Mode=OneWay}"/>
+                <DataGridTextColumn IsReadOnly="True" Width="130" Header="{Binding Departamento, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding CDepartamento, Mode=OneWay}"/>
+                <DataGridTextColumn IsReadOnly="True" Width="130" Header="{Binding Municipio, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding CMunicipio, Mode=OneWay}"/>
+                <DataGridTextColumn IsReadOnly="True" Width="130" Header="{Binding Entidad, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding CEntidad, Mode=OneWay}" />
+                <DataGridTextColumn IsReadOnly="True" Width="400" Header="{Binding Observaciones, Mode=OneWay, Source={StaticResource ControlesDataSource}}" Binding="{Binding CObservacion, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Ruv_WPF_Captura_Controles:PaggingControl x:Name="pageControl" Grid.Row="3" Height="25"
+                              PageContract="{StaticResource Datos}"
+                              PreviewPageChange="pageControl_PreviewPageChange"
+                              PageChanged="pageControl_PageChanged">
+            <Ruv_WPF_Captura_Controles:PaggingControl.PageSizes>
+                <System:UInt32>10
+                </System:UInt32>
+                <System:UInt32>20
+                </System:UInt32>
+                <System:UInt32>50
+                </System:UInt32>
+                <System:UInt32>100
+                </System:UInt32>
+            </Ruv_WPF_Captura_Controles:PaggingControl.PageSizes>
+        </Ruv_WPF_Captura_Controles:PaggingControl>
+        <Border  BorderThickness="1,1,1,1" Grid.Row="4" Margin="5" Height="100">
+            <StackPanel >
+                <TextBlock Text="{Binding Observacion, Mode=OneWay, Source={StaticResource ResourceKey=ControlesDataSource}}" Margin="5" ></TextBlock>
+                <TextBox Margin="5" Height="60" TextWrapping="Wrap" Text="{Binding CObservacion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+            </StackPanel>
+        </Border>
+        <Button x:Name="btnGuardar" Grid.Row="5" Content="{Binding Path=Guardar, Mode=OneWay, Source={StaticResource ControlesDataSource}}" HorizontalAlignment="Right" Margin="{DynamicResource Thickness-10}" Click="btnGuardar_Click" />
+    </Grid>
+</Page>

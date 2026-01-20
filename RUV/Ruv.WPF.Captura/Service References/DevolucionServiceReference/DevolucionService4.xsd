@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/DevolucionService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" />
+  <xs:complexType name="ArrayOfclsCausal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsCausal" nillable="true" type="tns:clsCausal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsCausal" nillable="true" type="tns:ArrayOfclsCausal" />
+  <xs:complexType name="clsCausal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CParteEmotiva" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common" minOccurs="0" name="EParametroTipoCausal" type="q1:eTipoParametros" />
+      <xs:element minOccurs="0" name="NId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsCausal" nillable="true" type="tns:clsCausal" />
+</xs:schema>

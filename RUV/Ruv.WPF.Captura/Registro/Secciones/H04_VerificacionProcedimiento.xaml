@@ -1,0 +1,494 @@
+﻿<UserControl xmlns:my="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+             x:Class="Ruv.WPF.Captura.Registro.Secciones.H04_VerificacionProcedimiento"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             xmlns:blo="clr-namespace:Ruv.WPF.Captura.Registro.Secciones.Controles"
+             mc:Ignorable="d"
+             DataContext="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VerificacionProcedimiento}"
+             
+             d:DesignHeight="1600"
+             
+             d:DesignWidth="1012">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:VisibilidadBoolConverter x:Key="VisibilidadBoolConverter"/>
+            <conv:DeclaranteEdicionConverter x:Key="DEC" />
+            <conv:FirmasConverter x:Key="FC" />
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+        </ResourceDictionary>
+
+
+
+    </UserControl.Resources>
+
+    <StackPanel x:Name="spMain">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource styNumeroDeclaracion}"
+                 Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.DeclaracionNumero}" />
+
+            <Border Grid.Column="1"
+              BorderThickness="1"
+              BorderBrush="Black"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+                <TextBlock VerticalAlignment="Center"
+                   Margin="5,2">HOJA 4 DE 4</TextBlock>
+            </Border>
+        </Grid>
+        <DockPanel x:Name="dpPregunta25">
+            <TextBox Text="{Binding EnmendarDeclaracionTexto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+               MinHeight="100"
+               DockPanel.Dock="Bottom"
+               Margin="5" />
+            <sec:SubTituloEntrada Numero="25"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Quiere agregar, enmendar o corregir algo de la declaración?"
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Top" />
+            <sec:ListaOpciones x:Name="loSiNoPregunta25"
+                         ValorSeleccionUnica="{Binding EnmendarDeclaracion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         DockPanel.Dock="Left"
+                         TipoParametros="SiNo"
+                         Margin="5,0,0,0" />
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 TextWrapping="Wrap">(Si la respuesta es 1 (Si), haga las correcciones y aclaraciones en el siguiente espacio)</TextBlock>
+        </DockPanel>
+
+        <my:BloqueadorControles Contenedor="{Binding ElementName=dpPregunta25}"
+                            ControlExcepto="{Binding ElementName=loSiNoPregunta25}"
+                            Valor="{Binding EnmendarDeclaracion}" />
+
+        <TextBlock Style="{StaticResource styTituloSeccion}">III. VERIFICACIÓN DEL PROCEDIMIENTO</TextBlock>
+        <sec:SubTituloEntrada Numero="26"
+                          ColorTexto="FondoBlanco"
+                          Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                          Texto="Por favor relacione la cantidad de anexos, soportes y folios que hacen parte de la declaración:"
+                          Margin="0,5" />
+        <sec:SubTituloEntrada Numero="26"
+                          ColorTexto="FondoBlanco"
+                          Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                          Texto="Relacione la cantidad de soportes documentales, otros soportes y anexos del FUD que hacen parte de la declaración:"
+                          Margin="0,5" />
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="1"
+                 TextWrapping="Wrap">a) Cantidad de anexos del FUD diligenciados de acuerdo con el hecho victimizante, adjuntos a esta declaración</TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="1"
+                 Grid.Row="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextWrapping="Wrap">c) Cantidad de soportes diferentes a documentos (CDs, USB, prendas, fotografías, micro Sd, otros)</TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="4"
+                 Grid.Row="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                 TextWrapping="Wrap">c) Cantidad total de folios que componen esta declaración*</TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="4"
+                 Grid.Row="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextWrapping="Wrap">d) Cantidad total de folios que componen esta declaración*</TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="4"
+                 TextWrapping="Wrap">b) Cantidad de folios de los soportes documentales aportados por el declarante</TextBlock>
+            <Border Grid.Column="2"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center"
+                   Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.NumeroDeAnexos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+                <!--Text="{Binding NumeroTotalAnexos}"-->
+            </Border>
+            <Border Grid.Column="5"
+              Grid.Row="1"
+              Margin="0,0,0,5">
+                <TextBlock TextAlignment="Center" 
+                Text="{Binding NumeroTotalFolios, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            </Border> 
+            <Border Grid.Column="2"
+              Grid.Row="1" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+              Margin="0,0,0,5">
+                <TextBox TextAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="5" 
+                   Text="{Binding NumeroTotalSoportesOtros, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+            </Border>
+            <Border Grid.Column="5"
+              Margin="0,0,0,5">
+                <TextBox TextAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="5"
+                 Text="{Binding NumeroTotalSoportes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" LostFocus="TextBox_LostFocus" />
+            </Border>
+            <Border Grid.Column="6" Margin="5,0,0,5" x:Name="btnSoportes" Visibility="Collapsed">
+                <Button  Click="btnSoportes_Click">Examinar</Button>
+            </Border>
+            <TextBlock Visibility="Collapsed"
+                 Grid.Row="0" Margin="5,10,0,5" Name="lnkVerSoportes"
+                 Grid.Column="7"
+                 Grid.ColumnSpan="5"><Hyperlink Style="{StaticResource styHyperlink}" Name="hlVerSoportes" Click="hlVerSoportes_Click">Ver Soportes</Hyperlink></TextBlock>
+            <TextBlock Style="{StaticResource styDescripcionCajaEntrada}"
+                 Grid.Column="1" Grid.Row="2" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 TextWrapping="Wrap">Describirlos</TextBlock>
+            <Border
+                 Grid.Row="2"
+                 Grid.Column="2" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                 Grid.ColumnSpan="2">
+                <TextBox TextAlignment="Center" x:Name="txtTotalSoportesOtrosDesc"
+                   Text="{Binding NumeroTotalSoportesOtrosDesc}" MaxLength="500" />
+            </Border>
+            <TextBlock Style="{StaticResource styTextoDescripcionPequeño}"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="5"
+                 >*Relacionar la cantidad total de folios, que componen la declaración, incluidos hojas básicas del FUD, anexos y soportes documentales</TextBlock>
+        </Grid>
+        <blo:BloqueadorControles Valor="{Binding NumeroTotalSoportesOtros}" Visibility="Collapsed">
+            <blo:BloqueadorControles.ValoresQueBloquean>
+                <blo:ValorParametroBloqueante Valor="0" />
+            </blo:BloqueadorControles.ValoresQueBloquean>
+            <blo:ControlIndividual Elemento="{Binding ElementName=txtTotalSoportesOtrosDesc}" />
+        </blo:BloqueadorControles>
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="{x:Type sec:SubTituloEntrada}">
+                    <Setter Property="VerticalAlignment"
+                  Value="Center" />
+                </Style>
+                <Style TargetType="{x:Type sec:ListaOpciones}">
+                    <Setter Property="HorizontalAlignment"
+                  Value="Left" />
+                    <Setter Property="VerticalAlignment"
+                  Value="Top" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <sec:SubTituloEntrada Numero="27"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Realizó la entrevista previa?" />
+            <sec:SubTituloEntrada Numero="29"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Leyó al (a la) Declarante la declaración?"
+                            Grid.Row="1" />
+            <sec:SubTituloEntrada Numero="31"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Se incluyeron correcciones o enmendaduras?"
+                            Grid.Row="2" />
+            <sec:SubTituloEntrada Numero="28"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Realizó la toma de juramento?"
+                            Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                            Grid.Column="2"
+                            Grid.Row="0" />
+            <sec:SubTituloEntrada Numero="30"
+                            ColorTexto="FondoBlanco"
+                            Texto="¿Hubo orientación para corregir o enmendar?"
+                            Grid.Column="2"
+                            Grid.Row="1" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding RealizoEntrevistaPrevia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Grid.Column="1"
+                         Grid.ColumnSpan="2" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding LeyoAlDeclaranteLaDeclaracion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         Grid.ColumnSpan="2" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding SeIncluyeronCorrecciones, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Grid.Column="1"
+                         Grid.Row="2"
+                         Grid.ColumnSpan="2" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding RealizoTomaJuramento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                         Grid.Column="3"
+                         Grid.Row="0"
+                         Grid.ColumnSpan="2" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding HuboOrientacionParaCorregir, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Grid.Column="3"
+                         Grid.Row="1"
+                         Grid.ColumnSpan="2" />
+
+        </Grid>
+        <DockPanel Margin="0,5">
+            <sec:SubTituloEntrada Numero="32"
+                            Texto="" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t001}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Justify" />
+        </DockPanel>
+        <TextBox Text="{Binding ObservacionesSobreDiligenciamiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+             TextWrapping="Wrap"
+             MinHeight="100"
+             Margin="5" />
+        <DockPanel Margin="0,5">
+            <sec:SubTituloEntrada Numero="33"
+                            Texto=""
+                            VerticalAlignment="Top" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t002}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Justify" 
+                           Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t002V2}" 
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Justify" 
+                           Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"     />
+            
+        </DockPanel>
+        <sec:ListaOpciones ValorSeleccionUnica="{Binding UsoDatosPersonales, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         VerticalAlignment="Bottom"
+                         Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+                         HorizontalAlignment="Left" Margin="20,0,30,10"  />
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t003}"
+                         Style="{StaticResource styTextoDescripcionIzq}"
+                         TextAlignment="Justify" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t004}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Left"
+                           Grid.ColumnSpan="3" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t005}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Left"
+                           Grid.Row="1" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t006}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Justify"
+                           Grid.Column="3"
+                           Grid.RowSpan="2" />
+            <sec:ListaOpciones ValorSeleccionUnica="{Binding DeclaranteSabeFirmar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                         TipoParametros="SiNo"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         VerticalAlignment="Bottom"
+                         HorizontalAlignment="Right" Margin="0,0,30,10"  />
+            <WrapPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" >
+                <Button x:Name="btnDeclaracion" Visibility="{Binding DebeCargarDeclaracionEscaneada, Converter={StaticResource VisibilidadBoolConverter}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="80" Click="Button_Click">Examinar</Button>
+                <TextBlock  Visibility="{Binding LinkDocumentos, Converter={StaticResource VisibilidadBoolConverter}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                 Margin="5,10,0,5"  Name="lnkVerDeclaracion">
+                    <Hyperlink   Name="hlVerDeclaracion" Click="hlVerDeclaracion_Click">Ver Documento</Hyperlink></TextBlock>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Margin="5">
+            <Grid.Resources>
+                <Style BasedOn="{StaticResource styDescripcionCajaEntrada}"
+               TargetType="TextBlock">
+                    <Setter Property="Margin"
+                  Value="6,3,0,3" />
+                    <Setter Property="VerticalAlignment"
+                  Value="Bottom" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="3">
+                <sec:SubTituloEntrada Numero="34"
+                              ColorTexto="FondoBlanco"
+                              Texto="* Declarante"
+                              HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.ColumnSpan="3"
+              Grid.Column="5">
+                <sec:SubTituloEntrada Numero="35"
+                              ColorTexto="FondoBlanco"
+                              Texto="* Funcionario (a)"
+                              HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="1"
+              Grid.ColumnSpan="3"
+              Grid.RowSpan="4"
+              BorderThickness="1,0,1,1" />
+            <Border Grid.Row="1"
+              Grid.ColumnSpan="3"
+              Grid.Column="5"
+              Grid.RowSpan="4"
+              BorderThickness="1,0,1,1" />
+            <Border Grid.Row="0"
+              Grid.RowSpan="5"
+              Grid.Column="3"
+              BorderThickness="0,1,1,1" />
+            <TextBlock Grid.Row="1">Firma</TextBlock>
+            <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="270" HorizontalAlignment="Left" Source="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.Firmas, Converter={StaticResource FC}, ConverterParameter=DECLARANTE}" />
+            <TextBlock Grid.Row="2">Nombre:</TextBlock>
+            <TextBlock Grid.Column="3"
+                 Grid.Row="4"
+                 HorizontalAlignment="Center"
+                 TextAlignment="Center">HUELLA DACTILAR<LineBreak />DECLARANTE</TextBlock>
+            <TextBlock Grid.Column="5"
+                 Grid.Row="1">Firma</TextBlock>
+            <Image Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Width="270" HorizontalAlignment="Left" Source="{Binding Source={StaticResource RUV}, Path=Usuario.ImagenFirmaDigital}" />
+            <TextBlock Grid.Column="5"
+                 Grid.Row="2">Nombre:</TextBlock>
+            <TextBlock Grid.Column="5"
+                 Grid.Row="3">Cargo:</TextBlock>
+
+            <Border BorderThickness="0,0,0,1"
+              Grid.Column="1"
+              Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="0,0,5,0" />
+            <Border BorderThickness="0,0,0,1"
+              Grid.Column="6"
+              Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="0,0,5,0" />
+            <DockPanel Grid.ColumnSpan="3"
+                 Grid.Row="4">
+                <TextBlock DockPanel.Dock="Left"
+                   VerticalAlignment="Center">No. de Documento de identidad</TextBlock>
+                <Border VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0">
+                    <TextBlock Margin="3"
+                     Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.TomaDeclaracion.DeclaranteNumeroDocumento}" />
+                    <!--Text="{Binding Converter={StaticResource DEC}, ConverterParameter=NUMERODOCUMENTO}" />-->
+                </Border>
+            </DockPanel>
+            <DockPanel Grid.ColumnSpan="3"
+                 Grid.Column="5"
+                 Grid.Row="4">
+                <TextBlock DockPanel.Dock="Left"
+                   VerticalAlignment="Center">No. de Documento de identidad</TextBlock>
+                <Border VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0">
+                    <TextBlock Margin="3"
+                     Text="{Binding FuncionarioDocumentoIdentidad}" />
+                </Border>
+            </DockPanel>
+            <TextBlock Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.TomaDeclaracion.DeclaranteNombreCompleto}" />
+            <!--, Converter={StaticResource DEC}, ConverterParameter=NOMBRECOMPLETO-->
+            <TextBlock Grid.Row="2"
+                 Grid.Column="6"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding FuncionarioNombre}" />
+            <TextBlock Grid.Row="3"
+                 Grid.Column="6"
+                 Grid.ColumnSpan="2"
+                 Text="{Binding FuncionarioCargo}" />
+        </Grid>
+        <sec:SubTituloEntrada Numero="36"
+                          ColorTexto="FondoBlanco"
+                          Texto="Firma Intérprete, tutor o funcionario (Solo si aplica)" />
+        <Grid Margin="5">
+            <Grid.Resources>
+                <Style BasedOn="{StaticResource styDescripcionCajaEntrada}"
+               TargetType="TextBlock">
+                    <Setter Property="Margin"
+                  Value="6,3,0,3" />
+                    <Setter Property="VerticalAlignment"
+                  Value="Bottom" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5.5*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h04t007}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Justify"
+                           Grid.RowSpan="4"
+                           Margin="0,0,10,0" />
+            <Border Grid.ColumnSpan="2"
+              Grid.Column="1"
+              Grid.RowSpan="4" />
+            <TextBlock Grid.Column="1"
+                 Grid.Row="0">Firma</TextBlock>
+            <Image Grid.Column="2" Grid.ColumnSpan="2" Width="270" HorizontalAlignment="Left" Source="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.Firmas, Converter={StaticResource FC}, ConverterParameter=TUTOR}" />
+            <TextBlock Grid.Column="1"
+                 Grid.Row="1">Nombre:</TextBlock>
+            <!--<TextBlock Grid.Column="1" Visibility="Collapsed"
+                 Grid.Row="2">Cargo:</TextBlock>-->
+            <DockPanel Grid.ColumnSpan="2"
+                 Grid.Column="1"
+                 Grid.Row="3">
+                <TextBlock DockPanel.Dock="Left"
+                   VerticalAlignment="Center">No. de Documento de identidad</TextBlock>
+                <Border VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0">
+                    <TextBlock Margin="3"
+                     Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.TomaDeclaracion.Encargado.RepresentanteNumeroDocumento}" />
+                </Border>
+            </DockPanel>
+            <Border BorderThickness="0,0,0,1"
+              Grid.Column="2"
+              Grid.Row="0"
+              Margin="0,0,5,0" />
+            <TextBlock Grid.Row="1"
+                 Grid.Column="2"
+                 Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.TomaDeclaracion.Encargado.RepresentanteNombreCompleto}" />
+            <!--<TextBlock Grid.Row="2"
+                 Grid.Column="2" />-->
+        </Grid>
+    </StackPanel>
+</UserControl>

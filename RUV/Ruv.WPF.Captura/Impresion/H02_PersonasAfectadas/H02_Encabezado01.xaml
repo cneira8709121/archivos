@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.H02_Encabezado01"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="329"
+             d:DesignWidth="1279">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type congen:TextoRecurso}"
+             BasedOn="{StaticResource styTextoDescripcionIzq}">
+                <Setter Property="VerticalAlignment"
+                Value="Top" />
+            </Style>
+            <conv:VersionFUDConverter x:Key="VersionFUDConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.ColumnSpan="3" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal"
+                  VerticalAlignment="Top">
+                <StackPanel.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="Margin"
+                    Value="0,0,10,0" />
+                        <Setter Property="VerticalAlignment"
+                    Value="Top" />
+                        <Setter Property="BorderThickness"
+                    Value="1" />
+                        <Setter Property="BorderBrush"
+                    Value="Black" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <Border>
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t001}" />
+                </Border>
+                <Border>
+                    <StackPanel Orientation="Vertical">
+                        <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t002}"
+                                 HorizontalAlignment="Center" />
+                        <StackPanel Orientation="Horizontal">
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t003}" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                                   MaxWidth="250" />
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t003_1}" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+       MaxWidth="250" />
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t004}" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}"
+                                   MaxWidth="250" />
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t004_1}" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}"
+       MaxWidth="250" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border>
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t005}" />
+                </Border>
+                <Border>
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t006}" />
+                </Border>
+                <Border>
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t007}" />
+                </Border>
+                <Border Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}">
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t008}" />
+                </Border>
+                <Border Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t014}" />
+                </Border>
+                <Border Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t015}" />
+                </Border>
+                <Border Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion2}">
+                    <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t016}" />
+                </Border>
+                <Border Margin="0">
+                    <StackPanel Orientation="Vertical">
+                        <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t009}"
+                                 HorizontalAlignment="Center" />
+                        <StackPanel Orientation="Horizontal">
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t010}"
+                                   MaxWidth="250"  Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}" />
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t011}"
+                                   MaxWidth="250" Visibility="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.VersionFUD, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, Converter={StaticResource VersionFUDConverter}, ConverterParameter=VisibleEnVersion1}" />
+                            <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t013}"
+                                   MaxWidth="250" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Viewbox>
+        <congen:TextoRecurso Recurso="{x:Static rec:Textos.eh02t012}"
+                         FontSize="{StaticResource TamañoTextoPequeño}"
+                         Grid.Row="1" Grid.ColumnSpan="3" />
+    </Grid>
+</UserControl>

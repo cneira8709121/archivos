@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioGestorDocumental" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IServicioGestorDocumental_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Homonimia" />
+      <xsd:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeEntradaBpmOrfeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeEntradaBpmOrfeo" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeEntradaBpmOrfeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeEntradaBpmOrfeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeSalidaBpmOrfeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeSalidaBpmOrfeo" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeSalidaBpmOrfeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeSalidaBpmOrfeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeSalida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_radicarDeSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:radicarDeSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getRadicados_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicados" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getRadicados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getDestinationDependencies_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDestinationDependencies" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getDestinationDependencies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDestinationDependenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getRadicadoDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadoDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getRadicadoDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadoDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_marcarRadicadoComoRecibido_InputMessage">
+    <wsdl:part name="parameters" element="tns:marcarRadicadoComoRecibido" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_marcarRadicadoComoRecibido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:marcarRadicadoComoRecibidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_verifyRadicado_InputMessage">
+    <wsdl:part name="parameters" element="tns:verifyRadicado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_verifyRadicado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verifyRadicadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getRadicadosSinImagen_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadosSinImagen" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getRadicadosSinImagen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRadicadosSinImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_attachDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:attachDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_attachDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:attachDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_attachDocumentBpmOrfeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:attachDocumentBpmOrfeo" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_attachDocumentBpmOrfeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:attachDocumentBpmOrfeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getTodosRadicados_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTodosRadicados" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getTodosRadicados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTodosRadicadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getDescargarDocumentoPorRadicado_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDescargarDocumentoPorRadicado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getDescargarDocumentoPorRadicado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDescargarDocumentoPorRadicadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_downloadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:downloadDocument" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_downloadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:downloadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getGeografiaBPM_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGeografiaBPM" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getGeografiaBPM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGeografiaBPMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getHomologacionGeografiaBpmSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHomologacionGeografiaBpmSalida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getHomologacionGeografiaBpmSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHomologacionGeografiaBpmSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCities" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getDeparments_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDeparments" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getDeparments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDeparmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCountries" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_getCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_ObtenerInfoRadicado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoRadicado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_ObtenerInfoRadicado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoRadicadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_ObtenerInfoPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoPersona" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_ObtenerInfoPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_ObtenerRadicadosVictima_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRadicadosVictima" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_ObtenerRadicadosVictima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerRadicadosVictimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_NegInformacionRadicadoEntrada_InputMessage">
+    <wsdl:part name="parameters" element="tns:NegInformacionRadicadoEntrada" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_NegInformacionRadicadoEntrada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NegInformacionRadicadoEntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_NegInformacionRadicadoSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:NegInformacionRadicadoSalida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_NegInformacionRadicadoSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NegInformacionRadicadoSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_NegNotificarRadicadoSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:NegNotificarRadicadoSalida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioGestorDocumental_NegNotificarRadicadoSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NegNotificarRadicadoSalidaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioGestorDocumental">
+    <wsdl:operation name="radicarDeEntradaBpmOrfeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeEntradaBpmOrfeo" message="tns:IServicioGestorDocumental_radicarDeEntradaBpmOrfeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeEntradaBpmOrfeoResponse" message="tns:IServicioGestorDocumental_radicarDeEntradaBpmOrfeo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeEntrada" message="tns:IServicioGestorDocumental_radicarDeEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeEntradaResponse" message="tns:IServicioGestorDocumental_radicarDeEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeSalidaBpmOrfeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeSalidaBpmOrfeo" message="tns:IServicioGestorDocumental_radicarDeSalidaBpmOrfeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeSalidaBpmOrfeoResponse" message="tns:IServicioGestorDocumental_radicarDeSalidaBpmOrfeo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeSalida" message="tns:IServicioGestorDocumental_radicarDeSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/radicarDeSalidaResponse" message="tns:IServicioGestorDocumental_radicarDeSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRadicados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getRadicados" message="tns:IServicioGestorDocumental_getRadicados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getRadicadosResponse" message="tns:IServicioGestorDocumental_getRadicados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDestinationDependencies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getDestinationDependencies" message="tns:IServicioGestorDocumental_getDestinationDependencies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getDestinationDependenciesResponse" message="tns:IServicioGestorDocumental_getDestinationDependencies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadoDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getRadicadoDocuments" message="tns:IServicioGestorDocumental_getRadicadoDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getRadicadoDocumentsResponse" message="tns:IServicioGestorDocumental_getRadicadoDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="marcarRadicadoComoRecibido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/marcarRadicadoComoRecibido" message="tns:IServicioGestorDocumental_marcarRadicadoComoRecibido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/marcarRadicadoComoRecibidoResponse" message="tns:IServicioGestorDocumental_marcarRadicadoComoRecibido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verifyRadicado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/verifyRadicado" message="tns:IServicioGestorDocumental_verifyRadicado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/verifyRadicadoResponse" message="tns:IServicioGestorDocumental_verifyRadicado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadosSinImagen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getRadicadosSinImagen" message="tns:IServicioGestorDocumental_getRadicadosSinImagen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getRadicadosSinImagenResponse" message="tns:IServicioGestorDocumental_getRadicadosSinImagen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="attachDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/attachDocument" message="tns:IServicioGestorDocumental_attachDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/attachDocumentResponse" message="tns:IServicioGestorDocumental_attachDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="attachDocumentBpmOrfeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/attachDocumentBpmOrfeo" message="tns:IServicioGestorDocumental_attachDocumentBpmOrfeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/attachDocumentBpmOrfeoResponse" message="tns:IServicioGestorDocumental_attachDocumentBpmOrfeo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTodosRadicados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getTodosRadicados" message="tns:IServicioGestorDocumental_getTodosRadicados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getTodosRadicadosResponse" message="tns:IServicioGestorDocumental_getTodosRadicados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDescargarDocumentoPorRadicado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getDescargarDocumentoPorRadicado" message="tns:IServicioGestorDocumental_getDescargarDocumentoPorRadicado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getDescargarDocumentoPorRadicadoResponse" message="tns:IServicioGestorDocumental_getDescargarDocumentoPorRadicado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="downloadDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/downloadDocument" message="tns:IServicioGestorDocumental_downloadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/downloadDocumentResponse" message="tns:IServicioGestorDocumental_downloadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGeografiaBPM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getGeografiaBPM" message="tns:IServicioGestorDocumental_getGeografiaBPM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getGeografiaBPMResponse" message="tns:IServicioGestorDocumental_getGeografiaBPM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHomologacionGeografiaBpmSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getHomologacionGeografiaBpmSalida" message="tns:IServicioGestorDocumental_getHomologacionGeografiaBpmSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getHomologacionGeografiaBpmSalidaResponse" message="tns:IServicioGestorDocumental_getHomologacionGeografiaBpmSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getCities" message="tns:IServicioGestorDocumental_getCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getCitiesResponse" message="tns:IServicioGestorDocumental_getCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeparments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getDeparments" message="tns:IServicioGestorDocumental_getDeparments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getDeparmentsResponse" message="tns:IServicioGestorDocumental_getDeparments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getCountries" message="tns:IServicioGestorDocumental_getCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/getCountriesResponse" message="tns:IServicioGestorDocumental_getCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoRadicado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoRadicado" message="tns:IServicioGestorDocumental_ObtenerInfoRadicado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoRadicadoResponse" message="tns:IServicioGestorDocumental_ObtenerInfoRadicado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoPersona" message="tns:IServicioGestorDocumental_ObtenerInfoPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoPersonaResponse" message="tns:IServicioGestorDocumental_ObtenerInfoPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRadicadosVictima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/ObtenerRadicadosVictima" message="tns:IServicioGestorDocumental_ObtenerRadicadosVictima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/ObtenerRadicadosVictimaResponse" message="tns:IServicioGestorDocumental_ObtenerRadicadosVictima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NegInformacionRadicadoEntrada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoEntrada" message="tns:IServicioGestorDocumental_NegInformacionRadicadoEntrada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoEntradaResponse" message="tns:IServicioGestorDocumental_NegInformacionRadicadoEntrada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NegInformacionRadicadoSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoSalida" message="tns:IServicioGestorDocumental_NegInformacionRadicadoSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoSalidaResponse" message="tns:IServicioGestorDocumental_NegInformacionRadicadoSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NegNotificarRadicadoSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioGestorDocumental/NegNotificarRadicadoSalida" message="tns:IServicioGestorDocumental_NegNotificarRadicadoSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioGestorDocumental/NegNotificarRadicadoSalidaResponse" message="tns:IServicioGestorDocumental_NegNotificarRadicadoSalida_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioGestorDocumental" type="tns:IServicioGestorDocumental">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IServicioGestorDocumental_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="radicarDeEntradaBpmOrfeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeEntradaBpmOrfeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeSalidaBpmOrfeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeSalidaBpmOrfeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicados">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getRadicados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDestinationDependencies">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getDestinationDependencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadoDocuments">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getRadicadoDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="marcarRadicadoComoRecibido">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/marcarRadicadoComoRecibido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyRadicado">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/verifyRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadosSinImagen">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getRadicadosSinImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attachDocument">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/attachDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attachDocumentBpmOrfeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/attachDocumentBpmOrfeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTodosRadicados">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getTodosRadicados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDescargarDocumentoPorRadicado">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getDescargarDocumentoPorRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="downloadDocument">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/downloadDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGeografiaBPM">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getGeografiaBPM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHomologacionGeografiaBpmSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getHomologacionGeografiaBpmSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeparments">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getDeparments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCountries">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoRadicado">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoPersona">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRadicadosVictima">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/ObtenerRadicadosVictima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegInformacionRadicadoEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegInformacionRadicadoSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegNotificarRadicadoSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/NegNotificarRadicadoSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IServicioGestorDocumental_Php" type="tns:IServicioGestorDocumental">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="radicarDeEntradaBpmOrfeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeEntradaBpmOrfeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeSalidaBpmOrfeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeSalidaBpmOrfeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="radicarDeSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/radicarDeSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicados">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getRadicados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDestinationDependencies">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getDestinationDependencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadoDocuments">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getRadicadoDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="marcarRadicadoComoRecibido">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/marcarRadicadoComoRecibido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyRadicado">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/verifyRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadicadosSinImagen">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getRadicadosSinImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attachDocument">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/attachDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attachDocumentBpmOrfeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/attachDocumentBpmOrfeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTodosRadicados">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getTodosRadicados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDescargarDocumentoPorRadicado">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getDescargarDocumentoPorRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="downloadDocument">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/downloadDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGeografiaBPM">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getGeografiaBPM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHomologacionGeografiaBpmSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getHomologacionGeografiaBpmSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeparments">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getDeparments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCountries">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/getCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoRadicado">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoRadicado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoPersona">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/ObtenerInfoPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRadicadosVictima">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/ObtenerRadicadosVictima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegInformacionRadicadoEntrada">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoEntrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegInformacionRadicadoSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/NegInformacionRadicadoSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NegNotificarRadicadoSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioGestorDocumental/NegNotificarRadicadoSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioGestorDocumental">
+    <wsdl:port name="BasicHttpBinding_IServicioGestorDocumental" binding="tns:BasicHttpBinding_IServicioGestorDocumental">
+      <soap:address location="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IServicioGestorDocumental_Php" binding="tns:BasicHttpBinding_IServicioGestorDocumental_Php">
+      <soap:address location="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc/MyAddress2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

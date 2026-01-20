@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8E89AD3-9B81-473B-86EE-5463EA0B7B96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ruv.Business.DTO</RootNamespace>
+    <AssemblyName>Ruv.Business.DTO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActosAdministrativos\clsNotificacionVal.cs" />
+    <Compile Include="Correcciones\clsCargaDatosCorreccion.cs" />
+    <Compile Include="Correcciones\clsCorreccion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Correcciones\clsInformacionCorreccion.cs" />
+    <Compile Include="CriticaN\clsRespuestaCritica.cs" />
+    <Compile Include="Devolucion\clsCausalDevolucion.cs" />
+    <Compile Include="Devolucion\clsDatosparaDevolucion.cs" />
+    <Compile Include="Devolucion\clsDevolucion.cs" />
+    <Compile Include="Feriado\Feriado.cs" />
+    <Compile Include="General\clsGeografia.cs" />
+    <Compile Include="General\clsParametro.cs" />
+    <Compile Include="General\clsUsuarioBasico.cs" />
+    <Compile Include="GestionFormulario\clsFormulario.cs" />
+    <Compile Include="GestionFormulario\clsSolicitudFormularioEstado.cs" />
+    <Compile Include="GestionValorador\clsDetalleGestionVal.cs" />
+    <Compile Include="GestionValorador\clsGestionValorador.cs" />
+    <Compile Include="IdentidadPersona\clsMensajeSMS.cs" />
+    <Compile Include="IdentidadPersona\clsPersonaIdentidad.cs" />
+    <Compile Include="IdentidadPersona\clsPreguntas.cs" />
+    <Compile Include="Notificacion\clsDatosCentroAtencion.cs" />
+    <Compile Include="Notificacion\clsDetalleDatosCentrosAtencion.cs" />
+    <Compile Include="Notificacion\clsEncargadoEntidad.cs" />
+    <Compile Include="Notificacion\clsEstadosNotificacion.cs" />
+    <Compile Include="Notificacion\clsNotificacion.cs" />
+    <Compile Include="Notificacion\clsNotificacionDetalle.cs" />
+    <Compile Include="Notificacion\clsNotificacionInterna.cs" />
+    <Compile Include="Notificacion\clsEntidadMunicipioNotificacion.cs" />
+    <Compile Include="Notificacion\clsReporteCourier.cs" />
+    <Compile Include="Notificacion\clsPaqueteNotificacion.cs" />
+    <Compile Include="Notificacion\clsNotificacionExcel.cs" />
+    <Compile Include="Notificacion\clsHistoricoNotificacion.cs" />
+    <Compile Include="Notificacion\clsPuntoAtencionDireccionTerritorial.cs" />
+    <Compile Include="Orfeo\clsOrfeo.cs" />
+    <Compile Include="Orfeo\Dignatario.cs" />
+    <Compile Include="Orfeo\Direccion.cs" />
+    <Compile Include="Orfeo\Evento.cs" />
+    <Compile Include="Orfeo\Radicado.cs" />
+    <Compile Include="Orfeo\Resultado.cs" />
+    <Compile Include="Orfeo\Secuencia.cs" />
+    <Compile Include="Radicacion\clsLiderRadicacion.cs" />
+    <Compile Include="Radicacion\clsRadicacion.cs" />
+    <Compile Include="Radicacion\clsRadicacionIntegradorGD.cs" />
+    <Compile Include="Reporteador\clsDeclarante.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporteador\clsDetalleDeclaracion.cs" />
+    <Compile Include="ServiciosComunicacion\clsGrupoFamiliar.cs" />
+    <Compile Include="ServiciosComunicacion\clsPersona.cs" />
+    <Compile Include="ServiciosComunicacion\clsSiniestro.cs" />
+    <Compile Include="Valoracion\clsCargaPersonasAsociadasDeclaracion.cs" />
+    <Compile Include="Valoracion\clsDeclaracionesValoracion.cs" />
+    <Compile Include="Valoracion\clsResumenValoracion.cs" />
+    <Compile Include="Valoracion\clsSubEtniasdto.cs" />
+    <Compile Include="Valoracion\clsTareasValorador.cs" />
+    <Compile Include="Valoracion\clsValoracionHistorico.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Common\Ruv.Infrastructure.Crosscutting.Common.csproj">
+      <Project>{4661210F-645E-4C3D-95A5-F80AC3FBB86C}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ruv.Infrastructure.Crosscutting.Resources\Ruv.Infrastructure.Crosscutting.Resources.csproj">
+      <Project>{1425A669-13B2-4E12-B886-C36B16375913}</Project>
+      <Name>Ruv.Infrastructure.Crosscutting.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ServiciosComunicacion\ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

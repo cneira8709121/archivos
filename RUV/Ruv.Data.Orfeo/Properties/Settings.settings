@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ruv.Data.Orfeo.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CodeReferenceUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://orfeo.unidadvictimas.gov.co/webservice/masivaconnect3.php</Value>
+    </Setting>
+    <Setting Name="FileReferenceUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://orfeo.unidadvictimas.gov.co/webservice/upload.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/DevolucionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion" />
+  <xs:import schemaLocation="http://ruvtemporal.unidadvictimas.gov.co/DevolucionService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" />
+  <xs:element name="ObtenerDevolucion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdDeclaracion" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDevolucionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion" minOccurs="0" name="ObtenerDevolucionResult" nillable="true" type="q1:clsDevolucion" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarDevolucion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion" minOccurs="0" name="dev" nillable="true" type="q2:clsDevolucion" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarDevolucionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SolicitarDevolucionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDevolucion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.Entidades.Devolucion" minOccurs="0" name="dev" nillable="true" type="q3:clsDevolucion" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarDevolucionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarDevolucionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarDocumentoDevolucion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nIdDevolucion" type="xs:int" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarDocumentoDevolucionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerarDocumentoDevolucionResult" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCausalesDevolucion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCausalesDevolucionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ruv.Infrastructure.Crosscutting.Common.General" minOccurs="0" name="ObtenerCausalesDevolucionResult" nillable="true" type="q4:ArrayOfclsCausal" />
+        <xs:element minOccurs="0" name="cError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

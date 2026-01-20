@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Registro.Secciones.H03_DescripcionHechos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             mc:Ignorable="d"
+             DataContext="{Binding Source={StaticResource RUV}, Path=I.DeclaracionActual.DescripcionHechos}"
+             d:DesignHeight="1600"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="RegistroDiccionario.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    
+    <StackPanel x:Name="spMain">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource styNumeroDeclaracion}"
+                 Text="{Binding Source={StaticResource RUV}, Path=DeclaracionActual.DeclaracionNumero}" />
+
+            <Border Grid.Column="1"
+              BorderThickness="1"
+              BorderBrush="Black"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+                <TextBlock VerticalAlignment="Center"
+                   Margin="5,2">HOJA 3 DE 4</TextBlock>
+            </Border>
+        </Grid>
+        <DockPanel>
+            <sec:SubTituloEntrada Numero="24"
+                            Texto=""
+                            DockPanel.Dock="Left"
+                            VerticalAlignment="Top" />
+            <congen:TextoRecurso Recurso="{x:Static rec:Textos.h03t001}"
+                           Style="{StaticResource styTextoDescripcionIzq}"
+                           TextAlignment="Justify" />
+        </DockPanel>
+        <Border Margin="10">
+            <StackPanel Orientation="Vertical">
+                <congen:TextoRecurso Recurso="{x:Static rec:Textos.h03t002}"
+                             Style="{StaticResource styTextoDescripcionIzq}"
+                             TextAlignment="Justify" />
+                <TextBox Text="{Binding Narracion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                 TextWrapping="Wrap" PreviewMouseDown="txtNarracion_PreviewMouseDown"
+                 AcceptsReturn="True"
+                 MinHeight="100" Name="txtNarracion"
+                 Margin="5">
+                    <TextBox.ToolTip>
+                        <ToolTip 
+                 OverridesDefaultStyle="True" Name="tpNarracion"
+                 Placement="Top"
+                 PlacementTarget="{Binding RelativeSource={RelativeSource Self}}">
+                            <ToolTip.Template>
+                                <ControlTemplate TargetType="ToolTip">
+                                 <!--   <Border BorderBrush="Blue" BorderThickness="1"
+                            Background="Black"
+                            CornerRadius="5">-->
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{TemplateBinding Content}"
+                                       Margin="10"
+                                       Width="150" TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                    <!--</Border>-->
+                                </ControlTemplate>
+                            </ToolTip.Template>
+                            </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+                <Label x:Name="lblMensajeOtroHecho" Foreground="Blue" ></Label>
+                <StackPanel x:Name="spInfoHechos" Visibility="Collapsed">
+                    <Label>Recuerde la siguiente información al momento de registrar la narración de los hechos</Label>
+                    <TextBox Text="{Binding InfoHechos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"    
+                    TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    MinHeight="100"
+                    IsReadOnly="True"
+                    Margin="5" />
+                </StackPanel>
+            </StackPanel>
+
+        </Border>
+        
+    </StackPanel>
+</UserControl>

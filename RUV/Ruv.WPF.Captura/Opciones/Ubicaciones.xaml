@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Opciones.Ubicaciones"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Height="23" 
+                               Margin="10,0,0,0" 
+                               Name="lblCarpetaDefaultGuardar" 
+                               Text="Carpeta Guardar Archivos descargados:" 
+                               VerticalAlignment="Center"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="2" />
+            <TextBox Height="23" 
+                             Name="txtCarpeta" 
+                             Width="340" 
+                             Margin="10,0,0,0" 
+                             HorizontalAlignment="Left"
+                             Grid.Row="1"
+                             Text="{Binding Path=DestinoDescargas, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              />
+            <Button Content="Examinar" 
+                            Height="23" 
+                            Name="btnExaminarDescargar" 
+                            Width="75"
+                            Grid.Row="1"
+                            Grid.Column="1" Click="btnExaminarDescargar_Click" />
+            <TextBlock Height="23" 
+                               Margin="10,0,0,0" 
+                               Name="lblCarpetaBuscarDefault" 
+                               Text="Carpeta Buscar Archivos a Cargar:" 
+                               VerticalAlignment="Center"
+                               Grid.Row="2"
+                               Grid.ColumnSpan="2" />
+            <TextBox Height="23" 
+                             Name="txtCarpetaCargar" 
+                             Width="340" 
+                             Margin="10,0,0,0" 
+                             HorizontalAlignment="Left"
+                             Grid.Row="3" Text="{Binding Path=OrigenDeclaraciones, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              />
+            <Button Content="Examinar" 
+                            Height="23" 
+                            Name="btnExaminarCargar" 
+                            Width="75"
+                            Grid.Row="3"
+                            Grid.Column="1" Click="btnExaminarCargar_Click" />
+        </Grid>
+    </ScrollViewer>
+</UserControl>

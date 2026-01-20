@@ -1,0 +1,65 @@
+﻿<Window x:Class="Ruv.WPF.Captura.Registro.Secciones.Controles.ResumenValidacionDeclaracion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Ruv.WPF.Captura;component/Recursos/Imagenes/RUV.ico"
+        Title="Resumen Validacion Declaracion"
+        Closing="CerrarVentana"
+        Topmost="True"
+        Height="300"
+        MinWidth="416"
+        MaxWidth="650">
+  <Grid>
+    <Grid.Resources>
+      <Style TargetType="{x:Type TreeViewItem}">
+        <Setter Property="IsExpanded"
+                Value="True">
+        </Setter>
+      </Style>
+
+      <HierarchicalDataTemplate x:Key="hdtNivel2">
+        <StackPanel Orientation="Horizontal">
+          <CheckBox>
+            <TextBlock Text="{Binding}"
+                       TextWrapping="Wrap"
+                       FontSize="11"
+                       Foreground="Black" />
+          </CheckBox>
+        </StackPanel>
+      </HierarchicalDataTemplate>
+      <HierarchicalDataTemplate x:Key="hdtNivel1"
+                                ItemTemplate="{StaticResource hdtNivel2}"
+                                ItemsSource="{Binding Item2}">
+        <TextBlock Text="{Binding Item1}"
+                   TextWrapping="Wrap"
+                   FontSize="12"
+                   Foreground="Blue" />
+      </HierarchicalDataTemplate>
+    </Grid.Resources>
+    <TreeView ScrollViewer.VerticalScrollBarVisibility="Auto"
+              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+              ItemTemplate="{StaticResource hdtNivel1}"
+              Margin="12,54,12,41"
+              Name="tvMain" />
+    <Button Content="Cerrar"
+            Click="CerrarBoton"
+            HorizontalAlignment="Left"
+            Margin="12,0,0,12"
+            Width="75"
+            Height="23"
+            VerticalAlignment="Bottom" />
+    <Button Content="Refrescar validación"
+            Click="Refrescar"
+            Height="23"
+            Margin="0,0,12,12"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Width="127" />
+    <TextBlock Height="36"
+               Margin="12,12,12,0"
+               TextAlignment="Left"
+               VerticalAlignment="Top">
+     <Run FontWeight="Bold" Foreground="Red"> Corrija estas inconsistencias antes de continuar.</Run><LineBreak />
+      Puede dejar esta ventana abierta mientras realiza las correcciones.
+    </TextBlock>
+  </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<Window xmlns:my1="clr-namespace:Ruv.WPF.Captura.Impresion"
+        xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+        x:Class="Ruv.WPF.Captura.Tmp.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+        xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+        Title="Window4"
+        Height="233"
+        Width="1015">
+  <Grid x:Name="grd01">
+    <my1:H02_Detalle01 />
+  </Grid>
+</Window>

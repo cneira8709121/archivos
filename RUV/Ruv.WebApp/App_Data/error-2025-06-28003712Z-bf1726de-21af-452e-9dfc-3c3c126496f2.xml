@@ -1,0 +1,144 @@
+﻿<error errorId="bf1726de-21af-452e-9dfc-3c3c126496f2" application="/LM/W3SVC/2/ROOT" host="CRISTIAN" type="System.InsufficientMemoryException" message="Error en la comprobación de las puertas de memoria, la memoria libre (767971328 bytes) es menor que el 5% de la memoria total. Como resultado, el servicio no estará disponible para las solicitudes entrantes. Para resolver esta situación, reduzcan la carga en el equipo o ajuste el valor deminFreeMemoryPercentageToActivateService en el elemento de configuración serviceHostingEnvironment." source="System.ServiceModel.Activation" detail="System.ServiceModel.ServiceActivationException: El servicio '/LoginService.svc' no se puede activar debido a una excepción durante la compilación. El mensaje de la excepción es: Error en la comprobación de las puertas de memoria, la memoria libre (767971328 bytes) es menor que el 5% de la memoria total. Como resultado, el servicio no estará disponible para las solicitudes entrantes. Para resolver esta situación, reduzcan la carga en el equipo o ajuste el valor deminFreeMemoryPercentageToActivateService en el elemento de configuración serviceHostingEnvironment.. ---&gt; System.InsufficientMemoryException: Error en la comprobación de las puertas de memoria, la memoria libre (767971328 bytes) es menor que el 5% de la memoria total. Como resultado, el servicio no estará disponible para las solicitudes entrantes. Para resolver esta situación, reduzcan la carga en el equipo o ajuste el valor deminFreeMemoryPercentageToActivateService en el elemento de configuración serviceHostingEnvironment.&#xD;&#xA;   en System.ServiceModel.Activation.ServiceMemoryGates.Check(Int32 minFreeMemoryPercentage, Boolean throwOnLowMemory, UInt64&amp; availableMemoryBytes)&#xD;&#xA;   en System.ServiceModel.ServiceHostingEnvironment.HostingManager.CheckMemoryCloseIdleServices(EventTraceActivity eventTraceActivity)&#xD;&#xA;   en System.ServiceModel.ServiceHostingEnvironment.HostingManager.EnsureServiceAvailable(String normalizedVirtualPath, EventTraceActivity eventTraceActivity)&#xD;&#xA;   --- Fin del seguimiento de la pila de la excepción interna ---&#xD;&#xA;   en System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)&#xD;&#xA;   en System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)&#xD;&#xA;   en System.ServiceModel.Activation.ServiceHttpHandlerFactory.ServiceHttpHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   en System.Web.HttpApplication.CallHandlerExecutionStep.InvokeEndHandler(IAsyncResult ar)&#xD;&#xA;   en System.Web.HttpApplication.CallHandlerExecutionStep.OnAsyncHandlerCompletion(IAsyncResult ar)" time="2025-06-28T00:37:12.9276448Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_HOST:localhost:44302&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Host: localhost:44302&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="E:\source\UARIV\RUV\RUV\Ruv.WebApp\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/LoginService.svc" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="E:\source\UARIV\RUV\RUV\Ruv.WebApp\LoginService.svc" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="62653" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/LoginService.svc" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="44302" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/LoginService.svc" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:44302" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="iaoatyulhvlnet54gqkciz4u" />
+    </item>
+  </cookies>
+</error>

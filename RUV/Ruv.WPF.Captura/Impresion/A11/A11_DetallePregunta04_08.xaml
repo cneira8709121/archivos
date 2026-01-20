@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A11_DetallePregunta04_08"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:conv="clr-namespace:Ruv.WPF.Captura.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="535"
+             d:DesignWidth="822">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+        <ResourceDictionary Source="/Ruv.WPF.Captura;component/Recursos/EstilosImpresion.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <conv:VictimaConsultaConverter x:Key="VCC" />
+      <conv:ConsultaDatoConverter x:Key="CDC" />
+      <conv:CantidadTiempoConverter x:Key="CTC" />
+      <conv:VictimaA11BienInmuebleConverter x:Key="V11BI" />
+      <conv:ParametroNumeroConverter x:Key="PNC" />
+      <conv:GeoEntornoConverter x:Key="GEC" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <Grid x:Name="grdMain"
+        VerticalAlignment="Top">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="4*" />
+      <ColumnDefinition Width="4*" />
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="4*" />
+      <ColumnDefinition Width="2*" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <my:DatoColumna Texto="{Binding PersonaAfectadaId, Converter={StaticResource VCC}, ConverterParameter=NumeroConsecutivo }"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    AlineacionTexto="Center" />
+    <my:DatoColumna Texto="{Binding TipoInmueble, Converter={StaticResource PNC}}"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1" />
+    <Border Grid.Column="2" />
+    <StackPanel Grid.Column="2">
+      <my:DatoColumna Texto="{Binding LocalizacionDepartamento, Converter={StaticResource CDC}, ConverterParameter=Departamento }"
+                      BordeVisible="False" />
+      <my:DatoColumna Texto="{Binding LocalizacionMunicipio, Converter={StaticResource CDC}, ConverterParameter=Municipio }"
+                      BordeVisible="False" />
+    </StackPanel>
+    <Border Grid.Column="3" />
+    <StackPanel Grid.Column="3">
+
+      <my:DatoColumna Texto="{Binding TipoEntorno, Converter={StaticResource CDC}, ConverterParameter=TIPOENTORNOPOBLACIONES}"
+                      BordeVisible="False" />
+      <my:DatoColumna BordeVisible="False">
+        <my:DatoColumna.Texto>
+          <MultiBinding Converter="{StaticResource GEC}"
+                        ConverterParameter="ENTORNOCOMPLETO">
+            <Binding Path="TipoEntorno" />
+            <Binding Path="BarrioVeredaId" />
+            <Binding Path="LocalidadCorregimientoId" />
+            <Binding Path="BarrioVeredaNombre" />
+            <Binding Path="LocalidadCorregimientoNombre" />
+          </MultiBinding>
+        </my:DatoColumna.Texto>
+      </my:DatoColumna>
+    </StackPanel>
+    <my:DatoColumna Texto="{Binding TipoTenencia, Converter={StaticResource PNC}}"
+                    Grid.Column="4" />
+    <my:DatoColumna Texto="{Binding NombreDireccion}"
+                    Grid.Column="5" />
+    <my:DatoColumna Texto="{Binding ExtensionArea, StringFormat='{}#,##0.00'}"
+                    Grid.Column="6" />
+    <my:DatoColumna Texto="{Binding ExtensionUnidadDeArea, Converter={StaticResource PNC}}"
+                    Grid.Column="7" />
+  </Grid>
+
+</UserControl>

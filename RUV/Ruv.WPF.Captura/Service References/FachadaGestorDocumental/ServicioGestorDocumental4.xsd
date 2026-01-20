@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" />
+  <xs:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" />
+  <xs:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Homonimia" />
+  <xs:import schemaLocation="http://172.20.210.208/SERVICIOS/WcfGestionDocumental/ServicioGestorDocumental.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" />
+  <xs:element name="radicarDeEntradaBpmOrfeo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q1:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="tipdesrem" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primerApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundoApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nomEntidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pais" type="xs:int" />
+        <xs:element minOccurs="0" name="departamento" type="xs:int" />
+        <xs:element minOccurs="0" name="municipio" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codDependenciaDestino" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripAnexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asunto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuarioOrfeo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwordOrfeo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroFolios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeEntradaBpmOrfeoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="radicarDeEntradaBpmOrfeoResult" nillable="true" type="q2:status" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeEntrada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q3:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="tipdesrem" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primerApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundoApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nomEntidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pais" type="xs:int" />
+        <xs:element minOccurs="0" name="departamento" type="xs:int" />
+        <xs:element minOccurs="0" name="municipio" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codDependenciaDestino" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripAnexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asunto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeEntradaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="radicarDeEntradaResult" nillable="true" type="q4:status" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeSalidaBpmOrfeo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q5:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="numRadicadoEntrada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipdesrem" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primerApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundoApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nomEntidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pais" type="xs:int" />
+        <xs:element minOccurs="0" name="departamento" type="xs:int" />
+        <xs:element minOccurs="0" name="municipio" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripAnexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asunto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreArchivo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="archivoB64" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ultimo" type="xs:int" />
+        <xs:element minOccurs="0" name="usuarioOrfeo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwordOrfeo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroFolios" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeSalidaBpmOrfeoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="radicarDeSalidaBpmOrfeoResult" nillable="true" type="q6:documento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q7:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="numRadicadoEntrada" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipdesrem" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="primerApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="segundoApell" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cedula" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nomEntidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pais" type="xs:int" />
+        <xs:element minOccurs="0" name="departamento" type="xs:int" />
+        <xs:element minOccurs="0" name="municipio" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descripAnexo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asunto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreArchivo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="archivoB64" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ultimo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="radicarDeSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="radicarDeSalidaResult" nillable="true" type="q8:documento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRadicados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q9:Credencial" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dependency" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRadicadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getRadicadosResult" nillable="true" type="q10:listOfRadicados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDestinationDependencies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q11:Credencial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDestinationDependenciesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getDestinationDependenciesResult" nillable="true" type="q12:listOfDependencies" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRadicadoDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q13:Credencial" />
+        <xs:element minOccurs="0" name="radicadoNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRadicadoDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getRadicadoDocumentsResult" nillable="true" type="q14:listOfDocuments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="marcarRadicadoComoRecibido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q15:Credencial" />
+        <xs:element minOccurs="0" name="numRadicado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="marcarRadicadoComoRecibidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="marcarRadicadoComoRecibidoResult" nillable="true" type="q16:status" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verifyRadicado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q17:Credencial" />
+        <xs:element minOccurs="0" name="numeroRadicado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verifyRadicadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="verifyRadicadoResult" nillable="true" type="q18:radicadoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRadicadosSinImagen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q19:Credencial" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRadicadosSinImagenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getRadicadosSinImagenResult" nillable="true" type="q20:listOfRadicados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attachDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q21:Credencial" />
+        <xs:element minOccurs="0" name="radicadoNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isLast" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attachDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="attachDocumentResult" nillable="true" type="q22:attachResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attachDocumentBpmOrfeo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="credencial" nillable="true" type="q23:Credencial" />
+        <xs:element minOccurs="0" name="radicadoNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isLast" type="xs:int" />
+        <xs:element minOccurs="0" name="radicadoNumberOrfeo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuarioOrfeo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwordOrfeo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attachDocumentBpmOrfeoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="attachDocumentBpmOrfeoResult" nillable="true" type="q24:attachResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTodosRadicados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q25:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dependency" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTodosRadicadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getTodosRadicadosResult" nillable="true" type="q26:ArrayOflistOfRadicados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDescargarDocumentoPorRadicado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q27:Credencial" />
+        <xs:element minOccurs="0" name="radicadoNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDescargarDocumentoPorRadicadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getDescargarDocumentoPorRadicadoResult" nillable="true" type="q28:b64File" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="downloadDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q29:Credencial" />
+        <xs:element minOccurs="0" name="radicadoNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="downloadDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="downloadDocumentResult" nillable="true" type="q30:b64File" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGeografiaBPM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Homonimia" minOccurs="0" name="objEntrada" nillable="true" type="q31:entEntradaGeografia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGeografiaBPMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Homonimia" minOccurs="0" name="getGeografiaBPMResult" nillable="true" type="q32:ArrayOfentSalidaGeografia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHomologacionGeografiaBpmSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Homonimia" minOccurs="0" name="objEntrada" nillable="true" type="q33:entHomoGeografiaEntrada" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHomologacionGeografiaBpmSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Homonimia" minOccurs="0" name="getHomologacionGeografiaBpmSalidaResult" nillable="true" type="q34:ArrayOfentHomoGeografiaSalida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q35:Credencial" />
+        <xs:element minOccurs="0" name="countryId" type="xs:int" />
+        <xs:element minOccurs="0" name="departamentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getCitiesResult" nillable="true" type="q36:listOfCities" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDeparments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q37:Credencial" />
+        <xs:element minOccurs="0" name="countryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDeparmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getDeparmentsResult" nillable="true" type="q38:listOfDepartments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q39:Credencial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.Negocio.ServicioBPM" minOccurs="0" name="getCountriesResult" nillable="true" type="q40:listOfCountries" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInfoRadicado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q41:Credencial" />
+        <xs:element minOccurs="0" name="numeroRadicado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInfoRadicadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="ObtenerInfoRadicadoResult" nillable="true" type="q42:ArrayOfEntInfoRadicado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInfoPersona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q43:Credencial" />
+        <xs:element minOccurs="0" name="numeroRadicado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInfoPersonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="ObtenerInfoPersonaResult" nillable="true" type="q44:ArrayOfentInfoPersona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRadicadosVictima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q45:Credencial" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="infoRadicado" nillable="true" type="q46:EntInfoRadicadosVictimasRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerRadicadosVictimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="ObtenerRadicadosVictimaResult" nillable="true" type="q47:ArrayOfEntInfoRadicadosVictimasResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NegInformacionRadicadoEntrada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q48:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="infoRadEntrada" nillable="true" type="q49:EntInformacionRadicadoEntradaRequest" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="infoInteresado" nillable="true" type="q50:ArrayOfEntInformacionInteresadoRequest" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="infoRepresentante" nillable="true" type="q51:EntInformacionRepresentanteRequest" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="infoRemitente" nillable="true" type="q52:EntMaestroDatosRemitenteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NegInformacionRadicadoEntradaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="NegInformacionRadicadoEntradaResult" nillable="true" type="q53:EntMensajeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NegInformacionRadicadoSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q54:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="infoRadSalida" nillable="true" type="q55:EntInformacionRadicadoSalidaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NegInformacionRadicadoSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="NegInformacionRadicadoSalidaResult" nillable="true" type="q56:EntMensajeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NegNotificarRadicadoSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos" minOccurs="0" name="Credencial" nillable="true" type="q57:Credencial" />
+        <xs:element minOccurs="0" name="idAplicacion" type="xs:int" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="notRadSalida" nillable="true" type="q58:EntNotificacionRadSalidaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NegNotificarRadicadoSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WcfGestorDocumental.ContratosDatos.Esigna" minOccurs="0" name="NegNotificarRadicadoSalidaResult" nillable="true" type="q59:EntMensajeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

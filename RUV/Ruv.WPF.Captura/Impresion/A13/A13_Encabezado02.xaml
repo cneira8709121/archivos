@@ -1,0 +1,416 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Impresion.A13_Encabezado02"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="clr-namespace:Ruv.WPF.Captura.Impresion"
+             xmlns:sec="clr-namespace:Ruv.WPF.Captura.Registro.Secciones"
+             xmlns:rec="clr-namespace:Ruv.WPF.Captura.Recursos"
+             xmlns:congen="clr-namespace:Ruv.WPF.Captura.Controles"
+             mc:Ignorable="d"
+             d:DesignHeight="329"
+             d:DesignWidth="1279">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Ruv.WPF.Captura;component/Registro/Secciones/RegistroDiccionario.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type congen:TextoRecurso}"
+             BasedOn="{StaticResource styTextoDescripcionIzq}">
+                <Setter Property="VerticalAlignment"
+                Value="Top" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.117117117117117*" />
+            <ColumnDefinition Width="0.117117117117117*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0990990990990991*" />
+            <ColumnDefinition Width="0.0720720720720721*" />
+            <ColumnDefinition Width="0.0630630630630631*" />
+
+            <!--Afectación-->
+            <ColumnDefinition Width="0.0720720720720721*" />
+            <ColumnDefinition Width="0.0630630630630631*" />
+
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+
+            <ColumnDefinition Width="0.00900900900900901*" />
+
+            <ColumnDefinition Width="0.018018018018018*" x:Name="cGenero" />
+            <ColumnDefinition Width="0.018018018018018*" x:Name="cSexo" />
+            <ColumnDefinition Width="0.018018018018018*" x:Name="cOrientacionSexual" />
+            <ColumnDefinition Width="0.018018018018018*" x:Name="cIdentidadGenero" />
+            <ColumnDefinition Width="0.081081081081081*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0027027027027027*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0027027027027027*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0027027027027027*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0027027027027027*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0027027027027027*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.0027027027027027*" />
+            <ColumnDefinition Width="0.0630630630630631*" />
+            <ColumnDefinition Width="0.018018018018018*" x:Name="cCampesinado" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" />
+            <ColumnDefinition Width="0.018018018018018*" x:Name="cPersonaBuscadora" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="14" />
+            <RowDefinition Height="14" />
+            <RowDefinition Height="14" />
+            <RowDefinition Height="14" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="14" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="BorderThickness"
+                Value="1" />
+                <Setter Property="BorderBrush"
+                Value="Black" />
+            </Style>
+            <Style TargetType="TextBlock"
+             x:Key="styNumeroPregunta">
+                <Setter Property="TextAlignment"
+                Value="Center" />
+                <Setter Property="HorizontalAlignment"
+                Value="Center" />
+                <Setter Property="Padding"
+                Value="5,2" />
+                <Setter Property="Background"
+                Value="Black" />
+                <Setter Property="Foreground"
+                Value="White" />
+                <Setter Property="Grid.Row"
+                Value="2" />
+                <Setter Property="FontSize"
+                Value="{StaticResource TamañoTextoPequeño}" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize"
+                Value="{StaticResource TamañoTextoPequeño}" />
+            </Style>
+        </Grid.Resources>
+
+        <TextBlock Style="{StaticResource styTextoDescripcion}"
+               Grid.ColumnSpan="10"
+               FontWeight="Bold">Campos obligatorios</TextBlock>
+        <Border Grid.ColumnSpan="10"
+            Grid.Row="1"
+            Height="10"
+            BorderThickness="1,1,1,0"
+            Margin="0,0,0,5" />
+        <TextBlock Style="{StaticResource styNumeroPregunta}">1</TextBlock>
+        <TextBlock Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Style="{StaticResource styNumeroPregunta}">2</TextBlock>
+        <TextBlock Grid.Column="3"
+               Grid.ColumnSpan="2"
+               Style="{StaticResource styNumeroPregunta}">3</TextBlock>
+        <TextBlock Grid.Column="5"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">4</TextBlock>
+        <TextBlock Grid.Column="6"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">5</TextBlock>
+        <TextBlock Grid.Column="7"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">7</TextBlock>
+        <TextBlock Grid.Column="8"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">8</TextBlock>
+        <TextBlock Grid.Column="9"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">9</TextBlock>
+        <!--LOS ENCABEZADOS DE LA TABLA-->
+        <my:EncabezadoColumna Texto="No. Consecutivo\nde la Persona"
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="*Nombres:\nEscriba en el renglón 1\nel primer nombre únicamente.\nEscriba en el renglón 2\nlos demás nombres."
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          Grid.Column="1" />
+        <my:EncabezadoColumna Texto="*Apellidos:\nEscriba en el reglón 1\nel primer apellido.\nEscriba en el renglón 2\nel segundo apellido."
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          Grid.Column="2" />
+        <my:EncabezadoColumna Texto="*Tipo Doc."
+                          Grid.Column="3"
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="*Número del documento\nde identidad"
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          Grid.Column="4" />
+        <my:EncabezadoColumna Texto="*Fecha de nacimiento\n(Si no es posible\nobtener una\nfecha precisa,\ndiligenciar\nel mes y/o el año)"
+                          Grid.Column="5"
+                          Grid.Row="3"
+                          Grid.RowSpan="3" />
+        <Grid Grid.Column="5"
+          Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <my:EncabezadoColumna Texto="Día" />
+            <my:EncabezadoColumna Texto="Mes"
+                            Grid.Column="1" />
+            <my:EncabezadoColumna Texto="Año"
+                            Grid.Column="2" />
+        </Grid>
+        <my:EncabezadoColumna Texto="*Hechos victimizantes\npor persona\n(Seleccione todos los\nque apliquen)"
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          Grid.Column="6" />
+        <my:EncabezadoColumna Texto="Afectación"                            
+                            Grid.Row="3"
+                            Grid.Column="7"
+                            Grid.RowSpan="4"
+                            OrientacionTexto="Horizontal" />
+        <my:EncabezadoColumna Texto="En caso de\nhaber marcado\nla casilla 14 (Otro) en\nel campo anterior, registre\nen este campo\nla afectación sufrida"                            
+                            Grid.Row="3"
+                            Grid.Column="8"
+                            Grid.RowSpan="4"
+                            OrientacionTexto="Horizontal" />
+        <my:EncabezadoColumna Texto="Relación"
+                          Grid.Row="3"
+                          Grid.Column="9"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="Estado Civil"
+                          Grid.Row="3"
+                          Grid.Column="10"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="Régimen especial"
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          Grid.Column="11"
+                          OrientacionTexto="Vertical" />
+        <TextBlock Style="{StaticResource styTextoDescripcion}"
+               Grid.ColumnSpan="26"
+               Grid.Column="12"
+               FontWeight="Bold">ENFOQUE DIFERENCIAL</TextBlock>
+        <Border Grid.ColumnSpan="26"
+            Grid.Row="1"
+            Grid.Column="13"
+            Height="10"
+            BorderThickness="1,1,1,0"
+            Margin="0,0,0,5" />
+        <TextBlock Grid.Column="13"
+               Style="{StaticResource styNumeroPregunta}">10</TextBlock>
+        <TextBlock Grid.Column="17"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">11</TextBlock>
+        <TextBlock Grid.Column="19"
+               Grid.ColumnSpan="16"
+               Style="{StaticResource styNumeroPregunta}">12</TextBlock>
+        <TextBlock Grid.Column="36"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">13</TextBlock>
+        <TextBlock Grid.Column="37"
+               Grid.ColumnSpan="1"
+               Style="{StaticResource styNumeroPregunta}">14</TextBlock>
+
+        <!--LOS ENCABEZADOS DE LA TABLA-->
+        <my:EncabezadoColumna Texto="Género"
+                          OrientacionTexto="Vertical"
+                          Grid.Column="13"
+                          Grid.Row="3"
+                          Grid.RowSpan="4" />
+        <my:EncabezadoColumna Texto="Sexo"
+                          OrientacionTexto="Vertical"
+                          Grid.Column="14"
+                          Grid.Row="3"
+                          Grid.RowSpan="4" />
+        <my:EncabezadoColumna Texto="Orientacion Sexual"
+                          OrientacionTexto="Vertical"
+                          Grid.Column="15"
+                          Grid.Row="3"
+                          Grid.RowSpan="4" />
+        <my:EncabezadoColumna Texto="Identidad de género"
+                          OrientacionTexto="Vertical"
+                          Grid.Column="16"
+                          Grid.Row="3"
+                          Grid.RowSpan="4" />
+        <my:EncabezadoColumna Texto="Discapacidad"
+                          Grid.Column="17"
+                          Grid.Row="3"
+                          Grid.RowSpan="2" />
+        <my:EncabezadoColumna Texto="Identifique la(s)\ndiscapacidad(es) de cada\nuna de las personas en\nla actualidad"
+                          Grid.Column="17"
+                          Grid.Row="5"
+                          Grid.RowSpan="2" />
+        <my:EncabezadoColumna Texto="Pertenencia Étnica"
+                          Grid.Row="3"
+                          Grid.ColumnSpan="17"
+                          Grid.RowSpan="2"
+                          Grid.Column="18" />
+
+        <!--<TextBlock Grid.Column="13"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">1</TextBlock>
+    <TextBlock Grid.Column="16"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">2</TextBlock>
+    <TextBlock Grid.Column="19"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="3"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">3</TextBlock>
+    <TextBlock Grid.Column="23"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="1"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">4</TextBlock>
+    <TextBlock Grid.Column="25"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="1"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">5</TextBlock>
+    <TextBlock Grid.Column="27"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="1"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">6</TextBlock>
+    <TextBlock Grid.Column="29"
+               Grid.Row="4"
+               Grid.RowSpan="1"
+               Grid.ColumnSpan="1"
+               HorizontalAlignment="Stretch"
+               Style="{StaticResource styNumeroPregunta}">1, 2, 3, 4 o 5</TextBlock>-->
+        <!--<Border Background="Black"
+            Grid.Column="15"
+            Grid.Row="4"
+            Grid.RowSpan="3" />
+    <Border Background="Black"
+            Grid.Column="18"
+            Grid.Row="4"
+            Grid.RowSpan="3" />
+    <Border Background="Black"
+            Grid.Column="22"
+            Grid.Row="4"
+            Grid.RowSpan="3" />
+    <Border Background="Black"
+            Grid.Column="24"
+            Grid.Row="4"
+            Grid.RowSpan="3" />
+    <Border Background="Black"
+            Grid.Column="26"
+            Grid.Row="4"
+            Grid.RowSpan="3" />
+    <Border Background="Black"
+            Grid.Column="28"
+            Grid.Row="4"
+            Grid.RowSpan="3" />-->
+
+        <my:EncabezadoColumna Texto="Etnia "
+                          Grid.Column="18"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          Grid.ColumnSpan="16"
+                          OrientacionTexto="Horizontal" />
+
+
+        <!--<my:EncabezadoColumna Texto="Negro(a) o\nAfrocolombiano"
+                          Grid.Column="13" Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Consejo\nComunitario"
+                          Grid.Column="14"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Gitano(a)\nROM"
+                          Grid.Column="16"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Kumpania"
+                          Grid.Column="17"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Indígena"
+                          Grid.Column="19"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Etnia o Pueblo\nIndígena"
+                          Grid.Column="20"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Resguardo"
+                          Grid.Column="21"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Palenquero"
+                          Grid.Column="23"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Raizal del Archipiélago\nde San Andrés\ny Providencia"
+                          Grid.Column="25"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />
+    <my:EncabezadoColumna Texto="Ninguna"
+                          Grid.Column="27"
+                          Grid.RowSpan="2"
+                          Grid.Row="5"
+                          OrientacionTexto="Vertical" />-->
+        <my:EncabezadoColumna Texto="Comunidad\n(Si aplica)"
+                          Grid.Column="34"
+                          Grid.RowSpan="2"
+                          Grid.Row="5" />
+
+        <my:EncabezadoColumna Texto="Campesinado"
+                          Grid.Row="3"
+                          Grid.RowSpan="4"
+                          Grid.Column="35"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="Cabeza de familia"
+                          Grid.Column="36"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="Gestante o lactante"
+                          Grid.Column="37"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+        <my:EncabezadoColumna Texto="Persona Buscadora"
+                          Grid.Column="38"
+                          Grid.RowSpan="4"
+                          OrientacionTexto="Vertical" />
+    </Grid>
+</UserControl>

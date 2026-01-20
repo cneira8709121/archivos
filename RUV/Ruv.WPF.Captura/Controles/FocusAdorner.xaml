@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Ruv.WPF.Captura.Controles.FocusAdorner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Visibility="Collapsed"
+             Background="Transparent"
+             x:Name="uc01"
+             d:DesignHeight="100"
+             d:DesignWidth="300">
+  <UserControl.Resources>
+    <Storyboard x:Key="sbFocusAdorner"
+                Duration="0:0:0.75">
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stTamaño"
+                                     Storyboard.TargetProperty="ScaleX"
+                                     Duration="0:0:0.6"
+                                     FillBehavior="HoldEnd">
+        <DiscreteDoubleKeyFrame KeyTime="0:0:0"
+                                Value="6" />
+        <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+                              Value="1">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CircleEase EasingMode="EaseOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+
+        <DiscreteDoubleKeyFrame KeyTime="0:0:0.6"
+                                Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="stTamaño"
+                                     Storyboard.TargetProperty="ScaleY"
+                                     Duration="0:0:0.6"
+                                     FillBehavior="HoldEnd">
+        <DiscreteDoubleKeyFrame KeyTime="0:0:0"
+                                Value="6" />
+        <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+                              Value="1">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CircleEase EasingMode="EaseOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+        <DiscreteDoubleKeyFrame KeyTime="0:0:0.6"
+                                Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="uc01"
+                                     Storyboard.TargetProperty="Opacity"
+                                     Duration="0:0:0.6"
+                                     FillBehavior="HoldEnd">
+        <DiscreteDoubleKeyFrame KeyTime="0:0:0"
+                                Value="0" />
+        <LinearDoubleKeyFrame KeyTime="0:0:0.5"
+                              Value="1" />
+        <LinearDoubleKeyFrame KeyTime="0:0:0.6"
+                              Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+  </UserControl.Resources>
+  <UserControl.RenderTransform>
+    <TransformGroup>
+      <ScaleTransform x:Name="stTamaño"
+                      ScaleX="1"
+                      ScaleY="1" />
+      <TranslateTransform x:Name="ttPosicion" />
+    </TransformGroup>
+  </UserControl.RenderTransform>
+  <Border BorderThickness="2"
+          CornerRadius="0"
+          Background="Transparent"
+          BorderBrush="Red" />
+</UserControl>
